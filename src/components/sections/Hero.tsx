@@ -1,23 +1,17 @@
-import { Button } from '@/components/ui/Button';
-
 export function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center px-6">
-      <div className="max-w-4xl text-center">
-        <h1 className="text-6xl md:text-7xl font-bold text-text-white mb-6">
-          Hi, I'm Nick
-        </h1>
-        <p className="text-xl md:text-2xl text-normal-text mb-8">
-          Full-stack developer passionate about creating exceptional digital experiences
-        </p>
-        <div className="flex gap-4 justify-center">
-          <Button variant="primary" size="lg">
-            View My Work
-          </Button>
-          <Button variant="outline" size="lg">
-            Get In Touch
-          </Button>
-        </div>
+    <section className="relative min-h-screen">
+      {/* Logo/Home Button */}
+      <div
+        className="absolute w-16 h-16 rounded-lg flex items-center justify-center border-2 border-white/30 shadow-[0_0_15px_rgba(255,255,255,0.2)] bg-white/5 z-[60]"
+        style={{
+          top: '80px',
+          left: '120px',
+        }}
+      >
+        <span className="text-white font-serif text-[22px]">
+          NCM
+        </span>
       </div>
     </section>
   );
