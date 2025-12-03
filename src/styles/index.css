@@ -10,12 +10,20 @@
   --normal-text: #b3b3b3;
   --highlight-dark: #292929;
   --white-smoke: #e7e7e7;
+  view-transition-name: root;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  display: block;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font-family: sans-serif;
 }
 
 body {
