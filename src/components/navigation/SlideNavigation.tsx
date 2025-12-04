@@ -6,6 +6,13 @@ interface SlideNavigationProps {
 }
 
 export function SlideNavigation({ currentSlideIndex = 0, totalSlides = 5 }: SlideNavigationProps) {
+  const scrollToSection = (index: number) => {
+    const section = document.getElementById(`section-${index}`);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="fixed right-8 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4">
       {[...Array(totalSlides)].map((_, index) => (
@@ -18,11 +25,8 @@ export function SlideNavigation({ currentSlideIndex = 0, totalSlides = 5 }: Slid
               : 'bg-white/20 hover:bg-white/40 hover:scale-110' // Inactive Dot (Dim)
             }
           `}
-          aria-label={`Go to slide ${index + 1}`}
-          onClick={() => {
-            // Add your scroll logic here, e.g.:
-            // document.getElementById(`slide-${index}`).scrollIntoView({ behavior: 'smooth' });
-          }}
+          aria-label={`Go to section ${index + 1}`}
+          onClick={() => scrollToSection(index)}
         />
       ))}
     </div>
