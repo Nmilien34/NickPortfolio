@@ -1,28 +1,11 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export function Hero() {
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState('EN');
   const [isListening, setIsListening] = useState(false);
-  const [isBraceExpanded, setIsBraceExpanded] = useState(false);
-  const braceCardRef = useRef<HTMLDivElement>(null);
-
-  // Close brace card when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (braceCardRef.current && !braceCardRef.current.contains(event.target as Node)) {
-        setIsBraceExpanded(false);
-      }
-    };
-
-    if (isBraceExpanded) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isBraceExpanded]);
+  const navigate = useNavigate();
 
   const languages = [
     { code: 'EN', label: 'English', flag: '🇺🇸' },
@@ -82,9 +65,14 @@ export function Hero() {
         <button className="px-5 py-2 text-normal-text hover:text-text-white transition-colors">
           About
         </button>
-        <button className="px-5 py-2 text-normal-text hover:text-text-white transition-colors">
+        <a
+          href="/images/_PM concised V7.2.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-5 py-2 text-normal-text hover:text-text-white transition-colors"
+        >
           Resume
-        </button>
+        </a>
         <button className="px-5 py-2 text-normal-text hover:text-text-white transition-colors">
           Learnings
         </button>
@@ -252,7 +240,7 @@ export function Hero() {
           <div className="w-0.5 h-24 bg-white/30" />
 
           {/* Brace for 2015-2017 (from dot to 2017 bubble) */}
-          <div className="absolute left-1/2 ml-20 flex items-start gap-3" style={{ top: '160px', height: '330px' }}>
+          <div className="absolute left-1/2 ml-20 flex items-start gap-3 z-20" style={{ top: '160px', height: '330px' }}>
             {/* Simple bracket */}
             <div className="relative" style={{ width: '20px', height: '100%' }}>
               {/* Top horizontal line */}
@@ -263,66 +251,28 @@ export function Hero() {
               <div className="absolute bottom-0 left-0 w-full h-0.5 bg-white/30" />
             </div>
             {/* Arrow and Card */}
-            <div ref={braceCardRef} className={`flex items-center gap-3 mt-40 transition-all duration-500 relative z-50 ${isBraceExpanded ? 'w-[540px]' : 'w-80'}`}>
+            <div className="flex items-center gap-3 mt-40">
               <span className="text-white/50">→</span>
-              <button
-                type="button"
-                onClick={() => {
-                  console.log('Brace card clicked! Current state:', isBraceExpanded);
-                  setIsBraceExpanded(!isBraceExpanded);
-                }}
-                className={`
-                  w-full p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm
-                  hover:bg-white/10 hover:border-white/30 transition-all duration-500
-                  text-left cursor-pointer relative z-50
-                  ${isBraceExpanded ? 'p-8' : 'p-6'}
-                `}
-              >
-                <h3 className={`font-serif text-white mb-4 transition-all duration-500 ${isBraceExpanded ? 'text-2xl' : 'text-xl'}`}>
-                  Early Years
-                </h3>
-                {isBraceExpanded && (
-                  <div className="space-y-4 animate-in fade-in duration-500">
-                    <p className="text-base font-mono text-normal-text leading-relaxed">
-                      i learned english and made friends
-                    </p>
-                    <div className="pt-4 border-t border-white/10">
-                      <h4 className="text-sm font-serif text-white mb-2">Key Highlights:</h4>
-                      <ul className="text-sm font-mono text-normal-text space-y-2 list-disc list-inside">
-                        <li>learned english</li>
-                        <li>made friends</li>
-                        <li>played a ton of soccer</li>
-                        <li>got my driver licence</li>
-                        <li>Got my first job at the mall in 2016 then quit and went to work at kfc</li>
-                      </ul>
-                    </div>
-
-                    {/* Early Years Photos */}
-                    <div className="pt-4 flex flex-col items-center gap-2">
-                      <div className="flex gap-4">
-                        <img
-                          src="/images/earlyYears/IMG_1399.jpg"
-                          alt="Early years summary"
-                          className="w-48 h-64 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
-                        />
-                        <img
-                          src="/images/earlyYears/IMG_3113.PNG"
-                          alt="Early years summary"
-                          className="w-48 h-64 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
-                        />
-                      </div>
-                      <p className="text-xs font-mono text-gray-500 italic">
-                        Pictures to summarize the years
-                      </p>
-                    </div>
-                  </div>
-                )}
-                {!isBraceExpanded && (
-                  <p className="text-xs font-mono text-gray-500">
-                    Click to expand
+              <div className="w-80">
+                <div
+                  onClick={() => {
+                    console.log('Early Years card clicked');
+                    navigate('/early-years');
+                  }}
+                  className="w-full p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-white/30 hover:scale-105 transition-all duration-300 text-left cursor-pointer"
+                >
+                  <h3 className="font-serif text-xl text-white mb-3">
+                    Early Years
+                  </h3>
+                  <p className="text-sm font-mono text-normal-text leading-relaxed mb-4 line-clamp-3">
+                    I learned english and made friends
                   </p>
-                )}
-              </button>
+                  <div className="flex items-center gap-2 text-xs font-mono text-white/70">
+                    <span>Click to view details</span>
+                    <span>→</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

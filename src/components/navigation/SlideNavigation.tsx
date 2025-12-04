@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react';
-
 interface SlideNavigationProps {
   currentSlideIndex?: number;
   totalSlides?: number;

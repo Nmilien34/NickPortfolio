@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface TimelineItemData {
   year: string;
@@ -7,6 +7,8 @@ interface TimelineItemData {
   position?: 'left' | 'right'; // Which side the card appears on
   highlights?: string[]; // Key highlights as bullet points
   photos?: string[]; // Photo URLs to display in the card
+  photosCaption?: string; // Optional caption for photos section
+  photoSections?: Array<{ caption: string; photos: string[] }>; // Multiple photo sections with captions
   brace?: {
     endsAtYear: string; // Year where the brace ends
     card: {
@@ -14,6 +16,8 @@ interface TimelineItemData {
       description: string;
       highlights?: string[];
       photos?: string[];
+      photosCaption?: string; // Optional caption for photos section
+      photoSections?: Array<{ caption: string; photos: string[] }>; // Multiple photo sections with captions
     };
   };
 }
@@ -23,25 +27,22 @@ interface TimelineItemProps {
 }
 
 function TimelineItem({ data }: TimelineItemProps) {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const cardRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
-  // Close card when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (cardRef.current && !cardRef.current.contains(event.target as Node)) {
-        setIsExpanded(false);
-      }
-    };
+  const titleToSlug = (title: string): string => {
+    return title
+      .toLowerCase()
+      .trim()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-');
+  };
 
-    if (isExpanded) {
-      document.addEventListener('mousedown', handleClickOutside);
+  const handleCardClick = () => {
+    if (data.title) {
+      navigate(`/${titleToSlug(data.title)}`);
     }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isExpanded]);
+  };
 
   const hasCard = data.title || data.description;
 
@@ -57,7 +58,7 @@ function TimelineItem({ data }: TimelineItemProps) {
 
       {/* Card with Arrow (if has content) */}
       {hasCard && (
-        <div ref={cardRef} className={`absolute ${data.position === 'left' ? 'right-1/2 mr-16' : 'left-1/2 ml-16'} transition-all duration-500 ${isExpanded ? 'w-[500px]' : 'w-80'}`}>
+        <div className={`absolute ${data.position === 'left' ? 'right-1/2 mr-16' : 'left-1/2 ml-16'} w-80`}>
           {/* Arrow pointing to timeline */}
           <div className={`flex items-center gap-2 mb-4 ${data.position === 'left' ? 'justify-end' : 'justify-start'}`}>
             {data.position === 'right' && <span className="text-white/50">←</span>}
@@ -65,61 +66,30 @@ function TimelineItem({ data }: TimelineItemProps) {
           </div>
 
           {/* Card */}
-          <button
-            onClick={() => setIsExpanded(!isExpanded)}
+          <div
+            onClick={handleCardClick}
             className={`
               w-full p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm
-              hover:bg-white/10 hover:border-white/30 transition-all duration-500
-              text-left
+              hover:bg-white/10 hover:border-white/30 hover:scale-105 transition-all duration-300
+              text-left cursor-pointer
               ${data.position === 'left' ? 'text-right' : 'text-left'}
-              ${isExpanded ? 'p-8' : 'p-6'}
             `}
           >
             {data.title && (
-              <h3 className={`font-serif text-white mb-4 transition-all duration-500 ${isExpanded ? 'text-2xl' : 'text-xl'}`}>
+              <h3 className="font-serif text-xl text-white mb-3">
                 {data.title}
               </h3>
             )}
-            {isExpanded && data.description && (
-              <div className="space-y-4 animate-in fade-in duration-500 max-h-96 overflow-y-auto pr-2 scrollbar-thin">
-                <p className="text-base font-mono text-normal-text leading-relaxed">
-                  {data.description}
-                </p>
-                {data.highlights && data.highlights.length > 0 && (
-                  <div className="pt-4 border-t border-white/10">
-                    <h4 className="text-sm font-serif text-white mb-2">Key Highlights:</h4>
-                    <ul className="text-sm font-mono text-normal-text space-y-2 list-disc list-inside">
-                      {data.highlights.map((highlight, index) => (
-                        <li key={index}>{highlight}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-                {data.photos && data.photos.length > 0 && (
-                  <div className="pt-4 flex flex-col items-center gap-2">
-                    <div className="grid grid-cols-2 gap-2">
-                      {data.photos.map((photo, index) => (
-                        <img
-                          key={index}
-                          src={photo}
-                          alt={`${data.title} photo ${index + 1}`}
-                          className="w-32 h-40 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
-                        />
-                      ))}
-                    </div>
-                    <p className="text-xs font-mono text-gray-500 italic">
-                      Pictures to summarize the year
-                    </p>
-                  </div>
-                )}
-              </div>
-            )}
-            {!isExpanded && (
-              <p className="text-xs font-mono text-gray-500">
-                Click to expand
+            {data.description && (
+              <p className="text-sm font-mono text-normal-text leading-relaxed mb-4 line-clamp-3">
+                {data.description}
               </p>
             )}
-          </button>
+            <div className="flex items-center gap-2 text-xs font-mono text-white/70">
+              <span>Click to view details</span>
+              <span>→</span>
+            </div>
+          </div>
         </div>
       )}
 
@@ -134,36 +104,33 @@ interface TimelineProps {
 }
 
 // Component for rendering brace with card
-function BraceCard({ 
-  startIndex, 
-  endIndex, 
-  card, 
-  itemHeight = 128 
-}: { 
-  startIndex: number; 
-  endIndex: number; 
+function BraceCard({
+  startIndex,
+  endIndex,
+  card,
+  itemHeight = 128
+}: {
+  startIndex: number;
+  endIndex: number;
   card: NonNullable<TimelineItemData['brace']>['card'];
   itemHeight?: number;
 }) {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const cardRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
-  // Close card when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (cardRef.current && !cardRef.current.contains(event.target as Node)) {
-        setIsExpanded(false);
-      }
-    };
+  const titleToSlug = (title: string): string => {
+    return title
+      .toLowerCase()
+      .trim()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-');
+  };
 
-    if (isExpanded) {
-      document.addEventListener('mousedown', handleClickOutside);
+  const handleCardClick = () => {
+    if (card.title) {
+      navigate(`/${titleToSlug(card.title)}`);
     }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isExpanded]);
+  };
 
   // Calculate brace height: spans from start to end (including both)
   // Each item is py-16 (64px top + 64px bottom = 128px total per item)
@@ -172,74 +139,41 @@ function BraceCard({
   const cardTopOffset = (braceHeight / 2) - 40; // -40 to center the card vertically
 
   return (
-    <div 
+    <div
       className="absolute right-1/2 mr-20 flex items-start gap-3 z-20"
-      style={{ 
+      style={{
         top: `${itemHeight / 2}px`, // Start from middle of first item's bubble
         height: `${braceHeight}px`
       }}
     >
       {/* Description Card - furthest from timeline */}
       <div
-        ref={cardRef}
         style={{ marginTop: `${cardTopOffset}px` }}
-        className="transition-all duration-500"
+        className="w-80"
       >
-        <button
-          type="button"
-          onClick={() => setIsExpanded(!isExpanded)}
+        <div
+          onClick={handleCardClick}
           className={`
-            rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm
-            hover:bg-white/10 hover:border-white/30 transition-all duration-500
-            text-right cursor-pointer
-            ${isExpanded ? 'w-[500px] p-8' : 'max-w-xs px-5 py-3'}
+            w-full p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm
+            hover:bg-white/10 hover:border-white/30 hover:scale-105 transition-all duration-300
+            text-left cursor-pointer
           `}
         >
           {card.title && (
-            <h3 className={`font-serif text-white mb-4 transition-all duration-500 ${isExpanded ? 'text-2xl' : 'text-xl'}`}>
+            <h3 className="font-serif text-xl text-white mb-3">
               {card.title}
             </h3>
           )}
-          <p className={`font-mono text-normal-text leading-relaxed transition-all duration-500 ${isExpanded ? 'text-base mb-4' : 'text-xs'}`}>
-            {card.description}
-          </p>
-          {isExpanded && (
-            <div className="pt-4 border-t border-white/10 animate-in fade-in duration-500 max-h-96 overflow-y-auto pr-2 scrollbar-thin">
-              {card.highlights && card.highlights.length > 0 && (
-                <div className="mb-4">
-                  <h4 className="text-sm font-serif text-white mb-2">Key Highlights:</h4>
-                  <ul className="text-sm font-mono text-normal-text space-y-2 list-disc list-inside">
-                    {card.highlights.map((highlight: string, index: number) => (
-                      <li key={index}>{highlight}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {card.photos && card.photos.length > 0 && (
-                <div className="pt-4 flex flex-col items-center gap-2">
-                  <div className="grid grid-cols-2 gap-2">
-                    {card.photos.map((photo: string, index: number) => (
-                      <img
-                        key={index}
-                        src={photo}
-                        alt={`${card.title} photo ${index + 1}`}
-                        className="w-32 h-40 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
-                      />
-                    ))}
-                  </div>
-                  <p className="text-xs font-mono text-gray-500 italic">
-                    Pictures to summarize the period
-                  </p>
-                </div>
-              )}
-            </div>
-          )}
-          {!isExpanded && (
-            <p className="text-xs font-mono text-gray-500 mt-2">
-              Click to expand
+          {card.description && (
+            <p className="text-sm font-mono text-normal-text leading-relaxed mb-4 line-clamp-3">
+              {card.description}
             </p>
           )}
-        </button>
+          <div className="flex items-center gap-2 text-xs font-mono text-white/70">
+            <span>Click to view details</span>
+            <span>→</span>
+          </div>
+        </div>
       </div>
       {/* Arrow - positioned at card location */}
       <span className="text-white/50" style={{ marginTop: `${cardTopOffset}px` }}>←</span>
@@ -320,13 +254,13 @@ export const fullTimelineData: TimelineItemData[] = [
     description: 'Prepared for prom and graduation',
     position: 'right',
     highlights: [
-      'Quit KFC, replaced it with 2 jobs. Amazon warehouse (after school), Biglots (weekends) needed to save for prom',
+      'Quit KFC, worked two jobs at Amazon warehouse (after school) and Big Lots (weekends) to save for prom',
       'Took and passed the ASVAB',
-      'Started studying for the SAT, took the SAT, had a decent score',
-      'Graduated Junior Police Academy',
-      'Started buying cars from the auction, Fixed them. Flipped them.',
+      'Studied for and took the SAT, achieved a decent score',
+      'Graduated from Junior Police Academy',
+      'Started buying cars from auctions, fixed them, and flipped them',
       'Threw some parties',
-      'Had prom',
+      'Attended prom',
       'Graduated in May 2019',
     ],
     photos: [
@@ -339,29 +273,29 @@ export const fullTimelineData: TimelineItemData[] = [
   {
     year: '2020',
     title: 'College Prep',
-    description: 'Prepared for college and worked 3 jobs',
+    description: 'Prepared for college and worked three jobs',
     position: 'left',
     highlights: [
-      'Applied to Upenn, Princeton, Penn state, NJIT, NYIT, Pace and etc…',
-      'UPenn (Got interview, waitlisted), Princeton (rejected), Penn state (Accepted), NJIT (Accepted), NYIT (Accepted), Pace (accepted). Chose NJIT for engineering',
-      'Quit Amazon. now had 3 jobs. Biglots, BJs, Macys',
+      'Applied to UPenn, Princeton, Penn State, NJIT, NYIT, and Pace',
+      'UPenn (interview, waitlisted), Princeton (rejected), Penn State (accepted), NJIT (accepted), NYIT (accepted), Pace (accepted) — chose NJIT for engineering',
+      'Quit Amazon, worked three jobs: Big Lots, BJ\'s, and Macy\'s',
       'Started assembling furniture for friends on the side',
-      'Barely had time for anything. fall 2019 - 2020 went to a community college and got some classes out of the way',
+      'Fall 2019-2020: Attended community college to get some classes out of the way',
     ],
   },
   {
     year: '2021',
     title: 'College & Hustle',
-    description: 'Started College, worked and had fun',
+    description: 'Started college, worked, and had fun',
     position: 'right',
     highlights: [
-      'Started NJIT',
-      'Quit Biglots. kept BJ\'s and Macys',
-      'Started really flipping cars. bought from the auction and resealing',
-      'Covid hit, school was virtual, had more time to work',
-      'Started Assembling more furnitures',
-      'Worked with my dad on building a new hotel in Haiti and did a ton of research about starting a shipping company',
-      'Shipping company failed. Hotel started getting built',
+      'Started at NJIT',
+      'Quit Big Lots, kept BJ\'s and Macy\'s',
+      'Scaled up car flipping business, buying from auctions and reselling',
+      'COVID-19 hit, school went virtual, had more time to work',
+      'Expanded furniture assembly business',
+      'Worked with my dad on building a hotel in Haiti and researched starting a shipping company',
+      'Shipping company didn\'t work out, but hotel construction began',
     ],
     photos: [
       '/images/HussleCollege/60019186770__60B76782-1BC6-4CAE-8788-BEF9141B18E3%204.JPG',
@@ -376,8 +310,46 @@ export const fullTimelineData: TimelineItemData[] = [
     brace: {
       endsAtYear: '2023',
       card: {
-        title: 'Recent Work',
-        description: 'Latest projects and achievements...',
+        title: 'Became an Entrepreneur',
+        description: 'Entrepreneurship, business building, and growth',
+        highlights: [
+          'Quit both my jobs and became a full-time entrepreneur',
+          'Opened a business assembling furniture and doing landscaping',
+          'Sold ~$250k worth of cars',
+          'Opened two jewelry stores, managed a $1.1 million budget, dealt in gold and diamonds',
+          'Started an ATM business',
+          'Started coding and building embedded systems',
+          'Threw bigger parties',
+          'Became a regional partner with Bird Scooters, bringing scooters to two cities',
+          'Bought land in Haiti and gifted it to my mom',
+        ],
+        photoSections: [
+          {
+            caption: 'Some of the cars I flipped — sold way more but these were my best',
+            photos: [
+              '/images/BecameEntrepreneur/carsSold/3853B68F-7729-456F-B1E7-E1B26BB32E92.JPG',
+              '/images/BecameEntrepreneur/carsSold/B94B3080-20EA-45CA-B14F-334B580D0BC7.JPG',
+              '/images/BecameEntrepreneur/carsSold/DAFD7AD8-97B6-49C8-B1DF-BB8C4B644019.JPG',
+              '/images/BecameEntrepreneur/carsSold/DEDCDA09-0AE6-4A3D-8E69-2F5279731B46.JPG',
+              '/images/BecameEntrepreneur/carsSold/IMG_4843.PNG',
+              '/images/BecameEntrepreneur/carsSold/IMG_4857.PNG',
+              '/images/BecameEntrepreneur/carsSold/86B9C278-B2C0-4F70-8900-1C04B5F40788.jpeg',
+              '/images/BecameEntrepreneur/carsSold/53022D27-B570-49B0-8761-EA98142D40B5.jpeg',
+              '/images/BecameEntrepreneur/carsSold/3ADBE203-8A4F-42F7-9837-1E33F3C1162A.jpeg',
+            ],
+          },
+          {
+            caption: 'One of the jewelry stores I built from scratch at the Westchester Mall, New York',
+            photos: [
+              '/images/BecameEntrepreneur/carsSold/jewelsstore/7FAACC54-9D2F-4F9C-8728-2091458E46C6.jpeg',
+              '/images/BecameEntrepreneur/carsSold/jewelsstore/E8E599F6-F1DB-4818-9AA8-393D2DB803B4.jpeg',
+              '/images/BecameEntrepreneur/carsSold/jewelsstore/4284133B-29EA-4139-9147-72157C7A1A0D.jpeg',
+              '/images/BecameEntrepreneur/carsSold/jewelsstore/8CCA7910-CCE3-4DC8-B15D-CF5369D8F561.jpeg',
+              '/images/BecameEntrepreneur/carsSold/jewelsstore/A1F8622F-8D40-45AB-9B8D-3E9EE46AF44C.JPG',
+              '/images/BecameEntrepreneur/carsSold/jewelsstore/13011B4F-C738-41B8-A906-1D0A4BA9E7A2.jpeg',
+            ],
+          },
+        ],
       },
     },
   },
