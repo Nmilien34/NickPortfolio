@@ -10,7 +10,7 @@ export function Footer() {
           </p>
           <div className="flex gap-6">
             <a
-              href="https://github.com"
+              href="https://github.com/Nmilien34"
               target="_blank"
               rel="noopener noreferrer"
               className="text-normal-text hover:text-text-white transition-colors"
@@ -18,7 +18,7 @@ export function Footer() {
               GitHub
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/nmilien/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-normal-text hover:text-text-white transition-colors"
@@ -26,7 +26,7 @@ export function Footer() {
               LinkedIn
             </a>
             <a
-              href="mailto:contact@example.com"
+              href="mailto:Nicksonn.milien@gmail.com"
               className="text-normal-text hover:text-text-white transition-colors"
             >
               Email
