@@ -337,7 +337,11 @@ export const fullTimelineData: TimelineItemData[] = [
   {
     year: '2024',
     title: 'Realizing the Ceiling',
-    description: 'I hit a point where I realized physical businesses scale linearly, but software scales exponentially. I formalized my furniture business into "Popfame" and built a team of 30 people, including a dev team in Pakistan to build an on-demand service app. I joined every incubator I could find—Microsoft Founders, AWS Activate, Rutgers BLT. We also were working with Amazon and HandyBuddy to bring in more service volume, but I realized that managing a massive team without a strong tech foundation was painful. I needed to stop just managing tech and start building it.',
+    description: (
+      <>
+        I hit a point where I realized physical businesses scale linearly, but software scales exponentially. I formalized my furniture business into "Popfame" and built a team of 30 people, including a dev team in Pakistan to build an on-demand service app. I joined every incubator I could find—<a href="https://portal.startups.microsoft.com/signup" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Microsoft for Startups</a>, AWS Activate, Rutgers BLT. We also were working with Amazon and HandyBuddy to bring in more service volume, but I realized that managing a massive team without a strong tech foundation was painful. I needed to stop just managing tech and start building it.
+      </>
+    ),
     position: 'right',
   },
   {
