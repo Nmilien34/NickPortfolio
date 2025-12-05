@@ -2,6 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { fullTimelineData } from '../sections/Timeline';
 import { Header } from '../layout/Header';
 import { Footer } from '../layout/Footer';
+import { PhotoFolderCarousel } from '../ui/PhotoFolderCarousel';
 
 function titleToSlug(title: string): string {
   return title
@@ -18,8 +19,9 @@ export function CardDetail() {
 
   // Find the card data
   let cardData: {
+    year?: string;
     title?: string;
-    description?: string;
+    description?: string | React.ReactNode;
     highlights?: string[];
     photos?: string[];
     photosCaption?: string;
@@ -30,18 +32,17 @@ export function CardDetail() {
     // Handle early years card
     if (slug === 'early-years') {
       cardData = {
-        title: 'Early Years',
-        description: 'Learned English and made friends',
-        highlights: [
-          'Learned English',
-          'Made friends',
-          'Played a ton of soccer',
-          'Got my driver\'s license',
-          'Started first job at the mall in 2016, then moved to KFC',
-        ],
-        photos: [
-          '/images/earlyYears/IMG_1399.jpg',
-          '/images/earlyYears/IMG_3113.PNG',
+        year: '2015-2017',
+        title: 'Early Years in the US',
+        description: 'I landed in the US from Haiti in 2015 and immediately realized one thing: nothing here is given, everything is earned. While I was navigating high school and learning English, I wasn\'t just trying to fit in—I was trying to catch up. Got my first job at 16 working at the mall which I then quit to go work at KFC, which paid a lot more. I built my first real community here, made friends who helped me navigate the culture, and set a baseline for the work ethic that would define the next decade of my life. Also played lots of soccer.',
+        photoSections: [
+          {
+            caption: 'Early years in the US',
+            photos: [
+              '/images/earlyYears/IMG_1399.jpg',
+              '/images/earlyYears/IMG_3113.PNG',
+            ],
+          },
         ],
       };
     } else {
@@ -50,16 +51,19 @@ export function CardDetail() {
         // Check regular timeline items
         if (item.title && titleToSlug(item.title) === slug) {
           cardData = {
+            year: item.year,
             title: item.title,
             description: item.description,
             highlights: item.highlights,
             photos: item.photos,
+            photoSections: item.photoSections,
           };
           break;
         }
         // Check brace cards
         if (item.brace?.card?.title && titleToSlug(item.brace.card.title) === slug) {
           cardData = {
+            year: `${item.year}-${item.brace.endsAtYear}`,
             title: item.brace.card.title,
             description: item.brace.card.description,
             highlights: item.brace.card.highlights,
@@ -82,7 +86,7 @@ export function CardDetail() {
             <h1 className="text-2xl font-serif text-white mb-4">Card not found</h1>
             <button
               onClick={() => navigate('/')}
-              className="px-6 py-2 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 text-white font-mono"
+              className="px-6 py-2 rounded-lg border border-[#EFBF04] bg-white/5 hover:bg-white/10 hover:border-[#EFBF04] hover:shadow-[0_0_35px_rgba(239,191,4,0.6)] text-white font-mono"
             >
               Go Back
             </button>
@@ -101,13 +105,20 @@ export function CardDetail() {
           {/* Back Button */}
           <button
             onClick={() => navigate(-1)}
-            className="mb-8 px-6 py-2 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 hover:border-white/30 transition-all duration-300 text-white font-mono text-sm"
+            className="mb-8 px-6 py-2 rounded-lg border border-[#EFBF04] bg-white/5 hover:bg-white/10 hover:border-[#EFBF04] hover:shadow-[0_0_35px_rgba(239,191,4,0.6)] transition-all duration-300 text-white font-mono text-sm"
           >
             ← Back
           </button>
 
           {/* Card Content */}
-          <div className="rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm p-8">
+          <div className="rounded-lg border border-[#EFBF04] bg-white/5 backdrop-blur-sm p-8 shadow-[0_0_30px_rgba(239,191,4,0.5)]">
+            {cardData.year && (
+              <div className="mb-6">
+                <span className="inline-block px-6 py-2 rounded-full border-2 border-[#EFBF04] shadow-[0_0_30px_rgba(239,191,4,0.5)] bg-white/5 text-white font-mono text-sm">
+                  {cardData.year}
+                </span>
+              </div>
+            )}
             {cardData.title && (
               <h1 className="font-serif text-4xl text-white mb-6">
                 {cardData.title}
@@ -135,30 +146,7 @@ export function CardDetail() {
             {cardData.photoSections && cardData.photoSections.length > 0 && (
               <div className="mt-8 pt-8 border-t border-white/10">
                 <h2 className="text-xl font-serif text-white mb-6">Photos</h2>
-                {cardData.photoSections.map((section, sectionIndex) => (
-                  <div key={sectionIndex} className={sectionIndex > 0 ? 'mt-12' : ''}>
-                    {section.caption && (
-                      <p className="text-sm font-mono text-normal-text italic mb-6 opacity-80">
-                        {section.caption}
-                      </p>
-                    )}
-                    {section.photos.length > 0 && (
-                      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                        {section.photos.map((photo, photoIndex) => (
-                          <div key={photoIndex} className="relative group">
-                            <img
-                              src={photo}
-                              alt={`${cardData.title} photo ${photoIndex + 1}`}
-                              className={`w-full h-96 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300 ${
-                                photoIndex === 0 ? 'object-top' : ''
-                              }`}
-                            />
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
+                <PhotoFolderCarousel photoSections={cardData.photoSections} />
               </div>
             )}
 

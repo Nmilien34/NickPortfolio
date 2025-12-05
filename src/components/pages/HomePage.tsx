@@ -12,10 +12,10 @@ export function HomePage() {
   // Section 0: Hero (2015)
   // Section 1: 2016-2019 (indices 0-3)
   // Section 2: 2020-2023 (indices 4-7)
-  // Section 3: 2024-2025 (indices 8-9)
+  // Section 3: 2024-2026 (indices 8-10)
   const section1Years = fullTimelineData.slice(0, 4);  // 2016-2019
   const section2Years = fullTimelineData.slice(4, 8);  // 2020-2023
-  const section3Years = fullTimelineData.slice(8, 10); // 2024-2025
+  const section3Years = fullTimelineData.slice(8);     // 2024-2026
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,7 +59,7 @@ export function HomePage() {
         <div id="section-2">
           <Timeline years={section2Years} />
         </div>
-        <div id="section-3">
+        <div id="section-3" className="pb-40">
           <Timeline years={section3Years} />
         </div>
       </main>

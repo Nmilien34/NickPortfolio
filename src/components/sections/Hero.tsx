@@ -42,7 +42,7 @@ export function Hero() {
       {/* Logo/Home Button */}
       <button
         onClick={scrollToTop}
-        className="absolute w-16 h-16 rounded-lg flex items-center justify-center border-2 border-white/30 shadow-[0_0_15px_rgba(255,255,255,0.2)] bg-white/5 z-[60] cursor-pointer hover:border-white/50 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-300"
+        className="absolute w-16 h-16 rounded-lg flex items-center justify-center border-2 border-[#EFBF04] shadow-[0_0_25px_rgba(239,191,4,0.5)] bg-white/5 z-[60] cursor-pointer hover:border-[#EFBF04] hover:shadow-[0_0_35px_rgba(239,191,4,0.7)] transition-all duration-300"
         style={{
           top: '40px',
           left: '120px',
@@ -88,13 +88,13 @@ export function Hero() {
       >
         <button
           onClick={() => setIsLangOpen(!isLangOpen)}
-          className="px-6 py-2 rounded-full border-2 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)] bg-white/5 text-white hover:border-white/50 hover:shadow-[0_0_25px_rgba(255,255,255,0.3)] transition-all duration-300"
+          className="px-6 py-2 rounded-full border-2 border-[#EFBF04] shadow-[0_0_30px_rgba(239,191,4,0.5)] bg-white/5 text-white hover:border-[#EFBF04] hover:shadow-[0_0_40px_rgba(239,191,4,0.7)] transition-all duration-300"
         >
           {currentLang}
         </button>
 
         {isLangOpen && (
-          <div className="absolute right-0 mt-2 w-44 rounded-lg border border-white/20 bg-background-color shadow-[0_0_20px_rgba(255,255,255,0.15)] overflow-hidden">
+          <div className="absolute right-0 mt-2 w-44 rounded-lg border border-[#EFBF04] bg-background-color shadow-[0_0_30px_rgba(239,191,4,0.4)] overflow-hidden">
             {languages.map((lang) => (
               <button
                 key={lang.code}
@@ -152,13 +152,13 @@ export function Hero() {
               relative group px-8 py-3 rounded-full
               flex items-center gap-3
               transition-all duration-500 ease-out
-              border border-white/10 bg-white/5 backdrop-blur-sm
-              hover:bg-white/10 hover:border-white/20 hover:scale-105
-              ${isListening ? 'border-red-500/30 bg-red-500/10 shadow-[0_0_30px_rgba(239,68,68,0.2)]' : 'shadow-[0_0_20px_rgba(255,255,255,0.05)]'}
+              border border-[#EFBF04] bg-white/5 backdrop-blur-sm
+              hover:bg-white/10 hover:border-[#EFBF04] hover:shadow-[0_0_35px_rgba(239,191,4,0.6)] hover:scale-105
+              ${isListening ? 'border-red-500/30 bg-red-500/10 shadow-[0_0_30px_rgba(239,68,68,0.2)]' : 'shadow-[0_0_30px_rgba(239,191,4,0.5)]'}
             `}
           >
             {/* Glowing Dot Indicator */}
-            <span className={`w-2 h-2 rounded-full transition-colors duration-300 ${isListening ? 'bg-red-500 animate-pulse' : 'bg-green-400'}`} />
+            <span className={`w-2 h-2 rounded-full transition-colors duration-300 ${isListening ? 'bg-red-500 animate-pulse' : 'bg-[#EFBF04] shadow-[0_0_15px_#EFBF04]'}`} />
 
             {/* Button Text */}
             <span className="font-mono text-sm text-gray-300 tracking-wide uppercase">
@@ -179,7 +179,7 @@ export function Hero() {
         <div className="flex justify-center gap-2 md:gap-4 mt-32 mb-32 px-4">
           {/* Left Photo (Tilted Left) */}
           <figure className="group relative -rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 ease-out z-0 hover:z-10">
-            <div className="w-fit p-2 border border-white/20 rounded-2xl shadow-2xl">
+            <div className="w-fit p-2 border border-[#EFBF04] rounded-2xl shadow-2xl">
               <img
                 src="/images/4F8413FF-0F8C-4384-AA3A-E72D29CD7AF1.jpeg"
                 alt="First day of high school"
@@ -200,7 +200,7 @@ export function Hero() {
 
           {/* Right Photo (Tilted Right) */}
           <figure className="group relative rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 ease-out z-0 hover:z-10">
-            <div className="w-fit p-2 border border-white/20 rounded-2xl shadow-2xl">
+            <div className="w-fit p-2 border border-[#EFBF04] rounded-2xl shadow-2xl">
               <img
                 src="/images/1F97147A-5531-4D66-BA63-A9F5B0A77C19_1_105_c.jpeg"
                 alt="Visiting Cornell"
@@ -226,7 +226,7 @@ export function Hero() {
           <h3 className="font-serif text-2xl text-white mb-6">the beginning</h3>
 
           {/* Year Label in Bubble */}
-          <div className="px-8 py-2 rounded-full border-2 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)] bg-white/5 text-white font-mono text-sm mb-4">
+          <div className="px-8 py-2 rounded-full border-2 border-[#EFBF04] shadow-[0_0_30px_rgba(239,191,4,0.5)] bg-white/5 text-white font-mono text-sm mb-4">
             2015
           </div>
 
@@ -237,21 +237,21 @@ export function Hero() {
           <div className="w-4 h-4 rounded-full bg-white shadow-[0_0_15px_rgba(255,255,255,0.5)] mb-0" />
 
           {/* Timeline Line extending down */}
-          <div className="w-0.5 h-24 bg-white/30" />
+          <div className="w-0.5 h-24 bg-[#EFBF04]" />
 
           {/* Brace for 2015-2017 (from dot to 2017 bubble) */}
           <div className="absolute left-1/2 ml-20 flex items-start gap-3 z-20" style={{ top: '160px', height: '330px' }}>
             {/* Simple bracket */}
             <div className="relative" style={{ width: '20px', height: '100%' }}>
               {/* Top horizontal line */}
-              <div className="absolute top-0 left-0 w-full h-0.5 bg-white/30" />
+              <div className="absolute top-0 left-0 w-full h-0.5 bg-[#EFBF04]" />
               {/* Vertical line */}
-              <div className="absolute top-0 right-0 w-0.5 h-full bg-white/30" />
+              <div className="absolute top-0 right-0 w-0.5 h-full bg-[#EFBF04]" />
               {/* Bottom horizontal line */}
-              <div className="absolute bottom-0 left-0 w-full h-0.5 bg-white/30" />
+              <div className="absolute bottom-0 left-0 w-full h-0.5 bg-[#EFBF04]" />
             </div>
             {/* Arrow and Card */}
-            <div className="flex items-center gap-3 mt-40">
+            <div className="flex items-center gap-3 mt-20">
               <span className="text-white/50">→</span>
               <div className="w-80">
                 <div
@@ -259,13 +259,13 @@ export function Hero() {
                     console.log('Early Years card clicked');
                     navigate('/early-years');
                   }}
-                  className="w-full p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-white/30 hover:scale-105 transition-all duration-300 text-left cursor-pointer"
+                  className="w-full p-6 rounded-lg border border-[#EFBF04] bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-[#EFBF04] hover:shadow-[0_0_35px_rgba(239,191,4,0.6)] hover:scale-105 transition-all duration-300 text-left cursor-pointer"
                 >
                   <h3 className="font-serif text-xl text-white mb-3">
-                    Early Years
+                    Early Years in the US
                   </h3>
                   <p className="text-sm font-mono text-normal-text leading-relaxed mb-4 line-clamp-3">
-                    I learned english and made friends
+                    I landed in the US from Haiti in 2015 and immediately realized one thing: nothing here is given, everything is earned. While I was navigating high school and learning English, I wasn't just trying to fit in—I was trying to catch up. Got my first job at 16 working at the mall which I then quit to go work at KFC, which paid a lot more. I built my first real community here, made friends who helped me navigate the culture, and set a baseline for the work ethic that would define the next decade of my life. Also played lots of soccer.
                   </p>
                   <div className="flex items-center gap-2 text-xs font-mono text-white/70">
                     <span>Click to view details</span>

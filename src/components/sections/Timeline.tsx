@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 interface TimelineItemData {
   year: string;
   title?: string;
-  description?: string;
+  description?: string | React.ReactNode;
   position?: 'left' | 'right'; // Which side the card appears on
   highlights?: string[]; // Key highlights as bullet points
   photos?: string[]; // Photo URLs to display in the card
@@ -13,7 +13,7 @@ interface TimelineItemData {
     endsAtYear: string; // Year where the brace ends
     card: {
       title: string;
-      description: string;
+      description: string | React.ReactNode;
       highlights?: string[];
       photos?: string[];
       photosCaption?: string; // Optional caption for photos section
@@ -49,28 +49,28 @@ function TimelineItem({ data }: TimelineItemProps) {
   return (
     <div className="relative flex items-center justify-center py-16">
       {/* Timeline Line (Top Half) - stops before bubble */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0.5 bg-white/30" style={{ height: 'calc(50% - 20px)' }} />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04]" style={{ height: 'calc(50% - 20px)' }} />
 
       {/* Year Bubble */}
-      <div className="absolute left-1/2 -translate-x-1/2 px-6 py-2 rounded-full border-2 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)] bg-background-color text-white font-mono text-sm z-10">
+      <div className="absolute left-1/2 -translate-x-1/2 px-6 py-2 rounded-full border-2 border-[#EFBF04] shadow-[0_0_30px_rgba(239,191,4,0.5)] bg-background-color text-white font-mono text-sm z-10">
         {data.year}
       </div>
 
       {/* Card with Arrow (if has content) */}
       {hasCard && (
-        <div className={`absolute ${data.position === 'left' ? 'right-1/2 mr-16' : 'left-1/2 ml-16'} w-80`}>
-          {/* Arrow pointing to timeline */}
-          <div className={`flex items-center gap-2 mb-4 ${data.position === 'left' ? 'justify-end' : 'justify-start'}`}>
-            {data.position === 'right' && <span className="text-white/50">←</span>}
-            {data.position === 'left' && <span className="text-white/50">→</span>}
-          </div>
+        <div className={`absolute -top-24 ${data.position === 'left' ? 'right-1/2 mr-16' : 'left-1/2 ml-16'} flex items-center gap-3 ${data.position === 'left' ? 'flex-row-reverse' : 'flex-row'}`}>
+          {/* Arrow pointing from timeline to card */}
+          <span className="text-white/50 text-xl">
+            {data.position === 'left' && '←'}
+            {data.position === 'right' && '→'}
+          </span>
 
           {/* Card */}
           <div
             onClick={handleCardClick}
             className={`
-              w-full p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm
-              hover:bg-white/10 hover:border-white/30 hover:scale-105 transition-all duration-300
+              w-80 p-6 rounded-lg border border-[#EFBF04] bg-white/5 backdrop-blur-sm
+              hover:bg-white/10 hover:border-[#EFBF04] hover:shadow-[0_0_35px_rgba(239,191,4,0.6)] hover:scale-105 transition-all duration-300
               text-left cursor-pointer
               ${data.position === 'left' ? 'text-right' : 'text-left'}
             `}
@@ -94,7 +94,7 @@ function TimelineItem({ data }: TimelineItemProps) {
       )}
 
       {/* Timeline Line (Bottom Half) - resumes after bubble */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0.5 bg-white/30" style={{ height: 'calc(50% - 20px)' }} />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04]" style={{ height: 'calc(50% - 20px)' }} />
     </div>
   );
 }
@@ -136,7 +136,7 @@ function BraceCard({
   // Each item is py-16 (64px top + 64px bottom = 128px total per item)
   const braceHeight = (endIndex - startIndex) * itemHeight;
   // Position card in the middle of the brace
-  const cardTopOffset = (braceHeight / 2) - 40; // -40 to center the card vertically
+  const cardTopOffset = (braceHeight / 2) - 10; // Position card along the brace
 
   return (
     <div
@@ -154,8 +154,8 @@ function BraceCard({
         <div
           onClick={handleCardClick}
           className={`
-            w-full p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm
-            hover:bg-white/10 hover:border-white/30 hover:scale-105 transition-all duration-300
+            w-full p-6 rounded-lg border border-[#EFBF04] bg-white/5 backdrop-blur-sm
+            hover:bg-white/10 hover:border-[#EFBF04] hover:shadow-[0_0_35px_rgba(239,191,4,0.6)] hover:scale-105 transition-all duration-300
             text-left cursor-pointer
           `}
         >
@@ -180,11 +180,11 @@ function BraceCard({
       {/* Simple bracket - closest to timeline */}
       <div className="relative" style={{ width: '20px', height: '100%' }}>
         {/* Top horizontal line */}
-        <div className="absolute top-0 left-0 w-full h-0.5 bg-white/30" />
+        <div className="absolute top-0 left-0 w-full h-0.5 bg-[#EFBF04]" />
         {/* Vertical line */}
-        <div className="absolute top-0 left-0 w-0.5 h-full bg-white/30" />
+        <div className="absolute top-0 left-0 w-0.5 h-full bg-[#EFBF04]" />
         {/* Bottom horizontal line */}
-        <div className="absolute bottom-0 left-0 w-full h-0.5 bg-white/30" />
+        <div className="absolute bottom-0 left-0 w-full h-0.5 bg-[#EFBF04]" />
       </div>
     </div>
   );
@@ -234,7 +234,7 @@ export function Timeline({ years }: TimelineProps) {
   );
 }
 
-// Full timeline data (2015-2025)
+// Full timeline data (2015-2026)
 export const fullTimelineData: TimelineItemData[] = [
   {
     year: '2016',
@@ -250,80 +250,49 @@ export const fullTimelineData: TimelineItemData[] = [
   },
   {
     year: '2019',
-    title: 'Graduation Year',
-    description: 'Prepared for prom and graduation',
-    position: 'right',
-    highlights: [
-      'Quit KFC, worked two jobs at Amazon warehouse (after school) and Big Lots (weekends) to save for prom',
-      'Took and passed the ASVAB',
-      'Studied for and took the SAT, achieved a decent score',
-      'Graduated from Junior Police Academy',
-      'Started buying cars from auctions, fixed them, and flipped them',
-      'Threw some parties',
-      'Attended prom',
-      'Graduated in May 2019',
-    ],
-    photos: [
-      '/images/gradYear/F68D635B-AEE4-4911-95C2-E9A8F21ED711 2.JPG',
-      '/images/gradYear/IMG_1400.jpg',
-      '/images/gradYear/IMG_1402.jpg',
-      '/images/gradYear/IMG_3229.JPG',
+    title: 'The Origin of the Hustle',
+    description: 'Prom and graduation were coming up, and I needed cash. So I quit KFC and replaced it with two jobs: Amazon Warehouse after school and selling furniture at Big Lots on weekends. With the money I was making, I started buying distressed cars at auctions, fixing them up, and flipping them for a profit. Between passing the ASVAB while barely speaking English, getting a decent SAT score without studying, and graduating in May 2019, I learned that I could outwork almost anyone, as long as the goal was clear.',
+    position: 'left',
+    photoSections: [
+      {
+        caption: 'Memories from graduation year',
+        photos: [
+          '/images/gradYear/F68D635B-AEE4-4911-95C2-E9A8F21ED711 2.JPG',
+          '/images/gradYear/IMG_1400.jpg',
+          '/images/gradYear/IMG_1402.jpg',
+          '/images/gradYear/IMG_3229.JPG',
+        ],
+      },
     ],
   },
   {
     year: '2020',
-    title: 'College Prep',
-    description: 'Prepared for college and worked three jobs',
-    position: 'left',
-    highlights: [
-      'Applied to UPenn, Princeton, Penn State, NJIT, NYIT, and Pace',
-      'UPenn (interview, waitlisted), Princeton (rejected), Penn State (accepted), NJIT (accepted), NYIT (accepted), Pace (accepted) — chose NJIT for engineering',
-      'Quit Amazon, worked three jobs: Big Lots, BJ\'s, and Macy\'s',
-      'Started assembling furniture for friends on the side',
-      'Fall 2019-2020: Attended community college to get some classes out of the way',
-    ],
-  },
-  {
-    year: '2021',
-    title: 'College & Hustle',
-    description: 'Started college, worked, and had fun',
+    title: 'Three Jobs & A Dream',
+    description: 'I got into schools like Penn State, NYIT, and Pace, and was waitlisted by UPenn and Columbia, but I chose NJIT for engineering and the in-state tuition. To prepare for the cost, I just worked more. I left Amazon but started balancing three simultaneous jobs at Big Lots, BJ\'s, and Macy\'s while assembling furniture for friends on the side. I barely had a free minute, but I squeezed in community college classes to get a head start on my degree. It was exhausting, but it taught me time management in a way no classroom ever could.',
     position: 'right',
-    highlights: [
-      'Started at NJIT',
-      'Quit Big Lots, kept BJ\'s and Macy\'s',
-      'Scaled up car flipping business, buying from auctions and reselling',
-      'COVID-19 hit, school went virtual, had more time to work',
-      'Expanded furniture assembly business',
-      'Worked with my dad on building a hotel in Haiti and researched starting a shipping company',
-      'Shipping company didn\'t work out, but hotel construction began',
-    ],
-    photos: [
-      '/images/HussleCollege/60019186770__60B76782-1BC6-4CAE-8788-BEF9141B18E3%204.JPG',
-      '/images/HussleCollege/IMG_0426%204.PNG',
-      '/images/HussleCollege/IMG_0558%204.PNG',
-      '/images/HussleCollege/IMG_0559%204.PNG',
-      '/images/HussleCollege/IMG_1221%204.jpg',
-      '/images/HussleCollege/IMG_1404.jpg',
-      '/images/HussleCollege/IMG_1405.jpg',
-      '/images/HussleCollege/IMG_1406.jpg',
-    ],
     brace: {
       endsAtYear: '2023',
       card: {
-        title: 'Became an Entrepreneur',
-        description: 'Entrepreneurship, business building, and growth',
-        highlights: [
-          'Quit both my jobs and became a full-time entrepreneur',
-          'Opened a business assembling furniture and doing landscaping',
-          'Sold ~$250k worth of cars',
-          'Opened two jewelry stores, managed a $1.1 million budget, dealt in gold and diamonds',
-          'Started an ATM business',
-          'Started coding and building embedded systems',
-          'Threw bigger parties',
-          'Became a regional partner with Bird Scooters, bringing scooters to two cities',
-          'Bought land in Haiti and gifted it to my mom',
-        ],
+        title: 'The Entrepreneur',
+        description: (
+          <>
+            I made the decision to quit my jobs and focus entirely on entrepreneurship. When COVID hit and classes went virtual, I suddenly had a lot more time to work and teach myself everything I could. I hustled hard. I went full-time entrepreneur. I scaled my car-flipping business to over $300k in inventory, managed a jewelry store with a $1.1M operating budget completely on my own, and even became a regional partner for <a href="https://www.bird.co/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Bird</a> Scooters, running logistics across two cities. It was a crash course in operations, logistics, and real-world P&L management. With the profits, I bought land in Haiti as a gift for my mom.
+          </>
+        ),
         photoSections: [
+          {
+            caption: 'College and the beginning of my hustle',
+            photos: [
+              '/images/HussleCollege/60019186770__60B76782-1BC6-4CAE-8788-BEF9141B18E3%204.JPG',
+              '/images/HussleCollege/IMG_0426%204.PNG',
+              '/images/HussleCollege/IMG_0558%204.PNG',
+              '/images/HussleCollege/IMG_0559%204.PNG',
+              '/images/HussleCollege/IMG_1221%204.jpg',
+              '/images/HussleCollege/IMG_1404.jpg',
+              '/images/HussleCollege/IMG_1405.jpg',
+              '/images/HussleCollege/IMG_1406.jpg',
+            ],
+          },
           {
             caption: 'Some of the cars I flipped — sold way more but these were my best',
             photos: [
@@ -354,21 +323,33 @@ export const fullTimelineData: TimelineItemData[] = [
     },
   },
   {
+    year: '2021',
+    // No card - part of 2020-2023 brace period
+  },
+  {
     year: '2022',
-    // No card - part of 2021-2023 brace period
+    // No card - part of 2020-2023 brace period
   },
   {
     year: '2023',
-    // No card - part of 2021-2023 brace period
+    // No card
   },
   {
     year: '2024',
-    title: 'Current',
-    description: 'What I\'m working on now...',
-    position: 'left',
+    title: 'Realizing the Ceiling',
+    description: 'I hit a point where I realized physical businesses scale linearly, but software scales exponentially. I formalized my furniture business into "Popfame" and built a team of 30 people, including a dev team in Pakistan to build an on-demand service app. I joined every incubator I could find—Microsoft Founders, AWS Activate, Rutgers BLT. We also were working with Amazon and HandyBuddy to bring in more service volume, but I realized that managing a massive team without a strong tech foundation was painful. I needed to stop just managing tech and start building it.',
+    position: 'right',
   },
   {
     year: '2025',
-    // No card
+    title: 'Lawnstackin..',
+    description: 'The "Real Life" MBA. This was the year everything changed. I realized I needed to be in a room with people smarter than me, so I recruited co-founders from Wharton and Cornell and built a team of 8 from MIT, Harvard, and Georgia Tech. We raised $150k, got into the Alchemist Accelerator, and processed $80k in GMV connecting homeowners to service providers. But the retention metrics weren\'t there. We were grinding out door-to-door sales for low-margin services. In November, we made the hard, mature decision to shut it down. It hurt, but it taught me the most important lesson in tech: Verify the problem before you build the solution.',
+    position: 'left',
+  },
+  {
+    year: '2026',
+    title: 'The Engineer',
+    description: 'After Lawnstack, I decided to get as technical as possible. I locked in for a month—200+ hours—teaching myself TypeScript and Vibe Coding. Then I teamed up with my former CTO to build Boltzman AI, which hit 3k users before we pivoted into Voice AI. Now I\'m running a profitable Voice AI receptionist service for restaurants. I hit a peak of ~$5k MRR with ~70% margins as a solopreneur wearing every hat. I\'m dealing with some churn right now, but I\'ve learned a ton in the process—from professors and mentors at Princeton, Caltech, Carnegie Mellon, Stanford, and more. (Shoutout to people like Vivian Shen, Nathaniel Simon, Ruming Guan, Ryan Kazuo, and Brian Yang.) And now, I\'m graduating this December with my engineering degree—not just as a student, but as a builder who has raised VC money, managed millions, failed fast, and learned to code his own way out.',
+    position: 'right',
   },
 ];
