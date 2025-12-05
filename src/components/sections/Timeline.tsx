@@ -52,7 +52,7 @@ function TimelineItem({ data }: TimelineItemProps) {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04]" style={{ height: 'calc(50% - 20px)' }} />
 
       {/* Year Bubble */}
-      <div className="absolute left-1/2 -translate-x-1/2 px-6 py-2 rounded-full border-2 border-[#EFBF04] shadow-[0_0_30px_rgba(239,191,4,0.5)] bg-background-color text-white font-mono text-sm z-10">
+      <div className="absolute left-1/2 -translate-x-1/2 px-6 py-2 rounded-full border-2 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)] bg-background-color text-white font-mono text-sm z-10">
         {data.year}
       </div>
 
@@ -69,8 +69,8 @@ function TimelineItem({ data }: TimelineItemProps) {
           <div
             onClick={handleCardClick}
             className={`
-              w-80 p-6 rounded-lg border border-[#EFBF04] bg-white/5 backdrop-blur-sm
-              hover:bg-white/10 hover:border-[#EFBF04] hover:shadow-[0_0_35px_rgba(239,191,4,0.6)] hover:scale-105 transition-all duration-300
+              w-80 p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm
+              hover:bg-white/10 hover:border-white/30 hover:scale-105 transition-all duration-300
               text-left cursor-pointer
               ${data.position === 'left' ? 'text-right' : 'text-left'}
             `}
@@ -154,8 +154,8 @@ function BraceCard({
         <div
           onClick={handleCardClick}
           className={`
-            w-full p-6 rounded-lg border border-[#EFBF04] bg-white/5 backdrop-blur-sm
-            hover:bg-white/10 hover:border-[#EFBF04] hover:shadow-[0_0_35px_rgba(239,191,4,0.6)] hover:scale-105 transition-all duration-300
+            w-full p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm
+            hover:bg-white/10 hover:border-white/30 hover:scale-105 transition-all duration-300
             text-left cursor-pointer
           `}
         >
@@ -180,11 +180,11 @@ function BraceCard({
       {/* Simple bracket - closest to timeline */}
       <div className="relative" style={{ width: '20px', height: '100%' }}>
         {/* Top horizontal line */}
-        <div className="absolute top-0 left-0 w-full h-0.5 bg-[#EFBF04]" />
+        <div className="absolute top-0 left-0 w-full h-0.5 bg-white/30" />
         {/* Vertical line */}
-        <div className="absolute top-0 left-0 w-0.5 h-full bg-[#EFBF04]" />
+        <div className="absolute top-0 left-0 w-0.5 h-full bg-white/30" />
         {/* Bottom horizontal line */}
-        <div className="absolute bottom-0 left-0 w-full h-0.5 bg-[#EFBF04]" />
+        <div className="absolute bottom-0 left-0 w-full h-0.5 bg-white/30" />
       </div>
     </div>
   );
@@ -339,10 +339,69 @@ export const fullTimelineData: TimelineItemData[] = [
     title: 'Realizing the Ceiling',
     description: (
       <>
-        I hit a point where I realized physical businesses scale linearly, but software scales exponentially. I formalized my furniture business into "Popfame" and built a team of 30 people, including a dev team in Pakistan to build an on-demand service app. I joined every incubator I could find—<a href="https://portal.startups.microsoft.com/signup" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Microsoft for Startups</a>, AWS Activate, Rutgers BLT. We also were working with Amazon and HandyBuddy to bring in more service volume, but I realized that managing a massive team without a strong tech foundation was painful. I needed to stop just managing tech and start building it.
+        I hit a point where I realized physical businesses scale linearly, but software scales exponentially. I formalized my furniture business into "Popfame" and built a team of 30 people, including a dev team in Pakistan to build an on-demand service app. I joined every incubator I could find—<a href="https://portal.startups.microsoft.com/signup" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Microsoft for Startups</a>, <a href="https://aws.amazon.com/startups?trk=938248bc-b30f-4bcb-acb4-df70af8da1da&sc_channel=ps&ef_id=Cj0KCQiA_8TJBhDNARIsAPX5qxQKPMm2aod31iXHd4Qpfy8ysu8odBvydXOSdmmbQnU7AdCdIPpfFdwaAujhEALw_wcB:G:s&s_kwcid=AL!4422!3!755443966033!p!!g!!cloud%20services%20startup!22615154847!183199681671&gad_campaignid=22615154847&gbraid=0AAAAADjHtp92Hs7xwRKtKTdfvcsYvO3sX&gclid=Cj0KCQiA_8TJBhDNARIsAPX5qxQKPMm2aod31iXHd4Qpfy8ysu8odBvydXOSdmmbQnU7AdCdIPpfFdwaAujhEALw_wcB" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">AWS Activate</a>, <a href="https://www.business.rutgers.edu/news/black-and-latino-tech-initiative-awards-seed-money-three-entrepreneurs" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Rutgers BLT</a>. We also were working with Amazon and <a href="https://www.handybuddy.com/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">HandyBuddy</a> to bring in more service volume, but I realized that managing a massive team without a strong tech foundation was painful. I needed to stop just managing tech and start building it.
       </>
     ),
     position: 'right',
+    photoSections: [
+      {
+        caption: 'Furniture assembly projects',
+        photos: [
+          '/images/realizingCeiling/0293E901-C78C-49F9-8BE9-90D23D2903C8.jpeg',
+          '/images/realizingCeiling/1C348847-2D91-48C4-9D5B-4BF05FED1203.jpeg',
+          '/images/realizingCeiling/27D9E6B9-F2EB-4175-9D87-4C2CC5495689.jpeg',
+          '/images/realizingCeiling/27F0E15D-0E0E-4948-B89C-654162678165.jpeg',
+          '/images/realizingCeiling/3A212120-9BE5-420A-A396-FA813FD5FB43.jpeg',
+          '/images/realizingCeiling/54BB7CE7-11D5-4D47-A715-D4667E14F9DC.jpeg',
+          '/images/realizingCeiling/61860984479__CE927448-A25E-4565-8FDD-4DA1343481C4.JPG',
+          '/images/realizingCeiling/7F58228B-6C37-493B-BC7C-2BB41C0406EA.jpeg',
+          '/images/realizingCeiling/9A9E17D2-F227-4B90-A8BF-B099040016BE.jpeg',
+          '/images/realizingCeiling/AFB09D27-E759-4A10-8AA9-B0F942BB2F5E.jpeg',
+          '/images/realizingCeiling/AFE2AA95-2FEE-462D-8D3B-ACB56ADED10F.jpeg',
+          '/images/realizingCeiling/B7175C52-DE02-4ADD-9B9B-8A15A2D30055.jpeg',
+          '/images/realizingCeiling/C9E24C79-3177-42F3-A136-D8C5A993899E.jpeg',
+          '/images/realizingCeiling/D6539CF2-692F-4E4F-8A7D-89357E5EB833.jpeg',
+          '/images/realizingCeiling/IMG_0834.jpeg',
+        ],
+      },
+      {
+        caption: 'Landscaping Services',
+        photos: [
+          '/images/LandscapingServices/01A4CBDF-5121-4AD2-B2BB-01D03D8919C6.jpeg',
+          '/images/LandscapingServices/0D1950C1-8D01-4DEE-A1BF-1D965CEE6D11.jpeg',
+          '/images/LandscapingServices/2023-12-11_15-21-41 2.PNG',
+          '/images/LandscapingServices/3235DD39-F0B1-48D2-B04B-F0588E3B85C5.jpeg',
+          '/images/LandscapingServices/77103D70-973B-4AC3-BCAE-1A98F6E8D29E.jpeg',
+          '/images/LandscapingServices/7C705D02-66C6-49AD-A33B-082E1FEB4A5E.jpeg',
+          '/images/LandscapingServices/7D967A64-D7B8-4269-8203-765A1E99410F.jpeg',
+          '/images/LandscapingServices/8AC1CE29-C91C-4407-8E6B-73F06DF1D777.jpeg',
+          '/images/LandscapingServices/8AD7D776-7BE5-4787-883A-865420132045.jpeg',
+          '/images/LandscapingServices/959FA2D8-A2EA-4532-82D6-E0BCDC648003.jpeg',
+          '/images/LandscapingServices/9FF4AB37-2247-4121-A40A-F456DAF8B1CA.jpeg',
+          '/images/LandscapingServices/B0DBDC58-1345-4C94-86B8-4B1BE6D3650B.jpeg',
+          '/images/LandscapingServices/B6A6663C-5526-462F-B827-DEE276410097.jpeg',
+          '/images/LandscapingServices/D0224E2D-60F2-4336-8C61-456B36EDF219.jpeg',
+          '/images/LandscapingServices/D755DADE-02DB-49CA-992F-909CEFD3E325.jpeg',
+          '/images/LandscapingServices/EAB905CE-22F7-415C-92F3-0BE57104D596.jpeg',
+          '/images/LandscapingServices/FEBDADC2-42CA-4633-BF3E-7E77D8E8C1B5.jpeg',
+          '/images/LandscapingServices/IMG_1124 2.JPG',
+          '/images/LandscapingServices/IMG_1255 2.JPG',
+          '/images/LandscapingServices/IMG_1256 2.JPG',
+          '/images/LandscapingServices/IMG_1259 2.jpg',
+          '/images/LandscapingServices/IMG_1261 2.JPG',
+          '/images/LandscapingServices/IMG_1262 2.JPG',
+          '/images/LandscapingServices/IMG_1577 2.JPG',
+          '/images/LandscapingServices/IMG_3709 2.JPG',
+          '/images/LandscapingServices/IMG_4634 2.JPEG',
+          '/images/LandscapingServices/IMG_4635 2.JPEG',
+          '/images/LandscapingServices/IMG_4639 2.JPEG',
+          '/images/LandscapingServices/IMG_8939 2.JPG',
+          '/images/LandscapingServices/IMG_9590 2.JPG',
+          '/images/LandscapingServices/IMG_9592 2.JPG',
+          '/images/LandscapingServices/IMG_9593 2.JPG',
+        ],
+      },
+    ],
   },
   {
     year: '2025',

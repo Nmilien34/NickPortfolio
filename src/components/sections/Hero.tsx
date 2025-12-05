@@ -152,9 +152,9 @@ export function Hero() {
               relative group px-8 py-3 rounded-full
               flex items-center gap-3
               transition-all duration-500 ease-out
-              border border-[#EFBF04] bg-white/5 backdrop-blur-sm
-              hover:bg-white/10 hover:border-[#EFBF04] hover:shadow-[0_0_35px_rgba(239,191,4,0.6)] hover:scale-105
-              ${isListening ? 'border-red-500/30 bg-red-500/10 shadow-[0_0_30px_rgba(239,68,68,0.2)]' : 'shadow-[0_0_30px_rgba(239,191,4,0.5)]'}
+              border border-white/10 bg-white/5 backdrop-blur-sm
+              hover:bg-white/10 hover:border-white/20 hover:scale-105
+              ${isListening ? 'border-red-500/30 bg-red-500/10 shadow-[0_0_30px_rgba(239,68,68,0.2)]' : 'shadow-[0_0_20px_rgba(255,255,255,0.05)]'}
             `}
           >
             {/* Glowing Dot Indicator */}
@@ -179,7 +179,7 @@ export function Hero() {
         <div className="flex justify-center gap-2 md:gap-4 mt-32 mb-32 px-4">
           {/* Left Photo (Tilted Left) */}
           <figure className="group relative -rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 ease-out z-0 hover:z-10">
-            <div className="w-fit p-2 border border-[#EFBF04] rounded-2xl shadow-2xl">
+            <div className="w-fit p-2 border border-white/20 rounded-2xl shadow-2xl">
               <img
                 src="/images/4F8413FF-0F8C-4384-AA3A-E72D29CD7AF1.jpeg"
                 alt="First day of high school"
@@ -200,7 +200,7 @@ export function Hero() {
 
           {/* Right Photo (Tilted Right) */}
           <figure className="group relative rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 ease-out z-0 hover:z-10">
-            <div className="w-fit p-2 border border-[#EFBF04] rounded-2xl shadow-2xl">
+            <div className="w-fit p-2 border border-white/20 rounded-2xl shadow-2xl">
               <img
                 src="/images/1F97147A-5531-4D66-BA63-A9F5B0A77C19_1_105_c.jpeg"
                 alt="Visiting Cornell"
@@ -226,7 +226,7 @@ export function Hero() {
           <h3 className="font-serif text-2xl text-white mb-6">the beginning</h3>
 
           {/* Year Label in Bubble */}
-          <div className="px-8 py-2 rounded-full border-2 border-[#EFBF04] shadow-[0_0_30px_rgba(239,191,4,0.5)] bg-white/5 text-white font-mono text-sm mb-4">
+          <div className="px-8 py-2 rounded-full border-2 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)] bg-white/5 text-white font-mono text-sm mb-4">
             2015
           </div>
 
@@ -244,11 +244,11 @@ export function Hero() {
             {/* Simple bracket */}
             <div className="relative" style={{ width: '20px', height: '100%' }}>
               {/* Top horizontal line */}
-              <div className="absolute top-0 left-0 w-full h-0.5 bg-[#EFBF04]" />
+              <div className="absolute top-0 left-0 w-full h-0.5 bg-white/30" />
               {/* Vertical line */}
-              <div className="absolute top-0 right-0 w-0.5 h-full bg-[#EFBF04]" />
+              <div className="absolute top-0 right-0 w-0.5 h-full bg-white/30" />
               {/* Bottom horizontal line */}
-              <div className="absolute bottom-0 left-0 w-full h-0.5 bg-[#EFBF04]" />
+              <div className="absolute bottom-0 left-0 w-full h-0.5 bg-white/30" />
             </div>
             {/* Arrow and Card */}
             <div className="flex items-center gap-3 mt-20">
@@ -259,7 +259,7 @@ export function Hero() {
                     console.log('Early Years card clicked');
                     navigate('/early-years');
                   }}
-                  className="w-full p-6 rounded-lg border border-[#EFBF04] bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-[#EFBF04] hover:shadow-[0_0_35px_rgba(239,191,4,0.6)] hover:scale-105 transition-all duration-300 text-left cursor-pointer"
+                  className="w-full p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-white/30 hover:scale-105 transition-all duration-300 text-left cursor-pointer"
                 >
                   <h3 className="font-serif text-xl text-white mb-3">
                     Early Years in the US

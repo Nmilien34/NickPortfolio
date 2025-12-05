@@ -29,7 +29,7 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
             <div
               key={index}
               onClick={() => handleCardClick(index)}
-              className="flex-shrink-0 w-[300px] aspect-[4/5] rounded-xl border-2 border-[#EFBF04] bg-white cursor-pointer hover:shadow-[0_0_35px_rgba(239,191,4,0.6)] transition-all duration-300 snap-start shadow-[0_0_20px_rgba(239,191,4,0.3)]"
+              className="flex-shrink-0 w-[300px] aspect-[4/5] rounded-xl border border-gray-300 bg-white cursor-pointer hover:shadow-lg transition-shadow duration-300 snap-start"
             >
               {/* Top Section - Image (65%) */}
               <div className="h-[65%] overflow-hidden rounded-t-xl">
@@ -105,7 +105,7 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
           onClick={closeGallery}
         >
           <div
-            className="max-w-6xl w-full max-h-[90vh] overflow-y-auto bg-[#0a0a0a] rounded-2xl border border-[#EFBF04] shadow-[0_0_40px_rgba(239,191,4,0.5)] p-8 custom-scrollbar"
+            className="max-w-6xl w-full max-h-[90vh] overflow-y-auto bg-[#0a0a0a] rounded-2xl border border-white/10 shadow-2xl p-8 custom-scrollbar"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}

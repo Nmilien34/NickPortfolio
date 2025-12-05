@@ -86,7 +86,7 @@ export function CardDetail() {
             <h1 className="text-2xl font-serif text-white mb-4">Card not found</h1>
             <button
               onClick={() => navigate('/')}
-              className="px-6 py-2 rounded-lg border border-[#EFBF04] bg-white/5 hover:bg-white/10 hover:border-[#EFBF04] hover:shadow-[0_0_35px_rgba(239,191,4,0.6)] text-white font-mono"
+              className="px-6 py-2 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 text-white font-mono"
             >
               Go Back
             </button>
@@ -105,16 +105,16 @@ export function CardDetail() {
           {/* Back Button */}
           <button
             onClick={() => navigate(-1)}
-            className="mb-8 px-6 py-2 rounded-lg border border-[#EFBF04] bg-white/5 hover:bg-white/10 hover:border-[#EFBF04] hover:shadow-[0_0_35px_rgba(239,191,4,0.6)] transition-all duration-300 text-white font-mono text-sm"
+            className="mb-8 px-6 py-2 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 hover:border-white/30 transition-all duration-300 text-white font-mono text-sm"
           >
             ← Back
           </button>
 
           {/* Card Content */}
-          <div className="rounded-lg border border-[#EFBF04] bg-white/5 backdrop-blur-sm p-8 shadow-[0_0_30px_rgba(239,191,4,0.5)]">
+          <div className="rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm p-8">
             {cardData.year && (
               <div className="mb-6">
-                <span className="inline-block px-6 py-2 rounded-full border-2 border-[#EFBF04] shadow-[0_0_30px_rgba(239,191,4,0.5)] bg-white/5 text-white font-mono text-sm">
+                <span className="inline-block px-6 py-2 rounded-full border-2 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)] bg-white/5 text-white font-mono text-sm">
                   {cardData.year}
                 </span>
               </div>
