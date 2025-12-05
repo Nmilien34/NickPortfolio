@@ -345,31 +345,11 @@ export const fullTimelineData: TimelineItemData[] = [
     position: 'right',
     photoSections: [
       {
-        caption: 'Furniture assembly projects',
-        photos: [
-          '/images/realizingCeiling/0293E901-C78C-49F9-8BE9-90D23D2903C8.jpeg',
-          '/images/realizingCeiling/1C348847-2D91-48C4-9D5B-4BF05FED1203.jpeg',
-          '/images/realizingCeiling/27D9E6B9-F2EB-4175-9D87-4C2CC5495689.jpeg',
-          '/images/realizingCeiling/27F0E15D-0E0E-4948-B89C-654162678165.jpeg',
-          '/images/realizingCeiling/3A212120-9BE5-420A-A396-FA813FD5FB43.jpeg',
-          '/images/realizingCeiling/54BB7CE7-11D5-4D47-A715-D4667E14F9DC.jpeg',
-          '/images/realizingCeiling/61860984479__CE927448-A25E-4565-8FDD-4DA1343481C4.JPG',
-          '/images/realizingCeiling/7F58228B-6C37-493B-BC7C-2BB41C0406EA.jpeg',
-          '/images/realizingCeiling/9A9E17D2-F227-4B90-A8BF-B099040016BE.jpeg',
-          '/images/realizingCeiling/AFB09D27-E759-4A10-8AA9-B0F942BB2F5E.jpeg',
-          '/images/realizingCeiling/AFE2AA95-2FEE-462D-8D3B-ACB56ADED10F.jpeg',
-          '/images/realizingCeiling/B7175C52-DE02-4ADD-9B9B-8A15A2D30055.jpeg',
-          '/images/realizingCeiling/C9E24C79-3177-42F3-A136-D8C5A993899E.jpeg',
-          '/images/realizingCeiling/D6539CF2-692F-4E4F-8A7D-89357E5EB833.jpeg',
-          '/images/realizingCeiling/IMG_0834.jpeg',
-        ],
-      },
-      {
         caption: 'Landscaping Services',
         photos: [
+          '/images/LandscapingServices/2023-12-11_15-21-41 2.PNG',
           '/images/LandscapingServices/01A4CBDF-5121-4AD2-B2BB-01D03D8919C6.jpeg',
           '/images/LandscapingServices/0D1950C1-8D01-4DEE-A1BF-1D965CEE6D11.jpeg',
-          '/images/LandscapingServices/2023-12-11_15-21-41 2.PNG',
           '/images/LandscapingServices/3235DD39-F0B1-48D2-B04B-F0588E3B85C5.jpeg',
           '/images/LandscapingServices/77103D70-973B-4AC3-BCAE-1A98F6E8D29E.jpeg',
           '/images/LandscapingServices/7C705D02-66C6-49AD-A33B-082E1FEB4A5E.jpeg',
@@ -401,18 +381,67 @@ export const fullTimelineData: TimelineItemData[] = [
           '/images/LandscapingServices/IMG_9593 2.JPG',
         ],
       },
+      {
+        caption: 'Furniture assembly projects',
+        photos: [
+          '/images/realizingCeiling/0293E901-C78C-49F9-8BE9-90D23D2903C8.jpeg',
+          '/images/realizingCeiling/1C348847-2D91-48C4-9D5B-4BF05FED1203.jpeg',
+          '/images/realizingCeiling/27D9E6B9-F2EB-4175-9D87-4C2CC5495689.jpeg',
+          '/images/realizingCeiling/27F0E15D-0E0E-4948-B89C-654162678165.jpeg',
+          '/images/realizingCeiling/3A212120-9BE5-420A-A396-FA813FD5FB43.jpeg',
+          '/images/realizingCeiling/54BB7CE7-11D5-4D47-A715-D4667E14F9DC.jpeg',
+          '/images/realizingCeiling/61860984479__CE927448-A25E-4565-8FDD-4DA1343481C4.JPG',
+          '/images/realizingCeiling/7F58228B-6C37-493B-BC7C-2BB41C0406EA.jpeg',
+          '/images/realizingCeiling/9A9E17D2-F227-4B90-A8BF-B099040016BE.jpeg',
+          '/images/realizingCeiling/AFB09D27-E759-4A10-8AA9-B0F942BB2F5E.jpeg',
+          '/images/realizingCeiling/AFE2AA95-2FEE-462D-8D3B-ACB56ADED10F.jpeg',
+          '/images/realizingCeiling/B7175C52-DE02-4ADD-9B9B-8A15A2D30055.jpeg',
+          '/images/realizingCeiling/C9E24C79-3177-42F3-A136-D8C5A993899E.jpeg',
+          '/images/realizingCeiling/D6539CF2-692F-4E4F-8A7D-89357E5EB833.jpeg',
+          '/images/realizingCeiling/IMG_0834.jpeg',
+        ],
+      },
+      {
+        caption: 'Popfame',
+        photos: [
+          '/images/Popfame/PNG image 2.JPEG',
+          '/images/Popfame/07EF3009-46DC-48E5-85CF-ED20AD425E98.jpeg',
+          '/images/Popfame/3f5dba39-74b9-4f0f-a23c-66526a5bcbe7.JPG',
+          '/images/Popfame/4a32a032-ff6d-4c65-a69a-d2e09605fa63.JPG',
+          '/images/Popfame/6ABB443C-1A97-4144-9173-0EE9B99E7C69.jpeg',
+          '/images/Popfame/Chat-details form.JPG',
+          '/images/Popfame/E3C909D7-68FB-4E61-9D35-9C1A6BB4D8BA.jpeg',
+          '/images/Popfame/IMG_0795.PNG',
+          '/images/Popfame/IMG_2666.JPG',
+          '/images/Popfame/IMG_3635.PNG',
+          '/images/Popfame/IMG_3636.PNG',
+          '/images/Popfame/IMG_6353.jpg',
+          '/images/Popfame/IMG_6832.PNG',
+          '/images/Popfame/IMG_9495.jpg',
+          '/images/Popfame/Image 12-8-22 at 3.36 PM.JPG',
+          '/images/Popfame/Image 3-7-23 at 5.36 PM.JPG',
+        ],
+      },
     ],
   },
   {
     year: '2025',
     title: 'Lawnstackin..',
-    description: 'The "Real Life" MBA. This was the year everything changed. I realized I needed to be in a room with people smarter than me, so I recruited co-founders from Wharton and Cornell and built a team of 8 from MIT, Harvard, and Georgia Tech. We raised $150k, got into the Alchemist Accelerator, and processed $80k in GMV connecting homeowners to service providers. But the retention metrics weren\'t there. We were grinding out door-to-door sales for low-margin services. In November, we made the hard, mature decision to shut it down. It hurt, but it taught me the most important lesson in tech: Verify the problem before you build the solution.',
+    description: (
+      <>
+        The "Real Life" MBA. This was the year everything changed. I realized I needed to be in rooms with people smarter than me, so I teamed up with <a href="https://allen.mov/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Allen Yao</a> from Wharton and <a href="https://www.liamdu.com/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Liam Du</a> from Cornell, and together we built a team of eight across MIT, Harvard, and Georgia Tech and Upenn. We raised $150k, got into the <a href="https://www.alchemistaccelerator.com/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Alchemist Accelerator</a>, and processed $80k in GMV connecting homeowners to service providers. But the retention wasn't there. We were grinding door-to-door sales for low-margin services, and in November we made the hard, mature call to shut it down. It hurt—but it taught me the most important lesson in tech: Verify the problem before you build the solution.
+      </>
+    ),
     position: 'left',
   },
   {
     year: '2026',
     title: 'The Engineer',
-    description: 'After Lawnstack, I decided to get as technical as possible. I locked in for a month—200+ hours—teaching myself TypeScript and Vibe Coding. Then I teamed up with my former CTO to build Boltzman AI, which hit 3k users before we pivoted into Voice AI. Now I\'m running a profitable Voice AI receptionist service for restaurants. I hit a peak of ~$5k MRR with ~70% margins as a solopreneur wearing every hat. I\'m dealing with some churn right now, but I\'ve learned a ton in the process—from professors and mentors at Princeton, Caltech, Carnegie Mellon, Stanford, and more. (Shoutout to people like Vivian Shen, Nathaniel Simon, Ruming Guan, Ryan Kazuo, and Brian Yang.) And now, I\'m graduating this December with my engineering degree—not just as a student, but as a builder who has raised VC money, managed millions, failed fast, and learned to code his own way out.',
+    description: (
+      <>
+        After Lawnstack, I decided to get as technical as possible. I locked in for a month—200+ hours—teaching myself TypeScript and Vibe Coding. Then I teamed up with my former <a href="https://www.liamdu.com/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">CTO</a> to build <a href="https://www.boltzman.ai/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Boltzman AI</a>, which hit 3k users before we pivoted into <a href="https://voice.boltzman.ai/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Voice AI</a>. Now I'm running a profitable Voice AI <a href="https://enterprise.boltzman.ai/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">receptionist</a> service for restaurants. I hit a peak of ~$5k MRR with ~70% margins as a solopreneur wearing every hat. I'm dealing with some churn right now, but I've learned a ton in the process—from professors and mentors at Princeton, Caltech, Carnegie Mellon, Stanford, and more. (Shoutout to people like <a href="https://www.vivian-shen.com/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Vivian Shen</a>, <a href="https://natesimon.github.io/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Nathaniel Simon</a>, <a href="https://runingguan.com/about" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Ruming Guan</a>, <a href="https://www.rkcosner.com/bio/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Ryan Kazuo</a>, and <a href="https://byang.org/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Brian Yang</a>.) And now, I'm graduating this December with my engineering degree—not just as a student, but as a builder who has raised VC money, managed millions, failed fast, and learned to code his own way out.
+      </>
+    ),
     position: 'right',
   },
 ];

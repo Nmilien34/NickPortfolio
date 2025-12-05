@@ -3,6 +3,7 @@ import { Header } from '../layout/Header';
 import { Footer } from '../layout/Footer';
 import { Hero } from '../sections/Hero';
 import { Timeline, fullTimelineData } from '../sections/Timeline';
+import { Projects } from '../sections/Projects';
 import { SlideNavigation } from '../navigation/SlideNavigation';
 
 export function HomePage() {
@@ -59,9 +60,10 @@ export function HomePage() {
         <div id="section-2">
           <Timeline years={section2Years} />
         </div>
-        <div id="section-3" className="pb-40">
+        <div id="section-3" className="pb-20">
           <Timeline years={section3Years} />
         </div>
+        <Projects />
       </main>
       <Footer />
       <SlideNavigation currentSlideIndex={currentSection} totalSlides={4} />

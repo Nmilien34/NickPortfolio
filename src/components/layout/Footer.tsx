@@ -6,7 +6,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-8">
         <div className="flex justify-between items-center">
           <p className="text-normal-text text-sm">
-            © {currentYear} Nick. All rights reserved.
+            © {currentYear} made by Nick with love ❤️
           </p>
           <div className="flex gap-6">
             <a
