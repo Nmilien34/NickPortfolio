@@ -54,7 +54,7 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
                     alt={section.caption}
                     loading="lazy"
                     className="w-full h-full object-cover object-[50%_35%]"
-                    onError={(e) => {
+                    onError={() => {
                       console.error(`Failed to load image: ${section.photos[0]}`);
                     }}
                   />
