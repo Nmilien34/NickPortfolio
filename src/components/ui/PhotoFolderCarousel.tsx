@@ -20,6 +20,12 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
     setSelectedSection(null);
   };
 
+  // Helper function to check if file is a video
+  const isVideo = (filename: string) => {
+    const videoExtensions = ['.mp4', '.MP4', '.mov', '.MOV', '.webm', '.WEBM'];
+    return videoExtensions.some(ext => filename.endsWith(ext));
+  };
+
   return (
     <>
       {/* Carousel Container */}
@@ -31,13 +37,23 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
               onClick={() => handleCardClick(index)}
               className="flex-shrink-0 w-[300px] aspect-[4/5] rounded-xl border border-gray-300 bg-white cursor-pointer hover:shadow-lg transition-shadow duration-300 snap-start"
             >
-              {/* Top Section - Image (65%) */}
+              {/* Top Section - Image/Video (65%) */}
               <div className="h-[65%] overflow-hidden rounded-t-xl">
-                <img
-                  src={section.photos[0]}
-                  alt={section.caption}
-                  className="w-full h-full object-cover object-top"
-                />
+                {isVideo(section.photos[0]) ? (
+                  <video
+                    src={section.photos[0]}
+                    className="w-full h-full object-cover object-top"
+                    muted
+                    loop
+                    playsInline
+                  />
+                ) : (
+                  <img
+                    src={section.photos[0]}
+                    alt={section.caption}
+                    className="w-full h-full object-cover object-top"
+                  />
+                )}
               </div>
 
               {/* Bottom Section - Text (35%) */}
@@ -163,15 +179,24 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
               </button>
             </div>
 
-            {/* Photo Grid */}
+            {/* Photo/Video Grid */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {photoSections[selectedSection].photos.map((photo, photoIndex) => (
                 <div key={photoIndex} className="relative group">
-                  <img
-                    src={photo}
-                    alt={`Photo ${photoIndex + 1}`}
-                    className="w-full h-96 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
-                  />
+                  {isVideo(photo) ? (
+                    <video
+                      src={photo}
+                      className="w-full h-96 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
+                      controls
+                      playsInline
+                    />
+                  ) : (
+                    <img
+                      src={photo}
+                      alt={`Photo ${photoIndex + 1}`}
+                      className="w-full h-96 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
+                    />
+                  )}
                 </div>
               ))}
             </div>

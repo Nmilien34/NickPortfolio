@@ -416,6 +416,7 @@ export const fullTimelineData: TimelineItemData[] = [
           '/images/Popfame/IMG_6832.PNG',
           '/images/Popfame/Image 12-8-22 at 3.36 PM.JPG',
           '/images/Popfame/Image 3-7-23 at 5.36 PM.JPG',
+          '/images/Popfame/popfame-4 2.MP4',
         ],
       },
     ],
