@@ -52,7 +52,11 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
                   <img
                     src={section.photos[0]}
                     alt={section.caption}
+                    loading="lazy"
                     className="w-full h-full object-cover object-[50%_35%]"
+                    onError={(e) => {
+                      console.error(`Failed to load image: ${section.photos[0]}`);
+                    }}
                   />
                 )}
               </div>
@@ -196,7 +200,12 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
                     <img
                       src={photo}
                       alt={`Photo ${photoIndex + 1}`}
+                      loading="lazy"
                       className="w-full h-96 object-contain rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
+                      onError={(e) => {
+                        console.error(`Failed to load image: ${photo}`);
+                        (e.target as HTMLImageElement).style.display = 'none';
+                      }}
                     />
                   )}
                 </div>

@@ -165,9 +165,14 @@ export function CardDetail() {
                       <img
                         src={photo}
                         alt={`${cardData.title} photo ${index + 1}`}
+                        loading="lazy"
                         className={`w-full h-96 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300 ${
                           index === 0 ? 'object-top' : ''
                         }`}
+                        onError={(e) => {
+                          console.error(`Failed to load image: ${photo}`);
+                          (e.target as HTMLImageElement).style.display = 'none';
+                        }}
                       />
                     </div>
                   ))}
