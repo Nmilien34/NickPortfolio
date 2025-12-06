@@ -187,7 +187,7 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
                   {isVideo(photo) ? (
                     <video
                       src={photo}
-                      className="w-full h-96 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
+                      className="w-full h-96 object-contain rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
                       controls
                       playsInline
                     />
@@ -195,7 +195,7 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
                     <img
                       src={photo}
                       alt={`Photo ${photoIndex + 1}`}
-                      className="w-full h-96 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
+                      className="w-full h-96 object-contain rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
                     />
                   )}
                 </div>
