@@ -435,6 +435,7 @@ export const fullTimelineData: TimelineItemData[] = [
           '/images/Popfame/popfamePeople/IMG_1432.jpg',
           '/images/Popfame/popfamePeople/IMG_1435.jpg',
           '/images/Popfame/popfamePeople/IMG_1437.jpg',
+          '/images/Popfame/popfamePeople/IMG_3038.JPG',
         ],
       },
     ],
