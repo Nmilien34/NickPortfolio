@@ -43,6 +43,7 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
                   <video
                     src={section.photos[0]}
                     className="w-full h-full object-cover object-top"
+                    autoPlay
                     muted
                     loop
                     playsInline
