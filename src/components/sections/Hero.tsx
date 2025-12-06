@@ -70,7 +70,7 @@ export function Hero() {
           About
         </button>
         <a
-          href="/images/_PM concised V7.2.pdf"
+          href={encodeURI("/images/_PM concised V7.2.pdf")}
           target="_blank"
           rel="noopener noreferrer"
           className="px-5 py-2 text-normal-text hover:text-text-white transition-colors"
