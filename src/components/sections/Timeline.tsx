@@ -348,7 +348,6 @@ export const fullTimelineData: TimelineItemData[] = [
       {
         caption: 'Popfame',
         photos: [
-          '/images/Popfame/POPFAME (1) 2.MP4',
           '/images/Popfame/IMG_6183.jpg',
           '/images/Popfame/PNG image 2.JPEG',
           '/images/Popfame/3f5dba39-74b9-4f0f-a23c-66526a5bcbe7.JPG',
@@ -356,14 +355,12 @@ export const fullTimelineData: TimelineItemData[] = [
           '/images/Popfame/IMG_9495.jpg',
           '/images/Popfame/Chat-details form.JPG',
           '/images/Popfame/IMG_0795.PNG',
-          '/images/Popfame/Popfame 2.MP4',
           '/images/Popfame/IMG_2666.JPG',
           '/images/Popfame/IMG_3635.PNG',
           '/images/Popfame/IMG_3636.PNG',
           '/images/Popfame/IMG_6832.PNG',
           '/images/Popfame/Image 12-8-22 at 3.36 PM.JPG',
           '/images/Popfame/Image 3-7-23 at 5.36 PM.JPG',
-          '/images/Popfame/popfame-4 2.MP4',
         ],
       },
       {

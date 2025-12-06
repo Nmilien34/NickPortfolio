@@ -84,7 +84,8 @@ export function Projects() {
                     loop
                     muted
                     playsInline
-                    preload="auto"
+                    preload="metadata"
+                    crossOrigin="anonymous"
                     style={{
                       objectFit: 'cover',
                       backgroundColor: '#10e9a0',
@@ -102,6 +103,21 @@ export function Projects() {
                       video.style.height = '100%';
                       // Speed up playback to 1.5x
                       video.playbackRate = 1.5;
+                    }}
+                    onError={(e) => {
+                      console.error(`Failed to load video for ${project.title}:`, e);
+                      // Optionally hide the video element or show a placeholder
+                      const video = e.target as HTMLVideoElement;
+                      video.style.display = 'none';
+                    }}
+                    onCanPlay={() => {
+                      // Ensure video plays when ready
+                      const video = document.querySelector(`video[src="${project.video}"]`) as HTMLVideoElement;
+                      if (video && video.paused) {
+                        video.play().catch((err) => {
+                          console.warn('Video autoplay prevented:', err);
+                        });
+                      }
                     }}
                   />
                 ) : (
