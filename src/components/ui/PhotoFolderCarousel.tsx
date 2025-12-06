@@ -42,7 +42,7 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
                 {isVideo(section.photos[0]) ? (
                   <video
                     src={section.photos[0]}
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover object-[50%_35%]"
                     autoPlay
                     muted
                     loop
@@ -52,7 +52,7 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
                   <img
                     src={section.photos[0]}
                     alt={section.caption}
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover object-[50%_35%]"
                   />
                 )}
               </div>
@@ -189,6 +189,7 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
                       src={photo}
                       className="w-full h-96 object-contain rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
                       controls
+                      muted
                       playsInline
                     />
                   ) : (

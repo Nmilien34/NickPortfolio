@@ -281,7 +281,7 @@ export const fullTimelineData: TimelineItemData[] = [
         ),
         photoSections: [
           {
-            caption: 'College and the beginning of my hustle',
+            caption: 'College & Early Hustle',
             photos: [
               '/images/HussleCollege/60019186770__60B76782-1BC6-4CAE-8788-BEF9141B18E3%204.JPG',
               '/images/HussleCollege/IMG_0426%204.PNG',
@@ -294,11 +294,12 @@ export const fullTimelineData: TimelineItemData[] = [
             ],
           },
           {
-            caption: 'Some of the cars I flipped — sold way more but these were my best',
+            caption: 'Cars I Flipped',
             photos: [
+              '/images/BecameEntrepreneur/carsSold/DAFD7AD8-97B6-49C8-B1DF-BB8C4B644019.JPG',
+              '/images/BecameEntrepreneur/carsSold/IMG_1433.jpg',
               '/images/BecameEntrepreneur/carsSold/3853B68F-7729-456F-B1E7-E1B26BB32E92.JPG',
               '/images/BecameEntrepreneur/carsSold/B94B3080-20EA-45CA-B14F-334B580D0BC7.JPG',
-              '/images/BecameEntrepreneur/carsSold/DAFD7AD8-97B6-49C8-B1DF-BB8C4B644019.JPG',
               '/images/BecameEntrepreneur/carsSold/DEDCDA09-0AE6-4A3D-8E69-2F5279731B46.JPG',
               '/images/BecameEntrepreneur/carsSold/IMG_4843.PNG',
               '/images/BecameEntrepreneur/carsSold/IMG_4857.PNG',
@@ -308,7 +309,7 @@ export const fullTimelineData: TimelineItemData[] = [
             ],
           },
           {
-            caption: 'One of the jewelry stores I built from scratch at the Westchester Mall, New York',
+            caption: 'Jewelry Store at Westchester Mall',
             photos: [
               '/images/BecameEntrepreneur/carsSold/jewelsstore/7FAACC54-9D2F-4F9C-8728-2091458E46C6.jpeg',
               '/images/BecameEntrepreneur/carsSold/jewelsstore/E8E599F6-F1DB-4818-9AA8-393D2DB803B4.jpeg',
@@ -344,6 +345,27 @@ export const fullTimelineData: TimelineItemData[] = [
     ),
     position: 'right',
     photoSections: [
+      {
+        caption: 'Popfame',
+        photos: [
+          '/images/Popfame/POPFAME (1) 2.MP4',
+          '/images/Popfame/IMG_6183.jpg',
+          '/images/Popfame/PNG image 2.JPEG',
+          '/images/Popfame/3f5dba39-74b9-4f0f-a23c-66526a5bcbe7.JPG',
+          '/images/Popfame/4a32a032-ff6d-4c65-a69a-d2e09605fa63.JPG',
+          '/images/Popfame/IMG_9495.jpg',
+          '/images/Popfame/Chat-details form.JPG',
+          '/images/Popfame/IMG_0795.PNG',
+          '/images/Popfame/Popfame 2.MP4',
+          '/images/Popfame/IMG_2666.JPG',
+          '/images/Popfame/IMG_3635.PNG',
+          '/images/Popfame/IMG_3636.PNG',
+          '/images/Popfame/IMG_6832.PNG',
+          '/images/Popfame/Image 12-8-22 at 3.36 PM.JPG',
+          '/images/Popfame/Image 3-7-23 at 5.36 PM.JPG',
+          '/images/Popfame/popfame-4 2.MP4',
+        ],
+      },
       {
         caption: 'Landscaping Services',
         photos: [
@@ -402,23 +424,20 @@ export const fullTimelineData: TimelineItemData[] = [
         ],
       },
       {
-        caption: 'Popfame',
+        caption: 'The People Of Popfame',
         photos: [
-          '/images/Popfame/POPFAME (1) 2.MP4',
-          '/images/Popfame/IMG_6183.jpg',
-          '/images/Popfame/PNG image 2.JPEG',
-          '/images/Popfame/3f5dba39-74b9-4f0f-a23c-66526a5bcbe7.JPG',
-          '/images/Popfame/4a32a032-ff6d-4c65-a69a-d2e09605fa63.JPG',
-          '/images/Popfame/IMG_9495.jpg',
-          '/images/Popfame/Chat-details form.JPG',
-          '/images/Popfame/IMG_0795.PNG',
-          '/images/Popfame/IMG_2666.JPG',
-          '/images/Popfame/IMG_3635.PNG',
-          '/images/Popfame/IMG_3636.PNG',
-          '/images/Popfame/IMG_6832.PNG',
-          '/images/Popfame/Image 12-8-22 at 3.36 PM.JPG',
-          '/images/Popfame/Image 3-7-23 at 5.36 PM.JPG',
-          '/images/Popfame/popfame-4 2.MP4',
+          '/images/Popfame/popfamePeople/IMG_1426.jpg',
+          '/images/Popfame/popfamePeople/IMG_1422.jpg',
+          '/images/Popfame/popfamePeople/IMG_1423.jpg',
+          '/images/Popfame/popfamePeople/IMG_1424.jpg',
+          '/images/Popfame/popfamePeople/IMG_1425.jpg',
+          '/images/Popfame/popfamePeople/IMG_1428.jpg',
+          '/images/Popfame/popfamePeople/IMG_1429.jpg',
+          '/images/Popfame/popfamePeople/IMG_1430.jpg',
+          '/images/Popfame/popfamePeople/IMG_1431.jpg',
+          '/images/Popfame/popfamePeople/IMG_1432.jpg',
+          '/images/Popfame/popfamePeople/IMG_1435.jpg',
+          '/images/Popfame/popfamePeople/IMG_1437.jpg',
         ],
       },
     ],
