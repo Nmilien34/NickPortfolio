@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 
 export function VolumetricLight() {
   const lightRef = useRef<HTMLDivElement>(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const currentPos = useRef({ x: 0, y: 0 });
   const targetPos = useRef({ x: 0, y: 0 });
   const [lightOpacity, setLightOpacity] = useState(1);
