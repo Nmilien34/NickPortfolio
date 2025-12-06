@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { VolumetricLight } from '../effects/VolumetricLight';
 
 export function Hero() {
   const [isLangOpen, setIsLangOpen] = useState(false);
@@ -39,6 +40,9 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-start justify-center pt-48">
+      {/* Volumetric Light Effect */}
+      <VolumetricLight />
+
       {/* Logo/Home Button */}
       <button
         onClick={scrollToTop}
@@ -112,9 +116,16 @@ export function Hero() {
       </div>
 
       {/* Hero Content */}
-      <div className="text-center px-6">
+      <div className="text-center px-6 relative z-10">
         {/* Main Title */}
-        <h1 className="font-serif text-7xl md:text-8xl tracking-tighter mb-4 text-white">
+        <h1
+          className="font-serif text-7xl md:text-8xl tracking-tighter mb-4 text-white"
+          style={{
+            mixBlendMode: 'overlay',
+            opacity: 0.95,
+            textShadow: '0 0 40px rgba(255,255,255,0.3), 0 0 80px rgba(255,255,255,0.2)',
+          }}
+        >
           NICK MILIEN
         </h1>
 
