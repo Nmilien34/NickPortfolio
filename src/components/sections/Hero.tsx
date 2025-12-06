@@ -194,6 +194,7 @@ export function Hero() {
               <img
                 src="/images/4F8413FF-0F8C-4384-AA3A-E72D29CD7AF1.jpeg"
                 alt="First day of high school"
+                loading="lazy"
                 className="w-64 h-80 md:w-72 md:h-96 object-cover object-top rounded-xl filter grayscale-[30%] group-hover:grayscale-0 transition-all duration-500"
               />
             </div>
@@ -215,6 +216,7 @@ export function Hero() {
               <img
                 src="/images/1F97147A-5531-4D66-BA63-A9F5B0A77C19_1_105_c.jpeg"
                 alt="Visiting Cornell"
+                loading="lazy"
                 className="w-64 h-80 md:w-72 md:h-96 object-cover rounded-xl filter grayscale-[30%] group-hover:grayscale-0 transition-all duration-500"
               />
             </div>

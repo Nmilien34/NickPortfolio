@@ -47,12 +47,13 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
                     muted
                     loop
                     playsInline
+                    preload="metadata"
                   />
                 ) : (
                   <img
                     src={section.photos[0]}
                     alt={section.caption}
-                    loading="lazy"
+                    loading={index === 0 ? "eager" : "lazy"}
                     className="w-full h-full object-cover object-[50%_35%]"
                     onError={() => {
                       console.error(`Failed to load image: ${section.photos[0]}`);
