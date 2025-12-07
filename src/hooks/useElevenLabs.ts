@@ -86,9 +86,19 @@ export function useElevenLabs(config?: ElevenLabsConfig) {
       const formData = new FormData();
       formData.append('audio', audioBlob, 'audio.webm');
 
-      // Backend endpoint - defaults to localhost:5000, but can be configured
-      const backendUrl = config?.backendUrl || 'http://localhost:5000';
+      // Backend endpoint - use provided URL or detect based on environment
+      let backendUrl = config?.backendUrl;
+      if (!backendUrl) {
+        // Fallback: detect production
+        if (window.location.hostname === 'www.nickmilien.com' || window.location.hostname === 'nickmilien.com') {
+          backendUrl = 'https://nickportfolio.onrender.com';
+        } else {
+          backendUrl = 'http://localhost:5000';
+        }
+      }
       const endpoint = `${backendUrl}/api/elevenlabs/audio`;
+      
+      console.log('Sending audio to:', endpoint); // Debug log
 
       const response = await fetch(endpoint, {
         method: 'POST',

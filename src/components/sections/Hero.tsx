@@ -17,7 +17,8 @@ export function Hero() {
     }
     
     // If in production, use production backend URL
-    if (window.location.hostname === 'www.nickmilien.com' || window.location.hostname === 'nickmilien.com') {
+    const hostname = window.location.hostname;
+    if (hostname === 'www.nickmilien.com' || hostname === 'nickmilien.com') {
       return 'https://nickportfolio.onrender.com';
     }
     
@@ -25,8 +26,11 @@ export function Hero() {
     return 'http://localhost:5000';
   };
 
+  const backendUrl = getBackendUrl();
+  console.log('Backend URL:', backendUrl); // Debug log
+  
   const elevenLabsConfig = {
-    backendUrl: getBackendUrl(),
+    backendUrl: backendUrl,
   };
 
   const { isRecording, isProcessing, error, toggleRecording } = useElevenLabs(elevenLabsConfig);
