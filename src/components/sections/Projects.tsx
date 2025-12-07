@@ -19,7 +19,7 @@ export const projects: Project[] = [
     gradientColors: undefined, // Will use CSS variables instead
   },
   {
-    title: 'Voice AI Receptionist',
+    title: 'Boltzman Enterprise',
     category: 'SaaS Product',
     description: 'AI-powered voice receptionist service for restaurants, handling customer calls and reservations with natural conversation.',
     mockup: '/Projects/Voice ai Receptionist/91658D25-00CB-4B5E-BD37-CDE8CFA0BA8C.jpeg',
@@ -44,7 +44,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Energy',
-    category: 'Mobile App',
+    category: 'Music Platform',
     description: 'Energy is a youtube wrapper that let you listen to your favorite songs for free by converting videos into ads-free Audio',
     mockup: '/Projects/Energy/974BE277-C1B0-4EBC-9E0C-AE982167833B.jpeg',
     gradientColors: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',

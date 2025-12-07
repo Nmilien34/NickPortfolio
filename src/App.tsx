@@ -3,6 +3,7 @@ import { HomePage } from './components/pages/HomePage';
 import { CardDetail } from './components/pages/CardDetail';
 import { ProjectDetail } from './components/pages/ProjectDetail';
 import { About } from './components/pages/About';
+import { Learnings } from './components/pages/Learnings';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<About />} />
+          <Route path="/learnings" element={<Learnings />} />
           <Route path="/project/:slug" element={<ProjectDetail />} />
           <Route path="/:slug" element={<CardDetail />} />
         </Routes>

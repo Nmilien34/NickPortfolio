@@ -80,7 +80,10 @@ export function Hero() {
         >
           Resume
         </a>
-        <button className="px-5 py-2 text-normal-text hover:text-text-white transition-colors">
+        <button 
+          onClick={() => navigate('/learnings')}
+          className="px-5 py-2 text-normal-text hover:text-text-white transition-colors"
+        >
           Learnings
         </button>
       </div>
