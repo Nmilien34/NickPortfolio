@@ -9,9 +9,24 @@ export function Hero() {
   const navigate = useNavigate();
 
   // ElevenLabs Configuration - Backend handles the API keys
-  // Optionally configure backend URL if different from default
+  // Automatically detect backend URL based on environment
+  const getBackendUrl = () => {
+    // If explicitly set in env, use it
+    if (import.meta.env.VITE_BACKEND_URL) {
+      return import.meta.env.VITE_BACKEND_URL;
+    }
+    
+    // If in production, use production backend URL
+    if (window.location.hostname === 'www.nickmilien.com' || window.location.hostname === 'nickmilien.com') {
+      return 'https://nickportfolio.onrender.com';
+    }
+    
+    // Default to localhost for development
+    return 'http://localhost:5000';
+  };
+
   const elevenLabsConfig = {
-    backendUrl: import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000',
+    backendUrl: getBackendUrl(),
   };
 
   const { isRecording, isProcessing, error, toggleRecording } = useElevenLabs(elevenLabsConfig);

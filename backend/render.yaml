@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: nick-portfolio-backend
+    env: node
+    buildCommand: npm install --include=dev && npm run build
+    startCommand: npm start
+    envVars:
+      - key: ELEVENLABS_API_KEY
+        sync: false
+      - key: ELEVENLABS_AGENT_ID
+        sync: false
+      - key: ELEVENLABS_CONVERSATION_ID
+        sync: false
+        optional: true
+      - key: PORT
+        value: 10000
+      - key: NODE_ENV
+        value: production
+
