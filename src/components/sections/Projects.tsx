@@ -1,4 +1,4 @@
-interface Project {
+export interface Project {
   title: string;
   category: string;
   description: string;
@@ -10,7 +10,7 @@ interface Project {
   browserUrl?: string; // Custom URL to display in browser bar
 }
 
-const projects: Project[] = [
+export const projects: Project[] = [
   {
     title: 'Lawnstack',
     category: 'Web Platform',
@@ -60,7 +60,12 @@ const projects: Project[] = [
   },
 ];
 
+import { useNavigate } from 'react-router-dom';
+import { titleToSlug } from '../../lib/utils';
+
 export function Projects() {
+  const navigate = useNavigate();
+
   return (
     <section className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
@@ -76,9 +81,8 @@ export function Projects() {
               key={index}
               className="group relative overflow-hidden rounded-2xl cursor-pointer transition-all duration-500 hover:scale-[1.02]"
               onClick={() => {
-                if (project.link) {
-                  window.open(project.link, '_blank');
-                }
+                const slug = titleToSlug(project.title);
+                navigate(`/project/${slug}`);
               }}
               style={{
                 backgroundColor: 'hsl(var(--background))',
