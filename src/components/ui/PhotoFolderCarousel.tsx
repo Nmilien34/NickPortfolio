@@ -206,7 +206,6 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
                       muted
                       playsInline
                       preload="none"
-                      loading="lazy"
                     />
                   ) : (
                     <img
