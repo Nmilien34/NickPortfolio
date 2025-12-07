@@ -35,6 +35,14 @@ export const projects: Project[] = [
     browserUrl: 'boltzman.ai',
   },
   {
+    title: 'Boltzman Voice',
+    category: 'AI Product',
+    description: 'Placeholder description for Boltzman Voice project.',
+    mockup: '/Projects/BoltzmanVoice/E80A7619-852F-43F7-AADB-099DC4EBE4EB.jpeg',
+    gradientColors: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+    browserUrl: 'voice.boltzman.ai',
+  },
+  {
     title: 'Clearr',
     category: 'Mobile App',
     description: 'Clearr is an AI-powered message translation app that acts like \'Google translate\' for emotional communication. it translates raw, potentionally emotional messages into healthier, more constructive communication using AI.',
