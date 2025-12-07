@@ -4,6 +4,7 @@ export interface Project {
   description: string;
   image?: string;
   mockup?: string; // Browser mockup screenshot
+  coverImage?: string; // Cover image for detail page
   link?: string;
   underConstruction?: boolean;
   gradientColors?: string; // Custom gradient for each project
@@ -16,6 +17,7 @@ export const projects: Project[] = [
     category: 'Web Platform',
     description: 'A marketplace platform connecting homeowners with local lawn care and landscaping service providers.',
     mockup: '/Projects/Lawnstack /98EE5DD3-9A94-4F47-8D32-DD098CF123B9.jpeg',
+    coverImage: '/Projects/Lawnstack /IMG_5043.PNG',
     gradientColors: undefined, // Will use CSS variables instead
   },
   {

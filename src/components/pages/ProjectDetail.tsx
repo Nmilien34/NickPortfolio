@@ -38,11 +38,14 @@ export function ProjectDetail() {
         {/* Notion-style Layout */}
         <div className="w-full">
           {/* 1. Full-Width Cover Image */}
-          <div className="w-full h-64 md:h-96 bg-gray-200 relative">
+          <div className="w-full h-64 md:h-96 bg-gray-200 relative -mt-16 pt-16">
             <img
-              src={project.mockup || project.image || '/placeholder-cover.jpg'}
+              src={project.coverImage || project.mockup || project.image || '/placeholder-cover.jpg'}
               alt={`${project.title} cover`}
               className="w-full h-full object-cover"
+              style={{
+                objectPosition: 'center top',
+              }}
             />
           </div>
 

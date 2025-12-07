@@ -141,26 +141,130 @@ export function About() {
                   <div className="space-y-2.5 text-normal-text font-mono text-xs">
                     <div className="border-b border-white/10 pb-2">
                       <p className="text-white font-semibold mb-2">School</p>
-                      <div className="flex items-center gap-2">
+                      <a 
+                        href="https://www.njit.edu/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+                      >
                         <img 
                           src="/images/aboutMe/New_Jersey_IT_seal.svg" 
                           alt="NJIT Logo" 
                           className="w-14 h-14 rounded-2xl"
                         />
                         <p className="text-white/60 text-xs">New Jersey Institute of Technology</p>
-                      </div>
+                      </a>
                     </div>
                     <div className="border-b border-white/10 pb-2">
                       <p className="text-white font-semibold">Undergrad Major</p>
-                      <p className="text-white/60 text-xs">Placeholder</p>
+                      <p className="text-white/60 text-xs">Electrical and Computer Engineering(Electronics)</p>
                     </div>
                     <div className="border-b border-white/10 pb-2">
-                      <p className="text-white font-semibold">Accelerator</p>
-                      <p className="text-white/60 text-xs">Placeholder</p>
+                      <p className="text-white font-semibold mb-2">Accelerator</p>
+                      <div className="flex flex-col gap-3">
+                        <div className="flex items-start gap-2">
+                          <a 
+                            href="https://www.alchemistaccelerator.com/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex flex-col items-center hover:opacity-80 transition-opacity"
+                          >
+                            <img 
+                              src="/images/aboutMe/60eebaffc81474a926d65845_AA Logo For Blog Placeholder Dark.png" 
+                              alt="Alchemist Accelerator Logo" 
+                              className="w-14 h-14 rounded-2xl mb-1"
+                            />
+                            <p className="text-white/60 text-xs text-center">Alchemist Accelerator</p>
+                          </a>
+                          <a 
+                            href="https://buildspace.so/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex flex-col items-center hover:opacity-80 transition-opacity"
+                          >
+                            <img 
+                              src="/images/aboutMe/FqHUKZLk_400x400.jpg" 
+                              alt="Buildspace Logo" 
+                              className="w-14 h-14 rounded-2xl mb-1"
+                            />
+                            <p className="text-white/60 text-xs text-center">Buildspace</p>
+                          </a>
+                        </div>
+                        <div className="flex items-start gap-2 justify-center">
+                          <a 
+                            href="https://www.njii.com/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex flex-col items-center hover:opacity-80 transition-opacity"
+                          >
+                            <img 
+                              src="/images/aboutMe/NJII_icon_red_logo_noBG_square-01.png" 
+                              alt="New Jersey Innovation Institute Logo" 
+                              className="w-14 h-14 rounded-2xl mb-1"
+                            />
+                            <p className="text-white/60 text-xs text-center">New Jersey Innovation Institute</p>
+                          </a>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <a 
+                            href="https://www.business.rutgers.edu/news/black-and-latino-tech-initiative-awards-seed-money-three-entrepreneurs" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex flex-col items-center hover:opacity-80 transition-opacity"
+                          >
+                            <img 
+                              src="/images/aboutMe/BLT-CUEED-Image.webp" 
+                              alt="CUEED Logo" 
+                              className="w-14 h-14 rounded-2xl mb-1"
+                            />
+                            <p className="text-white/60 text-xs text-center">Rutgers BLT Program</p>
+                          </a>
+                          <a 
+                            href="https://nsbe.org/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex flex-col items-center ml-8 hover:opacity-80 transition-opacity"
+                          >
+                            <img 
+                              src="/images/aboutMe/National_Society_of_Black_Engineers_logo.svg" 
+                              alt="NSBE Logo" 
+                              className="w-14 h-14 rounded-2xl mb-1"
+                            />
+                            <p className="text-white/60 text-xs text-center">NSBE</p>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                     <div className="border-b border-white/10 pb-2">
-                      <p className="text-white font-semibold">Articles</p>
-                      <p className="text-white/60 text-xs">Placeholder</p>
+                      <p className="text-white font-semibold mb-2">Articles</p>
+                      <div className="space-y-2">
+                        <a 
+                          href="https://www.tapinto.net/towns/red-bank/articles/lawnstack-ignites-excitement-in-new-jersey-with-a-game-changing-home-service-solution-one-team-for-all-your-outdoor-chores-92dd83f5-4b9b-4151-8d0d-72c80d273f7e" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="block text-white/60 text-xs hover:text-[#EFBF04] underline decoration-[#EFBF04] transition-colors"
+                        >
+                          Lawnstack: A Game-Changing Home-Service Solution
+                        </a>
+                      </div>
+                    </div>
+                    <div className="pb-2">
+                      <p className="text-white font-semibold mb-2">LinkedIn</p>
+                      <a 
+                        href="https://www.linkedin.com/in/nmilien/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+                      >
+                        <img 
+                          src="/images/aboutMe/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.webp" 
+                          alt="LinkedIn Logo" 
+                          className="w-8 h-8"
+                        />
+                        <span className="text-white/60 text-xs hover:text-[#EFBF04] underline decoration-[#EFBF04] transition-colors">
+                          Connect on LinkedIn
+                        </span>
+                      </a>
                     </div>
                   </div>
                 </div>

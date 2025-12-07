@@ -1,12 +1,22 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { VolumetricLight } from '../effects/VolumetricLight';
+import { useElevenLabs } from '../../hooks/useElevenLabs';
 
 export function Hero() {
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState('EN');
-  const [isListening, setIsListening] = useState(false);
   const navigate = useNavigate();
+
+  // ElevenLabs Configuration - Backend handles the API keys
+  // Optionally configure backend URL if different from default
+  const elevenLabsConfig = {
+    backendUrl: import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000',
+  };
+
+  const { isRecording, isProcessing, error, toggleRecording } = useElevenLabs(elevenLabsConfig);
+  
+  const isListening = isRecording || isProcessing;
 
   const languages = [
     { code: 'EN', label: 'English', flag: '🇺🇸' },
@@ -164,27 +174,40 @@ export function Hero() {
 
           {/* The Button */}
           <button
-            onClick={() => setIsListening(!isListening)}
+            onClick={toggleRecording}
+            disabled={isProcessing}
             className={`
               relative group px-8 py-3 rounded-full
               flex items-center gap-3
               transition-all duration-500 ease-out
               border border-white/10 bg-white/5 backdrop-blur-sm
               hover:bg-white/10 hover:border-white/20 hover:scale-105
+              disabled:opacity-50 disabled:cursor-not-allowed
               ${isListening ? 'border-red-500/30 bg-red-500/10 shadow-[0_0_30px_rgba(239,68,68,0.2)]' : 'shadow-[0_0_20px_rgba(255,255,255,0.05)]'}
             `}
           >
             {/* Glowing Dot Indicator */}
-            <span className={`w-2 h-2 rounded-full transition-colors duration-300 ${isListening ? 'bg-red-500 animate-pulse' : 'bg-[#EFBF04] shadow-[0_0_15px_#EFBF04]'}`} />
+            <span className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+              isRecording ? 'bg-red-500 animate-pulse' : 
+              isProcessing ? 'bg-blue-500 animate-pulse' : 
+              'bg-[#EFBF04] shadow-[0_0_15px_#EFBF04]'
+            }`} />
 
             {/* Button Text */}
             <span className="font-mono text-sm text-gray-300 tracking-wide uppercase">
-              {isListening ? "Listening..." : "Speak to Assistant"}
+              {isRecording ? "Listening..." : isProcessing ? "Processing..." : "Speak to Assistant"}
             </span>
 
             {/* Subtle Glow Layer */}
             <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-white/5 blur-xl -z-10" />
           </button>
+
+          {/* Error Message */}
+          {error && (
+            <p className="text-xs text-red-400 font-mono mt-2 max-w-md text-center">
+              {error}
+            </p>
+          )}
 
           {/* Instruction Text */}
           <p className={`text-xs text-gray-600 font-mono transition-opacity duration-500 ${isListening ? 'opacity-0' : 'opacity-100'}`}>
