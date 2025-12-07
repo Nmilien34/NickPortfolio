@@ -3,6 +3,7 @@ import { useState } from 'react';
 interface PhotoSection {
   caption: string;
   photos: string[];
+  videos?: string[];
 }
 
 interface PhotoFolderCarouselProps {
@@ -35,41 +36,46 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
             <div
               key={index}
               onClick={() => handleCardClick(index)}
-              className="flex-shrink-0 w-[300px] aspect-[4/5] rounded-xl border border-gray-300 bg-white cursor-pointer hover:shadow-lg transition-shadow duration-300 snap-start"
+              className="flex-shrink-0 w-[300px] aspect-[4/5] rounded-xl border border-white/20 bg-white/5 backdrop-blur-sm cursor-pointer hover:bg-white/10 hover:border-white/30 transition-all duration-300 snap-start"
             >
               {/* Top Section - Image/Video (65%) */}
-              <div className="h-[65%] overflow-hidden rounded-t-xl">
-                {isVideo(section.photos[0]) ? (
-                  <video
-                    src={section.photos[0]}
-                    className="w-full h-full object-cover object-[50%_35%]"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                  />
-                ) : (
-                  <img
-                    src={section.photos[0]}
-                    alt={section.caption}
-                    loading={index === 0 ? "eager" : "lazy"}
-                    className="w-full h-full object-cover object-[50%_35%]"
-                    onError={() => {
-                      console.error(`Failed to load image: ${section.photos[0]}`);
-                    }}
-                  />
-                )}
+              <div className="h-[65%] overflow-hidden rounded-t-xl bg-black">
+                {(() => {
+                  const coverMedia = section.videos && section.videos.length > 0 ? section.videos[0] : section.photos[0];
+                  return isVideo(coverMedia) ? (
+                    <video
+                      src={coverMedia}
+                      className="w-full h-full object-cover object-[50%_35%]"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      style={{ display: 'block', transform: 'scale(1.02)' }}
+                    />
+                  ) : (
+                    <img
+                      src={coverMedia}
+                      alt={section.caption}
+                      loading={index === 0 ? "eager" : "lazy"}
+                      className="w-full h-full object-cover object-[50%_35%]"
+                      style={{ display: 'block' }}
+                      onError={() => {
+                        console.error(`Failed to load image: ${coverMedia}`);
+                      }}
+                    />
+                  );
+                })()}
               </div>
 
               {/* Bottom Section - Text (35%) */}
               <div className="h-[35%] p-4 flex flex-col justify-between">
-                <h3 className="font-sans font-bold text-lg text-gray-900 line-clamp-2">
+                <h3 className="font-sans font-bold text-lg text-white line-clamp-2">
                   {section.caption}
                 </h3>
 
                 {/* Metadata */}
-                <div className="flex items-center gap-2 text-sm text-gray-500">
+                <div className="flex items-center gap-2 text-sm text-gray-300">
                   <svg
                     className="w-4 h-4"
                     fill="none"
@@ -83,7 +89,9 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
                       d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                     />
                   </svg>
-                  <span>{section.photos.length} photo{section.photos.length !== 1 ? 's' : ''}</span>
+                  <span>
+                    {(section.videos?.length || 0) + section.photos.length} item{((section.videos?.length || 0) + section.photos.length) !== 1 ? 's' : ''}
+                  </span>
                 </div>
               </div>
             </div>
@@ -100,11 +108,11 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
                 container.scrollBy({ left: -316, behavior: 'smooth' }); // Scroll left
               }
             }}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:shadow-xl transition-shadow duration-300 z-10"
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center hover:bg-white/20 hover:border-white/30 transition-all duration-300 z-10"
             aria-label="Previous"
           >
             <svg
-              className="w-6 h-6 text-gray-700"
+              className="w-6 h-6 text-white"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -129,11 +137,11 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
                 container.scrollBy({ left: 316, behavior: 'smooth' }); // 300px card + 16px gap
               }
             }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center hover:shadow-xl transition-shadow duration-300 z-10"
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center hover:bg-white/20 hover:border-white/30 transition-all duration-300 z-10"
             aria-label="Next"
           >
             <svg
-              className="w-6 h-6 text-gray-700"
+              className="w-6 h-6 text-white"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -187,11 +195,12 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
 
             {/* Photo/Video Grid */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {photoSections[selectedSection].photos.map((photo, photoIndex) => (
-                <div key={photoIndex} className="relative group">
-                  {isVideo(photo) ? (
+              {/* Render videos first, then photos */}
+              {[...(photoSections[selectedSection].videos || []), ...photoSections[selectedSection].photos].map((media, mediaIndex) => (
+                <div key={mediaIndex} className="relative group">
+                  {isVideo(media) ? (
                     <video
-                      src={photo}
+                      src={media}
                       className="w-full h-96 object-contain rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
                       controls
                       muted
@@ -199,12 +208,12 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
                     />
                   ) : (
                     <img
-                      src={photo}
-                      alt={`Photo ${photoIndex + 1}`}
+                      src={media}
+                      alt={`Media ${mediaIndex + 1}`}
                       loading="lazy"
                       className="w-full h-96 object-contain rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
                       onError={(e) => {
-                        console.error(`Failed to load image: ${photo}`);
+                        console.error(`Failed to load image: ${media}`);
                         (e.target as HTMLImageElement).style.display = 'none';
                       }}
                     />

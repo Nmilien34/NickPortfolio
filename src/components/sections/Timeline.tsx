@@ -8,7 +8,7 @@ interface TimelineItemData {
   highlights?: string[]; // Key highlights as bullet points
   photos?: string[]; // Photo URLs to display in the card
   photosCaption?: string; // Optional caption for photos section
-  photoSections?: Array<{ caption: string; photos: string[] }>; // Multiple photo sections with captions
+  photoSections?: Array<{ caption: string; photos: string[]; videos?: string[] }>; // Multiple photo sections with captions
   brace?: {
     endsAtYear: string; // Year where the brace ends
     card: {
@@ -17,7 +17,7 @@ interface TimelineItemData {
       highlights?: string[];
       photos?: string[];
       photosCaption?: string; // Optional caption for photos section
-      photoSections?: Array<{ caption: string; photos: string[] }>; // Multiple photo sections with captions
+      photoSections?: Array<{ caption: string; photos: string[]; videos?: string[] }>; // Multiple photo sections with captions
     };
   };
 }
@@ -347,6 +347,9 @@ export const fullTimelineData: TimelineItemData[] = [
     photoSections: [
       {
         caption: 'Popfame',
+        videos: [
+          'https://zivbanqpjwktphio.public.blob.vercel-storage.com/Popfame/POPFAME%20%281%29%202.MP4',
+        ],
         photos: [
           '/images/Popfame/IMG_6183.jpg',
           '/images/Popfame/PNG image 2.JPEG',
@@ -365,6 +368,9 @@ export const fullTimelineData: TimelineItemData[] = [
       },
       {
         caption: 'Landscaping Services',
+        videos: [
+          'https://zivbanqpjwktphio.public.blob.vercel-storage.com/Popfame/ScreenRecording_12-06-2025%2020-52-31_1.mov',
+        ],
         photos: [
           '/images/LandscapingServices/2023-12-11_15-21-41 2.PNG',
           '/images/LandscapingServices/01A4CBDF-5121-4AD2-B2BB-01D03D8919C6.jpeg',

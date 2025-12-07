@@ -25,7 +25,7 @@ export function CardDetail() {
     highlights?: string[];
     photos?: string[];
     photosCaption?: string;
-    photoSections?: Array<{ caption: string; photos: string[] }>;
+    photoSections?: Array<{ caption: string; photos: string[]; videos?: string[] }>;
   } | null = null;
   
   if (slug) {
