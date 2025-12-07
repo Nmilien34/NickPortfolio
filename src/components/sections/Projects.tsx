@@ -58,11 +58,11 @@ export function Projects() {
         </h2>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center lg:justify-items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 hover:bg-white/10 hover:border-white/30 transition-all duration-300 cursor-pointer w-full max-w-xl"
+              className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 hover:bg-white/10 hover:border-white/30 transition-all duration-300 cursor-pointer"
               onClick={() => {
                 if (project.link) {
                   window.open(project.link, '_blank');
