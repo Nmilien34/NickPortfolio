@@ -455,6 +455,19 @@ export const fullTimelineData: TimelineItemData[] = [
       </>
     ),
     position: 'left',
+    photoSections: [
+      {
+        caption: 'Lawnstack People',
+        photos: [
+          '/images/Lawnstack /lawnstackPeople/_VDB0699 2.JPG',
+          '/images/Lawnstack /lawnstackPeople/IMG_5452.HEIC',
+          '/images/Lawnstack /lawnstackPeople/IMG_5468.heic',
+          '/images/Lawnstack /lawnstackPeople/IMG_5477.HEIC',
+          '/images/Lawnstack /lawnstackPeople/IMG_5514.HEIC',
+          '/images/Lawnstack /lawnstackPeople/IMG_6130.HEIC',
+        ],
+      },
+    ],
   },
   {
     year: '2026',

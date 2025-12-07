@@ -10,6 +10,8 @@
   --normal-text: #b3b3b3;
   --highlight-dark: #292929;
   --white-smoke: #e7e7e7;
+  --background: 0 0% 7%;
+  --foreground: 0 0% 70%;
   view-transition-name: root;
 }
 
