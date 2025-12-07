@@ -50,7 +50,7 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
                       muted
                       loop
                       playsInline
-                      preload="metadata"
+                      preload="auto"
                       style={{ display: 'block', transform: 'scale(1.02)' }}
                     />
                   ) : (
@@ -205,6 +205,8 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
                       controls
                       muted
                       playsInline
+                      preload="none"
+                      loading="lazy"
                     />
                   ) : (
                     <img
