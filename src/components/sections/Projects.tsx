@@ -84,7 +84,7 @@ export function Projects() {
                     loop
                     muted
                     playsInline
-                    preload="metadata"
+                    preload="auto"
                     crossOrigin="anonymous"
                     style={{
                       objectFit: 'cover',
