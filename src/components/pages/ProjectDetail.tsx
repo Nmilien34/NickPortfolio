@@ -199,6 +199,46 @@ export function ProjectDetail() {
               </div>
             </div>
           </div>
+
+          {/* Problem Vs Solution Card */}
+          <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
+            <h2 className="font-serif text-2xl text-white mb-6">Problem Vs Solution</h2>
+            <div className="relative">
+              {/* Top Row: Second picture (left) and First picture (right) */}
+              <div className="grid grid-cols-2 gap-6 mb-6">
+                {/* Second picture on the left */}
+                <div className="rounded-lg overflow-hidden">
+                  <img
+                    src="/Projects/Lawnstack /ProblemvsSolution/1C58272F-C600-4E0B-845F-344282B2A3E2.jpeg"
+                    alt="Problem Vs Solution 2"
+                    className="w-full h-auto"
+                  />
+                </div>
+                {/* First picture on the right */}
+                <div className="rounded-lg overflow-hidden">
+                  <img
+                    src="/Projects/Lawnstack /ProblemvsSolution/C75678B5-C340-44CC-A0FE-B62FAE6844C1.jpeg"
+                    alt="Problem Vs Solution 1"
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
+              {/* Third picture at the bottom */}
+              <div className="rounded-lg overflow-hidden">
+                <img
+                  src="/Projects/Lawnstack /ProblemvsSolution/4B4D9254-1E21-467C-AA45-E9DAA0FDFCC7.jpeg"
+                  alt="Problem Vs Solution 3"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* How was lawnstack different Card */}
+          <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
+            <h2 className="font-serif text-2xl text-white mb-6">How was lawnstack different?</h2>
+            {/* Content will be added here */}
+          </div>
         </div>
       </main>
       <Footer />
