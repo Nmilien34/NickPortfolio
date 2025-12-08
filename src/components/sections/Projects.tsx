@@ -2,6 +2,7 @@ export interface Project {
   title: string;
   category: string;
   description: string;
+  tagline?: string; // Tagline/subtitle for the project
   image?: string;
   mockup?: string; // Browser mockup screenshot
   coverImage?: string; // Cover image for detail page
@@ -14,8 +15,9 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: 'Lawnstack',
-    category: 'Web Platform',
-    description: 'A marketplace platform connecting homeowners with local lawn care and landscaping service providers.',
+    category: 'Home Service Platform',
+    description: '',
+    tagline: 'One membership for all your outdoor chores',
     mockup: '/Projects/Lawnstack /98EE5DD3-9A94-4F47-8D32-DD098CF123B9.jpeg',
     coverImage: '/Projects/Lawnstack /IMG_5043.PNG',
     gradientColors: undefined, // Will use CSS variables instead

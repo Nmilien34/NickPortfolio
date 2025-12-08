@@ -73,9 +73,16 @@ export function ProjectDetail() {
                   <p className="text-normal-text font-mono text-base mb-2">
                     {project.category}
                   </p>
-                  <p className="text-white/80 font-mono text-sm max-w-2xl">
-                    {project.description}
-                  </p>
+                  {project.tagline && (
+                    <p className="text-white/90 font-mono text-sm mb-2">
+                      {project.tagline}
+                    </p>
+                  )}
+                  {project.description && (
+                    <p className="text-white/80 font-mono text-sm max-w-2xl">
+                      {project.description}
+                    </p>
+                  )}
                 </div>
               </div>
               {project.link && (
