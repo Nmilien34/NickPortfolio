@@ -146,7 +146,7 @@ export function ProjectDetail() {
                       <div className="w-3 h-3 rounded-full bg-green-500"></div>
                     </div>
                     <div className="flex-1 bg-gray-700 rounded px-4 py-1 text-xs text-gray-300 text-center font-mono">
-                      {project.browserUrl || 'example.com'}
+                      {project.title === 'Lawnstack' ? 'lawnstack.com' : (project.browserUrl || 'example.com')}
                     </div>
                   </div>
                   <div className="bg-white rounded-b-lg overflow-hidden shadow-2xl">
@@ -161,39 +161,43 @@ export function ProjectDetail() {
             </div>
           )}
 
-          {/* Project Details Card */}
-          <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div>
-                <p className="text-white/60 font-mono text-xs mb-2">Role</p>
-                <p className="text-white font-mono text-sm">Product Designer</p>
-              </div>
-              <div>
-                <p className="text-white/60 font-mono text-xs mb-2">Team</p>
-                <p className="text-white font-mono text-sm">1 Designer</p>
-              </div>
-              <div>
-                <p className="text-white/60 font-mono text-xs mb-2">Tools</p>
-                <p className="text-white font-mono text-sm">Figma, React</p>
-              </div>
-              <div>
-                <p className="text-white/60 font-mono text-xs mb-2">Timeline</p>
-                <p className="text-white font-mono text-sm">2024</p>
+          {/* Summary and Role Cards - Side by Side */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            {/* Summary Card - First */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
+              <h2 className="font-serif text-xl text-white mb-4">Summary</h2>
+              <p className="text-normal-text font-mono text-sm leading-relaxed">
+                {project.description}
+              </p>
+              {project.underConstruction && (
+                <div className="mt-4 px-4 py-2 bg-yellow-500/20 border border-yellow-500/30 rounded-lg">
+                  <p className="text-yellow-400 font-mono text-xs">🚧 This project is currently under construction</p>
+                </div>
+              )}
+            </div>
+
+            {/* Role Card - Second */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
+              <h2 className="font-serif text-xl text-white mb-4">Role</h2>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <p className="text-white/60 font-mono text-xs mb-1">Role</p>
+                  <p className="text-white font-mono text-sm">Product Designer</p>
+                </div>
+                <div>
+                  <p className="text-white/60 font-mono text-xs mb-1">Team</p>
+                  <p className="text-white font-mono text-sm">1 Designer</p>
+                </div>
+                <div>
+                  <p className="text-white/60 font-mono text-xs mb-1">Tools</p>
+                  <p className="text-white font-mono text-sm">Figma, React</p>
+                </div>
+                <div>
+                  <p className="text-white/60 font-mono text-xs mb-1">Timeline</p>
+                  <p className="text-white font-mono text-sm">2024</p>
+                </div>
               </div>
             </div>
-          </div>
-
-          {/* Summary Card */}
-          <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8">
-            <h2 className="font-serif text-2xl text-white mb-4">Summary</h2>
-            <p className="text-normal-text font-mono text-base leading-relaxed">
-              {project.description}
-            </p>
-            {project.underConstruction && (
-              <div className="mt-4 px-4 py-2 bg-yellow-500/20 border border-yellow-500/30 rounded-lg">
-                <p className="text-yellow-400 font-mono text-sm">🚧 This project is currently under construction</p>
-              </div>
-            )}
           </div>
         </div>
       </main>
