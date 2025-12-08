@@ -40,12 +40,11 @@ export async function sendAudioToElevenLabs(req: Request, res: Response) {
       // If we have a conversation ID, send message to existing conversation
       endpoint = `https://api.elevenlabs.io/v1/convai/conversation/${conversationId}/user_message`;
     } else if (agentId) {
-      // If we have agent ID, we need to create/start a conversation
-      // First, try to create a conversation, then send the message
-      // The endpoint format might be: POST /v1/convai/conversation with agent_id in body
+      // For agent ID, we need to use the conversation creation endpoint with the message
+      // Based on ElevenLabs API: POST /v1/convai/conversation with agent_id and audio
       endpoint = `https://api.elevenlabs.io/v1/convai/conversation`;
       
-      // Create a new form data with agent_id
+      // Create a new form data with agent_id and audio
       const conversationFormData = new FormData();
       conversationFormData.append('agent_id', agentId);
       conversationFormData.append('audio', req.file.buffer, {
@@ -53,11 +52,21 @@ export async function sendAudioToElevenLabs(req: Request, res: Response) {
         contentType: req.file.mimetype || 'audio/webm',
       });
       requestBody = conversationFormData;
+      
+      // Alternative: Try endpoint with agent_id as query parameter
+      // endpoint = `https://api.elevenlabs.io/v1/convai/conversation?agent_id=${agentId}`;
     } else {
       return res.status(500).json({ error: 'Either agent ID or conversation ID must be configured' });
     }
 
-    console.log('Calling ElevenLabs endpoint:', endpoint, 'with agentId:', agentId, 'conversationId:', conversationId);
+    console.log('Calling ElevenLabs endpoint:', endpoint);
+    console.log('Request details:', {
+      agentId,
+      conversationId,
+      hasAudio: !!req.file,
+      audioSize: req.file?.size,
+      formDataKeys: requestBody instanceof FormData ? 'FormData object' : 'Not FormData'
+    });
 
     // Forward the request to ElevenLabs
     const response = await fetch(endpoint, {
