@@ -4,9 +4,10 @@ import fetch from 'node-fetch';
 
 export async function sendAudioToElevenLabs(req: Request, res: Response) {
   try {
-    const apiKey = process.env.ELEVENLABS_API_KEY;
-    const agentId = process.env.ELEVENLABS_AGENT_ID;
-    const conversationId = process.env.ELEVENLABS_CONVERSATION_ID;
+    // Check for both naming conventions (with/without underscore, with/without VITE_ prefix)
+    const apiKey = process.env.ELEVENLABS_API_KEY || process.env.ELEVEN_LABS_API_KEY || process.env.VITE_ELEVENLABS_API_KEY;
+    const agentId = process.env.ELEVENLABS_AGENT_ID || process.env.VITE_ELEVENLABS_AGENT_ID;
+    const conversationId = process.env.ELEVENLABS_CONVERSATION_ID || process.env.VITE_ELEVENLABS_CONVERSATION_ID;
 
     if (!apiKey) {
       return res.status(500).json({ error: 'ElevenLabs API key not configured' });
