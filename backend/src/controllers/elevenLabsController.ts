@@ -165,39 +165,17 @@ export async function sendAudioToElevenLabs(req: Request, res: Response) {
       }
       
       if (!createdConversationId) {
-        // ElevenLabs Conversational AI uses WebRTC for real-time communication
-        // The token endpoint: GET /v1/convai/conversation/token returns a WebRTC token
-        // This means the API is designed for real-time WebRTC connections, not REST file uploads
-        // 
-        // However, let's try getting a token first to see if it helps, then try REST endpoints
-        console.log('ElevenLabs API appears to be WebRTC-based. Trying to get token and then REST fallback...');
+        // ElevenLabs Conversational AI uses WebSocket/WebRTC for real-time communication
+        // REST endpoints do not exist for sending audio - must use WebSocket on frontend
+        console.log('ElevenLabs API requires WebSocket for audio. REST endpoints not available.');
         
-        let webrtcToken = null;
-        try {
-          const tokenResponse = await fetch(`https://api.elevenlabs.io/v1/convai/conversation/token?agent_id=${agentId}`, {
-            method: 'GET',
-            headers: {
-              'xi-api-key': apiKey,
-            },
-          });
-          
-          if (tokenResponse.ok) {
-            const tokenData = await tokenResponse.json() as any;
-            webrtcToken = tokenData.token;
-            console.log('Got WebRTC token (for frontend WebRTC connection)');
-            
-            // Note: WebRTC tokens are for browser-based real-time connections
-            // They cannot be used from Node.js backend to send audio files
-          } else {
-            const errorText = await tokenResponse.text();
-            console.log('Token endpoint failed:', tokenResponse.status, errorText);
-          }
-        } catch (err) {
-          console.log('Error getting token:', err);
-        }
-        
-        // Try REST endpoints as fallback (though they likely don't exist for sending audio)
-        console.log('Trying REST endpoints for sending audio (may not be supported)...');
+        // Return error explaining that WebSocket must be used on frontend
+        return res.status(400).json({
+          error: 'ElevenLabs Conversational AI requires WebSocket connection',
+          message: 'Audio must be sent via WebSocket on the frontend, not REST API from backend.',
+          solution: 'Use the /api/elevenlabs/agent-id endpoint to get the agent ID, then connect to wss://api.elevenlabs.io/v1/convai/conversation?agent_id={agent_id} from the frontend.',
+          note: 'Pre-recorded audio files cannot be sent via REST. Use real-time WebSocket connection.'
+        });
         
         const agentFormData = new FormData();
         agentFormData.append('agent_id', agentId);
