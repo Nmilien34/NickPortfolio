@@ -99,17 +99,65 @@ export async function sendAudioToElevenLabs(req: Request, res: Response) {
       }
       
       if (!createdConversationId) {
-        return res.status(500).json({
-          error: 'Could not create conversation with agent',
-          details: 'Tried multiple endpoint formats, all failed. Please check ElevenLabs API documentation for the correct endpoint format.',
-          lastError: lastError
+        // If we can't create a conversation, try sending audio directly with agent_id
+        // Maybe conversations are auto-created when you send the first message
+        console.log('Could not create conversation via REST. Trying to send audio directly with agent_id...');
+        
+        const agentFormData = new FormData();
+        agentFormData.append('agent_id', agentId);
+        agentFormData.append('audio', req.file.buffer, {
+          filename: req.file.originalname || 'audio.webm',
+          contentType: req.file.mimetype || 'audio/webm',
         });
+        
+        // Try sending directly - maybe conversation is auto-created
+        const directEndpoints = [
+          `https://api.elevenlabs.io/v1/convai/agents/${agentId}/message`,
+          `https://api.elevenlabs.io/v1/convai/conversations?agent_id=${agentId}`,
+          `https://api.elevenlabs.io/v1/convai/message?agent_id=${agentId}`,
+        ];
+        
+        let directSuccess = false;
+        for (const directEndpoint of directEndpoints) {
+          try {
+            console.log('Trying direct send to:', directEndpoint);
+            const directResponse = await fetch(directEndpoint, {
+              method: 'POST',
+              headers: {
+                'xi-api-key': apiKey,
+                ...agentFormData.getHeaders(),
+              },
+              body: agentFormData,
+            });
+            
+            if (directResponse.ok) {
+              endpoint = directEndpoint;
+              requestBody = agentFormData;
+              directSuccess = true;
+              console.log('Direct send worked at:', directEndpoint);
+              break;
+            } else {
+              const errorText = await directResponse.text();
+              console.log('Direct send failed at', directEndpoint, ':', directResponse.status, errorText);
+            }
+          } catch (err) {
+            console.log('Error trying direct send to', directEndpoint, ':', err);
+          }
+        }
+        
+        if (!directSuccess) {
+          return res.status(500).json({
+            error: 'Could not create conversation or send message directly',
+            details: 'Please check ElevenLabs API documentation for the correct endpoint to send audio with an agent_id. The API might require WebRTC instead of REST.',
+            suggestion: 'Look for "POST" endpoints that accept agent_id and audio file'
+          });
+        }
+      } else {
+        // Step 2: Send audio to the created conversation
+        // Use plural form to match API pattern: /v1/convai/conversations/:id
+        endpoint = `https://api.elevenlabs.io/v1/convai/conversations/${createdConversationId}/user_message`;
+        finalConversationId = createdConversationId;
       }
-      
-      // Step 2: Send audio to the created conversation
-      // Use plural form to match API pattern: /v1/convai/conversations/:id
-      endpoint = `https://api.elevenlabs.io/v1/convai/conversations/${createdConversationId}/user_message`;
-      finalConversationId = createdConversationId;
     } else {
       return res.status(500).json({ error: 'Either agent ID or conversation ID must be configured' });
     }
