@@ -176,132 +176,13 @@ export async function sendAudioToElevenLabs(req: Request, res: Response) {
           solution: 'Use the /api/elevenlabs/agent-id endpoint to get the agent ID, then connect to wss://api.elevenlabs.io/v1/convai/conversation?agent_id={agent_id} from the frontend.',
           note: 'Pre-recorded audio files cannot be sent via REST. Use real-time WebSocket connection.'
         });
-        
-        const agentFormData = new FormData();
-        agentFormData.append('agent_id', agentId);
-        agentFormData.append('audio', req.file.buffer, {
-          filename: req.file.originalname || 'audio.webm',
-          contentType: req.file.mimetype || 'audio/webm',
-        });
-        
-        // Try sending directly - maybe conversation is auto-created when sending first message
-        // Try various endpoint patterns that might accept audio with agent_id
-        // Based on common REST API patterns and the fact that conversations exist
-        const directEndpoints = [
-          // Try sending to conversations endpoint - maybe it auto-creates
-          `https://api.elevenlabs.io/v1/convai/conversations?agent_id=${agentId}`,
-          // Try agent-specific message endpoints
-          `https://api.elevenlabs.io/v1/convai/agents/${agentId}/user-message`,
-          `https://api.elevenlabs.io/v1/convai/agents/${agentId}/message`,
-          `https://api.elevenlabs.io/v1/convai/agents/${agentId}/send-message`,
-          `https://api.elevenlabs.io/v1/convai/agents/${agentId}/post-message`,
-          `https://api.elevenlabs.io/v1/convai/agents/${agentId}/audio`,
-          // Try global message endpoints
-          `https://api.elevenlabs.io/v1/convai/user-message?agent_id=${agentId}`,
-          `https://api.elevenlabs.io/v1/convai/send-message?agent_id=${agentId}`,
-          `https://api.elevenlabs.io/v1/convai/message?agent_id=${agentId}`,
-          `https://api.elevenlabs.io/v1/convai/post-message?agent_id=${agentId}`,
-          // Try start/initiate patterns
-          `https://api.elevenlabs.io/v1/convai/agents/${agentId}/start`,
-          `https://api.elevenlabs.io/v1/convai/agents/${agentId}/initiate`,
-        ];
-        
-        let directSuccess = false;
-        for (const directEndpoint of directEndpoints) {
-          try {
-            console.log('Trying direct send to:', directEndpoint);
-            const directResponse = await fetch(directEndpoint, {
-              method: 'POST',
-              headers: {
-                'xi-api-key': apiKey,
-                ...agentFormData.getHeaders(),
-              },
-              body: agentFormData,
-            });
-            
-            if (directResponse.ok) {
-              endpoint = directEndpoint;
-              requestBody = agentFormData;
-              directSuccess = true;
-              console.log('Direct send worked at:', directEndpoint);
-              break;
-            } else {
-              const errorText = await directResponse.text();
-              console.log('Direct send failed at', directEndpoint, ':', directResponse.status, errorText);
-            }
-          } catch (err) {
-            console.log('Error trying direct send to', directEndpoint, ':', err);
-          }
-        }
-        
-        if (!directSuccess) {
-          // ElevenLabs Conversational AI is WebRTC-based, not REST-based
-          // Return the WebRTC token so frontend can establish WebRTC connection
-          if (webrtcToken) {
-            return res.status(200).json({
-              token: webrtcToken,
-              message: 'WebRTC token retrieved. Use this token to establish a WebRTC connection on the frontend.',
-              note: 'ElevenLabs Conversational AI requires WebRTC for real-time audio communication. Pre-recorded audio files cannot be sent via REST API.'
-            });
-          }
-          
-          return res.status(500).json({
-            error: 'ElevenLabs Conversational AI requires WebRTC for audio communication',
-            details: 'The API does not support sending pre-recorded audio files via REST. You must use WebRTC on the frontend.',
-            suggestion: 'Get a WebRTC token and establish a WebRTC connection in the browser using the ElevenLabs SDK or WebRTC APIs.'
-          });
-        }
-      } else {
-        // Step 2: Send audio to the created conversation
-        // Based on feedback endpoint pattern: /v1/convai/conversations/:conversation_id/feedback
-        // So user message might be: /v1/convai/conversations/:conversation_id/user-message
-        // Try multiple patterns
-        const messageEndpoints = [
-          `https://api.elevenlabs.io/v1/convai/conversations/${createdConversationId}/user-message`,  // Most likely (hyphenated)
-          `https://api.elevenlabs.io/v1/convai/conversations/${createdConversationId}/user_message`,  // Underscore variant
-          `https://api.elevenlabs.io/v1/convai/conversations/${createdConversationId}/message`,  // Simple message
-          `https://api.elevenlabs.io/v1/convai/conversations/${createdConversationId}/send-message`,  // Send message
-        ];
-        
-        // Try each message endpoint until one works
-        let messageSent = false;
-        for (const msgEndpoint of messageEndpoints) {
-          try {
-            const testResponse = await fetch(msgEndpoint, {
-              method: 'POST',
-              headers: {
-                'xi-api-key': apiKey,
-                ...formData.getHeaders(),
-              },
-              body: formData,
-            });
-            
-            if (testResponse.ok) {
-              endpoint = msgEndpoint;
-              requestBody = formData;
-              finalConversationId = createdConversationId;
-              messageSent = true;
-              console.log('Found working message endpoint:', msgEndpoint);
-              break;
-            } else {
-              const errorText = await testResponse.text();
-              console.log(`Message endpoint ${msgEndpoint} failed:`, testResponse.status, errorText);
-            }
-          } catch (err) {
-            console.log(`Error testing message endpoint ${msgEndpoint}:`, err);
-          }
-        }
-        
-        if (!messageSent) {
-          // Fallback to most common pattern
-          endpoint = `https://api.elevenlabs.io/v1/convai/conversations/${createdConversationId}/user-message`;
-          finalConversationId = createdConversationId;
-        }
       }
     } else {
       return res.status(500).json({ error: 'Either agent ID or conversation ID must be configured' });
     }
 
+    // This code should never be reached if we're using WebSocket
+    // But keeping it for backwards compatibility in case conversation ID is provided
     console.log('Calling ElevenLabs endpoint:', endpoint, 'with conversationId:', finalConversationId);
 
     // Forward the request to ElevenLabs
