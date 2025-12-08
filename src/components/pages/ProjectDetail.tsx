@@ -167,7 +167,7 @@ export function ProjectDetail() {
             <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
               <h2 className="font-serif text-xl text-white mb-4">Summary</h2>
               <p className="text-normal-text font-mono text-sm leading-relaxed">
-                {project.description}
+                {project.summary || project.description}
               </p>
               {project.underConstruction && (
                 <div className="mt-4 px-4 py-2 bg-yellow-500/20 border border-yellow-500/30 rounded-lg">
