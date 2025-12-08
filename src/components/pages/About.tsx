@@ -177,6 +177,19 @@ export function About() {
                             <p className="text-white/60 text-xs text-center">Alchemist Accelerator</p>
                           </a>
                           <a 
+                            href="https://joinodf.com/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex flex-col items-center hover:opacity-80 transition-opacity"
+                          >
+                            <img 
+                              src="/images/aboutMe/on-deck-ca-squareLogo-1626898105995.png" 
+                              alt="ODF Logo" 
+                              className="w-14 h-14 rounded-2xl mb-1"
+                            />
+                            <p className="text-white/60 text-xs text-center">ODF</p>
+                          </a>
+                          <a 
                             href="https://buildspace.so/" 
                             target="_blank" 
                             rel="noopener noreferrer"
