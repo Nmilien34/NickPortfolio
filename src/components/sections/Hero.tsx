@@ -26,12 +26,10 @@ export function Hero() {
   };
 
   const { 
-    isRecording, 
     isProcessing, 
     isConnecting,
     isConnected,
     isSpeaking,
-    connectionState,
     error, 
     toggleRecording 
   } = useElevenLabs(elevenLabsConfig);
