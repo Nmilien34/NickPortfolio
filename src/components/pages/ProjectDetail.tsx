@@ -176,25 +176,25 @@ export function ProjectDetail() {
               )}
             </div>
 
-            {/* Role Card - Second */}
+            {/* Profile Card - Second */}
             <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
-              <h2 className="font-serif text-xl text-white mb-4">Role</h2>
+              <h2 className="font-serif text-xl text-white mb-4">Profile</h2>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <p className="text-white/60 font-mono text-xs mb-1">Role</p>
-                  <p className="text-white font-mono text-sm">Product Designer</p>
+                  <p className="text-white font-mono text-sm">Chief Executive Officer & Product Manager</p>
                 </div>
                 <div>
                   <p className="text-white/60 font-mono text-xs mb-1">Team</p>
-                  <p className="text-white font-mono text-sm">1 Designer</p>
-                </div>
-                <div>
-                  <p className="text-white/60 font-mono text-xs mb-1">Tools</p>
-                  <p className="text-white font-mono text-sm">Figma, React</p>
+                  <p className="text-white font-mono text-sm">8 people</p>
                 </div>
                 <div>
                   <p className="text-white/60 font-mono text-xs mb-1">Timeline</p>
-                  <p className="text-white font-mono text-sm">2024</p>
+                  <p className="text-white font-mono text-sm">6-8months, from 0 to Revenue generating</p>
+                </div>
+                <div>
+                  <p className="text-white/60 font-mono text-xs mb-1">Fundraising</p>
+                  <p className="text-white font-mono text-sm">$150,000</p>
                 </div>
               </div>
             </div>
