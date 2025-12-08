@@ -81,13 +81,8 @@ export function useElevenLabs(config?: ElevenLabsConfig) {
     }
   };
 
-  // Get agent ID from backend or config
-  const getAgentId = async (): Promise<string> => {
-    if (config?.agentId) {
-      return config.agentId;
-    }
-    
-    // Try to get from backend
+  // Get WebSocket URL from backend (signed URL if needed, or direct URL)
+  const getWebSocketUrl = async (): Promise<string> => {
     let backendUrl = config?.backendUrl;
     if (!backendUrl) {
       if (import.meta.env.PROD) {
@@ -97,17 +92,40 @@ export function useElevenLabs(config?: ElevenLabsConfig) {
       }
     }
     
+    // First try to get signed URL (for private agents)
     try {
-      const response = await fetch(`${backendUrl}/api/elevenlabs/agent-id`);
-      if (response.ok) {
-        const data = await response.json();
-        return data.agentId;
+      const signedUrlResponse = await fetch(`${backendUrl}/api/elevenlabs/signed-url`);
+      if (signedUrlResponse.ok) {
+        const data = await signedUrlResponse.json();
+        if (data.signedUrl) {
+          console.log('Using signed URL for WebSocket');
+          return data.signedUrl;
+        }
       }
     } catch (err) {
-      console.error('Error getting agent ID:', err);
+      console.warn('Could not get signed URL, trying direct connection:', err);
     }
     
-    throw new Error('Agent ID not configured');
+    // Fallback: get agent ID and construct direct URL
+    let agentId = config?.agentId;
+    if (!agentId) {
+      try {
+        const agentIdResponse = await fetch(`${backendUrl}/api/elevenlabs/agent-id`);
+        if (agentIdResponse.ok) {
+          const data = await agentIdResponse.json();
+          agentId = data.agentId;
+        }
+      } catch (err) {
+        console.error('Error getting agent ID:', err);
+      }
+    }
+    
+    if (!agentId) {
+      throw new Error('Agent ID not configured');
+    }
+    
+    // Direct WebSocket URL (for public agents)
+    return `wss://api.elevenlabs.io/v1/convai/conversation?agent_id=${agentId}`;
   };
 
   const processAudio = async (audioBlob: Blob) => {
@@ -116,12 +134,10 @@ export function useElevenLabs(config?: ElevenLabsConfig) {
 
     try {
       // ElevenLabs uses WebSocket for audio communication
-      // Connect to: wss://api.elevenlabs.io/v1/convai/conversation?agent_id={agent_id}
+      // Get signed URL (for private agents) or direct URL (for public agents)
+      const wsUrl = await getWebSocketUrl();
       
-      const agentId = await getAgentId();
-      const wsUrl = `wss://api.elevenlabs.io/v1/convai/conversation?agent_id=${agentId}`;
-      
-      console.log('Connecting to ElevenLabs WebSocket:', wsUrl);
+      console.log('🔌 Connecting to ElevenLabs WebSocket:', wsUrl);
 
       return new Promise<void>((resolve, reject) => {
         const ws = new WebSocket(wsUrl);

@@ -43,6 +43,47 @@ router.get('/agent-id', async (req, res) => {
   }
 });
 
+// Route to get signed URL for WebSocket (if agent requires authorization)
+router.get('/signed-url', async (req, res) => {
+  try {
+    const apiKey = process.env.ELEVENLABS_API_KEY || process.env.ELEVEN_LABS_API_KEY || process.env.VITE_ELEVENLABS_API_KEY;
+    const agentId = process.env.ELEVENLABS_AGENT_ID || process.env.VITE_ELEVENLABS_AGENT_ID;
+
+    if (!apiKey) {
+      return res.status(500).json({ error: 'ElevenLabs API key not configured' });
+    }
+
+    if (!agentId) {
+      return res.status(500).json({ error: 'ElevenLabs agent ID not configured' });
+    }
+
+    // Get signed URL for WebSocket connection
+    const signedUrlResponse = await fetch(`https://api.elevenlabs.io/v1/convai/conversation/get-signed-url?agent_id=${agentId}`, {
+      method: 'GET',
+      headers: {
+        'xi-api-key': apiKey,
+      },
+    });
+
+    if (!signedUrlResponse.ok) {
+      const errorText = await signedUrlResponse.text();
+      return res.status(signedUrlResponse.status).json({ 
+        error: 'Failed to get signed URL',
+        details: errorText
+      });
+    }
+
+    const signedUrlData = await signedUrlResponse.json() as { signed_url: string };
+    return res.json({ signedUrl: signedUrlData.signed_url });
+  } catch (error) {
+    console.error('Error getting signed URL:', error);
+    return res.status(500).json({ 
+      error: 'Failed to get signed URL',
+      details: error instanceof Error ? error.message : 'Unknown error'
+    });
+  }
+});
+
 // New route to get WebRTC token (if needed for other purposes)
 router.get('/token', async (req, res) => {
   try {
