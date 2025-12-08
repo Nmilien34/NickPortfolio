@@ -89,8 +89,8 @@ export function useElevenLabs(config?: ElevenLabsConfig) {
       // Backend endpoint - use provided URL or detect based on environment
       let backendUrl = config?.backendUrl;
       if (!backendUrl) {
-        // Fallback: detect production
-        if (window.location.hostname === 'www.nickmilien.com' || window.location.hostname === 'nickmilien.com') {
+        // Fallback: detect production using Vite's env
+        if (import.meta.env.PROD) {
           backendUrl = 'https://nickportfolio.onrender.com';
         } else {
           backendUrl = 'http://localhost:5000';
@@ -98,7 +98,7 @@ export function useElevenLabs(config?: ElevenLabsConfig) {
       }
       const endpoint = `${backendUrl}/api/elevenlabs/audio`;
       
-      console.log('Sending audio to:', endpoint); // Debug log
+      console.log('Sending audio to:', endpoint, 'PROD:', import.meta.env.PROD); // Debug log
 
       const response = await fetch(endpoint, {
         method: 'POST',

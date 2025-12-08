@@ -11,12 +11,17 @@ export function Hero() {
   // ElevenLabs Configuration - Backend handles the API keys
   // Automatically detect backend URL based on environment
   const getBackendUrl = () => {
-    // If explicitly set in env, use it
+    // Priority 1: Explicitly set in env (most reliable)
     if (import.meta.env.VITE_BACKEND_URL) {
       return import.meta.env.VITE_BACKEND_URL;
     }
     
-    // If in production, use production backend URL
+    // Priority 2: Use Vite's production mode detection
+    if (import.meta.env.PROD) {
+      return 'https://nickportfolio.onrender.com';
+    }
+    
+    // Priority 3: Check hostname as fallback
     const hostname = window.location.hostname;
     if (hostname === 'www.nickmilien.com' || hostname === 'nickmilien.com') {
       return 'https://nickportfolio.onrender.com';
@@ -27,7 +32,7 @@ export function Hero() {
   };
 
   const backendUrl = getBackendUrl();
-  console.log('Backend URL:', backendUrl); // Debug log
+  console.log('Backend URL:', backendUrl, 'PROD:', import.meta.env.PROD); // Debug log
   
   const elevenLabsConfig = {
     backendUrl: backendUrl,
