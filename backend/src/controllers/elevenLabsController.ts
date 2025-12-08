@@ -66,7 +66,7 @@ export async function sendAudioToElevenLabs(req: Request, res: Response) {
         });
       }
 
-      const conversationData = await createConversationResponse.json();
+      const conversationData = await createConversationResponse.json() as any;
       finalConversationId = conversationData.conversation_id || conversationData.id || conversationData.conversationId;
       console.log('Created conversation:', finalConversationId);
 
