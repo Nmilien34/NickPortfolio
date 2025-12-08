@@ -67,9 +67,24 @@ export function ProjectDetail() {
                   </div>
                 )}
                 <div>
-                  <h1 className="font-serif text-4xl md:text-5xl text-white mb-2">
-                    {project.title}
-                  </h1>
+                  <div className="flex items-center gap-3 mb-2">
+                    <h1 className="font-serif text-4xl md:text-5xl text-white">
+                      {project.title}
+                    </h1>
+                    {project.title === 'Lawnstack' && (
+                      <a
+                        href="https://www.lawnstack.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 px-3 py-1 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 text-white font-mono text-xs transition-all"
+                      >
+                        Live Website
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    )}
+                  </div>
                   <p className="text-normal-text font-mono text-base mb-2">
                     {project.category}
                   </p>
