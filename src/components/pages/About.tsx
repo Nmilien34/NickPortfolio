@@ -162,7 +162,7 @@ export function About() {
                     <div className="border-b border-white/10 pb-2">
                       <p className="text-white font-semibold mb-2">Accelerator</p>
                       <div className="flex flex-col gap-3">
-                        <div className="flex items-start gap-2">
+                        <div className="flex items-start justify-between">
                           <a 
                             href="https://www.alchemistaccelerator.com/" 
                             target="_blank" 
