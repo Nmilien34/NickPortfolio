@@ -174,7 +174,7 @@ export function About() {
                               alt="Alchemist Accelerator Logo" 
                               className="w-14 h-14 rounded-2xl mb-1"
                             />
-                            <p className="text-white/60 text-xs text-center">Alchemist Accelerator</p>
+                            <p className="text-white/60 text-xs text-center">Alchemist</p>
                           </a>
                           <a 
                             href="https://joinodf.com/" 
