@@ -9,30 +9,17 @@ export function Hero() {
   const navigate = useNavigate();
 
   // ElevenLabs Configuration - Backend handles the API keys
-  // Automatically detect backend URL based on environment
-  const getBackendUrl = () => {
-    // Priority 1: Explicitly set in env (most reliable)
-    if (import.meta.env.VITE_BACKEND_URL) {
-      return import.meta.env.VITE_BACKEND_URL;
-    }
-    
-    // Priority 2: Use Vite's production mode detection
-    if (import.meta.env.PROD) {
-      return 'https://nickportfolio.onrender.com';
-    }
-    
-    // Priority 3: Check hostname as fallback
-    const hostname = window.location.hostname;
-    if (hostname === 'www.nickmilien.com' || hostname === 'nickmilien.com') {
-      return 'https://nickportfolio.onrender.com';
-    }
-    
-    // Default to localhost for development
-    return 'http://localhost:5000';
-  };
-
-  const backendUrl = getBackendUrl();
-  console.log('Backend URL:', backendUrl, 'PROD:', import.meta.env.PROD); // Debug log
+  // In production, always use Render backend URL
+  const backendUrl = import.meta.env.VITE_BACKEND_URL || 
+    (import.meta.env.PROD ? 'https://nickportfolio.onrender.com' : 'http://localhost:5000');
+  
+  console.log('🔧 Backend Config:', {
+    url: backendUrl,
+    envUrl: import.meta.env.VITE_BACKEND_URL,
+    isProd: import.meta.env.PROD,
+    mode: import.meta.env.MODE,
+    hostname: typeof window !== 'undefined' ? window.location.hostname : 'SSR',
+  });
   
   const elevenLabsConfig = {
     backendUrl: backendUrl,
