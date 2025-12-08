@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 
 interface ElevenLabsConfig {
   backendUrl?: string; // Backend API URL
+  agentId?: string; // Agent ID for WebSocket connection
 }
 
 export function useElevenLabs(config?: ElevenLabsConfig) {
@@ -13,6 +14,9 @@ export function useElevenLabs(config?: ElevenLabsConfig) {
   const audioChunksRef = useRef<Blob[]>([]);
   const audioElementRef = useRef<HTMLAudioElement | null>(null);
   const streamRef = useRef<MediaStream | null>(null);
+  const websocketRef = useRef<WebSocket | null>(null);
+  const audioContextRef = useRef<AudioContext | null>(null);
+  const audioQueueRef = useRef<Blob[]>([]);
 
   // Initialize audio element for playback
   useEffect(() => {
@@ -77,55 +81,112 @@ export function useElevenLabs(config?: ElevenLabsConfig) {
     }
   };
 
+  // Get agent ID from backend or config
+  const getAgentId = async (): Promise<string> => {
+    if (config?.agentId) {
+      return config.agentId;
+    }
+    
+    // Try to get from backend
+    let backendUrl = config?.backendUrl;
+    if (!backendUrl) {
+      if (import.meta.env.PROD) {
+        backendUrl = 'https://nickportfolio.onrender.com';
+      } else {
+        backendUrl = 'http://localhost:5000';
+      }
+    }
+    
+    try {
+      const response = await fetch(`${backendUrl}/api/elevenlabs/agent-id`);
+      if (response.ok) {
+        const data = await response.json();
+        return data.agentId;
+      }
+    } catch (err) {
+      console.error('Error getting agent ID:', err);
+    }
+    
+    throw new Error('Agent ID not configured');
+  };
+
   const processAudio = async (audioBlob: Blob) => {
     setIsProcessing(true);
     setError(null);
 
     try {
-      // Create form data to send to backend
-      const formData = new FormData();
-      formData.append('audio', audioBlob, 'audio.webm');
-
-      // Backend endpoint - use provided URL or detect based on environment
-      let backendUrl = config?.backendUrl;
-      if (!backendUrl) {
-        // Fallback: detect production using Vite's env
-        if (import.meta.env.PROD) {
-          backendUrl = 'https://nickportfolio.onrender.com';
-        } else {
-          backendUrl = 'http://localhost:5000';
-        }
-      }
-      const endpoint = `${backendUrl}/api/elevenlabs/audio`;
+      // ElevenLabs uses WebSocket for audio communication
+      // Connect to: wss://api.elevenlabs.io/v1/convai/conversation?agent_id={agent_id}
       
-      console.log('Sending audio to:', endpoint, 'PROD:', import.meta.env.PROD); // Debug log
-
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        body: formData,
-        // Don't set Content-Type header - browser will set it with boundary for FormData
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
-        throw new Error(`Backend error: ${response.status} - ${errorData.error || 'Unknown error'}`);
-      }
-
-      // Get the audio response from backend
-      const audioBlobResponse = await response.blob();
-      const audioUrl = URL.createObjectURL(audioBlobResponse);
+      const agentId = await getAgentId();
+      const wsUrl = `wss://api.elevenlabs.io/v1/convai/conversation?agent_id=${agentId}`;
       
-      if (audioElementRef.current) {
-        audioElementRef.current.src = audioUrl;
-        await audioElementRef.current.play();
-        
-        // Clean up URL after playback
-        audioElementRef.current.onended = () => {
-          URL.revokeObjectURL(audioUrl);
+      console.log('Connecting to ElevenLabs WebSocket:', wsUrl);
+
+      return new Promise<void>((resolve, reject) => {
+        const ws = new WebSocket(wsUrl);
+        websocketRef.current = ws;
+
+        ws.onopen = () => {
+          console.log('WebSocket connected');
+          
+          // Send audio blob as binary data
+          // Convert blob to ArrayBuffer and send
+          audioBlob.arrayBuffer().then(buffer => {
+            ws.send(buffer);
+            // Close after sending
+            setTimeout(() => {
+              ws.close();
+              resolve();
+            }, 1000);
+          });
         };
-      }
 
-      setIsProcessing(false);
+        ws.onmessage = (event) => {
+          // Handle incoming audio response
+          if (event.data instanceof Blob) {
+            const audioUrl = URL.createObjectURL(event.data);
+            if (audioElementRef.current) {
+              audioElementRef.current.src = audioUrl;
+              audioElementRef.current.play();
+              audioElementRef.current.onended = () => {
+                URL.revokeObjectURL(audioUrl);
+                setIsProcessing(false);
+              };
+            }
+          } else if (typeof event.data === 'string') {
+            // Handle text messages (transcripts, etc.)
+            console.log('WebSocket message:', event.data);
+            try {
+              const data = JSON.parse(event.data);
+              if (data.audio) {
+                // Handle base64 audio if needed
+                const audioBlob = new Blob([Uint8Array.from(atob(data.audio), c => c.charCodeAt(0))], { type: 'audio/mpeg' });
+                const audioUrl = URL.createObjectURL(audioBlob);
+                if (audioElementRef.current) {
+                  audioElementRef.current.src = audioUrl;
+                  audioElementRef.current.play();
+                }
+              }
+            } catch (e) {
+              console.error('Error parsing WebSocket message:', e);
+            }
+          }
+        };
+
+        ws.onerror = (error) => {
+          console.error('WebSocket error:', error);
+          setError('Failed to connect to ElevenLabs');
+          setIsProcessing(false);
+          reject(error);
+        };
+
+        ws.onclose = () => {
+          console.log('WebSocket closed');
+          websocketRef.current = null;
+          setIsProcessing(false);
+        };
+      });
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to process audio');
       setIsProcessing(false);

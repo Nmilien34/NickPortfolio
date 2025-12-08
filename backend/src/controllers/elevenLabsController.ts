@@ -257,10 +257,20 @@ export async function sendAudioToElevenLabs(req: Request, res: Response) {
         }
         
         if (!directSuccess) {
+          // ElevenLabs Conversational AI is WebRTC-based, not REST-based
+          // Return the WebRTC token so frontend can establish WebRTC connection
+          if (webrtcToken) {
+            return res.status(200).json({
+              token: webrtcToken,
+              message: 'WebRTC token retrieved. Use this token to establish a WebRTC connection on the frontend.',
+              note: 'ElevenLabs Conversational AI requires WebRTC for real-time audio communication. Pre-recorded audio files cannot be sent via REST API.'
+            });
+          }
+          
           return res.status(500).json({
-            error: 'Could not create conversation or send message directly',
-            details: 'Please check ElevenLabs API documentation for the correct endpoint to send audio with an agent_id. The API might require WebRTC instead of REST.',
-            suggestion: 'Look for "POST" endpoints that accept agent_id and audio file'
+            error: 'ElevenLabs Conversational AI requires WebRTC for audio communication',
+            details: 'The API does not support sending pre-recorded audio files via REST. You must use WebRTC on the frontend.',
+            suggestion: 'Get a WebRTC token and establish a WebRTC connection in the browser using the ElevenLabs SDK or WebRTC APIs.'
           });
         }
       } else {
