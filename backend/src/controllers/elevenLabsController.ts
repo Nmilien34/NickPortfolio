@@ -47,42 +47,54 @@ export async function sendAudioToElevenLabs(req: Request, res: Response) {
       // Try creating conversation first, then sending message
       console.log('Creating conversation with agent:', agentId);
       
-      // Step 1: Try to create conversation
-      // Based on API pattern showing /v1/convai/conversations/:id, try plural form
-      const createEndpoints = [
-        `https://api.elevenlabs.io/v1/convai/conversations`, // Most likely based on the pattern you showed
-        `https://api.elevenlabs.io/v1/convai/agents/${agentId}/conversation`,
-        `https://api.elevenlabs.io/v1/convai/conversation`,
-      ];
-      
+      // Step 1: Try different methods to create/start conversation
+      // The 405 error suggests the endpoint exists but POST might need different format
       let createdConversationId = null;
       let lastError = null;
       
-      for (const createEndpoint of createEndpoints) {
+      // Try 1: POST with different body format
+      const tryCreateConversation = async (endpoint: string, body: any, method = 'POST') => {
         try {
-          console.log('Trying to create conversation at:', createEndpoint);
-          const createResponse = await fetch(createEndpoint, {
-            method: 'POST',
+          console.log(`Trying ${method} to create conversation at:`, endpoint);
+          const createResponse = await fetch(endpoint, {
+            method: method,
             headers: {
               'xi-api-key': apiKey,
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ agent_id: agentId }),
+            body: method === 'POST' ? JSON.stringify(body) : undefined,
           });
           
           if (createResponse.ok) {
             const convData = await createResponse.json() as any;
-            createdConversationId = convData.conversation_id || convData.id || convData.conversationId;
-            console.log('Successfully created conversation:', createdConversationId, 'at:', createEndpoint);
-            break;
+            return convData.conversation_id || convData.id || convData.conversationId || convData;
           } else {
             const errorText = await createResponse.text();
-            console.log('Failed at', createEndpoint, ':', createResponse.status, errorText);
-            lastError = errorText;
+            console.log(`Failed ${method} at`, endpoint, ':', createResponse.status, errorText);
+            return null;
           }
         } catch (err) {
-          console.log('Error trying', createEndpoint, ':', err);
-          lastError = err instanceof Error ? err.message : 'Unknown error';
+          console.log('Error trying', endpoint, ':', err);
+          return null;
+        }
+      };
+      
+      // Try various endpoint formats and body structures
+      const attempts = [
+        { endpoint: `https://api.elevenlabs.io/v1/convai/conversations`, body: { agent_id: agentId }, method: 'POST' },
+        { endpoint: `https://api.elevenlabs.io/v1/convai/conversations`, body: { agentId: agentId }, method: 'POST' },
+        { endpoint: `https://api.elevenlabs.io/v1/convai/conversations?agent_id=${agentId}`, body: {}, method: 'POST' },
+        { endpoint: `https://api.elevenlabs.io/v1/convai/agents/${agentId}/conversations`, body: {}, method: 'POST' },
+      ];
+      
+      for (const attempt of attempts) {
+        const result = await tryCreateConversation(attempt.endpoint, attempt.body, attempt.method);
+        if (result) {
+          createdConversationId = typeof result === 'string' ? result : (result.conversation_id || result.id);
+          if (createdConversationId) {
+            console.log('Successfully created conversation:', createdConversationId);
+            break;
+          }
         }
       }
       
