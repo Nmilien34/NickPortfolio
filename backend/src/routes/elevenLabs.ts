@@ -2,6 +2,7 @@ import { Router } from 'express';
 import multer from 'multer';
 import fetch from 'node-fetch';
 import { sendAudioToElevenLabs } from '../controllers/elevenLabsController.js';
+import { CEDRICK_PROMPT } from '../config/agentPrompt.js';
 
 const router = Router();
 
@@ -46,9 +47,8 @@ router.get('/agent-id', async (req, res) => {
 // Route to get the current agent prompt/instructions
 router.get('/agent-prompt', async (req, res) => {
   try {
-    // Get prompt from environment variable or use default
-    const prompt = process.env.ELEVENLABS_AGENT_PROMPT || 
-      'You are a helpful AI assistant for Nick Milien\'s portfolio website. Help visitors learn about Nick\'s work, experience, and projects. Be friendly, professional, and concise.';
+    // Get prompt from environment variable, config file, or use default
+    const prompt = process.env.ELEVENLABS_AGENT_PROMPT || CEDRICK_PROMPT;
     
     return res.json({ prompt });
   } catch (error) {
@@ -74,9 +74,8 @@ router.post('/update-agent-config', async (req, res) => {
       return res.status(500).json({ error: 'ElevenLabs agent ID not configured' });
     }
 
-    // Get prompt from request body or environment variable
-    const prompt = req.body.prompt || process.env.ELEVENLABS_AGENT_PROMPT || 
-      'You are a helpful AI assistant for Nick Milien\'s portfolio website. Help visitors learn about Nick\'s work, experience, and projects. Be friendly, professional, and concise.';
+    // Get prompt from request body, environment variable, or config file
+    const prompt = req.body.prompt || process.env.ELEVENLABS_AGENT_PROMPT || CEDRICK_PROMPT;
 
     // First, get the current agent configuration
     const getAgentResponse = await fetch(`https://api.elevenlabs.io/v1/convai/agents/${agentId}`, {
@@ -179,8 +178,7 @@ router.get('/signed-url', async (req, res) => {
     // Update agent config with backend prompt before getting signed URL
     // This ensures the agent uses backend-controlled prompts
     try {
-      const prompt = process.env.ELEVENLABS_AGENT_PROMPT || 
-        'You are a helpful AI assistant for Nick Milien\'s portfolio website. Help visitors learn about Nick\'s work, experience, and projects. Be friendly, professional, and concise.';
+      const prompt = process.env.ELEVENLABS_AGENT_PROMPT || CEDRICK_PROMPT;
       
       const getAgentResponse = await fetch(`https://api.elevenlabs.io/v1/convai/agents/${agentId}`, {
         method: 'GET',
