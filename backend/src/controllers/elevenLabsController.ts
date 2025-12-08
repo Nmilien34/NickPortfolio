@@ -165,9 +165,39 @@ export async function sendAudioToElevenLabs(req: Request, res: Response) {
       }
       
       if (!createdConversationId) {
-        // If we can't create a conversation, try sending audio directly with agent_id
-        // Maybe conversations are auto-created when you send the first message
-        console.log('Could not create conversation via REST. Trying to send audio directly with agent_id...');
+        // ElevenLabs Conversational AI uses WebRTC for real-time communication
+        // The token endpoint: GET /v1/convai/conversation/token returns a WebRTC token
+        // This means the API is designed for real-time WebRTC connections, not REST file uploads
+        // 
+        // However, let's try getting a token first to see if it helps, then try REST endpoints
+        console.log('ElevenLabs API appears to be WebRTC-based. Trying to get token and then REST fallback...');
+        
+        let webrtcToken = null;
+        try {
+          const tokenResponse = await fetch(`https://api.elevenlabs.io/v1/convai/conversation/token?agent_id=${agentId}`, {
+            method: 'GET',
+            headers: {
+              'xi-api-key': apiKey,
+            },
+          });
+          
+          if (tokenResponse.ok) {
+            const tokenData = await tokenResponse.json() as any;
+            webrtcToken = tokenData.token;
+            console.log('Got WebRTC token (for frontend WebRTC connection)');
+            
+            // Note: WebRTC tokens are for browser-based real-time connections
+            // They cannot be used from Node.js backend to send audio files
+          } else {
+            const errorText = await tokenResponse.text();
+            console.log('Token endpoint failed:', tokenResponse.status, errorText);
+          }
+        } catch (err) {
+          console.log('Error getting token:', err);
+        }
+        
+        // Try REST endpoints as fallback (though they likely don't exist for sending audio)
+        console.log('Trying REST endpoints for sending audio (may not be supported)...');
         
         const agentFormData = new FormData();
         agentFormData.append('agent_id', agentId);
