@@ -39,9 +39,49 @@ export async function sendAudioToElevenLabs(req: Request, res: Response) {
     // Determine endpoint based on what's configured
     if (conversationId) {
       // If we have a conversation ID, send message to existing conversation
-      // Based on API pattern: /v1/convai/conversations/:conversation_id/audio (GET)
-      // Likely pattern for POST: /v1/convai/conversations/:conversation_id/user_message
-      endpoint = `https://api.elevenlabs.io/v1/convai/conversations/${conversationId}/user_message`;
+      // Based on API pattern: 
+      // - GET /v1/convai/conversations/:conversation_id/audio (get audio)
+      // - POST /v1/convai/conversations/:conversation_id/feedback (send feedback)
+      // So user message likely follows: POST /v1/convai/conversations/:conversation_id/user-message
+      // Try multiple patterns
+      const userMessageEndpoints = [
+        `https://api.elevenlabs.io/v1/convai/conversations/${conversationId}/user-message`,  // Most likely (matches feedback pattern)
+        `https://api.elevenlabs.io/v1/convai/conversations/${conversationId}/user_message`,
+        `https://api.elevenlabs.io/v1/convai/conversations/${conversationId}/message`,
+      ];
+      
+      // Try each endpoint until one works
+      let foundEndpoint = false;
+      for (const msgEndpoint of userMessageEndpoints) {
+        try {
+          const testResponse = await fetch(msgEndpoint, {
+            method: 'POST',
+            headers: {
+              'xi-api-key': apiKey,
+              ...formData.getHeaders(),
+            },
+            body: formData,
+          });
+          
+          if (testResponse.ok || testResponse.status === 200) {
+            endpoint = msgEndpoint;
+            requestBody = formData;
+            foundEndpoint = true;
+            console.log('Found working user-message endpoint:', msgEndpoint);
+            break;
+          } else {
+            const errorText = await testResponse.text();
+            console.log(`User message endpoint ${msgEndpoint} failed:`, testResponse.status, errorText);
+          }
+        } catch (err) {
+          console.log(`Error testing user message endpoint ${msgEndpoint}:`, err);
+        }
+      }
+      
+      if (!foundEndpoint) {
+        // Default to most likely pattern
+        endpoint = `https://api.elevenlabs.io/v1/convai/conversations/${conversationId}/user-message`;
+      }
     } else if (agentId) {
       // ElevenLabs Conversational AI might use WebSockets or a different REST format
       // Try creating conversation first, then sending message
@@ -52,21 +92,37 @@ export async function sendAudioToElevenLabs(req: Request, res: Response) {
       let createdConversationId = null;
       let lastError = null;
       
-      // Try 1: POST with different body format
+      // Try different methods to create/start conversation
       const tryCreateConversation = async (endpoint: string, body: any, method = 'POST') => {
         try {
           console.log(`Trying ${method} to create conversation at:`, endpoint);
+          const headers: any = {
+            'xi-api-key': apiKey,
+          };
+          
+          if (method === 'POST' && Object.keys(body).length > 0) {
+            headers['Content-Type'] = 'application/json';
+          }
+          
           const createResponse = await fetch(endpoint, {
             method: method,
-            headers: {
-              'xi-api-key': apiKey,
-              'Content-Type': 'application/json',
-            },
-            body: method === 'POST' ? JSON.stringify(body) : undefined,
+            headers: headers,
+            body: method === 'POST' && Object.keys(body).length > 0 ? JSON.stringify(body) : undefined,
           });
           
           if (createResponse.ok) {
             const convData = await createResponse.json() as any;
+            console.log('Response data:', JSON.stringify(convData).substring(0, 200));
+            
+            // Try to extract conversation ID from various possible formats
+            if (typeof convData === 'string') {
+              return convData;
+            }
+            if (Array.isArray(convData) && convData.length > 0) {
+              // If it's an array, maybe take the first conversation
+              const first = convData[0];
+              return first.conversation_id || first.id || first.conversationId || first;
+            }
             return convData.conversation_id || convData.id || convData.conversationId || convData;
           } else {
             const errorText = await createResponse.text();
@@ -79,12 +135,22 @@ export async function sendAudioToElevenLabs(req: Request, res: Response) {
         }
       };
       
-      // Try various endpoint formats and body structures
+      // Try various endpoint formats and body structures to CREATE a conversation
+      // Based on the feedback endpoint pattern, conversations are at /v1/convai/conversations/:id
+      // So creation might be POST /v1/convai/conversations with agent_id
       const attempts = [
+        // Try GET first to see if we can list existing conversations or see structure
+        { endpoint: `https://api.elevenlabs.io/v1/convai/conversations?agent_id=${agentId}`, body: {}, method: 'GET' },
+        // Try POST with agent_id in body
         { endpoint: `https://api.elevenlabs.io/v1/convai/conversations`, body: { agent_id: agentId }, method: 'POST' },
         { endpoint: `https://api.elevenlabs.io/v1/convai/conversations`, body: { agentId: agentId }, method: 'POST' },
+        // Try POST with agent_id as query param
         { endpoint: `https://api.elevenlabs.io/v1/convai/conversations?agent_id=${agentId}`, body: {}, method: 'POST' },
+        // Try creating via agent endpoint
         { endpoint: `https://api.elevenlabs.io/v1/convai/agents/${agentId}/conversations`, body: {}, method: 'POST' },
+        // Try start or create endpoints
+        { endpoint: `https://api.elevenlabs.io/v1/convai/agents/${agentId}/start-conversation`, body: {}, method: 'POST' },
+        { endpoint: `https://api.elevenlabs.io/v1/convai/agents/${agentId}/create-conversation`, body: {}, method: 'POST' },
       ];
       
       for (const attempt of attempts) {
@@ -110,11 +176,26 @@ export async function sendAudioToElevenLabs(req: Request, res: Response) {
           contentType: req.file.mimetype || 'audio/webm',
         });
         
-        // Try sending directly - maybe conversation is auto-created
+        // Try sending directly - maybe conversation is auto-created when sending first message
+        // Try various endpoint patterns that might accept audio with agent_id
+        // Based on common REST API patterns and the fact that conversations exist
         const directEndpoints = [
-          `https://api.elevenlabs.io/v1/convai/agents/${agentId}/message`,
+          // Try sending to conversations endpoint - maybe it auto-creates
           `https://api.elevenlabs.io/v1/convai/conversations?agent_id=${agentId}`,
+          // Try agent-specific message endpoints
+          `https://api.elevenlabs.io/v1/convai/agents/${agentId}/user-message`,
+          `https://api.elevenlabs.io/v1/convai/agents/${agentId}/message`,
+          `https://api.elevenlabs.io/v1/convai/agents/${agentId}/send-message`,
+          `https://api.elevenlabs.io/v1/convai/agents/${agentId}/post-message`,
+          `https://api.elevenlabs.io/v1/convai/agents/${agentId}/audio`,
+          // Try global message endpoints
+          `https://api.elevenlabs.io/v1/convai/user-message?agent_id=${agentId}`,
+          `https://api.elevenlabs.io/v1/convai/send-message?agent_id=${agentId}`,
           `https://api.elevenlabs.io/v1/convai/message?agent_id=${agentId}`,
+          `https://api.elevenlabs.io/v1/convai/post-message?agent_id=${agentId}`,
+          // Try start/initiate patterns
+          `https://api.elevenlabs.io/v1/convai/agents/${agentId}/start`,
+          `https://api.elevenlabs.io/v1/convai/agents/${agentId}/initiate`,
         ];
         
         let directSuccess = false;
@@ -154,9 +235,50 @@ export async function sendAudioToElevenLabs(req: Request, res: Response) {
         }
       } else {
         // Step 2: Send audio to the created conversation
-        // Use plural form to match API pattern: /v1/convai/conversations/:id
-        endpoint = `https://api.elevenlabs.io/v1/convai/conversations/${createdConversationId}/user_message`;
-        finalConversationId = createdConversationId;
+        // Based on feedback endpoint pattern: /v1/convai/conversations/:conversation_id/feedback
+        // So user message might be: /v1/convai/conversations/:conversation_id/user-message
+        // Try multiple patterns
+        const messageEndpoints = [
+          `https://api.elevenlabs.io/v1/convai/conversations/${createdConversationId}/user-message`,  // Most likely (hyphenated)
+          `https://api.elevenlabs.io/v1/convai/conversations/${createdConversationId}/user_message`,  // Underscore variant
+          `https://api.elevenlabs.io/v1/convai/conversations/${createdConversationId}/message`,  // Simple message
+          `https://api.elevenlabs.io/v1/convai/conversations/${createdConversationId}/send-message`,  // Send message
+        ];
+        
+        // Try each message endpoint until one works
+        let messageSent = false;
+        for (const msgEndpoint of messageEndpoints) {
+          try {
+            const testResponse = await fetch(msgEndpoint, {
+              method: 'POST',
+              headers: {
+                'xi-api-key': apiKey,
+                ...formData.getHeaders(),
+              },
+              body: formData,
+            });
+            
+            if (testResponse.ok) {
+              endpoint = msgEndpoint;
+              requestBody = formData;
+              finalConversationId = createdConversationId;
+              messageSent = true;
+              console.log('Found working message endpoint:', msgEndpoint);
+              break;
+            } else {
+              const errorText = await testResponse.text();
+              console.log(`Message endpoint ${msgEndpoint} failed:`, testResponse.status, errorText);
+            }
+          } catch (err) {
+            console.log(`Error testing message endpoint ${msgEndpoint}:`, err);
+          }
+        }
+        
+        if (!messageSent) {
+          // Fallback to most common pattern
+          endpoint = `https://api.elevenlabs.io/v1/convai/conversations/${createdConversationId}/user-message`;
+          finalConversationId = createdConversationId;
+        }
       }
     } else {
       return res.status(500).json({ error: 'Either agent ID or conversation ID must be configured' });
