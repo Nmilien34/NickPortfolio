@@ -33,32 +33,40 @@ export async function sendAudioToElevenLabs(req: Request, res: Response) {
     });
 
     let endpoint = '';
+    let requestBody = formData;
     
     // Determine endpoint based on what's configured
-    // For ElevenLabs Conversational AI, we need to use the conversation endpoint
     if (conversationId) {
+      // If we have a conversation ID, send message to existing conversation
       endpoint = `https://api.elevenlabs.io/v1/convai/conversation/${conversationId}/user_message`;
     } else if (agentId) {
-      // For agent ID, we need to create a conversation first, then send messages
-      // Try the direct agent endpoint first - if that doesn't work, we'll need to create conversation
+      // If we have agent ID, we need to create/start a conversation
+      // First, try to create a conversation, then send the message
+      // The endpoint format might be: POST /v1/convai/conversation with agent_id in body
       endpoint = `https://api.elevenlabs.io/v1/convai/conversation`;
       
-      // Add agent_id as query parameter or in body
-      formData.append('agent_id', agentId);
+      // Create a new form data with agent_id
+      const conversationFormData = new FormData();
+      conversationFormData.append('agent_id', agentId);
+      conversationFormData.append('audio', req.file.buffer, {
+        filename: req.file.originalname || 'audio.webm',
+        contentType: req.file.mimetype || 'audio/webm',
+      });
+      requestBody = conversationFormData;
     } else {
       return res.status(500).json({ error: 'Either agent ID or conversation ID must be configured' });
     }
 
-    console.log('Calling ElevenLabs endpoint:', endpoint);
+    console.log('Calling ElevenLabs endpoint:', endpoint, 'with agentId:', agentId, 'conversationId:', conversationId);
 
     // Forward the request to ElevenLabs
     const response = await fetch(endpoint, {
       method: 'POST',
       headers: {
         'xi-api-key': apiKey,
-        ...formData.getHeaders(),
+        ...requestBody.getHeaders(),
       },
-      body: formData,
+      body: requestBody,
     });
 
     if (!response.ok) {
