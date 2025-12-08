@@ -48,14 +48,24 @@ export function ProjectDetail() {
           <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
             <div className="flex items-start justify-between flex-wrap gap-4">
               <div className="flex items-start gap-4">
-                {/* Project Icon */}
-                <div className="w-16 h-16 rounded-lg bg-white/10 border border-white/20 overflow-hidden flex-shrink-0">
-                  <img
-                    src={project.mockup || project.image || '/placeholder-icon.jpg'}
-                    alt={`${project.title} icon`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                {/* Project Icon/Logo */}
+                {project.title === 'Lawnstack' ? (
+                  <div className="w-16 h-16 rounded-lg bg-white/10 border border-white/20 overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
+                    <img
+                      src="/Projects/Lawnstack /Logo /Frame 49.svg"
+                      alt="Lawnstack Logo"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-16 h-16 rounded-lg bg-white/10 border border-white/20 overflow-hidden flex-shrink-0">
+                    <img
+                      src={project.mockup || project.image || '/placeholder-icon.jpg'}
+                      alt={`${project.title} icon`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
                 <div>
                   <h1 className="font-serif text-4xl md:text-5xl text-white mb-2">
                     {project.title}
