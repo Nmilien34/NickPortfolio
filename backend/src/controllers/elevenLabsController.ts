@@ -24,18 +24,32 @@ export async function sendAudioToElevenLabs(req: Request, res: Response) {
       contentType: req.file.mimetype || 'audio/webm',
     });
 
+    console.log('ElevenLabs Config:', { 
+      hasApiKey: !!apiKey, 
+      agentId, 
+      conversationId,
+      fileSize: req.file.size,
+      fileType: req.file.mimetype
+    });
+
     let endpoint = '';
     
     // Determine endpoint based on what's configured
+    // For ElevenLabs Conversational AI, we need to use the conversation endpoint
     if (conversationId) {
       endpoint = `https://api.elevenlabs.io/v1/convai/conversation/${conversationId}/user_message`;
     } else if (agentId) {
-      // If using agent ID, we might need to create/start a conversation first
-      // This is a simplified version - adjust based on ElevenLabs API docs
-      endpoint = `https://api.elevenlabs.io/v1/convai/conversation?agent_id=${agentId}`;
+      // For agent ID, we need to create a conversation first, then send messages
+      // Try the direct agent endpoint first - if that doesn't work, we'll need to create conversation
+      endpoint = `https://api.elevenlabs.io/v1/convai/conversation`;
+      
+      // Add agent_id as query parameter or in body
+      formData.append('agent_id', agentId);
     } else {
       return res.status(500).json({ error: 'Either agent ID or conversation ID must be configured' });
     }
+
+    console.log('Calling ElevenLabs endpoint:', endpoint);
 
     // Forward the request to ElevenLabs
     const response = await fetch(endpoint, {
@@ -49,10 +63,17 @@ export async function sendAudioToElevenLabs(req: Request, res: Response) {
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error('ElevenLabs API error:', response.status, errorText);
+      console.error('ElevenLabs API error:', {
+        status: response.status,
+        statusText: response.statusText,
+        url: endpoint,
+        error: errorText,
+        headers: Object.fromEntries(response.headers.entries())
+      });
       return res.status(response.status).json({ 
         error: `ElevenLabs API error: ${response.status}`,
-        details: errorText 
+        details: errorText,
+        endpoint: endpoint
       });
     }
 
