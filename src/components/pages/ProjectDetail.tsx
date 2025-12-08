@@ -234,10 +234,25 @@ export function ProjectDetail() {
             </div>
           </div>
 
-          {/* How was lawnstack different Card */}
+          {/* How was Lawnstack different Card */}
           <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
-            <h2 className="font-serif text-2xl text-white mb-6">How was lawnstack different?</h2>
-            {/* Content will be added here */}
+            <h2 className="font-serif text-2xl text-white mb-6">How was Lawnstack different?</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="rounded-lg overflow-hidden">
+                <img
+                  src="/Projects/Lawnstack /HowWeDifferent/D9056013-A1B6-4A0E-AD45-F2929ABEC530.jpeg"
+                  alt="How Lawnstack was different 1"
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden">
+                <img
+                  src="/Projects/Lawnstack /HowWeDifferent/87F2C6E5-28A2-4B27-9EA1-E2B9FDA1F47A.jpeg"
+                  alt="How Lawnstack was different 2"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </main>
