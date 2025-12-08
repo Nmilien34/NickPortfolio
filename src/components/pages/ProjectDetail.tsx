@@ -254,6 +254,71 @@ export function ProjectDetail() {
               </div>
             </div>
           </div>
+
+          {/* Revenue Model and Total Addressable Market Card */}
+          <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
+            <h2 className="font-serif text-2xl text-white mb-6">Revenue Model and Total Addressable Market</h2>
+            <div className="rounded-lg overflow-hidden">
+              <img
+                src="/Projects/Lawnstack /TAMandRevenue/91F2AD58-5973-46EC-88E2-5B1F04494968.jpeg"
+                alt="Revenue Model and Total Addressable Market"
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+
+          {/* Benefit of our model Card */}
+          <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
+            <h2 className="font-serif text-2xl text-white mb-6">Benefit of our model</h2>
+            
+            <div className="mb-8">
+              <h3 className="font-serif text-xl text-white mb-4">Benefits of the Subscription Model</h3>
+              <ul className="space-y-3 text-normal-text font-mono text-sm">
+                <li className="flex items-start">
+                  <span className="mr-2 text-[#EFBF04]">•</span>
+                  <span><strong className="text-white">Stickier Business Model:</strong> Customers are less likely to churn after committing to a subscription.</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-[#EFBF04]">•</span>
+                  <span><strong className="text-white">Higher Pricing Potential:</strong> Subscriptions allow for higher prices, providing more room for margins and potentially increasing revenue.</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-[#EFBF04]">•</span>
+                  <span><strong className="text-white">Simplicity:</strong> Comprehensive outdoor home care services beyond just lawn mowing, without the headaches of calculating prices / quotes for the different services.</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-[#EFBF04]">•</span>
+                  <span><strong className="text-white">Trust and Familiarity:</strong> Regular service providers build trust and familiarity with customers.</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-[#EFBF04]">•</span>
+                  <span><strong className="text-white">Predictable Income:</strong> Clearer recurring revenue model is attractive to investors and easier to calculate in terms of churn and revenue projections.</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-[#EFBF04]">•</span>
+                  <span><strong className="text-white">Upsell Opportunities:</strong> More opportunities to engage customers and offer additional services.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-serif text-xl text-white mb-4">Cons of the Subscription Model</h3>
+              <ul className="space-y-3 text-normal-text font-mono text-sm">
+                <li className="flex items-start">
+                  <span className="mr-2 text-[#EFBF04]">•</span>
+                  <span><strong className="text-white">Higher Price Point:</strong> Harder to sell due to the higher cost.</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-[#EFBF04]">•</span>
+                  <span><strong className="text-white">Reputational Risk:</strong> Increased risk if service providers are of poor quality.</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-[#EFBF04]">•</span>
+                  <span><strong className="text-white">Fundamental Change:</strong> Transitioning from a marketplace to a service provider incurs reputational risks and operational challenges.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </main>
       <Footer />
