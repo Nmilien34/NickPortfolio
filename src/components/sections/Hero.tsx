@@ -25,9 +25,18 @@ export function Hero() {
     backendUrl: backendUrl,
   };
 
-  const { isRecording, isProcessing, error, toggleRecording } = useElevenLabs(elevenLabsConfig);
+  const { 
+    isRecording, 
+    isProcessing, 
+    isConnecting,
+    isConnected,
+    isSpeaking,
+    connectionState,
+    error, 
+    toggleRecording 
+  } = useElevenLabs(elevenLabsConfig);
   
-  const isListening = isRecording || isProcessing;
+  const isActive = isConnecting || isConnected || isProcessing || isSpeaking;
 
   const languages = [
     { code: 'EN', label: 'English', flag: '🇺🇸' },
@@ -168,8 +177,8 @@ export function Hero() {
 
         {/* Voice Assistant */}
         <div className="flex flex-col items-center justify-center gap-6 mt-12">
-          {/* Visualizer (Only visible when listening) */}
-          <div className={`h-16 flex items-center justify-center gap-1 transition-all duration-500 ${isListening ? 'opacity-100 scale-100' : 'opacity-0 scale-50 h-0 overflow-hidden'}`}>
+          {/* Visualizer (Only visible when active) */}
+          <div className={`h-16 flex items-center justify-center gap-1 transition-all duration-500 ${isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-50 h-0 overflow-hidden'}`}>
             {[...Array(12)].map((_, i) => (
               <div
                 key={i}
@@ -186,7 +195,7 @@ export function Hero() {
           {/* The Button */}
           <button
             onClick={toggleRecording}
-            disabled={isProcessing}
+            disabled={isConnecting}
             className={`
               relative group px-8 py-3 rounded-full
               flex items-center gap-3
@@ -194,19 +203,25 @@ export function Hero() {
               border border-white/10 bg-white/5 backdrop-blur-sm
               hover:bg-white/10 hover:border-white/20 hover:scale-105
               disabled:opacity-50 disabled:cursor-not-allowed
-              ${isListening ? 'border-red-500/30 bg-red-500/10 shadow-[0_0_30px_rgba(239,68,68,0.2)]' : 'shadow-[0_0_20px_rgba(255,255,255,0.05)]'}
+              ${isActive ? 'border-white/30 bg-white/10 shadow-[0_0_30px_rgba(255,255,255,0.2)]' : 'shadow-[0_0_20px_rgba(255,255,255,0.05)]'}
             `}
           >
             {/* Glowing Dot Indicator */}
             <span className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-              isRecording ? 'bg-red-500 animate-pulse' : 
+              isConnecting ? 'bg-yellow-500 animate-pulse' : 
+              isConnected ? 'bg-green-500 shadow-[0_0_15px_rgba(34,197,94,0.5)]' : 
               isProcessing ? 'bg-blue-500 animate-pulse' : 
+              isSpeaking ? 'bg-green-500 animate-pulse shadow-[0_0_15px_rgba(34,197,94,0.5)]' : 
               'bg-[#EFBF04] shadow-[0_0_15px_#EFBF04]'
             }`} />
 
             {/* Button Text */}
             <span className="font-mono text-sm text-gray-300 tracking-wide uppercase">
-              {isRecording ? "Listening..." : isProcessing ? "Processing..." : "Speak to Assistant"}
+              {isConnecting ? "Connecting..." : 
+               isConnected ? "Listening..." : 
+               isProcessing ? "Processing..." : 
+               isSpeaking ? "Speaking..." : 
+               "Speak to Assistant"}
             </span>
 
             {/* Subtle Glow Layer */}
@@ -221,7 +236,7 @@ export function Hero() {
           )}
 
           {/* Instruction Text */}
-          <p className={`text-xs text-gray-600 font-mono transition-opacity duration-500 ${isListening ? 'opacity-0' : 'opacity-100'}`}>
+          <p className={`text-xs text-gray-600 font-mono transition-opacity duration-500 ${isActive ? 'opacity-0' : 'opacity-100'}`}>
             Press to ask about my work, skills, or availability.
           </p>
         </div>
