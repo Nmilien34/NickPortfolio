@@ -101,6 +101,23 @@ export function ProjectDetail() {
             </div>
           </div>
 
+          {/* Team Card - Only for Lawnstack */}
+          {project.title === 'Lawnstack' && (
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
+              <h2 className="font-serif text-2xl text-white mb-4">Original Team</h2>
+              <p className="text-normal-text font-mono text-base mb-6">
+                Lawnstack Initially started as Terra
+              </p>
+              <div className="rounded-lg overflow-hidden">
+                <img
+                  src="/Projects/Lawnstack /Team/Crew 2.jpg"
+                  alt="Lawnstack Original Team"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+          )}
+
           {/* Visual Mockup Card */}
           {(project.coverImage || project.mockup) && (
             <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
