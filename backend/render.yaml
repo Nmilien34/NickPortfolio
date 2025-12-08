@@ -9,6 +9,9 @@ services:
         sync: false
       - key: ELEVENLABS_AGENT_ID
         sync: false
+      - key: ELEVENLABS_AGENT_PROMPT
+        sync: false
+        optional: true
       - key: ELEVENLABS_CONVERSATION_ID
         sync: false
         optional: true

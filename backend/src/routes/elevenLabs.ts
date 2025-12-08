@@ -43,6 +43,125 @@ router.get('/agent-id', async (req, res) => {
   }
 });
 
+// Route to get the current agent prompt/instructions
+router.get('/agent-prompt', async (req, res) => {
+  try {
+    // Get prompt from environment variable or use default
+    const prompt = process.env.ELEVENLABS_AGENT_PROMPT || 
+      'You are a helpful AI assistant for Nick Milien\'s portfolio website. Help visitors learn about Nick\'s work, experience, and projects. Be friendly, professional, and concise.';
+    
+    return res.json({ prompt });
+  } catch (error) {
+    console.error('Error getting agent prompt:', error);
+    return res.status(500).json({ 
+      error: 'Failed to get agent prompt',
+      details: error instanceof Error ? error.message : 'Unknown error'
+    });
+  }
+});
+
+// Route to update agent configuration with backend-controlled prompt
+router.post('/update-agent-config', async (req, res) => {
+  try {
+    const apiKey = process.env.ELEVENLABS_API_KEY || process.env.ELEVEN_LABS_API_KEY || process.env.VITE_ELEVENLABS_API_KEY;
+    const agentId = process.env.ELEVENLABS_AGENT_ID || process.env.VITE_ELEVENLABS_AGENT_ID;
+
+    if (!apiKey) {
+      return res.status(500).json({ error: 'ElevenLabs API key not configured' });
+    }
+
+    if (!agentId) {
+      return res.status(500).json({ error: 'ElevenLabs agent ID not configured' });
+    }
+
+    // Get prompt from request body or environment variable
+    const prompt = req.body.prompt || process.env.ELEVENLABS_AGENT_PROMPT || 
+      'You are a helpful AI assistant for Nick Milien\'s portfolio website. Help visitors learn about Nick\'s work, experience, and projects. Be friendly, professional, and concise.';
+
+    // First, get the current agent configuration
+    const getAgentResponse = await fetch(`https://api.elevenlabs.io/v1/convai/agents/${agentId}`, {
+      method: 'GET',
+      headers: {
+        'xi-api-key': apiKey,
+      },
+    });
+
+    if (!getAgentResponse.ok) {
+      const errorText = await getAgentResponse.text();
+      console.error('Failed to get agent config:', errorText);
+      return res.status(getAgentResponse.status).json({ 
+        error: 'Failed to get agent configuration',
+        details: errorText
+      });
+    }
+
+    const agentData = await getAgentResponse.json() as any;
+    console.log('Current agent data structure:', JSON.stringify(agentData, null, 2));
+
+    // Update the agent with backend-controlled prompt
+    // This will override whatever is in the dashboard
+    // Try different possible structures for the prompt field
+    const updatePayload: any = {
+      ...agentData,
+    };
+
+    // Try different prompt field structures based on ElevenLabs API
+    if (agentData.prompt) {
+      // If prompt exists as an object
+      updatePayload.prompt = {
+        ...agentData.prompt,
+        prompt: prompt,
+      };
+    } else if (agentData.instructions) {
+      // If it's called instructions
+      updatePayload.instructions = prompt;
+    } else if (agentData.system_prompt) {
+      // If it's called system_prompt
+      updatePayload.system_prompt = prompt;
+    } else {
+      // Try adding it as a new field
+      updatePayload.prompt = {
+        prompt: prompt,
+      };
+    }
+
+    console.log('Updating agent with payload:', JSON.stringify(updatePayload, null, 2));
+
+    const updateAgentResponse = await fetch(`https://api.elevenlabs.io/v1/convai/agents/${agentId}`, {
+      method: 'POST',
+      headers: {
+        'xi-api-key': apiKey,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updatePayload),
+    });
+
+    if (!updateAgentResponse.ok) {
+      const errorText = await updateAgentResponse.text();
+      console.error('Failed to update agent config:', errorText);
+      return res.status(updateAgentResponse.status).json({ 
+        error: 'Failed to update agent configuration',
+        details: errorText
+      });
+    }
+
+    const updatedAgent = await updateAgentResponse.json();
+    console.log('✅ Agent configuration updated with backend prompt');
+
+    return res.json({ 
+      success: true,
+      message: 'Agent configuration updated',
+      agent: updatedAgent
+    });
+  } catch (error) {
+    console.error('Error updating agent configuration:', error);
+    return res.status(500).json({ 
+      error: 'Failed to update agent configuration',
+      details: error instanceof Error ? error.message : 'Unknown error'
+    });
+  }
+});
+
 // Route to get signed URL for WebSocket (if agent requires authorization)
 router.get('/signed-url', async (req, res) => {
   try {
@@ -55,6 +174,50 @@ router.get('/signed-url', async (req, res) => {
 
     if (!agentId) {
       return res.status(500).json({ error: 'ElevenLabs agent ID not configured' });
+    }
+
+    // Update agent config with backend prompt before getting signed URL
+    // This ensures the agent uses backend-controlled prompts
+    try {
+      const prompt = process.env.ELEVENLABS_AGENT_PROMPT || 
+        'You are a helpful AI assistant for Nick Milien\'s portfolio website. Help visitors learn about Nick\'s work, experience, and projects. Be friendly, professional, and concise.';
+      
+      const getAgentResponse = await fetch(`https://api.elevenlabs.io/v1/convai/agents/${agentId}`, {
+        method: 'GET',
+        headers: {
+          'xi-api-key': apiKey,
+        },
+      });
+
+      if (getAgentResponse.ok) {
+        const agentData = await getAgentResponse.json() as any;
+        
+        // Update agent with backend prompt
+        const updatePayload: any = { ...agentData };
+        
+        // Try different prompt field structures
+        if (agentData.prompt) {
+          updatePayload.prompt = { ...agentData.prompt, prompt: prompt };
+        } else if (agentData.instructions) {
+          updatePayload.instructions = prompt;
+        } else if (agentData.system_prompt) {
+          updatePayload.system_prompt = prompt;
+        } else {
+          updatePayload.prompt = { prompt: prompt };
+        }
+        
+        await fetch(`https://api.elevenlabs.io/v1/convai/agents/${agentId}`, {
+          method: 'POST',
+          headers: {
+            'xi-api-key': apiKey,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(updatePayload),
+        });
+      }
+    } catch (updateError) {
+      console.warn('Could not update agent config before signed URL (non-critical):', updateError);
+      // Continue anyway - signed URL will still work
     }
 
     // Get signed URL for WebSocket connection
@@ -125,4 +288,3 @@ router.get('/token', async (req, res) => {
 });
 
 export { router as elevenLabsRouter };
-

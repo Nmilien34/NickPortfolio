@@ -88,6 +88,35 @@ export function useElevenLabs(config?: ElevenLabsConfig) {
       // Request microphone permission first
       await navigator.mediaDevices.getUserMedia({ audio: true });
 
+      // Update agent config with backend-controlled prompt before starting
+      // This ensures the agent ignores dashboard settings and uses backend prompts
+      let backendUrl = config?.backendUrl;
+      if (!backendUrl) {
+        if (import.meta.env.PROD) {
+          backendUrl = 'https://nickportfolio.onrender.com';
+        } else {
+          backendUrl = 'http://localhost:5000';
+        }
+      }
+
+      try {
+        const updateResponse = await fetch(`${backendUrl}/api/elevenlabs/update-agent-config`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+        
+        if (updateResponse.ok) {
+          console.log('✅ Agent configuration updated with backend prompt');
+        } else {
+          console.warn('⚠️ Could not update agent config (will continue anyway):', await updateResponse.text());
+        }
+      } catch (updateErr) {
+        console.warn('⚠️ Error updating agent config (will continue anyway):', updateErr);
+        // Continue anyway - the conversation will still work
+      }
+
       // Start the conversation session
       // The SDK will use WebSocket by default
       await conversation.startSession({
@@ -99,7 +128,7 @@ export function useElevenLabs(config?: ElevenLabsConfig) {
       setError(err instanceof Error ? err.message : 'Failed to start conversation');
       setConnectionState('idle');
     }
-  }, [agentId, conversation]);
+  }, [agentId, conversation, config?.backendUrl]);
 
   const disconnect = useCallback(async () => {
     try {
