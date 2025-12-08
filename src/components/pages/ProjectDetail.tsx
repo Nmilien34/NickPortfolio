@@ -267,11 +267,11 @@ export function ProjectDetail() {
             </div>
           </div>
 
-          {/* Benefit of our model Card */}
-          <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
-            <h2 className="font-serif text-2xl text-white mb-6">Benefit of our model</h2>
-            
-            <div className="mb-8">
+          {/* Benefits and Cons Cards - Side by Side */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            {/* Benefit of our model Card - Left, Larger */}
+            <div className="md:col-span-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
+              <h2 className="font-serif text-2xl text-white mb-4">Benefit of our model</h2>
               <h3 className="font-serif text-xl text-white mb-4">Benefits of the Subscription Model</h3>
               <ul className="space-y-3 text-normal-text font-mono text-sm">
                 <li className="flex items-start">
@@ -301,8 +301,9 @@ export function ProjectDetail() {
               </ul>
             </div>
 
-            <div>
-              <h3 className="font-serif text-xl text-white mb-4">Cons of the Subscription Model</h3>
+            {/* Cons of the Subscription Model Card - Right, Smaller, Vertical */}
+            <div className="md:col-span-1 bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
+              <h2 className="font-serif text-xl text-white mb-4">Cons of the Subscription Model</h2>
               <ul className="space-y-3 text-normal-text font-mono text-sm">
                 <li className="flex items-start">
                   <span className="mr-2 text-[#EFBF04]">•</span>
