@@ -10,6 +10,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
+    "@elevenlabs/react": "^0.12.1",
     "@vercel/blob": "^2.0.0",
     "clsx": "^2.1.1",
     "react": "^18.3.1",

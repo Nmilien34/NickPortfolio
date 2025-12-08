@@ -1,4 +1,5 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useCallback, useEffect } from 'react';
+import { useConversation } from '@elevenlabs/react';
 
 interface ElevenLabsConfig {
   backendUrl?: string; // Backend API URL
@@ -10,207 +11,114 @@ type ConnectionState = 'idle' | 'connecting' | 'connected' | 'processing' | 'spe
 export function useElevenLabs(config?: ElevenLabsConfig) {
   const [connectionState, setConnectionState] = useState<ConnectionState>('idle');
   const [error, setError] = useState<string | null>(null);
-  
-  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
-  const audioElementRef = useRef<HTMLAudioElement | null>(null);
-  const streamRef = useRef<MediaStream | null>(null);
-  const websocketRef = useRef<WebSocket | null>(null);
+  const [agentId, setAgentId] = useState<string | null>(null);
 
-  // Initialize audio element for playback
+  // Get agent ID from backend
   useEffect(() => {
-    audioElementRef.current = new Audio();
-    return () => {
-      if (audioElementRef.current) {
-        audioElementRef.current.pause();
-        audioElementRef.current = null;
+    const fetchAgentId = async () => {
+      if (config?.agentId) {
+        setAgentId(config.agentId);
+        return;
       }
-    };
-  }, []);
 
-  // Cleanup on unmount
-  useEffect(() => {
-    return () => {
-      disconnect();
-      if (streamRef.current) {
-        streamRef.current.getTracks().forEach(track => track.stop());
-      }
-    };
-  }, []);
-
-  // Get WebSocket URL from backend (signed URL if needed, or direct URL)
-  const getWebSocketUrl = async (): Promise<string> => {
-    let backendUrl = config?.backendUrl;
-    if (!backendUrl) {
-      if (import.meta.env.PROD) {
-        backendUrl = 'https://nickportfolio.onrender.com';
-      } else {
-        backendUrl = 'http://localhost:5000';
-      }
-    }
-    
-    // First try to get signed URL (for private agents)
-    try {
-      const signedUrlResponse = await fetch(`${backendUrl}/api/elevenlabs/signed-url`);
-      if (signedUrlResponse.ok) {
-        const data = await signedUrlResponse.json();
-        if (data.signedUrl) {
-          console.log('✅ Using signed URL for WebSocket');
-          return data.signedUrl;
+      let backendUrl = config?.backendUrl;
+      if (!backendUrl) {
+        if (import.meta.env.PROD) {
+          backendUrl = 'https://nickportfolio.onrender.com';
+        } else {
+          backendUrl = 'http://localhost:5000';
         }
       }
-    } catch (err) {
-      console.warn('Could not get signed URL, trying direct connection:', err);
-    }
-    
-    // Fallback: get agent ID and construct direct URL
-    let agentId = config?.agentId;
-    if (!agentId) {
+
       try {
-        const agentIdResponse = await fetch(`${backendUrl}/api/elevenlabs/agent-id`);
-        if (agentIdResponse.ok) {
-          const data = await agentIdResponse.json();
-          agentId = data.agentId;
+        const response = await fetch(`${backendUrl}/api/elevenlabs/agent-id`);
+        if (response.ok) {
+          const data = await response.json();
+          setAgentId(data.agentId);
+        } else {
+          setError('Failed to get agent ID from backend');
         }
       } catch (err) {
         console.error('Error getting agent ID:', err);
-        throw new Error('Failed to get agent ID from backend');
+        setError('Failed to connect to backend');
       }
-    }
-    
-    if (!agentId) {
-      throw new Error('Agent ID not configured');
-    }
-    
-    // Direct WebSocket URL (for public agents)
-    return `wss://api.elevenlabs.io/v1/convai/conversation?agent_id=${agentId}`;
-  };
+    };
 
-  const connectAndStartRecording = async () => {
+    fetchAgentId();
+  }, [config?.agentId, config?.backendUrl]);
+
+  // Use the official ElevenLabs React SDK
+  // Note: The SDK handles authentication automatically through the backend
+  const conversation = useConversation({
+    onConnect: () => {
+      console.log('✅ Connected to ElevenLabs');
+      setConnectionState('connected');
+      setError(null);
+    },
+    onDisconnect: () => {
+      console.log('🔌 Disconnected from ElevenLabs');
+      setConnectionState('idle');
+    },
+    onMessage: (message: any) => {
+      console.log('📨 Message received:', message);
+      // Handle different message types
+      if (message.type === 'agent_response' || message.type === 'audio') {
+        setConnectionState('speaking');
+      } else if (message.type === 'user_transcript' || message.type === 'tentative_user_transcript') {
+        setConnectionState('processing');
+      }
+    },
+    onError: (message: string, context?: any) => {
+      console.error('❌ ElevenLabs error:', message, context);
+      setError(message || 'An error occurred');
+      setConnectionState('idle');
+    },
+  });
+
+  const connectAndStartRecording = useCallback(async () => {
+    if (!agentId) {
+      setError('Agent ID not available. Please wait...');
+      return;
+    }
+
     try {
       setError(null);
       setConnectionState('connecting');
 
-      // Step 1: Get WebSocket URL
-      const wsUrl = await getWebSocketUrl();
-      console.log('🔌 Connecting to ElevenLabs WebSocket:', wsUrl);
+      // Request microphone permission first
+      await navigator.mediaDevices.getUserMedia({ audio: true });
 
-      // Step 2: Get microphone access
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      streamRef.current = stream;
-
-      // Step 3: Connect WebSocket
-      const ws = new WebSocket(wsUrl);
-      websocketRef.current = ws;
-
-      ws.onopen = () => {
-        console.log('✅ WebSocket connected to ElevenLabs');
-        setConnectionState('connected');
-
-        // Step 4: Start recording and stream audio in real-time
-        const mediaRecorder = new MediaRecorder(stream, {
-          mimeType: 'audio/webm;codecs=opus'
-        });
-        mediaRecorderRef.current = mediaRecorder;
-
-        // Send audio chunks as they're recorded (real-time streaming)
-        mediaRecorder.ondataavailable = (event) => {
-          if (event.data.size > 0 && ws.readyState === WebSocket.OPEN) {
-            console.log('📤 Sending audio chunk:', event.data.size, 'bytes');
-            // Send as binary data
-            ws.send(event.data);
-            setConnectionState('processing');
-          }
-        };
-
-        // Start recording with timeslice to get chunks frequently
-        mediaRecorder.start(100); // Get chunks every 100ms for real-time streaming
-      };
-
-      ws.onmessage = (event) => {
-        console.log('📨 WebSocket message received:', event.data instanceof Blob ? 'Blob' : typeof event.data);
-        
-        // Handle incoming audio response
-        if (event.data instanceof Blob) {
-          setConnectionState('speaking');
-          const audioUrl = URL.createObjectURL(event.data);
-          if (audioElementRef.current) {
-            audioElementRef.current.src = audioUrl;
-            audioElementRef.current.play();
-            audioElementRef.current.onended = () => {
-              URL.revokeObjectURL(audioUrl);
-              setConnectionState('connected'); // Back to connected state after speaking
-            };
-          }
-        } else if (typeof event.data === 'string') {
-          // Handle text messages (transcripts, events, etc.)
-          try {
-            const data = JSON.parse(event.data);
-            console.log('📝 WebSocket event:', data);
-            
-            // Handle different event types
-            if (data.type === 'agent_response' || data.type === 'audio') {
-              setConnectionState('speaking');
-            } else if (data.type === 'user_transcript' || data.type === 'tentative_user_transcript') {
-              setConnectionState('processing');
-            }
-          } catch (e) {
-            console.error('Error parsing WebSocket message:', e);
-          }
-        }
-      };
-
-      ws.onerror = (error) => {
-        console.error('❌ WebSocket error:', error);
-        setError('Failed to connect to ElevenLabs. Please try again.');
-        setConnectionState('idle');
-        disconnect();
-      };
-
-      ws.onclose = (event) => {
-        console.log('🔌 WebSocket closed:', event.code, event.reason);
-        setConnectionState('idle');
-        websocketRef.current = null;
-        disconnect();
-      };
-
+      // Start the conversation session
+      // The SDK will use WebSocket by default
+      await conversation.startSession({
+        agentId: agentId,
+        connectionType: 'websocket', // Use WebSocket for real-time communication
+      });
     } catch (err) {
-      console.error('Error connecting:', err);
-      setError(err instanceof Error ? err.message : 'Failed to connect');
+      console.error('Failed to start conversation:', err);
+      setError(err instanceof Error ? err.message : 'Failed to start conversation');
       setConnectionState('idle');
-      disconnect();
     }
-  };
+  }, [agentId, conversation]);
 
-  const disconnect = () => {
-    // Stop recording
-    if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
-      mediaRecorderRef.current.stop();
+  const disconnect = useCallback(async () => {
+    try {
+      await conversation.endSession();
+      setConnectionState('idle');
+    } catch (err) {
+      console.error('Error ending session:', err);
     }
-    
-    // Close WebSocket
-    if (websocketRef.current) {
-      websocketRef.current.close();
-      websocketRef.current = null;
-    }
-    
-    // Stop microphone
-    if (streamRef.current) {
-      streamRef.current.getTracks().forEach(track => track.stop());
-      streamRef.current = null;
-    }
-    
-    setConnectionState('idle');
-  };
+  }, [conversation]);
 
-  const toggleConnection = () => {
+  const toggleConnection = useCallback(() => {
     if (connectionState === 'idle') {
       connectAndStartRecording();
     } else {
       disconnect();
     }
-  };
+  }, [connectionState, connectAndStartRecording, disconnect]);
 
-  // Computed states for backward compatibility
+  // Computed states
   const isRecording = connectionState === 'connected' || connectionState === 'processing';
   const isProcessing = connectionState === 'processing';
   const isConnecting = connectionState === 'connecting';
@@ -228,5 +136,6 @@ export function useElevenLabs(config?: ElevenLabsConfig) {
     toggleRecording: toggleConnection,
     connect: connectAndStartRecording,
     disconnect,
+    conversation, // Expose the conversation object for advanced usage
   };
 }
