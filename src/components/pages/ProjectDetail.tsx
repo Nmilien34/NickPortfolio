@@ -762,6 +762,151 @@ export function ProjectDetail() {
             </div>
           </div>
         </div>
+
+        {/* The New Experience (Autonomy) Card */}
+        <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8 w-full max-w-[1240px] mx-auto">
+          <h2 className="font-serif text-xl text-white mb-6">The New Experience 4</h2>
+
+          <div className="space-y-4 mb-8">
+            <h3 className="font-serif text-lg text-white">How Might We...</h3>
+            <p className="text-normal-text font-mono text-sm leading-relaxed">
+              How might we empower users with full autonomy to manage and approve variable costs?
+            </p>
+          </div>
+
+          {/* Options stacked like an inverse staircase */}
+          <div className="space-y-6 flex flex-col">
+            {/* Option A */}
+            <div className="bg-white/5 rounded-lg border border-white/10 p-4 flex flex-col w-full max-w-xl">
+              <div className="inline-block mb-4">
+                <span className="bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-blue-500/30">
+                  Option A
+                </span>
+              </div>
+              <h3 className="font-serif text-lg text-white mb-3">Checkbox Selector</h3>
+              <p className="text-normal-text font-mono text-sm leading-relaxed mb-4 flex-grow">
+                The Limitation: Ambiguity. A standalone checkbox lacked the necessary affordance to fully explain the financial implication, forcing users to guess the context.
+              </p>
+              <div className="w-full mt-auto">
+                <img
+                  src="/Projects/Lawnstack /hoandspui/638D071F-6F06-475C-AD4B-B6E103F81C9B.jpeg"
+                  alt="Option A: Checkbox Selector"
+                  className="w-full h-[320px] object-cover rounded-lg"
+                />
+              </div>
+            </div>
+
+            {/* Option B */}
+            <div className="bg-white/5 rounded-lg border border-white/10 p-4 flex flex-col w-full max-w-xl ml-48 md:ml-64">
+              <div className="inline-block mb-4">
+                <span className="bg-gray-500/20 text-gray-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-gray-500/30">
+                  Option B
+                </span>
+              </div>
+              <h3 className="font-serif text-lg text-white mb-3">Dropdown Selector</h3>
+              <p className="text-normal-text font-mono text-sm leading-relaxed mb-4 flex-grow">
+                The Drawback: High interaction cost. Burying options inside a dropdown required unnecessary clicks, increasing friction for a simple decision.
+              </p>
+              <div className="w-full mt-auto">
+                <img
+                  src="/Projects/Lawnstack /hoandspui/FFE62EEB-909D-4B6B-A8F8-880F9403DDCA.jpeg"
+                  alt="Option B: Dropdown Selector"
+                  className="w-full h-[320px] object-cover rounded-lg"
+                />
+              </div>
+            </div>
+
+            {/* Option C */}
+            <div className="bg-white/5 rounded-lg border border-white/10 p-4 flex flex-col w-full max-w-xl ml-0 md:ml-0">
+              <div className="inline-block mb-4">
+                <span className="bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-blue-500/30">
+                  Option C
+                </span>
+              </div>
+              <h3 className="font-serif text-lg text-white mb-3">Segmented Toggles</h3>
+              <p className="text-normal-text font-mono text-sm leading-relaxed mb-4 flex-grow">
+                The Trade-off: Rapid scanning vs. Scalability. While it allows users to parse options instantly, it risks creating visual clutter if the dataset expands significantly.
+              </p>
+              <div className="w-full mt-auto">
+                <img
+                  src="/Projects/Lawnstack /hoandspui/FFE62EEB-909D-4B6B-A8F8-880F9403DDCA.jpeg"
+                  alt="Option C: Segmented Toggles"
+                  className="w-full h-[320px] object-cover rounded-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* The New Experience 5 Card */}
+        <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8 w-full max-w-[1240px] mx-auto">
+          <h2 className="font-serif text-xl text-white mb-6">The New Experience 5</h2>
+
+          <div className="space-y-4 mb-8">
+            <h3 className="font-serif text-lg text-white">HW: Balance User Control with Operational Reality?</h3>
+            <p className="text-normal-text font-mono text-sm leading-relaxed">
+              I investigated two models: one focused on granular user precision (exact slots), and another designed for operational sustainability, granting providers the flexibility to optimize routes for long-term efficiency.
+            </p>
+          </div>
+
+          {/* Option A */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div className="flex flex-col justify-center">
+              <div className="inline-block mb-4">
+                <span className="bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-blue-500/30">
+                  Option A
+                </span>
+              </div>
+              <h3 className="font-serif text-lg text-white mb-3">Granular Control</h3>
+              <p className="text-normal-text font-mono text-sm leading-relaxed">
+                The Upside: Error Mitigation. Explicit selection reduces ambiguity and prevents scheduling conflicts. The Downside: Visual Noise. The high density of information risks overwhelming the user with visual clutter.
+              </p>
+            </div>
+            <div className="w-full">
+              <img
+                src="/Projects/Lawnstack /hoandspui/04EF65C5-6C42-4C21-B67F-4434B5311082.jpeg"
+                alt="Option A: Granular Control"
+                className="w-full h-auto rounded-lg"
+              />
+            </div>
+          </div>
+
+          {/* Option B */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="w-full order-2 md:order-1">
+              <img
+                src="/Projects/Lawnstack /hoandspui/57CC0F9D-9B05-4C96-87CE-3C0DAA8D7A7C.jpeg"
+                alt="Option B: Operational Flexibility"
+                className="w-full h-auto rounded-lg"
+              />
+            </div>
+            <div className="flex flex-col justify-center order-1 md:order-2">
+              <div className="inline-block mb-4">
+                <span className="bg-gray-500/20 text-gray-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-gray-500/30">
+                  Option B
+                </span>
+              </div>
+              <h3 className="font-serif text-lg text-white mb-3">Operational Flexibility</h3>
+              <p className="text-normal-text font-mono text-sm leading-relaxed">
+                The Strategy: Prioritize provider logistics by using broader arrival windows instead of exact times. The Outcome: This sacrifice in precision establishes the infrastructure needed to support efficient, recurring service routes.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8">
+            <p className="text-normal-text font-mono text-sm leading-relaxed">
+              Prioritizing Immediate Value At this stage, conversion hinges on demonstrating immediate utility. I designed the flow to focus on the specific details of the first visit, while using clear copy to reassure users that recurring schedules could be easily configured post-signup.
+            </p>
+          </div>
+        </div>
+
+        {/* Service Provider Flow Intro */}
+        <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8 max-w-4xl mx-auto w-full">
+          <h2 className="font-serif text-xl text-white mb-4">
+            Now that we have a Clear understandring of the Homeowner workflow, let's take a look at the service providers flow
+          </h2>
+        </div>
+
       </main>
       <Footer />
     </div>
