@@ -659,6 +659,108 @@ export function ProjectDetail() {
               </p>
             </div>
           </div>
+
+          {/* The New Experience 2 Card */}
+          <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8">
+            <h2 className="font-serif text-xl text-white mb-6">The New Experience 2</h2>
+            
+            <div className="space-y-6 mb-8">
+              <div>
+                <h3 className="font-serif text-lg text-white mb-3">Communicating Value Post-Consultation</h3>
+                <p className="text-normal-text font-mono text-sm leading-relaxed mb-4">
+                  The Challenge: Turning site visit data into a closed deal. We needed to synthesize the provider's technical measurements into a clear membership offer. The core question became: What tangible takeaway does the homeowner need to feel confident signing a contract?
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="flex flex-col justify-center">
+                <h3 className="font-serif text-lg text-white mb-4">The Proposal: Scaffolding for Transparency</h3>
+                <p className="text-normal-text font-mono text-sm leading-relaxed">
+                  I began by restructuring the global navigation and layout. Unlike our legacy flows, this design prioritized clarity—ensuring homeowners could compare pricing options with total transparency and zero ambiguity.
+                </p>
+              </div>
+              <div className="w-full">
+                <img
+                  src="/Projects/Lawnstack /hoandspui/C35F7386-EEBF-40D7-895D-DCCADEDC15A9.jpeg"
+                  alt="The Proposal: Scaffolding for Transparency"
+                  className="w-full h-auto rounded-lg"
+                />
+              </div>
+            </div>
+
+            <div className="mt-6 pt-6 border-t border-white/20">
+              <h3 className="font-serif text-lg text-white mb-4">Reducing Friction via Data</h3>
+              <p className="text-normal-text font-mono text-sm leading-relaxed mb-6">
+                Leveraging the data captured during consultations, we drastically reduced the input burden on homeowners. I designed a layout that established a clear visual hierarchy, guiding the eye and simplifying the remaining key decisions.
+              </p>
+              <div className="w-full">
+                <img
+                  src="/Projects/Lawnstack /hoandspui/C8E28A1B-9843-4B06-846D-7150E63F56F5.jpeg"
+                  alt="Reducing Friction via Data"
+                  className="w-full h-auto rounded-lg"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* The New Experience 3 Card */}
+          <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8">
+            <h2 className="font-serif text-xl text-white mb-6">The New Experience 3</h2>
+            
+            <div className="space-y-4 mb-8">
+              <h3 className="font-serif text-lg text-white">Decoupling Labor from Materials</h3>
+              <p className="text-normal-text font-mono text-sm leading-relaxed">
+                Lawnstack's core value was simplicity: a predictable $300/mo flat fee for labor. However, variable material costs (fertilizer, mulch, etc.) introduced complexity. The Problem: Users often assumed the subscription was all-inclusive, creating confusion over who was responsible for purchasing materials.
+              </p>
+              <p className="text-normal-text font-mono text-sm leading-relaxed">
+                HMW: How might we transparently separate material costs from labor fees without eroding the trust built by our flat-rate promise?
+              </p>
+            </div>
+
+            {/* Two Options Side by Side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+              {/* Option A */}
+              <div className="flex flex-col h-full">
+                <div className="inline-block mb-4">
+                  <span className="bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-blue-500/30">
+                    Option A
+                  </span>
+                </div>
+                <h3 className="font-serif text-lg text-white mb-3">The Split-Path Approach</h3>
+                <p className="text-normal-text font-mono text-sm leading-relaxed mb-4 flex-grow">
+                  Present users with a binary decision, visually separating the workflows into two clearly defined avenues.
+                </p>
+                <div className="w-full mt-auto">
+                  <img
+                    src="/Projects/Lawnstack /hoandspui/E37EEEE7-064B-40EC-B1B4-222A522F7AD6.jpeg"
+                    alt="Option A: The Split-Path Approach"
+                    className="w-full h-[400px] object-cover rounded-lg"
+                  />
+                </div>
+              </div>
+
+              {/* Option B */}
+              <div className="flex flex-col h-full">
+                <div className="inline-block mb-4">
+                  <span className="bg-gray-500/20 text-gray-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-gray-500/30">
+                    Option B
+                  </span>
+                </div>
+                <h3 className="font-serif text-lg text-white mb-3">Inline Disclosure</h3>
+                <p className="text-normal-text font-mono text-sm leading-relaxed mb-4 flex-grow">
+                  The Risk: Cognitive friction. Integrating material costs inline increased the likelihood of users conflating variable add-ons with the standard $295/mo base fee
+                </p>
+                <div className="w-full mt-auto">
+                  <img
+                    src="/Projects/Lawnstack /hoandspui/B44E554D-CB2E-4554-96D5-5D4A971C447A.jpeg"
+                    alt="Option B: Inline Disclosure"
+                    className="w-full h-[400px] object-cover rounded-lg"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
       <Footer />
