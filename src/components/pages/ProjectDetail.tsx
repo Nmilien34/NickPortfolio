@@ -764,7 +764,7 @@ export function ProjectDetail() {
         </div>
 
         {/* The New Experience (Autonomy) Card */}
-        <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8 w-full max-w-[1240px] mx-auto">
+        <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8 w-full max-w-[1200px] mx-auto">
           <h2 className="font-serif text-xl text-white mb-6">The New Experience 4</h2>
 
           <div className="space-y-4 mb-8">
@@ -901,11 +901,294 @@ export function ProjectDetail() {
         </div>
 
         {/* Service Provider Flow Intro */}
-        <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8 max-w-4xl mx-auto w-full">
-          <h2 className="font-serif text-xl text-white mb-4">
-            Now that we have a Clear understandring of the Homeowner workflow, let's take a look at the service providers flow
-          </h2>
-        </div>
+        {project.title === 'Lawnstack' && (
+          <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8 w-full max-w-[1240px] mx-auto">
+            <h2 className="font-serif text-xl text-white mb-4">
+              Now that we have a Clear understandring of the Homeowner workflow, let's take a look at the service providers flow
+            </h2>
+          </div>
+        )}
+
+        {/* Boltzman Enterprise Card Layouts */}
+        {project.title === 'Boltzman Enterprise' && (
+          <div className="max-w-7xl mx-auto px-6">
+            {/* Two Picture Cards - Side by Side */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 items-start">
+              {/* Left Column - Contains both left card and smaller container */}
+              <div className="md:col-span-2 flex flex-col gap-6">
+                {/* First Picture Card */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-0.5">
+                  <div className="bg-white rounded-t-lg p-2 flex items-center gap-2 mb-0">
+                    <div className="flex gap-2">
+                      <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                      <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                      <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <div className="flex-1 bg-gray-200 rounded px-4 py-1 text-xs text-gray-700 text-center font-mono">
+                      enterprise.boltzman.ai
+                    </div>
+                  </div>
+                  <div className="overflow-hidden rounded-b-lg bg-white" style={{ height: '350px' }}>
+                  </div>
+                  <div className="p-3 text-center">
+                  </div>
+                </div>
+
+                {/* Smaller container at bottom */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 w-full" style={{ minHeight: '262px' }}>
+                </div>
+              </div>
+
+              {/* Second Picture Card */}
+              <div className="md:col-span-1 bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-2" style={{ height: '770px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div className="flex items-center justify-center w-[80%] mx-auto mb-3">
+                </div>
+                <div className="p-3 text-center">
+                </div>
+              </div>
+            </div>
+
+            {/* Full Width Experience Card */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8">
+              <div className="w-full">
+              </div>
+            </div>
+
+            {/* Experience Iteration Process Card with 3 small containers */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 items-start">
+              <div className="md:col-span-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
+                <div className="w-full">
+                </div>
+              </div>
+
+              {/* Right side - 3 small containers */}
+              <div className="md:col-span-1 flex flex-col gap-6 h-full">
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 flex-1 flex items-center justify-center">
+                </div>
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 flex-1 flex items-center justify-center">
+                </div>
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 flex-1 flex items-center justify-center">
+                </div>
+              </div>
+            </div>
+
+            {/* User Research Card - Full Width */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8">
+              <div className="space-y-6">
+                {/* First Insight Row */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="w-full">
+                  </div>
+                  <div className="w-full flex flex-col justify-center">
+                  </div>
+                </div>
+
+                {/* Second Insight Row */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="w-full flex flex-col justify-center">
+                  </div>
+                  <div className="w-full">
+                  </div>
+                </div>
+
+                {/* Third Insight Row */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="w-full">
+                  </div>
+                  <div className="w-full flex flex-col justify-center">
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 pt-8 border-t border-white/10 space-y-6">
+                <div>
+                </div>
+                <div>
+                </div>
+              </div>
+            </div>
+
+            {/* Ideation to Action Card */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8">
+              <div className="space-y-8">
+                <div>
+                </div>
+              </div>
+            </div>
+
+            {/* The New Experience Card */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8">
+              <div className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="flex flex-col justify-center">
+                  </div>
+                  <div className="w-full">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* The Iteration Card */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8">
+              <div className="space-y-6 mb-8">
+              </div>
+
+              {/* Option A */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div className="flex flex-col justify-center">
+                  <div className="inline-block mb-4">
+                    <span className="bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-blue-500/30">
+                      Option A
+                    </span>
+                  </div>
+                </div>
+                <div className="w-full">
+                </div>
+              </div>
+
+              {/* Option B */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div className="w-full order-2 md:order-1">
+                </div>
+                <div className="flex flex-col justify-center order-1 md:order-2">
+                  <div className="inline-block mb-4">
+                    <span className="bg-gray-500/20 text-gray-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-gray-500/30">
+                      Option B
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* The New Experience 2 Card */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8">
+              <div className="space-y-6 mb-8">
+                <div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div className="flex flex-col justify-center">
+                </div>
+                <div className="w-full">
+                </div>
+              </div>
+
+              <div className="mt-6 pt-6 border-t border-white/20">
+                <div className="w-full">
+                </div>
+              </div>
+            </div>
+
+            {/* The New Experience 3 Card */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8">
+              <div className="space-y-4 mb-8">
+              </div>
+
+              {/* Two Options Side by Side */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+                {/* Option A */}
+                <div className="flex flex-col h-full">
+                  <div className="inline-block mb-4">
+                    <span className="bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-blue-500/30">
+                      Option A
+                    </span>
+                  </div>
+                  <div className="w-full mt-auto">
+                  </div>
+                </div>
+
+                {/* Option B */}
+                <div className="flex flex-col h-full">
+                  <div className="inline-block mb-4">
+                    <span className="bg-gray-500/20 text-gray-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-gray-500/30">
+                      Option B
+                    </span>
+                  </div>
+                  <div className="w-full mt-auto">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* The New Experience 4 Card */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8 w-full max-w-[1200px] mx-auto">
+              <div className="space-y-4 mb-8">
+              </div>
+
+              {/* Options stacked like an inverse staircase */}
+              <div className="space-y-6 flex flex-col">
+                {/* Option A */}
+                <div className="bg-white/5 rounded-lg border border-white/10 p-4 flex flex-col w-full max-w-xl">
+                  <div className="inline-block mb-4">
+                    <span className="bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-blue-500/30">
+                      Option A
+                    </span>
+                  </div>
+                  <div className="w-full mt-auto">
+                  </div>
+                </div>
+
+                {/* Option B */}
+                <div className="bg-white/5 rounded-lg border border-white/10 p-4 flex flex-col w-full max-w-xl ml-48 md:ml-64">
+                  <div className="inline-block mb-4">
+                    <span className="bg-gray-500/20 text-gray-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-gray-500/30">
+                      Option B
+                    </span>
+                  </div>
+                  <div className="w-full mt-auto">
+                  </div>
+                </div>
+
+                {/* Option C */}
+                <div className="bg-white/5 rounded-lg border border-white/10 p-4 flex flex-col w-full max-w-xl ml-0 md:ml-0">
+                  <div className="inline-block mb-4">
+                    <span className="bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-blue-500/30">
+                      Option C
+                    </span>
+                  </div>
+                  <div className="w-full mt-auto">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* The New Experience 5 Card */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8 w-full max-w-[1240px] mx-auto">
+              <div className="space-y-4 mb-8">
+              </div>
+
+              {/* Option A */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div className="flex flex-col justify-center">
+                  <div className="inline-block mb-4">
+                    <span className="bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-blue-500/30">
+                      Option A
+                    </span>
+                  </div>
+                </div>
+                <div className="w-full">
+                </div>
+              </div>
+
+              {/* Option B */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="w-full order-2 md:order-1">
+                </div>
+                <div className="flex flex-col justify-center order-1 md:order-2">
+                  <div className="inline-block mb-4">
+                    <span className="bg-gray-500/20 text-gray-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-gray-500/30">
+                      Option B
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8">
+              </div>
+            </div>
+          </div>
+        )}
 
       </main>
       <Footer />
