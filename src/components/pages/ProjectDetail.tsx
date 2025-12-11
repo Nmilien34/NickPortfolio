@@ -902,11 +902,251 @@ export function ProjectDetail() {
 
         {/* Service Provider Flow Intro */}
         {project.title === 'Lawnstack' && (
-          <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8 w-full max-w-[1240px] mx-auto">
-            <h2 className="font-serif text-xl text-white mb-4">
-              Now that we have a Clear understandring of the Homeowner workflow, let's take a look at the service providers flow
-            </h2>
-          </div>
+          <>
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8 w-full max-w-[1240px] mx-auto">
+              <h2 className="font-serif text-xl text-white mb-4">
+                The Other Half of the Equation
+              </h2>
+              <p className="text-normal-text font-mono text-sm leading-relaxed mb-6">
+                Having established a frictionless path for the demand side (homeowners), we turned our attention to the supply side. Let's look at how the system comes together to empower the Service Providers.
+              </p>
+              <div className="w-full">
+                <img
+                  src="/Projects/Lawnstack /hoandspui/0B4F4991-0AB2-4EC4-A300-10C490F94C5B.jpeg"
+                  alt="Service provider flow"
+                  className="w-full h-auto rounded-lg"
+                />
+              </div>
+            </div>
+
+            {/* Service provider goals cards - Side by Side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 w-full max-w-[1240px] mx-auto">
+              {/* Left Card - Goals */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6" style={{ minHeight: '262px' }}>
+                <h3 className="text-white font-serif text-xl mb-6">My Goals For Designing The Perfect Experience For The Service Providers (SPs)</h3>
+                <div className="space-y-6">
+                  <div>
+                    <p className="text-white font-mono text-sm font-semibold mb-3">Designing for the Supply Side</p>
+                    <p className="text-normal-text font-mono text-sm leading-relaxed">
+                      The Goal: Build the operating system I wished I had. My approach wasn't just theoretical—it was personal. Having worked in furniture assembly, landscaping, and snow removal, I knew the friction firsthand. I validated this experience by interviewing hundreds of service providers, and the consensus was clear: They just want to work. They wanted to wake up, hop in the truck, and execute—without the administrative headaches.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-white font-mono text-sm font-semibold mb-3">The Core Constraints</p>
+                    <p className="text-normal-text font-mono text-sm leading-relaxed mb-4">
+                      To achieve this "turn-key" workday, the product had to solve four critical frictions:
+                    </p>
+                    <ul className="space-y-3 text-normal-text font-mono text-sm">
+                      <li className="flex items-start">
+                        <span className="mr-2 text-[#EFBF04] mt-0.5">•</span>
+                        <span><strong className="text-white">Acquisition:</strong> Eliminate the need to buy leads or chase sales.</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="mr-2 text-[#EFBF04] mt-0.5">•</span>
+                        <span><strong className="text-white">Logistics:</strong> Provide intelligent, automated route optimization.</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="mr-2 text-[#EFBF04] mt-0.5">•</span>
+                        <span><strong className="text-white">Fintech:</strong> Instant access to earnings (no net-30 delays).</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="mr-2 text-[#EFBF04] mt-0.5">•</span>
+                        <span><strong className="text-white">Operations:</strong> A complete digital OS—scheduling, invoicing, and messaging—replacing the "pen and paper" chaos.</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Card - Optimization & Workflow */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6" style={{ minHeight: '262px' }}>
+                <h3 className="text-white font-serif text-xl mb-6">Optimization & Workflow</h3>
+                <div className="space-y-6">
+                  <div>
+                    <p className="text-white font-mono text-sm font-semibold mb-3">Optimization: Route Density & Logistics</p>
+                    <ul className="space-y-3 text-normal-text font-mono text-sm mb-4">
+                      <li className="flex items-start">
+                        <span className="mr-2 text-[#EFBF04] mt-0.5">•</span>
+                        <span><strong className="text-white">Requirement: Visual Route Planning.</strong> The Spec: Providers must see a visual map of existing clients to cluster new jobs. This minimizes travel time and maximizes daily revenue per truck.</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="mr-2 text-[#EFBF04] mt-0.5">•</span>
+                        <span><strong className="text-white">Requirement: Dynamic "Day-of" Adjustments.</strong> The Spec: The algorithm must support real-time changes—accounting for urgency, proximity, and crew availability—allowing providers to re-optimize their route when conditions change mid-shift.</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="text-white font-mono text-sm font-semibold mb-3">Workflow: The Digital Command Center</p>
+                    <ul className="space-y-3 text-normal-text font-mono text-sm">
+                      <li className="flex items-start">
+                        <span className="mr-2 text-[#EFBF04] mt-0.5">•</span>
+                        <span><strong className="text-white">Requirement: Automated Job Management.</strong> The Spec: Eliminate the "morning huddle." Providers need a unified dashboard to view job details, submit proof-of-work photos, and trigger instant payouts upon completion.</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Ecosystem Alignment Card - Full Width */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8 w-full max-w-[1240px] mx-auto">
+              <h3 className="text-white font-serif text-xl mb-6">Ecosystem Alignment: Connecting Supply & Demand</h3>
+              <p className="text-normal-text font-mono text-sm leading-relaxed mb-6">
+                Before validating the provider tools, we had to ensure they directly supported the homeowner's journey. A marketplace only works when the incentives align.
+              </p>
+
+              <div className="mb-6">
+                <p className="text-white font-mono text-sm font-semibold mb-4">The Unified Vision:</p>
+                <ul className="space-y-3 text-normal-text font-mono text-sm mb-4">
+                  <li className="flex items-start">
+                    <span className="mr-2 text-[#EFBF04] mt-0.5">•</span>
+                    <span><strong className="text-white">For Homeowners:</strong> Lawnstack is the one-stop subscription for year-round outdoor maintenance—offering "set it and forget it" peace of mind.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2 text-[#EFBF04] mt-0.5">•</span>
+                    <span><strong className="text-white">For Providers:</strong> We provide the operational backbone—the internal tooling required to manage logistics and execute those jobs efficiently.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mb-6">
+                <p className="text-white font-mono text-sm font-semibold mb-3">The Result:</p>
+                <p className="text-normal-text font-mono text-sm leading-relaxed">
+                  The provider's efficiency becomes the homeowner's reliability.
+                </p>
+              </div>
+
+              <div className="w-full">
+                <img
+                  src="/Projects/Lawnstack /hoandspui/8B718F9A-8B65-4F4D-B986-0770B3DE15D9.jpeg"
+                  alt="Ecosystem alignment visualization"
+                  className="w-full h-auto rounded-lg"
+                />
+              </div>
+            </div>
+
+            {/* The First Friction Card with Customer Complaints - Side by Side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 w-full max-w-[1240px] mx-auto items-start">
+              {/* Left Column - The First Friction Card & Beyond the Interview Card */}
+              <div className="flex flex-col gap-6">
+                {/* The First Friction Card */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
+                  <h3 className="text-white font-serif text-xl mb-4">The First Friction: Schedule Adherence</h3>
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-white font-mono text-sm font-semibold mb-2">The Data:</p>
+                      <p className="text-normal-text font-mono text-sm leading-relaxed">
+                        We identified a critical failure in our service delivery—a significant percentage of providers were missing their scheduled arrival windows.
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-white font-mono text-sm font-semibold mb-2">The Impact:</p>
+                      <p className="text-normal-text font-mono text-sm leading-relaxed">
+                        This inconsistency eroded homeowner trust and spiked customer support tickets, directly threatening our retention metrics.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Beyond the Interview Card */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
+                  <h3 className="text-white font-serif text-xl mb-4">Beyond the Interview</h3>
+                  <p className="text-normal-text font-mono text-sm leading-relaxed">
+                    To uncover the root cause, surveys weren't enough. I initiated a phase of ethnographic research, moving from standard user interviews to full-day job shadowing. By riding along in the trucks, I could observe the "unarticulated" realities of their workflow—seeing exactly where the friction occurred in real-time, rather than relying on what they remembered to tell me later.
+                  </p>
+                  <div className="w-full mt-4">
+                    <img
+                      src="/Projects/Lawnstack /hoandspui/530FE62F-A9A0-4269-B931-992A4A380A6B.jpeg"
+                      alt="Ethnographic research ride-along"
+                      className="w-full h-auto rounded-lg"
+                    />
+                  </div>
+                  <p className="text-normal-text font-mono text-sm leading-relaxed mt-4">
+                    Contextual Inquiry: To validate my hypothesis, I moved beyond interviews and conducted job shadowing. I hopped into the truck with providers to observe the workflow in real-time. The Breakthrough Insight: I discovered a fundamental disconnect in our scheduling logic. In the real world, providers don't follow a rigid, pre-set calendar. Instead, they operate dynamically, selecting which properties to service "day-of" based on proximity, weather, and route efficiency.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right - Homeowner Complaints + Key Decision Factors */}
+              <div className="flex flex-col gap-6">
+                {/* Complaint Card 1 */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4">
+                  <p className="text-white font-mono text-sm font-semibold mb-2">Homeowner A</p>
+                  <p className="text-normal-text font-mono text-sm leading-relaxed italic">
+                    "The results were good, but he came 30 minutes late. When I tried to call, there was no response."
+                  </p>
+                </div>
+
+                {/* Complaint Card 2 */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4">
+                  <p className="text-white font-mono text-sm font-semibold mb-2">Homeowner B</p>
+                  <p className="text-normal-text font-mono text-sm leading-relaxed italic">
+                    "I scheduled a job with him twice, and both times he didn't come at the time scheduled."
+                  </p>
+                </div>
+
+                {/* Complaint Card 3 */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4">
+                  <p className="text-white font-mono text-sm font-semibold mb-2">Homeowner C</p>
+                  <p className="text-normal-text font-mono text-sm leading-relaxed italic">
+                    "We scheduled for 3:30 but he came at 12."
+                  </p>
+                </div>
+
+                {/* Key Decision Factors Card */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
+                  <p className="text-white font-mono text-sm leading-relaxed mb-6">
+                    In the first 5 minutes of their day, providers build their route based on three heuristics:
+                  </p>
+
+                  {/* Factor 1: Route Density */}
+                  <div className="mb-6">
+                    <div className="flex items-start gap-3 mb-3">
+                      <svg className="w-6 h-6 text-[#EFBF04] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                      </svg>
+                      <div>
+                        <h4 className="text-white font-mono text-sm font-semibold mb-2">Route Density</h4>
+                        <p className="text-normal-text font-mono text-xs leading-relaxed">
+                          Clustering jobs to minimize windshield time. Closer homes = higher hourly revenue.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Factor 2: Crew Availability */}
+                  <div className="mb-6">
+                    <div className="flex items-start gap-3 mb-3">
+                      <svg className="w-6 h-6 text-[#EFBF04] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                      <div>
+                        <h4 className="text-white font-mono text-sm font-semibold mb-2">Crew Availability</h4>
+                        <p className="text-normal-text font-mono text-xs leading-relaxed">
+                          Real-time adjustments based on who is in the truck. (e.g., "Do I have a helper for the heavy lifting?")
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Factor 3: Job Criticality */}
+                  <div>
+                    <div className="flex items-start gap-3 mb-3">
+                      <svg className="w-6 h-6 text-[#EFBF04] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                      </svg>
+                      <div>
+                        <h4 className="text-white font-mono text-sm font-semibold mb-2">Job Criticality</h4>
+                        <p className="text-normal-text font-mono text-xs leading-relaxed">
+                          Spontaneously prioritizing "fix-it" tickets that must be resolved within the same service window.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
         )}
 
         {/* Boltzman Enterprise Card Layouts */}
