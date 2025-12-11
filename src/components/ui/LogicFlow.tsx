@@ -1,5 +1,3 @@
-import React from 'react';
-
 export function LogicFlow() {
   return (
     <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8">

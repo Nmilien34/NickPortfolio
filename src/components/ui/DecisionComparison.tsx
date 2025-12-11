@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface BulletPoint {
   text: string;
   isPositive: boolean;
