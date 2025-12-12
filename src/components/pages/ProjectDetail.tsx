@@ -1065,6 +1065,68 @@ export function ProjectDetail() {
                     Contextual Inquiry: To validate my hypothesis, I moved beyond interviews and conducted job shadowing. I hopped into the truck with providers to observe the workflow in real-time. The Breakthrough Insight: I discovered a fundamental disconnect in our scheduling logic. In the real world, providers don't follow a rigid, pre-set calendar. Instead, they operate dynamically, selecting which properties to service "day-of" based on proximity, weather, and route efficiency.
                   </p>
                 </div>
+
+                {/* The Digital Regression Card */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 pb-[37px]">
+                  <h3 className="text-white font-serif text-xl mb-4">The Digital Regression: 3.4x Slower than Analog</h3>
+
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-white font-mono text-sm font-semibold mb-2">The Benchmark:</p>
+                      <p className="text-normal-text font-mono text-sm leading-relaxed">
+                        I conducted usability testing with 4 active providers to benchmark our digital scheduling flow against their traditional "pen and paper" method.
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-white font-mono text-sm font-semibold mb-3">The Data:</p>
+                      <ul className="space-y-3 text-normal-text font-mono text-sm">
+                        <li className="flex items-start">
+                          <span className="mr-2 text-[#EFBF04] mt-0.5">•</span>
+                          <span><strong className="text-white">Time-on-Task:</strong> It took an average of 3.7 minutes to schedule a single job digitally.</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="mr-2 text-[#EFBF04] mt-0.5">•</span>
+                          <span><strong className="text-white">Daily Impact:</strong> For a standard 6-job route, this totaled 22.2 minutes of admin time—a 344% increase in effort compared to their 5-minute manual routine.</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <p className="text-white font-mono text-sm font-semibold mb-2">The Root Cause:</p>
+                      <p className="text-normal-text font-mono text-sm leading-relaxed">
+                        High cognitive load. The interface forced providers to manually cross-reference new requests against their existing schedule to check for proximity and urgency, rather than visualizing it for them.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Customer Testimonials */}
+                <div className="space-y-4">
+                  {/* Testimonial 1 - Homeowner C */}
+                  <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4">
+                    <p className="text-white font-mono text-sm font-semibold mb-2">Homeowner C</p>
+                    <p className="text-normal-text font-mono text-sm leading-relaxed italic">
+                      "The results were good, but he came 30 minutes late. When I tried to call, there was no response."
+                    </p>
+                  </div>
+
+                  {/* Testimonial 2 - Homeowner B */}
+                  <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4">
+                    <p className="text-white font-mono text-sm font-semibold mb-2">Homeowner B</p>
+                    <p className="text-normal-text font-mono text-sm leading-relaxed italic">
+                      "We scheduled for 3:30 but he came at 12. Unexpected, but he was very detail-oriented."
+                    </p>
+                  </div>
+
+                  {/* Testimonial 3 - Homeowner A */}
+                  <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4">
+                    <p className="text-white font-mono text-sm font-semibold mb-2">Homeowner A</p>
+                    <p className="text-normal-text font-mono text-sm leading-relaxed italic">
+                      "Came late, but got the job done. It's what I expected for a cheap service."
+                    </p>
+                  </div>
+                </div>
               </div>
 
               {/* Right - Homeowner Complaints + Key Decision Factors */}
@@ -1090,6 +1152,13 @@ export function ProjectDetail() {
                   <p className="text-white font-mono text-sm font-semibold mb-2">Homeowner C</p>
                   <p className="text-normal-text font-mono text-sm leading-relaxed italic">
                     "We scheduled for 3:30 but he came at 12."
+                  </p>
+                </div>
+
+                {/* Intro to Provider Insights Card */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4">
+                  <p className="text-normal-text font-mono text-sm leading-relaxed italic">
+                    I had a lot of fun hanging out with the service providers and trying to understand their world better and below is what I've learned about them.
                   </p>
                 </div>
 
@@ -1143,6 +1212,266 @@ export function ProjectDetail() {
                       </div>
                     </div>
                   </div>
+                </div>
+
+                {/* Phone Mockup Card */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 flex items-center justify-center">
+                  <div className="w-full max-w-[280px]">
+                    <img
+                      src="/Projects/Lawnstack /hoandspui/example 2 (2) 1.svg"
+                      alt="Service provider mobile app interface"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                </div>
+
+                {/* The Expectation Gap Card */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 pb-[45px]">
+                  <h3 className="text-white font-serif text-xl mb-4">The Expectation Gap</h3>
+
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-white font-mono text-sm font-semibold mb-2">The Insight:</p>
+                      <p className="text-normal-text font-mono text-sm leading-relaxed">
+                        Sentiment analysis revealed a paradox—homeowners were highly satisfied with the quality of the work, but frustrated by the timing.
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-white font-mono text-sm font-semibold mb-2">The Culprit:</p>
+                      <p className="text-normal-text font-mono text-sm leading-relaxed">
+                        The scheduling interface. By offering rigid, specific time slots (e.g., "2:00 PM"), the product created an artificial promise of precision that dynamic field operations couldn't match, setting providers up to fail.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Strategic Goal Header */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-12 mb-8 w-full max-w-[1240px] mx-auto">
+              {/* Icon */}
+              <div className="flex justify-center mb-6">
+                <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                </svg>
+              </div>
+
+              {/* Label */}
+              <p className="text-gray-400 text-center font-mono text-sm uppercase tracking-wider mb-4">
+                Goal #1
+              </p>
+
+              {/* Main Heading */}
+              <h2 className="text-white text-center font-serif text-3xl md:text-4xl leading-relaxed">
+                How might we make the scheduling feature <strong className="font-bold italic">less disruptive</strong> & <strong className="font-bold italic">more seamless</strong> with providers' existing workflow?
+              </h2>
+            </div>
+
+            {/* Iteration 1 Card - Full Width */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8 w-full max-w-[1240px] mx-auto">
+              <h3 className="text-white font-serif text-2xl mb-6">Iteration 1: Prioritizing Route Density</h3>
+
+              <div className="space-y-6 mb-8">
+                <div>
+                  <p className="text-white font-mono text-sm font-semibold mb-2">The Hypothesis:</p>
+                  <p className="text-normal-text font-mono text-sm leading-relaxed">
+                    Rigid time slots were artificial constraints that caused lateness. By removing them, we could empower providers to self-optimize their routes.
+                  </p>
+                </div>
+
+                <div>
+                  <p className="text-white font-mono text-sm font-semibold mb-3">The Solution:</p>
+                  <ul className="space-y-3 text-normal-text font-mono text-sm">
+                    <li className="flex items-start">
+                      <span className="mr-2 text-[#EFBF04] mt-0.5">•</span>
+                      <span><strong className="text-white">Deprecated Time Slots:</strong> Shifted from specific appointment times (e.g., "2:00 PM") to "Day-based" scheduling.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-2 text-[#EFBF04] mt-0.5">•</span>
+                      <span><strong className="text-white">Visualized Proximity:</strong> Exposed the provider's existing route map during the acceptance phase. This allowed them to make data-driven decisions—accepting new jobs only if they fit into their existing clusters.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="w-full">
+                <img
+                  src="/Projects/Lawnstack /hoandspui/Group 80.svg"
+                  alt="Route density visualization"
+                  className="w-full h-auto rounded-lg"
+                />
+              </div>
+            </div>
+
+            {/* Strategic Goal Header - Goal #2 */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-12 mb-8 w-full max-w-[1240px] mx-auto">
+              {/* Lawnmower Icon */}
+              <div className="flex justify-center mb-6">
+                <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                  {/* Lawnmower body */}
+                  <rect x="6" y="8" width="12" height="6" rx="1" strokeLinecap="round" strokeLinejoin="round"/>
+                  {/* Handle */}
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M10 8V4M14 8V4"/>
+                  {/* Wheels */}
+                  <circle cx="8" cy="18" r="2"/>
+                  <circle cx="16" cy="18" r="2"/>
+                  {/* Connector */}
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8 14v2M16 14v2"/>
+                  {/* Heart decorations */}
+                  <path className="animate-pulse" strokeLinecap="round" strokeLinejoin="round" d="M4 10c0-.5.5-1 1-1s1 .5 1 1-.5 1-1 1-1-.5-1-1z" opacity="0.6"/>
+                  <path className="animate-pulse" strokeLinecap="round" strokeLinejoin="round" d="M18 6c0-.5.5-1 1-1s1 .5 1 1-.5 1-1 1-1-.5-1-1z" opacity="0.6"/>
+                </svg>
+              </div>
+
+              {/* Label */}
+              <p className="text-gray-400 text-center font-mono text-sm italic tracking-wider mb-4">
+                Goal #2
+              </p>
+
+              {/* Main Heading */}
+              <h2 className="text-white text-center font-serif text-3xl md:text-4xl leading-relaxed">
+                How might we accommodate for <strong className="font-bold italic">dynamic changes</strong> (co-workers and urgent jobs) that occur throughout the day?
+              </h2>
+            </div>
+
+            {/* Routes Visualization Card */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8 w-full max-w-[1240px] mx-auto relative overflow-hidden">
+              {/* Background neighborhood grid with routes */}
+              <svg className="w-full h-[400px] opacity-20 absolute inset-0" viewBox="0 0 800 400" fill="none" stroke="currentColor">
+                {/* Grid/Street lines */}
+                <line x1="0" y1="100" x2="800" y2="100" stroke="#888" strokeWidth="1"/>
+                <line x1="0" y1="200" x2="800" y2="200" stroke="#888" strokeWidth="1"/>
+                <line x1="0" y1="300" x2="800" y2="300" stroke="#888" strokeWidth="1"/>
+                <line x1="200" y1="0" x2="200" y2="400" stroke="#888" strokeWidth="1"/>
+                <line x1="400" y1="0" x2="400" y2="400" stroke="#888" strokeWidth="1"/>
+                <line x1="600" y1="0" x2="600" y2="400" stroke="#888" strokeWidth="1"/>
+
+                {/* Houses */}
+                <rect x="150" y="70" width="30" height="30" fill="#666"/>
+                <rect x="350" y="70" width="30" height="30" fill="#666"/>
+                <rect x="550" y="70" width="30" height="30" fill="#666"/>
+                <rect x="150" y="170" width="30" height="30" fill="#666"/>
+                <rect x="350" y="170" width="30" height="30" fill="#666"/>
+                <rect x="550" y="170" width="30" height="30" fill="#666"/>
+                <rect x="150" y="270" width="30" height="30" fill="#666"/>
+                <rect x="350" y="270" width="30" height="30" fill="#666"/>
+                <rect x="550" y="270" width="30" height="30" fill="#666"/>
+
+                {/* Route paths (connecting houses) */}
+                <path d="M165 85 L365 85 L565 85" stroke="#EFBF04" strokeWidth="2" strokeDasharray="5,5" opacity="0.6"/>
+                <path d="M165 85 L165 185 L365 185" stroke="#EFBF04" strokeWidth="2" strokeDasharray="5,5" opacity="0.6"/>
+                <path d="M365 185 L565 185 L565 285" stroke="#EFBF04" strokeWidth="2" strokeDasharray="5,5" opacity="0.6"/>
+              </svg>
+
+              {/* Central text overlay */}
+              <div className="relative z-10 flex flex-col items-center justify-center h-[400px]">
+                <h2 className="text-white font-serif text-5xl md:text-6xl font-bold mb-4 text-center">
+                  Introducing Routes!
+                </h2>
+                <p className="text-gray-300 font-mono text-lg md:text-xl text-center">
+                  Accommodating Dynamic Changes
+                </p>
+              </div>
+            </div>
+
+            {/* Dynamic Route Optimization Card */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8 w-full max-w-[1240px] mx-auto">
+              {/* Section 1: Dynamic Route Optimization */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
+                {/* Left - Image */}
+                <div className="w-full">
+                  <img
+                    src="/Projects/Lawnstack /hoandspui/image 13.svg"
+                    alt="Dynamic route optimization interface"
+                    className="w-full h-auto rounded-lg"
+                  />
+                </div>
+
+                {/* Right - Text Content */}
+                <div className="space-y-4">
+                  <h3 className="text-white font-serif text-2xl mb-4">Feature: Dynamic Route Optimization</h3>
+
+                  <div>
+                    <p className="text-white font-mono text-sm font-semibold mb-2">The Logic:</p>
+                    <p className="text-normal-text font-mono text-sm leading-relaxed">
+                      Field conditions aren't static. I designed the routing engine to handle real-time variables, allowing providers to re-rank their queue instantly.
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="text-white font-mono text-sm font-semibold mb-2">The Execution:</p>
+                    <p className="text-normal-text font-mono text-sm leading-relaxed">
+                      Providers can toggle their route optimization logic based on the immediate context: sorting by Proximity (for efficiency) or Urgency (for critical "drop-everything" tickets).
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Section 2: Dynamic Crew Merging */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                {/* Left - Text Content */}
+                <div className="space-y-4 md:order-1">
+                  <h3 className="text-white font-serif text-2xl mb-4">Feature: Dynamic Crew Merging</h3>
+
+                  <div>
+                    <p className="text-white font-mono text-sm font-semibold mb-2">The Friction:</p>
+                    <p className="text-normal-text font-mono text-sm leading-relaxed">
+                      When crews combined trucks, they were wasting time manually cross-referencing physical addresses to build a shared route.
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="text-white font-mono text-sm font-semibold mb-2">The Solution:</p>
+                    <p className="text-normal-text font-mono text-sm leading-relaxed">
+                      I built a "Merge Route" function. This algorithm automatically overlays a co-worker's schedule onto the primary driver's map, clustering the jobs to create a single, optimized path based on the new combined capacity.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Right - Image */}
+                <div className="w-full md:order-2">
+                  <img
+                    src="/Projects/Lawnstack /hoandspui/image 13.svg"
+                    alt="Dynamic crew merging interface"
+                    className="w-full h-auto rounded-lg"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Conclusion Card - The Co-Founder Experience */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border-2 border-[#EFBF04]/20 p-12 mb-8 w-full max-w-[1240px] mx-auto">
+              <div className="max-w-3xl mx-auto text-center">
+                {/* Title with accent */}
+                <div className="mb-8">
+                  <div className="w-16 h-1 bg-[#EFBF04] mx-auto mb-6"></div>
+                  <h2 className="text-white font-serif text-4xl md:text-5xl font-bold mb-2">
+                    The Co-Founder Experience
+                  </h2>
+                  <div className="w-16 h-1 bg-[#EFBF04] mx-auto mt-6"></div>
+                </div>
+
+                {/* Main content */}
+                <div className="space-y-6 mb-8">
+                  <p className="text-normal-text font-mono text-base leading-relaxed">
+                    Leading Lawnstack required me to operate at the intersection of finance, engineering, and design.
+                  </p>
+
+                  <p className="text-normal-text font-mono text-base leading-relaxed">
+                    I worked alongside <strong className="text-white"><a href="https://allen.mov/" target="_blank" rel="noopener noreferrer" className="hover:text-[#EFBF04] transition-colors underline decoration-[#EFBF04]/50 hover:decoration-[#EFBF04]">Co-founder/CFO Allen Yao</a></strong> to validate our business models and unit economics. Simultaneously, I managed the technical roadmap with <strong className="text-white"><a href="https://www.liamdu.com/" target="_blank" rel="noopener noreferrer" className="hover:text-[#EFBF04] transition-colors underline decoration-[#EFBF04]/50 hover:decoration-[#EFBF04]">Co-founder/CTO Liam Du</a></strong>, ensuring our engineering efforts matched our strategic goals.
+                  </p>
+
+                  <p className="text-normal-text font-mono text-base leading-relaxed">
+                    This experience taught me how to articulate product decisions from both a financial and technical standpoint, leading the team to venture backing and significant market traction.
+                  </p>
+                </div>
+
+                {/* Team acknowledgment */}
+                <div className="pt-6 border-t border-white/10">
+                  <p className="text-gray-400 font-mono text-sm italic">
+                    Special thanks to the incredible product design interns <strong className="text-white">Dennis Quizhpi</strong> and <strong className="text-white">Nancy Duong</strong> who helped bring this vision to life.
+                  </p>
                 </div>
               </div>
             </div>
