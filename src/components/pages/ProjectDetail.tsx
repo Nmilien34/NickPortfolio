@@ -1,3 +1,4 @@
+import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Header } from '../layout/Header';
 import { Footer } from '../layout/Footer';
@@ -58,6 +59,14 @@ export function ProjectDetail() {
                     <img
                       src="/Projects/Lawnstack /Logo /Frame 49.svg"
                       alt="Lawnstack Logo"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                ) : project.title === 'Boltzman Enterprise' ? (
+                  <div className="w-16 h-16 rounded-lg bg-white/10 border border-white/20 overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
+                    <img
+                      src="/Projects/Boltzman AI/Frame 431.svg"
+                      alt="Boltzman Enterprise Logo"
                       className="w-full h-full object-contain"
                     />
                   </div>
@@ -143,13 +152,13 @@ export function ProjectDetail() {
               <div className="relative">
                 {/* Desktop Mockup */}
                 <div className="relative mx-auto max-w-4xl">
-                  <div className="bg-gray-800 rounded-t-lg p-2 flex items-center gap-2">
+                  <div className={project.title === 'Boltzman Enterprise' ? 'bg-white rounded-t-lg p-2 flex items-center gap-2' : 'bg-gray-800 rounded-t-lg p-2 flex items-center gap-2'}>
                     <div className="flex gap-2">
                       <div className="w-3 h-3 rounded-full bg-red-500"></div>
                       <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                       <div className="w-3 h-3 rounded-full bg-green-500"></div>
                     </div>
-                    <div className="flex-1 bg-gray-700 rounded px-4 py-1 text-xs text-gray-300 text-center font-mono">
+                    <div className={project.title === 'Boltzman Enterprise' ? 'flex-1 bg-gray-200 rounded px-4 py-1 text-xs text-gray-700 text-center font-mono' : 'flex-1 bg-gray-700 rounded px-4 py-1 text-xs text-gray-300 text-center font-mono'}>
                       {project.title === 'Lawnstack' ? 'lawnstack.com' : (project.browserUrl || 'example.com')}
                     </div>
                   </div>
@@ -165,6 +174,9 @@ export function ProjectDetail() {
             </div>
           )}
 
+        {/* Lawnstack-specific content */}
+        {project.title === 'Lawnstack' && (
+          <React.Fragment>
           {/* Summary and Role Cards - Side by Side */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {/* Summary Card - First */}
@@ -761,7 +773,6 @@ export function ProjectDetail() {
               </div>
             </div>
           </div>
-        </div>
 
         {/* The New Experience (Autonomy) Card */}
         <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8 w-full max-w-[1200px] mx-auto">
@@ -899,6 +910,8 @@ export function ProjectDetail() {
             </p>
           </div>
         </div>
+        </React.Fragment>
+        )}
 
         {/* Service Provider Flow Intro */}
         {project.title === 'Lawnstack' && (
@@ -1478,286 +1491,171 @@ export function ProjectDetail() {
           </>
         )}
 
-        {/* Boltzman Enterprise Card Layouts */}
+        {/* Boltzman Enterprise-specific content */}
         {project.title === 'Boltzman Enterprise' && (
-          <div className="max-w-7xl mx-auto px-6">
-            {/* Two Picture Cards - Side by Side */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 items-start">
-              {/* Left Column - Contains both left card and smaller container */}
-              <div className="md:col-span-2 flex flex-col gap-6">
-                {/* First Picture Card */}
-                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-0.5">
-                  <div className="bg-white rounded-t-lg p-2 flex items-center gap-2 mb-0">
-                    <div className="flex gap-2">
-                      <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                      <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                      <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                    </div>
-                    <div className="flex-1 bg-gray-200 rounded px-4 py-1 text-xs text-gray-700 text-center font-mono">
-                      enterprise.boltzman.ai
-                    </div>
-                  </div>
-                  <div className="overflow-hidden rounded-b-lg bg-white" style={{ height: '350px' }}>
-                  </div>
-                  <div className="p-3 text-center">
-                  </div>
-                </div>
-
-                {/* Smaller container at bottom */}
-                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 w-full" style={{ minHeight: '262px' }}>
-                </div>
+          <>
+            {/* Summary and Profile Cards - Side by Side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              {/* Summary Card - First */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
+                <h2 className="font-serif text-xl text-white mb-4">Summary</h2>
+                <p className="text-normal-text font-mono text-sm leading-relaxed">
+                  Boltzman helps restaurants answer calls during rush hours when staff can't get to the phone. We built conversational voice AI that handles phone orders, reservations, and customer questions 24/7. Unlike traditional IVR systems that use rigid logic trees, our AI conducts natural, human-like conversations—technology that's only become possible in the past two years.
+                </p>
               </div>
 
-              {/* Second Picture Card */}
-              <div className="md:col-span-1 bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-2" style={{ height: '770px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div className="flex items-center justify-center w-[80%] mx-auto mb-3">
-                </div>
-                <div className="p-3 text-center">
+              {/* Profile Card - Second */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
+                <h2 className="font-serif text-xl text-white mb-4">Profile</h2>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Role</p>
+                    <p className="text-white font-mono text-sm">Chief Executive Officer & Technical Product Manager</p>
+                  </div>
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Team</p>
+                    <p className="text-white font-mono text-sm">2 People</p>
+                  </div>
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Highlight</p>
+                    <p className="text-white font-mono text-sm">Reached $1k MRR in the first 8 days opearting. Peaked to $5k MRR with 30 restaurants, processing over $50k/month worth of food</p>
+                  </div>
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Fundraising</p>
+                    <p className="text-white font-mono text-sm">$0</p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Full Width Experience Card */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8">
-              <div className="w-full">
+            {/* Team Card */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
+              <div className="rounded-lg overflow-hidden">
+                <img
+                  src="/Projects/VoiceaiReceptionist/Slide 16_9 - 8.png"
+                  alt="Team - Co-founders Nickson Milien and Liam Du"
+                  className="w-full h-auto"
+                />
               </div>
             </div>
 
-            {/* Experience Iteration Process Card with 3 small containers */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 items-start">
-              <div className="md:col-span-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
-                <div className="w-full">
+            {/* Problem Vs Solution Card */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
+              <h2 className="font-serif text-2xl text-white mb-6">Problem Vs Solution</h2>
+              <div className="grid grid-cols-2 gap-6">
+                {/* Problem - Left side */}
+                <div className="rounded-lg overflow-hidden">
+                  <img
+                    src="/Projects/VoiceaiReceptionist/Slide 16_9 - 2.png"
+                    alt="Restaurant Industry Crisis - Problem"
+                    className="w-full h-auto"
+                  />
                 </div>
-              </div>
-
-              {/* Right side - 3 small containers */}
-              <div className="md:col-span-1 flex flex-col gap-6 h-full">
-                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 flex-1 flex items-center justify-center">
-                </div>
-                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 flex-1 flex items-center justify-center">
-                </div>
-                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 flex-1 flex items-center justify-center">
+                {/* Solution - Right side */}
+                <div className="rounded-lg overflow-hidden">
+                  <img
+                    src="/Projects/VoiceaiReceptionist/Slide 16_9 - 3.png"
+                    alt="Boltzman Solution"
+                    className="w-full h-auto"
+                  />
                 </div>
               </div>
             </div>
 
-            {/* User Research Card - Full Width */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8">
-              <div className="space-y-6">
-                {/* First Insight Row */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="w-full">
-                  </div>
-                  <div className="w-full flex flex-col justify-center">
-                  </div>
-                </div>
+            {/* Competition Strategy Card */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
+              <h2 className="font-serif text-2xl text-white mb-6">The Original Strategy to Capture the Market and Overcome the Incumbents</h2>
+              <div className="rounded-lg overflow-hidden">
+                <img
+                  src="/Projects/VoiceaiReceptionist/DA47F276-9C4E-469A-8EC5-4BB404CA1B07.jpeg"
+                  alt="Competition Strategy - Vertical vs General Approach"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
 
-                {/* Second Insight Row */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="w-full flex flex-col justify-center">
-                  </div>
-                  <div className="w-full">
-                  </div>
-                </div>
+            {/* Market Vision Card */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
+              <p className="text-normal-text font-mono text-sm leading-relaxed mb-6">
+                Our vision extended far beyond restaurants. We recognized that Voice AI could transform operations for a wide range of local businesses. Our goal was to democratize enterprise-grade technology, previously accessible only to large corporations, and make it available to SMBs for a fraction of the cost. Here's the what the market looked like
+              </p>
+              <div className="rounded-lg overflow-hidden">
+                <img
+                  src="/Projects/VoiceaiReceptionist/600A1659-511C-489E-9B32-46DF35799CE2.jpeg"
+                  alt="Market Size - TAM Analysis"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
 
-                {/* Third Insight Row */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="w-full">
-                  </div>
-                  <div className="w-full flex flex-col justify-center">
-                  </div>
+            {/* Revenue Model & Pricing Card */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
+              <h2 className="font-serif text-2xl text-white mb-6">Revenue Model & Pricing</h2>
+              <div className="rounded-lg overflow-hidden">
+                <img
+                  src="/Projects/VoiceaiReceptionist/Slide 16_9 - 4.png"
+                  alt="Revenue Model & Pricing - Simple Pricing that Scales With Your Success"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+
+            {/* Value Provided Card */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
+              <h2 className="font-serif text-2xl text-white mb-6">Value Provided</h2>
+              <div className="grid grid-cols-2 gap-6">
+                {/* Numbers Don't Lie - Left side */}
+                <div className="rounded-lg overflow-hidden">
+                  <img
+                    src="/Projects/VoiceaiReceptionist/Slide 16_9 - 5.png"
+                    alt="The Numbers Don't Lie: Boltzman Pays for itself"
+                    className="w-full h-auto"
+                  />
+                </div>
+                {/* Powerful Features - Right side */}
+                <div className="rounded-lg overflow-hidden">
+                  <img
+                    src="/Projects/VoiceaiReceptionist/Slide 16_9 - 6.png"
+                    alt="Powerful Features that work from Day One"
+                    className="w-full h-auto"
+                  />
                 </div>
               </div>
+            </div>
 
-              <div className="mt-8 pt-8 border-t border-white/10 space-y-6">
+            {/* Creating the Experience Card - Half Width */}
+            <div className="max-w-3xl">
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
+                <h2 className="font-serif text-2xl text-white mb-6">Creating the experience</h2>
+
+                {/* The Current Reality */}
+                <div className="mb-6">
+                  <h3 className="font-serif text-lg text-white mb-3">The Current Reality:</h3>
+                  <p className="text-normal-text font-mono text-sm leading-relaxed">
+                    Restaurants are overwhelmed by volume, receiving over 75 calls daily. Staff members spend 30+ hours per month on the phone—time that should be focused on dine-in guests and operations. The cost of this inefficiency is high: 40% of calls are placed on hold or missed entirely. Worse, data shows that 50% of customers hang up and order elsewhere after waiting just 90 seconds.
+                  </p>
+                </div>
+
+                {/* The Ideal Experience */}
+                <div className="mb-6">
+                  <h3 className="font-serif text-lg text-white mb-3">The Ideal Experience:</h3>
+                  <p className="text-normal-text font-mono text-sm leading-relaxed">
+                    We envision a restaurant where the phone never interrupts the staff. Our Voice Agents function as fully integrated team members, speaking over 30 languages and delivering the utmost in customer service. The AI is indistinguishable from a human, handling everything from reservations to complex orders. By integrating directly with POS systems, orders are processed and sent to the kitchen instantly without staff intervention.
+                  </p>
+                </div>
+
+                {/* The Network Advantage */}
                 <div>
-                </div>
-                <div>
-                </div>
-              </div>
-            </div>
-
-            {/* Ideation to Action Card */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8">
-              <div className="space-y-8">
-                <div>
+                  <h3 className="font-serif text-lg text-white mb-3">The Network Advantage:</h3>
+                  <p className="text-normal-text font-mono text-sm leading-relaxed">
+                    Unlike competitors who build isolated models for each client, we are building a collective learning network. Every conversation improves the model for all restaurants. If the AI learns that "extra crispy" implies specific instructions for pizza versus fried chicken, that intelligence propagates across our entire network immediately. This creates a powerful flywheel: more restaurants lead to smarter AI, which attracts more restaurants.
+                  </p>
                 </div>
               </div>
             </div>
-
-            {/* The New Experience Card */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8">
-              <div className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="flex flex-col justify-center">
-                  </div>
-                  <div className="w-full">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* The Iteration Card */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8">
-              <div className="space-y-6 mb-8">
-              </div>
-
-              {/* Option A */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <div className="flex flex-col justify-center">
-                  <div className="inline-block mb-4">
-                    <span className="bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-blue-500/30">
-                      Option A
-                    </span>
-                  </div>
-                </div>
-                <div className="w-full">
-                </div>
-              </div>
-
-              {/* Option B */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div className="w-full order-2 md:order-1">
-                </div>
-                <div className="flex flex-col justify-center order-1 md:order-2">
-                  <div className="inline-block mb-4">
-                    <span className="bg-gray-500/20 text-gray-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-gray-500/30">
-                      Option B
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* The New Experience 2 Card */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8">
-              <div className="space-y-6 mb-8">
-                <div>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div className="flex flex-col justify-center">
-                </div>
-                <div className="w-full">
-                </div>
-              </div>
-
-              <div className="mt-6 pt-6 border-t border-white/20">
-                <div className="w-full">
-                </div>
-              </div>
-            </div>
-
-            {/* The New Experience 3 Card */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8">
-              <div className="space-y-4 mb-8">
-              </div>
-
-              {/* Two Options Side by Side */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-                {/* Option A */}
-                <div className="flex flex-col h-full">
-                  <div className="inline-block mb-4">
-                    <span className="bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-blue-500/30">
-                      Option A
-                    </span>
-                  </div>
-                  <div className="w-full mt-auto">
-                  </div>
-                </div>
-
-                {/* Option B */}
-                <div className="flex flex-col h-full">
-                  <div className="inline-block mb-4">
-                    <span className="bg-gray-500/20 text-gray-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-gray-500/30">
-                      Option B
-                    </span>
-                  </div>
-                  <div className="w-full mt-auto">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* The New Experience 4 Card */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8 w-full max-w-[1200px] mx-auto">
-              <div className="space-y-4 mb-8">
-              </div>
-
-              {/* Options stacked like an inverse staircase */}
-              <div className="space-y-6 flex flex-col">
-                {/* Option A */}
-                <div className="bg-white/5 rounded-lg border border-white/10 p-4 flex flex-col w-full max-w-xl">
-                  <div className="inline-block mb-4">
-                    <span className="bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-blue-500/30">
-                      Option A
-                    </span>
-                  </div>
-                  <div className="w-full mt-auto">
-                  </div>
-                </div>
-
-                {/* Option B */}
-                <div className="bg-white/5 rounded-lg border border-white/10 p-4 flex flex-col w-full max-w-xl ml-48 md:ml-64">
-                  <div className="inline-block mb-4">
-                    <span className="bg-gray-500/20 text-gray-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-gray-500/30">
-                      Option B
-                    </span>
-                  </div>
-                  <div className="w-full mt-auto">
-                  </div>
-                </div>
-
-                {/* Option C */}
-                <div className="bg-white/5 rounded-lg border border-white/10 p-4 flex flex-col w-full max-w-xl ml-0 md:ml-0">
-                  <div className="inline-block mb-4">
-                    <span className="bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-blue-500/30">
-                      Option C
-                    </span>
-                  </div>
-                  <div className="w-full mt-auto">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* The New Experience 5 Card */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 mb-8 w-full max-w-[1240px] mx-auto">
-              <div className="space-y-4 mb-8">
-              </div>
-
-              {/* Option A */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <div className="flex flex-col justify-center">
-                  <div className="inline-block mb-4">
-                    <span className="bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-blue-500/30">
-                      Option A
-                    </span>
-                  </div>
-                </div>
-                <div className="w-full">
-                </div>
-              </div>
-
-              {/* Option B */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="w-full order-2 md:order-1">
-                </div>
-                <div className="flex flex-col justify-center order-1 md:order-2">
-                  <div className="inline-block mb-4">
-                    <span className="bg-gray-500/20 text-gray-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-gray-500/30">
-                      Option B
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-8">
-              </div>
-            </div>
-          </div>
+          </>
         )}
+        </div>
 
       </main>
       <Footer />

@@ -27,7 +27,7 @@ export const projects: Project[] = [
   {
     title: 'Boltzman Enterprise',
     category: 'SaaS Product',
-    description: 'AI-powered voice receptionist service for restaurants, handling customer calls and reservations with natural conversation.',
+    description: 'Voice AI Receiptionist for restaurants',
     mockup: '/Projects/Voice ai Receptionist/91658D25-00CB-4B5E-BD37-CDE8CFA0BA8C.jpeg',
     gradientColors: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
     browserUrl: 'enterprise.boltzman.ai',
@@ -84,7 +84,7 @@ export function Projects() {
     <section className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
-        <h2 className="font-serif text-4xl text-white mb-12 text-center">
+        <h2 className="font-serif text-3xl md:text-4xl text-white mb-8 md:mb-12 text-center">
           Some Projects I've Done
         </h2>
 
@@ -93,7 +93,7 @@ export function Projects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-2xl cursor-pointer transition-all duration-500 hover:scale-[1.02]"
+              className="group relative overflow-hidden rounded-2xl cursor-pointer transition-all duration-500 hover:scale-[1.02] min-h-[400px] md:min-h-[500px]"
               onClick={() => {
                 const slug = titleToSlug(project.title);
                 navigate(`/project/${slug}`);
@@ -101,11 +101,10 @@ export function Projects() {
               style={{
                 backgroundColor: 'hsl(var(--background))',
                 color: 'hsl(var(--foreground))',
-                minHeight: '500px',
               }}
             >
               {/* Browser Window Mockup Container */}
-              <div className="absolute inset-0 flex items-end p-6">
+              <div className="absolute inset-0 flex items-end p-4 md:p-6">
                 <div
                   className="w-full bg-white rounded-t-xl shadow-2xl overflow-hidden"
                   style={{
@@ -115,13 +114,13 @@ export function Projects() {
                   }}
                 >
                   {/* Browser Chrome/Header */}
-                  <div className="bg-gray-100 px-4 py-3 flex items-center gap-2 border-b border-gray-200">
-                    <div className="flex gap-2">
-                      <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                      <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                      <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                  <div className="bg-gray-100 px-3 py-2 md:px-4 md:py-3 flex items-center gap-2 border-b border-gray-200">
+                    <div className="flex gap-1.5 md:gap-2">
+                      <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-red-500"></div>
+                      <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-yellow-500"></div>
+                      <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-green-500"></div>
                     </div>
-                    <div className="flex-1 mx-4 bg-white rounded-md px-3 py-1 text-xs text-gray-500">
+                    <div className="flex-1 mx-2 md:mx-4 bg-white rounded-md px-2 md:px-3 py-1 text-[10px] md:text-xs text-gray-500 truncate">
                       {project.browserUrl || `${project.title.toLowerCase().replace(/\s+/g, '')}.com`}
                     </div>
                   </div>
