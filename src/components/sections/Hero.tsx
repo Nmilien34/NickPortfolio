@@ -74,27 +74,17 @@ export function Hero() {
       {/* Logo/Home Button */}
       <button
         onClick={scrollToTop}
-        className="absolute w-16 h-16 rounded-lg flex items-center justify-center border-2 border-[#EFBF04] shadow-[0_0_25px_rgba(239,191,4,0.5)] bg-white/5 z-[60] cursor-pointer hover:border-[#EFBF04] hover:shadow-[0_0_35px_rgba(239,191,4,0.7)] transition-all duration-300"
-        style={{
-          top: '40px',
-          left: '120px',
-        }}
+        className="absolute top-6 left-4 md:top-10 md:left-[120px] w-12 h-12 md:w-16 md:h-16 rounded-lg flex items-center justify-center border-2 border-[#EFBF04] shadow-[0_0_25px_rgba(239,191,4,0.5)] bg-white/5 z-[60] cursor-pointer hover:border-[#EFBF04] hover:shadow-[0_0_35px_rgba(239,191,4,0.7)] transition-all duration-300"
         aria-label="Home"
       >
-        <span className="text-white font-serif text-[22px]">
+        <span className="text-white font-serif text-lg md:text-[22px]">
           NCM
         </span>
       </button>
 
-      {/* Navigation Buttons */}
-      <div
-        className="absolute flex gap-6 z-[60]"
-        style={{
-          top: '40px',
-          right: '280px',
-        }}
-      >
-        <button 
+      {/* Navigation Buttons - Hidden on mobile, visible on md+ */}
+      <div className="absolute top-10 right-[280px] hidden md:flex gap-6 z-[60]">
+        <button
           onClick={() => navigate('/about')}
           className="px-5 py-2 text-normal-text hover:text-text-white transition-colors"
         >
@@ -108,7 +98,7 @@ export function Hero() {
         >
           Resume
         </a>
-        <button 
+        <button
           onClick={() => navigate('/learnings')}
           className="px-5 py-2 text-normal-text hover:text-text-white transition-colors"
         >
@@ -117,16 +107,10 @@ export function Hero() {
       </div>
 
       {/* Language Switcher */}
-      <div
-        className="absolute z-[60]"
-        style={{
-          top: '40px',
-          right: '120px',
-        }}
-      >
+      <div className="absolute top-6 right-4 md:top-10 md:right-[120px] z-[60]">
         <button
           onClick={() => setIsLangOpen(!isLangOpen)}
-          className="px-6 py-2 rounded-full border-2 border-[#EFBF04] shadow-[0_0_30px_rgba(239,191,4,0.5)] bg-white/5 text-white hover:border-[#EFBF04] hover:shadow-[0_0_40px_rgba(239,191,4,0.7)] transition-all duration-300"
+          className="px-4 py-1.5 md:px-6 md:py-2 text-sm md:text-base rounded-full border-2 border-[#EFBF04] shadow-[0_0_30px_rgba(239,191,4,0.5)] bg-white/5 text-white hover:border-[#EFBF04] hover:shadow-[0_0_40px_rgba(239,191,4,0.7)] transition-all duration-300"
         >
           {currentLang}
         </button>
@@ -150,10 +134,10 @@ export function Hero() {
       </div>
 
       {/* Hero Content */}
-      <div className="text-center px-6 relative z-10">
+      <div className="text-center px-4 md:px-6 relative z-10">
         {/* Main Title */}
         <h1
-          className="font-serif text-7xl md:text-8xl tracking-tighter mb-4 text-white"
+          className="font-serif text-5xl md:text-7xl lg:text-8xl tracking-tighter mb-4 text-white"
           style={{
             mixBlendMode: 'overlay',
             opacity: 0.95,
@@ -164,12 +148,12 @@ export function Hero() {
         </h1>
 
         {/* Subtitle */}
-        <h2 className="font-serif text-3xl md:text-4xl font-light text-white-smoke mb-12">
+        <h2 className="font-serif text-xl md:text-3xl lg:text-4xl font-light text-white-smoke mb-8 md:mb-12 px-2">
           {translations[currentLang as keyof typeof translations].subtitle}
         </h2>
 
         {/* Details */}
-        <p className="font-mono text-sm text-normal-text">
+        <p className="font-mono text-xs md:text-sm text-normal-text max-w-2xl mx-auto">
           {translations[currentLang as keyof typeof translations].description}
         </p>
 
@@ -240,15 +224,15 @@ export function Hero() {
         </div>
 
         {/* Personal Photos Section */}
-        <div className="flex justify-center gap-2 md:gap-4 mt-32 mb-32 px-4">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-4 mt-20 md:mt-32 mb-20 md:mb-32 px-4">
           {/* Left Photo (Tilted Left) */}
-          <figure className="group relative -rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 ease-out z-0 hover:z-10">
+          <figure className="group relative -rotate-2 md:-rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 ease-out z-0 hover:z-10">
             <div className="w-fit p-2 border border-white/20 rounded-2xl shadow-2xl">
               <img
                 src="/images/4F8413FF-0F8C-4384-AA3A-E72D29CD7AF1.jpeg"
                 alt="First day of high school"
                 loading="lazy"
-                className="w-64 h-80 md:w-72 md:h-96 object-cover object-top rounded-xl filter grayscale-[30%] group-hover:grayscale-0 transition-all duration-500"
+                className="w-48 h-60 md:w-64 md:h-80 lg:w-72 lg:h-96 object-cover object-top rounded-xl filter grayscale-[30%] group-hover:grayscale-0 transition-all duration-500"
               />
             </div>
             <figcaption className="text-center text-gray-400 mt-4 font-mono text-xs opacity-80 group-hover:opacity-100 transition-opacity">
@@ -257,20 +241,20 @@ export function Hero() {
           </figure>
 
           {/* Timeline Indicator */}
-          <div className="flex items-center gap-2 text-gray-500 font-mono text-xs">
-            <span>←</span>
-            <span>~10 years in the us</span>
-            <span>→</span>
+          <div className="flex flex-col md:flex-row items-center gap-2 text-gray-500 font-mono text-xs order-last md:order-none">
+            <span className="hidden md:inline">←</span>
+            <span className="text-center">~10 years<br className="md:hidden" /> in the us</span>
+            <span className="hidden md:inline">→</span>
           </div>
 
           {/* Right Photo (Tilted Right) */}
-          <figure className="group relative rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 ease-out z-0 hover:z-10">
+          <figure className="group relative rotate-2 md:rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 ease-out z-0 hover:z-10">
             <div className="w-fit p-2 border border-white/20 rounded-2xl shadow-2xl">
               <img
                 src="/images/1F97147A-5531-4D66-BA63-A9F5B0A77C19_1_105_c.jpeg"
                 alt="Visiting Cornell"
                 loading="lazy"
-                className="w-64 h-80 md:w-72 md:h-96 object-cover rounded-xl filter grayscale-[30%] group-hover:grayscale-0 transition-all duration-500"
+                className="w-48 h-60 md:w-64 md:h-80 lg:w-72 lg:h-96 object-cover rounded-xl filter grayscale-[30%] group-hover:grayscale-0 transition-all duration-500"
               />
             </div>
             <figcaption className="text-center text-gray-400 mt-4 font-mono text-xs opacity-80 group-hover:opacity-100 transition-opacity">
@@ -280,24 +264,24 @@ export function Hero() {
         </div>
 
         {/* Closing Statement */}
-        <div className="max-w-3xl mx-auto mt-32 mb-20 px-6 text-center">
-          <p className="font-mono text-sm text-normal-text leading-relaxed">
+        <div className="max-w-3xl mx-auto mt-20 md:mt-32 mb-12 md:mb-20 px-4 md:px-6 text-center">
+          <p className="font-mono text-xs md:text-sm text-normal-text leading-relaxed">
             Since leaving Haiti, I've been chasing a dream I've had since I was 10. The past decade has been filled with incredible people who shaped my journey. I'm grateful for their guidance and hope to pay it forward. Here's what I've been building.
           </p>
         </div>
 
         {/* Timeline Start */}
-        <div className="relative flex flex-col items-center mt-20 mb-0">
+        <div className="relative flex flex-col items-center mt-12 md:mt-20 mb-0">
           {/* Title */}
-          <h3 className="font-serif text-2xl text-white mb-6">the beginning</h3>
+          <h3 className="font-serif text-xl md:text-2xl text-white mb-6">the beginning</h3>
 
           {/* Year Label in Bubble */}
-          <div className="px-8 py-2 rounded-full border-2 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)] bg-white/5 text-white font-mono text-sm mb-4">
+          <div className="px-6 md:px-8 py-2 rounded-full border-2 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)] bg-white/5 text-white font-mono text-sm mb-4">
             2015
           </div>
 
           {/* Description */}
-          <p className="font-mono text-sm text-normal-text mb-8">Came to live in the US</p>
+          <p className="font-mono text-xs md:text-sm text-normal-text mb-8">Came to live in the US</p>
 
           {/* Timeline Dot */}
           <div className="w-4 h-4 rounded-full bg-white shadow-[0_0_15px_rgba(255,255,255,0.5)] mb-0" />
@@ -305,8 +289,8 @@ export function Hero() {
           {/* Timeline Line extending down */}
           <div className="w-0.5 h-24 bg-[#EFBF04]" />
 
-          {/* Brace for 2015-2017 (from dot to 2017 bubble) */}
-          <div className="absolute left-1/2 ml-20 flex items-start gap-3 z-20" style={{ top: '160px', height: '330px' }}>
+          {/* Brace for 2015-2017 - Hidden on mobile, shown on md+ */}
+          <div className="hidden md:flex absolute left-1/2 ml-20 items-start gap-3 z-20" style={{ top: '160px', height: '330px' }}>
             {/* Simple bracket */}
             <div className="relative" style={{ width: '20px', height: '100%' }}>
               {/* Top horizontal line */}
@@ -338,6 +322,28 @@ export function Hero() {
                     <span>→</span>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile-only card - centered below timeline */}
+          <div className="md:hidden w-full max-w-md px-4 mt-8">
+            <div
+              onClick={() => {
+                console.log('Early Years card clicked');
+                navigate('/early-years');
+              }}
+              className="w-full p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-white/30 active:scale-95 transition-all duration-300 text-left cursor-pointer"
+            >
+              <h3 className="font-serif text-lg text-white mb-3">
+                Early Years in the US
+              </h3>
+              <p className="text-xs font-mono text-normal-text leading-relaxed mb-4">
+                I landed in the US from Haiti in 2015 and immediately realized one thing: nothing here is given, everything is earned. While I was navigating high school and learning English, I wasn't just trying to fit in—I was trying to catch up. Got my first job at 16 working at the mall which I then quit to go work at KFC, which paid a lot more. I built my first real community here, made friends who helped me navigate the culture, and set a baseline for the work ethic that would define the next decade of my life. Also played lots of soccer.
+              </p>
+              <div className="flex items-center gap-2 text-xs font-mono text-white/70">
+                <span>Tap to view details</span>
+                <span>→</span>
               </div>
             </div>
           </div>
