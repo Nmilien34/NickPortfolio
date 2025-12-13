@@ -70,6 +70,14 @@ export function ProjectDetail() {
                       className="w-full h-full object-contain"
                     />
                   </div>
+                ) : project.title === 'Boltzman AI' ? (
+                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg bg-white/10 border border-white/20 overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
+                    <img
+                      src="/Projects/Boltzman AI/Frame 108.png"
+                      alt="Boltzman AI Logo"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
                 ) : (
                   <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg bg-white/10 border border-white/20 overflow-hidden flex-shrink-0">
                     <img
@@ -92,6 +100,19 @@ export function ProjectDetail() {
                         className="flex items-center gap-1 px-3 py-1 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 text-white font-mono text-xs transition-all"
                       >
                         Live Website
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    )}
+                    {project.title === 'Boltzman Enterprise' && (
+                      <a
+                        href="https://enterprise.boltzman.ai/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 px-3 py-1 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 text-white font-mono text-xs transition-all"
+                      >
+                        Live Site
                         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>
@@ -2062,6 +2083,202 @@ export function ProjectDetail() {
                     <p className="text-normal-text font-mono text-sm text-center">
                       We optimize each layer sequentially to ensure a flawless customer experience.
                     </p>
+                  </div>
+                </div>
+
+                {/* Observability Card */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 md:p-8 mb-8">
+                  <h2 className="font-serif text-xl md:text-2xl text-white mb-6">Observability</h2>
+                  <p className="text-normal-text font-mono text-sm leading-relaxed mb-6">
+                    <strong className="text-white">The Client Dashboard:</strong> Upon completion of testing, we provision a dedicated analytics portal. This gives customers real-time visibility into their operation, allowing them to monitor live AI interactions, track call volume, and measure direct revenue attribution.
+                  </p>
+                  <div className="rounded-lg overflow-hidden bg-white p-4">
+                    <img
+                      src="/Projects/VoiceaiReceptionist/570B11C1-C09C-4A9B-B282-55E011472146.jpeg"
+                      alt="Client Dashboard - Real-time Analytics Portal"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                </div>
+
+                {/* The Reflection Card */}
+                <div className="bg-gradient-to-br from-[#EFBF04]/10 via-white/5 to-white/5 backdrop-blur-sm rounded-lg border border-[#EFBF04]/30 p-8 md:p-12 mb-8">
+                  <div className="max-w-4xl mx-auto">
+                    <h2 className="font-serif text-2xl md:text-3xl text-white mb-8 text-center">The Reflection</h2>
+
+                    <div className="space-y-6 text-normal-text font-mono text-sm md:text-base leading-relaxed">
+                      <p>
+                        This venture represents my fastest execution to date, taking us from ideation to $1k MRR in just two weeks. While Lawnstack taught me efficiency, this project proved exactly how much can be achieved with a lean team. Operating often as a solo founder—balancing engineering, sales, and support—I learned that business is not just about building; it is a continuous effort to maintain the customer experience when things break.
+                      </p>
+
+                      <p>
+                        Whether it was driving from Jersey to NYC to fix hardware issues or waking up early for support calls, this became a lifestyle rather than just a job. Fundamentally, I gained deep technical expertise in Voice AI, specifically in reducing latency, humanizing interactions, and engineering long-term memory. It was an incredible journey.
+                      </p>
+
+                      <p className="text-white">
+                        Special thanks to <a href="https://www.liamdu.com/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Liam Du</a> for his collaboration. Check out the journey below.
+                      </p>
+                    </div>
+
+                    {/* Decorative Element */}
+                    <div className="mt-8 flex justify-center">
+                      <div className="h-1 w-32 bg-gradient-to-r from-transparent via-[#EFBF04] to-transparent rounded-full"></div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* The Journey Card */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 md:p-8 mb-8">
+                  <h2 className="font-serif text-2xl md:text-3xl text-white mb-8 text-center">The Journey</h2>
+
+                  {/* Cool/Cute Picture Collage */}
+                  <div className="relative w-full overflow-hidden">
+                    {/* ALL PHOTOS SECTION */}
+                    
+                    {/* Top Row - 3 Photos with Polaroid Style */}
+                    <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-4 md:mb-6">
+                      <div className="group relative transform rotate-[-3deg] hover:rotate-0 hover:z-20 transition-all duration-500 hover:scale-110">
+                        <div className="bg-white p-3 md:p-4 rounded-lg shadow-2xl">
+                          <img
+                            src="/Projects/VoiceaiReceptionist/IMG_1542.jpg"
+                            alt="Journey 1"
+                            className="w-64 md:w-72 h-48 md:h-56 object-cover rounded"
+                          />
+                        </div>
+                      </div>
+                      <div className="group relative transform rotate-[2deg] hover:rotate-0 hover:z-20 transition-all duration-500 hover:scale-110">
+                        <div className="bg-white p-3 md:p-4 rounded-lg shadow-2xl">
+                          <img
+                            src="/Projects/VoiceaiReceptionist/IMG_1543.jpg"
+                            alt="Journey 2"
+                            className="w-64 md:w-72 h-48 md:h-56 object-cover rounded"
+                          />
+                        </div>
+                      </div>
+                      <div className="group relative transform rotate-[4deg] hover:rotate-0 hover:z-20 transition-all duration-500 hover:scale-110">
+                        <div className="bg-white p-3 md:p-4 rounded-lg shadow-2xl">
+                          <img
+                            src="/Projects/VoiceaiReceptionist/IMG_1544.jpg"
+                            alt="Journey 3"
+                            className="w-64 md:w-72 h-48 md:h-56 object-cover rounded"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Second Row - 2 Photos */}
+                    <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-4 md:mb-6">
+                      <div className="group relative transform rotate-[3deg] hover:rotate-0 hover:z-20 transition-all duration-500 hover:scale-110">
+                        <div className="bg-white p-3 md:p-4 rounded-lg shadow-2xl">
+                          <img
+                            src="/Projects/VoiceaiReceptionist/IMG_1545.jpg"
+                            alt="Journey 4"
+                            className="w-64 md:w-72 h-48 md:h-56 object-cover rounded"
+                          />
+                        </div>
+                      </div>
+                      <div className="group relative transform rotate-[-2deg] hover:rotate-0 hover:z-20 transition-all duration-500 hover:scale-110">
+                        <div className="bg-white p-3 md:p-4 rounded-lg shadow-2xl">
+                          <img
+                            src="/Projects/VoiceaiReceptionist/IMG_1546.jpg"
+                            alt="Journey 5"
+                            className="w-64 md:w-72 h-48 md:h-56 object-cover rounded"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Third Row - 1 Large Photo */}
+                    <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-4 md:mb-6">
+                      <div className="group relative transform rotate-[2deg] hover:rotate-0 hover:z-20 transition-all duration-500 hover:scale-110">
+                        <div className="bg-white p-3 md:p-4 rounded-lg shadow-2xl">
+                          <img
+                            src="/Projects/VoiceaiReceptionist/View recent photos 5.png"
+                            alt="Journey 6"
+                            className="w-full md:w-[600px] h-48 md:h-64 object-cover rounded"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Fourth Row - 4 Small Photos */}
+                    <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-6 md:mb-8">
+                      <div className="group relative transform rotate-[-4deg] hover:rotate-0 hover:z-20 transition-all duration-500 hover:scale-110">
+                        <div className="bg-white p-2 md:p-3 rounded-lg shadow-xl">
+                          <img
+                            src="/Projects/VoiceaiReceptionist/View recent photos 6.png"
+                            alt="Journey 7"
+                            className="w-40 md:w-48 h-40 md:h-48 object-cover rounded"
+                          />
+                        </div>
+                      </div>
+                      <div className="group relative transform rotate-[3deg] hover:rotate-0 hover:z-20 transition-all duration-500 hover:scale-110">
+                        <div className="bg-white p-2 md:p-3 rounded-lg shadow-xl">
+                          <img
+                            src="/Projects/VoiceaiReceptionist/View recent photos 7.png"
+                            alt="Journey 8"
+                            className="w-40 md:w-48 h-40 md:h-48 object-cover rounded"
+                          />
+                        </div>
+                      </div>
+                      <div className="group relative transform rotate-[-2deg] hover:rotate-0 hover:z-20 transition-all duration-500 hover:scale-110">
+                        <div className="bg-white p-2 md:p-3 rounded-lg shadow-xl">
+                          <img
+                            src="/Projects/VoiceaiReceptionist/View recent photos 8.png"
+                            alt="Journey 9"
+                            className="w-40 md:w-48 h-40 md:h-48 object-cover rounded"
+                          />
+                        </div>
+                      </div>
+                      <div className="group relative transform rotate-[5deg] hover:rotate-0 hover:z-20 transition-all duration-500 hover:scale-110">
+                        <div className="bg-white p-2 md:p-3 rounded-lg shadow-xl">
+                          <img
+                            src="/Projects/VoiceaiReceptionist/IMG_1552.jpg"
+                            alt="Journey 10"
+                            className="w-40 md:w-48 h-40 md:h-48 object-cover rounded"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* ALL VIDEOS SECTION */}
+                    
+                    {/* All Videos in One Row */}
+                    <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+                      {/* First Video - Left */}
+                      <div className="group relative transform rotate-[-1deg] hover:rotate-0 hover:z-20 transition-all duration-500 hover:scale-105">
+                        <div className="bg-black p-2 md:p-3 rounded-lg shadow-2xl overflow-hidden">
+                          <video
+                            controls
+                            className="w-64 md:w-80 h-40 md:h-48"
+                          >
+                            <source src="/Projects/VoiceaiReceptionist/IMG_8749.mp4" type="video/mp4" />
+                          </video>
+                        </div>
+                      </div>
+                      {/* Second Video - Middle */}
+                      <div className="group relative transform rotate-[2deg] hover:rotate-0 hover:z-20 transition-all duration-500 hover:scale-105">
+                        <div className="bg-black p-2 md:p-3 rounded-lg shadow-2xl overflow-hidden">
+                          <video
+                            controls
+                            className="w-64 md:w-80 h-40 md:h-48"
+                          >
+                            <source src="/Projects/VoiceaiReceptionist/IMG_8700.mp4" type="video/mp4" />
+                          </video>
+                        </div>
+                      </div>
+                      {/* Third Video - Right */}
+                      <div className="group relative transform rotate-[-2deg] hover:rotate-0 hover:z-20 transition-all duration-500 hover:scale-105">
+                        <div className="bg-black p-2 md:p-3 rounded-lg shadow-2xl overflow-hidden">
+                          <video
+                            controls
+                            className="w-64 md:w-80 h-40 md:h-48"
+                          >
+                            <source src="/Projects/VoiceaiReceptionist/IMG_9068.mp4" type="video/mp4" />
+                          </video>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
