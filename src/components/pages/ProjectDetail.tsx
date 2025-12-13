@@ -2510,6 +2510,194 @@ export function ProjectDetail() {
                 </div>
               </div>
             </div>
+
+            {/* Boltzman's Differentiation Card */}
+            <div className="mb-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
+                {/* Header */}
+                <div className="text-center mb-8">
+                  <h2 className="font-serif text-3xl md:text-4xl text-white mb-2">Boltzman's Differentiation</h2>
+                  <p className="text-white/60 font-mono text-sm">The Logic of Autonomy</p>
+                </div>
+
+                {/* Content Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                  {/* Main Content - Spans 2 columns */}
+                  <div className="lg:col-span-2 space-y-8">
+                    {/* Section I */}
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center border border-purple-500/30">
+                          <span className="text-purple-400 font-serif text-xl font-bold">I</span>
+                        </div>
+                        <h3 className="font-serif text-2xl text-white">Re-evaluating the Problem</h3>
+                      </div>
+                      <p className="text-white/60 font-mono text-sm italic mb-4">The Inefficient Status Quo</p>
+                      
+                      <div className="space-y-4">
+                        <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                          <h4 className="text-white font-semibold mb-2 font-mono text-sm flex items-center gap-2">
+                            <svg className="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                            The Implicit Friction of Fragmentation
+                          </h4>
+                          <p className="text-white/70 font-mono text-xs leading-relaxed">
+                            We recognized that professionals spend their days executing complex, multi-step workflows (e.g., preparing for a meeting, sending a contextual email) that are currently manual and platform-specific. Users are forced to constantly navigate between distinct applications—such as Gmail, Calendar, LinkedIn, and Notion—because this process is so deeply ingrained that the underlying inefficiency is rarely questioned.
+                          </p>
+                        </div>
+
+                        <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-lg p-4 border border-purple-500/20">
+                          <h4 className="text-purple-400 font-semibold mb-2 font-mono text-sm flex items-center gap-2">
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                            The Opportunity for Reversal
+                          </h4>
+                          <p className="text-white/80 font-mono text-xs leading-relaxed italic">
+                            This led to a crucial insight: <strong className="text-white">Why should the user always have to seek out the platform when, with AI at its core, the necessary workflow could be brought directly to the user?</strong>
+                          </p>
+                        </div>
+
+                        <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                          <h4 className="text-white font-semibold mb-2 font-mono text-sm flex items-center gap-2">
+                            <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            The Goal
+                          </h4>
+                          <p className="text-white/70 font-mono text-xs leading-relaxed">
+                            Boltzman is pioneering a new method of interaction—not through the traditional browser interface, but via a multi-modal assistant that abstracts these workflows and delivers them on desktop or mobile.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Section II */}
+                    <div className="space-y-4 pt-6 border-t border-white/10">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center border border-emerald-500/30">
+                          <span className="text-emerald-400 font-serif text-xl font-bold">II</span>
+                        </div>
+                        <h3 className="font-serif text-2xl text-white">Strategic Solution</h3>
+                      </div>
+                      <p className="text-white/60 font-mono text-sm italic mb-4">The Universal Assistant Pillars</p>
+                      
+                      <div className="bg-white/5 rounded-lg p-4 border border-white/10 mb-6">
+                        <p className="text-white/80 font-mono text-sm leading-relaxed">
+                          We approached the concept of a "Universal Assistant" (or "Universal Agent," a more technical term) not by building everything, but by defining and efficiently addressing its core functional pillars. Our goal was to create a solution that works effectively with fewer resources.
+                        </p>
+                        <p className="text-white/70 font-mono text-sm leading-relaxed mt-3">
+                          We identified four core requirements for any system to be considered a truly universal agent capable of performing actions:
+                        </p>
+                      </div>
+
+                      {/* Four Pillars */}
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {/* Pillar 1 */}
+                        <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-lg p-4 border border-blue-500/20">
+                          <div className="flex items-start gap-3 mb-2">
+                            <div className="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                              <span className="text-blue-400 font-mono font-bold text-sm">1</span>
+                            </div>
+                            <div className="flex-1">
+                              <h4 className="text-blue-400 font-semibold mb-1 font-mono text-sm">Execution of Tasks</h4>
+                              <p className="text-white/60 font-mono text-xs italic mb-2">The "How"</p>
+                              <p className="text-white/70 font-mono text-xs leading-relaxed">
+                                Powered by the very tools humans use digitally. Our strategy was to equip the system with access to the user's existing suite of favorite applications—Google Drive, Calendar, Notion, Slack, etc.—acting as the "sous chef" to run the digital kitchen.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Pillar 2 */}
+                        <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-lg p-4 border border-purple-500/20">
+                          <div className="flex items-start gap-3 mb-2">
+                            <div className="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                              <span className="text-purple-400 font-mono font-bold text-sm">2</span>
+                            </div>
+                            <div className="flex-1">
+                              <h4 className="text-purple-400 font-semibold mb-1 font-mono text-sm">Long-Form Memory</h4>
+                              <p className="text-white/60 font-mono text-xs italic mb-2">The "Intent"</p>
+                              <p className="text-white/70 font-mono text-xs leading-relaxed">
+                                The best way to anticipate and understand a user's intent is by having access to their vast history of past interactions with the system. This deep, persistent memory capability solves the critical problem of contextual understanding.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Pillar 3 */}
+                        <div className="bg-gradient-to-br from-emerald-500/10 to-green-500/10 rounded-lg p-4 border border-emerald-500/20">
+                          <div className="flex items-start gap-3 mb-2">
+                            <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
+                              <span className="text-emerald-400 font-mono font-bold text-sm">3</span>
+                            </div>
+                            <div className="flex-1">
+                              <h4 className="text-emerald-400 font-semibold mb-1 font-mono text-sm">Integration</h4>
+                              <p className="text-white/60 font-mono text-xs italic mb-2">The "Where"</p>
+                              <p className="text-white/70 font-mono text-xs leading-relaxed">
+                                Integration gives the system the necessary access to execute actions and retrieve data. We leveraged advanced techniques like Vector databases and Retrieval-Augmented Generation (RAG) to ensure the system can interact with and retrieve data from the user's favorite apps.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Pillar 4 */}
+                        <div className="bg-gradient-to-br from-orange-500/10 to-red-500/10 rounded-lg p-4 border border-orange-500/20">
+                          <div className="flex items-start gap-3 mb-2">
+                            <div className="w-8 h-8 rounded-lg bg-orange-500/20 flex items-center justify-center flex-shrink-0">
+                              <span className="text-orange-400 font-mono font-bold text-sm">4</span>
+                            </div>
+                            <div className="flex-1">
+                              <h4 className="text-orange-400 font-semibold mb-1 font-mono text-sm">Value Function</h4>
+                              <p className="text-white/60 font-mono text-xs italic mb-2">The "Why"</p>
+                              <p className="text-white/70 font-mono text-xs leading-relaxed">
+                                This involves optimizing the system to prioritize actions that the user will find valuable. This optimization is achieved through an incentive-based algorithm, which we've termed the "Boltzman Engine," ensuring the system is always providing desired outcomes.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Closing Statement */}
+                      <div className="bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-emerald-500/10 rounded-lg p-5 border border-purple-500/20 mt-6">
+                        <p className="text-white/90 font-mono text-sm leading-relaxed">
+                          We believe this structured approach, focusing on operationalizing these four pillars, represents the most effective and resource-efficient method for building a universal assistant.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Image Sidebar - 1 column */}
+                  <div className="lg:col-span-1">
+                    <div className="sticky top-4">
+                      {/* Browser Frame */}
+                      <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 overflow-hidden">
+                        {/* Browser Header */}
+                        <div className="bg-white rounded-t-lg p-2 flex items-center gap-2">
+                          <div className="flex gap-1.5">
+                            <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                          </div>
+                          <div className="flex-1 bg-gray-200 rounded px-4 py-1 text-xs text-gray-700 text-center font-mono">
+                            boltzman.ai
+                          </div>
+                        </div>
+                        {/* Browser Content */}
+                        <div className="bg-white rounded-b-lg overflow-hidden">
+                          <img
+                            src="/Projects/Boltzman AI/Image 2-23-25 at 12.25 AM 1.svg"
+                            alt="Boltzman Differentiation Visual"
+                            className="w-full h-auto"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </>
         )}
         </div>
