@@ -35,7 +35,7 @@ export const projects: Project[] = [
   {
     title: 'Boltzman AI',
     category: 'AI Platform',
-    description: 'An AI-powered platform leveraging advanced language models to deliver intelligent automation and conversational experiences.',
+    description: 'Assistant that streamlines and handles any task',
     mockup: '/Projects/Boltzman AI/146A59BD-B8D5-4B99-BD96-823574456AF2.jpeg',
     gradientColors: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
     browserUrl: 'boltzman.ai',
@@ -99,14 +99,14 @@ export function Projects() {
                 navigate(`/project/${slug}`);
               }}
               style={{
-                backgroundColor: 'hsl(var(--background))',
+                backgroundColor: project.title === 'Boltzman AI' ? '#1a1a1a' : 'hsl(var(--background))',
                 color: 'hsl(var(--foreground))',
               }}
             >
               {/* Browser Window Mockup Container */}
               <div className="absolute inset-0 flex items-end p-4 md:p-6">
                 <div
-                  className="w-full bg-white rounded-t-xl shadow-2xl overflow-hidden"
+                  className={`w-full ${project.title === 'Boltzman AI' ? 'bg-[#1a1a1a]' : 'bg-white'} rounded-t-xl shadow-2xl overflow-hidden`}
                   style={{
                     height: '85%',
                     maskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
@@ -114,19 +114,19 @@ export function Projects() {
                   }}
                 >
                   {/* Browser Chrome/Header */}
-                  <div className="bg-gray-100 px-3 py-2 md:px-4 md:py-3 flex items-center gap-2 border-b border-gray-200">
+                  <div className={`${project.title === 'Boltzman AI' ? 'bg-[#2a2a2a] border-b border-gray-700' : 'bg-gray-100 border-b border-gray-200'} px-3 py-2 md:px-4 md:py-3 flex items-center gap-2`}>
                     <div className="flex gap-1.5 md:gap-2">
                       <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-red-500"></div>
                       <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-yellow-500"></div>
                       <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-green-500"></div>
                     </div>
-                    <div className="flex-1 mx-2 md:mx-4 bg-white rounded-md px-2 md:px-3 py-1 text-[10px] md:text-xs text-gray-500 truncate">
+                    <div className={`flex-1 mx-2 md:mx-4 ${project.title === 'Boltzman AI' ? 'bg-[#3a3a3a] text-gray-400' : 'bg-white text-gray-500'} rounded-md px-2 md:px-3 py-1 text-[10px] md:text-xs truncate`}>
                       {project.browserUrl || `${project.title.toLowerCase().replace(/\s+/g, '')}.com`}
                     </div>
                   </div>
 
                   {/* Browser Content */}
-                  <div className="bg-white h-full relative overflow-hidden">
+                  <div className={`${project.title === 'Boltzman AI' ? 'bg-[#1a1a1a]' : 'bg-white'} h-full relative overflow-hidden`}>
                     {project.underConstruction ? (
                       <div className="flex flex-col items-center justify-center h-full p-8">
                         <div className="text-gray-800 text-2xl font-bold mb-2">Under Construction</div>

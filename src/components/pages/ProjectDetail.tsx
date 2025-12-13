@@ -118,6 +118,19 @@ export function ProjectDetail() {
                         </svg>
                       </a>
                     )}
+                    {project.title === 'Boltzman AI' && (
+                      <a
+                        href="https://www.boltzman.ai/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 px-3 py-1 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 text-white font-mono text-xs transition-all"
+                      >
+                        Live site
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    )}
                   </div>
                   <p className="text-normal-text font-mono text-sm md:text-base mb-2">
                     {project.category}
@@ -2278,6 +2291,220 @@ export function ProjectDetail() {
                           </video>
                         </div>
                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
+
+        {/* Boltzman AI-specific content */}
+        {project.title === 'Boltzman AI' && (
+          <>
+            {/* Summary and Profile Cards - Side by Side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              {/* Summary Card - First */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
+                <h2 className="font-serif text-xl text-white mb-4">Summary</h2>
+                <p className="text-normal-text font-mono text-sm leading-relaxed">
+                  Boltzman was built in the hope of solving for a universal AI assistant that executes tasks across your digital workspace, removing the need to manually navigate between different apps and services. Unlike traditional AI tools that only provide responses, Boltzman takes action - it can search, gather, analyze, and execute tasks across your connected tools (Slack, Drive, Notion, Calendar, etc).
+                </p>
+              </div>
+
+              {/* Profile Card - Second */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
+                <h2 className="font-serif text-xl text-white mb-4">Profile</h2>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Role</p>
+                    <p className="text-white font-mono text-sm">Chief Executive Officer & Part Time Product Manager</p>
+                  </div>
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Team</p>
+                    <p className="text-white font-mono text-sm">2</p>
+                  </div>
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Timeline</p>
+                    <p className="text-white font-mono text-sm">6months</p>
+                  </div>
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Highlight</p>
+                    <p className="text-white font-mono text-sm">3000 users in ~15 days and almost got acquired by minlify</p>
+                  </div>
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Fundraising</p>
+                    <p className="text-white font-mono text-sm">$0</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Problem VS Solution Section */}
+            <div className="mb-8">
+              {/* Header */}
+              <div className="text-center mb-8">
+                <h2 className="font-serif text-3xl md:text-4xl text-white mb-2">The Challenge</h2>
+                <div className="flex items-center justify-center gap-4">
+                  <div className="h-px bg-gradient-to-r from-transparent via-red-500/50 to-red-500/50 w-24"></div>
+                  <span className="text-white/40 font-mono text-xs">VS</span>
+                  <div className="h-px bg-gradient-to-l from-transparent via-green-500/50 to-green-500/50 w-24"></div>
+                </div>
+              </div>
+
+              {/* Split Screen Design */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+                {/* PROBLEM SIDE - Left */}
+                <div className="relative flex flex-col">
+                  {/* Decorative gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-orange-500/5 rounded-2xl blur-xl"></div>
+                  
+                  <div className="relative bg-gradient-to-br from-red-950/30 to-orange-950/20 backdrop-blur-sm rounded-2xl border-2 border-red-500/30 p-6 md:p-8 flex flex-col h-full">
+                    {/* Problem Header */}
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center border-2 border-red-500/50">
+                        <svg className="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="font-serif text-2xl text-white">The Problem</h3>
+                        <p className="text-red-400/70 font-mono text-sm">Fragmentation & Manual Overhead</p>
+                      </div>
+                    </div>
+
+                    {/* Problem Points */}
+                    <div className="space-y-4 flex-grow">
+                      {/* Point 1 */}
+                      <div className="bg-black/30 rounded-lg p-4 border border-red-500/20 hover:border-red-500/40 transition-all">
+                        <div className="flex items-start gap-3">
+                          <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
+                            <svg className="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="text-white font-semibold mb-1 font-mono text-sm">The Multi-App Toll</h4>
+                            <p className="text-white/70 font-mono text-xs leading-relaxed">
+                              Simple tasks require jumping between multiple platforms. Traditional AI only provides responses, leaving you to handle execution.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Point 2 */}
+                      <div className="bg-black/30 rounded-lg p-4 border border-red-500/20 hover:border-red-500/40 transition-all">
+                        <div className="flex items-start gap-3">
+                          <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
+                            <svg className="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            </svg>
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="text-white font-semibold mb-1 font-mono text-sm">The Repetitive Grind</h4>
+                            <p className="text-white/70 font-mono text-xs leading-relaxed">
+                              Wasted time on copy-paste and repetitive actions—or even necessary but tedious steps—just to accomplish a single goal.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Point 3 */}
+                      <div className="bg-black/30 rounded-lg p-4 border border-red-500/20 hover:border-red-500/40 transition-all">
+                        <div className="flex items-start gap-3">
+                          <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
+                            <svg className="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="text-white font-semibold mb-1 font-mono text-sm">Lack of Context</h4>
+                            <p className="text-white/70 font-mono text-xs leading-relaxed">
+                              Existing tools lack persistent memory or access to your full context, preferences, and information, making them ineffective for complex tasks.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* SOLUTION SIDE - Right */}
+                <div className="relative flex flex-col">
+                  {/* Decorative gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/5 rounded-2xl blur-xl"></div>
+                  
+                  <div className="relative bg-gradient-to-br from-green-950/30 to-emerald-950/20 backdrop-blur-sm rounded-2xl border-2 border-green-500/30 p-6 md:p-8 flex flex-col h-full">
+                    {/* Solution Header */}
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center border-2 border-green-500/50">
+                        <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="font-serif text-2xl text-white">The Solution</h3>
+                        <p className="text-green-400/70 font-mono text-sm">Autonomous Action & Unified Workflow</p>
+                      </div>
+                    </div>
+
+                    {/* Solution Description */}
+                    <div className="bg-black/30 rounded-lg p-4 border border-green-500/20 mb-4">
+                      <p className="text-white/80 font-mono text-sm leading-relaxed">
+                        Boltzman is an AI assistant that executes tasks across your digital workspace, moving beyond simple responses to take direct action on your behalf.
+                      </p>
+                    </div>
+
+                    {/* Core Capabilities */}
+                    <div className="space-y-4 mb-4 flex-grow">
+                      <h4 className="text-green-400 font-semibold font-mono text-sm uppercase tracking-wide">Core Capabilities</h4>
+                      
+                      {/* Capability 1 */}
+                      <div className="bg-black/30 rounded-lg p-4 border border-green-500/20 hover:border-green-500/40 transition-all">
+                        <div className="flex items-start gap-3">
+                          <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center">
+                            <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="text-white font-semibold mb-1 font-mono text-sm">Autonomous Execution</h4>
+                            <p className="text-white/70 font-mono text-xs leading-relaxed">
+                              Search, gather, analyze, and execute tasks across connected tools like Slack, Drive, Notion, and Calendar—no manual navigation needed.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Capability 2 */}
+                      <div className="bg-black/30 rounded-lg p-4 border border-green-500/20 hover:border-green-500/40 transition-all">
+                        <div className="flex items-start gap-3">
+                          <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center">
+                            <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="text-white font-semibold mb-1 font-mono text-sm">Full Contextual Understanding</h4>
+                            <p className="text-white/70 font-mono text-xs leading-relaxed">
+                              With integration to existing tools and persistent memory, Boltzman understands and acts on your full context.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Example Workflow */}
+                    <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-lg p-4 border border-green-500/30">
+                      <div className="flex items-start gap-2 mb-2">
+                        <svg className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <h4 className="text-green-400 font-semibold font-mono text-sm">Example Workflow</h4>
+                      </div>
+                      <p className="text-white/80 font-mono text-xs leading-relaxed italic">
+                        When asked to "prepare questions for an upcoming coffee chat," Boltzman autonomously handles the entire process: finding the calendar event, researching the participant, crafting relevant questions, and even drafting personalized follow-up emails by analyzing meeting transcripts.
+                      </p>
                     </div>
                   </div>
                 </div>
