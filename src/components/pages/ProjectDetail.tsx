@@ -1990,6 +1990,80 @@ export function ProjectDetail() {
                     />
                   </div>
                 </div>
+
+                {/* How we ran tests Card */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 md:p-8 mb-8">
+                  <h2 className="font-serif text-xl md:text-2xl text-white mb-6">How we ran tests</h2>
+
+                  {/* Introduction */}
+                  <div className="mb-8">
+                    <h3 className="text-white font-serif text-lg mb-4">The Quality Assurance Protocol</h3>
+                    <p className="text-normal-text font-mono text-sm leading-relaxed">
+                      Following implementation, every agent undergoes a rigorous three-stage validation process before going live. We isolate and optimize the three core components of the voice stack:
+                    </p>
+                  </div>
+
+                  {/* Three Testing Stages */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {/* Stage 1 - Pronunciation */}
+                    <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 backdrop-blur-sm rounded-xl border border-blue-500/30 p-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center border border-blue-500/40">
+                          <span className="text-2xl">🗣️</span>
+                        </div>
+                        <div>
+                          <span className="text-blue-400 font-mono text-xs font-semibold">STAGE 1</span>
+                          <h4 className="font-serif text-lg text-white">Pronunciation</h4>
+                        </div>
+                      </div>
+                      <p className="text-xs text-gray-400 font-mono mb-2">(Text-to-Speech)</p>
+                      <p className="text-normal-text font-mono text-sm leading-relaxed">
+                        Tuning the AI's cadence and tone for natural delivery.
+                      </p>
+                    </div>
+
+                    {/* Stage 2 - Transcription */}
+                    <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur-sm rounded-xl border border-purple-500/30 p-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center border border-purple-500/40">
+                          <span className="text-2xl">📝</span>
+                        </div>
+                        <div>
+                          <span className="text-purple-400 font-mono text-xs font-semibold">STAGE 2</span>
+                          <h4 className="font-serif text-lg text-white">Transcription</h4>
+                        </div>
+                      </div>
+                      <p className="text-xs text-gray-400 font-mono mb-2">(Speech-to-Text)</p>
+                      <p className="text-normal-text font-mono text-sm leading-relaxed">
+                        Ensuring accurate capture of customer inputs, even with background noise.
+                      </p>
+                    </div>
+
+                    {/* Stage 3 - Comprehension */}
+                    <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 backdrop-blur-sm rounded-xl border border-green-500/30 p-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center border border-green-500/40">
+                          <span className="text-2xl">🧠</span>
+                        </div>
+                        <div>
+                          <span className="text-green-400 font-mono text-xs font-semibold">STAGE 3</span>
+                          <h4 className="font-serif text-lg text-white">Comprehension</h4>
+                        </div>
+                      </div>
+                      <p className="text-xs text-gray-400 font-mono mb-2">(LLM Processing)</p>
+                      <p className="text-normal-text font-mono text-sm leading-relaxed">
+                        Verifying the AI correctly interprets complex logic and intent.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Closing Statement */}
+                  <div className="mt-6 p-4 bg-white/5 rounded-lg border border-white/10">
+                    <p className="text-normal-text font-mono text-sm text-center">
+                      We optimize each layer sequentially to ensure a flawless customer experience.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </>
