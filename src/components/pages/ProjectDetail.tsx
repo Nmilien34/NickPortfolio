@@ -1921,6 +1921,75 @@ export function ProjectDetail() {
                     />
                   </div>
                 </div>
+
+                {/* Everything was designed for speed Card */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 md:p-8 mb-8">
+                  <h2 className="font-serif text-xl md:text-2xl text-white mb-6">Everything was designed for speed</h2>
+                  <div className="rounded-lg overflow-hidden bg-white p-4">
+                    <img
+                      src="/Projects/VoiceaiReceptionist/5B04FC8E-6021-4A8B-A986-FD255E26A135.jpeg"
+                      alt="Boltzman Landing Page - Designed for Speed"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                </div>
+
+                {/* The Experience Designed for Scalability Card */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 md:p-8 mb-8">
+                  <h2 className="font-serif text-xl md:text-2xl text-white mb-6">The experience designed for scalability.</h2>
+                  <p className="text-normal-text font-mono text-sm leading-relaxed mb-6">
+                    With our sales and onboarding workflows validated, we shifted our focus to scaling. We drove growth through a mix of word-of-mouth referrals, door-to-door outreach, and targeted Google Ads. To support this expansion, we built a comprehensive web platform serving two critical functions: a conversion engine for booking demos and a self-service portal for clients to manage their accounts. Below is a walkthrough of how I curated that user experience.
+                  </p>
+                  <p className="text-white font-mono text-sm mb-4">
+                    Once a potential customer get on our website they're welcomed with a "Get started button"
+                  </p>
+                  <div className="rounded-lg overflow-hidden bg-white p-8">
+                    <img
+                      src="/Projects/VoiceaiReceptionist/Group 5.svg"
+                      alt="Get Started Button Welcome"
+                      className="w-full h-auto mx-auto"
+                      style={{ maxWidth: '1200px' }}
+                    />
+                  </div>
+                </div>
+
+                {/* Booking and Onboarding Card */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 md:p-8 mb-8">
+                  <p className="text-normal-text font-mono text-sm leading-relaxed mb-6">
+                    Once a prospect selects a time, the demo is automatically booked. During this meeting, we validate the fit and close the sale. Immediately after confirmation, we move to the onboarding phase, where we gather essential data—including menus, operating hours, and frequently asked questions—to begin training their specific AI model.
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="rounded-lg overflow-hidden bg-white p-4">
+                      <img
+                        src="/Projects/VoiceaiReceptionist/7E20C981-B2CE-43B8-AD47-58B6BF3636F4.jpeg"
+                        alt="Booking Meeting - Step 1"
+                        className="w-full h-auto"
+                      />
+                    </div>
+                    <div className="rounded-lg overflow-hidden bg-white p-4">
+                      <img
+                        src="/Projects/VoiceaiReceptionist/EB9267A7-CBD9-4659-A30A-EF3128272C63.jpeg"
+                        alt="Booking Meeting - Step 2"
+                        className="w-full h-auto"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* How we Implemented the Agents Card */}
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 md:p-8 mb-8">
+                  <h2 className="font-serif text-xl md:text-2xl text-white mb-6">How we Implemented the Agents</h2>
+                  <p className="text-normal-text font-mono text-sm leading-relaxed mb-6">
+                    Initially, we hard-coded agents for our first three customers, manually configuring separate files for menus, transcribers, and inbound handlers. While this static approach offered granular control, it became a bottleneck during door-to-door sales where immediate deployment was required. To resolve this, I migrated our architecture from file-based configurations to a dynamic, database-driven backend. This shift enabled on-the-spot agent generation and reduced implementation time by over 60%
+                  </p>
+                  <div className="rounded-lg overflow-hidden bg-white p-4">
+                    <img
+                      src="/Projects/VoiceaiReceptionist/BF1BF3E2-DA53-489B-8C98-73A7F5EF96C0.jpeg"
+                      alt="Agent Implementation - Edit Restaurant Interface"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </>
