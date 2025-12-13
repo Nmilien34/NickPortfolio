@@ -39,7 +39,7 @@ export function ProjectDetail() {
   return (
     <div className="min-h-screen flex flex-col bg-background-color">
       <Header />
-      <main className="flex-1 pt-32 pb-20">
+      <main className="flex-1 pt-24 md:pt-32 pb-12 md:pb-20">
         <div className="max-w-7xl mx-auto px-6">
           {/* Back Button */}
           <button
@@ -50,12 +50,12 @@ export function ProjectDetail() {
           </button>
 
           {/* Header Card */}
-          <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
+          <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 md:p-8 mb-8">
             <div className="flex items-start justify-between flex-wrap gap-4">
               <div className="flex items-start gap-4">
                 {/* Project Icon/Logo */}
                 {project.title === 'Lawnstack' ? (
-                  <div className="w-16 h-16 rounded-lg bg-white/10 border border-white/20 overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
+                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg bg-white/10 border border-white/20 overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
                     <img
                       src="/Projects/Lawnstack /Logo /Frame 49.svg"
                       alt="Lawnstack Logo"
@@ -63,7 +63,7 @@ export function ProjectDetail() {
                     />
                   </div>
                 ) : project.title === 'Boltzman Enterprise' ? (
-                  <div className="w-16 h-16 rounded-lg bg-white/10 border border-white/20 overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
+                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg bg-white/10 border border-white/20 overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
                     <img
                       src="/Projects/Boltzman AI/Frame 431.svg"
                       alt="Boltzman Enterprise Logo"
@@ -71,7 +71,7 @@ export function ProjectDetail() {
                     />
                   </div>
                 ) : (
-                  <div className="w-16 h-16 rounded-lg bg-white/10 border border-white/20 overflow-hidden flex-shrink-0">
+                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg bg-white/10 border border-white/20 overflow-hidden flex-shrink-0">
                     <img
                       src={project.mockup || project.image || '/placeholder-icon.jpg'}
                       alt={`${project.title} icon`}
@@ -81,7 +81,7 @@ export function ProjectDetail() {
                 )}
                 <div>
                   <div className="flex items-center gap-3 mb-2">
-                    <h1 className="font-serif text-4xl md:text-5xl text-white">
+                    <h1 className="font-serif text-3xl md:text-5xl text-white">
                       {project.title}
                     </h1>
                     {project.title === 'Lawnstack' && (
@@ -98,16 +98,16 @@ export function ProjectDetail() {
                       </a>
                     )}
                   </div>
-                  <p className="text-normal-text font-mono text-base mb-2">
+                  <p className="text-normal-text font-mono text-sm md:text-base mb-2">
                     {project.category}
                   </p>
                   {project.tagline && (
-                    <p className="text-white/90 font-mono text-sm mb-2">
+                    <p className="text-white/90 font-mono text-xs md:text-sm mb-2">
                       {project.tagline}
                     </p>
                   )}
                   {project.description && (
-                    <p className="text-white/80 font-mono text-sm max-w-2xl">
+                    <p className="text-white/80 font-mono text-xs md:text-sm max-w-2xl">
                       {project.description}
                     </p>
                   )}
@@ -131,9 +131,9 @@ export function ProjectDetail() {
 
           {/* Team Card - Only for Lawnstack */}
           {project.title === 'Lawnstack' && (
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
-              <h2 className="font-serif text-2xl text-white mb-4">Original Team</h2>
-              <p className="text-normal-text font-mono text-base mb-6">
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 md:p-8 mb-8">
+              <h2 className="font-serif text-xl md:text-2xl text-white mb-4">Original Team</h2>
+              <p className="text-normal-text font-mono text-sm md:text-base mb-6">
                 Lawnstack Initially started as Terra
               </p>
               <div className="rounded-lg overflow-hidden">
@@ -148,17 +148,17 @@ export function ProjectDetail() {
 
           {/* Visual Mockup Card */}
           {(project.coverImage || project.mockup) && (
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 md:p-8 mb-8">
               <div className="relative">
                 {/* Desktop Mockup */}
                 <div className="relative mx-auto max-w-4xl">
                   <div className={project.title === 'Boltzman Enterprise' ? 'bg-white rounded-t-lg p-2 flex items-center gap-2' : 'bg-gray-800 rounded-t-lg p-2 flex items-center gap-2'}>
-                    <div className="flex gap-2">
-                      <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                      <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                      <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                    <div className="flex gap-1.5 md:gap-2">
+                      <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-red-500"></div>
+                      <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-yellow-500"></div>
+                      <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-500"></div>
                     </div>
-                    <div className={project.title === 'Boltzman Enterprise' ? 'flex-1 bg-gray-200 rounded px-4 py-1 text-xs text-gray-700 text-center font-mono' : 'flex-1 bg-gray-700 rounded px-4 py-1 text-xs text-gray-300 text-center font-mono'}>
+                    <div className={project.title === 'Boltzman Enterprise' ? 'flex-1 bg-gray-200 rounded px-2 md:px-4 py-1 text-[10px] md:text-xs text-gray-700 text-center font-mono' : 'flex-1 bg-gray-700 rounded px-2 md:px-4 py-1 text-[10px] md:text-xs text-gray-300 text-center font-mono'}>
                       {project.title === 'Lawnstack' ? 'lawnstack.com' : (project.browserUrl || 'example.com')}
                     </div>
                   </div>
@@ -180,9 +180,9 @@ export function ProjectDetail() {
           {/* Summary and Role Cards - Side by Side */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {/* Summary Card - First */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
-              <h2 className="font-serif text-xl text-white mb-4">Summary</h2>
-              <p className="text-normal-text font-mono text-sm leading-relaxed">
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 md:p-6">
+              <h2 className="font-serif text-lg md:text-xl text-white mb-4">Summary</h2>
+              <p className="text-normal-text font-mono text-xs md:text-sm leading-relaxed">
                 {project.summary || project.description}
               </p>
               {project.underConstruction && (
@@ -193,8 +193,8 @@ export function ProjectDetail() {
             </div>
 
             {/* Profile Card - Second */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
-              <h2 className="font-serif text-xl text-white mb-4">Profile</h2>
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 md:p-6">
+              <h2 className="font-serif text-lg md:text-xl text-white mb-4">Profile</h2>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <p className="text-white/60 font-mono text-xs mb-1">Role</p>
@@ -217,11 +217,11 @@ export function ProjectDetail() {
           </div>
 
           {/* Problem Vs Solution Card */}
-          <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
-            <h2 className="font-serif text-2xl text-white mb-6">Problem Vs Solution</h2>
+          <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 md:p-8 mb-8">
+            <h2 className="font-serif text-xl md:text-2xl text-white mb-6">Problem Vs Solution</h2>
             <div className="relative">
               {/* Top Row: Second picture (left) and First picture (right) */}
-              <div className="grid grid-cols-2 gap-6 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 {/* Second picture on the left */}
                 <div className="rounded-lg overflow-hidden">
                   <img
@@ -251,8 +251,8 @@ export function ProjectDetail() {
           </div>
 
           {/* How was Lawnstack different Card */}
-          <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
-            <h2 className="font-serif text-2xl text-white mb-6">How was Lawnstack different?</h2>
+          <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 md:p-8 mb-8">
+            <h2 className="font-serif text-xl md:text-2xl text-white mb-6">How was Lawnstack different?</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="rounded-lg overflow-hidden">
                 <img
@@ -272,8 +272,8 @@ export function ProjectDetail() {
           </div>
 
           {/* Revenue Model and Total Addressable Market Card */}
-          <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
-            <h2 className="font-serif text-2xl text-white mb-6">Revenue Model and Total Addressable Market</h2>
+          <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 md:p-8 mb-8">
+            <h2 className="font-serif text-xl md:text-2xl text-white mb-6">Revenue Model and Total Addressable Market</h2>
             <div className="rounded-lg overflow-hidden">
               <img
                 src="/Projects/Lawnstack /TAMandRevenue/91F2AD58-5973-46EC-88E2-5B1F04494968.jpeg"
@@ -286,9 +286,9 @@ export function ProjectDetail() {
           {/* Benefits and Cons Cards - Side by Side */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {/* Benefit of our model Card - Left, Larger */}
-            <div className="md:col-span-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
-              <h2 className="font-serif text-2xl text-white mb-4">Benefit of our model</h2>
-              <h3 className="font-serif text-xl text-white mb-4">Benefits of the Subscription Model</h3>
+            <div className="md:col-span-2 bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 md:p-6">
+              <h2 className="font-serif text-xl md:text-2xl text-white mb-4">Benefit of our model</h2>
+              <h3 className="font-serif text-lg md:text-xl text-white mb-4">Benefits of the Subscription Model</h3>
               <ul className="space-y-3 text-normal-text font-mono text-sm">
                 <li className="flex items-start">
                   <span className="mr-2 text-[#EFBF04]">•</span>
@@ -318,9 +318,9 @@ export function ProjectDetail() {
             </div>
 
             {/* Cons of the Subscription Model Card - Right, Smaller, Vertical */}
-            <div className="md:col-span-1 bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
-              <h2 className="font-serif text-xl text-white mb-4">Cons of the Subscription Model</h2>
-              <ul className="space-y-3 text-normal-text font-mono text-sm">
+            <div className="md:col-span-1 bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 md:p-6">
+              <h2 className="font-serif text-lg md:text-xl text-white mb-4">Cons of the Subscription Model</h2>
+              <ul className="space-y-3 text-normal-text font-mono text-xs md:text-sm">
                 <li className="flex items-start">
                   <span className="mr-2 text-[#EFBF04]">•</span>
                   <span><strong className="text-white">Higher Price Point:</strong> Harder to sell due to the higher cost.</span>
@@ -344,16 +344,16 @@ export function ProjectDetail() {
               {/* First Picture Card */}
               <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-0.5">
                 <div className="bg-white rounded-t-lg p-2 flex items-center gap-2 mb-0">
-                  <div className="flex gap-2">
-                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                  <div className="flex gap-1.5 md:gap-2">
+                    <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-red-500"></div>
+                    <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-yellow-500"></div>
+                    <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-500"></div>
                   </div>
-                  <div className="flex-1 bg-gray-200 rounded px-4 py-1 text-xs text-gray-700 text-center font-mono">
+                  <div className="flex-1 bg-gray-200 rounded px-2 md:px-4 py-1 text-[10px] md:text-xs text-gray-700 text-center font-mono">
                     lawnstack.com
                   </div>
                 </div>
-                <div className="overflow-hidden rounded-b-lg bg-white" style={{ height: '350px' }}>
+                <div className="overflow-hidden rounded-b-lg bg-white h-[250px] md:h-[350px]">
                   <img
                     src="/Projects/Lawnstack /hoandspui/00446BEF-0DCC-4B7A-A602-68FF5DCAC8E1.jpeg"
                     alt="Lawnstack image 1"
@@ -367,8 +367,8 @@ export function ProjectDetail() {
               </div>
 
               {/* Smaller container at bottom, same width as card above, extends to match right card height */}
-              <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 w-full" style={{ minHeight: '262px' }}>
-                <h3 className="text-white font-serif text-xl mb-4">The Ideal Experience</h3>
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 w-full min-h-[200px] md:min-h-[262px]">
+                <h3 className="text-white font-serif text-lg md:text-xl mb-4">The Ideal Experience</h3>
                 <div className="space-y-4">
                   <div>
                     <p className="text-white font-mono text-sm font-semibold mb-2">For Homeowners: Zero Friction</p>
@@ -387,7 +387,7 @@ export function ProjectDetail() {
             </div>
 
             {/* Second Picture Card - Same size as Cons card (1/3 width) */}
-            <div className="md:col-span-1 bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-2" style={{ height: '770px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div className="md:col-span-1 bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-2 flex flex-col justify-between min-h-[400px] md:h-[770px]">
               {/* Removed 'transform', added 'w-[80%] mx-auto' to replicate the size reduction properly */}
               <div className="flex items-center justify-center w-[80%] mx-auto mb-3">
                 <img
@@ -1623,33 +1623,303 @@ export function ProjectDetail() {
               </div>
             </div>
 
-            {/* Creating the Experience Card - Half Width */}
-            <div className="max-w-3xl">
-              <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
-                <h2 className="font-serif text-2xl text-white mb-6">Creating the experience</h2>
+            {/* Creating the Experience Card - Two Column Layout */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
+              <h2 className="font-serif text-2xl text-white mb-6">Creating the experience</h2>
 
-                {/* The Current Reality */}
-                <div className="mb-6">
-                  <h3 className="font-serif text-lg text-white mb-3">The Current Reality:</h3>
-                  <p className="text-normal-text font-mono text-sm leading-relaxed">
-                    Restaurants are overwhelmed by volume, receiving over 75 calls daily. Staff members spend 30+ hours per month on the phone—time that should be focused on dine-in guests and operations. The cost of this inefficiency is high: 40% of calls are placed on hold or missed entirely. Worse, data shows that 50% of customers hang up and order elsewhere after waiting just 90 seconds.
-                  </p>
-                </div>
-
-                {/* The Ideal Experience */}
-                <div className="mb-6">
-                  <h3 className="font-serif text-lg text-white mb-3">The Ideal Experience:</h3>
-                  <p className="text-normal-text font-mono text-sm leading-relaxed">
-                    We envision a restaurant where the phone never interrupts the staff. Our Voice Agents function as fully integrated team members, speaking over 30 languages and delivering the utmost in customer service. The AI is indistinguishable from a human, handling everything from reservations to complex orders. By integrating directly with POS systems, orders are processed and sent to the kitchen instantly without staff intervention.
-                  </p>
-                </div>
-
-                {/* The Network Advantage */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Left Column - Three Sections */}
                 <div>
-                  <h3 className="font-serif text-lg text-white mb-3">The Network Advantage:</h3>
-                  <p className="text-normal-text font-mono text-sm leading-relaxed">
-                    Unlike competitors who build isolated models for each client, we are building a collective learning network. Every conversation improves the model for all restaurants. If the AI learns that "extra crispy" implies specific instructions for pizza versus fried chicken, that intelligence propagates across our entire network immediately. This creates a powerful flywheel: more restaurants lead to smarter AI, which attracts more restaurants.
+                  {/* The Current Reality */}
+                  <div className="mb-6">
+                    <h3 className="font-serif text-lg text-white mb-3">The Current Reality:</h3>
+                    <p className="text-normal-text font-mono text-sm leading-relaxed">
+                      Restaurants are overwhelmed by volume, receiving over 75 calls daily. Staff members spend 30+ hours per month on the phone—time that should be focused on dine-in guests and operations. The cost of this inefficiency is high: 40% of calls are placed on hold or missed entirely. Worse, data shows that 50% of customers hang up and order elsewhere after waiting just 90 seconds.
+                    </p>
+                  </div>
+
+                  {/* The Ideal Experience */}
+                  <div className="mb-6">
+                    <h3 className="font-serif text-lg text-white mb-3">The Ideal Experience:</h3>
+                    <p className="text-normal-text font-mono text-sm leading-relaxed">
+                      We envision a restaurant where the phone never interrupts the staff. Our Voice Agents function as fully integrated team members, speaking over 30 languages and delivering the utmost in customer service. The AI is indistinguishable from a human, handling everything from reservations to complex orders. By integrating directly with POS systems, orders are processed and sent to the kitchen instantly without staff intervention.
+                    </p>
+                  </div>
+
+                  {/* The Network Advantage */}
+                  <div>
+                    <h3 className="font-serif text-lg text-white mb-3">The Network Advantage:</h3>
+                    <p className="text-normal-text font-mono text-sm leading-relaxed">
+                      Unlike competitors who build isolated models for each client, we are building a collective learning network. Every conversation improves the model for all restaurants. If the AI learns that "extra crispy" implies specific instructions for pizza versus fried chicken, that intelligence propagates across our entire network immediately. This creates a powerful flywheel: more restaurants lead to smarter AI, which attracts more restaurants.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Right Column - Onboarding Experience */}
+                <div>
+                  <p className="text-normal-text font-mono text-sm leading-relaxed mb-6">
+                    Restaurant owners need immediate solutions, not lengthy integration processes. We engineered a seamless onboarding experience that turns a heavy logistical setup into a few simple steps. Here is what the user sees:
                   </p>
+                  <div className="flex justify-center">
+                    <img
+                      src="/Projects/VoiceaiReceptionist/ED0C2331-51D9-4A66-A02A-4DB336516616.jpeg"
+                      alt="Boltzman Onboarding Experience - Phone Mockup"
+                      className="max-w-sm h-auto"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* From Zero to First Revenue Card */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
+              <h2 className="font-serif text-2xl text-white mb-6">From Zero to First Revenue</h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Left Column - Story */}
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="font-serif text-lg text-white mb-3">The Hypothesis</h3>
+                    <p className="text-normal-text font-mono text-sm leading-relaxed">
+                      Our foundational hypothesis was that Voice AI had matured to the point of being indistinguishable from human speakers. We believe the future of business communication will shift from human-to-human interactions to human-to-agent and agent-to-agent workflows.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="font-serif text-lg text-white mb-3">The Opportunity</h3>
+                    <p className="text-normal-text font-mono text-sm leading-relaxed">
+                      However, we recognized that large enterprises would require established trust and pedigree before adopting such new technology. We identified a more immediate opportunity with SMBs—specifically restaurants—which are frequently understaffed and in need of reliable customer service support.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="font-serif text-lg text-white mb-3">The Validation</h3>
+                    <p className="text-normal-text font-mono text-sm leading-relaxed">
+                      Rather than conducting passive market research, we built a functional prototype in just three days and took it directly to potential users. I validated the problem at the very first restaurant I visited: upon my arrival, the phone was ringing at the front counter with no staff available to answer it.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Right Column - Video */}
+                <div className="flex items-center justify-center">
+                  <div className="w-full max-w-md">
+                    <video
+                      className="w-full h-auto rounded-lg shadow-2xl"
+                      controls
+                    >
+                      <source src="/Projects/VoiceaiReceptionist/IMG_8618.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+              </div>
+
+              {/* Validation Result - Highlighted */}
+              <div className="mt-8 pt-6 border-t border-white/20">
+                <p className="text-normal-text font-mono text-base leading-relaxed text-center">
+                  Within <span className="text-white font-bold">72 hours</span> of demos, we closed <span className="text-white font-bold">three deals</span> totaling <span className="text-white font-bold">$375</span>. The willingness to pay without a free trial strongly validated the market need.
+                </p>
+              </div>
+            </div>
+
+            {/* The Realization - Implementation Friction Card */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
+              <h2 className="font-serif text-2xl text-white mb-6">The Realization: While closing sales was seamless, the transition to implementation revealed immediate friction in our setup process</h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Left Column - Friction Points */}
+                <div>
+                  {/* Friction 1 */}
+                  <div className="mb-6">
+                    <div className="inline-block bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-4 border border-white/20">
+                      <span className="text-white font-mono text-sm font-semibold">Friction 1</span>
+                    </div>
+                    <h3 className="font-serif text-xl text-white mb-3">Telephony Integration</h3>
+                    <p className="text-normal-text font-mono text-sm leading-relaxed">
+                      To deploy the AI, we evaluated three connectivity strategies: building a proprietary VoIP infrastructure, provisioning Twilio numbers for call forwarding, or updating the restaurant's public-facing number on Google with a brand new twilio number.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Right Column - Illustration */}
+                <div className="flex items-center justify-center">
+                  <img
+                    src="/Projects/VoiceaiReceptionist/Virtual-Number-1.webp"
+                    alt="Customer Support Telephony Integration"
+                    className="w-full h-auto max-w-lg"
+                  />
+                </div>
+              </div>
+
+              {/* Friction 2 - Reversed Layout */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+                {/* Left Column - POS System Images */}
+                <div className="flex flex-row gap-4 items-start">
+                  <img
+                    src="/Projects/VoiceaiReceptionist/View recent photos.png"
+                    alt="POS System - Clover Device"
+                    className="w-1/2 h-64 object-cover rounded-lg shadow-lg"
+                  />
+                  <img
+                    src="/Projects/VoiceaiReceptionist/View recent photos 2.png"
+                    alt="POS System - Square Terminal"
+                    className="w-1/2 h-64 object-cover rounded-lg shadow-lg"
+                  />
+                </div>
+
+                {/* Right Column - Friction 2 Description */}
+                <div>
+                  <div className="inline-block bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-4 border border-white/20">
+                    <span className="text-white font-mono text-sm font-semibold">Friction 2</span>
+                  </div>
+                  <h3 className="font-serif text-xl text-white mb-3">The POS Fragmentation Barrier</h3>
+                  <p className="text-normal-text font-mono text-sm leading-relaxed">
+                    The Point of Sale (POS) market is notoriously fractured, ranging from modern cloud systems to legacy hardware and even analog pen-and-paper operations. We faced a critical engineering challenge: creating a universal solution to generate invoices and route orders to the kitchen, regardless of the restaurant's existing tech stack.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* How We Solved Those Problems Card */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 mb-8">
+              <h2 className="font-serif text-2xl text-white mb-8">How might we solved those problems?</h2>
+
+              {/* Solving Friction 1: Connectivity */}
+              <div className="mb-8">
+                <h3 className="font-serif text-xl text-white mb-6">Solving Friction 1: Connectivity</h3>
+                <p className="text-normal-text font-mono text-sm leading-relaxed mb-6">
+                  We evaluated three architectural approaches to connect our AI to the restaurant's phone line, each with distinct trade-offs:
+                </p>
+
+                {/* Options Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                  {/* Option A */}
+                  <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-red-500/30 p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center border border-red-500/40">
+                        <span className="text-2xl">🏗️</span>
+                      </div>
+                      <div>
+                        <span className="text-red-400 font-mono text-xs font-semibold">RULED OUT</span>
+                        <h4 className="font-serif text-lg text-white">Option A</h4>
+                      </div>
+                    </div>
+                    <p className="text-sm text-white/80 font-semibold mb-2">VoIP Infrastructure</p>
+                    <p className="text-normal-text font-mono text-xs leading-relaxed">
+                      Building a proprietary VoIP network required complex carrier partnerships and significant engineering overhead that was out of scope.
+                    </p>
+                  </div>
+
+                  {/* Option B */}
+                  <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-yellow-500/30 p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-full bg-yellow-500/20 flex items-center justify-center border border-yellow-500/40">
+                        <span className="text-2xl">↪️</span>
+                      </div>
+                      <div>
+                        <span className="text-yellow-400 font-mono text-xs font-semibold">PARTIAL</span>
+                        <h4 className="font-serif text-lg text-white">Option B</h4>
+                      </div>
+                    </div>
+                    <p className="text-sm text-white/80 font-semibold mb-2">Call Forwarding</p>
+                    <p className="text-normal-text font-mono text-xs leading-relaxed">
+                      Kept existing number but created a dead-end: once forwarded to AI, impossible to transfer back to staff if human intervention needed.
+                    </p>
+                  </div>
+
+                  {/* Option C */}
+                  <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-blue-500/30 p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center border border-blue-500/40">
+                        <span className="text-2xl">📞</span>
+                      </div>
+                      <div>
+                        <span className="text-blue-400 font-mono text-xs font-semibold">VIABLE</span>
+                        <h4 className="font-serif text-lg text-white">Option C</h4>
+                      </div>
+                    </div>
+                    <p className="text-sm text-white/80 font-semibold mb-2">Dedicated AI Number</p>
+                    <p className="text-normal-text font-mono text-xs leading-relaxed">
+                      New number for public profiles. Enabled call transfers, but owners hesitant to replace legacy numbers customers memorized.
+                    </p>
+                  </div>
+                </div>
+
+                {/* The Solution - Highlighted */}
+                <div className="bg-green-500/10 backdrop-blur-sm rounded-lg border border-green-500/30 p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center border border-green-500/40">
+                      <span className="text-2xl">✓</span>
+                    </div>
+                    <h4 className="font-serif text-xl text-green-400">The Solution: Hybrid Model</h4>
+                  </div>
+                  <p className="text-normal-text font-mono text-sm leading-relaxed">
+                    We implemented a hybrid model. By supporting both <span className="text-white font-semibold">Option B</span> (for owners prioritizing their legacy number) and <span className="text-white font-semibold">Option C</span> (for owners prioritizing call transfer capabilities), we provided a flexible solution that accommodated the specific operational nuances of each restaurant.
+                  </p>
+                </div>
+              </div>
+
+              {/* Solving Friction 2: Universal Order Injection */}
+              <div>
+                <h3 className="font-serif text-xl text-white mb-6">Solving Friction 2: Universal Order Injection</h3>
+                <p className="text-normal-text font-mono text-sm leading-relaxed mb-8">
+                  To ensure 100% market compatibility, we developed a dual-track integration strategy:
+                </p>
+
+                {/* Option A - Modern Ecosystems */}
+                <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 backdrop-blur-sm rounded-xl border border-purple-500/30 p-8 mb-8">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center border border-purple-500/40">
+                      <span className="text-3xl">🔗</span>
+                    </div>
+                    <div>
+                      <span className="text-purple-400 font-mono text-xs font-semibold">OPTION A</span>
+                      <h4 className="font-serif text-xl text-white">Modern Ecosystems</h4>
+                    </div>
+                  </div>
+                  <p className="text-normal-text font-mono text-sm leading-relaxed mb-6">
+                    For tech-forward restaurants, we secured formal integration partnerships with over five major POS providers, including Clover, Square, and Lightspeed. This allowed orders to flow directly from the AI into their digital KDS (Kitchen Display Systems).
+                  </p>
+                  <div className="grid grid-cols-2 gap-4">
+                    <img
+                      src="/Projects/VoiceaiReceptionist/AE12994F-BE02-4094-98E2-7BD53754DF7D.jpeg"
+                      alt="POS Integration Partners - Clover, Square, Toast, Yelp, UberEats"
+                      className="w-full h-96 object-contain rounded-lg shadow-xl border border-white/10"
+                    />
+                    <img
+                      src="/Projects/VoiceaiReceptionist/IMG_1937 2.JPG"
+                      alt="Kitchen Display System with Digital Orders"
+                      className="w-full h-96 object-cover rounded-lg shadow-xl border border-white/10"
+                    />
+                  </div>
+                </div>
+
+                {/* Option B - Smart Printer Bridge */}
+                <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 backdrop-blur-sm rounded-xl border border-orange-500/30 p-8">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center border border-orange-500/40">
+                      <span className="text-3xl">🖨️</span>
+                    </div>
+                    <div>
+                      <span className="text-orange-400 font-mono text-xs font-semibold">OPTION B</span>
+                      <h4 className="font-serif text-xl text-white">The "Smart Printer" Bridge</h4>
+                    </div>
+                  </div>
+                  <p className="text-normal-text font-mono text-sm leading-relaxed mb-6">
+                    For legacy or analog restaurants (pen and paper), we engineered a proprietary hardware solution. We built low-cost "Smart Printers" using thermal printers powered by Raspberry Pi Zeros. This allowed the AI to bypass the lack of digital infrastructure and physically print orders for both the kitchen and the cashier in real-time.
+                  </p>
+                  <div className="grid grid-cols-2 gap-4">
+                    <img
+                      src="/Projects/VoiceaiReceptionist/View recent photos 3.png"
+                      alt="Smart Printer - Thermal Printer with Raspberry Pi"
+                      className="w-full h-96 object-cover rounded-lg shadow-xl border border-white/10"
+                    />
+                    <img
+                      src="/Projects/VoiceaiReceptionist/View recent photos 4.png"
+                      alt="Printed Receipt with Order Details"
+                      className="w-full h-96 object-contain rounded-lg shadow-xl border border-white/10"
+                    />
+                  </div>
                 </div>
               </div>
             </div>

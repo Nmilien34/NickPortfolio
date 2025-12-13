@@ -28,7 +28,7 @@ export const projects: Project[] = [
     title: 'Boltzman Enterprise',
     category: 'SaaS Product',
     description: 'Voice AI Receiptionist for restaurants',
-    mockup: '/Projects/Voice ai Receptionist/91658D25-00CB-4B5E-BD37-CDE8CFA0BA8C.jpeg',
+    mockup: '/Projects/VoiceaiReceptionist/91658D25-00CB-4B5E-BD37-CDE8CFA0BA8C.jpeg',
     gradientColors: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
     browserUrl: 'enterprise.boltzman.ai',
   },
@@ -81,7 +81,7 @@ export function Projects() {
   const navigate = useNavigate();
 
   return (
-    <section className="py-20 px-6">
+    <section className="py-12 md:py-20 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
         <h2 className="font-serif text-3xl md:text-4xl text-white mb-8 md:mb-12 text-center">
@@ -179,11 +179,11 @@ export function Projects() {
               </div>
 
               {/* Project Info Overlay - Bottom Left */}
-              <div className="absolute bottom-6 left-6 z-10">
-                <h3 className="text-2xl font-bold text-white mb-1 drop-shadow-lg">
+              <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-10">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-1 drop-shadow-lg">
                   {project.title}
                 </h3>
-                <p className="text-sm text-white/90 drop-shadow-md">
+                <p className="text-xs md:text-sm text-white/90 drop-shadow-md">
                   {project.category}
                 </p>
               </div>

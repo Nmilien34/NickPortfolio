@@ -14,7 +14,7 @@ export function About() {
   return (
     <div className="min-h-screen flex flex-col bg-background-color">
       <Header />
-      <main className="flex-1 pt-32 pb-20">
+      <main className="flex-1 pt-24 md:pt-32 pb-12 md:pb-20">
         <div className="max-w-7xl mx-auto px-6">
           {/* Back Button */}
           <button
@@ -25,17 +25,17 @@ export function About() {
           </button>
 
           {/* Page Title */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 md:mb-16">
             <h1 className="font-serif text-5xl md:text-6xl text-white mb-4">
               About Me
             </h1>
-            <p className="text-normal-text text-lg font-mono max-w-2xl mx-auto">
+            <p className="text-normal-text text-base md:text-lg font-mono max-w-2xl mx-auto">
               A glimpse into who I am beyond the code
             </p>
           </div>
 
           {/* Unique Photo Collage */}
-          <div className="relative mb-20">
+          <div className="relative mb-12 md:mb-20">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {/* First Image - Large, Left Side */}
               <div className="md:col-span-2 relative group">
@@ -43,7 +43,7 @@ export function About() {
                   <img
                     src={images[0]}
                     alt="About me 1"
-                    className="w-full h-[500px] object-cover hover:scale-110 transition-transform duration-700"
+                    className="w-full h-[350px] md:h-[500px] object-cover hover:scale-110 transition-transform duration-700"
                     loading="eager"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -57,7 +57,7 @@ export function About() {
                     <img
                       src={images[1]}
                       alt="About me 2"
-                      className="w-full h-[240px] object-cover hover:scale-110 transition-transform duration-700"
+                      className="w-full h-[180px] md:h-[240px] object-cover hover:scale-110 transition-transform duration-700"
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -68,7 +68,7 @@ export function About() {
                     <img
                       src={images[2]}
                       alt="About me 3"
-                      className="w-full h-[240px] object-cover hover:scale-110 transition-transform duration-700"
+                      className="w-full h-[180px] md:h-[240px] object-cover hover:scale-110 transition-transform duration-700"
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -83,9 +83,9 @@ export function About() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
               {/* Who I Am Box - Left Side */}
               <div className="md:col-span-2 flex">
-                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-8 md:p-12 w-full">
-                  <h2 className="font-serif text-3xl text-white mb-6">Who I Am</h2>
-                  <div className="space-y-4 text-normal-text font-mono text-base leading-relaxed">
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 md:p-12 w-full">
+                  <h2 className="font-serif text-2xl md:text-3xl text-white mb-6">Who I Am</h2>
+                  <div className="space-y-4 text-normal-text font-mono text-sm md:text-base leading-relaxed">
                     <p>
                       <strong className="text-white">Hiya, I'm Nick (short for Nickson).</strong>
                     </p>
