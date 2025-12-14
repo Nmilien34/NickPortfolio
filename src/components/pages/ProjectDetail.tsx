@@ -2961,6 +2961,255 @@ export function ProjectDetail() {
                 </div>
               </div>
             </div>
+
+            {/* The Boltzman Engine Card */}
+            <div className="mb-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-indigo-500/20 flex items-center justify-center border border-purple-500/30">
+                    <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 className="font-serif text-2xl md:text-3xl text-white mb-1">The Boltzman Engine</h2>
+                    <p className="text-white/60 font-mono text-sm">Custom Modes and Algorithmic LLM Orchestration</p>
+                  </div>
+                </div>
+
+                {/* Section I: User-Centric Modes */}
+                <div className="mb-12">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center border border-blue-500/30">
+                      <span className="text-blue-400 font-serif text-xl font-bold">I</span>
+                    </div>
+                    <h3 className="font-serif text-xl md:text-2xl text-white">User-Centric Modes</h3>
+                  </div>
+                  <p className="text-white/70 font-mono text-sm mb-6 leading-relaxed">
+                    Solving Specific Pain Points
+                  </p>
+
+                  {/* Introduction */}
+                  <div className="bg-white/5 rounded-lg p-4 border border-white/10 mb-8">
+                    <p className="text-white/80 font-mono text-sm leading-relaxed">
+                      User research and interviews revealed distinct user needs, leading us to segment the platform into specialized modes to optimize for common workflows.
+                    </p>
+                  </div>
+
+                  {/* Mode Diversification */}
+                  <div className="mb-8">
+                    <h4 className="text-white font-semibold mb-4 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
+                      <svg className="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                      </svg>
+                      Mode Diversification
+                    </h4>
+                    <p className="text-white/70 font-mono text-sm mb-6 leading-relaxed">
+                      Users were given multiple interaction modes to choose from, with each mode designed to address a specific problem identified during our user interviews.
+                    </p>
+
+                    {/* Modes Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                      {/* Auto Mode */}
+                      <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-lg p-4 border border-green-500/20">
+                        <div className="flex items-center gap-2 mb-2">
+                          <div className="w-2 h-2 rounded-full bg-green-400"></div>
+                          <h5 className="text-green-400 font-semibold font-mono text-sm">Auto</h5>
+                        </div>
+                        <p className="text-white/70 font-mono text-xs leading-relaxed">
+                          Optimized for daily use, providing basic chat functionality.
+                        </p>
+                      </div>
+
+                      {/* Quick Search */}
+                      <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-lg p-4 border border-blue-500/20">
+                        <div className="flex items-center gap-2 mb-2">
+                          <div className="w-2 h-2 rounded-full bg-blue-400"></div>
+                          <h5 className="text-blue-400 font-semibold font-mono text-sm">Quick Search</h5>
+                        </div>
+                        <p className="text-white/70 font-mono text-xs leading-relaxed">
+                          Optimized for fast facts and answers.
+                        </p>
+                      </div>
+
+                      {/* Pro Search */}
+                      <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-lg p-4 border border-purple-500/20">
+                        <div className="flex items-center gap-2 mb-2">
+                          <div className="w-2 h-2 rounded-full bg-purple-400"></div>
+                          <h5 className="text-purple-400 font-semibold font-mono text-sm">Pro Search</h5>
+                        </div>
+                        <p className="text-white/70 font-mono text-xs leading-relaxed">
+                          Offers enhanced searching power.
+                        </p>
+                      </div>
+
+                      {/* Assistant (BETA) */}
+                      <div className="bg-gradient-to-br from-orange-500/10 to-red-500/10 rounded-lg p-4 border border-orange-500/20">
+                        <div className="flex items-center gap-2 mb-2">
+                          <div className="w-2 h-2 rounded-full bg-orange-400"></div>
+                          <h5 className="text-orange-400 font-semibold font-mono text-sm">Assistant (BETA)</h5>
+                        </div>
+                        <p className="text-white/70 font-mono text-xs leading-relaxed">
+                          Focuses on agency, reasoning, and action execution.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Specialized Tools */}
+                  <div className="mb-8">
+                    <h4 className="text-white font-semibold mb-4 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
+                      <svg className="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                      Specialized Tools
+                    </h4>
+                    <p className="text-white/70 font-mono text-sm mb-4 leading-relaxed">
+                      Beyond the core chat modes, we provided targeted tools to solve high-frequency, complex tasks:
+                    </p>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                      {['YouTube Transcriber', 'Image Generator', 'Website Scraper', 'Audio Transcriber', 'Text to Speech'].map((tool, idx) => (
+                        <div key={idx} className="bg-white/5 rounded-lg p-3 border border-white/10">
+                          <p className="text-white/80 font-mono text-xs text-center">{tool}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Image 1 */}
+                  <div className="relative mb-6 flex justify-center">
+                    <div className="bg-white/5 rounded-xl p-4 border border-white/10 max-w-2xl w-full">
+                      <img
+                        src="/Projects/Boltzman AI/4B8144E9-D045-4C8A-90D5-97E48E7A8181.jpeg"
+                        alt="Boltzman Engine Modes"
+                        className="w-full h-auto rounded-lg object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="absolute -inset-2 bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-xl blur-xl -z-10"></div>
+                  </div>
+                </div>
+
+                {/* Divider */}
+                <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-12"></div>
+
+                {/* Section II: Strategic Advantage */}
+                <div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center border border-indigo-500/30">
+                      <span className="text-indigo-400 font-serif text-xl font-bold">II</span>
+                    </div>
+                    <h3 className="font-serif text-xl md:text-2xl text-white">Strategic Advantage</h3>
+                  </div>
+                  <p className="text-white/70 font-mono text-sm mb-6 leading-relaxed">
+                    LLM Orchestration
+                  </p>
+
+                  {/* Introduction */}
+                  <div className="bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-lg p-5 border border-indigo-500/20 mb-8">
+                    <p className="text-white/90 font-mono text-sm leading-relaxed">
+                      We recognized that no single Large Language Model (LLM) is superior across all task types. Our vision was to empower Boltzman with a decisive technical edge by allowing it to select the best model for any given action.
+                    </p>
+                  </div>
+
+                  {/* Two Column Layout with Images */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                    {/* Left Column - Content */}
+                    <div className="space-y-6">
+                      {/* Pioneering LLM Choice */}
+                      <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                        <h4 className="text-indigo-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                          </svg>
+                          Pioneering LLM Choice
+                        </h4>
+                        <p className="text-white/70 font-mono text-xs leading-relaxed">
+                          We were among the first platforms to offer users and the system a selection of multiple LLMs.
+                        </p>
+                      </div>
+
+                      {/* The Orchestration Layer */}
+                      <div className="bg-gradient-to-br from-purple-500/10 to-indigo-500/10 rounded-lg p-4 border border-purple-500/20">
+                        <h4 className="text-purple-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                          </svg>
+                          The Orchestration Layer
+                        </h4>
+                        <p className="text-white/80 font-mono text-xs leading-relaxed mb-4">
+                          The core power of Boltzman lay in its ability to dynamically assign tasks to the most appropriate LLM based on its known strengths.
+                        </p>
+                        <div className="space-y-3">
+                          <div className="flex items-start gap-2">
+                            <span className="text-purple-400 mt-0.5">•</span>
+                            <p className="text-white/70 font-mono text-xs leading-relaxed">
+                              If <span className="text-white font-semibold">DeepSeek R1</span> was superior for deep reasoning tasks, Boltzman would delegate the task to it.
+                            </p>
+                          </div>
+                          <div className="flex items-start gap-2">
+                            <span className="text-purple-400 mt-0.5">•</span>
+                            <p className="text-white/70 font-mono text-xs leading-relaxed">
+                              If <span className="text-white font-semibold">Claude 3 Opus</span> was better suited for math or complex logical reasoning, the system would route the request accordingly.
+                            </p>
+                          </div>
+                          <div className="flex items-start gap-2">
+                            <span className="text-purple-400 mt-0.5">•</span>
+                            <p className="text-white/70 font-mono text-xs leading-relaxed">
+                              If <span className="text-white font-semibold">GPT-3.5</span> was optimal for generative writing, that model would be prioritized.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Right Column - Images */}
+                    <div className="space-y-6">
+                      <div className="relative flex justify-center">
+                        <div className="bg-white/5 rounded-xl p-4 border border-white/10 max-w-md w-full">
+                          <img
+                            src="/Projects/Boltzman AI/26E52750-FCB5-41E4-84EA-8503EFED8CB3.jpeg"
+                            alt="LLM Orchestration"
+                            className="w-full h-auto rounded-lg object-contain"
+                            loading="lazy"
+                          />
+                        </div>
+                        <div className="absolute -inset-2 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-xl blur-xl -z-10"></div>
+                      </div>
+                      <div className="relative flex justify-center">
+                        <div className="bg-white/5 rounded-xl p-4 border border-white/10 max-w-md w-full">
+                          <img
+                            src="/Projects/Boltzman AI/6A2EA0F4-525B-41B4-B219-04EC5D1EC5F6.jpeg"
+                            alt="LLM Selection"
+                            className="w-full h-auto rounded-lg object-contain"
+                            loading="lazy"
+                          />
+                        </div>
+                        <div className="absolute -inset-2 bg-gradient-to-br from-purple-500/10 to-indigo-500/10 rounded-xl blur-xl -z-10"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Result */}
+                  <div className="bg-gradient-to-r from-indigo-500/20 via-purple-500/20 to-pink-500/20 rounded-xl p-6 border border-indigo-500/30">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-indigo-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">Result</h4>
+                        <p className="text-white/90 font-mono text-sm leading-relaxed">
+                          By granting the system access to a diverse array of models—including offerings from OpenAI, Anthropic, Google, Meta, and others—Boltzman achieved a "superpower" in execution, resulting in higher quality and more reliable outcomes across a vast spectrum of tasks.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </>
         )}
         </div>
