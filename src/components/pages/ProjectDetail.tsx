@@ -2788,6 +2788,179 @@ export function ProjectDetail() {
                 </div>
               </div>
             </div>
+
+            {/* Building the Experience: Optimizing Top-of-Funnel Card */}
+            <div className="mb-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/20 to-red-500/20 flex items-center justify-center border border-orange-500/30">
+                    <svg className="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 className="font-serif text-2xl md:text-3xl text-white mb-1">Building the Experience</h2>
+                    <p className="text-white/60 font-mono text-sm">Optimizing the Top-of-Funnel</p>
+                  </div>
+                </div>
+
+                {/* Content Layout - Problem/Solution with Image */}
+                <div className="space-y-8">
+                  {/* The Initial Problem */}
+                  <div className="bg-gradient-to-br from-red-500/10 to-orange-500/10 rounded-xl p-6 border border-red-500/20">
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-lg bg-red-500/20 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-red-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide">The Initial Problem</h3>
+                        <p className="text-white/80 font-mono text-sm leading-relaxed">
+                          Our initial flow, which required an immediate account creation (via Google or direct sign-up), created high friction. Usability testing showed users were dropping off immediately upon seeing the sign-up modal, leading to significantly reduced top-of-funnel conversion rates.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Solution with Image */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    {/* Text Content */}
+                    <div className="bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-xl p-6 border border-emerald-500/20">
+                      <div className="flex items-start gap-4 mb-4">
+                        <div className="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
+                          <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-emerald-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide">The Solution (CRO Strategy)</h3>
+                          <p className="text-white/80 font-mono text-sm leading-relaxed mb-4">
+                            I implemented a progressive disclosure approach. The system was modified to grant users a limited trial of 3 interactions.
+                          </p>
+                          <div className="bg-black/30 rounded-lg p-4 border border-emerald-500/20">
+                            <p className="text-white/90 font-mono text-sm leading-relaxed italic">
+                              This allowed prospects to experience the AI's core functionality and utility firsthand, effectively demonstrating the product's value before requiring the commitment of account creation.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Image */}
+                    <div className="relative">
+                      <div className="bg-white/5 rounded-xl p-6 border border-white/10 shadow-2xl">
+                        <img
+                          src="/Projects/Boltzman AI/Group 6.svg"
+                          alt="Progressive Disclosure Flow"
+                          className="w-full h-auto rounded-lg object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                      {/* Decorative gradient overlay */}
+                      <div className="absolute -inset-4 bg-gradient-to-br from-emerald-500/10 via-teal-500/10 to-blue-500/10 rounded-2xl blur-2xl -z-10"></div>
+                    </div>
+                  </div>
+
+                  {/* Visual Flow Indicator */}
+                  <div className="flex items-center justify-center gap-4 pt-4">
+                    <div className="flex items-center gap-2 text-white/40 font-mono text-xs">
+                      <div className="w-2 h-2 rounded-full bg-red-400"></div>
+                      <span>High Friction</span>
+                    </div>
+                    <div className="flex-1 h-px bg-gradient-to-r from-red-500/50 via-orange-500/50 to-emerald-500/50"></div>
+                    <div className="flex items-center gap-2 text-white/40 font-mono text-xs">
+                      <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+                      <span>Progressive Disclosure</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Multilingual Support Card */}
+            <div className="mb-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
+                {/* Header with Globe Icon */}
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center border border-cyan-500/30">
+                    <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 className="font-serif text-2xl md:text-3xl text-white mb-1">Multilingual Support</h2>
+                    <p className="text-white/60 font-mono text-sm">Global Accessibility</p>
+                  </div>
+                </div>
+
+                {/* Main Content */}
+                <div className="space-y-8">
+                  {/* Description */}
+                  <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-xl p-6 border border-cyan-500/20">
+                    <p className="text-white/90 font-mono text-base leading-relaxed text-center">
+                      Boltzman provided users with comprehensive multilingual support, enabling them to conduct studies, research, and mathematical work in any language of their choosing.
+                    </p>
+                  </div>
+
+                  {/* Images Grid */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Image 1 */}
+                    <div className="relative group">
+                      <div className="bg-white/5 rounded-xl p-4 border border-white/10 overflow-hidden transition-all duration-300 group-hover:border-cyan-500/30 group-hover:shadow-lg group-hover:shadow-cyan-500/10">
+                        <img
+                          src="/Projects/Boltzman AI/View recent photos 10.png"
+                          alt="Multilingual Support Example 1"
+                          className="w-full h-auto rounded-lg object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                          loading="lazy"
+                        />
+                      </div>
+                      {/* Decorative gradient overlay */}
+                      <div className="absolute -inset-2 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                    </div>
+
+                    {/* Image 2 */}
+                    <div className="relative group">
+                      <div className="bg-white/5 rounded-xl p-4 border border-white/10 overflow-hidden transition-all duration-300 group-hover:border-cyan-500/30 group-hover:shadow-lg group-hover:shadow-cyan-500/10">
+                        <img
+                          src="/Projects/Boltzman AI/View recent photos 11.png"
+                          alt="Multilingual Support Example 2"
+                          className="w-full h-auto rounded-lg object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                          loading="lazy"
+                        />
+                      </div>
+                      {/* Decorative gradient overlay */}
+                      <div className="absolute -inset-2 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                    </div>
+                  </div>
+
+                  {/* Language Icons Decoration */}
+                  <div className="flex items-center justify-center gap-6 pt-4 border-t border-white/10">
+                    <div className="flex items-center gap-2 text-white/50 font-mono text-xs">
+                      <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                      </svg>
+                      <span>Multiple Languages</span>
+                    </div>
+                    <div className="w-1 h-1 rounded-full bg-cyan-400/50"></div>
+                    <div className="flex items-center gap-2 text-white/50 font-mono text-xs">
+                      <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                      <span>Research & Studies</span>
+                    </div>
+                    <div className="w-1 h-1 rounded-full bg-cyan-400/50"></div>
+                    <div className="flex items-center gap-2 text-white/50 font-mono text-xs">
+                      <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
+                      </svg>
+                      <span>Mathematical Work</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </>
         )}
         </div>
