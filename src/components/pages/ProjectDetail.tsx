@@ -2852,7 +2852,7 @@ export function ProjectDetail() {
                     <div className="relative">
                       <div className="bg-white/5 rounded-xl p-6 border border-white/10 shadow-2xl">
                         <img
-                          src="/Projects/Boltzman AI/Group 6.svg"
+                          src="/Projects/Boltzman AI/Group 7.svg"
                           alt="Progressive Disclosure Flow"
                           className="w-full h-auto rounded-lg object-contain"
                           loading="lazy"
@@ -3205,6 +3205,410 @@ export function ProjectDetail() {
                           By granting the system access to a diverse array of models—including offerings from OpenAI, Anthropic, Google, Meta, and others—Boltzman achieved a "superpower" in execution, resulting in higher quality and more reliable outcomes across a vast spectrum of tasks.
                         </p>
                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Enhancing Autonomy Card */}
+            <div className="mb-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500/20 to-fuchsia-500/20 flex items-center justify-center border border-violet-500/30">
+                    <svg className="w-6 h-6 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 className="font-serif text-2xl md:text-3xl text-white mb-1">Enhancing Autonomy</h2>
+                    <p className="text-white/60 font-mono text-sm">The Toolbox and the LLM Orchestration Layer</p>
+                  </div>
+                </div>
+
+                {/* Core Goal Introduction */}
+                <div className="bg-gradient-to-r from-violet-500/10 via-purple-500/10 to-fuchsia-500/10 rounded-xl p-6 border border-violet-500/20 mb-10">
+                  <p className="text-white/90 font-mono text-sm leading-relaxed text-center">
+                    The foundational goal of Boltzman is to achieve <span className="text-violet-400 font-semibold">true universal AI autonomy</span> by solving the execution constraint. This autonomy is achieved by strategically equipping the system with two critical resource layers: <span className="text-fuchsia-400 font-semibold">specialized expertise (LLMs)</span> and <span className="text-purple-400 font-semibold">essential tools (Software Integration)</span>.
+                  </p>
+                </div>
+
+                {/* Section I: The Toolkit */}
+                <div className="mb-12">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center border border-emerald-500/30">
+                      <span className="text-emerald-400 font-serif text-xl font-bold">I</span>
+                    </div>
+                    <h3 className="font-serif text-xl md:text-2xl text-white">The Toolkit</h3>
+                  </div>
+                  <p className="text-white/70 font-mono text-sm mb-6 leading-relaxed italic">
+                    Equipping the Agent for Action
+                  </p>
+
+                  {/* Problem-Driven Development */}
+                  <div className="bg-white/5 rounded-lg p-5 border border-white/10 mb-6">
+                    <div className="flex items-start gap-3 mb-3">
+                      <svg className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                      </svg>
+                      <div className="flex-1">
+                        <h4 className="text-emerald-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">Problem-Driven Tool Development</h4>
+                        <p className="text-white/80 font-mono text-sm leading-relaxed">
+                          Our initial user research with target professionals identified high-frequency, manual workflows that demanded specific, non-chat solutions. We developed a Tools Marketplace to provide the Large Language Models (LLMs) with the necessary functional assets to perform complex, multi-step actions.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Available Tools */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div className="bg-gradient-to-br from-teal-500/10 to-emerald-500/10 rounded-lg p-4 border border-teal-500/20">
+                      <h4 className="text-teal-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                        Available Tools
+                      </h4>
+                      <div className="space-y-2">
+                        {['YouTube Transcriber', 'Image Generator', 'Text to Speech'].map((tool, idx) => (
+                          <div key={idx} className="flex items-center gap-2">
+                            <div className="w-1.5 h-1.5 rounded-full bg-teal-400"></div>
+                            <span className="text-white/80 font-mono text-xs">{tool}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-lg p-4 border border-blue-500/20">
+                      <h4 className="text-blue-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Planned Development
+                      </h4>
+                      <div className="space-y-2">
+                        {['Website Scraper', 'Audio Transcriber'].map((tool, idx) => (
+                          <div key={idx} className="flex items-center gap-2">
+                            <div className="w-1.5 h-1.5 rounded-full bg-blue-400"></div>
+                            <span className="text-white/70 font-mono text-xs">{tool}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* The Outcome */}
+                  <div className="bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-lg p-5 border border-emerald-500/30">
+                    <div className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <p className="text-white/90 font-mono text-sm leading-relaxed">
+                        <span className="text-emerald-400 font-semibold">The Outcome:</span> The AI system now has the required instruments to move beyond simple chat responses and actively perform complex tasks in the user's digital environment.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Divider */}
+                <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-12"></div>
+
+                {/* Section II: LLM Orchestration */}
+                <div className="mb-8">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center border border-indigo-500/30">
+                      <span className="text-indigo-400 font-serif text-xl font-bold">II</span>
+                    </div>
+                    <h3 className="font-serif text-xl md:text-2xl text-white">LLM Orchestration</h3>
+                  </div>
+                  <p className="text-white/70 font-mono text-sm mb-6 leading-relaxed italic">
+                    The Algorithmic Expertise
+                  </p>
+
+                  {/* Introduction */}
+                  <div className="bg-white/5 rounded-lg p-5 border border-white/10 mb-6">
+                    <p className="text-white/80 font-mono text-sm leading-relaxed">
+                      To maximize the quality and efficiency of task execution, we implemented a sophisticated system for model selection.
+                    </p>
+                  </div>
+
+                  {/* Two Column Layout */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                    {/* Left Column - Content */}
+                    <div className="space-y-6">
+                      {/* Diverse Model Access */}
+                      <div className="bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-lg p-5 border border-indigo-500/20">
+                        <h4 className="text-indigo-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                          </svg>
+                          Diverse Model Access
+                        </h4>
+                        <p className="text-white/80 font-mono text-xs leading-relaxed mb-3">
+                          We equipped our system with a wide array of models from leading providers:
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {['OpenAI', 'Anthropic', 'Google', 'Meta', 'Mistral', 'DeepSeek'].map((provider, idx) => (
+                            <span key={idx} className="px-3 py-1 bg-white/10 rounded-full text-white/70 font-mono text-xs border border-white/10">
+                              {provider}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Strategic Delegation */}
+                      <div className="bg-gradient-to-br from-purple-500/10 to-violet-500/10 rounded-lg p-5 border border-purple-500/20">
+                        <h4 className="text-purple-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                          </svg>
+                          Strategic Delegation
+                        </h4>
+                        <p className="text-white/80 font-mono text-xs leading-relaxed mb-4">
+                          The core logic of the Boltzman engine dictates that when an action is required, the system delegates the task to the LLM best suited for that specific constraint.
+                        </p>
+                        <div className="space-y-3">
+                          <div className="bg-black/30 rounded-lg p-3 border border-purple-500/20">
+                            <p className="text-white/90 font-mono text-xs leading-relaxed">
+                              <span className="text-purple-400 font-semibold">Deep reasoning</span> → DeepSeek R1
+                            </p>
+                          </div>
+                          <div className="bg-black/30 rounded-lg p-3 border border-purple-500/20">
+                            <p className="text-white/90 font-mono text-xs leading-relaxed">
+                              <span className="text-purple-400 font-semibold">Logical/mathematical processing</span> → Claude 3 Opus
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Right Column - Image */}
+                    <div className="flex justify-center items-start">
+                      <div className="relative w-full max-w-xl">
+                        <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                          <img
+                            src="/Projects/Boltzman AI/413D456D-B9AC-4B2F-8B12-3E631B89240F.jpeg"
+                            alt="LLM Orchestration Layer"
+                            className="w-full h-auto rounded-lg object-contain"
+                            loading="lazy"
+                          />
+                        </div>
+                        <div className="absolute -inset-2 bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-violet-500/10 rounded-xl blur-xl -z-10"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Final Result */}
+                  <div className="bg-gradient-to-r from-violet-500/20 via-purple-500/20 to-indigo-500/20 rounded-xl p-6 border border-violet-500/30">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-violet-500/20 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-5 h-5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-violet-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">Result</h4>
+                        <p className="text-white/90 font-mono text-sm leading-relaxed">
+                          By combining this deep toolbox with a dynamic LLM orchestration layer, Boltzman effectively solves the constraints of execution and accelerates its journey toward becoming a truly autonomous universal AI system.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Contextual Command: Memory and Integration Card */}
+            <div className="mb-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
+                {/* Header with Different Color Scheme */}
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500/20 to-cyan-500/20 flex items-center justify-center border border-teal-500/30">
+                    <svg className="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 className="font-serif text-2xl md:text-3xl text-white mb-1">Contextual Command</h2>
+                    <p className="text-white/60 font-mono text-sm">The Memory and Integration Pillars</p>
+                  </div>
+                </div>
+
+                {/* Introduction */}
+                <div className="bg-gradient-to-r from-teal-500/10 via-cyan-500/10 to-blue-500/10 rounded-xl p-6 border border-teal-500/20 mb-10">
+                  <p className="text-white/90 font-mono text-sm leading-relaxed text-center">
+                    For Boltzman to evolve from a simple chat interface into a <span className="text-teal-400 font-semibold">truly autonomous agent</span>, it required two critical capabilities: <span className="text-cyan-400 font-semibold">deep memory for intent</span>, and <span className="text-blue-400 font-semibold">secure access to the user's digital environment for action</span>.
+                  </p>
+                </div>
+
+                {/* Section I: Long-Form Memory */}
+                <div className="mb-12">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-500/20 to-cyan-500/20 flex items-center justify-center border border-teal-500/30">
+                      <span className="text-teal-400 font-serif text-xl font-bold">I</span>
+                    </div>
+                    <h3 className="font-serif text-xl md:text-2xl text-white">Long-Form Memory</h3>
+                  </div>
+                  <p className="text-white/70 font-mono text-sm mb-6 leading-relaxed italic">
+                    Building Context
+                  </p>
+
+                  {/* Content with Image */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-6">
+                    {/* Left: Text Content */}
+                    <div className="space-y-5">
+                      <div className="bg-gradient-to-br from-teal-500/10 to-cyan-500/10 rounded-lg p-5 border border-teal-500/20">
+                        <h4 className="text-teal-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                          </svg>
+                          Knowledge Base Creation
+                        </h4>
+                        <p className="text-white/80 font-mono text-sm leading-relaxed mb-3">
+                          Users were allowed to create a knowledge base or memory for the system.
+                        </p>
+                        <div className="bg-black/30 rounded-lg p-3 border border-teal-500/20">
+                          <p className="text-teal-300 font-mono text-xs leading-relaxed italic">
+                            <span className="text-white font-semibold">Purpose:</span> This ensured the underlying algorithms and LLMs had the maximum amount of contextual information available to make the most informed decisions when performing tasks.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Right: Image */}
+                    <div className="flex justify-center">
+                      <div className="relative w-full max-w-md">
+                        <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                          <img
+                            src="/Projects/Boltzman AI/6C74FEC1-5539-4B74-AB5C-4654A59BAD10.jpeg"
+                            alt="Long-Form Memory"
+                            className="w-full h-auto rounded-lg object-contain"
+                            loading="lazy"
+                          />
+                        </div>
+                        <div className="absolute -inset-2 bg-gradient-to-br from-teal-500/10 to-cyan-500/10 rounded-xl blur-xl -z-10"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Divider */}
+                <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-12"></div>
+
+                {/* Section II: Integrations */}
+                <div className="mb-8">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center border border-cyan-500/30">
+                      <span className="text-cyan-400 font-serif text-xl font-bold">II</span>
+                    </div>
+                    <h3 className="font-serif text-xl md:text-2xl text-white">Integrations</h3>
+                  </div>
+                  <p className="text-white/70 font-mono text-sm mb-6 leading-relaxed italic">
+                    The Hub for Action and Retrieval
+                  </p>
+
+                  {/* Introduction */}
+                  <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-lg p-5 border border-cyan-500/20 mb-8">
+                    <p className="text-white/80 font-mono text-sm leading-relaxed">
+                      The Integrations pillar solves the "where" of execution, allowing Boltzman to seamlessly operate across the user's fragmented digital workspace.
+                    </p>
+                  </div>
+
+                  {/* Content with Image - Reversed Layout */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-8">
+                    {/* Left: Image */}
+                    <div className="flex justify-center order-2 lg:order-1">
+                      <div className="relative w-full max-w-md">
+                        <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                          <img
+                            src="/Projects/Boltzman AI/A5B9D7E8-70DE-48E3-AFDF-FE80BC166F26.png"
+                            alt="Integrations"
+                            className="w-full h-auto rounded-lg object-contain"
+                            loading="lazy"
+                          />
+                        </div>
+                        <div className="absolute -inset-2 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-xl blur-xl -z-10"></div>
+                      </div>
+                    </div>
+
+                    {/* Right: Text Content */}
+                    <div className="space-y-6 order-1 lg:order-2">
+                      {/* Access and Authorization */}
+                      <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-lg p-5 border border-blue-500/20">
+                        <h4 className="text-blue-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                          </svg>
+                          Access and Authorization
+                        </h4>
+                        <p className="text-white/80 font-mono text-sm leading-relaxed mb-3">
+                          Users were provided with the ability to integrate with essential third-party applications:
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {['Notion', 'Google Drive', 'Slack', 'Google Docs', 'N8N', 'ClickUp', 'SurveyMonkey'].map((app, idx) => (
+                            <span key={idx} className="px-3 py-1.5 bg-white/10 rounded-lg text-white/90 font-mono text-xs border border-blue-500/20">
+                              {app}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Dual Functionality */}
+                      <div className="bg-gradient-to-br from-cyan-500/10 to-teal-500/10 rounded-lg p-5 border border-cyan-500/20">
+                        <h4 className="text-cyan-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                          </svg>
+                          Dual Functionality
+                        </h4>
+                        <p className="text-white/80 font-mono text-xs leading-relaxed mb-4">
+                          These integrations serve a dual purpose for the LLMs:
+                        </p>
+                        <div className="space-y-3">
+                          <div className="bg-black/30 rounded-lg p-3 border border-cyan-500/20">
+                            <div className="flex items-start gap-2">
+                              <svg className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                              </svg>
+                              <div>
+                                <p className="text-cyan-400 font-semibold font-mono text-xs mb-1">Retrieval</p>
+                                <p className="text-white/70 font-mono text-xs leading-relaxed">
+                                  They provide secure locations to retrieve information (e.g., pulling a file from Google Drive or Slack).
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="bg-black/30 rounded-lg p-3 border border-cyan-500/20">
+                            <div className="flex items-start gap-2">
+                              <svg className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                              </svg>
+                              <div>
+                                <p className="text-cyan-400 font-semibold font-mono text-xs mb-1">Execution</p>
+                                <p className="text-white/70 font-mono text-xs leading-relaxed">
+                                  They give the system the necessary authority and location to execute actions (e.g., creating a document or sending a message) within the user's preferred apps.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Final Result */}
+                <div className="bg-gradient-to-r from-teal-500/20 via-cyan-500/20 to-blue-500/20 rounded-xl p-6 border border-teal-500/30">
+                  <div className="flex items-start gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-teal-500/20 flex items-center justify-center flex-shrink-0">
+                      <svg className="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-white/90 font-mono text-sm leading-relaxed">
+                        By combining <span className="text-teal-400 font-semibold">deep contextual memory</span> with <span className="text-cyan-400 font-semibold">robust, integrated action capabilities</span>, Boltzman fulfills the requirement of an autonomous universal AI system.
+                      </p>
                     </div>
                   </div>
                 </div>
