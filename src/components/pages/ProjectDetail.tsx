@@ -186,17 +186,17 @@ export function ProjectDetail() {
               <div className="relative">
                 {/* Desktop Mockup */}
                 <div className="relative mx-auto max-w-4xl">
-                  <div className={project.title === 'Boltzman Enterprise' ? 'bg-white rounded-t-lg p-2 flex items-center gap-2' : 'bg-gray-800 rounded-t-lg p-2 flex items-center gap-2'}>
+                  <div className={project.title === 'Boltzman Enterprise' ? 'bg-white rounded-t-lg p-2 flex items-center gap-2' : project.title === 'Boltzman AI' ? 'bg-[#2a2a2a] rounded-t-lg p-2 flex items-center gap-2 border-b border-gray-700' : 'bg-gray-800 rounded-t-lg p-2 flex items-center gap-2'}>
                     <div className="flex gap-1.5 md:gap-2">
                       <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-red-500"></div>
                       <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-yellow-500"></div>
                       <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-500"></div>
                     </div>
-                    <div className={project.title === 'Boltzman Enterprise' ? 'flex-1 bg-gray-200 rounded px-2 md:px-4 py-1 text-[10px] md:text-xs text-gray-700 text-center font-mono' : 'flex-1 bg-gray-700 rounded px-2 md:px-4 py-1 text-[10px] md:text-xs text-gray-300 text-center font-mono'}>
+                    <div className={project.title === 'Boltzman Enterprise' ? 'flex-1 bg-gray-200 rounded px-2 md:px-4 py-1 text-[10px] md:text-xs text-gray-700 text-center font-mono' : project.title === 'Boltzman AI' ? 'flex-1 bg-[#3a3a3a] rounded px-2 md:px-4 py-1 text-[10px] md:text-xs text-gray-400 text-center font-mono' : 'flex-1 bg-gray-700 rounded px-2 md:px-4 py-1 text-[10px] md:text-xs text-gray-300 text-center font-mono'}>
                       {project.title === 'Lawnstack' ? 'lawnstack.com' : (project.browserUrl || 'example.com')}
                     </div>
                   </div>
-                  <div className="bg-white rounded-b-lg overflow-hidden shadow-2xl">
+                  <div className={project.title === 'Boltzman AI' ? 'bg-[#1a1a1a] rounded-b-lg overflow-hidden shadow-2xl' : 'bg-white rounded-b-lg overflow-hidden shadow-2xl'}>
                     <img
                       src={project.coverImage || project.mockup || project.image || '/placeholder-cover.jpg'}
                       alt={`${project.title} desktop mockup`}
@@ -2520,10 +2520,10 @@ export function ProjectDetail() {
                   <p className="text-white/60 font-mono text-sm">The Logic of Autonomy</p>
                 </div>
 
-                {/* Content Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-                  {/* Main Content - Spans 2 columns */}
-                  <div className="lg:col-span-2 space-y-8">
+                {/* Content */}
+                <div className="space-y-8 mb-8">
+                  {/* Main Content */}
+                  <div className="space-y-8">
                     {/* Section I */}
                     <div className="space-y-4">
                       <div className="flex items-center gap-3 mb-4">
@@ -2668,32 +2668,122 @@ export function ProjectDetail() {
                     </div>
                   </div>
 
-                  {/* Image Sidebar - 1 column */}
-                  <div className="lg:col-span-1">
-                    <div className="sticky top-4">
-                      {/* Browser Frame */}
-                      <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 overflow-hidden">
-                        {/* Browser Header */}
-                        <div className="bg-white rounded-t-lg p-2 flex items-center gap-2">
-                          <div className="flex gap-1.5">
-                            <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                            <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                          </div>
-                          <div className="flex-1 bg-gray-200 rounded px-4 py-1 text-xs text-gray-700 text-center font-mono">
-                            boltzman.ai
-                          </div>
+                  {/* Image Below Content */}
+                  <div className="mt-8">
+                    {/* Browser Frame */}
+                    <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 overflow-hidden max-w-4xl mx-auto">
+                      {/* Browser Header */}
+                      <div className="bg-[#2a2a2a] rounded-t-lg p-2 flex items-center gap-2 border-b border-gray-700">
+                        <div className="flex gap-1.5">
+                          <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                          <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                          <div className="w-3 h-3 rounded-full bg-green-500"></div>
                         </div>
-                        {/* Browser Content */}
-                        <div className="bg-white rounded-b-lg overflow-hidden">
+                        <div className="flex-1 bg-[#3a3a3a] rounded px-4 py-1 text-xs text-gray-400 text-center font-mono">
+                          boltzman.ai
+                        </div>
+                      </div>
+                      {/* Browser Content */}
+                      <div className="bg-[#1a1a1a] rounded-b-lg overflow-hidden" style={{ minHeight: '200px' }}>
+                        <div className="p-6">
                           <img
-                            src="/Projects/Boltzman AI/Image 2-23-25 at 12.25 AM 1.svg"
+                            src="/Projects/Boltzman AI/hello.JPEG"
                             alt="Boltzman Differentiation Visual"
-                            className="w-full h-auto"
+                            className="w-full h-auto object-contain"
+                            loading="eager"
                           />
                         </div>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Interface Strategy Card */}
+            <div className="mb-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
+                {/* Header with Icon */}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center border border-blue-500/30">
+                    <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 className="font-serif text-2xl md:text-3xl text-white mb-1">Interface Strategy</h2>
+                    <p className="text-white/60 font-mono text-sm">Designing for Familiarity</p>
+                  </div>
+                </div>
+
+                {/* Content Grid - Text on left, Image on right */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                  {/* Text Content */}
+                  <div className="space-y-6">
+                    {/* The Insight */}
+                    <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg p-5 border border-blue-500/20">
+                      <div className="flex items-start gap-3 mb-3">
+                        <div className="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                          <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                          </svg>
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-blue-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">The Insight</h3>
+                          <p className="text-white/80 font-mono text-sm leading-relaxed">
+                            After extensive interviews with our target customers (researchers, students, and professionals), the consensus pointed toward a friction-less communication method.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* The Decision */}
+                    <div className="bg-white/5 rounded-lg p-5 border border-white/10">
+                      <div className="flex items-start gap-3 mb-3">
+                        <div className="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center flex-shrink-0">
+                          <svg className="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                          </svg>
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-purple-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">The Decision</h3>
+                          <p className="text-white/80 font-mono text-sm leading-relaxed">
+                            We determined that the chatbot interface was the optimal channel, primarily because our target users operate predominantly on their desktop computers.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* The Goal */}
+                    <div className="bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-lg p-5 border border-emerald-500/20">
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
+                          <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-emerald-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">The Goal</h3>
+                          <p className="text-white/80 font-mono text-sm leading-relaxed">
+                            Our design imperative was to create a non-convoluted interface—a simple, familiar chat window—while simultaneously ensuring the product's advanced capabilities (task execution and multi-app functionality) were immediately evident upon first glance.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Image */}
+                  <div className="relative">
+                    <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                      <img
+                        src="/Projects/Boltzman AI/View recent photos 9.png"
+                        alt="Interface Strategy - Chat Interface"
+                        className="w-full h-auto rounded-lg object-contain shadow-lg"
+                        loading="lazy"
+                      />
+                    </div>
+                    {/* Decorative gradient overlay */}
+                    <div className="absolute -inset-4 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-emerald-500/10 rounded-2xl blur-2xl -z-10"></div>
                   </div>
                 </div>
               </div>
