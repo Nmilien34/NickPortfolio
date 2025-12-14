@@ -3614,6 +3614,297 @@ export function ProjectDetail() {
                 </div>
               </div>
             </div>
+
+            {/* Dual Utility: The Consolidated Toolkit Card */}
+            <div className="mb-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center border border-amber-500/30">
+                    <svg className="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 className="font-serif text-2xl md:text-3xl text-white mb-1">Dual Utility</h2>
+                    <p className="text-white/60 font-mono text-sm">The Consolidated Toolkit</p>
+                  </div>
+                </div>
+
+                {/* Introduction */}
+                <div className="bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-yellow-500/10 rounded-xl p-6 border border-amber-500/20 mb-10">
+                  <p className="text-white/90 font-mono text-sm leading-relaxed text-center">
+                    While the primary function of the Tools Marketplace is to equip the Boltzman Engine with assets for autonomous orchestration, a <span className="text-amber-400 font-semibold">significant side benefit</span> is the consolidation of fragmented utilities for the end-user.
+                  </p>
+                </div>
+
+                {/* Content Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                  {/* Left Column - Text Content */}
+                  <div className="space-y-6">
+                    {/* Solving Tool Fragmentation */}
+                    <div className="bg-gradient-to-br from-amber-500/10 to-orange-500/10 rounded-lg p-5 border border-amber-500/20">
+                      <div className="flex items-start gap-3 mb-3">
+                        <svg className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                        <div className="flex-1">
+                          <h4 className="text-amber-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">Solving Tool Fragmentation</h4>
+                          <p className="text-white/80 font-mono text-sm leading-relaxed mb-3">
+                            The tools developed for the AI's use are also some of the most commonly used utilities by humans digitally. These functions—such as the YouTube Transcriber, Image Generator, and Website Scraper—are typically scattered across different platforms on the internet.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* The Single-Roof Advantage */}
+                    <div className="bg-gradient-to-br from-orange-500/10 to-amber-500/10 rounded-lg p-5 border border-orange-500/20">
+                      <div className="flex items-start gap-3">
+                        <svg className="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                        <div className="flex-1">
+                          <h4 className="text-orange-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">The Single-Roof Advantage</h4>
+                          <p className="text-white/80 font-mono text-sm leading-relaxed">
+                            Boltzman provides a unique value proposition by serving as a single, consolidated platform where all these essential tools reside under one roof.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Column - Image */}
+                  <div className="flex justify-center items-start">
+                    <div className="relative w-full max-w-xl">
+                      <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                        <img
+                          src="/Projects/Boltzman AI/6BDB30F1-AF91-404A-931D-1703633390D3_1_102_o.jpeg"
+                          alt="Consolidated Toolkit"
+                          className="w-full h-auto rounded-lg object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="absolute -inset-2 bg-gradient-to-br from-amber-500/10 via-orange-500/10 to-yellow-500/10 rounded-xl blur-xl -z-10"></div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Dual Access Section */}
+                <div className="bg-gradient-to-br from-yellow-500/10 to-amber-500/10 rounded-xl p-6 border border-yellow-500/20">
+                  <h4 className="text-yellow-400 font-semibold mb-4 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                    </svg>
+                    Dual Access
+                  </h4>
+                  <p className="text-white/80 font-mono text-sm leading-relaxed mb-6">
+                    This ensures the tools can be used in two distinct ways:
+                  </p>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {/* AI Orchestration */}
+                    <div className="bg-black/30 rounded-lg p-4 border border-amber-500/20">
+                      <div className="flex items-start gap-3 mb-2">
+                        <div className="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center flex-shrink-0">
+                          <svg className="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                          </svg>
+                        </div>
+                        <div className="flex-1">
+                          <h5 className="text-amber-400 font-semibold mb-2 font-mono text-xs uppercase tracking-wide">AI Orchestration</h5>
+                          <p className="text-white/70 font-mono text-xs leading-relaxed">
+                            The Boltzman algorithm can autonomously leverage the tools to execute complex, multi-step actions.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Human Utility */}
+                    <div className="bg-black/30 rounded-lg p-4 border border-orange-500/20">
+                      <div className="flex items-start gap-3 mb-2">
+                        <div className="w-8 h-8 rounded-lg bg-orange-500/20 flex items-center justify-center flex-shrink-0">
+                          <svg className="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                          </svg>
+                        </div>
+                        <div className="flex-1">
+                          <h5 className="text-orange-400 font-semibold mb-2 font-mono text-xs uppercase tracking-wide">Human Utility</h5>
+                          <p className="text-white/70 font-mono text-xs leading-relaxed">
+                            Users can access and use these tools in isolation for quick, one-off tasks without initiating a full AI workflow.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Defining the Research Experience Card */}
+            <div className="mb-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/20 to-green-500/20 flex items-center justify-center border border-emerald-500/30">
+                    <svg className="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 className="font-serif text-2xl md:text-3xl text-white mb-1">Defining the Research Experience</h2>
+                    <p className="text-white/60 font-mono text-sm">Features for Trust and Workflow</p>
+                  </div>
+                </div>
+
+                {/* Introduction */}
+                <div className="bg-gradient-to-r from-emerald-500/10 via-green-500/10 to-teal-500/10 rounded-xl p-6 border border-emerald-500/20 mb-10">
+                  <p className="text-white/90 font-mono text-sm leading-relaxed text-center">
+                    Our experience-shaping features were designed specifically to address high-friction points identified by our target users, primarily researchers and students, which positioned Boltzman <span className="text-emerald-400 font-semibold">ahead of early incumbent AI assistants</span>.
+                  </p>
+                </div>
+
+                {/* Section I: Source Citation */}
+                <div className="mb-12">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500/20 to-green-500/20 flex items-center justify-center border border-emerald-500/30">
+                      <span className="text-emerald-400 font-serif text-xl font-bold">I</span>
+                    </div>
+                    <h3 className="font-serif text-xl md:text-2xl text-white">Source Citation</h3>
+                  </div>
+                  <p className="text-white/70 font-mono text-sm mb-6 leading-relaxed italic">
+                    Solving for Trust and Verifiability
+                  </p>
+
+                  {/* Problem Statement */}
+                  <div className="bg-gradient-to-br from-red-500/10 to-orange-500/10 rounded-lg p-5 border border-red-500/20 mb-6">
+                    <div className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                      </svg>
+                      <div className="flex-1">
+                        <p className="text-white/80 font-mono text-sm leading-relaxed">
+                          A major complaint from researchers and students regarding early AI models was <span className="text-red-400 font-semibold">hallucination and the lack of source verification</span>. We solved this by making source transparency a foundational feature.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Solution Grid */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    {/* Transparency by Default */}
+                    <div className="bg-gradient-to-br from-emerald-500/10 to-green-500/10 rounded-lg p-5 border border-emerald-500/20">
+                      <div className="flex items-start gap-3 mb-3">
+                        <svg className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                        <div className="flex-1">
+                          <h4 className="text-emerald-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">Transparency by Default</h4>
+                          <p className="text-white/80 font-mono text-xs leading-relaxed">
+                            During every search—whether executed autonomously by the Boltzman Engine or through a tool used in isolation—the system provides clear source citation.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* User Empowerment */}
+                    <div className="bg-gradient-to-br from-green-500/10 to-teal-500/10 rounded-lg p-5 border border-green-500/20">
+                      <div className="flex items-start gap-3 mb-3">
+                        <svg className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                        <div className="flex-1">
+                          <h4 className="text-green-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">User Empowerment</h4>
+                          <p className="text-white/80 font-mono text-xs leading-relaxed">
+                            Users can vividly see exactly where the answers are coming from. This capability aligns with the Resources panel, where users can confirm if the answer is derived from items they added to their knowledge base (e.g., Notion, Google Drive).
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Divider */}
+                <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-12"></div>
+
+                {/* Section II: Canvas and Threads */}
+                <div className="mb-8">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-500/20 to-cyan-500/20 flex items-center justify-center border border-teal-500/30">
+                      <span className="text-teal-400 font-serif text-xl font-bold">II</span>
+                    </div>
+                    <h3 className="font-serif text-xl md:text-2xl text-white">Canvas and Threads</h3>
+                  </div>
+                  <p className="text-white/70 font-mono text-sm mb-6 leading-relaxed italic">
+                    Enhancing Study Workflow
+                  </p>
+
+                  {/* Introduction */}
+                  <div className="bg-white/5 rounded-lg p-5 border border-white/10 mb-8">
+                    <p className="text-white/80 font-mono text-sm leading-relaxed">
+                      We observed that researchers and students often needed dedicated space for synthesis and clarification while using the platform.
+                    </p>
+                  </div>
+
+                  {/* Two Column Layout with Image */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                    {/* Left Column - Features */}
+                    <div className="space-y-6">
+                      {/* Canvas */}
+                      <div className="bg-gradient-to-br from-teal-500/10 to-cyan-500/10 rounded-lg p-5 border border-teal-500/20">
+                        <div className="flex items-start gap-3 mb-3">
+                          <svg className="w-5 h-5 text-teal-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                          <div className="flex-1">
+                            <h4 className="text-teal-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">Canvas (Internal Whiteboard)</h4>
+                            <p className="text-white/80 font-mono text-xs leading-relaxed mb-2">
+                              We realized that users needed a place to take notes and write down thoughts while conducting research.
+                            </p>
+                            <p className="text-white/70 font-mono text-xs leading-relaxed italic">
+                              We built an integrated whiteboard called Canvas that allows users to capture ideas and notes without leaving the research tab.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Threads */}
+                      <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-lg p-5 border border-cyan-500/20">
+                        <div className="flex items-start gap-3">
+                          <svg className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                          </svg>
+                          <div className="flex-1">
+                            <h4 className="text-cyan-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">Threads (Deep Clarification)</h4>
+                            <p className="text-white/80 font-mono text-xs leading-relaxed mb-2">
+                              To support deep comprehension, users were allowed to highlight words they didn't understand and initiate a Thread.
+                            </p>
+                            <p className="text-white/70 font-mono text-xs leading-relaxed italic">
+                              This feature enables users to have a continuous, back-and-forth conversation with the system until the concept is fully clarified.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Right Column - Image */}
+                    <div className="flex justify-center items-start">
+                      <div className="relative w-full max-w-xl">
+                        <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                          <img
+                            src="/Projects/Boltzman AI/Group 9.svg"
+                            alt="Canvas and Threads Features"
+                            className="w-full h-auto rounded-lg object-contain"
+                            loading="lazy"
+                          />
+                        </div>
+                        <div className="absolute -inset-2 bg-gradient-to-br from-teal-500/10 via-cyan-500/10 to-blue-500/10 rounded-xl blur-xl -z-10"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </>
         )}
         </div>
