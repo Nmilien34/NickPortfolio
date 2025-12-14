@@ -3905,6 +3905,371 @@ export function ProjectDetail() {
                 </div>
               </div>
             </div>
+
+            {/* Core Algorithmic Objective Card */}
+            <div className="mb-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-rose-500/20 to-pink-500/20 flex items-center justify-center border border-rose-500/30">
+                    <svg className="w-6 h-6 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 className="font-serif text-2xl md:text-3xl text-white mb-1">The Boltzman Engine</h2>
+                    <p className="text-white/60 font-mono text-sm">Core Algorithmic Objective</p>
+                  </div>
+                </div>
+
+                {/* Text Content */}
+                <div className="bg-gradient-to-r from-rose-500/10 via-pink-500/10 to-fuchsia-500/10 rounded-xl p-6 border border-rose-500/20 mb-8">
+                  <p className="text-white/90 font-mono text-lg leading-relaxed text-center">
+                    The core algorithmic objective of the Boltzman Engine is to <span className="text-rose-400 font-semibold">accurately infer and fulfill the user's underlying intent</span> with every query.
+                  </p>
+                </div>
+
+                {/* Browser Frame with Image */}
+                <div className="flex justify-center">
+                  <div className="w-full max-w-4xl">
+                    <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 overflow-hidden">
+                      {/* Browser Header */}
+                      <div className="bg-[#2a2a2a] rounded-t-lg p-2 flex items-center gap-2 border-b border-gray-700">
+                        <div className="flex gap-1.5">
+                          <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                          <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                          <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <div className="flex-1 bg-[#3a3a3a] rounded px-4 py-1 text-xs text-gray-400 text-center font-mono">
+                          boltzman.ai
+                        </div>
+                      </div>
+                      {/* Browser Content */}
+                      <div className="bg-[#1a1a1a] rounded-b-lg overflow-hidden">
+                        <div className="p-6">
+                          <img
+                            src="/Projects/Boltzman AI/uuid=695A573D-E53C-4731-95B9-9A337DB5109A&code=001&library=1&type=1&mode=1&loc=true&cap=true.jpeg"
+                            alt="Boltzman Engine Intent Inference"
+                            className="w-full h-auto rounded-lg object-contain"
+                            loading="lazy"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Monetization Strategy Card */}
+            <div className="mb-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500/20 to-amber-500/20 flex items-center justify-center border border-yellow-500/30">
+                    <svg className="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 className="font-serif text-2xl md:text-3xl text-white mb-1">Monetization Strategy</h2>
+                    <p className="text-white/60 font-mono text-sm">Free Utility vs. Agentic Autonomy</p>
+                  </div>
+                </div>
+
+                {/* Introduction */}
+                <div className="bg-gradient-to-r from-yellow-500/10 via-amber-500/10 to-orange-500/10 rounded-xl p-6 border border-yellow-500/20 mb-10">
+                  <p className="text-white/90 font-mono text-sm leading-relaxed text-center">
+                    Boltzman's monetization strategy was designed to align feature access with user value and the <span className="text-yellow-400 font-semibold">computational cost of advanced AI orchestration</span>.
+                  </p>
+                </div>
+
+                {/* Two Column Layout - Tiers */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+                  {/* Free Tier */}
+                  <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-xl p-6 border border-green-500/20">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center border border-green-500/30">
+                        <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                        </svg>
+                      </div>
+                      <h3 className="font-serif text-xl text-white">The Free Tier</h3>
+                    </div>
+                    <p className="text-green-400 font-semibold mb-4 font-mono text-sm uppercase tracking-wide">Utility</p>
+                    <div className="space-y-3">
+                      <div className="flex items-start gap-2">
+                        <svg className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <p className="text-white/80 font-mono text-sm leading-relaxed">
+                          The majority of individual tools and basic functionalities are available for free use.
+                        </p>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <svg className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <p className="text-white/80 font-mono text-sm leading-relaxed">
+                          Users can utilize features like the Image Generator and other common utilities in isolation.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Pro Tier */}
+                  <div className="bg-gradient-to-br from-yellow-500/10 to-amber-500/10 rounded-xl p-6 border border-yellow-500/20">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-lg bg-yellow-500/20 flex items-center justify-center border border-yellow-500/30">
+                        <svg className="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                        </svg>
+                      </div>
+                      <h3 className="font-serif text-xl text-white">The Pro Tier</h3>
+                    </div>
+                    <p className="text-yellow-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">The Agentic Advantage</p>
+                    <div className="mb-4 p-3 bg-yellow-500/20 rounded-lg border border-yellow-500/30">
+                      <p className="text-yellow-300 font-mono text-lg font-bold text-center">
+                        $20.00 <span className="text-yellow-400 text-sm font-normal">/ monthly</span>
+                      </p>
+                    </div>
+                    <p className="text-white/80 font-mono text-xs leading-relaxed mb-4">
+                      To access the full power of the orchestrated AI system—the core value proposition of Boltzman—users subscribe to the Pro Plan.
+                    </p>
+                    <p className="text-white/70 font-mono text-xs italic">
+                      This subscription unlocks features critical to the universal AI agent model.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Pro Tier Features */}
+                <div className="bg-gradient-to-br from-yellow-500/10 to-amber-500/10 rounded-xl p-6 border border-yellow-500/20 mb-10">
+                  <h4 className="text-yellow-400 font-semibold mb-4 font-mono text-sm uppercase tracking-wide">Pro Plan Features</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="bg-black/30 rounded-lg p-4 border border-yellow-500/20">
+                      <div className="flex items-start gap-2 mb-2">
+                        <svg className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <h5 className="text-yellow-400 font-semibold font-mono text-xs uppercase">Agentic Orchestration</h5>
+                      </div>
+                      <p className="text-white/70 font-mono text-xs leading-relaxed">
+                        Full access to the orchestration layer, enabling AI to autonomously execute complex, multi-step tasks across integrations.
+                      </p>
+                    </div>
+                    <div className="bg-black/30 rounded-lg p-4 border border-yellow-500/20">
+                      <div className="flex items-start gap-2 mb-2">
+                        <svg className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <h5 className="text-yellow-400 font-semibold font-mono text-xs uppercase">Unlimited Usage</h5>
+                      </div>
+                      <p className="text-white/70 font-mono text-xs leading-relaxed">
+                        Unlimited AI searches and conversations.
+                      </p>
+                    </div>
+                    <div className="bg-black/30 rounded-lg p-4 border border-yellow-500/20">
+                      <div className="flex items-start gap-2 mb-2">
+                        <svg className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                        <h5 className="text-yellow-400 font-semibold font-mono text-xs uppercase">Advanced Features</h5>
+                      </div>
+                      <p className="text-white/70 font-mono text-xs leading-relaxed">
+                        Access to advanced features, integrations, and priority support.
+                      </p>
+                    </div>
+                    <div className="bg-black/30 rounded-lg p-4 border border-yellow-500/20">
+                      <div className="flex items-start gap-2 mb-2">
+                        <svg className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <h5 className="text-yellow-400 font-semibold font-mono text-xs uppercase">LLM Customization</h5>
+                      </div>
+                      <p className="text-white/70 font-mono text-xs leading-relaxed">
+                        Custom AI model configurations, including Pro-only LLMs like GPT-4.5 Preview, DeepSeek R1, and others.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Mobile Image */}
+                <div className="flex justify-center">
+                  <div className="relative max-w-sm w-full">
+                    <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                      <img
+                        src="/Projects/Boltzman AI/uuid=4BFFD134-5632-4A4B-BFBD-862A84C1FB81&code=001&library=1&type=1&mode=1&loc=true&cap=true.jpeg"
+                        alt="Monetization Strategy Mobile"
+                        className="w-full h-auto rounded-lg object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                    {/* Decorative glow */}
+                    <div className="absolute -inset-4 bg-gradient-to-br from-yellow-500/10 via-amber-500/10 to-orange-500/10 rounded-xl blur-xl -z-10"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Reflection Card */}
+            <div className="mb-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center border border-amber-500/30">
+                    <svg className="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 className="font-serif text-2xl md:text-3xl text-white mb-1">Reflection</h2>
+                    <p className="text-white/60 font-mono text-sm">Building a Universal AI with Limited Resources</p>
+                  </div>
+                </div>
+
+                {/* Introduction */}
+                <div className="bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-red-500/10 rounded-xl p-6 border border-amber-500/20 mb-10">
+                  <p className="text-white/90 font-mono text-sm leading-relaxed text-center">
+                    This project represents a <span className="text-amber-400 font-semibold">high-leverage exercise in product creation</span>, demonstrating that a true universal AI assistant could be built with just two people. It provided invaluable lessons in three critical areas:
+                  </p>
+                </div>
+
+                {/* Three Key Lessons */}
+                <div className="space-y-8">
+                  {/* Lesson 1 */}
+                  <div className="bg-gradient-to-br from-blue-500/10 to-indigo-500/10 rounded-xl p-6 border border-blue-500/20">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0">
+                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500/20 to-indigo-500/20 flex items-center justify-center border border-blue-500/30">
+                          <span className="text-blue-400 font-serif text-2xl font-bold">1</span>
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-blue-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide">Product Strategy & Taste (Finding the Edge)</h3>
+                        <p className="text-white/80 font-mono text-sm leading-relaxed mb-3">
+                          I learned the profound importance of "product taste"—the ability to identify and execute on nuanced user pain points that competitors overlook. This insight allowed us to carve out a competitive advantage in a crowded market where incumbents possessed far greater resources and traction.
+                        </p>
+                        <div className="bg-black/30 rounded-lg p-4 border border-blue-500/20">
+                          <p className="text-white/70 font-mono text-xs leading-relaxed italic">
+                            By focusing on fundamental issues like source citation, threads, and internal notetaking, we designed an experience that resonated deeply with our target users (students and researchers).
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Lesson 2 */}
+                  <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-xl p-6 border border-purple-500/20">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0">
+                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center border border-purple-500/30">
+                          <span className="text-purple-400 font-serif text-2xl font-bold">2</span>
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-purple-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide">Technicality & Execution</h3>
+                        <p className="text-white/80 font-mono text-sm leading-relaxed mb-3">
+                          This venture was a masterclass in technical leadership and feasibility. I dramatically enhanced my coding skills and learned how to deeply conceptualize a product—translating complex product ideas into engineering reality.
+                        </p>
+                        <div className="bg-black/30 rounded-lg p-4 border border-purple-500/20">
+                          <p className="text-white/70 font-mono text-xs leading-relaxed italic">
+                            This included designing the orchestration layer, integrating various LLMs, and building the necessary tools for autonomous action.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Lesson 3 */}
+                  <div className="bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-xl p-6 border border-emerald-500/20">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0">
+                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center border border-emerald-500/30">
+                          <span className="text-emerald-400 font-serif text-2xl font-bold">3</span>
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-emerald-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide">Personal Drive & Growth</h3>
+                        <p className="text-white/80 font-mono text-sm leading-relaxed mb-3">
+                          Beyond product development, I demonstrated exceptional dedication to execution and distribution. I personally led our early growth efforts, visiting universities, giving talks, and distributing physical marketing materials (flyers at schools, malls, and train stations).
+                        </p>
+                        <div className="bg-black/30 rounded-lg p-4 border border-emerald-500/20">
+                          <p className="text-white/70 font-mono text-xs leading-relaxed italic">
+                            This rigorous grassroots approach proved highly effective, enabling us to sustain an early growth rate of <span className="text-emerald-400 font-semibold">80 new users per day</span>. This experience underscored my ability to push personal boundaries and successfully drive rapid user acquisition.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Team Card */}
+            <div className="mb-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center border border-indigo-500/30">
+                    <svg className="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 className="font-serif text-2xl md:text-3xl text-white mb-1">The Team</h2>
+                    <p className="text-white/60 font-mono text-sm">Building Together</p>
+                  </div>
+                </div>
+
+                {/* Team Images Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                  {/* Image 1 */}
+                  <div className="relative group">
+                    <div className="bg-white/5 rounded-xl p-4 border border-white/10 overflow-hidden transition-all duration-300 group-hover:border-indigo-500/30 group-hover:shadow-lg group-hover:shadow-indigo-500/10">
+                      <img
+                        src="/Projects/Boltzman AI/uuid=BD016AC9-281D-44DD-9DB2-B48538D05B7A&code=001&library=1&type=1&mode=1&loc=true&cap=true.jpeg"
+                        alt="Team Member"
+                        className="w-full h-auto rounded-lg object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                        loading="lazy"
+                      />
+                    </div>
+                    {/* Decorative gradient overlay */}
+                    <div className="absolute -inset-2 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                  </div>
+
+                  {/* Image 2 */}
+                  <div className="relative group">
+                    <div className="bg-white/5 rounded-xl p-4 border border-white/10 overflow-hidden transition-all duration-300 group-hover:border-purple-500/30 group-hover:shadow-lg group-hover:shadow-purple-500/10">
+                      <img
+                        src="/Projects/Boltzman AI/uuid=4A991D1E-E894-491B-93D0-D37B1E896AB6&code=001&library=1&type=1&mode=1&loc=true&cap=true.jpeg"
+                        alt="Team Member"
+                        className="w-full h-auto rounded-lg object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                        loading="lazy"
+                      />
+                    </div>
+                    {/* Decorative gradient overlay */}
+                    <div className="absolute -inset-2 bg-gradient-to-br from-purple-500/10 to-indigo-500/10 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                  </div>
+                </div>
+
+                {/* Team Message */}
+                <div className="bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-pink-500/10 rounded-xl p-6 border border-indigo-500/20">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0">
+                      <svg className="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-white/90 font-mono text-sm leading-relaxed">
+                        <span className="text-indigo-400 font-semibold">Liam Du</span> taught me a lot and we had a lot of fun building the Boltzman Engine, in great engineering feat in our view, we did something in <span className="text-purple-400 font-semibold">2 months</span> what takes teams <span className="text-pink-400 font-semibold">months with way more people</span>.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </>
         )}
         </div>
