@@ -4343,19 +4343,19 @@ export function ProjectDetail() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <p className="text-white/60 font-mono text-xs mb-1">Role</p>
-                    <p className="text-white font-mono text-sm">[Add role]</p>
+                    <p className="text-white font-mono text-sm">Chief Executive Officer & Part time Product Manager</p>
                   </div>
                   <div>
                     <p className="text-white/60 font-mono text-xs mb-1">Team</p>
-                    <p className="text-white font-mono text-sm">[Add team size]</p>
+                    <p className="text-white font-mono text-sm">2 People</p>
                   </div>
                   <div>
                     <p className="text-white/60 font-mono text-xs mb-1">Timeline</p>
-                    <p className="text-white font-mono text-sm">[Add timeline]</p>
+                    <p className="text-white font-mono text-sm">1 Week</p>
                   </div>
                   <div>
-                    <p className="text-white/60 font-mono text-xs mb-1">Status</p>
-                    <p className="text-white font-mono text-sm">[Add status]</p>
+                    <p className="text-white/60 font-mono text-xs mb-1">Fundraise</p>
+                    <p className="text-white font-mono text-sm">$0</p>
                   </div>
                 </div>
               </div>
