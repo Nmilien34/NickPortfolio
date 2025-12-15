@@ -86,6 +86,14 @@ export function ProjectDetail() {
                       className="w-full h-full object-contain"
                     />
                   </div>
+                ) : project.title === 'Energy' ? (
+                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg bg-white/10 border border-white/20 overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
+                    <img
+                      src="/Projects/Energy/C39BD170-0761-448C-8DE0-28227341A867.png"
+                      alt="Energy Logo"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
                 ) : (
                   <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg bg-white/10 border border-white/20 overflow-hidden flex-shrink-0">
                     <img
@@ -142,6 +150,19 @@ export function ProjectDetail() {
                     {project.title === 'Boltzman Voice' && (
                       <a
                         href="https://voice.boltzman.ai/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 px-3 py-1 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 text-white font-mono text-xs transition-all"
+                      >
+                        Live site
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    )}
+                    {project.title === 'Energy' && (
+                      <a
+                        href="https://www.yfhnrg.com/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-1 px-3 py-1 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 text-white font-mono text-xs transition-all"
