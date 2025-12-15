@@ -139,6 +139,19 @@ export function ProjectDetail() {
                         </svg>
                       </a>
                     )}
+                    {project.title === 'Boltzman Voice' && (
+                      <a
+                        href="https://voice.boltzman.ai/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 px-3 py-1 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 text-white font-mono text-xs transition-all"
+                      >
+                        Live site
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    )}
                   </div>
                   <p className="text-normal-text font-mono text-sm md:text-base mb-2">
                     {project.category}
@@ -5243,6 +5256,42 @@ export function ProjectDetail() {
                     {/* Decorative glow */}
                     <div className="absolute -inset-2 bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 rounded-xl blur-xl -z-10 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Reflection Card */}
+            <div className="mb-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center border border-green-500/30">
+                    <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h2 className="font-serif text-2xl md:text-3xl text-white mb-1">Reflection</h2>
+                    <p className="text-white/60 font-mono text-sm">A Lesson in Velocity</p>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="bg-gradient-to-r from-green-500/10 via-emerald-500/10 to-teal-500/10 rounded-xl p-6 border border-green-500/20 mb-6">
+                  <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed text-center">
+                    Working with <a href="https://www.liamdu.com/" target="_blank" rel="noopener noreferrer" className="text-green-400 font-semibold hover:underline">Liam Du</a> was a masterclass in extreme execution. We went from a whiteboard concept to a fully functional product in a single night—a feat that usually takes teams weeks.
+                  </p>
+                </div>
+
+                <div className="space-y-6 text-normal-text font-mono text-sm md:text-base leading-relaxed">
+                  <p>
+                    The momentum was instant: we onboarded 20 users the very next morning and pitched Sequoia Capital just 48 hours post-ideation. This experience redefined my standard for speed, proving that a focused two-person team can deliver enterprise-grade quality overnight.
+                  </p>
+                </div>
+
+                {/* Decorative Element */}
+                <div className="mt-8 flex justify-center">
+                  <div className="h-1 w-32 bg-gradient-to-r from-transparent via-green-500/50 to-transparent rounded-full"></div>
                 </div>
               </div>
             </div>
