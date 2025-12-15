@@ -4762,6 +4762,490 @@ export function ProjectDetail() {
                 </div>
               </div>
             </div>
+
+            {/* Real-Life Use Cases: Personas Card */}
+            <div className="mb-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-3xl border border-white/20 p-8 md:p-10">
+                {/* Header */}
+                <div className="text-center mb-12">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center border border-purple-400/30">
+                      <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                    </div>
+                    <h2 className="font-serif text-3xl md:text-4xl text-white">Real-Life Use Cases</h2>
+                  </div>
+                  <p className="text-white/60 font-mono text-sm">Personas in Action</p>
+                </div>
+
+                {/* Persona 1: The Student */}
+                <div className="mb-12">
+                  <div className="bg-gradient-to-br from-blue-500/10 via-indigo-500/5 to-blue-500/5 rounded-2xl border-2 border-blue-500/30 p-8 mb-6">
+                    {/* Persona Header */}
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500/30 to-indigo-500/20 flex items-center justify-center border-2 border-blue-400/50 shadow-lg shadow-blue-500/20">
+                        <svg className="w-8 h-8 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="font-serif text-2xl md:text-3xl text-white mb-1">Persona 1: The Student</h3>
+                        <p className="text-blue-300/80 font-mono text-sm">Academic Cramming</p>
+                      </div>
+                    </div>
+
+                    {/* The Insight */}
+                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-blue-500/20">
+                      <div className="flex items-start gap-3 mb-3">
+                        <svg className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                        <h4 className="text-blue-400 font-semibold font-mono text-sm uppercase tracking-wide">The Insight</h4>
+                      </div>
+                      <p className="text-white/80 font-mono text-sm leading-relaxed">
+                        Students often have 15-45 minute walking commutes between campus locations. They are stressed about exams but can't read notes while walking. They need an active tutor, not just a passive audiobook.
+                      </p>
+                    </div>
+
+                    {/* The Workflow */}
+                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-blue-500/20">
+                      <div className="flex items-start gap-3 mb-3">
+                        <svg className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <h4 className="text-blue-400 font-semibold font-mono text-sm uppercase tracking-wide">The Workflow</h4>
+                      </div>
+                      <p className="text-white/80 font-mono text-sm leading-relaxed">
+                        Walking to the Psychology Final Exam (30 mins).
+                      </p>
+                    </div>
+
+                    {/* The Context */}
+                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-blue-500/20">
+                      <div className="flex items-start gap-3 mb-4">
+                        <svg className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                        <h4 className="text-blue-400 font-semibold font-mono text-sm uppercase tracking-wide">The Context (What Boltzman Voice "Sees")</h4>
+                      </div>
+                      <div className="space-y-3 font-mono text-xs">
+                        <div className="bg-blue-500/10 rounded-lg p-3 border border-blue-500/20">
+                          <span className="text-blue-300 font-semibold">[PDF]</span> <span className="text-white/70">Psych 101 Lecture Notes.pdf</span>
+                          <p className="text-white/60 mt-1 leading-relaxed">Content: "Atkinson-Shiffrin Model: Sensory → Short Term → Long Term. Baddeley's Model: Central Executive, Phonological Loop. Interference: Proactive (old blocks new), Retroactive (new blocks old). Construction Errors: The mind fills gaps with logic, not fact."</p>
+                        </div>
+                        <div className="bg-blue-500/10 rounded-lg p-3 border border-blue-500/20">
+                          <span className="text-blue-300 font-semibold">[Video Transcript]</span> <span className="text-white/70">Memory Concepts Explained (YouTube)</span>
+                          <p className="text-white/60 mt-1 leading-relaxed">Content: "04:12: The Misinformation Effect occurs when misleading info is incorporated into one's memory after an event. Example: The 'Car Crash' study where the word 'smashed' vs 'hit' changed speed estimates."</p>
+                        </div>
+                        <div className="bg-blue-500/10 rounded-lg p-3 border border-blue-500/20">
+                          <span className="text-blue-300 font-semibold">[Audio Transcript]</span> <span className="text-white/70">Finals Review Session.mp4</span>
+                          <p className="text-white/60 mt-1 leading-relaxed">Content: "TA: 'Make sure you know the difference between Recall (fill-in-the-blank) and Recognition (multiple choice). We will test heavily on interference examples.'"</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* The Interaction */}
+                    <div className="bg-gradient-to-br from-blue-500/20 to-indigo-500/10 rounded-xl p-6 border-2 border-blue-400/30">
+                      <div className="flex items-start gap-3 mb-4">
+                        <svg className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                        <h4 className="text-blue-400 font-semibold font-mono text-sm uppercase tracking-wide">The Interaction (Boltzman Voice)</h4>
+                      </div>
+                      <div className="space-y-4 font-mono text-sm">
+                        <div className="bg-black/40 rounded-lg p-4 border border-blue-500/20">
+                          <p className="text-blue-300 mb-2"><span className="font-semibold">User:</span> "I have 30 minutes. Review the main memory models we covered."</p>
+                          <p className="text-green-300"><span className="font-semibold">Boltzman:</span> "Okay. Based on your Lecture Notes, we need to cover Atkinson-Shiffrin and Baddeley. Atkinson focuses on the flow from Sensory to Long Term, while Baddeley emphasizes the 'Working Memory' components like the Phonological Loop. Want me to quiz you on the difference?"</p>
+                        </div>
+                        <div className="bg-black/40 rounded-lg p-4 border border-blue-500/20">
+                          <p className="text-blue-300 mb-2"><span className="font-semibold">User:</span> "What did the TA say about the misinformation effect? That's likely on the test."</p>
+                          <p className="text-green-300"><span className="font-semibold">Boltzman:</span> "In the review session recording, the TA explicitly linked the misinformation effect to the 'Car Crash' study mentioned in your YouTube video. He said to remember that word choice—like 'smashed' vs 'hit'—alters the memory construction."</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Persona 2: The Parent */}
+                <div className="mb-12">
+                  <div className="bg-gradient-to-br from-purple-500/10 via-pink-500/5 to-purple-500/5 rounded-2xl border-2 border-purple-500/30 p-8 mb-6">
+                    {/* Persona Header */}
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500/30 to-pink-500/20 flex items-center justify-center border-2 border-purple-400/50 shadow-lg shadow-purple-500/20">
+                        <svg className="w-8 h-8 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="font-serif text-2xl md:text-3xl text-white mb-1">Persona 2: The Parent</h3>
+                        <p className="text-purple-300/80 font-mono text-sm">The Logistics Hub</p>
+                      </div>
+                    </div>
+
+                    {/* The Insight */}
+                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-purple-500/20">
+                      <div className="flex items-start gap-3 mb-3">
+                        <svg className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                        <h4 className="text-purple-400 font-semibold font-mono text-sm uppercase tracking-wide">The Insight</h4>
+                      </div>
+                      <p className="text-white/80 font-mono text-sm leading-relaxed">
+                        Parents operate as the "Central Processing Unit" for the family. Their "dead time" is the school run/drive. They suffer from fragmented info—data is scattered across texts, emails, and calendars, making mental synchronization impossible while driving.
+                      </p>
+                    </div>
+
+                    {/* The Workflow */}
+                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-purple-500/20">
+                      <div className="flex items-start gap-3 mb-3">
+                        <svg className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <h4 className="text-purple-400 font-semibold font-mono text-sm uppercase tracking-wide">The Workflow</h4>
+                      </div>
+                      <p className="text-white/80 font-mono text-sm leading-relaxed">
+                        Morning school drop-off and commute.
+                      </p>
+                    </div>
+
+                    {/* The Context */}
+                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-purple-500/20">
+                      <div className="flex items-start gap-3 mb-4">
+                        <svg className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                        <h4 className="text-purple-400 font-semibold font-mono text-sm uppercase tracking-wide">The Context (What Boltzman Voice "Sees")</h4>
+                      </div>
+                      <div className="space-y-3 font-mono text-xs">
+                        <div className="bg-purple-500/10 rounded-lg p-3 border border-purple-500/20">
+                          <span className="text-purple-300 font-semibold">[Integration: G-Cal]</span> <span className="text-white/70">Family Hub</span>
+                          <div className="text-white/60 mt-2 space-y-1">
+                            <p>Event: "Emma - Soccer Practice" | Loc: Lincoln Fields | Time: 4:30-6:00pm</p>
+                            <p>Event: "Noah - Piano Lesson" | Loc: Ms. Chen's | Time: 3:45-4:30pm</p>
+                            <p>Note: "Wed Meal Plan: Chicken Stir-fry (Defrost AM)"</p>
+                          </div>
+                        </div>
+                        <div className="bg-purple-500/10 rounded-lg p-3 border border-purple-500/20">
+                          <span className="text-purple-300 font-semibold">[Integration: Gmail]</span>
+                          <p className="text-white/70 mt-1">Subject: 5th Grade Field Trip</p>
+                          <p className="text-white/60 mt-1">Body: "Museum trip April 15. Permission slips and $12 fee due by Friday, April 11. Bring lunch or $8."</p>
+                        </div>
+                        <div className="bg-purple-500/10 rounded-lg p-3 border border-purple-500/20">
+                          <span className="text-purple-300 font-semibold">[Integration: iMessage]</span> <span className="text-white/70">Thread: Sarah (Babysitter)</span>
+                          <p className="text-white/60 mt-1">Last Msg: "Yes, that works for me! See you Friday at 6."</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* The Interaction */}
+                    <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/10 rounded-xl p-6 border-2 border-purple-400/30">
+                      <div className="flex items-start gap-3 mb-4">
+                        <svg className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                        </svg>
+                        <h4 className="text-purple-400 font-semibold font-mono text-sm uppercase tracking-wide">The Interaction (Boltzman Voice)</h4>
+                      </div>
+                      <div className="space-y-4 font-mono text-sm">
+                        <div className="bg-black/40 rounded-lg p-4 border border-purple-500/20">
+                          <p className="text-purple-300 mb-2"><span className="font-semibold">User:</span> "What activities do the kids have after school? Coordinate the pickup."</p>
+                          <p className="text-green-300"><span className="font-semibold">Boltzman:</span> "It's tight today. Noah has Piano at 3:45 at Ms. Chen's, and Emma has Soccer at 4:30 at Lincoln Fields. You'll need to drop Noah, then immediately drive Emma to make the 4:30 start."</p>
+                        </div>
+                        <div className="bg-black/40 rounded-lg p-4 border border-purple-500/20">
+                          <p className="text-purple-300 mb-2"><span className="font-semibold">User:</span> "What's for dinner according to the plan? Do I need to prep?"</p>
+                          <p className="text-green-300"><span className="font-semibold">Boltzman:</span> "It's Chicken Stir-fry night. The calendar note says you need to defrost the chicken this morning."</p>
+                        </div>
+                        <div className="bg-black/40 rounded-lg p-4 border border-purple-500/20">
+                          <p className="text-purple-300 mb-2"><span className="font-semibold">User:</span> "When was my last text with the babysitter? I need to confirm Friday."</p>
+                          <p className="text-green-300"><span className="font-semibold">Boltzman:</span> "You last spoke to Sarah confirming this Friday at 6 PM. She said 'Yes, that works for me!'"</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Images Section */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                  <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                    <img
+                      src="/Projects/BoltzmanVoice/27C91B42-0A31-4794-AAF0-EC4C2C9DAD00.jpeg"
+                      alt="Boltzman Voice Use Case"
+                      className="w-full h-auto"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                    <img
+                      src="/Projects/BoltzmanVoice/567C334B-62B3-44EB-BDB3-6D5DCF6C509C.jpeg"
+                      alt="Boltzman Voice Use Case"
+                      className="w-full h-auto"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+
+                {/* Persona 3: The Sales Manager */}
+                <div className="mb-12">
+                  <div className="bg-gradient-to-br from-orange-500/10 via-red-500/5 to-orange-500/5 rounded-2xl border-2 border-orange-500/30 p-8 mb-6">
+                    {/* Persona Header */}
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500/30 to-red-500/20 flex items-center justify-center border-2 border-orange-400/50 shadow-lg shadow-orange-500/20">
+                        <svg className="w-8 h-8 text-orange-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="font-serif text-2xl md:text-3xl text-white mb-1">Persona 3: The Sales Manager</h3>
+                        <p className="text-orange-300/80 font-mono text-sm">High-Stakes Prep</p>
+                      </div>
+                    </div>
+
+                    {/* The Insight */}
+                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-orange-500/20">
+                      <div className="flex items-start gap-3 mb-3">
+                        <svg className="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                        <h4 className="text-orange-400 font-semibold font-mono text-sm uppercase tracking-wide">The Insight</h4>
+                      </div>
+                      <p className="text-white/80 font-mono text-sm leading-relaxed">
+                        Sales professionals have high anxiety before client meetings. They utilize commute time to "get in the zone," but they lack a feedback loop. Talking to themselves isn't enough; they need a roleplay partner who knows the specific client context.
+                      </p>
+                    </div>
+
+                    {/* The Workflow */}
+                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-orange-500/20">
+                      <div className="flex items-start gap-3 mb-3">
+                        <svg className="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <h4 className="text-orange-400 font-semibold font-mono text-sm uppercase tracking-wide">The Workflow</h4>
+                      </div>
+                      <p className="text-white/80 font-mono text-sm leading-relaxed">
+                        Driving to Acme Corp HQ (1 hour).
+                      </p>
+                    </div>
+
+                    {/* The Context */}
+                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-orange-500/20">
+                      <div className="flex items-start gap-3 mb-4">
+                        <svg className="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                        <h4 className="text-orange-400 font-semibold font-mono text-sm uppercase tracking-wide">The Context (What Boltzman Voice "Sees")</h4>
+                      </div>
+                      <div className="space-y-3 font-mono text-xs">
+                        <div className="bg-orange-500/10 rounded-lg p-3 border border-orange-500/20">
+                          <span className="text-orange-300 font-semibold">[PDF]</span> <span className="text-white/70">Acme Corp Pitch Package.pdf</span>
+                          <div className="text-white/60 mt-2 space-y-1">
+                            <p>Pain Point: "Inventory discrepancies costing ~$300K/yr."</p>
+                            <p>Solution: "Real-time sync eliminates manual reconciliation."</p>
+                            <p>Timeline: "Q3 Implementation Deadline."</p>
+                          </div>
+                        </div>
+                        <div className="bg-orange-500/10 rounded-lg p-3 border border-orange-500/20">
+                          <span className="text-orange-300 font-semibold">[Doc]</span> <span className="text-white/70">Sales Effectiveness Toolkit.docx</span>
+                          <p className="text-white/60 mt-1">Script: "Objection: Price. Response: Pivot to 18-month ROI. 'Yes, the fee is higher, but with 94% accuracy improvement, you break even in 6 months.'"</p>
+                        </div>
+                        <div className="bg-orange-500/10 rounded-lg p-3 border border-orange-500/20">
+                          <span className="text-orange-300 font-semibold">[Web Scrape]</span> <span className="text-white/70">Acme Corp Website</span>
+                          <p className="text-white/60 mt-1">About: "Acme Corp values 'Speed to Market' and 'Operational Transparency' above all."</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* The Interaction */}
+                    <div className="bg-gradient-to-br from-orange-500/20 to-red-500/10 rounded-xl p-6 border-2 border-orange-400/30">
+                      <div className="flex items-start gap-3 mb-4">
+                        <svg className="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                        <h4 className="text-orange-400 font-semibold font-mono text-sm uppercase tracking-wide">The Interaction (Boltzman Voice)</h4>
+                      </div>
+                      <div className="space-y-4 font-mono text-sm">
+                        <div className="bg-black/40 rounded-lg p-4 border border-orange-500/20">
+                          <p className="text-orange-300 mb-2"><span className="font-semibold">User:</span> "I want to practice my opening. Roleplay as their procurement director."</p>
+                          <p className="text-green-300"><span className="font-semibold">Boltzman:</span> "Understood. I'm the Director. 'Look, we like the software, but your implementation timeline seems aggressive. We can't risk downtime in Q3.' How do you respond?"</p>
+                        </div>
+                        <div className="bg-black/40 rounded-lg p-4 border border-orange-500/20">
+                          <p className="text-orange-300 mb-2"><span className="font-semibold">User:</span> "I'd say... we can do it fast."</p>
+                          <p className="text-green-300"><span className="font-semibold">Boltzman:</span> "That's a bit weak. Based on your Pitch Package, try leveraging the 'tailored Q3 deadline' plan. Say: 'We specifically designed the rollout to align with your Q3 goals, ensuring zero downtime during the switch.'"</p>
+                        </div>
+                        <div className="bg-black/40 rounded-lg p-4 border border-orange-500/20">
+                          <p className="text-orange-300 mb-2"><span className="font-semibold">User:</span> "Okay, let me try responding to the pricing objection."</p>
+                          <p className="text-green-300"><span className="font-semibold">Boltzman:</span> "Go ahead. I'll check your response against the ROI script in your Toolkit."</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Persona 4: The Bio-Hacker */}
+                <div>
+                  <div className="bg-gradient-to-br from-emerald-500/10 via-teal-500/5 to-emerald-500/5 rounded-2xl border-2 border-emerald-500/30 p-8">
+                    {/* Persona Header */}
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500/30 to-teal-500/20 flex items-center justify-center border-2 border-emerald-400/50 shadow-lg shadow-emerald-500/20">
+                        <svg className="w-8 h-8 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h3 className="font-serif text-2xl md:text-3xl text-white mb-1">Persona 4: The Bio-Hacker</h3>
+                        <p className="text-emerald-300/80 font-mono text-sm">Active Learning</p>
+                      </div>
+                    </div>
+
+                    {/* The Insight */}
+                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-emerald-500/20">
+                      <div className="flex items-start gap-3 mb-3">
+                        <svg className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                        <h4 className="text-emerald-400 font-semibold font-mono text-sm uppercase tracking-wide">The Insight</h4>
+                      </div>
+                      <p className="text-white/80 font-mono text-sm leading-relaxed">
+                        Lifelong learners consume heavy intellectual content (podcasts/lectures) while exercising. The problem is retention. They hear a protocol (e.g., supplement dosage) but can't write it down, so they forget it by the time the workout ends.
+                      </p>
+                    </div>
+
+                    {/* The Workflow */}
+                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-emerald-500/20">
+                      <div className="flex items-start gap-3 mb-3">
+                        <svg className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <h4 className="text-emerald-400 font-semibold font-mono text-sm uppercase tracking-wide">The Workflow</h4>
+                      </div>
+                      <p className="text-white/80 font-mono text-sm leading-relaxed">
+                        Morning run / Gym session.
+                      </p>
+                    </div>
+
+                    {/* The Context */}
+                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-emerald-500/20">
+                      <div className="flex items-start gap-3 mb-4">
+                        <svg className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                        <h4 className="text-emerald-400 font-semibold font-mono text-sm uppercase tracking-wide">The Context (What Boltzman Voice "Sees")</h4>
+                      </div>
+                      <div className="space-y-3 font-mono text-xs">
+                        <div className="bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/20">
+                          <span className="text-emerald-300 font-semibold">[YouTube Transcript]</span> <span className="text-white/70">Huberman Lab - Sleep Master Class</span>
+                          <p className="text-white/60 mt-1">Content: "To increase deep sleep, temperature is key. Your body needs to drop by 1-3 degrees. Viewing sunlight within 30 mins of waking triggers cortisol, setting the melatonin timer for 16 hours later."</p>
+                        </div>
+                        <div className="bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/20">
+                          <span className="text-emerald-300 font-semibold">[Web Link]</span> <span className="text-white/70">Sleep Optimization Research Study</span>
+                          <p className="text-white/60 mt-1">Data: "Supplements: Magnesium Threonate (200-400mg) 30 mins before bed. Apigenin (50mg). Theanine (100-200mg)."</p>
+                        </div>
+                        <div className="bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/20">
+                          <span className="text-emerald-300 font-semibold">[Web Link]</span> <span className="text-white/70">Sleep Foundation Guide</span>
+                          <p className="text-white/60 mt-1">List: "Environment Checklist: Room temp 65-68°F. Blackout curtains. No blue light 60 mins before bed."</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* The Interaction */}
+                    <div className="bg-gradient-to-br from-emerald-500/20 to-teal-500/10 rounded-xl p-6 border-2 border-emerald-400/30">
+                      <div className="flex items-start gap-3 mb-4">
+                        <svg className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                        <h4 className="text-emerald-400 font-semibold font-mono text-sm uppercase tracking-wide">The Interaction (Boltzman Voice)</h4>
+                      </div>
+                      <div className="space-y-4 font-mono text-sm">
+                        <div className="bg-black/40 rounded-lg p-4 border border-emerald-500/20">
+                          <p className="text-emerald-300 mb-2"><span className="font-semibold">User:</span> "What were the key points from the podcast about maximizing deep sleep phases?"</p>
+                          <p className="text-green-300"><span className="font-semibold">Boltzman:</span> "Huberman emphasized two main things: Temperature and Light. You need to drop your body temp by 1-3 degrees, and getting sunlight within 30 minutes of waking is crucial to set your circadian timer."</p>
+                        </div>
+                        <div className="bg-black/40 rounded-lg p-4 border border-emerald-500/20">
+                          <p className="text-emerald-300 mb-2"><span className="font-semibold">User:</span> "What supplements were discussed? I'm at the store later."</p>
+                          <p className="text-green-300"><span className="font-semibold">Boltzman:</span> "According to the Research Study doc, the protocol is: Magnesium Threonate (200-400mg), Apigenin (50mg), and Theanine (100-200mg). Take them 30 minutes before sleep."</p>
+                        </div>
+                        <div className="bg-black/40 rounded-lg p-4 border border-emerald-500/20">
+                          <p className="text-emerald-300 mb-2"><span className="font-semibold">User:</span> "What's the proper temperature range?"</p>
+                          <p className="text-green-300"><span className="font-semibold">Boltzman:</span> "The Sleep Foundation Guide recommends a precise range of 65-68°F (18-20°C)."</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Demo Card */}
+            <div className="mb-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-3xl border border-white/20 p-8 md:p-10">
+                {/* Header */}
+                <div className="text-center mb-10">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center border border-green-400/30">
+                      <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <h2 className="font-serif text-3xl md:text-4xl text-white">Demo</h2>
+                  </div>
+                  <p className="text-white/60 font-mono text-sm">See Boltzman Voice in Action</p>
+                </div>
+
+                {/* Image Section */}
+                <div className="mb-10">
+                  <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                    <img
+                      src="/Projects/BoltzmanVoice/4FA0411E-F8C5-4C03-B5C4-B721A6E57C91.jpeg"
+                      alt="Boltzman Voice Demo"
+                      className="w-full h-auto"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+
+                {/* Videos Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {/* Video 1 */}
+                  <div className="relative">
+                    <div className="bg-white/5 rounded-xl p-4 border border-white/10 overflow-hidden">
+                      <div className="relative w-full max-w-sm mx-auto" style={{ paddingBottom: '120%' }}>
+                        <iframe
+                          className="absolute top-0 left-0 w-full h-full rounded-lg"
+                          src="https://www.youtube.com/embed/up6XT7VntqU"
+                          title="Boltzman Voice Demo 1"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        ></iframe>
+                      </div>
+                    </div>
+                    {/* Decorative glow */}
+                    <div className="absolute -inset-2 bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 rounded-xl blur-xl -z-10 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+
+                  {/* Video 2 */}
+                  <div className="relative">
+                    <div className="bg-white/5 rounded-xl p-4 border border-white/10 overflow-hidden">
+                      <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                        <iframe
+                          className="absolute top-0 left-0 w-full h-full rounded-lg"
+                          src="https://www.youtube.com/embed/THkUAd2d_0Y"
+                          title="Boltzman Voice Demo 2"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        ></iframe>
+                      </div>
+                    </div>
+                    {/* Decorative glow */}
+                    <div className="absolute -inset-2 bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 rounded-xl blur-xl -z-10 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </>
         )}
         </div>
