@@ -94,6 +94,14 @@ export function ProjectDetail() {
                       className="w-full h-full object-contain"
                     />
                   </div>
+                ) : project.title === 'Clearr' ? (
+                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg bg-white/10 border border-white/20 overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
+                    <img
+                      src="/Projects/Clearr/5361FE02-9D38-4F02-992B-EA13F7F12C6A_4_5005_c.jpeg"
+                      alt="Clearr Logo"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
                 ) : (
                   <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg bg-white/10 border border-white/20 overflow-hidden flex-shrink-0">
                     <img

@@ -51,7 +51,7 @@ export const projects: Project[] = [
   {
     title: 'Clearr',
     category: 'Mobile App',
-    description: 'Clearr is an AI-powered message translation app that acts like \'Google translate\' for emotional communication. it translates raw, potentionally emotional messages into healthier, more constructive communication using AI.',
+    description: 'Thought Translator',
     image: '/images/projects/Clearr/clearr-cover.jpeg',
     link: 'https://apps.apple.com/us/app/clearr-thought-translator/id6751149912',
     gradientColors: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
