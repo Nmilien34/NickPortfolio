@@ -6090,6 +6090,52 @@ export function ProjectDetail() {
                 </div>
               </div>
             </div>
+
+            {/* Reflection Card */}
+            <div className="mb-8">
+              <div className="relative overflow-hidden bg-gradient-to-br from-purple-950/80 via-black/90 to-fuchsia-950/80 rounded-3xl border-2 border-purple-500/40 p-8 md:p-12 shadow-[0_0_60px_rgba(147,51,234,0.4)]">
+                {/* Decorative Background Elements */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-fuchsia-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+                
+                <div className="relative z-10">
+                  {/* Header */}
+                  <div className="text-center mb-8">
+                    <div className="inline-flex items-center justify-center gap-3 mb-4">
+                      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/40 to-fuchsia-500/40 flex items-center justify-center border-2 border-purple-400/60 shadow-lg shadow-purple-500/50">
+                        <svg className="w-7 h-7 text-purple-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                      </div>
+                      <h2 className="font-serif text-3xl md:text-4xl text-white">Reflection</h2>
+                    </div>
+                    <p className="text-purple-300/90 font-mono text-base md:text-lg font-semibold">The Superpower of Agency</p>
+                  </div>
+
+                  {/* Reflection Content */}
+                  <div className="max-w-4xl mx-auto">
+                    <div className="bg-black/30 backdrop-blur-sm rounded-2xl border border-purple-500/30 p-8 md:p-10">
+                      <div className="relative">
+                        {/* Quote decoration */}
+                        <div className="absolute -top-4 -left-4 w-12 h-12 opacity-20">
+                          <svg className="w-full h-full text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.984zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                          </svg>
+                        </div>
+                        
+                        <p className="text-white/95 font-mono text-base md:text-lg leading-relaxed relative z-10">
+                          To be honest, there isn't a deep, inspirational backstory here. I just saw a gap in my daily life, so I wrote the code to fix it. 
+                          <br /><br />
+                          The biggest lesson wasn't technical—it was simply realizing that <span className="text-purple-300 font-semibold">I don't have to wait for products to exist</span>. If I want something, I can just build it. 
+                          <br /><br />
+                          <span className="text-fuchsia-300 font-semibold text-lg">That agency feels like a genuine superpower.</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </>
         )}
         </div>
