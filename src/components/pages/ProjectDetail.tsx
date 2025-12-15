@@ -4360,6 +4360,408 @@ export function ProjectDetail() {
                 </div>
               </div>
             </div>
+
+            {/* Problem VS Solution Section - Vertical Stack Design */}
+            <div className="mb-8">
+              {/* Header */}
+              <div className="text-center mb-12">
+                <h2 className="font-serif text-3xl md:text-4xl text-white mb-4">The Challenge</h2>
+                <div className="flex items-center justify-center gap-4">
+                  <div className="h-px bg-gradient-to-r from-transparent via-red-500/50 to-red-500/50 w-32"></div>
+                  <div className="px-4 py-2 bg-white/5 rounded-full border border-white/20">
+                    <span className="text-white/60 font-mono text-sm">PROBLEM → SOLUTION</span>
+                  </div>
+                  <div className="h-px bg-gradient-to-l from-transparent via-green-500/50 to-green-500/50 w-32"></div>
+                </div>
+              </div>
+
+              {/* Problem Card - Top */}
+              <div className="relative mb-8">
+                {/* Decorative gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 via-orange-500/5 to-transparent rounded-3xl blur-2xl"></div>
+                
+                <div className="relative bg-gradient-to-br from-red-950/40 via-orange-950/30 to-red-950/20 backdrop-blur-sm rounded-3xl border-2 border-red-500/40 p-8 md:p-10">
+                  {/* Problem Header */}
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500/30 to-orange-500/20 flex items-center justify-center border-2 border-red-400/50 shadow-lg shadow-red-500/20">
+                      <svg className="w-7 h-7 text-red-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-serif text-3xl text-white mb-2">The Problem</h3>
+                      <p className="text-red-300/80 font-mono text-sm">The "Screen Constraint" & Unproductive Dead Time</p>
+                    </div>
+                  </div>
+
+                  {/* Problem Points */}
+                  <div className="space-y-5">
+                    {/* Point 1 */}
+                    <div className="bg-black/40 rounded-2xl p-5 border border-red-500/30 hover:border-red-400/50 transition-all hover:shadow-lg hover:shadow-red-500/10">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-red-500/30 to-orange-500/20 flex items-center justify-center border border-red-400/40">
+                          <svg className="w-5 h-5 text-red-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                          </svg>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-white font-semibold mb-2 font-mono text-base">The "Hands-Busy" Gap</h4>
+                          <p className="text-white/75 font-mono text-sm leading-relaxed">
+                            Professionals in manual industries (medical, field service, culinary) often cannot access digital tools because their hands are occupied, dirty, or sterile. For example, surgeons can't touch screens to access patient records, and technicians can't order parts while fixing equipment.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Point 2 */}
+                    <div className="bg-black/40 rounded-2xl p-5 border border-red-500/30 hover:border-red-400/50 transition-all hover:shadow-lg hover:shadow-red-500/10">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-red-500/30 to-orange-500/20 flex items-center justify-center border border-red-400/40">
+                          <svg className="w-5 h-5 text-red-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-white font-semibold mb-2 font-mono text-base">Wasted "Dead Time"</h4>
+                          <p className="text-white/75 font-mono text-sm leading-relaxed">
+                            Knowledge workers, executives, and students lose valuable productivity during downtime activities—like commuting, cooking, hiking, or working out—because they cannot physically interact with a laptop or phone.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Point 3 */}
+                    <div className="bg-black/40 rounded-2xl p-5 border border-red-500/30 hover:border-red-400/50 transition-all hover:shadow-lg hover:shadow-red-500/10">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-red-500/30 to-orange-500/20 flex items-center justify-center border border-red-400/40">
+                          <svg className="w-5 h-5 text-red-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                          </svg>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-white font-semibold mb-2 font-mono text-base">High Opportunity Cost</h4>
+                          <p className="text-white/75 font-mono text-sm leading-relaxed">
+                            Executives and founders waste 1-2 hours daily commuting, unable to process information, make decisions, or stay on top of communications without constant device checking.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Connecting Arrow/Divider */}
+              <div className="flex justify-center mb-8">
+                <div className="relative">
+                  <div className="w-px h-16 bg-gradient-to-b from-red-500/50 via-green-500/50 to-green-500/50"></div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-gradient-to-br from-red-500/20 to-green-500/20 border-2 border-green-400/50 flex items-center justify-center backdrop-blur-sm">
+                    <svg className="w-6 h-6 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              {/* Solution Card - Bottom */}
+              <div className="relative">
+                {/* Decorative gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-emerald-500/5 to-transparent rounded-3xl blur-2xl"></div>
+                
+                <div className="relative bg-gradient-to-br from-green-950/40 via-emerald-950/30 to-green-950/20 backdrop-blur-sm rounded-3xl border-2 border-green-500/40 p-8 md:p-10">
+                  {/* Solution Header */}
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500/30 to-emerald-500/20 flex items-center justify-center border-2 border-green-400/50 shadow-lg shadow-green-500/20">
+                      <svg className="w-7 h-7 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-serif text-3xl text-white mb-2">The Solution</h3>
+                      <p className="text-green-300/80 font-mono text-sm">Boltzman Voice (Ubiquitous Workflow Execution)</p>
+                    </div>
+                  </div>
+
+                  {/* Solution Description */}
+                  <div className="bg-black/40 rounded-2xl p-6 border border-green-500/30 mb-6">
+                    <p className="text-white/85 font-mono text-base leading-relaxed">
+                      Boltzman Voice is a voice-first interface designed to allow users to "still get work done" entirely by voice when screens are inaccessible.
+                    </p>
+                  </div>
+
+                  {/* Solution Points */}
+                  <div className="space-y-5">
+                    {/* Point 1 */}
+                    <div className="bg-black/40 rounded-2xl p-5 border border-green-500/30 hover:border-green-400/50 transition-all hover:shadow-lg hover:shadow-green-500/10">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-green-500/30 to-emerald-500/20 flex items-center justify-center border border-green-400/40">
+                          <svg className="w-5 h-5 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                          </svg>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-white font-semibold mb-2 font-mono text-base">Work Beyond the Screen</h4>
+                          <p className="text-white/75 font-mono text-sm leading-relaxed">
+                            Boltzman Voice is a voice-first interface designed to allow users to "still get work done" entirely by voice when screens are inaccessible.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Point 2 */}
+                    <div className="bg-black/40 rounded-2xl p-5 border border-green-500/30 hover:border-green-400/50 transition-all hover:shadow-lg hover:shadow-green-500/10">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-green-500/30 to-emerald-500/20 flex items-center justify-center border border-green-400/40">
+                          <svg className="w-5 h-5 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                          </svg>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-white font-semibold mb-2 font-mono text-base">Action, Not Just Chat</h4>
+                          <p className="text-white/75 font-mono text-sm leading-relaxed">
+                            Unlike standard assistants that only summarize or chat, Boltzman Voice connects to the user's tools to transform workflows—enabling actions like real-time documentation, inventory ordering, and safety protocol verification without stopping physical work.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Point 3 */}
+                    <div className="bg-black/40 rounded-2xl p-5 border border-green-500/30 hover:border-green-400/50 transition-all hover:shadow-lg hover:shadow-green-500/10">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-green-500/30 to-emerald-500/20 flex items-center justify-center border border-green-400/40">
+                          <svg className="w-5 h-5 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                          </svg>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-white font-semibold mb-2 font-mono text-base">Maximizing ROI on Time</h4>
+                          <p className="text-white/75 font-mono text-sm leading-relaxed">
+                            It converts "dead time" into productive hours, allowing students to learn while walking and executives to manage workflows during drives, effectively solving the constraint of physical limitations.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Usage in Action Card */}
+            <div className="mb-8">
+              <div className="bg-white/5 backdrop-blur-sm rounded-3xl border border-white/20 p-8 md:p-10">
+                {/* Header */}
+                <div className="text-center mb-10">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center border border-green-400/30">
+                      <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <h2 className="font-serif text-3xl md:text-4xl text-white">Usage in Action</h2>
+                  </div>
+                  <p className="text-white/60 font-mono text-sm">Real-World Scenarios</p>
+                </div>
+
+                {/* Real-World Scenarios Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                  {/* The Student */}
+                  <div className="bg-gradient-to-br from-blue-500/10 to-indigo-500/5 rounded-2xl p-6 border border-blue-500/20 hover:border-blue-400/40 transition-all">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center border border-blue-400/30">
+                        <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                      </div>
+                      <h3 className="font-serif text-xl text-white">The Student</h3>
+                    </div>
+                    <p className="text-white/80 font-mono text-sm leading-relaxed italic">
+                      "Turning a 45-minute commute into an active study session for upcoming exams."
+                    </p>
+                  </div>
+
+                  {/* The Executive */}
+                  <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/5 rounded-2xl p-6 border border-purple-500/20 hover:border-purple-400/40 transition-all">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center border border-purple-400/30">
+                        <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                      </div>
+                      <h3 className="font-serif text-xl text-white">The Executive</h3>
+                    </div>
+                    <p className="text-white/80 font-mono text-sm leading-relaxed italic">
+                      "Perfecting a keynote presentation and strategy notes during a morning workout."
+                    </p>
+                  </div>
+
+                  {/* The Busy Pro */}
+                  <div className="bg-gradient-to-br from-orange-500/10 to-red-500/5 rounded-2xl p-6 border border-orange-500/20 hover:border-orange-400/40 transition-all">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center border border-orange-400/30">
+                        <svg className="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                      </div>
+                      <h3 className="font-serif text-xl text-white">The Busy Pro</h3>
+                    </div>
+                    <p className="text-white/80 font-mono text-sm leading-relaxed italic">
+                      "Clearing the daily inbox and managing to-do lists hands-free while preparing dinner."
+                    </p>
+                  </div>
+                </div>
+
+                {/* Image Section */}
+                <div className="mb-12">
+                  <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                    <img
+                      src="/Projects/BoltzmanVoice/BF68BAF3-2B8E-4629-B6B1-8A442085B824.jpeg"
+                      alt="Boltzman Voice in Action"
+                      className="w-full h-auto"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+
+                {/* The Productivity Unlock Section */}
+                <div className="mb-12">
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-500/30 to-emerald-500/20 flex items-center justify-center border-2 border-green-400/50 shadow-lg shadow-green-500/20">
+                      <svg className="w-7 h-7 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-serif text-2xl md:text-3xl text-white mb-2">The Productivity Unlock</h3>
+                      <p className="text-green-300/80 font-mono text-sm">Unlock Your Hidden Hours</p>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {/* Reclaim Time */}
+                    <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/5 rounded-xl p-6 border border-green-500/20">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center border border-green-400/30">
+                          <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </div>
+                        <h4 className="text-green-400 font-semibold font-mono text-sm">Reclaim Time</h4>
+                      </div>
+                      <p className="text-white/75 font-mono text-sm leading-relaxed">
+                        Recover up to 14 hours of lost productivity every week by converting "dead time" into deep work.
+                      </p>
+                    </div>
+
+                    {/* Zero Eye Strain */}
+                    <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/5 rounded-xl p-6 border border-green-500/20">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center border border-green-400/30">
+                          <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                          </svg>
+                        </div>
+                        <h4 className="text-green-400 font-semibold font-mono text-sm">Zero Eye Strain</h4>
+                      </div>
+                      <p className="text-white/75 font-mono text-sm leading-relaxed">
+                        Maintain full digital connectivity and workflow control without looking at a screen.
+                      </p>
+                    </div>
+
+                    {/* Ubiquitous Access */}
+                    <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/5 rounded-xl p-6 border border-green-500/20">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center border border-green-400/30">
+                          <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </div>
+                        <h4 className="text-green-400 font-semibold font-mono text-sm">Ubiquitous Access</h4>
+                      </div>
+                      <p className="text-white/75 font-mono text-sm leading-relaxed">
+                        Execute work and learning tasks in environments where screens were previously impossible (driving, cooking, hiking).
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* How It Works Section */}
+                <div>
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500/30 to-indigo-500/20 flex items-center justify-center border-2 border-blue-400/50 shadow-lg shadow-blue-500/20">
+                      <svg className="w-7 h-7 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-serif text-2xl md:text-3xl text-white mb-2">How It Works</h3>
+                      <p className="text-blue-300/80 font-mono text-sm">Seamless Voice Execution</p>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {/* Step 1: Sync */}
+                    <div className="relative">
+                      <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-gradient-to-br from-blue-500/30 to-indigo-500/20 flex items-center justify-center border-2 border-blue-400/50">
+                        <span className="text-blue-300 font-bold font-mono text-sm">1</span>
+                      </div>
+                      <div className="bg-gradient-to-br from-blue-500/10 to-indigo-500/5 rounded-xl p-6 border border-blue-500/20 pt-8">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center border border-blue-400/30">
+                            <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                            </svg>
+                          </div>
+                          <h4 className="text-blue-400 font-semibold font-mono text-base">Sync</h4>
+                        </div>
+                        <p className="text-white/75 font-mono text-sm leading-relaxed">
+                          Securely connect your digital ecosystem (Notion, Google Drive, GitHub) in one click.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Step 2: Speak */}
+                    <div className="relative">
+                      <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-gradient-to-br from-blue-500/30 to-indigo-500/20 flex items-center justify-center border-2 border-blue-400/50">
+                        <span className="text-blue-300 font-bold font-mono text-sm">2</span>
+                      </div>
+                      <div className="bg-gradient-to-br from-blue-500/10 to-indigo-500/5 rounded-xl p-6 border border-blue-500/20 pt-8">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center border border-blue-400/30">
+                            <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                            </svg>
+                          </div>
+                          <h4 className="text-blue-400 font-semibold font-mono text-base">Speak</h4>
+                        </div>
+                        <p className="text-white/75 font-mono text-sm leading-relaxed">
+                          Issue natural voice commands, queries, or complex instructions on the go.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Step 3: Execute */}
+                    <div className="relative">
+                      <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-gradient-to-br from-blue-500/30 to-indigo-500/20 flex items-center justify-center border-2 border-blue-400/50">
+                        <span className="text-blue-300 font-bold font-mono text-sm">3</span>
+                      </div>
+                      <div className="bg-gradient-to-br from-blue-500/10 to-indigo-500/5 rounded-xl p-6 border border-blue-500/20 pt-8">
+                        <div className="flex items-center gap-3 mb-4">
+                          <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center border border-blue-400/30">
+                            <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                          </div>
+                          <h4 className="text-blue-400 font-semibold font-mono text-base">Execute</h4>
+                        </div>
+                        <p className="text-white/75 font-mono text-sm leading-relaxed">
+                          Receive instant, intelligent responses and perform actions tailored to your specific data and context.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </>
         )}
         </div>
