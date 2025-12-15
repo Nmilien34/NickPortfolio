@@ -5612,6 +5612,484 @@ export function ProjectDetail() {
                 </div>
               </div>
             </div>
+
+            {/* Dashboard Experience Card */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-br from-purple-950/60 via-black/80 to-black rounded-3xl border border-purple-600/50 p-8 md:p-10 shadow-[0_0_50px_rgba(147,51,234,0.35)]">
+                {/* Header */}
+                <div className="text-center mb-10">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/30 flex items-center justify-center border border-purple-400/50 shadow-lg shadow-purple-500/30">
+                      <svg className="w-6 h-6 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                      </svg>
+                    </div>
+                    <h2 className="font-serif text-3xl md:text-4xl text-white">The Dashboard Experience</h2>
+                  </div>
+                  <p className="text-purple-300/80 font-mono text-sm md:text-base">Instant Immersion</p>
+                </div>
+
+                {/* Introduction */}
+                <div className="bg-gradient-to-r from-purple-500/10 via-fuchsia-500/10 to-purple-500/10 rounded-xl p-6 border border-purple-500/30 mb-10">
+                  <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed text-center">
+                    Once logged in, the interface shifts from the landing page's utility focus to a <span className="text-purple-300 font-semibold">hyper-personalized command center</span>. We designed the dashboard to minimize "Time-to-Play," ensuring users are only ever one click away from their audio.
+                  </p>
+                </div>
+
+                {/* Dashboard Image */}
+                <div className="mb-10">
+                  <div className="rounded-2xl overflow-hidden border border-purple-500/30 shadow-2xl bg-black/20">
+                    <img
+                      src="/Projects/Energy/772DDE9D-BE97-4C58-B987-43D8A1FD1017.jpeg"
+                      alt="NRGFLOW Dashboard"
+                      className="w-full h-auto"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+
+                {/* Features Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {/* Feature 1: Contextual Welcome */}
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-fuchsia-500/5 to-transparent rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-purple-950/40 via-black/60 to-purple-950/30 rounded-2xl border-2 border-purple-500/40 p-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/20 flex items-center justify-center border-2 border-purple-400/50">
+                          <svg className="w-5 h-5 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                          </svg>
+                        </div>
+                        <h3 className="font-serif text-lg text-white">Contextual Welcome</h3>
+                      </div>
+                      <p className="text-white/75 font-mono text-sm leading-relaxed">
+                        The user is immediately grounded with a personalized, time-sensitive greeting (e.g., "Good evening, Milien"), creating a sense of familiarity and polish often missing from "tool-based" apps.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Feature 2: Made for You */}
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/10 via-purple-500/5 to-transparent rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-fuchsia-950/40 via-black/60 to-purple-950/30 rounded-2xl border-2 border-fuchsia-500/40 p-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-fuchsia-500/30 to-purple-500/20 flex items-center justify-center border-2 border-fuchsia-400/50">
+                          <svg className="w-5 h-5 text-fuchsia-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                          </svg>
+                        </div>
+                        <h3 className="font-serif text-lg text-white">"Made for You" Quick Access</h3>
+                      </div>
+                      <p className="text-white/75 font-mono text-sm leading-relaxed">
+                        Directly below the greeting, we implemented a "Made for [User]" section. This surfaces the user's most frequently played or recently created playlists (e.g., "nicks fun"), allowing them to jump back into their flow without navigating through complex library menus.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Feature 3: Live Trending Data */}
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-fuchsia-500/5 to-transparent rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-purple-950/40 via-black/60 to-fuchsia-950/30 rounded-2xl border-2 border-purple-500/40 p-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/20 flex items-center justify-center border-2 border-purple-400/50">
+                          <svg className="w-5 h-5 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                          </svg>
+                        </div>
+                        <h3 className="font-serif text-lg text-white">Live Trending Data</h3>
+                      </div>
+                      <p className="text-white/75 font-mono text-sm leading-relaxed">
+                        To keep the platform dynamic, the bottom half of the viewport is dedicated to discovery. The "Trending Right Now" chart automatically aggregates and displays the top 20 hottest tracks globally, complete with "Hot" status badges, ensuring users stay connected to the cultural pulse while digging for underground gems.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Retention Engine Card */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-br from-purple-950/60 via-black/80 to-black rounded-3xl border border-purple-600/50 p-8 md:p-10 shadow-[0_0_50px_rgba(147,51,234,0.35)]">
+                {/* Header */}
+                <div className="text-center mb-10">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/30 flex items-center justify-center border border-purple-400/50 shadow-lg shadow-purple-500/30">
+                      <svg className="w-6 h-6 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                      </svg>
+                    </div>
+                    <h2 className="font-serif text-3xl md:text-4xl text-white">The Retention Engine</h2>
+                  </div>
+                  <p className="text-purple-300/80 font-mono text-sm md:text-base">Curated Playlists</p>
+                </div>
+
+                {/* Introduction */}
+                <div className="bg-gradient-to-r from-purple-500/10 via-fuchsia-500/10 to-purple-500/10 rounded-xl p-6 border border-purple-500/30 mb-10">
+                  <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed text-center">
+                    We identified that while discovery gets users on the platform, <span className="text-purple-300 font-semibold">curation is what keeps them there</span>. The Playlist interface serves as the "second home" for users, transforming fleeting discoveries into a permanent, accessible library.
+                  </p>
+                </div>
+
+                {/* Browser Frame with Image */}
+                <div className="mb-10">
+                  <div className="relative mx-auto max-w-5xl">
+                    {/* Browser Header */}
+                    <div className="bg-gray-800 rounded-t-lg p-2 flex items-center gap-2">
+                      <div className="flex gap-1.5 md:gap-2">
+                        <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-red-500"></div>
+                        <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-yellow-500"></div>
+                        <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-500"></div>
+                      </div>
+                      <div className="flex-1 bg-gray-700 rounded px-2 md:px-4 py-1 text-[10px] md:text-xs text-gray-300 text-center font-mono">
+                        yfhnrg.com
+                      </div>
+                    </div>
+                    {/* Browser Content */}
+                    <div className="bg-white rounded-b-lg overflow-hidden shadow-2xl">
+                      <img
+                        src="/Projects/Energy/93FF2F0D-0552-4820-8066-7A8936A1789D.jpeg"
+                        alt="NRGFLOW Playlist Interface"
+                        className="w-full h-auto"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Features Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {/* Feature 1: Standardized Control Suite */}
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-fuchsia-500/5 to-transparent rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-purple-950/40 via-black/60 to-purple-950/30 rounded-2xl border-2 border-purple-500/40 p-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/20 flex items-center justify-center border-2 border-purple-400/50">
+                          <svg className="w-5 h-5 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                        </div>
+                        <h3 className="font-serif text-lg text-white">Standardized Control Suite</h3>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="bg-black/40 rounded-xl p-3 border border-purple-500/30">
+                          <p className="text-purple-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Experience</p>
+                          <p className="text-white/75 font-mono text-xs leading-relaxed">
+                            We didn't reinvent the wheel where it wasn't necessary. The playlist header features a prominent, industry-standard control set: a primary Play button for immediate immersion and a Shuffle toggle for randomized listening.
+                          </p>
+                        </div>
+                        <div className="bg-gradient-to-r from-purple-500/10 to-fuchsia-500/10 rounded-xl p-3 border border-purple-400/30">
+                          <p className="text-fuchsia-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Logic</p>
+                          <p className="text-white/75 font-mono text-xs leading-relaxed">
+                            This familiarity reduces the learning curve, allowing users to interact with their underground collection just as easily as they would on Spotify.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Feature 2: Social Loops */}
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/10 via-purple-500/5 to-transparent rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-fuchsia-950/40 via-black/60 to-purple-950/30 rounded-2xl border-2 border-fuchsia-500/40 p-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-fuchsia-500/30 to-purple-500/20 flex items-center justify-center border-2 border-fuchsia-400/50">
+                          <svg className="w-5 h-5 text-fuchsia-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                          </svg>
+                        </div>
+                        <h3 className="font-serif text-lg text-white">Social Loops</h3>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="bg-black/40 rounded-xl p-3 border border-fuchsia-500/30">
+                          <p className="text-fuchsia-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Experience</p>
+                          <p className="text-white/75 font-mono text-xs leading-relaxed">
+                            Integrated directly next to the playback controls is the Share button.
+                          </p>
+                        </div>
+                        <div className="bg-gradient-to-r from-fuchsia-500/10 to-purple-500/10 rounded-xl p-3 border border-fuchsia-400/30">
+                          <p className="text-purple-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Value Prop</p>
+                          <p className="text-white/75 font-mono text-xs leading-relaxed">
+                            Music is inherently social. This feature allows users to export their niche finds to friends, turning individual discovery into a viral growth loop for the platform.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Feature 3: Clean Metadata Organization */}
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-fuchsia-500/5 to-transparent rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-purple-950/40 via-black/60 to-fuchsia-950/30 rounded-2xl border-2 border-purple-500/40 p-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/20 flex items-center justify-center border-2 border-purple-400/50">
+                          <svg className="w-5 h-5 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                          </svg>
+                        </div>
+                        <h3 className="font-serif text-lg text-white">Clean Metadata Organization</h3>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="bg-black/40 rounded-xl p-3 border border-purple-500/30">
+                          <p className="text-purple-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Interface</p>
+                          <p className="text-white/75 font-mono text-xs leading-relaxed">
+                            The list view is designed for clarity, stripping away the visual noise typical of YouTube. It presents a clean hierarchy of Title, Artist, and Duration, allowing users to scan their collection (e.g., "Juice WRLD", "Polo G") without distraction.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Collaboration Hub Card */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-br from-purple-950/60 via-black/80 to-black rounded-3xl border border-purple-600/50 p-8 md:p-10 shadow-[0_0_50px_rgba(147,51,234,0.35)]">
+                {/* Header */}
+                <div className="text-center mb-10">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/30 flex items-center justify-center border border-purple-400/50 shadow-lg shadow-purple-500/30">
+                      <svg className="w-6 h-6 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                    </div>
+                    <h2 className="font-serif text-3xl md:text-4xl text-white">The Collaboration Hub</h2>
+                  </div>
+                  <p className="text-purple-300/80 font-mono text-sm md:text-base">My Playlists</p>
+                </div>
+
+                {/* Introduction */}
+                <div className="bg-gradient-to-r from-purple-500/10 via-fuchsia-500/10 to-purple-500/10 rounded-xl p-6 border border-purple-500/30 mb-10">
+                  <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed text-center">
+                    We designed the My Playlists interface to be the user's <span className="text-purple-300 font-semibold">personal archive and social launchpad</span>. This is where individual curation meets community sharing, giving users granular control over how they organize and distribute their underground music.
+                  </p>
+                </div>
+
+                {/* Image */}
+                <div className="mb-10">
+                  <div className="rounded-2xl overflow-hidden border border-purple-500/30 shadow-2xl bg-black/20">
+                    <img
+                      src="/Projects/Energy/13A86BD8-D63F-4E7D-B7D3-BDCFA4F22EBB.jpeg"
+                      alt="NRGFLOW My Playlists Interface"
+                      className="w-full h-auto"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+
+                {/* Features Grid - 2x2 Layout */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Feature 1: Customizable Curation */}
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-fuchsia-500/5 to-transparent rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-purple-950/40 via-black/60 to-purple-950/30 rounded-2xl border-2 border-purple-500/40 p-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/20 flex items-center justify-center border-2 border-purple-400/50">
+                          <svg className="w-5 h-5 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                          </svg>
+                        </div>
+                        <h3 className="font-serif text-lg text-white">Customizable Curation</h3>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="bg-black/40 rounded-xl p-3 border border-purple-500/30">
+                          <p className="text-purple-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Experience</p>
+                          <p className="text-white/75 font-mono text-xs leading-relaxed">
+                            Users can spin up new collections instantly via the "Create Playlist" modal, which asks for the essentials: a distinctive Playlist Name and an optional Description to provide context for the vibe (e.g., "songs to add to the playlist").
+                          </p>
+                        </div>
+                        <div className="bg-gradient-to-r from-purple-500/10 to-fuchsia-500/10 rounded-xl p-3 border border-purple-400/30">
+                          <p className="text-fuchsia-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Value Prop</p>
+                          <p className="text-white/75 font-mono text-xs leading-relaxed">
+                            This structured metadata transforms a random list of songs into a cohesive "album" experience, allowing users to build their own narrative around disparate tracks.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Feature 2: Granular Privacy Controls */}
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/10 via-purple-500/5 to-transparent rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-fuchsia-950/40 via-black/60 to-purple-950/30 rounded-2xl border-2 border-fuchsia-500/40 p-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-fuchsia-500/30 to-purple-500/20 flex items-center justify-center border-2 border-fuchsia-400/50">
+                          <svg className="w-5 h-5 text-fuchsia-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                          </svg>
+                        </div>
+                        <h3 className="font-serif text-lg text-white">Granular Privacy Controls</h3>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="bg-black/40 rounded-xl p-3 border border-fuchsia-500/30">
+                          <p className="text-fuchsia-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Experience</p>
+                          <p className="text-white/75 font-mono text-xs leading-relaxed">
+                            We implemented a toggle-based permission system directly in the creation flow. Users can check "Make this playlist public" to broadcast their taste to the platform or keep it private for personal listening.
+                          </p>
+                        </div>
+                        <div className="bg-gradient-to-r from-fuchsia-500/10 to-purple-500/10 rounded-xl p-3 border border-fuchsia-400/30">
+                          <p className="text-purple-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Logic</p>
+                          <p className="text-white/75 font-mono text-xs leading-relaxed">
+                            By defaulting to choice, we respect the user's desire for privacy while offering a clear path to becoming a "tastemaker" on the platform.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Feature 3: Collaborative "Social Mode" */}
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-fuchsia-500/5 to-transparent rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-purple-950/40 via-black/60 to-purple-950/30 rounded-2xl border-2 border-purple-500/40 p-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/20 flex items-center justify-center border-2 border-purple-400/50">
+                          <svg className="w-5 h-5 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                          </svg>
+                        </div>
+                        <h3 className="font-serif text-lg text-white">Collaborative "Social Mode"</h3>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="bg-black/40 rounded-xl p-3 border border-purple-500/30">
+                          <p className="text-purple-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Experience</p>
+                          <p className="text-white/75 font-mono text-xs leading-relaxed">
+                            The "Allow others to add songs" checkbox turns a static playlist into a dynamic, collaborative queue.
+                          </p>
+                        </div>
+                        <div className="bg-gradient-to-r from-purple-500/10 to-fuchsia-500/10 rounded-xl p-3 border border-purple-400/30">
+                          <p className="text-fuchsia-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Value Prop</p>
+                          <p className="text-white/75 font-mono text-xs leading-relaxed">
+                            This feature mimics the "party mode" functionality of premium apps, enabling friends to co-curate vibes in real-time without needing a paid subscription.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Feature 4: Unified Library View */}
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/10 via-purple-500/5 to-transparent rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-fuchsia-950/40 via-black/60 to-purple-950/30 rounded-2xl border-2 border-fuchsia-500/40 p-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-fuchsia-500/30 to-purple-500/20 flex items-center justify-center border-2 border-fuchsia-400/50">
+                          <svg className="w-5 h-5 text-fuchsia-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                          </svg>
+                        </div>
+                        <h3 className="font-serif text-lg text-white">Unified Library View</h3>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="bg-black/40 rounded-xl p-3 border border-fuchsia-500/30">
+                          <p className="text-fuchsia-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Interface</p>
+                          <p className="text-white/75 font-mono text-xs leading-relaxed">
+                            The background view organizes all created playlists (like "nicks fun") into a visual grid with album art, track counts, and visibility icons (eye icon), ensuring users can manage their growing library at a glance.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* YouTube Integration Card */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-br from-purple-950/60 via-black/80 to-black rounded-3xl border border-purple-600/50 p-8 md:p-10 shadow-[0_0_50px_rgba(147,51,234,0.35)]">
+                {/* Header */}
+                <div className="text-center mb-10">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/30 flex items-center justify-center border border-purple-400/50 shadow-lg shadow-purple-500/30">
+                      <svg className="w-6 h-6 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                      </svg>
+                    </div>
+                    <h2 className="font-serif text-3xl md:text-4xl text-white">YouTube Integration</h2>
+                  </div>
+                  <p className="text-purple-300/80 font-mono text-sm md:text-base">Solving the "Empty Library Problem"</p>
+                </div>
+
+                {/* Introduction */}
+                <div className="bg-gradient-to-r from-purple-500/10 via-fuchsia-500/10 to-purple-500/10 rounded-xl p-6 border border-purple-500/30 mb-10">
+                  <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed text-center">
+                    We recognized that the biggest barrier to adopting a new music platform is the <span className="text-purple-300 font-semibold">"Empty Library Problem."</span> Users have spent years curating their YouTube playlists and subscriptions, and they shouldn't have to start from zero. To solve this, I engineered a direct YouTube Integration that serves as a seamless bridge between the user's existing data and the Energy platform.
+                  </p>
+                </div>
+
+                {/* Image */}
+                <div className="mb-10">
+                  <div className="rounded-2xl overflow-hidden border border-purple-500/30 shadow-2xl bg-black/20">
+                    <img
+                      src="/Projects/Energy/6ADA2CCA-66C5-43F6-8BEA-EC07A705089F.jpeg"
+                      alt="YouTube Integration Interface"
+                      className="w-full h-auto"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+
+                {/* Features Grid - Side by Side */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Feature 1: One-Click Migration */}
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-fuchsia-500/5 to-transparent rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-purple-950/40 via-black/60 to-purple-950/30 rounded-2xl border-2 border-purple-500/40 p-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/20 flex items-center justify-center border-2 border-purple-400/50">
+                          <svg className="w-5 h-5 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                          </svg>
+                        </div>
+                        <h3 className="font-serif text-lg text-white">One-Click Migration</h3>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="bg-black/40 rounded-xl p-3 border border-purple-500/30">
+                          <p className="text-purple-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Experience</p>
+                          <p className="text-white/75 font-mono text-xs leading-relaxed">
+                            We simplified the onboarding process into a single action. Users are presented with a prominent "Connect with YouTube" CTA that handles the authentication instantly.
+                          </p>
+                        </div>
+                        <div className="bg-gradient-to-r from-purple-500/10 to-fuchsia-500/10 rounded-xl p-3 border border-purple-400/30">
+                          <p className="text-fuchsia-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Value Prop</p>
+                          <p className="text-white/75 font-mono text-xs leading-relaxed">
+                            This eliminates the "cold start" problem. By enabling users to "Import all your playlists," we deliver immediate value the moment they sign up, rather than forcing them to manually search for and re-add hundreds of songs.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Feature 2: Continuous Synchronization */}
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/10 via-purple-500/5 to-transparent rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-fuchsia-950/40 via-black/60 to-purple-950/30 rounded-2xl border-2 border-fuchsia-500/40 p-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-fuchsia-500/30 to-purple-500/20 flex items-center justify-center border-2 border-fuchsia-400/50">
+                          <svg className="w-5 h-5 text-fuchsia-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                          </svg>
+                        </div>
+                        <h3 className="font-serif text-lg text-white">Continuous Synchronization</h3>
+                      </div>
+                      <div className="space-y-3">
+                        <div className="bg-black/40 rounded-xl p-3 border border-fuchsia-500/30">
+                          <p className="text-fuchsia-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Tech</p>
+                          <p className="text-white/75 font-mono text-xs leading-relaxed">
+                            The integration isn't just a one-time data dump; it includes logic to "Keep playlists in sync".
+                          </p>
+                        </div>
+                        <div className="bg-gradient-to-r from-fuchsia-500/10 to-purple-500/10 rounded-xl p-3 border border-fuchsia-400/30">
+                          <p className="text-purple-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Benefit</p>
+                          <p className="text-white/75 font-mono text-xs leading-relaxed">
+                            This ensures true interoperability. If a user updates a playlist on YouTube, it reflects in Energy, preventing their libraries from becoming fragmented across platforms.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </>
         )}
         </div>
