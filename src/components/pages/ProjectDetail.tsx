@@ -65,7 +65,7 @@ export function ProjectDetail() {
                 ) : project.title === 'Boltzman Enterprise' ? (
                   <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg bg-white/10 border border-white/20 overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
                     <img
-                      src="/Projects/Boltzman AI/Frame 431.svg"
+                      src="/Projects/VoiceaiReceptionist/Group 33.svg"
                       alt="Boltzman Enterprise Logo"
                       className="w-full h-full object-contain"
                     />
@@ -75,6 +75,14 @@ export function ProjectDetail() {
                     <img
                       src="/Projects/Boltzman AI/Frame 108.png"
                       alt="Boltzman AI Logo"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                ) : project.title === 'Boltzman Voice' ? (
+                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg bg-white/10 border border-white/20 overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
+                    <img
+                      src="/Projects/BoltzmanVoice/Vector.svg"
+                      alt="Boltzman Voice Logo"
                       className="w-full h-full object-contain"
                     />
                   </div>
@@ -2137,6 +2145,26 @@ export function ProjectDetail() {
                     <div className="mt-8 flex justify-center">
                       <div className="h-1 w-32 bg-gradient-to-r from-transparent via-[#EFBF04] to-transparent rounded-full"></div>
                     </div>
+
+                    {/* YouTube Video Demo */}
+                    <div className="mt-10 flex justify-center">
+                      <div className="relative w-full max-w-4xl">
+                        <div className="bg-white/5 rounded-xl p-4 border border-white/10 overflow-hidden">
+                          <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                            <iframe
+                              className="absolute top-0 left-0 w-full h-full rounded-lg"
+                              src="https://www.youtube.com/embed/_bVnjj65hqk"
+                              title="Boltzman Enterprise Demo"
+                              frameBorder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            ></iframe>
+                          </div>
+                        </div>
+                        {/* Decorative glow */}
+                        <div className="absolute -inset-4 bg-gradient-to-br from-[#EFBF04]/10 via-yellow-500/10 to-amber-500/10 rounded-xl blur-xl -z-10"></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -4094,19 +4122,42 @@ export function ProjectDetail() {
                   </div>
                 </div>
 
-                {/* Mobile Image */}
-                <div className="flex justify-center">
-                  <div className="relative max-w-sm w-full">
-                    <div className="bg-white/5 rounded-xl p-4 border border-white/10">
-                      <img
-                        src="/Projects/Boltzman AI/uuid=4BFFD134-5632-4A4B-BFBD-862A84C1FB81&code=001&library=1&type=1&mode=1&loc=true&cap=true.jpeg"
-                        alt="Monetization Strategy Mobile"
-                        className="w-full h-auto rounded-lg object-contain"
-                        loading="lazy"
-                      />
+                {/* Mobile Image and Video Demo */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  {/* Mobile Image */}
+                  <div className="flex justify-center">
+                    <div className="relative max-w-sm w-full">
+                      <div className="bg-white/5 rounded-xl p-4 border border-white/10">
+                        <img
+                          src="/Projects/Boltzman AI/uuid=4BFFD134-5632-4A4B-BFBD-862A84C1FB81&code=001&library=1&type=1&mode=1&loc=true&cap=true.jpeg"
+                          alt="Monetization Strategy Mobile"
+                          className="w-full h-auto rounded-lg object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                      {/* Decorative glow */}
+                      <div className="absolute -inset-4 bg-gradient-to-br from-yellow-500/10 via-amber-500/10 to-orange-500/10 rounded-xl blur-xl -z-10"></div>
                     </div>
-                    {/* Decorative glow */}
-                    <div className="absolute -inset-4 bg-gradient-to-br from-yellow-500/10 via-amber-500/10 to-orange-500/10 rounded-xl blur-xl -z-10"></div>
+                  </div>
+
+                  {/* YouTube Video Demo */}
+                  <div className="flex justify-center items-center">
+                    <div className="relative w-full max-w-lg">
+                      <div className="bg-white/5 rounded-xl p-4 border border-white/10 overflow-hidden">
+                        <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                          <iframe
+                            className="absolute top-0 left-0 w-full h-full rounded-lg"
+                            src="https://www.youtube.com/embed/yUmDaKlBvCc"
+                            title="Boltzman Demo"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                          ></iframe>
+                        </div>
+                      </div>
+                      {/* Decorative glow */}
+                      <div className="absolute -inset-4 bg-gradient-to-br from-yellow-500/10 via-amber-500/10 to-orange-500/10 rounded-xl blur-xl -z-10"></div>
+                    </div>
                   </div>
                 </div>
               </div>
