@@ -4333,7 +4333,7 @@ export function ProjectDetail() {
               <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
                 <h2 className="font-serif text-xl text-white mb-4">Summary</h2>
                 <p className="text-normal-text font-mono text-sm leading-relaxed">
-                  [Add your Boltzman Voice summary here]
+                  Boltzman Voice was created as a strategic extension of the Boltzman Engine, developed after power user interviews highlighted the need to establish a moat against market incumbents. It addresses the need for seamless productivity when screens are inaccessible. Unlike traditional voice assistants that are limited to simple chat, Boltzman Voice retains full connectivity—it integrates with your favorite apps to access all your data and execute actions entirely by voice, allowing you to continue working even when you can't reach your phone or laptop.
                 </p>
               </div>
 
