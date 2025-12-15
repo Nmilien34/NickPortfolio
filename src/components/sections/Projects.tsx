@@ -43,7 +43,7 @@ export const projects: Project[] = [
   {
     title: 'Boltzman Voice',
     category: 'AI Product',
-    description: 'Placeholder description for Boltzman Voice project.',
+    description: 'Universal Voice Assistant that bring your apps, tabs and platforms to you',
     mockup: '/Projects/BoltzmanVoice/E80A7619-852F-43F7-AADB-099DC4EBE4EB.jpeg',
     gradientColors: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
     browserUrl: 'voice.boltzman.ai',

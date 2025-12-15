@@ -194,13 +194,13 @@ export function ProjectDetail() {
               <div className="relative">
                 {/* Desktop Mockup */}
                 <div className="relative mx-auto max-w-4xl">
-                  <div className={project.title === 'Boltzman Enterprise' ? 'bg-white rounded-t-lg p-2 flex items-center gap-2' : project.title === 'Boltzman AI' ? 'bg-[#2a2a2a] rounded-t-lg p-2 flex items-center gap-2 border-b border-gray-700' : 'bg-gray-800 rounded-t-lg p-2 flex items-center gap-2'}>
+                  <div className={project.title === 'Boltzman Enterprise' || project.title === 'Boltzman Voice' ? 'bg-white rounded-t-lg p-2 flex items-center gap-2' : project.title === 'Boltzman AI' ? 'bg-[#2a2a2a] rounded-t-lg p-2 flex items-center gap-2 border-b border-gray-700' : 'bg-gray-800 rounded-t-lg p-2 flex items-center gap-2'}>
                     <div className="flex gap-1.5 md:gap-2">
                       <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-red-500"></div>
                       <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-yellow-500"></div>
                       <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-500"></div>
                     </div>
-                    <div className={project.title === 'Boltzman Enterprise' ? 'flex-1 bg-gray-200 rounded px-2 md:px-4 py-1 text-[10px] md:text-xs text-gray-700 text-center font-mono' : project.title === 'Boltzman AI' ? 'flex-1 bg-[#3a3a3a] rounded px-2 md:px-4 py-1 text-[10px] md:text-xs text-gray-400 text-center font-mono' : 'flex-1 bg-gray-700 rounded px-2 md:px-4 py-1 text-[10px] md:text-xs text-gray-300 text-center font-mono'}>
+                    <div className={project.title === 'Boltzman Enterprise' || project.title === 'Boltzman Voice' ? 'flex-1 bg-gray-200 rounded px-2 md:px-4 py-1 text-[10px] md:text-xs text-gray-700 text-center font-mono' : project.title === 'Boltzman AI' ? 'flex-1 bg-[#3a3a3a] rounded px-2 md:px-4 py-1 text-[10px] md:text-xs text-gray-400 text-center font-mono' : 'flex-1 bg-gray-700 rounded px-2 md:px-4 py-1 text-[10px] md:text-xs text-gray-300 text-center font-mono'}>
                       {project.title === 'Lawnstack' ? 'lawnstack.com' : (project.browserUrl || 'example.com')}
                     </div>
                   </div>
@@ -4321,6 +4321,12 @@ export function ProjectDetail() {
                 </div>
               </div>
             </div>
+          </>
+        )}
+
+        {/* Boltzman Voice-specific content */}
+        {project.title === 'Boltzman Voice' && (
+          <>
           </>
         )}
         </div>
