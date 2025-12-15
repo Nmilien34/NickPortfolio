@@ -4327,6 +4327,39 @@ export function ProjectDetail() {
         {/* Boltzman Voice-specific content */}
         {project.title === 'Boltzman Voice' && (
           <>
+            {/* Summary and Profile Cards - Side by Side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              {/* Summary Card - First */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
+                <h2 className="font-serif text-xl text-white mb-4">Summary</h2>
+                <p className="text-normal-text font-mono text-sm leading-relaxed">
+                  [Add your Boltzman Voice summary here]
+                </p>
+              </div>
+
+              {/* Profile Card - Second */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
+                <h2 className="font-serif text-xl text-white mb-4">Profile</h2>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Role</p>
+                    <p className="text-white font-mono text-sm">[Add role]</p>
+                  </div>
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Team</p>
+                    <p className="text-white font-mono text-sm">[Add team size]</p>
+                  </div>
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Timeline</p>
+                    <p className="text-white font-mono text-sm">[Add timeline]</p>
+                  </div>
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Status</p>
+                    <p className="text-white font-mono text-sm">[Add status]</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </>
         )}
         </div>
