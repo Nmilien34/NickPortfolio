@@ -5318,6 +5318,302 @@ export function ProjectDetail() {
             </div>
           </>
         )}
+
+        {/* Energy-specific content */}
+        {project.title === 'Energy' && (
+          <>
+            {/* Summary and Profile Cards - Side by Side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              {/* Summary Card - First */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
+                <h2 className="font-serif text-xl text-white mb-4">Summary</h2>
+                <p className="text-normal-text font-mono text-sm leading-relaxed">
+                  Energy was born out of personal necessity. I wanted to listen to underground artists exclusive to YouTube without the "screen-on" friction and ad interruptions, but I didn't want to pay for a YouTube Premium subscription just for that.
+                  <br />
+                  <br />
+                  I built Energy to get the best of both worlds: the discovery depth of YouTube with the seamless background playback of a dedicated music app. To be transparent, I'm still actively building it—balancing my final semester and job hunting has taken up most of my coding time—but it's functional enough that it has replaced Spotify for me.
+                  <br />
+                  <br />
+                  Here is a walkthrough of the architecture and how I built the flow.
+                </p>
+              </div>
+
+              {/* Profile Card - Second */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
+                <h2 className="font-serif text-xl text-white mb-4">Profile</h2>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Role</p>
+                    <p className="text-white font-mono text-sm">Full Stack Software Engineer</p>
+                  </div>
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Team</p>
+                    <p className="text-white font-mono text-sm">1</p>
+                  </div>
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Timeline</p>
+                    <p className="text-white font-mono text-sm">Weekend. Friday to Sunday</p>
+                  </div>
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Fundraise</p>
+                    <p className="text-white font-mono text-sm">$0</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Problem vs Solution Card */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-br from-purple-950/60 via-black/80 to-black rounded-3xl border border-purple-600/50 p-6 md:p-10 shadow-[0_0_50px_rgba(147,51,234,0.35)]">
+                {/* Header */}
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500 to-fuchsia-500 flex items-center justify-center border border-purple-300/60 shadow-lg shadow-purple-500/40">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h2 className="font-serif text-2xl md:text-3xl text-white mb-1">The Problem & The Solution</h2>
+                      <p className="text-purple-200/80 font-mono text-xs md:text-sm">The "Catalog vs. Utility" Trade-off in Music</p>
+                    </div>
+                  </div>
+                  <div className="hidden md:flex items-center gap-2 text-xs font-mono text-purple-200/70 bg-purple-500/10 border border-purple-400/40 rounded-full px-4 py-1">
+                    <span className="w-2 h-2 rounded-full bg-fuchsia-400 animate-pulse" />
+                    <span>Built for underground + discovery-first listening</span>
+                  </div>
+                </div>
+
+                {/* Split Layout */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+                  {/* Problem Side */}
+                  <div className="relative flex flex-col">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/15 via-fuchsia-500/10 to-transparent rounded-2xl blur-2xl pointer-events-none" />
+                    <div className="relative bg-white/5 rounded-2xl border border-purple-500/40 p-6 md:p-7 flex flex-col h-full">
+                      <div className="flex items-center gap-3 mb-4">
+                        <span className="px-3 py-1 rounded-full bg-purple-500/20 border border-purple-400/50 text-purple-200 font-mono text-[11px] uppercase tracking-[0.2em]">
+                          The Problem
+                        </span>
+                      </div>
+                      <h3 className="font-serif text-xl text-white mb-4">The "Catalog vs. Utility" Trade-off</h3>
+
+                      <div className="space-y-4 text-white/80 font-mono text-xs md:text-sm leading-relaxed">
+                        {/* Content Gap */}
+                        <div className="border-l-2 border-purple-400/60 pl-4">
+                          <p className="text-purple-300 font-semibold mb-1">The Content Gap</p>
+                          <p>
+                            Mainstream platforms (Spotify, Apple Music) lack the depth of underground artists, remixes, and covers that exist exclusively on YouTube. Users are forced to choose between a good interface (Spotify) or a good catalog (YouTube).
+                          </p>
+                        </div>
+
+                        {/* Attention Tax */}
+                        <div className="border-l-2 border-purple-400/60 pl-4">
+                          <p className="text-purple-300 font-semibold mb-1">The "Attention Tax" (UX Friction)</p>
+                          <p>
+                            YouTube holds the monopoly on niche content, but its mobile architecture creates high friction for music listeners. It forces "active viewing" (screen on, no background play) and interrupts flow with aggressive ads, making it unusable for passive listening (commuting/working).
+                          </p>
+                        </div>
+
+                        {/* Financial Barrier */}
+                        <div className="border-l-2 border-purple-400/60 pl-4">
+                          <p className="text-purple-300 font-semibold mb-1">The Financial Barrier</p>
+                          <p>
+                            Top-tier music experiences are gated behind premium subscriptions. For students and cost-sensitive users, the choice is binary: pay monthly fees or suffer through ad-heavy, limited experiences.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Solution Side */}
+                  <div className="relative flex flex-col">
+                    <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/15 via-purple-500/10 to-transparent rounded-2xl blur-2xl pointer-events-none" />
+                    <div className="relative bg-white/5 rounded-2xl border border-fuchsia-500/40 p-6 md:p-7 flex flex-col h-full">
+                      <div className="flex items-center gap-3 mb-4">
+                        <span className="px-3 py-1 rounded-full bg-fuchsia-500/20 border border-fuchsia-400/50 text-fuchsia-100 font-mono text-[11px] uppercase tracking-[0.2em]">
+                          ⚡ The Solution: Energy
+                        </span>
+                      </div>
+                      <h3 className="font-serif text-xl text-white mb-4">Technical Decoupling for Music</h3>
+
+                      <div className="space-y-4 text-white/80 font-mono text-xs md:text-sm leading-relaxed">
+                        {/* Audio-First Architecture */}
+                        <div className="bg-black/40 rounded-xl p-4 border border-fuchsia-500/30">
+                          <p className="text-fuchsia-200 font-semibold mb-1">Audio-First Architecture</p>
+                          <p>
+                            Energy leverages the YouTube Data API to decouple the audio track from the video container. By programmatically retrieving MP4 streams and converting them to MP3 audio in real-time, the app allows for seamless background playback and "screen-off" listening.
+                          </p>
+                        </div>
+
+                        {/* Unified Discovery Engine */}
+                        <div className="bg-black/40 rounded-xl p-4 border border-fuchsia-500/30">
+                          <p className="text-fuchsia-200 font-semibold mb-1">Unified Discovery Engine</p>
+                          <p>
+                            The system aggregates data to keep users on top of Global Trending Charts while simultaneously providing access to the deep tail of underground artists, effectively combining the discovery power of YouTube with the utility of a dedicated music player.
+                          </p>
+                        </div>
+
+                        {/* Frictionless & Free */}
+                        <div className="bg-black/40 rounded-xl p-4 border border-fuchsia-500/30">
+                          <p className="text-fuchsia-200 font-semibold mb-1">Frictionless & Free</p>
+                          <p>
+                            By building a custom client, Energy removes the ad-layer and playback restrictions, delivering a premium, uninterrupted listening experience without the recurring subscription cost.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Zero-Friction Experience Card */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-br from-purple-950/60 via-black/80 to-black rounded-3xl border border-purple-600/50 p-8 md:p-10 shadow-[0_0_50px_rgba(147,51,234,0.35)]">
+                {/* Header */}
+                <div className="text-center mb-10">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/30 flex items-center justify-center border border-purple-400/50 shadow-lg shadow-purple-500/30">
+                      <svg className="w-6 h-6 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <h2 className="font-serif text-3xl md:text-4xl text-white">The Experience</h2>
+                  </div>
+                  <div className="max-w-3xl mx-auto">
+                    <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed mb-4">
+                      We built NRGFLOW with a <span className="text-purple-300 font-semibold">"Zero-Friction"</span> philosophy. When users land on the platform, they aren't bombarded with banners or complex navigation. The interface is intentionally minimal, immediately surfacing the solutions to the user's primary pain points without requiring them to scroll or search.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Images Section */}
+                <div className="mb-12 space-y-8">
+                  <div className="rounded-2xl overflow-hidden border border-purple-500/30 shadow-2xl bg-black/20">
+                    <img
+                      src="/Projects/Energy/Group 10.svg"
+                      alt="NRGFLOW Interface"
+                      className="w-full h-auto"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="rounded-2xl overflow-hidden border border-purple-500/30 shadow-2xl bg-black/20">
+                    <img
+                      src="/Projects/Energy/D2E9F876-79D5-4F95-BB08-43721438BEE6.jpeg"
+                      alt="NRGFLOW Features"
+                      className="w-full h-auto"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+
+                {/* Core Features Section */}
+                <div>
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="h-px bg-gradient-to-r from-transparent via-purple-500/50 to-purple-500/50 flex-1"></div>
+                    <h3 className="font-serif text-2xl md:text-3xl text-white">Core Feature Architecture</h3>
+                    <div className="h-px bg-gradient-to-l from-transparent via-purple-500/50 to-purple-500/50 flex-1"></div>
+                  </div>
+
+                  <div className="space-y-8">
+                    {/* Feature 1: YouTube-to-MP3 Conversion */}
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-fuchsia-500/5 to-transparent rounded-2xl blur-xl"></div>
+                      <div className="relative bg-gradient-to-br from-purple-950/40 via-black/60 to-purple-950/30 rounded-2xl border-2 border-purple-500/40 p-6 md:p-8">
+                        <div className="flex items-start gap-4 mb-4">
+                          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/20 flex items-center justify-center border-2 border-purple-400/50 flex-shrink-0">
+                            <svg className="w-6 h-6 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                            </svg>
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="font-serif text-xl md:text-2xl text-white mb-2">YouTube-to-MP3 Conversion Engine</h4>
+                            <div className="space-y-4 mt-4">
+                              <div className="bg-black/40 rounded-xl p-4 border border-purple-500/30">
+                                <p className="text-purple-300 font-semibold font-mono text-sm mb-2 uppercase tracking-wide">The Experience</p>
+                                <p className="text-white/80 font-mono text-sm leading-relaxed">
+                                  We engineered a seamless bridge between YouTube's massive catalog and a premium listening experience. Users can convert video streams into high-quality MP3s instantly.
+                                </p>
+                              </div>
+                              <div className="bg-gradient-to-r from-purple-500/10 to-fuchsia-500/10 rounded-xl p-4 border border-purple-400/30">
+                                <p className="text-fuchsia-300 font-semibold font-mono text-sm mb-2 uppercase tracking-wide">The Value Prop</p>
+                                <p className="text-white/80 font-mono text-sm leading-relaxed">
+                                  This effectively decouples the audio from the video container, unlocking ad-free listening and background play for free, solving the "paywall" friction found on Spotify and Apple Music.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Feature 2: AI-Enhanced Song Recognition */}
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/10 via-purple-500/5 to-transparent rounded-2xl blur-xl"></div>
+                      <div className="relative bg-gradient-to-br from-fuchsia-950/40 via-black/60 to-purple-950/30 rounded-2xl border-2 border-fuchsia-500/40 p-6 md:p-8">
+                        <div className="flex items-start gap-4 mb-4">
+                          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-fuchsia-500/30 to-purple-500/20 flex items-center justify-center border-2 border-fuchsia-400/50 flex-shrink-0">
+                            <svg className="w-6 h-6 text-fuchsia-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                            </svg>
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="font-serif text-xl md:text-2xl text-white mb-2">AI-Enhanced Song Recognition</h4>
+                            <div className="space-y-4 mt-4">
+                              <div className="bg-black/40 rounded-xl p-4 border border-fuchsia-500/30">
+                                <p className="text-fuchsia-300 font-semibold font-mono text-sm mb-2 uppercase tracking-wide">The Experience</p>
+                                <p className="text-white/80 font-mono text-sm leading-relaxed">
+                                  Inspired by Shazam but optimized for the web, this feature allows users to identify music by simply letting the platform "listen" to a snippet.
+                                </p>
+                              </div>
+                              <div className="bg-gradient-to-r from-fuchsia-500/10 to-purple-500/10 rounded-xl p-4 border border-fuchsia-400/30">
+                                <p className="text-purple-300 font-semibold font-mono text-sm mb-2 uppercase tracking-wide">The Tech</p>
+                                <p className="text-white/80 font-mono text-sm leading-relaxed">
+                                  We integrated an AI-enhanced recognition layer that analyzes audio fingerprints to accurately identify tracks—even obscure underground songs—and immediately links them for conversion.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Feature 3: Offline-First Personal Library */}
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-fuchsia-500/5 to-transparent rounded-2xl blur-xl"></div>
+                      <div className="relative bg-gradient-to-br from-purple-950/40 via-black/60 to-fuchsia-950/30 rounded-2xl border-2 border-purple-500/40 p-6 md:p-8">
+                        <div className="flex items-start gap-4 mb-4">
+                          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/20 flex items-center justify-center border-2 border-purple-400/50 flex-shrink-0">
+                            <svg className="w-6 h-6 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                            </svg>
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="font-serif text-xl md:text-2xl text-white mb-2">Offline-First Personal Library</h4>
+                            <div className="space-y-4 mt-4">
+                              <div className="bg-black/40 rounded-xl p-4 border border-purple-500/30">
+                                <p className="text-purple-300 font-semibold font-mono text-sm mb-2 uppercase tracking-wide">The Experience</p>
+                                <p className="text-white/80 font-mono text-sm leading-relaxed">
+                                  We moved beyond simple streaming by building a persistent Personal Library system.
+                                </p>
+                              </div>
+                              <div className="bg-gradient-to-r from-purple-500/10 to-fuchsia-500/10 rounded-xl p-4 border border-purple-400/30">
+                                <p className="text-fuchsia-300 font-semibold font-mono text-sm mb-2 uppercase tracking-wide">The Value Prop</p>
+                                <p className="text-white/80 font-mono text-sm leading-relaxed">
+                                  This grants users true ownership of their music. By saving converted tracks locally to their library, users can listen to their curated underground playlists anywhere, fully offline, without relying on an internet connection or data plan.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
         </div>
 
       </main>
