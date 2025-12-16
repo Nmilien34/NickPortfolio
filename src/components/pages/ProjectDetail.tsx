@@ -6146,6 +6146,216 @@ export function ProjectDetail() {
             </div>
           </>
         )}
+
+        {/* Clearr-specific content */}
+        {project.title === 'Clearr' && (
+          <>
+            {/* First Image Card */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-br from-sky-50/10 via-white/5 to-sky-100/10 rounded-3xl border-2 border-sky-300/30 p-6 md:p-10 shadow-[0_0_40px_rgba(56,189,248,0.2)]">
+                <div className="rounded-2xl overflow-hidden border border-sky-200/20 shadow-xl bg-white/5">
+                  <img
+                    src="/Projects/Clearr/18E300C3-BB87-4109-8AEA-B298456D1762.jpeg"
+                    alt="Clearr Interface"
+                    className="w-full h-auto"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Summary and Profile Cards - Side by Side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              {/* Summary Card - First */}
+              <div className="bg-gradient-to-br from-sky-50/10 via-white/5 to-sky-100/10 rounded-xl border-2 border-sky-300/30 p-6 shadow-[0_0_30px_rgba(56,189,248,0.15)]">
+                <h2 className="font-serif text-xl text-white mb-4">Summary</h2>
+                <p className="text-white/90 font-mono text-sm leading-relaxed">
+                  Clearr is an AI-powered 'thought translator' designed to de-escalate interpersonal conflict. Functioning like a translation engine for emotions, the app ingests raw, unfiltered thoughts and uses generative AI to rewrite them into healthy, constructive communication. This was a dedicated contract project built for a client; I served as the Lead Backend Engineer, architecting the translation logic and API infrastructure, while collaborating with Liam Du, who led Frontend and Design.
+                </p>
+              </div>
+
+              {/* Profile Card - Second */}
+              <div className="bg-gradient-to-br from-sky-50/10 via-white/5 to-sky-100/10 rounded-xl border-2 border-sky-300/30 p-6 shadow-[0_0_30px_rgba(56,189,248,0.15)]">
+                <h2 className="font-serif text-xl text-white mb-4">Profile</h2>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Role</p>
+                    <p className="text-white font-mono text-sm">Backend Engineer</p>
+                  </div>
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Team</p>
+                    <p className="text-white font-mono text-sm">2 People</p>
+                  </div>
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Timeline</p>
+                    <p className="text-white font-mono text-sm">2 weeks</p>
+                  </div>
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Pay</p>
+                    <p className="text-white font-mono text-sm">$5000</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Problem vs Solution Card */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-br from-sky-50/20 via-white/10 to-blue-50/20 rounded-3xl border-2 border-sky-300/40 p-6 md:p-10 shadow-[0_0_50px_rgba(56,189,248,0.25)]">
+                {/* Header */}
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-500 flex items-center justify-center border-2 border-sky-300/60 shadow-lg shadow-sky-400/40">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h2 className="font-serif text-2xl md:text-3xl text-white mb-1">The Problem & The Solution</h2>
+                      <p className="text-sky-200/80 font-mono text-xs md:text-sm">The "Intent vs. Impact" Gap in Communication</p>
+                    </div>
+                  </div>
+                  <div className="hidden md:flex items-center gap-2 text-xs font-mono text-sky-200/70 bg-sky-400/10 border border-sky-300/40 rounded-full px-4 py-1">
+                    <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+                    <span>AI-powered emotional intelligence</span>
+                  </div>
+                </div>
+
+                {/* Split Layout */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+                  {/* Problem Side */}
+                  <div className="relative flex flex-col">
+                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500/15 via-red-500/10 to-transparent rounded-2xl blur-2xl pointer-events-none" />
+                    <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-orange-400/40 p-6 md:p-7 flex flex-col h-full">
+                      <div className="flex items-center gap-3 mb-4">
+                        <span className="px-3 py-1 rounded-full bg-orange-500/20 border border-orange-400/50 text-orange-200 font-mono text-[11px] uppercase tracking-[0.2em]">
+                          The Problem
+                        </span>
+                      </div>
+                      <h3 className="font-serif text-xl text-white mb-4">The "Intent vs. Impact" Gap</h3>
+
+                      <div className="space-y-4 text-white/90 font-mono text-xs md:text-sm leading-relaxed flex-grow">
+                        {/* The Articulation Barrier */}
+                        <div className="border-l-2 border-orange-400/60 pl-4">
+                          <p className="text-orange-300 font-semibold mb-1">The Articulation Barrier</p>
+                          <p>
+                            We often struggle to translate our complex, raw emotions into clear language. When we type exactly what we think in the heat of the moment, the message can come across as aggressive or confusing, leading to accidental offense.
+                          </p>
+                        </div>
+
+                        {/* The Cost of Miscommunication */}
+                        <div className="border-l-2 border-orange-400/60 pl-4">
+                          <p className="text-orange-300 font-semibold mb-1">The Cost of Miscommunication</p>
+                          <p>
+                            In sensitive situations—whether a tricky text to a friend or a critical work email—a poorly phrased message can damage relationships or even "cost us friends" because the recipient misinterprets the tone.
+                          </p>
+                        </div>
+
+                        {/* Communication Anxiety */}
+                        <div className="border-l-2 border-orange-400/60 pl-4">
+                          <p className="text-orange-300 font-semibold mb-1">Communication Anxiety</p>
+                          <p>
+                            Many users suffer from "analysis paralysis," wasting valuable time stressing over how to word a difficult message, fearing that their raw input isn't professional or polite enough to send.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Solution Side */}
+                  <div className="relative flex flex-col">
+                    <div className="absolute inset-0 bg-gradient-to-br from-sky-500/15 via-blue-500/10 to-transparent rounded-2xl blur-2xl pointer-events-none" />
+                    <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-400/40 p-6 md:p-7 flex flex-col h-full">
+                      <div className="flex items-center gap-3 mb-4">
+                        <span className="px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/50 text-sky-100 font-mono text-[11px] uppercase tracking-[0.2em]">
+                          🧠 The Solution: Clearr
+                        </span>
+                      </div>
+                      <h3 className="font-serif text-xl text-white mb-4">AI Thought Translation</h3>
+
+                      <div className="space-y-4 text-white/90 font-mono text-xs md:text-sm leading-relaxed flex-grow">
+                        {/* Google Translate for Emotions */}
+                        <div className="bg-white/10 rounded-xl p-4 border border-sky-400/30">
+                          <p className="text-sky-300 font-semibold mb-1">"Google Translate" for Emotions</p>
+                          <p>
+                            We built an AI engine that acts as a bridge between your brain and your keyboard. It takes "raw, messy thoughts" as input and instantly refines them into "smooth, polished messages," ensuring the output matches your actual intent.
+                          </p>
+                        </div>
+
+                        {/* Granular Tone Control */}
+                        <div className="bg-white/10 rounded-xl p-4 border border-sky-400/30">
+                          <p className="text-sky-300 font-semibold mb-1">Granular Tone Control</p>
+                          <p>
+                            Unlike basic spell-checkers, Clearr understands context. Users can select specific modes—Professional, Casual, Persuasive, or Friendly—to tailor the delivery of the message to the specific relationship and situation.
+                          </p>
+                        </div>
+
+                        {/* Confidence at Speed */}
+                        <div className="bg-white/10 rounded-xl p-4 border border-sky-400/30">
+                          <p className="text-sky-300 font-semibold mb-1">Confidence at Speed</p>
+                          <p>
+                            By providing AI-generated message templates and instant refinement, the app removes the stress of writing, allowing users to communicate clearly and confidently without the fear of being misunderstood.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* The Challenge Card */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-br from-sky-50/20 via-white/10 to-blue-50/20 rounded-3xl border-2 border-sky-300/40 p-6 md:p-10 shadow-[0_0_50px_rgba(56,189,248,0.25)]">
+                {/* Header */}
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-500 flex items-center justify-center border-2 border-sky-300/60 shadow-lg shadow-sky-400/40">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>
+                    </div>
+                    <h2 className="font-serif text-3xl md:text-4xl text-white">The Challenge</h2>
+                  </div>
+                  <p className="text-sky-200/80 font-mono text-base md:text-lg font-semibold">"Google Translate" for Emotions</p>
+                </div>
+
+                {/* Content */}
+                <div className="max-w-4xl mx-auto">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-8 md:p-10 mb-8">
+                    <p className="text-white/95 font-mono text-base md:text-lg leading-relaxed text-center">
+                      The goal was to build a system that takes <span className="text-sky-300 font-semibold">raw, messy human emotion</span> and "translates" it into healthy communication. As the backend architect, I had to ensure the system wasn't just a wrapper for ChatGPT—it needed to be <span className="text-sky-300 font-semibold">safe, context-aware, and strictly rate-limited</span> based on monetization tiers.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Architecture Section */}
+                <div className="max-w-5xl mx-auto mt-8 pt-8 border-t border-sky-300/30">
+                  <div className="text-center mb-6">
+                    <h3 className="font-serif text-2xl md:text-3xl text-white mb-2">The Architecture</h3>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
+                    {/* Text Content */}
+                    <div className="md:col-span-1 flex flex-col justify-center">
+                      <p className="text-white/90 font-mono text-base md:text-lg leading-relaxed">
+                        The whole backend is designed in a <span className="text-sky-300 font-semibold">clean, modular and minimal architecture</span>, designed for <span className="text-sky-300 font-semibold">scalability and low learning curve</span>.
+                      </p>
+                    </div>
+
+                    {/* Image */}
+                    <div className="md:col-span-4 w-full">
+                      <img
+                        src="/Projects/Clearr/EC28F842-7601-43E9-92DD-E8447C4CA5A3.jpeg"
+                        alt="Clearr Backend Architecture"
+                        className="w-full h-auto rounded-2xl border-2 border-sky-300/40 shadow-lg shadow-sky-400/20"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
         </div>
 
       </main>
