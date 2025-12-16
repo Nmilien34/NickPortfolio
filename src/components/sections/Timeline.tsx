@@ -47,15 +47,15 @@ function TimelineItem({ data }: TimelineItemProps) {
   const hasCard = data.title || data.description;
 
   return (
-    <div className="relative flex flex-col md:flex-row items-center justify-center py-8 md:py-16 gap-8 md:gap-0">
+    <div className="relative flex flex-col items-center justify-center py-6 md:py-16 gap-4 md:gap-0">
       {/* Timeline Line (Top Half) - stops before year bubble */}
       <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04]" style={{ height: 'calc(50% - 20px)' }} />
 
-      {/* Mobile Timeline - stops before year, resumes after card */}
-      <div className="md:hidden absolute top-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04] h-8" />
+      {/* Mobile Timeline - stops before year */}
+      <div className="md:hidden absolute top-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04] h-6" />
 
-      {/* Year Bubble */}
-      <div className="relative md:absolute left-1/2 md:-translate-x-1/2 px-6 py-2 rounded-full border-2 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)] bg-background-color text-white font-mono text-sm z-10">
+      {/* Year Bubble - centered on mobile */}
+      <div className="relative md:absolute left-1/2 -translate-x-1/2 px-6 py-2 rounded-full border-2 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)] bg-background-color text-white font-mono text-sm z-10">
         {data.year}
       </div>
 
@@ -96,9 +96,9 @@ function TimelineItem({ data }: TimelineItemProps) {
         </div>
       )}
 
-      {/* Mobile: Full card like "Early Years" */}
+      {/* Mobile: Full card - centered below year */}
       {hasCard && (
-        <div className="md:hidden w-full max-w-md px-4">
+        <div className="md:hidden w-full max-w-md px-4 mt-2">
           <div
             onClick={handleCardClick}
             className="w-full p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm active:bg-white/10 active:scale-95 transition-all duration-300 text-left cursor-pointer"
@@ -125,7 +125,7 @@ function TimelineItem({ data }: TimelineItemProps) {
       <div className="hidden md:block absolute bottom-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04]" style={{ height: 'calc(50% - 20px)' }} />
 
       {/* Mobile Timeline - resumes after card */}
-      <div className="md:hidden absolute bottom-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04] h-8" />
+      <div className="md:hidden absolute bottom-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04] h-6" />
     </div>
   );
 }
@@ -222,9 +222,9 @@ function BraceCard({
         </div>
       </div>
 
-      {/* Mobile: Full card like other timeline cards */}
+      {/* Mobile: Full card - positioned below year */}
       <div
-        className="md:hidden absolute top-[80px] left-1/2 -translate-x-1/2 w-full max-w-md px-4 z-20"
+        className="md:hidden relative w-full max-w-md px-4 mt-2 z-20"
       >
         <div
           onClick={handleCardClick}
@@ -271,7 +271,7 @@ export function Timeline({ years }: TimelineProps) {
 
   return (
     <section className="relative pt-0 pb-0">
-      <div className="max-w-6xl mx-auto px-4 md:px-6">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 w-full">
         {years.map((item, index) => {
           const braceInfo = braceMap.get(index);
 
