@@ -7121,6 +7121,29 @@ export function ProjectDetail() {
                 </div>
               </div>
             </div>
+
+            {/* Reflection Card */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-br from-sky-50/20 via-white/10 to-blue-50/20 rounded-3xl border-2 border-sky-300/40 p-6 md:p-10 shadow-[0_0_50px_rgba(56,189,248,0.25)]">
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center border-2 border-amber-300/60 shadow-lg shadow-amber-400/30">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      </svg>
+                    </div>
+                    <h2 className="font-serif text-2xl md:text-3xl text-white">Reflection</h2>
+                  </div>
+                  <p className="text-amber-200/80 font-mono text-base md:text-lg font-semibold">90% Planning, 10% Coding</p>
+                </div>
+
+                <div className="max-w-4xl mx-auto bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-amber-300/40 p-6 md:p-8">
+                  <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                    This project redefined my understanding of engineering velocity. The backend build took under an hour—helped by Claude Code—but only after a week of rigorous architecture. Working with Liam Du, we refused to write a line until the logic was bulletproof. I mapped every edge case into a 15-page design doc and FigJam flow. Lesson: when the thinking is clear, execution is trivial.
+                  </p>
+                </div>
+              </div>
+            </div>
           </>
         )}
         </div>
