@@ -137,7 +137,7 @@ export function Hero() {
       <div className="text-center px-4 md:px-6 relative z-10">
         {/* Main Title */}
         <h1
-          className="font-serif text-5xl md:text-7xl lg:text-8xl tracking-tighter mb-4 text-white"
+          className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tighter mb-3 md:mb-4 text-white leading-tight"
           style={{
             mixBlendMode: 'overlay',
             opacity: 0.95,
@@ -148,12 +148,12 @@ export function Hero() {
         </h1>
 
         {/* Subtitle */}
-        <h2 className="font-serif text-xl md:text-3xl lg:text-4xl font-light text-white-smoke mb-8 md:mb-12 px-2">
+        <h2 className="font-serif text-base sm:text-xl md:text-3xl lg:text-4xl font-light text-white-smoke mb-6 md:mb-12 px-2 leading-snug">
           {translations[currentLang as keyof typeof translations].subtitle}
         </h2>
 
         {/* Details */}
-        <p className="font-mono text-xs md:text-sm text-normal-text max-w-2xl mx-auto">
+        <p className="font-mono text-xs md:text-sm text-normal-text max-w-2xl mx-auto px-2">
           {translations[currentLang as keyof typeof translations].description}
         </p>
 
@@ -224,24 +224,24 @@ export function Hero() {
         </div>
 
         {/* Personal Photos Section */}
-        <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-4 mt-20 md:mt-32 mb-20 md:mb-32 px-4">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-4 mt-12 md:mt-32 mb-12 md:mb-32 px-2 sm:px-4">
           {/* Left Photo (Tilted Left) */}
           <figure className="group relative -rotate-2 md:-rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 ease-out z-0 hover:z-10">
-            <div className="w-fit p-2 border border-white/20 rounded-2xl shadow-2xl">
+            <div className="w-fit p-1.5 sm:p-2 border border-white/20 rounded-xl sm:rounded-2xl shadow-2xl">
               <img
                 src="/images/4F8413FF-0F8C-4384-AA3A-E72D29CD7AF1.jpeg"
                 alt="First day of high school"
                 loading="lazy"
-                className="w-48 h-60 md:w-64 md:h-80 lg:w-72 lg:h-96 object-cover object-top rounded-xl filter grayscale-[30%] group-hover:grayscale-0 transition-all duration-500"
+                className="w-36 h-44 sm:w-48 sm:h-60 md:w-64 md:h-80 lg:w-72 lg:h-96 object-cover object-top rounded-lg sm:rounded-xl filter grayscale-[30%] group-hover:grayscale-0 transition-all duration-500"
               />
             </div>
-            <figcaption className="text-center text-gray-400 mt-4 font-mono text-xs opacity-80 group-hover:opacity-100 transition-opacity">
+            <figcaption className="text-center text-gray-400 mt-2 sm:mt-4 font-mono text-[10px] sm:text-xs opacity-80 group-hover:opacity-100 transition-opacity">
               first day of high school
             </figcaption>
           </figure>
 
           {/* Timeline Indicator */}
-          <div className="flex flex-col md:flex-row items-center gap-2 text-gray-500 font-mono text-xs order-last md:order-none">
+          <div className="flex flex-col md:flex-row items-center gap-1 sm:gap-2 text-gray-500 font-mono text-[10px] sm:text-xs order-last md:order-none">
             <span className="hidden md:inline">←</span>
             <span className="text-center">~10 years<br className="md:hidden" /> in the us</span>
             <span className="hidden md:inline">→</span>
@@ -249,22 +249,22 @@ export function Hero() {
 
           {/* Right Photo (Tilted Right) */}
           <figure className="group relative rotate-2 md:rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 ease-out z-0 hover:z-10">
-            <div className="w-fit p-2 border border-white/20 rounded-2xl shadow-2xl">
+            <div className="w-fit p-1.5 sm:p-2 border border-white/20 rounded-xl sm:rounded-2xl shadow-2xl">
               <img
                 src="/images/1F97147A-5531-4D66-BA63-A9F5B0A77C19_1_105_c.jpeg"
                 alt="Visiting Cornell"
                 loading="lazy"
-                className="w-48 h-60 md:w-64 md:h-80 lg:w-72 lg:h-96 object-cover rounded-xl filter grayscale-[30%] group-hover:grayscale-0 transition-all duration-500"
+                className="w-36 h-44 sm:w-48 sm:h-60 md:w-64 md:h-80 lg:w-72 lg:h-96 object-cover rounded-lg sm:rounded-xl filter grayscale-[30%] group-hover:grayscale-0 transition-all duration-500"
               />
             </div>
-            <figcaption className="text-center text-gray-400 mt-4 font-mono text-xs opacity-80 group-hover:opacity-100 transition-opacity">
+            <figcaption className="text-center text-gray-400 mt-2 sm:mt-4 font-mono text-[10px] sm:text-xs opacity-80 group-hover:opacity-100 transition-opacity">
               visiting friends at Cornell
             </figcaption>
           </figure>
         </div>
 
         {/* Closing Statement */}
-        <div className="max-w-3xl mx-auto mt-20 md:mt-32 mb-12 md:mb-20 px-4 md:px-6 text-center">
+        <div className="max-w-3xl mx-auto mt-12 md:mt-32 mb-8 md:mb-20 px-4 md:px-6 text-center">
           <p className="font-mono text-xs md:text-sm text-normal-text leading-relaxed">
             Since leaving Haiti, I've been chasing a dream I've had since I was 10. The past decade has been filled with incredible people who shaped my journey. I'm grateful for their guidance and hope to pay it forward. Here's what I've been building.
           </p>

@@ -81,19 +81,19 @@ export function Projects() {
   const navigate = useNavigate();
 
   return (
-    <section className="py-12 md:py-20 px-6">
+    <section className="py-8 md:py-20 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
-        <h2 className="font-serif text-3xl md:text-4xl text-white mb-8 md:mb-12 text-center">
+        <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-white mb-6 md:mb-12 text-center px-2">
           Some Projects I've Done
         </h2>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-2xl cursor-pointer transition-all duration-500 hover:scale-[1.02] min-h-[400px] md:min-h-[500px]"
+              className="group relative overflow-hidden rounded-xl sm:rounded-2xl cursor-pointer transition-all duration-500 hover:scale-[1.02] active:scale-[0.98] min-h-[300px] sm:min-h-[400px] md:min-h-[500px]"
               onClick={() => {
                 const slug = titleToSlug(project.title);
                 navigate(`/project/${slug}`);
@@ -179,11 +179,11 @@ export function Projects() {
               </div>
 
               {/* Project Info Overlay - Bottom Left */}
-              <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-10">
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-1 drop-shadow-lg">
+              <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 md:bottom-6 md:left-6 z-10">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-0.5 sm:mb-1 drop-shadow-lg">
                   {project.title}
                 </h3>
-                <p className="text-xs md:text-sm text-white/90 drop-shadow-md">
+                <p className="text-[10px] sm:text-xs md:text-sm text-white/90 drop-shadow-md">
                   {project.category}
                 </p>
               </div>

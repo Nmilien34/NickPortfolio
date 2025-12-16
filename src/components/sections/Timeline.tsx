@@ -47,7 +47,7 @@ function TimelineItem({ data }: TimelineItemProps) {
   const hasCard = data.title || data.description;
 
   return (
-    <div className="relative flex flex-col items-center justify-center py-6 md:py-16 gap-4 md:gap-0">
+    <div className="relative flex flex-col items-center justify-center py-4 sm:py-6 md:py-16 gap-3 sm:gap-4 md:gap-0">
       {/* Timeline Line (Top Half) - stops before year bubble */}
       <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04]" style={{ height: 'calc(50% - 20px)' }} />
 
@@ -55,7 +55,7 @@ function TimelineItem({ data }: TimelineItemProps) {
       <div className="md:hidden absolute top-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04] h-6" />
 
       {/* Year Bubble - centered on mobile */}
-      <div className="relative md:absolute left-1/2 -translate-x-1/2 px-6 py-2 rounded-full border-2 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)] bg-background-color text-white font-mono text-sm z-10">
+      <div className="relative md:absolute left-1/2 -translate-x-1/2 px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border-2 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)] bg-background-color text-white font-mono text-xs sm:text-sm z-10">
         {data.year}
       </div>
 
@@ -98,22 +98,22 @@ function TimelineItem({ data }: TimelineItemProps) {
 
       {/* Mobile: Full card - centered below year */}
       {hasCard && (
-        <div className="md:hidden w-full max-w-md px-4 mt-2">
+        <div className="md:hidden w-full max-w-md px-3 sm:px-4 mt-2">
           <div
             onClick={handleCardClick}
-            className="w-full p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm active:bg-white/10 active:scale-95 transition-all duration-300 text-left cursor-pointer"
+            className="w-full p-4 sm:p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm active:bg-white/10 active:scale-95 transition-all duration-300 text-left cursor-pointer touch-manipulation"
           >
             {data.title && (
-              <h3 className="font-serif text-lg text-white mb-3">
+              <h3 className="font-serif text-base sm:text-lg text-white mb-2 sm:mb-3">
                 {data.title}
               </h3>
             )}
             {data.description && (
-              <p className="text-xs font-mono text-normal-text leading-relaxed mb-4">
+              <p className="text-xs font-mono text-normal-text leading-relaxed mb-3 sm:mb-4">
                 {data.description}
               </p>
             )}
-            <div className="flex items-center gap-2 text-xs font-mono text-white/70">
+            <div className="flex items-center gap-2 text-[10px] sm:text-xs font-mono text-white/70">
               <span>Tap to view details</span>
               <span>→</span>
             </div>
@@ -224,23 +224,23 @@ function BraceCard({
 
       {/* Mobile: Full card - positioned below year */}
       <div
-        className="md:hidden relative w-full max-w-md px-4 mt-2 z-20"
+        className="md:hidden relative w-full max-w-md px-3 sm:px-4 mt-2 z-20"
       >
         <div
           onClick={handleCardClick}
-          className="w-full p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm active:bg-white/10 active:scale-95 transition-all duration-300 text-left cursor-pointer"
+          className="w-full p-4 sm:p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm active:bg-white/10 active:scale-95 transition-all duration-300 text-left cursor-pointer touch-manipulation"
         >
           {card.title && (
-            <h3 className="font-serif text-lg text-white mb-3">
+            <h3 className="font-serif text-base sm:text-lg text-white mb-2 sm:mb-3">
               {card.title}
             </h3>
           )}
           {card.description && (
-            <p className="text-xs font-mono text-normal-text leading-relaxed mb-4 line-clamp-3">
+            <p className="text-xs font-mono text-normal-text leading-relaxed mb-3 sm:mb-4 line-clamp-3">
               {card.description}
             </p>
           )}
-          <div className="flex items-center gap-2 text-xs font-mono text-white/70">
+          <div className="flex items-center gap-2 text-[10px] sm:text-xs font-mono text-white/70">
             <span>Tap to view details</span>
             <span>→</span>
           </div>
@@ -271,7 +271,7 @@ export function Timeline({ years }: TimelineProps) {
 
   return (
     <section className="relative pt-0 pb-0">
-      <div className="max-w-6xl mx-auto px-4 md:px-6 w-full">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 w-full">
         {years.map((item, index) => {
           const braceInfo = braceMap.get(index);
 

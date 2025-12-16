@@ -39,12 +39,12 @@ export function ProjectDetail() {
   return (
     <div className="min-h-screen flex flex-col bg-background-color">
       <Header />
-      <main className="flex-1 pt-24 md:pt-32 pb-12 md:pb-20">
-        <div className="max-w-5xl mx-auto px-4 md:px-6">
+      <main className="flex-1 pt-20 md:pt-32 pb-8 md:pb-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
           {/* Back Button */}
           <button
             onClick={() => navigate('/')}
-            className="mb-12 px-6 py-2 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 hover:border-white/30 transition-all duration-300 text-white font-mono text-sm"
+            className="mb-8 md:mb-12 px-4 sm:px-6 py-2 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 hover:border-white/30 active:scale-95 transition-all duration-300 text-white font-mono text-xs sm:text-sm"
           >
             ← Back
           </button>
