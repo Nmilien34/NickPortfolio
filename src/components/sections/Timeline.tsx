@@ -47,12 +47,12 @@ function TimelineItem({ data }: TimelineItemProps) {
   const hasCard = data.title || data.description;
 
   return (
-    <div className="relative flex items-center justify-center py-8 md:py-16">
+    <div className="relative flex items-center justify-center py-16">
       {/* Timeline Line (Top Half) - stops before bubble */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04]" style={{ height: 'calc(50% - 12px)' }} />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04]" style={{ height: 'calc(50% - 20px)' }} />
 
       {/* Year Bubble */}
-      <div className="absolute left-1/2 -translate-x-1/2 px-3 py-1 md:px-6 md:py-2 rounded-full border border-white/30 md:border-2 shadow-[0_0_10px_rgba(255,255,255,0.15)] md:shadow-[0_0_20px_rgba(255,255,255,0.2)] bg-background-color text-white font-mono text-xs md:text-sm z-10">
+      <div className="absolute left-1/2 -translate-x-1/2 px-6 py-2 rounded-full border-2 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)] bg-background-color text-white font-mono text-sm z-10">
         {data.year}
       </div>
 
@@ -93,22 +93,22 @@ function TimelineItem({ data }: TimelineItemProps) {
         </div>
       )}
 
-      {/* Mobile: Compact title below bubble */}
+      {/* Mobile: Card appears below on separate row - NO overlap with year */}
       {hasCard && data.title && (
-        <div
-          onClick={handleCardClick}
-          className="md:hidden absolute top-full mt-2 left-1/2 -translate-x-1/2 w-[85vw] max-w-xs"
-        >
-          <div className="px-3 py-2 rounded-md border border-white/20 bg-white/5 backdrop-blur-sm cursor-pointer active:bg-white/10 transition-all">
-            <h3 className="font-serif text-sm text-white text-center">
+        <div className="md:hidden absolute top-[calc(50%+40px)] left-1/2 -translate-x-1/2 w-[90vw] max-w-sm">
+          <div
+            onClick={handleCardClick}
+            className="px-4 py-3 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm cursor-pointer active:bg-white/10 transition-all"
+          >
+            <h3 className="font-serif text-sm text-white text-center leading-tight">
               {data.title}
             </h3>
           </div>
         </div>
       )}
 
-      {/* Timeline Line (Bottom Half) - resumes after bubble */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04]" style={{ height: 'calc(50% - 12px)' }} />
+      {/* Timeline Line (Bottom Half) - resumes after bubble and card */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04]" style={{ height: 'calc(50% - 20px)' }} />
     </div>
   );
 }
@@ -205,15 +205,15 @@ function BraceCard({
         </div>
       </div>
 
-      {/* Mobile: Show compact card at start of brace */}
+      {/* Mobile: Show compact card below first year bubble */}
       <div
-        className="md:hidden absolute top-8 left-1/2 -translate-x-1/2 w-[85vw] max-w-xs z-20"
+        className="md:hidden absolute top-[calc(50%+40px)] left-1/2 -translate-x-1/2 w-[90vw] max-w-sm z-20"
       >
         <div
           onClick={handleCardClick}
-          className="px-3 py-2 rounded-md border border-white/20 bg-white/5 backdrop-blur-sm cursor-pointer active:bg-white/10 transition-all"
+          className="px-4 py-3 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm cursor-pointer active:bg-white/10 transition-all"
         >
-          <h3 className="font-serif text-sm text-white text-center">
+          <h3 className="font-serif text-sm text-white text-center leading-tight">
             {card.title}
           </h3>
         </div>
