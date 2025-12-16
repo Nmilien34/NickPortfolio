@@ -160,16 +160,16 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
       {/* Photo Gallery Modal */}
       {selectedSection !== null && (
         <div
-          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-2 md:p-4"
           onClick={closeGallery}
         >
           <div
-            className="max-w-6xl w-full max-h-[90vh] overflow-y-auto bg-[#0a0a0a] rounded-2xl border border-white/10 shadow-2xl p-8 custom-scrollbar"
+            className="max-w-6xl w-full max-h-[90vh] overflow-y-auto bg-[#0a0a0a] rounded-2xl border border-white/10 shadow-2xl p-4 md:p-8 custom-scrollbar"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
-            <div className="flex justify-between items-center mb-8">
-              <h2 className="text-2xl font-serif text-white">
+            <div className="flex justify-between items-center mb-4 md:mb-8">
+              <h2 className="text-lg md:text-2xl font-serif text-white">
                 {photoSections[selectedSection].caption}
               </h2>
               <button
@@ -194,14 +194,14 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
             </div>
 
             {/* Photo/Video Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
               {/* Render videos first, then photos */}
               {[...(photoSections[selectedSection].videos || []), ...photoSections[selectedSection].photos].map((media, mediaIndex) => (
                 <div key={mediaIndex} className="relative group">
                   {isVideo(media) ? (
                     <video
                       src={media}
-                      className="w-full h-96 object-contain rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
+                      className="w-full aspect-video object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
                       controls
                       muted
                       playsInline
@@ -212,7 +212,7 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
                       src={media}
                       alt={`Media ${mediaIndex + 1}`}
                       loading="lazy"
-                      className="w-full h-96 object-contain rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
+                      className="w-full aspect-square object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
                       onError={(e) => {
                         console.error(`Failed to load image: ${media}`);
                         (e.target as HTMLImageElement).style.display = 'none';

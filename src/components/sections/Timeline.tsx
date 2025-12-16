@@ -47,18 +47,18 @@ function TimelineItem({ data }: TimelineItemProps) {
   const hasCard = data.title || data.description;
 
   return (
-    <div className="relative flex items-center justify-center py-16">
+    <div className="relative flex items-center justify-center py-8 md:py-16">
       {/* Timeline Line (Top Half) - stops before bubble */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04]" style={{ height: 'calc(50% - 20px)' }} />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04]" style={{ height: 'calc(50% - 12px)' }} />
 
       {/* Year Bubble */}
-      <div className="absolute left-1/2 -translate-x-1/2 px-6 py-2 rounded-full border-2 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)] bg-background-color text-white font-mono text-sm z-10">
+      <div className="absolute left-1/2 -translate-x-1/2 px-3 py-1 md:px-6 md:py-2 rounded-full border border-white/30 md:border-2 shadow-[0_0_10px_rgba(255,255,255,0.15)] md:shadow-[0_0_20px_rgba(255,255,255,0.2)] bg-background-color text-white font-mono text-xs md:text-sm z-10">
         {data.year}
       </div>
 
-      {/* Card with Arrow (if has content) */}
+      {/* Desktop Card with Arrow (if has content) - hidden on mobile */}
       {hasCard && (
-        <div className={`absolute -top-24 ${data.position === 'left' ? 'right-1/2 mr-16' : 'left-1/2 ml-16'} flex items-center gap-3 ${data.position === 'left' ? 'flex-row-reverse' : 'flex-row'}`}>
+        <div className={`hidden md:flex absolute -top-24 ${data.position === 'left' ? 'right-1/2 mr-16' : 'left-1/2 ml-16'} items-center gap-3 ${data.position === 'left' ? 'flex-row-reverse' : 'flex-row'}`}>
           {/* Arrow pointing from timeline to card */}
           <span className="text-white/50 text-xl">
             {data.position === 'left' && '←'}
@@ -93,8 +93,22 @@ function TimelineItem({ data }: TimelineItemProps) {
         </div>
       )}
 
+      {/* Mobile: Compact title below bubble */}
+      {hasCard && data.title && (
+        <div
+          onClick={handleCardClick}
+          className="md:hidden absolute top-full mt-2 left-1/2 -translate-x-1/2 w-[85vw] max-w-xs"
+        >
+          <div className="px-3 py-2 rounded-md border border-white/20 bg-white/5 backdrop-blur-sm cursor-pointer active:bg-white/10 transition-all">
+            <h3 className="font-serif text-sm text-white text-center">
+              {data.title}
+            </h3>
+          </div>
+        </div>
+      )}
+
       {/* Timeline Line (Bottom Half) - resumes after bubble */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04]" style={{ height: 'calc(50% - 20px)' }} />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04]" style={{ height: 'calc(50% - 12px)' }} />
     </div>
   );
 }
@@ -133,60 +147,78 @@ function BraceCard({
   };
 
   // Calculate brace height: spans from start to end (including both)
-  // Each item is py-16 (64px top + 64px bottom = 128px total per item)
+  // Desktop: Each item is py-16 (64px top + 64px bottom = 128px total per item)
+  // Mobile: Each item is py-8 (32px top + 32px bottom = 64px total per item)
   const braceHeight = (endIndex - startIndex) * itemHeight;
   // Position card in the middle of the brace
   const cardTopOffset = (braceHeight / 2) - 10; // Position card along the brace
 
   return (
-    <div
-      className="absolute right-1/2 mr-20 flex items-start gap-3 z-20"
-      style={{
-        top: `${itemHeight / 2}px`, // Start from middle of first item's bubble
-        height: `${braceHeight}px`
-      }}
-    >
-      {/* Description Card - furthest from timeline */}
+    <>
+      {/* Desktop brace - hidden on mobile */}
       <div
-        style={{ marginTop: `${cardTopOffset}px` }}
-        className="w-80"
+        className="hidden md:flex absolute right-1/2 mr-20 items-start gap-3 z-20"
+        style={{
+          top: `${itemHeight / 2}px`, // Start from middle of first item's bubble
+          height: `${braceHeight}px`
+        }}
+      >
+        {/* Description Card - furthest from timeline */}
+        <div
+          style={{ marginTop: `${cardTopOffset}px` }}
+          className="w-80"
+        >
+          <div
+            onClick={handleCardClick}
+            className={`
+              w-full p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm
+              hover:bg-white/10 hover:border-white/30 hover:scale-105 transition-all duration-300
+              text-left cursor-pointer
+            `}
+          >
+            {card.title && (
+              <h3 className="font-serif text-xl text-white mb-3">
+                {card.title}
+              </h3>
+            )}
+            {card.description && (
+              <p className="text-sm font-mono text-normal-text leading-relaxed mb-4 line-clamp-3">
+                {card.description}
+              </p>
+            )}
+            <div className="flex items-center gap-2 text-xs font-mono text-white/70">
+              <span>Click to view details</span>
+              <span>→</span>
+            </div>
+          </div>
+        </div>
+        {/* Arrow - positioned at card location */}
+        <span className="text-white/50" style={{ marginTop: `${cardTopOffset}px` }}>←</span>
+        {/* Simple bracket - closest to timeline */}
+        <div className="relative" style={{ width: '20px', height: '100%' }}>
+          {/* Top horizontal line */}
+          <div className="absolute top-0 left-0 w-full h-0.5 bg-white/30" />
+          {/* Vertical line */}
+          <div className="absolute top-0 left-0 w-0.5 h-full bg-white/30" />
+          {/* Bottom horizontal line */}
+          <div className="absolute bottom-0 left-0 w-full h-0.5 bg-white/30" />
+        </div>
+      </div>
+
+      {/* Mobile: Show compact card at start of brace */}
+      <div
+        className="md:hidden absolute top-8 left-1/2 -translate-x-1/2 w-[85vw] max-w-xs z-20"
       >
         <div
           onClick={handleCardClick}
-          className={`
-            w-full p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm
-            hover:bg-white/10 hover:border-white/30 hover:scale-105 transition-all duration-300
-            text-left cursor-pointer
-          `}
+          className="px-3 py-2 rounded-md border border-white/20 bg-white/5 backdrop-blur-sm cursor-pointer active:bg-white/10 transition-all"
         >
-          {card.title && (
-            <h3 className="font-serif text-xl text-white mb-3">
-              {card.title}
-            </h3>
-          )}
-          {card.description && (
-            <p className="text-sm font-mono text-normal-text leading-relaxed mb-4 line-clamp-3">
-              {card.description}
-            </p>
-          )}
-          <div className="flex items-center gap-2 text-xs font-mono text-white/70">
-            <span>Click to view details</span>
-            <span>→</span>
-          </div>
+          <h3 className="font-serif text-sm text-white text-center">
+            {card.title}
+          </h3>
         </div>
       </div>
-      {/* Arrow - positioned at card location */}
-      <span className="text-white/50" style={{ marginTop: `${cardTopOffset}px` }}>←</span>
-      {/* Simple bracket - closest to timeline */}
-      <div className="relative" style={{ width: '20px', height: '100%' }}>
-        {/* Top horizontal line */}
-        <div className="absolute top-0 left-0 w-full h-0.5 bg-white/30" />
-        {/* Vertical line */}
-        <div className="absolute top-0 left-0 w-0.5 h-full bg-white/30" />
-        {/* Bottom horizontal line */}
-        <div className="absolute bottom-0 left-0 w-full h-0.5 bg-white/30" />
-      </div>
-    </div>
+    </>
   );
 }
 
@@ -211,10 +243,10 @@ export function Timeline({ years }: TimelineProps) {
 
   return (
     <section className="relative pt-0 pb-0">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
         {years.map((item, index) => {
           const braceInfo = braceMap.get(index);
-          
+
           return (
             <div key={index} className="relative">
               <TimelineItem data={item} />
