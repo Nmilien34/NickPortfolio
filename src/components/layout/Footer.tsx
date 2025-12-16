@@ -3,12 +3,12 @@ export function Footer() {
 
   return (
     <footer className="border-t border-stroke-border mt-auto">
-      <div className="max-w-7xl mx-auto px-6 py-8">
-        <div className="flex justify-between items-center">
-          <p className="text-normal-text text-sm">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-8">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
+          <p className="text-normal-text text-xs md:text-sm text-center md:text-left">
             © {currentYear} made by Nick with love ❤️
           </p>
-          <div className="flex gap-6">
+          <div className="flex gap-4 md:gap-6 text-sm md:text-base">
             <a
               href="https://github.com/Nmilien34"
               target="_blank"

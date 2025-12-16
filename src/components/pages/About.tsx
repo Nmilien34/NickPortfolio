@@ -14,29 +14,29 @@ export function About() {
   return (
     <div className="min-h-screen flex flex-col bg-background-color">
       <Header />
-      <main className="flex-1 pt-24 md:pt-32 pb-12 md:pb-20">
-        <div className="max-w-7xl mx-auto px-6">
+      <main className="flex-1 pt-20 md:pt-32 pb-8 md:pb-20">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
           {/* Back Button */}
           <button
             onClick={() => navigate('/')}
-            className="mb-12 px-6 py-2 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 hover:border-white/30 transition-all duration-300 text-white font-mono text-sm"
+            className="mb-8 md:mb-12 px-4 md:px-6 py-2 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 hover:border-white/30 transition-all duration-300 text-white font-mono text-xs md:text-sm"
           >
             ← Back
           </button>
 
           {/* Page Title */}
-          <div className="text-center mb-12 md:mb-16">
-            <h1 className="font-serif text-5xl md:text-6xl text-white mb-4">
+          <div className="text-center mb-8 md:mb-16">
+            <h1 className="font-serif text-4xl md:text-6xl text-white mb-3 md:mb-4">
               About Me
             </h1>
-            <p className="text-normal-text text-base md:text-lg font-mono max-w-2xl mx-auto">
+            <p className="text-normal-text text-sm md:text-lg font-mono max-w-2xl mx-auto px-4">
               A glimpse into who I am beyond the code
             </p>
           </div>
 
           {/* Unique Photo Collage */}
-          <div className="relative mb-12 md:mb-20">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="relative mb-8 md:mb-20">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
               {/* First Image - Large, Left Side */}
               <div className="md:col-span-2 relative group">
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl transform rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
@@ -83,9 +83,9 @@ export function About() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
               {/* Who I Am Box - Left Side */}
               <div className="md:col-span-2 flex">
-                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 md:p-12 w-full">
-                  <h2 className="font-serif text-2xl md:text-3xl text-white mb-6">Who I Am</h2>
-                  <div className="space-y-4 text-normal-text font-mono text-sm md:text-base leading-relaxed">
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-5 md:p-12 w-full">
+                  <h2 className="font-serif text-xl md:text-3xl text-white mb-4 md:mb-6">Who I Am</h2>
+                  <div className="space-y-3 md:space-y-4 text-normal-text font-mono text-xs md:text-base leading-relaxed">
                     <p>
                       <strong className="text-white">Hiya, I'm Nick (short for Nickson).</strong>
                     </p>
