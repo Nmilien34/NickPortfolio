@@ -40,7 +40,7 @@ export function ProjectDetail() {
     <div className="min-h-screen flex flex-col bg-background-color">
       <Header />
       <main className="flex-1 pt-24 md:pt-32 pb-12 md:pb-20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-4 md:px-6">
           {/* Back Button */}
           <button
             onClick={() => navigate('/')}
@@ -6343,12 +6343,312 @@ export function ProjectDetail() {
                     </div>
 
                     {/* Image */}
-                    <div className="md:col-span-4 w-full">
+                    <div className="md:col-span-4 w-full min-h-[500px]">
                       <img
                         src="/Projects/Clearr/EC28F842-7601-43E9-92DD-E8447C4CA5A3.jpeg"
                         alt="Clearr Backend Architecture"
-                        className="w-full h-auto rounded-2xl border-2 border-sky-300/40 shadow-lg shadow-sky-400/20"
+                        className="w-full h-full min-h-[500px] object-cover object-left rounded-2xl border-2 border-sky-300/40 shadow-lg shadow-sky-400/20"
                       />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* The Entry Point: Phone-First Architecture Card */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-br from-sky-50/20 via-white/10 to-blue-50/20 rounded-3xl border-2 border-sky-300/40 p-6 md:p-10 shadow-[0_0_50px_rgba(56,189,248,0.25)]">
+                {/* Header */}
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-500 flex items-center justify-center border-2 border-sky-300/60 shadow-lg shadow-sky-400/40">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <h2 className="font-serif text-2xl md:text-3xl text-white">The Entry Point</h2>
+                  </div>
+                  <p className="text-sky-200/80 font-mono text-base md:text-lg font-semibold">Phone-First Architecture</p>
+                </div>
+
+                {/* Introduction */}
+                <div className="max-w-4xl mx-auto mb-8">
+                  <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed text-center">
+                    We made a deliberate engineering choice to bypass email/password entirely in favor of <span className="text-sky-300 font-semibold">Phone Number OAuth</span>. This wasn't just a UX decision—it was the <span className="text-sky-300 font-semibold">backbone of our MVP architecture</span>.
+                  </p>
+                </div>
+
+                {/* Two Main Sections */}
+                <div className="space-y-6 md:space-y-8">
+                  {/* The Identity Anchor */}
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-10 h-10 rounded-xl bg-sky-500/30 flex items-center justify-center border border-sky-400/50">
+                        <svg className="w-5 h-5 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                      </div>
+                      <h3 className="font-serif text-xl md:text-2xl text-white">The Identity Anchor</h3>
+                      <span className="text-sky-300/70 font-mono text-xs md:text-sm">(Backend Logic)</span>
+                    </div>
+
+                    <div className="space-y-4">
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Decision:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          In our database schema, the <span className="text-sky-300 font-semibold">phoneNumber serves as the primary unique identifier</span> for the user.
+                        </p>
+                      </div>
+
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Integration:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          This was critical for our <span className="text-sky-300 font-semibold">RevenueCat implementation</span>. By tying identity strictly to a verified phone number, we ensured a reliable "Source of Truth" for validating entitlements and syncing subscription status across devices without complex email verification flows.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Frictionless Entry */}
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-10 h-10 rounded-xl bg-sky-500/30 flex items-center justify-center border border-sky-400/50">
+                        <svg className="w-5 h-5 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                      </div>
+                      <h3 className="font-serif text-xl md:text-2xl text-white">Frictionless Entry</h3>
+                      <span className="text-sky-300/70 font-mono text-xs md:text-sm">(User Logic)</span>
+                    </div>
+
+                    <div className="space-y-4 mb-6">
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Experience:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          When users open Clearr, they are likely in a <span className="text-sky-300 font-semibold">high-stress emotional state</span>. They need immediate access, not a "Forgot Password" loop.
+                        </p>
+                      </div>
+
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Flow:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          We built a streamlined, <span className="text-sky-300 font-semibold">2-step OTP (One-Time Password) flow</span>. The interface is stark and focused—asking only for the number—allowing users to authenticate and start translating their thoughts in <span className="text-sky-300 font-semibold">under 10 seconds</span>.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Image */}
+                    <div className="w-full mt-6 flex justify-center">
+                      <img
+                        src="/Projects/Clearr/F1BBFD5B-8E96-4899-A783-CCC0209E003B.jpeg"
+                        alt="Phone-First OTP Authentication Flow"
+                        className="w-full max-w-md h-auto rounded-2xl border-2 border-sky-300/40 shadow-lg shadow-sky-400/20"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* The Auth & Initialization Pipeline Card */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-br from-sky-50/20 via-white/10 to-blue-50/20 rounded-3xl border-2 border-sky-300/40 p-6 md:p-10 shadow-[0_0_50px_rgba(56,189,248,0.25)]">
+                {/* Header */}
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-500 flex items-center justify-center border-2 border-sky-300/60 shadow-lg shadow-sky-400/40">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                      </svg>
+                    </div>
+                    <h2 className="font-serif text-2xl md:text-3xl text-white">The Auth & Initialization Pipeline</h2>
+                  </div>
+                </div>
+
+                {/* Introduction */}
+                <div className="max-w-4xl mx-auto mb-8">
+                  <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed text-center">
+                    As a backend engineer, I viewed the "Phone Auth" flow as a balance between <span className="text-sky-300 font-semibold">security and latency</span>. We couldn't afford to have slow DB writes for temporary codes, nor could we build our own SMS gateway. Here is how I architected the state machine using <span className="text-sky-300 font-semibold">Twilio and a Caching Layer</span>.
+                  </p>
+                </div>
+
+                {/* Three Main Sections */}
+                <div className="space-y-6 md:space-y-8">
+                  {/* 1. The OTP Trigger */}
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-10 h-10 rounded-xl bg-sky-500/30 flex items-center justify-center border border-sky-400/50">
+                        <span className="text-sky-300 font-bold font-mono">1</span>
+                      </div>
+                      <h3 className="font-serif text-xl md:text-2xl text-white">The OTP Trigger</h3>
+                      <span className="text-sky-300/70 font-mono text-xs md:text-sm">(Ephemeral Storage)</span>
+                    </div>
+
+                    <div className="space-y-4">
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Action:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          User enters their phone number.
+                        </p>
+                        <p className="text-sky-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          When the request hits <code className="text-sky-300">POST /auth/send-otp</code>, I deliberately avoided touching the main MongoDB database. Writing temporary OTPs to a persistent disk database is inefficient and creates "garbage" data.
+                        </p>
+                      </div>
+
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">Twilio Integration:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          I integrated the <span className="text-sky-300 font-semibold">Twilio Programmable SMS API</span> to handle the delivery. The backend generates a cryptographically secure 6-digit integer and offloads the delivery to Twilio's network.
+                        </p>
+                      </div>
+
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Caching Layer:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          Instead of the DB, I stored the <code className="text-sky-300">{`{phoneNumber: otpCode}`}</code> pair in an <span className="text-sky-300 font-semibold">in-memory cache (with a strict TTL of 5 minutes)</span>.
+                        </p>
+                        <p className="text-sky-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">Why:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          This ensures the OTP automatically expires without me needing to run cron jobs to clean up the database. It keeps the auth logic <span className="text-sky-300 font-semibold">stateless and incredibly fast</span>.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 2. The Verification Gate */}
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-10 h-10 rounded-xl bg-sky-500/30 flex items-center justify-center border border-sky-400/50">
+                        <span className="text-sky-300 font-bold font-mono">2</span>
+                      </div>
+                      <h3 className="font-serif text-xl md:text-2xl text-white">The Verification Gate</h3>
+                      <span className="text-sky-300/70 font-mono text-xs md:text-sm">(The Handshake)</span>
+                    </div>
+
+                    <div className="space-y-4">
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          The 6-digit OTP entry.
+                        </p>
+                        <p className="text-sky-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          This represents the <code className="text-sky-300">POST /auth/verify</code> checkpoint.
+                        </p>
+                      </div>
+
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">Cache Validation:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed mb-3">
+                          The backend first queries the cache.
+                        </p>
+                        <ul className="space-y-2 text-white/90 font-mono text-sm md:text-base">
+                          <li className="flex items-start gap-2">
+                            <span className="text-sky-300 mt-1">•</span>
+                            <span><span className="text-red-300 font-semibold">Mis-match:</span> Return 400 Bad Request immediately.</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-sky-300 mt-1">•</span>
+                            <span><span className="text-green-300 font-semibold">Match:</span> invalidate the cache key instantly (preventing replay attacks).</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Branching Logic:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed mb-3">
+                          Once validated, I query the persistent User collection:
+                        </p>
+                        <ul className="space-y-2 text-white/90 font-mono text-sm md:text-base">
+                          <li className="flex items-start gap-2">
+                            <span className="text-sky-300 mt-1">•</span>
+                            <span><span className="text-sky-300 font-semibold">User Exists:</span> Generate JWT and return 200.</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-sky-300 mt-1">•</span>
+                            <span><span className="text-sky-300 font-semibold">User Doesn't Exist:</span> Return <code className="text-sky-300">isNewUser: true</code>. This signals the frontend to hold the verified session in memory and push the Profile Setup screen.</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 3. Profile Setup */}
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-10 h-10 rounded-xl bg-sky-500/30 flex items-center justify-center border border-sky-400/50">
+                        <span className="text-sky-300 font-bold font-mono">3</span>
+                      </div>
+                      <h3 className="font-serif text-xl md:text-2xl text-white">Profile Setup</h3>
+                      <span className="text-sky-300/70 font-mono text-xs md:text-sm">(The "Heavy Lifting" Trigger)</span>
+                    </div>
+
+                    <div className="space-y-4 mb-6">
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          Inputting Name and clicking "Complete Setup".
+                        </p>
+                        <p className="text-sky-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          To the user, this is just adding a name. To me, this button trigger (<code className="text-sky-300">POST /api/signup</code>) is the <span className="text-sky-300 font-semibold">most computationally expensive moment</span> in the lifecycle. I architected this as an atomic initialization sequence.
+                        </p>
+                      </div>
+
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">Why we wait:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          I refused to create a MongoDB record before this step. If we created records right after the Twilio OTP, we'd risk filling the DB with <span className="text-red-300 font-semibold">"zombie" users</span> who verified but never finished setup.
+                        </p>
+                      </div>
+
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Execution Flow:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed mb-3">
+                          When that button is clicked, the backend performs a synchronous "waterfall":
+                        </p>
+                        <ul className="space-y-3 text-white/90 font-mono text-sm md:text-base">
+                          <li className="flex items-start gap-2">
+                            <span className="text-sky-300 mt-1 font-bold">1.</span>
+                            <span><span className="text-sky-300 font-semibold">DB Write:</span> Create the User document with <code className="text-sky-300">_id</code>, <code className="text-sky-300">phoneNumber</code>, and <code className="text-sky-300">fullName</code>.</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-sky-300 mt-1 font-bold">2.</span>
+                            <span><span className="text-sky-300 font-semibold">External Provisioning:</span></span>
+                          </li>
+                          <li className="flex items-start gap-2 ml-6">
+                            <span className="text-sky-300 mt-1">•</span>
+                            <span><span className="text-sky-300 font-semibold">RevenueCat:</span> Call the API to generate an <code className="text-sky-300">appUserID</code> linked to our Mongo <code className="text-sky-300">_id</code>.</span>
+                          </li>
+                          <li className="flex items-start gap-2 ml-6">
+                            <span className="text-sky-300 mt-1">•</span>
+                            <span><span className="text-sky-300 font-semibold">Stripe:</span> Generate the <code className="text-sky-300">stripeCustomerID</code> for future web payments.</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-sky-300 mt-1 font-bold">3.</span>
+                            <span><span className="text-sky-300 font-semibold">Entitlement Injection:</span> Push the Freemium Tier ID into the user's tier field.</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* Images */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                      <div className="w-full flex justify-center">
+                        <img
+                          src="/Projects/Clearr/76FD46CC-43CA-498B-8963-5D6C13576F4B.jpeg"
+                          alt="Auth Pipeline Flow"
+                          className="w-full max-w-md h-auto rounded-2xl border-2 border-sky-300/40 shadow-lg shadow-sky-400/20"
+                        />
+                      </div>
+                      <div className="w-full flex justify-center">
+                        <img
+                          src="/Projects/Clearr/B5EA00F3-CB71-4523-8F19-44C29BC6589A.jpeg"
+                          alt="Initialization Sequence"
+                          className="w-full max-w-md h-auto rounded-2xl border-2 border-sky-300/40 shadow-lg shadow-sky-400/20"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
