@@ -6492,7 +6492,7 @@ export function ProjectDetail() {
                         </p>
                         <p className="text-sky-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          When the request hits <code className="text-sky-300">POST /auth/send-otp</code>, I deliberately avoided touching the main MongoDB database. Writing temporary OTPs to a persistent disk database is inefficient and creates "garbage" data.
+                          When the request hits <code className="text-sky-300">POST /api/send-otp</code>, I deliberately avoided touching the main MongoDB database. Writing temporary OTPs to a persistent disk database is inefficient and creates "garbage" data.
                         </p>
                       </div>
 
@@ -6534,7 +6534,7 @@ export function ProjectDetail() {
                         </p>
                         <p className="text-sky-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          This represents the <code className="text-sky-300">POST /auth/verify</code> checkpoint.
+                          This represents the <code className="text-sky-300">POST /api/verify-otp</code> checkpoint.
                         </p>
                       </div>
 
@@ -6588,25 +6588,18 @@ export function ProjectDetail() {
                       <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
                         <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          Inputting Name and clicking "Complete Setup".
+                          New users input their name during OTP verification.
                         </p>
                         <p className="text-sky-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          To the user, this is just adding a name. To me, this button trigger (<code className="text-sky-300">POST /api/signup</code>) is the <span className="text-sky-300 font-semibold">most computationally expensive moment</span> in the lifecycle. I architected this as an atomic initialization sequence.
-                        </p>
-                      </div>
-
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">Why we wait:</p>
-                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          I refused to create a MongoDB record before this step. If we created records right after the Twilio OTP, we'd risk filling the DB with <span className="text-red-300 font-semibold">"zombie" users</span> who verified but never finished setup.
+                          When <code className="text-sky-300">POST /api/verify-otp</code> receives <code className="text-sky-300">fullName</code> for a new user (<code className="text-sky-300">isNewUser: true</code>), this triggers the <span className="text-sky-300 font-semibold">most computationally expensive moment</span> in the lifecycle—an atomic initialization sequence.
                         </p>
                       </div>
 
                       <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
                         <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Execution Flow:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed mb-3">
-                          When that button is clicked, the backend performs a synchronous "waterfall":
+                          The backend performs a synchronous "waterfall":
                         </p>
                         <ul className="space-y-3 text-white/90 font-mono text-sm md:text-base">
                           <li className="flex items-start gap-2">
@@ -6615,19 +6608,11 @@ export function ProjectDetail() {
                           </li>
                           <li className="flex items-start gap-2">
                             <span className="text-sky-300 mt-1 font-bold">2.</span>
-                            <span><span className="text-sky-300 font-semibold">External Provisioning:</span></span>
-                          </li>
-                          <li className="flex items-start gap-2 ml-6">
-                            <span className="text-sky-300 mt-1">•</span>
-                            <span><span className="text-sky-300 font-semibold">RevenueCat:</span> Call the API to generate an <code className="text-sky-300">appUserID</code> linked to our Mongo <code className="text-sky-300">_id</code>.</span>
-                          </li>
-                          <li className="flex items-start gap-2 ml-6">
-                            <span className="text-sky-300 mt-1">•</span>
-                            <span><span className="text-sky-300 font-semibold">Stripe:</span> Generate the <code className="text-sky-300">stripeCustomerID</code> for future web payments.</span>
+                            <span><span className="text-sky-300 font-semibold">External Provisioning:</span> Generate <code className="text-sky-300">revenueCatUserId</code> and <code className="text-sky-300">stripeCustomerID</code>.</span>
                           </li>
                           <li className="flex items-start gap-2">
                             <span className="text-sky-300 mt-1 font-bold">3.</span>
-                            <span><span className="text-sky-300 font-semibold">Entitlement Injection:</span> Push the Freemium Tier ID into the user's tier field.</span>
+                            <span><span className="text-sky-300 font-semibold">Entitlement Injection:</span> Set Freemium Tier and return JWT token.</span>
                           </li>
                         </ul>
                       </div>
@@ -6649,6 +6634,488 @@ export function ProjectDetail() {
                           className="w-full max-w-md h-auto rounded-2xl border-2 border-sky-300/40 shadow-lg shadow-sky-400/20"
                         />
                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* The Control Center: State & Data Management Card */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-br from-sky-50/20 via-white/10 to-blue-50/20 rounded-3xl border-2 border-sky-300/40 p-6 md:p-10 shadow-[0_0_50px_rgba(56,189,248,0.25)]">
+                {/* Header */}
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-500 flex items-center justify-center border-2 border-sky-300/60 shadow-lg shadow-sky-400/40">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    <h2 className="font-serif text-2xl md:text-3xl text-white">The Control Center</h2>
+                  </div>
+                  <p className="text-sky-200/80 font-mono text-base md:text-lg font-semibold">State & Data Management</p>
+                </div>
+
+                {/* Introduction */}
+                <div className="max-w-4xl mx-auto mb-8">
+                  <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed text-center">
+                    I viewed the Settings screen not as a menu, but as the user's <span className="text-sky-300 font-semibold">dashboard for managing their database record and session lifecycle</span>. Every item here corresponds to a critical API endpoint or data field in our schema.
+                  </p>
+                </div>
+
+                {/* Three Main Sections */}
+                <div className="space-y-6 md:space-y-8">
+                  {/* 1. Identity & Debugging */}
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-10 h-10 rounded-xl bg-sky-500/30 flex items-center justify-center border border-sky-400/50">
+                        <span className="text-sky-300 font-bold font-mono">1</span>
+                      </div>
+                      <h3 className="font-serif text-xl md:text-2xl text-white">Identity & Debugging</h3>
+                      <span className="text-sky-300/70 font-mono text-xs md:text-sm">(The "Source of Truth")</span>
+                    </div>
+
+                    <div className="space-y-4">
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          The top section displaying "Nick" and the phone number.
+                        </p>
+                        <p className="text-sky-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
+                      </div>
+
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">Visible Primary Key:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          We intentionally display the phone number because, in our database architecture, this is the <span className="text-sky-300 font-semibold">immutable anchor for the account</span>.
+                        </p>
+                      </div>
+
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">Support Logic:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          By exposing this, we make customer support seamless. If a user reports an issue, they can see exactly which identity is authenticated, allowing us to look up their specific <code className="text-sky-300">revenueCatUserId</code> or <code className="text-sky-300">stripeCustomerID</code> instantly in the logs.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 2. The "Nuclear Option" */}
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-10 h-10 rounded-xl bg-red-500/30 flex items-center justify-center border border-red-400/50">
+                        <span className="text-red-300 font-bold font-mono">2</span>
+                      </div>
+                      <h3 className="font-serif text-xl md:text-2xl text-white">The "Nuclear Option"</h3>
+                      <span className="text-red-300/70 font-mono text-xs md:text-sm">(Delete Account)</span>
+                    </div>
+
+                    <div className="space-y-4">
+                      <div className="bg-red-500/10 rounded-xl p-4 border border-red-400/30">
+                        <p className="text-red-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          The red "Delete Account" button.
+                        </p>
+                        <p className="text-red-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          This isn't just a UI removal; it triggers a <span className="text-red-300 font-semibold">complex cascading delete operation</span> (<code className="text-red-300">POST /api/delete-account</code>) that I had to architect carefully to ensure no "orphan data" was left behind:
+                        </p>
+                      </div>
+
+                      <div className="bg-red-500/10 rounded-xl p-4 border border-red-400/30">
+                        <ul className="space-y-3 text-white/90 font-mono text-sm md:text-base">
+                          <li className="flex items-start gap-2">
+                            <span className="text-red-300 mt-1 font-bold">•</span>
+                            <span><span className="text-red-300 font-semibold">Stripe/RevenueCat:</span> The backend first hits the RevenueCat API to revoke entitlements and cancel any active subscriptions to prevent future billing.</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-red-300 mt-1 font-bold">•</span>
+                            <span><span className="text-red-300 font-semibold">Database:</span> It performs a hard delete on the User document and all associated Translation history to ensure full GDPR/CCPA compliance.</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-red-300 mt-1 font-bold">•</span>
+                            <span><span className="text-red-300 font-semibold">Token Invalidation:</span> Finally, it blacklists the current JWT to force an immediate client-side logout.</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 3. Preference Persistence */}
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-10 h-10 rounded-xl bg-sky-500/30 flex items-center justify-center border border-sky-400/50">
+                        <span className="text-sky-300 font-bold font-mono">3</span>
+                      </div>
+                      <h3 className="font-serif text-xl md:text-2xl text-white">Preference Persistence</h3>
+                      <span className="text-sky-300/70 font-mono text-xs md:text-sm">(System vs. User State)</span>
+                    </div>
+
+                    <div className="space-y-4 mb-6">
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          The Appearance Modal (System/Light/Dark).
+                        </p>
+                        <p className="text-sky-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
+                      </div>
+
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">Local vs. Server State:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed mb-3">
+                          We made a distinction here.
+                        </p>
+                        <ul className="space-y-3 text-white/90 font-mono text-sm md:text-base">
+                          <li className="flex items-start gap-2">
+                            <span className="text-sky-300 mt-1">•</span>
+                            <span><span className="text-sky-300 font-semibold">Appearance (Light/Dark)</span> is handled via <span className="text-sky-300 font-semibold">Local Storage</span> on the device because it's a UI preference that doesn't need to bloat the user's database document.</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-sky-300 mt-1">•</span>
+                            <span><span className="text-sky-300 font-semibold">Writing Style</span> (seen in the menu), however, is stored in the <span className="text-sky-300 font-semibold">MongoDB User object</span> (under <code className="text-sky-300">trainingContext</code>). This ensures that if the user switches phones, their personalized AI voice model follows them, whereas their dark mode setting remains device-specific.</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* Images */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                      <div className="w-full flex justify-center">
+                        <img
+                          src="/Projects/Clearr/BE4FFC2B-F42E-4772-BABD-59AC64926EE4.jpeg"
+                          alt="Control Center Settings"
+                          className="w-full max-w-md h-auto rounded-2xl border-2 border-sky-300/40 shadow-lg shadow-sky-400/20"
+                        />
+                      </div>
+                      <div className="w-full flex justify-center">
+                        <img
+                          src="/Projects/Clearr/E914BCC2-0A8E-4FFD-9FD6-8734AAF79792.jpeg"
+                          alt="Preference Management"
+                          className="w-full max-w-md h-auto rounded-2xl border-2 border-sky-300/40 shadow-lg shadow-sky-400/20"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Contextual Mode Logic Card */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-br from-sky-50/20 via-white/10 to-blue-50/20 rounded-3xl border-2 border-sky-300/40 p-6 md:p-10 shadow-[0_0_50px_rgba(56,189,248,0.25)]">
+                {/* Header */}
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-500 flex items-center justify-center border-2 border-sky-300/60 shadow-lg shadow-sky-400/40">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      </svg>
+                    </div>
+                    <h2 className="font-serif text-2xl md:text-3xl text-white">Contextual Mode Logic</h2>
+                  </div>
+                </div>
+
+                {/* Introduction */}
+                <div className="max-w-4xl mx-auto mb-8">
+                  <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed text-center">
+                    I knew that simply sending user text to an LLM with a generic "make this nicer" command would result in <span className="text-sky-300 font-semibold">robotic, unhelpful outputs</span>. To solve this, I architected a <span className="text-sky-300 font-semibold">Contextual Injection Layer</span> in the <code className="text-sky-300">POST /api/translations</code> endpoint.
+                  </p>
+                </div>
+
+                {/* Three Main Sections */}
+                <div className="space-y-6 md:space-y-8">
+                  {/* 1. The "Mode" Parameter */}
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-10 h-10 rounded-xl bg-sky-500/30 flex items-center justify-center border border-sky-400/50">
+                        <span className="text-sky-300 font-bold font-mono">1</span>
+                      </div>
+                      <h3 className="font-serif text-xl md:text-2xl text-white">The "Mode" Parameter</h3>
+                      <span className="text-sky-300/70 font-mono text-xs md:text-sm">(System Prompt Switching)</span>
+                    </div>
+
+                    <div className="space-y-4">
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          The "Select Mode" menu where users choose from their custom modes (e.g., Personal, Professional).
+                        </p>
+                        <p className="text-sky-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          The frontend sends a <code className="text-sky-300">modeId</code> (or uses the user's default). The backend retrieves the mode's custom prompt from the database and injects it into the LLM context window. Each mode has its own persona—for example, Personal modes focus on vulnerability and de-escalation, while Professional modes prioritize clarity and neutrality.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 2. The Safety Guardrails */}
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-10 h-10 rounded-xl bg-amber-500/30 flex items-center justify-center border border-amber-400/50">
+                        <span className="text-amber-300 font-bold font-mono">2</span>
+                      </div>
+                      <h3 className="font-serif text-xl md:text-2xl text-white">The Safety Guardrails</h3>
+                      <span className="text-amber-300/70 font-mono text-xs md:text-sm">(Pre-Processing)</span>
+                    </div>
+
+                    <div className="space-y-4">
+                      <div className="bg-amber-500/10 rounded-xl p-4 border border-amber-400/30">
+                        <p className="text-amber-300 font-semibold mb-2 font-mono text-sm md:text-base">The Logic:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          Before the "Mode" logic even runs, I implemented a <span className="text-amber-300 font-semibold">Safety Interceptor</span>.
+                        </p>
+                      </div>
+
+                      <div className="bg-amber-500/10 rounded-xl p-4 border border-amber-400/30">
+                        <p className="text-amber-300 font-semibold mb-2 font-mono text-sm md:text-base">The Problem:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          We didn't want the AI to "polish" <span className="text-red-300 font-semibold">hate speech or suicide notes</span> into "nicer" versions.
+                        </p>
+                      </div>
+
+                      <div className="bg-amber-500/10 rounded-xl p-4 border border-amber-400/30">
+                        <p className="text-amber-300 font-semibold mb-2 font-mono text-sm md:text-base">The Solution:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          The backend runs a <span className="text-amber-300 font-semibold">classification check first</span>. If the input contains threats or self-harm (e.g., "I hate you and can't stand you"), the system refuses the translation request with a <code className="text-amber-300">400 error</code> or a helpful diversion message, rather than processing it.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 3. Data Schema & Analytics */}
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-10 h-10 rounded-xl bg-sky-500/30 flex items-center justify-center border border-sky-400/50">
+                        <span className="text-sky-300 font-bold font-mono">3</span>
+                      </div>
+                      <h3 className="font-serif text-xl md:text-2xl text-white">Data Schema & Analytics</h3>
+                    </div>
+
+                    <div className="space-y-4 mb-6">
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Architecture:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          We store the mode in the <span className="text-sky-300 font-semibold">Translation collection</span> alongside the input and output.
+                        </p>
+                      </div>
+
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">Why:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          This allows us to run analytics on our "Tier" usage. For example, we can track if <span className="text-sky-300 font-semibold">Professional mode users have higher retention rates</span> (lower churn) than Personal mode users, allowing us to adjust our subscription limits (<code className="text-sky-300">translationsPerMonth</code>) based on value capture.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Image */}
+                    <div className="w-full mt-6 flex justify-center">
+                      <img
+                        src="/Projects/Clearr/3A64D645-1716-4632-9D54-5B9E4BAC4AC3.jpeg"
+                        alt="Contextual Mode Logic"
+                        className="w-full max-w-md h-auto rounded-2xl border-2 border-sky-300/40 shadow-lg shadow-sky-400/20"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* How the Translations Work Card */}
+            <div className="mb-8">
+              <div className="bg-gradient-to-br from-sky-50/20 via-white/10 to-blue-50/20 rounded-3xl border-2 border-sky-300/40 p-6 md:p-10 shadow-[0_0_50px_rgba(56,189,248,0.25)]">
+                {/* Header */}
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-500 flex items-center justify-center border-2 border-sky-300/60 shadow-lg shadow-sky-400/40">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                      </svg>
+                    </div>
+                    <h2 className="font-serif text-2xl md:text-3xl text-white">How the Translations Work</h2>
+                  </div>
+                </div>
+
+                {/* Introduction */}
+                <div className="max-w-4xl mx-auto mb-8">
+                  <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed text-center">
+                    The <code className="text-sky-300">POST /api/translations</code> endpoint was the most critical piece of infrastructure. I didn't just want to "wrap" the OpenAI API; I needed to build a pipeline that was <span className="text-sky-300 font-semibold">context-aware, safe, and rate-limited</span>.
+                  </p>
+                </div>
+
+                {/* Four Main Sections */}
+                <div className="space-y-6 md:space-y-8">
+                  {/* 1. The Context Injection */}
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-10 h-10 rounded-xl bg-sky-500/30 flex items-center justify-center border border-sky-400/50">
+                        <span className="text-sky-300 font-bold font-mono">1</span>
+                      </div>
+                      <h3 className="font-serif text-xl md:text-2xl text-white">The Context Injection</h3>
+                      <span className="text-sky-300/70 font-mono text-xs md:text-sm">(The "Mode" Switch)</span>
+                    </div>
+
+                    <div className="space-y-4">
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          The "Select Mode" menu where users choose from their custom modes (e.g., Personal, Professional).
+                        </p>
+                        <p className="text-sky-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          The "magic" of Clearr isn't just the LLM—it's the <span className="text-sky-300 font-semibold">System Prompt Architecture</span>. When the frontend sends <code className="text-sky-300">{`{ translationInput: string, modeId: "mode123" }`}</code>, my backend logic acts as a switchboard:
+                        </p>
+                      </div>
+
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">Dynamic Prompt Swapping:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed mb-3">
+                          The backend retrieves the user's selected mode (or default) and injects its custom prompt into the LLM context. Each mode has its own persona—for example:
+                        </p>
+                        <ul className="space-y-2 text-white/90 font-mono text-sm md:text-base">
+                          <li className="flex items-start gap-2">
+                            <span className="text-sky-300 mt-1">•</span>
+                            <span><span className="text-sky-300 font-semibold">Personal modes:</span> Focus on vulnerability, "I" statements, and de-escalation.</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-sky-300 mt-1">•</span>
+                            <span><span className="text-sky-300 font-semibold">Professional modes:</span> Prioritize clarity, neutrality, and actionable communication.</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">Writing Style Injection:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          The backend also pulls the user's <code className="text-sky-300">trainingContext</code> from the database to ensure the output sounds like them (e.g., maintaining their natural cadence) rather than a generic robot.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 2. The Safety & Policy Layer */}
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-10 h-10 rounded-xl bg-amber-500/30 flex items-center justify-center border border-amber-400/50">
+                        <span className="text-amber-300 font-bold font-mono">2</span>
+                      </div>
+                      <h3 className="font-serif text-xl md:text-2xl text-white">The Safety & Policy Layer</h3>
+                      <span className="text-amber-300/70 font-mono text-xs md:text-sm">(Pre-Processing)</span>
+                    </div>
+
+                    <div className="space-y-4">
+                      <div className="bg-amber-500/10 rounded-xl p-4 border border-amber-400/30">
+                        <p className="text-amber-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          The "Raw Thought" Input.
+                        </p>
+                        <p className="text-amber-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          Before sending anything to GPT-4, I architected a <span className="text-amber-300 font-semibold">Safety Interceptor</span> to protect the platform.
+                        </p>
+                      </div>
+
+                      <div className="bg-amber-500/10 rounded-xl p-4 border border-amber-400/30">
+                        <p className="text-amber-300 font-semibold mb-2 font-mono text-sm md:text-base">Toxicity Detection:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          The system first scans the input (e.g., "I hate you and can't stand you") for <span className="text-red-300 font-semibold">self-harm, threats, or extreme hate speech</span>.
+                        </p>
+                      </div>
+
+                      <div className="bg-amber-500/10 rounded-xl p-4 border border-amber-400/30">
+                        <p className="text-amber-300 font-semibold mb-2 font-mono text-sm md:text-base">The "Refusal" Logic:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          If the input violates our policy, the backend immediately terminates the request with a specific flag, returning a message like <span className="text-amber-300 italic">"I can't help translating this message,"</span> rather than allowing the AI to "polish" abuse into a sendable format.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 3. The GPT-4 Integration & Prompt Engineering */}
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-10 h-10 rounded-xl bg-sky-500/30 flex items-center justify-center border border-sky-400/50">
+                        <span className="text-sky-300 font-bold font-mono">3</span>
+                      </div>
+                      <h3 className="font-serif text-xl md:text-2xl text-white">The GPT-4 Integration & Prompt Engineering</h3>
+                    </div>
+
+                    <div className="space-y-4 mb-6">
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          The Polished Output.
+                        </p>
+                        <p className="text-sky-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          We utilized the GPT-4 API for its nuance capabilities, but raw GPT is often too formal. I spent significant time fine-tuning the <span className="text-sky-300 font-semibold">prompt engineering parameters</span>:
+                        </p>
+                      </div>
+
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Instructions:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          I hard-coded strict rules into the API call: <span className="text-sky-300 italic">"Be concise but warm,"</span> <span className="text-sky-300 italic">"Add empathy but don't be formal,"</span> and <span className="text-sky-300 italic">"Sound natural, try to be less robotic"</span>.
+                        </p>
+                      </div>
+
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">Token Management:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          I configured the <code className="text-sky-300">max_tokens</code> (e.g., 1000) to ensure responses were substantial enough to convey meaning but concise enough to fit in a text bubble.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* First Image */}
+                    <div className="w-full mt-6 flex justify-center">
+                      <img
+                        src="/Projects/Clearr/184124FC-EAB1-4FD2-B6EA-56F2CE32C11F.jpeg"
+                        alt="GPT-4 Integration"
+                        className="w-full max-w-md h-auto rounded-2xl border-2 border-sky-300/40 shadow-lg shadow-sky-400/20"
+                      />
+                    </div>
+                  </div>
+
+                  {/* 4. The Response Object & History */}
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-10 h-10 rounded-xl bg-sky-500/30 flex items-center justify-center border border-sky-400/50">
+                        <span className="text-sky-300 font-bold font-mono">4</span>
+                      </div>
+                      <h3 className="font-serif text-xl md:text-2xl text-white">The Response Object & History</h3>
+                    </div>
+
+                    <div className="space-y-4 mb-6">
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          The API doesn't just return text. It returns a <span className="text-sky-300 font-semibold">structured object</span> that updates the frontend state immediately:
+                        </p>
+                      </div>
+
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">Rate Limit Tracking:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          It returns <code className="text-sky-300">translationsLeft</code> so the UI can warn the user if they are hitting their Tier limit.
+                        </p>
+                      </div>
+
+                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
+                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">History Sync:</p>
+                        <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
+                          It asynchronously saves the <code className="text-sky-300">{`{input, output, timestamp}`}</code> tuple to the Translation collection, allowing the user to view their "Version 1" vs. "Raw" comparison later.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Second Image */}
+                    <div className="w-full mt-6 flex justify-center">
+                      <img
+                        src="/Projects/Clearr/0E8DEBBF-E4D9-4631-898B-93BB6A2E8EC9.jpeg"
+                        alt="Response Object & History"
+                        className="w-full max-w-md h-auto rounded-2xl border-2 border-sky-300/40 shadow-lg shadow-sky-400/20"
+                      />
                     </div>
                   </div>
                 </div>
