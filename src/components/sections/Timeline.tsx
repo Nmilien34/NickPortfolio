@@ -47,12 +47,15 @@ function TimelineItem({ data }: TimelineItemProps) {
   const hasCard = data.title || data.description;
 
   return (
-    <div className="relative flex items-center justify-center py-16">
-      {/* Timeline Line (Top Half) - stops before bubble */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04]" style={{ height: 'calc(50% - 20px)' }} />
+    <div className="relative flex flex-col md:flex-row items-center justify-center py-8 md:py-16 gap-8 md:gap-0">
+      {/* Timeline Line (Top Half) - stops before year bubble */}
+      <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04]" style={{ height: 'calc(50% - 20px)' }} />
+
+      {/* Mobile Timeline - stops before year, resumes after card */}
+      <div className="md:hidden absolute top-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04] h-8" />
 
       {/* Year Bubble */}
-      <div className="absolute left-1/2 -translate-x-1/2 px-6 py-2 rounded-full border-2 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)] bg-background-color text-white font-mono text-sm z-10">
+      <div className="relative md:absolute left-1/2 md:-translate-x-1/2 px-6 py-2 rounded-full border-2 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)] bg-background-color text-white font-mono text-sm z-10">
         {data.year}
       </div>
 
@@ -93,22 +96,36 @@ function TimelineItem({ data }: TimelineItemProps) {
         </div>
       )}
 
-      {/* Mobile: Card appears below on separate row - NO overlap with year */}
-      {hasCard && data.title && (
-        <div className="md:hidden absolute top-[calc(50%+40px)] left-1/2 -translate-x-1/2 w-[90vw] max-w-sm">
+      {/* Mobile: Full card like "Early Years" */}
+      {hasCard && (
+        <div className="md:hidden w-full max-w-md px-4">
           <div
             onClick={handleCardClick}
-            className="px-4 py-3 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm cursor-pointer active:bg-white/10 transition-all"
+            className="w-full p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm active:bg-white/10 active:scale-95 transition-all duration-300 text-left cursor-pointer"
           >
-            <h3 className="font-serif text-sm text-white text-center leading-tight">
-              {data.title}
-            </h3>
+            {data.title && (
+              <h3 className="font-serif text-lg text-white mb-3">
+                {data.title}
+              </h3>
+            )}
+            {data.description && (
+              <p className="text-xs font-mono text-normal-text leading-relaxed mb-4">
+                {data.description}
+              </p>
+            )}
+            <div className="flex items-center gap-2 text-xs font-mono text-white/70">
+              <span>Tap to view details</span>
+              <span>→</span>
+            </div>
           </div>
         </div>
       )}
 
-      {/* Timeline Line (Bottom Half) - resumes after bubble and card */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04]" style={{ height: 'calc(50% - 20px)' }} />
+      {/* Timeline Line (Bottom Half) - resumes after card */}
+      <div className="hidden md:block absolute bottom-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04]" style={{ height: 'calc(50% - 20px)' }} />
+
+      {/* Mobile Timeline - resumes after card */}
+      <div className="md:hidden absolute bottom-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04] h-8" />
     </div>
   );
 }
@@ -205,17 +222,28 @@ function BraceCard({
         </div>
       </div>
 
-      {/* Mobile: Show compact card below first year bubble */}
+      {/* Mobile: Full card like other timeline cards */}
       <div
-        className="md:hidden absolute top-[calc(50%+40px)] left-1/2 -translate-x-1/2 w-[90vw] max-w-sm z-20"
+        className="md:hidden absolute top-[80px] left-1/2 -translate-x-1/2 w-full max-w-md px-4 z-20"
       >
         <div
           onClick={handleCardClick}
-          className="px-4 py-3 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm cursor-pointer active:bg-white/10 transition-all"
+          className="w-full p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm active:bg-white/10 active:scale-95 transition-all duration-300 text-left cursor-pointer"
         >
-          <h3 className="font-serif text-sm text-white text-center leading-tight">
-            {card.title}
-          </h3>
+          {card.title && (
+            <h3 className="font-serif text-lg text-white mb-3">
+              {card.title}
+            </h3>
+          )}
+          {card.description && (
+            <p className="text-xs font-mono text-normal-text leading-relaxed mb-4 line-clamp-3">
+              {card.description}
+            </p>
+          )}
+          <div className="flex items-center gap-2 text-xs font-mono text-white/70">
+            <span>Tap to view details</span>
+            <span>→</span>
+          </div>
         </div>
       </div>
     </>
