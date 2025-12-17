@@ -2,16 +2,16 @@ import { useNavigate } from 'react-router-dom';
 
 interface TimelineItemData {
   year: string;
-  yearRange?: string; // For mobile: "2018 - 2019" format
+  yearRange?: string; // For mobile display: "2018 - 2019" format
   title?: string;
   description?: string | React.ReactNode;
-  position?: 'left' | 'right'; // Which side the card appears on
+  position?: 'left' | 'right'; // Which side the card appears on (desktop only)
   highlights?: string[]; // Key highlights as bullet points
   photos?: string[]; // Photo URLs to display in the card
   photosCaption?: string; // Optional caption for photos section
   photoSections?: Array<{ caption: string; photos: string[]; videos?: string[] }>; // Multiple photo sections with captions
   brace?: {
-    endsAtYear: string; // Year where the brace ends
+    endsAtYear: string; // Year where the brace ends (desktop only)
     card: {
       title: string;
       description: string | React.ReactNode;
@@ -46,6 +46,7 @@ function TimelineItem({ data }: TimelineItemProps) {
   };
 
   const hasCard = data.title || data.description;
+  const hasContentForMobile = hasCard || data.yearRange;
 
   return (
     <>
@@ -80,36 +81,38 @@ function TimelineItem({ data }: TimelineItemProps) {
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04]" style={{ height: 'calc(50% - 20px)' }} />
       </div>
 
-      {/* Mobile Layout - Natural flow */}
-      <div className="md:hidden relative flex flex-col items-center py-6">
-        {/* Timeline segment before year */}
-        <div className="w-0.5 h-6 bg-[#EFBF04]" />
+      {/* Mobile Layout - Natural flow (only show if there's content) */}
+      {hasContentForMobile && (
+        <div className="md:hidden relative flex flex-col items-center py-6">
+          {/* Timeline segment before year */}
+          <div className="w-0.5 h-6 bg-[#EFBF04]" />
 
-        {/* Year bubble - show range if available */}
-        <div className="px-4 py-1.5 rounded-full border-2 border-white/30 shadow-[0_0_15px_rgba(255,255,255,0.15)] bg-background-color text-white font-mono text-xs z-10 my-3">
-          {data.yearRange || data.year}
-        </div>
+          {/* Year bubble - show range if available */}
+          <div className="px-4 py-1.5 rounded-full border-2 border-white/30 shadow-[0_0_15px_rgba(255,255,255,0.15)] bg-background-color text-white font-mono text-xs z-10 my-3">
+            {data.yearRange || data.year}
+          </div>
 
-        {/* Card if exists */}
-        {hasCard && (
-          <div className="w-[90vw] max-w-md mb-3">
-            <div
-              onClick={handleCardClick}
-              className="w-full p-4 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm active:bg-white/10 active:scale-[0.98] transition-all duration-200 text-left cursor-pointer"
-            >
-              {data.title && <h3 className="font-serif text-base text-white mb-2 leading-snug">{data.title}</h3>}
-              {data.description && <p className="text-xs font-mono text-normal-text leading-relaxed mb-3">{data.description}</p>}
-              <div className="flex items-center gap-2 text-[10px] font-mono text-white/70">
-                <span>Tap to view details</span>
-                <span>→</span>
+          {/* Card if exists */}
+          {hasCard && (
+            <div className="w-[90vw] max-w-md mb-3">
+              <div
+                onClick={handleCardClick}
+                className="w-full p-4 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm active:bg-white/10 active:scale-[0.98] transition-all duration-200 text-left cursor-pointer"
+              >
+                {data.title && <h3 className="font-serif text-base text-white mb-2 leading-snug">{data.title}</h3>}
+                {data.description && <p className="text-xs font-mono text-normal-text leading-relaxed mb-3">{data.description}</p>}
+                <div className="flex items-center gap-2 text-[10px] font-mono text-white/70">
+                  <span>Tap to view details</span>
+                  <span>→</span>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {/* Timeline segment after card */}
-        <div className="w-0.5 h-6 bg-[#EFBF04]" />
-      </div>
+          {/* Timeline segment after card */}
+          <div className="w-0.5 h-6 bg-[#EFBF04]" />
+        </div>
+      )}
     </>
   );
 }
@@ -118,65 +121,7 @@ interface TimelineProps {
   years: TimelineItemData[];
 }
 
-// Mobile component for braced year ranges
-function BracedYearMobile({
-  startYear,
-  endYear,
-  card,
-}: {
-  startYear: string;
-  endYear: string;
-  card: NonNullable<TimelineItemData['brace']>['card'];
-}) {
-  const navigate = useNavigate();
-
-  const titleToSlug = (title: string): string => {
-    return title
-      .toLowerCase()
-      .trim()
-      .replace(/[^\w\s-]/g, '')
-      .replace(/\s+/g, '-')
-      .replace(/-+/g, '-');
-  };
-
-  const handleCardClick = () => {
-    if (card.title) {
-      navigate(`/${titleToSlug(card.title)}`);
-    }
-  };
-
-  return (
-    <div className="flex flex-col items-center py-6">
-      {/* Timeline segment before year range */}
-      <div className="w-0.5 h-6 bg-[#EFBF04]" />
-
-      {/* Year range bubble */}
-      <div className="px-4 py-1.5 rounded-full border-2 border-white/30 shadow-[0_0_15px_rgba(255,255,255,0.15)] bg-background-color text-white font-mono text-xs z-10 my-3">
-        {startYear} - {endYear}
-      </div>
-
-      {/* Card for the braced period */}
-      <div className="w-[90vw] max-w-md mb-3">
-        <div
-          onClick={handleCardClick}
-          className="w-full p-4 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm active:bg-white/10 active:scale-[0.98] transition-all duration-200 text-left cursor-pointer"
-        >
-          {card.title && <h3 className="font-serif text-base text-white mb-2 leading-snug">{card.title}</h3>}
-          {card.description && <p className="text-xs font-mono text-normal-text leading-relaxed mb-3 line-clamp-3">{card.description}</p>}
-          <div className="flex items-center gap-2 text-[10px] font-mono text-white/70">
-            <span>Tap to view details</span>
-            <span>→</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Timeline segment after card */}
-      <div className="w-0.5 h-6 bg-[#EFBF04]" />
-    </div>
-  );
-}
-
-// Component for rendering brace with card
+// Component for rendering brace with card (desktop only)
 function BraceCard({
   startIndex,
   endIndex,
@@ -205,106 +150,57 @@ function BraceCard({
     }
   };
 
-  // Calculate brace height: spans from start to end (including both)
-  // Desktop: Each item is py-16 (64px top + 64px bottom = 128px total per item)
-  // Mobile: Each item is py-8 (32px top + 32px bottom = 64px total per item)
+  // Calculate brace height and position
   const braceHeight = (endIndex - startIndex) * itemHeight;
-  // Position card in the middle of the brace
-  const cardTopOffset = (braceHeight / 2) - 10; // Position card along the brace
+  const cardTopOffset = (braceHeight / 2) - 10;
 
   return (
-    <>
-      {/* Desktop brace - hidden on mobile */}
-      <div
-        className="hidden md:flex absolute right-1/2 mr-20 items-start gap-3 z-20"
-        style={{
-          top: `${itemHeight / 2}px`, // Start from middle of first item's bubble
-          height: `${braceHeight}px`
-        }}
-      >
-        {/* Description Card - furthest from timeline */}
+    <div
+      className="hidden md:flex absolute right-1/2 mr-20 items-start gap-3 z-20"
+      style={{
+        top: `${itemHeight / 2}px`,
+        height: `${braceHeight}px`
+      }}
+    >
+      {/* Card */}
+      <div style={{ marginTop: `${cardTopOffset}px` }} className="w-80">
         <div
-          style={{ marginTop: `${cardTopOffset}px` }}
-          className="w-80"
+          onClick={handleCardClick}
+          className="w-full p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-white/30 hover:scale-105 transition-all duration-300 text-left cursor-pointer"
         >
-          <div
-            onClick={handleCardClick}
-            className={`
-              w-full p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm
-              hover:bg-white/10 hover:border-white/30 hover:scale-105 transition-all duration-300
-              text-left cursor-pointer
-            `}
-          >
-            {card.title && (
-              <h3 className="font-serif text-xl text-white mb-3">
-                {card.title}
-              </h3>
-            )}
-            {card.description && (
-              <p className="text-sm font-mono text-normal-text leading-relaxed mb-4 line-clamp-3">
-                {card.description}
-              </p>
-            )}
-            <div className="flex items-center gap-2 text-xs font-mono text-white/70">
-              <span>Click to view details</span>
-              <span>→</span>
-            </div>
+          {card.title && <h3 className="font-serif text-xl text-white mb-3">{card.title}</h3>}
+          {card.description && <p className="text-sm font-mono text-normal-text leading-relaxed mb-4 line-clamp-3">{card.description}</p>}
+          <div className="flex items-center gap-2 text-xs font-mono text-white/70">
+            <span>Click to view details</span>
+            <span>→</span>
           </div>
         </div>
-        {/* Arrow - positioned at card location */}
-        <span className="text-white/50" style={{ marginTop: `${cardTopOffset}px` }}>←</span>
-        {/* Simple bracket - closest to timeline */}
-        <div className="relative" style={{ width: '20px', height: '100%' }}>
-          {/* Top horizontal line */}
-          <div className="absolute top-0 left-0 w-full h-0.5 bg-white/30" />
-          {/* Vertical line */}
-          <div className="absolute top-0 left-0 w-0.5 h-full bg-white/30" />
-          {/* Bottom horizontal line */}
-          <div className="absolute bottom-0 left-0 w-full h-0.5 bg-white/30" />
-        </div>
       </div>
-
-      {/* Mobile: Show brace card inline with the first year */}
-      <div className="md:hidden flex flex-col items-center -mt-6">
-        <div className="w-[90vw] max-w-md mb-3">
-          <div
-            onClick={handleCardClick}
-            className="w-full p-4 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm active:bg-white/10 active:scale-[0.98] transition-all duration-200 text-left cursor-pointer"
-          >
-            {card.title && <h3 className="font-serif text-base text-white mb-2 leading-snug">{card.title}</h3>}
-            {card.description && <p className="text-xs font-mono text-normal-text leading-relaxed mb-3 line-clamp-3">{card.description}</p>}
-            <div className="flex items-center gap-2 text-[10px] font-mono text-white/70">
-              <span>Tap to view details</span>
-              <span>→</span>
-            </div>
-          </div>
-        </div>
-        <div className="w-0.5 h-6 bg-[#EFBF04]" />
+      {/* Arrow */}
+      <span className="text-white/50" style={{ marginTop: `${cardTopOffset}px` }}>←</span>
+      {/* Bracket */}
+      <div className="relative" style={{ width: '20px', height: '100%' }}>
+        <div className="absolute top-0 left-0 w-full h-0.5 bg-white/30" />
+        <div className="absolute top-0 left-0 w-0.5 h-full bg-white/30" />
+        <div className="absolute bottom-0 left-0 w-full h-0.5 bg-white/30" />
       </div>
-    </>
+    </div>
   );
 }
 
 export function Timeline({ years }: TimelineProps) {
-  // Find braces and track which items are part of a brace
-  const braceMap = new Map<number, { startIndex: number; endIndex: number; card: NonNullable<TimelineItemData['brace']>['card'], endYear: string }>();
-  const itemsInBrace = new Set<number>();
+  // Find braces for desktop only
+  const braceMap = new Map<number, { startIndex: number; endIndex: number; card: NonNullable<TimelineItemData['brace']>['card'] }>();
 
   years.forEach((item, index) => {
     if (item.brace) {
-      // Find the end index
       const endIndex = years.findIndex(y => y.year === item.brace!.endsAtYear);
       if (endIndex !== -1 && item.brace.card) {
         braceMap.set(index, {
           startIndex: index,
           endIndex,
-          card: item.brace.card!,
-          endYear: item.brace.endsAtYear
+          card: item.brace.card
         });
-        // Mark all items from start to end as part of brace
-        for (let i = index; i <= endIndex; i++) {
-          itemsInBrace.add(i);
-        }
       }
     }
   });
@@ -314,43 +210,17 @@ export function Timeline({ years }: TimelineProps) {
       <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 w-full">
         {years.map((item, index) => {
           const braceInfo = braceMap.get(index);
-          const isInBraceButNotStart = itemsInBrace.has(index) && !braceMap.has(index);
 
           return (
             <div key={index} className="relative">
-              {/* Desktop: Show all years normally */}
-              <div className="hidden md:block">
-                <TimelineItem data={item} />
-                {braceInfo && index === braceInfo.startIndex && (
-                  <BraceCard
-                    startIndex={braceInfo.startIndex}
-                    endIndex={braceInfo.endIndex}
-                    card={braceInfo.card}
-                  />
-                )}
-              </div>
-
-              {/* Mobile: Skip middle years of brace, show range for start year */}
-              {!isInBraceButNotStart && (
-                <div className="md:hidden">
-                  {braceInfo ? (
-                    <>
-                      {/* If there's a regular card at this year, show it first */}
-                      {(item.title || item.description) && (
-                        <TimelineItem data={item} />
-                      )}
-                      {/* Then show the brace card */}
-                      <BracedYearMobile
-                        startYear={item.year}
-                        endYear={braceInfo.endYear}
-                        card={braceInfo.card}
-                      />
-                    </>
-                  ) : (
-                    // Regular year
-                    <TimelineItem data={item} />
-                  )}
-                </div>
+              <TimelineItem data={item} />
+              {/* Desktop only: Show brace card */}
+              {braceInfo && (
+                <BraceCard
+                  startIndex={braceInfo.startIndex}
+                  endIndex={braceInfo.endIndex}
+                  card={braceInfo.card}
+                />
               )}
             </div>
           );
@@ -361,29 +231,8 @@ export function Timeline({ years }: TimelineProps) {
 }
 
 // Full timeline data (2015-2026)
+// Note: 2015-2017 "Early Years" is shown in Hero.tsx, so we start from 2018 here
 export const fullTimelineData: TimelineItemData[] = [
-  {
-    year: '2015',
-    yearRange: '2015 - 2017',
-    title: 'Early Years in the US',
-    description: 'I landed in the US from Haiti in 2015 and immediately realized one thing: nothing here is given, everything is earned. While I was navigating high school and learning English, I wasn\'t just trying to fit in—I was trying to catch up. Got my first job at 16 working at the mall which I then quit to go work at KFC, which paid a lot more. I built my first real community here, made friends who helped me navigate the culture, and set a baseline for the work ethic that would define the next decade of my life. Also played lots of soccer.',
-    position: 'right',
-    brace: {
-      endsAtYear: '2017',
-      card: {
-        title: 'Early Years in the US',
-        description: 'I landed in the US from Haiti in 2015 and immediately realized one thing: nothing here is given, everything is earned. While I was navigating high school and learning English, I wasn\'t just trying to fit in—I was trying to catch up. Got my first job at 16 working at the mall which I then quit to go work at KFC, which paid a lot more. I built my first real community here, made friends who helped me navigate the culture, and set a baseline for the work ethic that would define the next decade of my life. Also played lots of soccer.',
-      },
-    },
-  },
-  {
-    year: '2016',
-    // No card - part of 2015-2017 brace period
-  },
-  {
-    year: '2017',
-    // No card - part of 2015-2017 brace period
-  },
   {
     year: '2018',
     yearRange: '2018 - 2019',
@@ -401,28 +250,6 @@ export const fullTimelineData: TimelineItemData[] = [
         ],
       },
     ],
-    brace: {
-      endsAtYear: '2019',
-      card: {
-        title: 'The Origin of the Hustle',
-        description: 'Prom and graduation were coming up, and I needed cash. So I quit KFC and replaced it with two jobs: Amazon Warehouse after school and selling furniture at Big Lots on weekends. With the money I was making, I started buying distressed cars at auctions, fixing them up, and flipping them for a profit. Between passing the ASVAB while barely speaking English, getting a decent SAT score without studying, and graduating in May 2019, I learned that I could outwork almost anyone, as long as the goal was clear.',
-        photoSections: [
-          {
-            caption: 'Memories from graduation year',
-            photos: [
-              '/images/gradYear/F68D635B-AEE4-4911-95C2-E9A8F21ED711 2.JPG',
-              '/images/gradYear/IMG_1400.jpg',
-              '/images/gradYear/IMG_1402.jpg',
-              '/images/gradYear/IMG_3229.JPG',
-            ],
-          },
-        ],
-      },
-    },
-  },
-  {
-    year: '2019',
-    // No card - part of 2018-2019 brace period
   },
   {
     year: '2020',
@@ -430,6 +257,11 @@ export const fullTimelineData: TimelineItemData[] = [
     title: 'Three Jobs & A Dream',
     description: 'I got into schools like Penn State, NYIT, and Pace, and was waitlisted by UPenn and Columbia, but I chose NJIT for engineering and the in-state tuition. To prepare for the cost, I just worked more. I left Amazon but started balancing three simultaneous jobs at Big Lots, BJ\'s, and Macy\'s while assembling furniture for friends on the side. I barely had a free minute, but I squeezed in community college classes to get a head start on my degree. It was exhausting, but it taught me time management in a way no classroom ever could.',
     position: 'right',
+  },
+  {
+    year: '2021',
+    yearRange: '2021 - 2023',
+    position: 'left',
     brace: {
       endsAtYear: '2023',
       card: {
@@ -484,16 +316,12 @@ export const fullTimelineData: TimelineItemData[] = [
     },
   },
   {
-    year: '2021',
-    // No card - part of 2020-2023 brace period
-  },
-  {
     year: '2022',
-    // No card - part of 2020-2023 brace period
+    // No card - part of 2021-2023 brace on desktop, hidden on mobile
   },
   {
     year: '2023',
-    // No card - end of 2020-2023 brace
+    // No card - part of 2021-2023 brace on desktop, hidden on mobile
   },
   {
     year: '2024',
