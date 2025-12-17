@@ -117,6 +117,64 @@ interface TimelineProps {
   years: TimelineItemData[];
 }
 
+// Mobile component for braced year ranges
+function BracedYearMobile({
+  startYear,
+  endYear,
+  card,
+}: {
+  startYear: string;
+  endYear: string;
+  card: NonNullable<TimelineItemData['brace']>['card'];
+}) {
+  const navigate = useNavigate();
+
+  const titleToSlug = (title: string): string => {
+    return title
+      .toLowerCase()
+      .trim()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-');
+  };
+
+  const handleCardClick = () => {
+    if (card.title) {
+      navigate(`/${titleToSlug(card.title)}`);
+    }
+  };
+
+  return (
+    <div className="flex flex-col items-center py-6">
+      {/* Timeline segment before year range */}
+      <div className="w-0.5 h-6 bg-[#EFBF04]" />
+
+      {/* Year range bubble */}
+      <div className="px-4 py-1.5 rounded-full border-2 border-white/30 shadow-[0_0_15px_rgba(255,255,255,0.15)] bg-background-color text-white font-mono text-xs z-10 my-3">
+        {startYear} - {endYear}
+      </div>
+
+      {/* Card for the braced period */}
+      <div className="w-[90vw] max-w-md mb-3">
+        <div
+          onClick={handleCardClick}
+          className="w-full p-4 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm active:bg-white/10 active:scale-[0.98] transition-all duration-200 text-left cursor-pointer"
+        >
+          {card.title && <h3 className="font-serif text-base text-white mb-2 leading-snug">{card.title}</h3>}
+          {card.description && <p className="text-xs font-mono text-normal-text leading-relaxed mb-3 line-clamp-3">{card.description}</p>}
+          <div className="flex items-center gap-2 text-[10px] font-mono text-white/70">
+            <span>Tap to view details</span>
+            <span>→</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Timeline segment after card */}
+      <div className="w-0.5 h-6 bg-[#EFBF04]" />
+    </div>
+  );
+}
+
 // Component for rendering brace with card
 function BraceCard({
   startIndex,
@@ -228,7 +286,7 @@ function BraceCard({
 
 export function Timeline({ years }: TimelineProps) {
   // Find braces and track which items are part of a brace
-  const braceMap = new Map<number, { startIndex: number; endIndex: number; card: NonNullable<TimelineItemData['brace']>['card'] }>();
+  const braceMap = new Map<number, { startIndex: number; endIndex: number; card: NonNullable<TimelineItemData['brace']>['card'], endYear: string }>();
   const itemsInBrace = new Set<number>();
 
   years.forEach((item, index) => {
@@ -236,7 +294,12 @@ export function Timeline({ years }: TimelineProps) {
       // Find the end index
       const endIndex = years.findIndex(y => y.year === item.brace!.endsAtYear);
       if (endIndex !== -1 && item.brace.card) {
-            braceMap.set(index, { startIndex: index, endIndex, card: item.brace.card! });
+        braceMap.set(index, {
+          startIndex: index,
+          endIndex,
+          card: item.brace.card!,
+          endYear: item.brace.endsAtYear
+        });
         // Mark all items from start to end as part of brace
         for (let i = index; i <= endIndex; i++) {
           itemsInBrace.add(i);
@@ -250,17 +313,37 @@ export function Timeline({ years }: TimelineProps) {
       <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 w-full">
         {years.map((item, index) => {
           const braceInfo = braceMap.get(index);
+          const isInBraceButNotStart = itemsInBrace.has(index) && !braceMap.has(index);
 
           return (
             <div key={index} className="relative">
-              <TimelineItem data={item} />
-              {/* Render brace starting from the item that defines it */}
-              {braceInfo && index === braceInfo.startIndex && (
-                <BraceCard
-                  startIndex={braceInfo.startIndex}
-                  endIndex={braceInfo.endIndex}
-                  card={braceInfo.card}
-                />
+              {/* Desktop: Show all years normally */}
+              <div className="hidden md:block">
+                <TimelineItem data={item} />
+                {braceInfo && index === braceInfo.startIndex && (
+                  <BraceCard
+                    startIndex={braceInfo.startIndex}
+                    endIndex={braceInfo.endIndex}
+                    card={braceInfo.card}
+                  />
+                )}
+              </div>
+
+              {/* Mobile: Skip middle years of brace, show range for start year */}
+              {!isInBraceButNotStart && (
+                <div className="md:hidden">
+                  {braceInfo ? (
+                    // Start of brace - show year range
+                    <BracedYearMobile
+                      startYear={item.year}
+                      endYear={braceInfo.endYear}
+                      card={braceInfo.card}
+                    />
+                  ) : (
+                    // Regular year
+                    <TimelineItem data={item} />
+                  )}
+                </div>
               )}
             </div>
           );
