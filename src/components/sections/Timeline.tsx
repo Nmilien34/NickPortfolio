@@ -261,7 +261,54 @@ export const fullTimelineData: TimelineItemData[] = [
   {
     year: '2021',
     yearRange: '2021 - 2023',
+    title: 'The Entrepreneur',
+    description: (
+      <>
+        I made the decision to quit my jobs and focus entirely on entrepreneurship. When COVID hit and classes went virtual, I suddenly had a lot more time to work and teach myself everything I could. I hustled hard. I went full-time entrepreneur. I scaled my car-flipping business to over $300k in inventory, managed a jewelry store with a $1.1M operating budget completely on my own, and even became a regional partner for <a href="https://www.bird.co/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Bird</a> Scooters, running logistics across two cities. It was a crash course in operations, logistics, and real-world P&L management. With the profits, I bought land in Haiti as a gift for my mom.
+      </>
+    ),
     position: 'left',
+    photoSections: [
+      {
+        caption: 'College & Early Hustle',
+        photos: [
+          '/images/HussleCollege/60019186770__60B76782-1BC6-4CAE-8788-BEF9141B18E3%204.JPG',
+          '/images/HussleCollege/IMG_0426%204.PNG',
+          '/images/HussleCollege/IMG_0558%204.PNG',
+          '/images/HussleCollege/IMG_0559%204.PNG',
+          '/images/HussleCollege/IMG_1221%204.jpg',
+          '/images/HussleCollege/IMG_1404.jpg',
+          '/images/HussleCollege/IMG_1405.jpg',
+          '/images/HussleCollege/IMG_1406.jpg',
+        ],
+      },
+      {
+        caption: 'Cars I Flipped',
+        photos: [
+          '/images/BecameEntrepreneur/carsSold/DAFD7AD8-97B6-49C8-B1DF-BB8C4B644019.JPG',
+          '/images/BecameEntrepreneur/carsSold/IMG_1433.jpg',
+          '/images/BecameEntrepreneur/carsSold/3853B68F-7729-456F-B1E7-E1B26BB32E92.JPG',
+          '/images/BecameEntrepreneur/carsSold/B94B3080-20EA-45CA-B14F-334B580D0BC7.JPG',
+          '/images/BecameEntrepreneur/carsSold/DEDCDA09-0AE6-4A3D-8E69-2F5279731B46.JPG',
+          '/images/BecameEntrepreneur/carsSold/IMG_4843.PNG',
+          '/images/BecameEntrepreneur/carsSold/IMG_4857.PNG',
+          '/images/BecameEntrepreneur/carsSold/86B9C278-B2C0-4F70-8900-1C04B5F40788.jpeg',
+          '/images/BecameEntrepreneur/carsSold/53022D27-B570-49B0-8761-EA98142D40B5.jpeg',
+          '/images/BecameEntrepreneur/carsSold/3ADBE203-8A4F-42F7-9837-1E33F3C1162A.jpeg',
+        ],
+      },
+      {
+        caption: 'Jewelry Store at Westchester Mall',
+        photos: [
+          '/images/BecameEntrepreneur/carsSold/jewelsstore/7FAACC54-9D2F-4F9C-8728-2091458E46C6.jpeg',
+          '/images/BecameEntrepreneur/carsSold/jewelsstore/E8E599F6-F1DB-4818-9AA8-393D2DB803B4.jpeg',
+          '/images/BecameEntrepreneur/carsSold/jewelsstore/4284133B-29EA-4139-9147-72157C7A1A0D.jpeg',
+          '/images/BecameEntrepreneur/carsSold/jewelsstore/8CCA7910-CCE3-4DC8-B15D-CF5369D8F561.jpeg',
+          '/images/BecameEntrepreneur/carsSold/jewelsstore/A1F8622F-8D40-45AB-9B8D-3E9EE46AF44C.JPG',
+          '/images/BecameEntrepreneur/carsSold/jewelsstore/13011B4F-C738-41B8-A906-1D0A4BA9E7A2.jpeg',
+        ],
+      },
+    ],
     brace: {
       endsAtYear: '2023',
       card: {
