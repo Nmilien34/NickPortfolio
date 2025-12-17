@@ -83,34 +83,39 @@ function TimelineItem({ data }: TimelineItemProps) {
 
       {/* Mobile Layout - Natural flow (only show if there's content) */}
       {hasContentForMobile && (
-        <div className="md:hidden relative flex flex-col items-center py-6">
-          {/* Timeline segment before year */}
-          <div className="w-0.5 h-6 bg-[#EFBF04]" />
+        <div className="md:hidden relative flex flex-col items-center">
+          {/* Timeline segment before year - taller for spacing */}
+          <div className="w-0.5 h-12 bg-[#EFBF04]" />
 
           {/* Year bubble - show range if available */}
-          <div className="px-4 py-1.5 rounded-full border-2 border-white/30 shadow-[0_0_15px_rgba(255,255,255,0.15)] bg-background-color text-white font-mono text-xs z-10 my-3">
+          <div className="px-4 py-1.5 rounded-full border-2 border-white/30 shadow-[0_0_15px_rgba(255,255,255,0.15)] bg-background-color text-white font-mono text-xs z-10">
             {data.yearRange || data.year}
           </div>
 
           {/* Card if exists */}
           {hasCard && (
-            <div className="w-[90vw] max-w-md mb-3">
-              <div
-                onClick={handleCardClick}
-                className="w-full p-4 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm active:bg-white/10 active:scale-[0.98] transition-all duration-200 text-left cursor-pointer"
-              >
-                {data.title && <h3 className="font-serif text-base text-white mb-2 leading-snug">{data.title}</h3>}
-                {data.description && <p className="text-xs font-mono text-normal-text leading-relaxed mb-3">{data.description}</p>}
-                <div className="flex items-center gap-2 text-[10px] font-mono text-white/70">
-                  <span>Tap to view details</span>
-                  <span>→</span>
+            <>
+              {/* Timeline segment connecting bubble to card */}
+              <div className="w-0.5 h-6 bg-[#EFBF04]" />
+
+              <div className="w-[90vw] max-w-md">
+                <div
+                  onClick={handleCardClick}
+                  className="w-full p-4 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm active:bg-white/10 active:scale-[0.98] transition-all duration-200 text-left cursor-pointer"
+                >
+                  {data.title && <h3 className="font-serif text-base text-white mb-2 leading-snug">{data.title}</h3>}
+                  {data.description && <p className="text-xs font-mono text-normal-text leading-relaxed mb-3">{data.description}</p>}
+                  <div className="flex items-center gap-2 text-[10px] font-mono text-white/70">
+                    <span>Tap to view details</span>
+                    <span>→</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </>
           )}
 
-          {/* Timeline segment after card */}
-          <div className="w-0.5 h-6 bg-[#EFBF04]" />
+          {/* Timeline segment after card - taller for spacing */}
+          <div className="w-0.5 h-12 bg-[#EFBF04]" />
         </div>
       )}
     </>
