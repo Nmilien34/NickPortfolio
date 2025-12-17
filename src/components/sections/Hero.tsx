@@ -327,25 +327,36 @@ export function Hero() {
           </div>
 
           {/* Mobile-only card - centered below timeline */}
-          <div className="md:hidden w-full max-w-md px-4 mt-8">
-            <div
-              onClick={() => {
-                console.log('Early Years card clicked');
-                navigate('/early-years');
-              }}
-              className="w-full p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-white/30 active:scale-95 transition-all duration-300 text-left cursor-pointer"
-            >
-              <h3 className="font-serif text-lg text-white mb-3">
-                Early Years in the US
-              </h3>
-              <p className="text-xs font-mono text-normal-text leading-relaxed mb-4">
-                I landed in the US from Haiti in 2015 and immediately realized one thing: nothing here is given, everything is earned. While I was navigating high school and learning English, I wasn't just trying to fit in—I was trying to catch up. Got my first job at 16 working at the mall which I then quit to go work at KFC, which paid a lot more. I built my first real community here, made friends who helped me navigate the culture, and set a baseline for the work ethic that would define the next decade of my life. Also played lots of soccer.
-              </p>
-              <div className="flex items-center gap-2 text-xs font-mono text-white/70">
-                <span>Tap to view details</span>
-                <span>→</span>
+          <div className="md:hidden flex flex-col items-center">
+            {/* Year range bubble for mobile */}
+            <div className="px-4 py-1.5 rounded-full border-2 border-white/30 shadow-[0_0_15px_rgba(255,255,255,0.15)] bg-background-color text-white font-mono text-xs z-10 my-3">
+              2015 - 2017
+            </div>
+
+            {/* Early Years card */}
+            <div className="w-[90vw] max-w-md mb-3">
+              <div
+                onClick={() => {
+                  console.log('Early Years card clicked');
+                  navigate('/early-years');
+                }}
+                className="w-full p-4 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm active:bg-white/10 active:scale-[0.98] transition-all duration-200 text-left cursor-pointer"
+              >
+                <h3 className="font-serif text-base text-white mb-2 leading-snug">
+                  Early Years in the US
+                </h3>
+                <p className="text-xs font-mono text-normal-text leading-relaxed mb-3">
+                  I landed in the US from Haiti in 2015 and immediately realized one thing: nothing here is given, everything is earned. While I was navigating high school and learning English, I wasn't just trying to fit in—I was trying to catch up. Got my first job at 16 working at the mall which I then quit to go work at KFC, which paid a lot more. I built my first real community here, made friends who helped me navigate the culture, and set a baseline for the work ethic that would define the next decade of my life. Also played lots of soccer.
+                </p>
+                <div className="flex items-center gap-2 text-[10px] font-mono text-white/70">
+                  <span>Tap to view details</span>
+                  <span>→</span>
+                </div>
               </div>
             </div>
+
+            {/* Timeline segment after card - connects to Timeline.tsx */}
+            <div className="w-0.5 h-6 bg-[#EFBF04]" />
           </div>
         </div>
       </div>
