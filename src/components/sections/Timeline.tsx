@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 
 interface TimelineItemData {
   year: string;
+  yearRange?: string; // For mobile: "2018 - 2019" format
   title?: string;
   description?: string | React.ReactNode;
   position?: 'left' | 'right'; // Which side the card appears on
@@ -84,9 +85,9 @@ function TimelineItem({ data }: TimelineItemProps) {
         {/* Timeline segment before year */}
         <div className="w-0.5 h-6 bg-[#EFBF04]" />
 
-        {/* Year bubble */}
+        {/* Year bubble - show range if available */}
         <div className="px-4 py-1.5 rounded-full border-2 border-white/30 shadow-[0_0_15px_rgba(255,255,255,0.15)] bg-background-color text-white font-mono text-xs z-10 my-3">
-          {data.year}
+          {data.yearRange || data.year}
         </div>
 
         {/* Card if exists */}
@@ -333,12 +334,18 @@ export function Timeline({ years }: TimelineProps) {
               {!isInBraceButNotStart && (
                 <div className="md:hidden">
                   {braceInfo ? (
-                    // Start of brace - show year range
-                    <BracedYearMobile
-                      startYear={item.year}
-                      endYear={braceInfo.endYear}
-                      card={braceInfo.card}
-                    />
+                    <>
+                      {/* If there's a regular card at this year, show it first */}
+                      {(item.title || item.description) && (
+                        <TimelineItem data={item} />
+                      )}
+                      {/* Then show the brace card */}
+                      <BracedYearMobile
+                        startYear={item.year}
+                        endYear={braceInfo.endYear}
+                        card={braceInfo.card}
+                      />
+                    </>
                   ) : (
                     // Regular year
                     <TimelineItem data={item} />
@@ -356,6 +363,20 @@ export function Timeline({ years }: TimelineProps) {
 // Full timeline data (2015-2026)
 export const fullTimelineData: TimelineItemData[] = [
   {
+    year: '2015',
+    yearRange: '2015 - 2017',
+    title: 'Early Years in the US',
+    description: 'I landed in the US from Haiti in 2015 and immediately realized one thing: nothing here is given, everything is earned. While I was navigating high school and learning English, I wasn\'t just trying to fit in—I was trying to catch up. Got my first job at 16 working at the mall which I then quit to go work at KFC, which paid a lot more. I built my first real community here, made friends who helped me navigate the culture, and set a baseline for the work ethic that would define the next decade of my life. Also played lots of soccer.',
+    position: 'right',
+    brace: {
+      endsAtYear: '2017',
+      card: {
+        title: 'Early Years in the US',
+        description: 'I landed in the US from Haiti in 2015 and immediately realized one thing: nothing here is given, everything is earned. While I was navigating high school and learning English, I wasn\'t just trying to fit in—I was trying to catch up. Got my first job at 16 working at the mall which I then quit to go work at KFC, which paid a lot more. I built my first real community here, made friends who helped me navigate the culture, and set a baseline for the work ethic that would define the next decade of my life. Also played lots of soccer.',
+      },
+    },
+  },
+  {
     year: '2016',
     // No card - part of 2015-2017 brace period
   },
@@ -365,10 +386,7 @@ export const fullTimelineData: TimelineItemData[] = [
   },
   {
     year: '2018',
-    // No card
-  },
-  {
-    year: '2019',
+    yearRange: '2018 - 2019',
     title: 'The Origin of the Hustle',
     description: 'Prom and graduation were coming up, and I needed cash. So I quit KFC and replaced it with two jobs: Amazon Warehouse after school and selling furniture at Big Lots on weekends. With the money I was making, I started buying distressed cars at auctions, fixing them up, and flipping them for a profit. Between passing the ASVAB while barely speaking English, getting a decent SAT score without studying, and graduating in May 2019, I learned that I could outwork almost anyone, as long as the goal was clear.',
     position: 'left',
@@ -383,9 +401,32 @@ export const fullTimelineData: TimelineItemData[] = [
         ],
       },
     ],
+    brace: {
+      endsAtYear: '2019',
+      card: {
+        title: 'The Origin of the Hustle',
+        description: 'Prom and graduation were coming up, and I needed cash. So I quit KFC and replaced it with two jobs: Amazon Warehouse after school and selling furniture at Big Lots on weekends. With the money I was making, I started buying distressed cars at auctions, fixing them up, and flipping them for a profit. Between passing the ASVAB while barely speaking English, getting a decent SAT score without studying, and graduating in May 2019, I learned that I could outwork almost anyone, as long as the goal was clear.',
+        photoSections: [
+          {
+            caption: 'Memories from graduation year',
+            photos: [
+              '/images/gradYear/F68D635B-AEE4-4911-95C2-E9A8F21ED711 2.JPG',
+              '/images/gradYear/IMG_1400.jpg',
+              '/images/gradYear/IMG_1402.jpg',
+              '/images/gradYear/IMG_3229.JPG',
+            ],
+          },
+        ],
+      },
+    },
+  },
+  {
+    year: '2019',
+    // No card - part of 2018-2019 brace period
   },
   {
     year: '2020',
+    yearRange: '2019 - 2020',
     title: 'Three Jobs & A Dream',
     description: 'I got into schools like Penn State, NYIT, and Pace, and was waitlisted by UPenn and Columbia, but I chose NJIT for engineering and the in-state tuition. To prepare for the cost, I just worked more. I left Amazon but started balancing three simultaneous jobs at Big Lots, BJ\'s, and Macy\'s while assembling furniture for friends on the side. I barely had a free minute, but I squeezed in community college classes to get a head start on my degree. It was exhausting, but it taught me time management in a way no classroom ever could.',
     position: 'right',
@@ -452,10 +493,11 @@ export const fullTimelineData: TimelineItemData[] = [
   },
   {
     year: '2023',
-    // No card
+    // No card - end of 2020-2023 brace
   },
   {
     year: '2024',
+    yearRange: '2023 - 2024',
     title: 'Realizing the Ceiling',
     description: (
       <>
@@ -567,6 +609,7 @@ export const fullTimelineData: TimelineItemData[] = [
   },
   {
     year: '2025',
+    yearRange: '2024 - 2025',
     title: 'Lawnstackin..',
     description: (
       <>
@@ -606,6 +649,7 @@ export const fullTimelineData: TimelineItemData[] = [
   },
   {
     year: '2026',
+    yearRange: '2025 - 2026',
     title: 'The Engineer',
     description: (
       <>
