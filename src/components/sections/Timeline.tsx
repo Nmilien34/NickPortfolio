@@ -47,77 +47,69 @@ function TimelineItem({ data }: TimelineItemProps) {
   const hasCard = data.title || data.description;
 
   return (
-    <div className="relative py-8 md:py-16">
-      {/* Timeline Line (Top Half) */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04]" style={{ height: 'calc(50% - 20px)' }} />
+    <>
+      {/* Desktop Layout - Absolute positioning */}
+      <div className="hidden md:block relative py-16">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04]" style={{ height: 'calc(50% - 20px)' }} />
 
-      {/* Year Bubble - Always centered on timeline */}
-      <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border-2 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)] bg-background-color text-white font-mono text-xs sm:text-sm z-10">
-        {data.year}
+        <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 px-6 py-2 rounded-full border-2 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)] bg-background-color text-white font-mono text-sm z-10">
+          {data.year}
+        </div>
+
+        {hasCard && (
+          <div className={`absolute -top-24 ${data.position === 'left' ? 'right-1/2 mr-16' : 'left-1/2 ml-16'} flex items-center gap-3 ${data.position === 'left' ? 'flex-row-reverse' : 'flex-row'}`}>
+            <span className="text-white/50 text-xl">
+              {data.position === 'left' && '←'}
+              {data.position === 'right' && '→'}
+            </span>
+            <div
+              onClick={handleCardClick}
+              className={`w-80 p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-white/30 hover:scale-105 transition-all duration-300 text-left cursor-pointer ${data.position === 'left' ? 'text-right' : 'text-left'}`}
+            >
+              {data.title && <h3 className="font-serif text-xl text-white mb-3">{data.title}</h3>}
+              {data.description && <p className="text-sm font-mono text-normal-text leading-relaxed mb-4 line-clamp-3">{data.description}</p>}
+              <div className="flex items-center gap-2 text-xs font-mono text-white/70">
+                <span>Click to view details</span>
+                <span>→</span>
+              </div>
+            </div>
+          </div>
+        )}
+
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04]" style={{ height: 'calc(50% - 20px)' }} />
       </div>
 
-      {/* Desktop Card with Arrow - hidden on mobile */}
-      {hasCard && (
-        <div className={`hidden md:flex absolute -top-24 ${data.position === 'left' ? 'right-1/2 mr-16' : 'left-1/2 ml-16'} items-center gap-3 ${data.position === 'left' ? 'flex-row-reverse' : 'flex-row'}`}>
-          <span className="text-white/50 text-xl">
-            {data.position === 'left' && '←'}
-            {data.position === 'right' && '→'}
-          </span>
-          <div
-            onClick={handleCardClick}
-            className={`
-              w-80 p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm
-              hover:bg-white/10 hover:border-white/30 hover:scale-105 transition-all duration-300
-              text-left cursor-pointer
-              ${data.position === 'left' ? 'text-right' : 'text-left'}
-            `}
-          >
-            {data.title && (
-              <h3 className="font-serif text-xl text-white mb-3">
-                {data.title}
-              </h3>
-            )}
-            {data.description && (
-              <p className="text-sm font-mono text-normal-text leading-relaxed mb-4 line-clamp-3">
-                {data.description}
-              </p>
-            )}
-            <div className="flex items-center gap-2 text-xs font-mono text-white/70">
-              <span>Click to view details</span>
-              <span>→</span>
+      {/* Mobile Layout - Natural flow */}
+      <div className="md:hidden relative flex flex-col items-center py-6">
+        {/* Timeline segment before year */}
+        <div className="w-0.5 h-6 bg-[#EFBF04]" />
+
+        {/* Year bubble */}
+        <div className="px-4 py-1.5 rounded-full border-2 border-white/30 shadow-[0_0_15px_rgba(255,255,255,0.15)] bg-background-color text-white font-mono text-xs z-10 my-3">
+          {data.year}
+        </div>
+
+        {/* Card if exists */}
+        {hasCard && (
+          <div className="w-[90vw] max-w-md mb-3">
+            <div
+              onClick={handleCardClick}
+              className="w-full p-4 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm active:bg-white/10 active:scale-[0.98] transition-all duration-200 text-left cursor-pointer"
+            >
+              {data.title && <h3 className="font-serif text-base text-white mb-2 leading-snug">{data.title}</h3>}
+              {data.description && <p className="text-xs font-mono text-normal-text leading-relaxed mb-3">{data.description}</p>}
+              <div className="flex items-center gap-2 text-[10px] font-mono text-white/70">
+                <span>Tap to view details</span>
+                <span>→</span>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* Mobile Card - shows below year bubble */}
-      {hasCard && (
-        <div className="md:hidden absolute left-1/2 -translate-x-1/2 top-[calc(50%+36px)] w-[90vw] max-w-md">
-          <div
-            onClick={handleCardClick}
-            className="w-full p-4 sm:p-5 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm active:bg-white/10 active:scale-95 transition-all duration-300 text-left cursor-pointer"
-          >
-            {data.title && (
-              <h3 className="font-serif text-base sm:text-lg text-white mb-2 sm:mb-3 leading-snug">
-                {data.title}
-              </h3>
-            )}
-            {data.description && (
-              <p className="text-xs font-mono text-normal-text leading-relaxed mb-3">
-                {data.description}
-              </p>
-            )}
-            <div className="flex items-center gap-2 text-[10px] sm:text-xs font-mono text-white/70">
-              <span>Tap to view details</span>
-              <span>→</span>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Timeline Line (Bottom Half) */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04]" style={{ height: 'calc(50% - 20px)' }} />
-    </div>
+        {/* Timeline segment after card */}
+        <div className="w-0.5 h-6 bg-[#EFBF04]" />
+      </div>
+    </>
   );
 }
 
@@ -213,29 +205,22 @@ function BraceCard({
         </div>
       </div>
 
-      {/* Mobile: Full card - positioned below first year */}
-      <div
-        className="md:hidden absolute left-1/2 -translate-x-1/2 top-[calc(50%+36px)] w-[90vw] max-w-md z-20"
-      >
-        <div
-          onClick={handleCardClick}
-          className="w-full p-4 sm:p-5 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm active:bg-white/10 active:scale-95 transition-all duration-300 text-left cursor-pointer"
-        >
-          {card.title && (
-            <h3 className="font-serif text-base sm:text-lg text-white mb-2 sm:mb-3 leading-snug">
-              {card.title}
-            </h3>
-          )}
-          {card.description && (
-            <p className="text-xs font-mono text-normal-text leading-relaxed mb-3 line-clamp-3">
-              {card.description}
-            </p>
-          )}
-          <div className="flex items-center gap-2 text-[10px] sm:text-xs font-mono text-white/70">
-            <span>Tap to view details</span>
-            <span>→</span>
+      {/* Mobile: Show brace card inline with the first year */}
+      <div className="md:hidden flex flex-col items-center -mt-6">
+        <div className="w-[90vw] max-w-md mb-3">
+          <div
+            onClick={handleCardClick}
+            className="w-full p-4 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm active:bg-white/10 active:scale-[0.98] transition-all duration-200 text-left cursor-pointer"
+          >
+            {card.title && <h3 className="font-serif text-base text-white mb-2 leading-snug">{card.title}</h3>}
+            {card.description && <p className="text-xs font-mono text-normal-text leading-relaxed mb-3 line-clamp-3">{card.description}</p>}
+            <div className="flex items-center gap-2 text-[10px] font-mono text-white/70">
+              <span>Tap to view details</span>
+              <span>→</span>
+            </div>
           </div>
         </div>
+        <div className="w-0.5 h-6 bg-[#EFBF04]" />
       </div>
     </>
   );
