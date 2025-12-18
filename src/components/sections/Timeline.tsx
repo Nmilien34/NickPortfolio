@@ -240,12 +240,14 @@ export function Timeline({ years }: TimelineProps) {
 
 // Full timeline data (2015-2026)
 // Note: 2015-2017 "Early Years" is shown in Hero.tsx, so we start from 2018 here
-export const fullTimelineData: TimelineItemData[] = [
+// This function generates timeline data with translations
+export function getTimelineData(t: (key: string) => string): TimelineItemData[] {
+  return [
   {
     year: '2018',
     yearRange: '2018 - 2019',
-    title: 'The Origin of the Hustle',
-    description: 'Prom and graduation were coming up, and I needed cash. So I quit KFC and replaced it with two jobs: Amazon Warehouse after school and selling furniture at Big Lots on weekends. With the money I was making, I started buying distressed cars at auctions, fixing them up, and flipping them for a profit. Between passing the ASVAB while barely speaking English, getting a decent SAT score without studying, and graduating in May 2019, I learned that I could outwork almost anyone, as long as the goal was clear.',
+    title: t('timeline.originHustle.title'),
+    description: t('timeline.originHustle.description'),
     position: 'left',
     photoSections: [
       {
@@ -262,19 +264,15 @@ export const fullTimelineData: TimelineItemData[] = [
   {
     year: '2020',
     yearRange: '2019 - 2020',
-    title: 'Three Jobs & A Dream',
-    description: 'I got into schools like Penn State, NYIT, and Pace, and was waitlisted by UPenn and Columbia, but I chose NJIT for engineering and the in-state tuition. To prepare for the cost, I just worked more. I left Amazon but started balancing three simultaneous jobs at Big Lots, BJ\'s, and Macy\'s while assembling furniture for friends on the side. I barely had a free minute, but I squeezed in community college classes to get a head start on my degree. It was exhausting, but it taught me time management in a way no classroom ever could.',
+    title: t('timeline.threeJobs.title'),
+    description: t('timeline.threeJobs.description'),
     position: 'right',
   },
   {
     year: '2021',
     yearRange: '2021 - 2023',
-    title: 'The Entrepreneur',
-    description: (
-      <>
-        I made the decision to quit my jobs and focus entirely on entrepreneurship. When COVID hit and classes went virtual, I suddenly had a lot more time to work and teach myself everything I could. I hustled hard. I went full-time entrepreneur. I scaled my car-flipping business to over $300k in inventory, managed a jewelry store with a $1.1M operating budget completely on my own, and even became a regional partner for <a href="https://www.bird.co/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Bird</a> Scooters, running logistics across two cities. It was a crash course in operations, logistics, and real-world P&L management. With the profits, I bought land in Haiti as a gift for my mom.
-      </>
-    ),
+    title: t('timeline.entrepreneur.title'),
+    description: t('timeline.entrepreneur.description'),
     position: 'left',
     photoSections: [
       {
@@ -320,12 +318,8 @@ export const fullTimelineData: TimelineItemData[] = [
     brace: {
       endsAtYear: '2023',
       card: {
-        title: 'The Entrepreneur',
-        description: (
-          <>
-            I made the decision to quit my jobs and focus entirely on entrepreneurship. When COVID hit and classes went virtual, I suddenly had a lot more time to work and teach myself everything I could. I hustled hard. I went full-time entrepreneur. I scaled my car-flipping business to over $300k in inventory, managed a jewelry store with a $1.1M operating budget completely on my own, and even became a regional partner for <a href="https://www.bird.co/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Bird</a> Scooters, running logistics across two cities. It was a crash course in operations, logistics, and real-world P&L management. With the profits, I bought land in Haiti as a gift for my mom.
-          </>
-        ),
+        title: t('timeline.entrepreneur.title'),
+        description: t('timeline.entrepreneur.description'),
         photoSections: [
           {
             caption: 'College & Early Hustle',
@@ -381,12 +375,8 @@ export const fullTimelineData: TimelineItemData[] = [
   {
     year: '2024',
     yearRange: '2023 - 2024',
-    title: 'Realizing the Ceiling',
-    description: (
-      <>
-        I hit a point where I realized physical businesses scale linearly, but software scales exponentially. I formalized my furniture business into "Popfame" and built a team of 30 people, including a dev team in Pakistan to build an on-demand service app. I joined every incubator I could find—<a href="https://portal.startups.microsoft.com/signup" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Microsoft for Startups</a>, <a href="https://aws.amazon.com/startups?trk=938248bc-b30f-4bcb-acb4-df70af8da1da&sc_channel=ps&ef_id=Cj0KCQiA_8TJBhDNARIsAPX5qxQKPMm2aod31iXHd4Qpfy8ysu8odBvydXOSdmmbQnU7AdCdIPpfFdwaAujhEALw_wcB:G:s&s_kwcid=AL!4422!3!755443966033!p!!g!!cloud%20services%20startup!22615154847!183199681671&gad_campaignid=22615154847&gbraid=0AAAAADjHtp92Hs7xwRKtKTdfvcsYvO3sX&gclid=Cj0KCQiA_8TJBhDNARIsAPX5qxQKPMm2aod31iXHd4Qpfy8ysu8odBvydXOSdmmbQnU7AdCdIPpfFdwaAujhEALw_wcB" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">AWS Activate</a>, <a href="https://www.business.rutgers.edu/news/black-and-latino-tech-initiative-awards-seed-money-three-entrepreneurs" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Rutgers BLT</a>. We also were working with Amazon and <a href="https://www.handybuddy.com/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">HandyBuddy</a> to bring in more service volume, but I realized that managing a massive team without a strong tech foundation was painful. I needed to stop just managing tech and start building it.
-      </>
-    ),
+    title: t('timeline.realizingCeiling.title'),
+    description: t('timeline.realizingCeiling.description'),
     position: 'right',
     photoSections: [
       {
@@ -493,12 +483,8 @@ export const fullTimelineData: TimelineItemData[] = [
   {
     year: '2025',
     yearRange: '2024 - 2025',
-    title: 'Lawnstackin..',
-    description: (
-      <>
-        The "Real Life" MBA. This was the year everything changed. I realized I needed to be in rooms with people smarter than me, so I teamed up with <a href="https://allen.mov/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Allen Yao</a> from Wharton and <a href="https://www.liamdu.com/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Liam Du</a> from Cornell, and together we built a team of eight across MIT, Harvard, and Georgia Tech and Upenn. We raised $150k, got into the <a href="https://www.alchemistaccelerator.com/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Alchemist Accelerator</a>, and processed $80k in GMV connecting homeowners to service providers. But the retention wasn't there. We were grinding door-to-door sales for low-margin services, and in November we made the hard, mature call to shut it down. It hurt—but it taught me the most important lesson in tech: Verify the problem before you build the solution.
-      </>
-    ),
+    title: t('timeline.lawnstackin.title'),
+    description: t('timeline.lawnstackin.description'),
     position: 'left',
     photoSections: [
       {
@@ -533,12 +519,9 @@ export const fullTimelineData: TimelineItemData[] = [
   {
     year: '2026',
     yearRange: '2025 - 2026',
-    title: 'The Engineer',
-    description: (
-      <>
-        After Lawnstack, I decided to get as technical as possible. I locked in for a month—200+ hours—teaching myself TypeScript and Vibe Coding. Then I teamed up with my former <a href="https://www.liamdu.com/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">CTO</a> to build <a href="https://www.boltzman.ai/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Boltzman AI</a>, which hit 3k users before we pivoted into <a href="https://voice.boltzman.ai/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Voice AI</a>. Now I'm running a profitable Voice AI <a href="https://enterprise.boltzman.ai/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">receptionist</a> service for restaurants. I hit a peak of ~$5k MRR with ~70% margins as a solopreneur wearing every hat. I'm dealing with some churn right now, but I've learned a ton in the process—from professors and mentors at Princeton, Caltech, Carnegie Mellon, Stanford, and more. (Shoutout to people like <a href="https://www.vivian-shen.com/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Vivian Shen</a>, <a href="https://natesimon.github.io/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Nathaniel Simon</a>, <a href="https://runingguan.com/about" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Ruming Guan</a>, <a href="https://www.rkcosner.com/bio/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Ryan Kazuo</a>, and <a href="https://byang.org/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Brian Yang</a>.) And now, I'm graduating this December with my engineering degree—not just as a student, but as a builder who has raised VC money, managed millions, failed fast, and learned to code his own way out.
-      </>
-    ),
+    title: t('timeline.engineer.title'),
+    description: t('timeline.engineer.description'),
     position: 'right',
   },
-];
+  ];
+}
