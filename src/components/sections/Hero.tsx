@@ -329,12 +329,15 @@ export function Hero() {
           {/* Mobile-only card - centered below timeline */}
           <div className="md:hidden flex flex-col items-center">
             {/* Year range bubble for mobile */}
-            <div className="px-4 py-1.5 rounded-full border-2 border-white/30 shadow-[0_0_15px_rgba(255,255,255,0.15)] bg-background-color text-white font-mono text-xs z-10 my-3">
+            <div className="px-4 py-1.5 rounded-full border-2 border-white/30 shadow-[0_0_15px_rgba(255,255,255,0.15)] bg-background-color text-white font-mono text-xs z-10">
               2015 - 2017
             </div>
 
+            {/* Timeline segment connecting bubble to card */}
+            <div className="w-0.5 h-16 bg-[#EFBF04]" />
+
             {/* Early Years card */}
-            <div className="w-[90vw] max-w-md mb-3">
+            <div className="w-[90vw] max-w-md">
               <div
                 onClick={() => {
                   console.log('Early Years card clicked');
@@ -356,7 +359,7 @@ export function Hero() {
             </div>
 
             {/* Timeline segment after card - connects to Timeline.tsx */}
-            <div className="w-0.5 h-6 bg-[#EFBF04]" />
+            <div className="w-0.5 h-8 bg-[#EFBF04]" />
           </div>
         </div>
       </div>
