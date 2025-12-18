@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "about": "About",
+    "resume": "Resume",
+    "learnings": "Learnings"
+  },
+  "hero": {
+    "subtitle": "Technical Product Manager & Electronics Engineer",
+    "description": "I like finding the problems that keep the experience from being great",
+    "voiceAssistant": {
+      "connecting": "Connecting...",
+      "listening": "Listening...",
+      "processing": "Processing...",
+      "speaking": "Speaking...",
+      "speak": "Speak to Assistant",
+      "instruction": "Press to ask about my work, skills, or availability."
+    },
+    "timelineStart": "the beginning",
+    "cameToUS": "Came to live in the US",
+    "closingStatement": "Since leaving Haiti, I've been chasing a dream I've had since I was 10. The past decade has been filled with incredible people who shaped my journey. I'm grateful for their guidance and hope to pay it forward. Here's what I've been building."
+  },
+  "timeline": {
+    "earlyYears": {
+      "title": "Early Years in the US",
+      "description": "I landed in the US from Haiti in 2015 and immediately realized one thing: nothing here is given, everything is earned. While I was navigating high school and learning English, I wasn't just trying to fit in—I was trying to catch up. Got my first job at 16 working at the mall which I then quit to go work at KFC, which paid a lot more. I built my first real community here, made friends who helped me navigate the culture, and set a baseline for the work ethic that would define the next decade of my life. Also played lots of soccer."
+    },
+    "originHustle": {
+      "title": "The Origin of the Hustle",
+      "description": "Prom and graduation were coming up, and I needed cash. So I quit KFC and replaced it with two jobs: Amazon Warehouse after school and selling furniture at Big Lots on weekends. With the money I was making, I started buying distressed cars at auctions, fixing them up, and flipping them for a profit. Between passing the ASVAB while barely speaking English, getting a decent SAT score without studying, and graduating in May 2019, I learned that I could outwork almost anyone, as long as the goal was clear."
+    },
+    "threeJobs": {
+      "title": "Three Jobs & A Dream",
+      "description": "I got into schools like Penn State, NYIT, and Pace, and was waitlisted by UPenn and Columbia, but I chose NJIT for engineering and the in-state tuition. To prepare for the cost, I just worked more. I left Amazon but started balancing three simultaneous jobs at Big Lots, BJ's, and Macy's while assembling furniture for friends on the side. I barely had a free minute, but I squeezed in community college classes to get a head start on my degree. It was exhausting, but it taught me time management in a way no classroom ever could."
+    },
+    "entrepreneur": {
+      "title": "The Entrepreneur",
+      "description": "I made the decision to quit my jobs and focus entirely on entrepreneurship. When COVID hit and classes went virtual, I suddenly had a lot more time to work and teach myself everything I could. I hustled hard. I went full-time entrepreneur. I scaled my car-flipping business to over $300k in inventory, managed a jewelry store with a $1.1M operating budget completely on my own, and even became a regional partner for Bird Scooters, running logistics across two cities. It was a crash course in operations, logistics, and real-world P&L management. With the profits, I bought land in Haiti as a gift for my mom."
+    },
+    "realizingCeiling": {
+      "title": "Realizing the Ceiling",
+      "description": "I hit a point where I realized physical businesses scale linearly, but software scales exponentially. I formalized my furniture business into \"Popfame\" and built a team of 30 people, including a dev team in Pakistan to build an on-demand service app. I joined every incubator I could find—Microsoft for Startups, AWS Activate, Rutgers BLT. We also were working with Amazon and HandyBuddy to bring in more service volume, but I realized that managing a massive team without a strong tech foundation was painful. I needed to stop just managing tech and start building it."
+    },
+    "lawnstackin": {
+      "title": "Lawnstackin..",
+      "description": "The \"Real Life\" MBA. This was the year everything changed. I realized I needed to be in rooms with people smarter than me, so I teamed up with Allen Yao from Wharton and Liam Du from Cornell, and together we built a team of eight across MIT, Harvard, and Georgia Tech and Upenn. We raised $150k, got into the Alchemist Accelerator, and processed $80k in GMV connecting homeowners to service providers. But the retention wasn't there. We were grinding door-to-door sales for low-margin services, and in November we made the hard, mature call to shut it down. It hurt—but it taught me the most important lesson in tech: Verify the problem before you build the solution."
+    },
+    "engineer": {
+      "title": "The Engineer",
+      "description": "After Lawnstack, I decided to get as technical as possible. I locked in for a month—200+ hours—teaching myself TypeScript and Vibe Coding. Then I teamed up with my former CTO to build Boltzman AI, which hit 3k users before we pivoted into Voice AI. Now I'm running a profitable Voice AI receptionist service for restaurants. I hit a peak of ~$5k MRR with ~70% margins as a solopreneur wearing every hat. I'm dealing with some churn right now, but I've learned a ton in the process—from professors and mentors at Princeton, Caltech, Carnegie Mellon, Stanford, and more. And now, I'm graduating this December with my engineering degree—not just as a student, but as a builder who has raised VC money, managed millions, failed fast, and learned to code his own way out."
+    }
+  },
+  "common": {
+    "clickDetails": "Click to view details",
+    "tapDetails": "Tap to view details",
+    "backButton": "Back",
+    "notFound": "Project not found",
+    "goBack": "Go Back"
+  },
+  "footer": {
+    "madeWith": "made by Nick with love"
+  },
+  "photos": {
+    "firstDay": "first day of high school",
+    "visiting": "visiting friends at Cornell",
+    "timelineIndicator": "~10 years in the us"
+  }
+}

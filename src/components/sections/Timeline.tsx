@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 interface TimelineItemData {
   year: string;
@@ -29,6 +30,7 @@ interface TimelineItemProps {
 
 function TimelineItem({ data }: TimelineItemProps) {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const titleToSlug = (title: string): string => {
     return title
@@ -71,7 +73,7 @@ function TimelineItem({ data }: TimelineItemProps) {
               {data.title && <h3 className="font-serif text-xl text-white mb-3">{data.title}</h3>}
               {data.description && <p className="text-sm font-mono text-normal-text leading-relaxed mb-4 line-clamp-3">{data.description}</p>}
               <div className="flex items-center gap-2 text-xs font-mono text-white/70">
-                <span>Click to view details</span>
+                <span>{t('common.clickDetails')}</span>
                 <span>→</span>
               </div>
             </div>
@@ -106,7 +108,7 @@ function TimelineItem({ data }: TimelineItemProps) {
                   {data.title && <h3 className="font-serif text-base text-white mb-2 leading-snug">{data.title}</h3>}
                   {data.description && <p className="text-xs font-mono text-normal-text leading-relaxed mb-3">{data.description}</p>}
                   <div className="flex items-center gap-2 text-[10px] font-mono text-white/70">
-                    <span>Tap to view details</span>
+                    <span>{t('common.tapDetails')}</span>
                     <span>→</span>
                   </div>
                 </div>
@@ -139,6 +141,7 @@ function BraceCard({
   itemHeight?: number;
 }) {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const titleToSlug = (title: string): string => {
     return title
@@ -176,7 +179,7 @@ function BraceCard({
           {card.title && <h3 className="font-serif text-xl text-white mb-3">{card.title}</h3>}
           {card.description && <p className="text-sm font-mono text-normal-text leading-relaxed mb-4 line-clamp-3">{card.description}</p>}
           <div className="flex items-center gap-2 text-xs font-mono text-white/70">
-            <span>Click to view details</span>
+            <span>{t('common.clickDetails')}</span>
             <span>→</span>
           </div>
         </div>

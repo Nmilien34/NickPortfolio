@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "about": "À propos",
+    "resume": "CV",
+    "learnings": "Apprentissages"
+  },
+  "hero": {
+    "subtitle": "Chef de Produit Technique & Ingénieur en Électronique",
+    "description": "J'aime trouver les problèmes qui empêchent l'expérience d'être excellente",
+    "voiceAssistant": {
+      "connecting": "Connexion...",
+      "listening": "Écoute...",
+      "processing": "Traitement...",
+      "speaking": "Parle...",
+      "speak": "Parler à l'assistant",
+      "instruction": "Appuyez pour poser des questions sur mon travail, mes compétences ou ma disponibilité."
+    },
+    "timelineStart": "le commencement",
+    "cameToUS": "Arrivé aux États-Unis",
+    "closingStatement": "Depuis mon départ d'Haïti, je poursuis un rêve que j'ai depuis l'âge de 10 ans. La dernière décennie a été remplie de personnes incroyables qui ont façonné mon parcours. Je suis reconnaissant pour leurs conseils et j'espère rendre la pareille. Voici ce que j'ai construit."
+  },
+  "timeline": {
+    "earlyYears": {
+      "title": "Premières années aux États-Unis",
+      "description": "J'ai atterri aux États-Unis depuis Haïti en 2015 et j'ai immédiatement réalisé une chose : rien n'est donné ici, tout se gagne. Pendant que je naviguais au lycée et que j'apprenais l'anglais, je n'essayais pas seulement de m'intégrer, j'essayais de rattraper mon retard. J'ai eu mon premier emploi à 16 ans en travaillant au centre commercial, que j'ai ensuite quitté pour aller travailler chez KFC, qui payait beaucoup plus. J'ai construit ma première vraie communauté ici, je me suis fait des amis qui m'ont aidé à naviguer dans la culture, et j'ai établi une base pour l'éthique de travail qui définirait la prochaine décennie de ma vie. J'ai aussi beaucoup joué au football."
+    },
+    "originHustle": {
+      "title": "L'origine de l'agitation",
+      "description": "Le bal de promo et la remise des diplômes approchaient, et j'avais besoin d'argent. Alors j'ai quitté KFC et je l'ai remplacé par deux emplois : entrepôt Amazon après l'école et vente de meubles chez Big Lots le week-end. Avec l'argent que je gagnais, j'ai commencé à acheter des voitures en difficulté aux enchères, à les réparer et à les revendre pour réaliser un profit. Entre réussir l'ASVAB alors que je parlais à peine anglais, obtenir un score SAT décent sans étudier, et obtenir mon diplôme en mai 2019, j'ai appris que je pouvais surpasser presque n'importe qui, tant que l'objectif était clair."
+    },
+    "threeJobs": {
+      "title": "Trois emplois et un rêve",
+      "description": "J'ai été accepté dans des écoles comme Penn State, NYIT et Pace, et j'étais sur liste d'attente pour UPenn et Columbia, mais j'ai choisi NJIT pour l'ingénierie et les frais de scolarité d'État. Pour me préparer au coût, j'ai simplement travaillé davantage. J'ai quitté Amazon mais j'ai commencé à jongler avec trois emplois simultanés chez Big Lots, BJ's et Macy's tout en assemblant des meubles pour des amis à côté. J'avais à peine une minute de libre, mais j'ai réussi à suivre des cours dans un collège communautaire pour prendre de l'avance sur mon diplôme. C'était épuisant, mais cela m'a appris la gestion du temps d'une manière qu'aucune salle de classe n'aurait pu faire."
+    },
+    "entrepreneur": {
+      "title": "L'entrepreneur",
+      "description": "J'ai pris la décision de quitter mes emplois et de me concentrer entièrement sur l'entrepreneuriat. Quand COVID a frappé et que les cours sont devenus virtuels, j'ai soudainement eu beaucoup plus de temps pour travailler et m'apprendre tout ce que je pouvais. J'ai travaillé dur. Je suis devenu entrepreneur à temps plein. J'ai fait passer mon entreprise de revente de voitures à plus de 300 000 $ d'inventaire, j'ai géré une bijouterie avec un budget de fonctionnement de 1,1 million de dollars complètement seul, et je suis même devenu partenaire régional pour Bird Scooters, gérant la logistique dans deux villes. C'était un cours accéléré en opérations, logistique et gestion de P&L dans le monde réel. Avec les bénéfices, j'ai acheté un terrain en Haïti comme cadeau pour ma mère."
+    },
+    "realizingCeiling": {
+      "title": "Réaliser le plafond",
+      "description": "J'ai atteint un point où j'ai réalisé que les entreprises physiques évoluent linéairement, mais les logiciels évoluent exponentiellement. J'ai formalisé mon entreprise de meubles en 'Popfame' et j'ai constitué une équipe de 30 personnes, y compris une équipe de développement au Pakistan pour créer une application de services à la demande. J'ai rejoint tous les incubateurs que je pouvais trouver - Microsoft for Startups, AWS Activate, Rutgers BLT. Nous travaillions également avec Amazon et HandyBuddy pour augmenter le volume de services, mais j'ai réalisé que gérer une équipe massive sans une base technologique solide était douloureux. Je devais arrêter de simplement gérer la technologie et commencer à la construire."
+    },
+    "lawnstackin": {
+      "title": "Lawnstackin..",
+      "description": "Le MBA de la 'Vraie Vie'. C'était l'année où tout a changé. J'ai réalisé que je devais être dans des salles avec des gens plus intelligents que moi, alors je me suis associé avec Allen Yao de Wharton et Liam Du de Cornell, et ensemble nous avons constitué une équipe de huit personnes à travers MIT, Harvard, Georgia Tech et UPenn. Nous avons levé 150 000 $, nous sommes entrés dans l'Alchemist Accelerator, et nous avons traité 80 000 $ de GMV en connectant les propriétaires aux prestataires de services. Mais la rétention n'était pas au rendez-vous. Nous faisions du porte-à-porte pour des services à faible marge, et en novembre nous avons pris la décision difficile et mature de fermer. Ça a fait mal, mais ça m'a appris la leçon la plus importante en technologie : Vérifiez le problème avant de construire la solution."
+    },
+    "engineer": {
+      "title": "L'ingénieur",
+      "description": "Après Lawnstack, j'ai décidé de devenir aussi technique que possible. Je me suis enfermé pendant un mois - plus de 200 heures - pour m'apprendre TypeScript et le Vibe Coding. Ensuite, je me suis associé avec mon ancien CTO pour créer Boltzman AI, qui a atteint 3 000 utilisateurs avant de pivoter vers la Voice AI. Maintenant, je gère un service rentable de réceptionniste Voice AI pour les restaurants. J'ai atteint un pic d'environ 5 000 $ de MRR avec environ 70 % de marges en tant que solopreneur portant tous les chapeaux. Je fais face à un peu de désabonnement en ce moment, mais j'ai énormément appris dans le processus - de professeurs et mentors à Princeton, Caltech, Carnegie Mellon, Stanford, et plus encore. Et maintenant, je diplôme ce décembre avec mon diplôme d'ingénieur - non seulement en tant qu'étudiant, mais en tant que constructeur qui a levé de l'argent VC, géré des millions, échoué rapidement, et appris à coder pour s'en sortir."
+    }
+  },
+  "common": {
+    "clickDetails": "Cliquez pour voir les détails",
+    "tapDetails": "Appuyez pour voir les détails",
+    "backButton": "Retour",
+    "notFound": "Projet non trouvé",
+    "goBack": "Retourner"
+  },
+  "footer": {
+    "madeWith": "fait par Nick avec amour"
+  },
+  "photos": {
+    "firstDay": "premier jour de lycée",
+    "visiting": "visitant des amis à Cornell",
+    "timelineIndicator": "~10 ans aux États-Unis"
+  }
+}

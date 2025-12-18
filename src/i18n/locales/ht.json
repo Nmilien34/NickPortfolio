@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "about": "Konsènan",
+    "resume": "Rezime",
+    "learnings": "Aprann"
+  },
+  "hero": {
+    "subtitle": "Manadjè Pwodui Teknik & Enjenyè Elektwonik",
+    "description": "Mwen renmen jwenn pwoblèm ki anpeche eksperyans lan bon",
+    "voiceAssistant": {
+      "connecting": "Koneksyon...",
+      "listening": "Koute...",
+      "processing": "Trete...",
+      "speaking": "Pale...",
+      "speak": "Pale ak asistan an",
+      "instruction": "Peze pou poze kesyon sou travay mwen, konpetans mwen, oswa disponibilite mwen."
+    },
+    "timelineStart": "kòmansman an",
+    "cameToUS": "Rive nan Etazini",
+    "closingStatement": "Depi m kite Ayiti, mwen ap chache yon rèv mwen genyen depi m te gen 10 an. Dènye dis ane yo te ranpli ak moun enkyayab ki te fòme vwayaj mwen. Mwen rekonesan pou konsey yo epi mwen espere ranvwaye sa. Men sa m ap konstwi."
+  },
+  "timeline": {
+    "earlyYears": {
+      "title": "Premye ane nan Etazini",
+      "description": "Mwen rive Etazini soti Ayiti an 2015 epi imedyatman mwen reyalize yon bagay: anyen pa bay isit la, tout bagay merite. Pandan mwen t ap navige lekòl segondè epi aprann angle, mwen pat sèlman eseye rantre nan sosyete a, mwen t ap eseye ratrape. Mwen jwenn premye travay mwen nan 16 an kote mwen t ap travay nan sant komèsyal la, epi apre sa mwen kite l pou ale travay nan KFC, ki te peye anpil plis. Mwen bati premye vrè kominote mwen isit la, mwen fè zanmi ki ede m navige nan kilti a, epi mwen etabli yon baz pou travay di ki t ap defini dis lane k ap vini yo nan vi mwen. Mwen te jwe anpil foutbòl tou."
+    },
+    "originHustle": {
+      "title": "Orijin travay di a",
+      "description": "Bal gradyasyon ak seremoni diplòm t ap vini, epi mwen te bezwen kòb. Donk mwen kite KFC epi mwen ranplase l ak de travay: depo Amazon apre lekòl epi vann mèb nan Big Lots pandan wikenn. Avèk lajan mwen t ap fè, mwen kòmanse achte machin ki an move kondisyon nan vant, ranje yo, epi revann yo pou fè pwofi. Ant pase ASVAB pandan mwen te apèn pale angle, jwenn yon bon nòt SAT san etidye, epi diplome nan me 2019, mwen aprann ke mwen te kapab travay pi di pase prèske nenpòt moun, osi lontan objektif la te klè."
+    },
+    "threeJobs": {
+      "title": "Twa travay ak yon rèv",
+      "description": "Mwen antre nan lekòl tankou Penn State, NYIT, ak Pace, epi yo te mete m sou lis datant pou UPenn ak Columbia, men mwen chwazi NJIT pou enjenyè ak frè lekòl leta a. Pou prepare pou depans yo, mwen jis travay plis. Mwen kite Amazon men mwen kòmanse balanse twa travay an menm tan nan Big Lots, BJ's, ak Macy's pandan mwen t ap monte mèb pou zanmi sou kote. Mwen te apèn gen yon ti minit lib, men mwen te reyisi swiv kou nan yon kolèj kominotè pou pran avans sou diplòm mwen. Li te fatige anpil, men li te aprann mwen jesyon tan nan yon fason okenn klas pa t ap janm kapab fè."
+    },
+    "entrepreneur": {
+      "title": "Antreprenè a",
+      "description": "Mwen te pran desizyon pou kite travay mwen yo epi konsantre nèt sou antrepreneryat. Lè COVID frape epi kou yo vin vityèl, mwen te sibitman gen plis tan pou travay epi aprann tèt mwen tout sa mwen te kapab. Mwen travay di anpil. Mwen vin antreprenè tout tan. Mwen agrandi biznis machin mwen a pou rive sou plis pase $300k nan envantè, mwen te jere yon magazen bijou ak yon bidjè operasyon $1.1M konplètman pou kont mwen, epi menm vin patnè rejyonal pou Bird Scooters, kote mwen t ap jere lojistik nan de vil. Sa te yon kou rapid sou operasyon, lojistik, ak jesyon P&L nan mond reyèl la. Avèk pwofi yo, mwen achte tè nan Ayiti kòm kado pou manman m."
+    },
+    "realizingCeiling": {
+      "title": "Realize limit la",
+      "description": "Mwen rive nan yon pwen kote mwen reyalize biznis fizik evolye linearman, men lojisyèl evolye eksponansyèlman. Mwen fòmalize biznis mèb mwen an 'Popfame' epi mwen bati yon ekip 30 moun, ki enkli yon ekip devlopman nan Pakistan pou kreye yon aplikasyon sèvis sou demand. Mwen antre nan tout enkibatè mwen te kapab jwenn—Microsoft for Startups, AWS Activate, Rutgers BLT. Nou te travay tou avèk Amazon ak HandyBuddy pou ogmante volim sèvis yo, men mwen reyalize ke jere yon gwo ekip san yon fondasyon teknik solid te difisil anpil. Mwen te bezwen sispann jis jere teknoloji a epi kòmanse konstwi li."
+    },
+    "lawnstackin": {
+      "title": "Lawnstackin..",
+      "description": "MBA nan 'Lavi Reyèl' la. Sa te ane kote tout bagay te chanje. Mwen reyalize mwen te bezwen nan sal ak moun ki pi entelijan pase mwen, kidonk mwen asosye ak Allen Yao nan Wharton ak Liam Du nan Cornell, epi ansanm nou bati yon ekip uit moun atravè MIT, Harvard, Georgia Tech ak UPenn. Nou leve $150k, nou antre nan Alchemist Accelerator, epi nou trete $80k nan GMV konekte pwopriyetè kay yo ak founisè sèvis yo. Men retansyon an pat la. Nou t ap fè vant pòt-a-pòt pou sèvis ak mach fèb, epi nan mwa novanm nou pran desizyon difisil epi mat pou fèmen l. Li te fè mal—men li aprann mwen leson ki pi enpòtan nan teknoloji: Verifye pwoblèm lan anvan w konstwi solisyon an."
+    },
+    "engineer": {
+      "title": "Enjenyè a",
+      "description": "Apre Lawnstack, mwen deside vin pi teknik ke posib. Mwen fèmen tèt mwen pou yon mwa—plis pase 200 èdtan—aprann tèt mwen TypeScript ak Vibe Coding. Apre sa, mwen asosye ak ansyen CTO mwen pou kreye Boltzman AI, ki te rive 3k itilizatè anvan nou pivote nan Voice AI. Kounye a mwen ap jere yon sèvis resepsyonnis Voice AI ki pwofilab pou restoran. Mwen te rive nan yon pik anviwon $5k MRR ak anviwon 70% maj kòm yon soloprenè ki pote tout chapo yo. Mwen ap fè fas ak kèk pwoblèm retansyon kounye a, men mwen te aprann anpil nan pwosesis la—nan men pwofesè ak mantò nan Princeton, Caltech, Carnegie Mellon, Stanford, ak plis ankò. Epi kounye a, mwen ap diplome mwa desanm sa a avèk diplòm enjenyè mwen—pa sèlman kòm yon etidyan, men kòm yon bâtisè ki leve lajan VC, jere dè milyon, echwe rapid, epi aprann kòde pou soti nan pwoblèm yo."
+    }
+  },
+  "common": {
+    "clickDetails": "Klike pou wè detay yo",
+    "tapDetails": "Tape pou wè detay yo",
+    "backButton": "Retounen",
+    "notFound": "Pwojè pa jwenn",
+    "goBack": "Ale tounen"
+  },
+  "footer": {
+    "madeWith": "fèt pa Nick avèk lanmou"
+  },
+  "photos": {
+    "firstDay": "premye jou nan lekòl segondè",
+    "visiting": "vizite zanmi nan Cornell",
+    "timelineIndicator": "~10 lane nan Etazini"
+  }
+}

@@ -13,8 +13,10 @@
     "@elevenlabs/react": "^0.12.1",
     "@vercel/blob": "^2.0.0",
     "clsx": "^2.1.1",
+    "i18next": "^25.7.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-i18next": "^16.5.0",
     "react-router-dom": "^6.28.0",
     "tailwind-merge": "^3.4.0"
   },
