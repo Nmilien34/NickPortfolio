@@ -49,7 +49,9 @@ export function HomePage() {
 
   return (
     <>
-      <Header />
+      <div className="hidden md:block">
+        <Header />
+      </div>
       <main className="flex-1">
         <div id="section-0">
           <Hero />
