@@ -84,8 +84,8 @@ function TimelineItem({ data }: TimelineItemProps) {
       {/* Mobile Layout - Natural flow (only show if there's content) */}
       {hasContentForMobile && (
         <div className="md:hidden relative flex flex-col items-center">
-          {/* Timeline segment before year - extra tall to center bubble between cards */}
-          <div className="w-0.5 h-20 bg-[#EFBF04]" />
+          {/* Timeline segment before year - positions bubble at center between cards */}
+          <div className="w-0.5 h-8 bg-[#EFBF04]" />
 
           {/* Year bubble - show range if available */}
           <div className="px-4 py-1.5 rounded-full border-2 border-white/30 shadow-[0_0_15px_rgba(255,255,255,0.15)] bg-background-color text-white font-mono text-xs z-10">
@@ -95,8 +95,8 @@ function TimelineItem({ data }: TimelineItemProps) {
           {/* Card if exists */}
           {hasCard && (
             <>
-              {/* Timeline segment connecting bubble to card */}
-              <div className="w-0.5 h-6 bg-[#EFBF04]" />
+              {/* Timeline segment connecting bubble to card - equal length for centering */}
+              <div className="w-0.5 h-16 bg-[#EFBF04]" />
 
               <div className="w-[90vw] max-w-md">
                 <div
@@ -114,7 +114,7 @@ function TimelineItem({ data }: TimelineItemProps) {
             </>
           )}
 
-          {/* Timeline segment after card - shorter to center next bubble */}
+          {/* Timeline segment after card */}
           <div className="w-0.5 h-8 bg-[#EFBF04]" />
         </div>
       )}
