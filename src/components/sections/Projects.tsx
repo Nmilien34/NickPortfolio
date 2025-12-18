@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 export interface Project {
   title: string;
   category: string;
@@ -13,79 +15,83 @@ export interface Project {
   browserUrl?: string; // Custom URL to display in browser bar
 }
 
-export const projects: Project[] = [
+export function getProjectsData(t: (key: string) => string): Project[] {
+  return [
   {
     title: 'Lawnstack',
-    category: 'Home Service Platform',
+    category: t('projects.lawnstack.category'),
     description: '',
-    tagline: 'One membership for all your outdoor chores',
-    summary: 'Built to consolidate the fragmented home service industry. Lawnstack allowed homeowners to bypass the \'Yellow Pages\' search (Yelp, Nextdoor) by offering a managed subscription service that deployed dedicated teams for comprehensive monthly care.',
+    tagline: t('projects.lawnstack.tagline'),
+    summary: t('projects.lawnstack.summary'),
     mockup: '/Projects/Lawnstack /98EE5DD3-9A94-4F47-8D32-DD098CF123B9.jpeg',
     coverImage: '/Projects/Lawnstack /IMG_5043.PNG',
     gradientColors: undefined, // Will use CSS variables instead
   },
   {
     title: 'Boltzman Enterprise',
-    category: 'SaaS Product',
-    description: 'Voice AI Receiptionist for restaurants',
+    category: t('projects.boltzmanEnterprise.category'),
+    description: t('projects.boltzmanEnterprise.description'),
     mockup: '/Projects/VoiceaiReceptionist/91658D25-00CB-4B5E-BD37-CDE8CFA0BA8C.jpeg',
     gradientColors: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
     browserUrl: 'enterprise.boltzman.ai',
   },
   {
     title: 'Boltzman AI',
-    category: 'AI Platform',
-    description: 'Assistant that streamlines and handles any task',
+    category: t('projects.boltzmanAI.category'),
+    description: t('projects.boltzmanAI.description'),
     mockup: '/Projects/Boltzman AI/146A59BD-B8D5-4B99-BD96-823574456AF2.jpeg',
     gradientColors: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
     browserUrl: 'boltzman.ai',
   },
   {
     title: 'Boltzman Voice',
-    category: 'AI Product',
-    description: 'Universal Voice Assistant that bring your apps, tabs and platforms to you',
+    category: t('projects.boltzmanVoice.category'),
+    description: t('projects.boltzmanVoice.description'),
     mockup: '/Projects/BoltzmanVoice/E80A7619-852F-43F7-AADB-099DC4EBE4EB.jpeg',
     gradientColors: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
     browserUrl: 'voice.boltzman.ai',
   },
   {
     title: 'Clearr',
-    category: 'Mobile App',
-    description: 'Thought Translator',
+    category: t('projects.clearr.category'),
+    description: t('projects.clearr.description'),
     image: '/images/projects/Clearr/clearr-cover.jpeg',
     link: 'https://apps.apple.com/us/app/clearr-thought-translator/id6751149912',
     gradientColors: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
   },
   {
     title: 'Energy',
-    category: 'Music Platform',
-    description: 'Energy is a youtube wrapper that let you listen to your favorite songs for free by converting videos into ads-free Audio',
+    category: t('projects.energy.category'),
+    description: t('projects.energy.description'),
     mockup: '/Projects/Energy/974BE277-C1B0-4EBC-9E0C-AE982167833B.jpeg',
     gradientColors: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     browserUrl: 'YFHNRG.com',
   },
   {
     title: 'Lyra',
-    category: 'AI Product',
-    description: 'An AI companion for seniors with cognitive impairemet. Reimagining an interface just for them',
+    category: t('projects.lyra.category'),
+    description: t('projects.lyra.description'),
     underConstruction: true,
     gradientColors: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
     browserUrl: 'comingsoon.com',
   },
-];
+  ];
+}
 
 import { useNavigate } from 'react-router-dom';
 import { titleToSlug } from '../../lib/utils';
 
 export function Projects() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
+  const projects = getProjectsData(t);
 
   return (
     <section className="py-8 md:py-20 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
         <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-white mb-6 md:mb-12 text-center px-2">
-          Some Projects I've Done
+          {t('projects.title')}
         </h2>
 
         {/* Projects Grid */}
@@ -129,8 +135,8 @@ export function Projects() {
                   <div className={`${project.title === 'Boltzman AI' ? 'bg-[#1a1a1a]' : 'bg-white'} h-full relative overflow-hidden`}>
                     {project.underConstruction ? (
                       <div className="flex flex-col items-center justify-center h-full p-8">
-                        <div className="text-gray-800 text-2xl font-bold mb-2">Under Construction</div>
-                        <div className="text-gray-500 text-sm">Coming Soon</div>
+                        <div className="text-gray-800 text-2xl font-bold mb-2">{t('projects.underConstruction')}</div>
+                        <div className="text-gray-500 text-sm">{t('projects.comingSoon')}</div>
                       </div>
                     ) : project.mockup ? (
                       <div className="w-full h-full relative overflow-hidden">

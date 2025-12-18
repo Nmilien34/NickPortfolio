@@ -63,5 +63,39 @@
     "firstDay": "premier jour de lycée",
     "visiting": "visitant des amis à Cornell",
     "timelineIndicator": "~10 ans aux États-Unis"
+  },
+  "projects": {
+    "title": "Quelques Projets Que J'ai Réalisés",
+    "underConstruction": "En Construction",
+    "comingSoon": "Bientôt Disponible",
+    "lawnstack": {
+      "category": "Plateforme de Services à Domicile",
+      "tagline": "Un abonnement pour toutes vos tâches extérieures",
+      "summary": "Construit pour consolider l'industrie fragmentée des services à domicile. Lawnstack permettait aux propriétaires de contourner la recherche 'Pages Jaunes' (Yelp, Nextdoor) en offrant un service d'abonnement géré qui déployait des équipes dédiées pour un entretien mensuel complet."
+    },
+    "boltzmanEnterprise": {
+      "category": "Produit SaaS",
+      "description": "Réceptionniste IA Vocale pour restaurants"
+    },
+    "boltzmanAI": {
+      "category": "Plateforme IA",
+      "description": "Assistant qui rationalise et gère n'importe quelle tâche"
+    },
+    "boltzmanVoice": {
+      "category": "Produit IA",
+      "description": "Assistant Vocal Universel qui vous apporte vos applications, onglets et plateformes"
+    },
+    "clearr": {
+      "category": "Application Mobile",
+      "description": "Traducteur de Pensées"
+    },
+    "energy": {
+      "category": "Plateforme Musicale",
+      "description": "Energy est une enveloppe YouTube qui vous permet d'écouter vos chansons préférées gratuitement en convertissant les vidéos en audio sans publicité"
+    },
+    "lyra": {
+      "category": "Produit IA",
+      "description": "Un compagnon IA pour les seniors ayant des troubles cognitifs. Réinventer une interface juste pour eux"
+    }
   }
 }

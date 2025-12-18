@@ -63,5 +63,39 @@
     "firstDay": "premye jou nan lekòl segondè",
     "visiting": "vizite zanmi nan Cornell",
     "timelineIndicator": "~10 lane nan Etazini"
+  },
+  "projects": {
+    "title": "Kèk Pwojè Mwen Te Fè",
+    "underConstruction": "Nan Konstriksyon",
+    "comingSoon": "Pral Vini",
+    "lawnstack": {
+      "category": "Platfòm Sèvis Lakay",
+      "tagline": "Yon abònman pou tout travay deyò ou yo",
+      "summary": "Bati pou konsolide endistri sèvis lakay ki fragmante. Lawnstack te pèmèt pwopriyetè kay evite rechèch 'Paj Jon' yo (Yelp, Nextdoor) lè yo ofri yon sèvis abònman jere ki te deploye ekip dedye pou swen konplè chak mwa."
+    },
+    "boltzmanEnterprise": {
+      "category": "Pwodui SaaS",
+      "description": "Resepsyonis IA Vwa pou restoran"
+    },
+    "boltzmanAI": {
+      "category": "Platfòm IA",
+      "description": "Asistan ki fè nenpòt travay vin pi fasil epi jere l"
+    },
+    "boltzmanVoice": {
+      "category": "Pwodui IA",
+      "description": "Asistan Vwa Inivèsèl ki pote aplikasyon, onglè ak platfòm ou yo ba ou"
+    },
+    "clearr": {
+      "category": "Aplikasyon Mobil",
+      "description": "Tradiktè Panse"
+    },
+    "energy": {
+      "category": "Platfòm Mizik",
+      "description": "Energy se yon anvlòp YouTube ki pèmèt ou koute chante ou renmen gratis lè li konvèti videyo yo an odyo san piblisite"
+    },
+    "lyra": {
+      "category": "Pwodui IA",
+      "description": "Yon konpayon IA pou granmoun ki gen pwoblèm kognitif. Reimajine yon entèfas jis pou yo"
+    }
   }
 }

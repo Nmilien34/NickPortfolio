@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Header } from '../layout/Header';
 import { Footer } from '../layout/Footer';
 import { titleToSlug } from '../../lib/utils';
-import { projects } from '../sections/Projects';
+import { getProjectsData } from '../sections/Projects';
 import { DecisionComparison } from '../ui/DecisionComparison';
 import { LogicFlow } from '../ui/LogicFlow';
 import { StrategicComparison } from '../ui/StrategicComparison';
@@ -12,11 +13,15 @@ import { StrategicFlow } from '../ui/StrategicFlow';
 export function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   // Scroll to top when component mounts or slug changes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
+
+  // Get projects with translations
+  const projects = getProjectsData(t);
 
   // Find the project by slug
   const project = projects.find((p) => titleToSlug(p.title) === slug);

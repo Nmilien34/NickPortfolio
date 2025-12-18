@@ -63,5 +63,39 @@
     "firstDay": "first day of high school",
     "visiting": "visiting friends at Cornell",
     "timelineIndicator": "~10 years in the us"
+  },
+  "projects": {
+    "title": "Some Projects I've Done",
+    "underConstruction": "Under Construction",
+    "comingSoon": "Coming Soon",
+    "lawnstack": {
+      "category": "Home Service Platform",
+      "tagline": "One membership for all your outdoor chores",
+      "summary": "Built to consolidate the fragmented home service industry. Lawnstack allowed homeowners to bypass the 'Yellow Pages' search (Yelp, Nextdoor) by offering a managed subscription service that deployed dedicated teams for comprehensive monthly care."
+    },
+    "boltzmanEnterprise": {
+      "category": "SaaS Product",
+      "description": "Voice AI Receiptionist for restaurants"
+    },
+    "boltzmanAI": {
+      "category": "AI Platform",
+      "description": "Assistant that streamlines and handles any task"
+    },
+    "boltzmanVoice": {
+      "category": "AI Product",
+      "description": "Universal Voice Assistant that bring your apps, tabs and platforms to you"
+    },
+    "clearr": {
+      "category": "Mobile App",
+      "description": "Thought Translator"
+    },
+    "energy": {
+      "category": "Music Platform",
+      "description": "Energy is a youtube wrapper that let you listen to your favorite songs for free by converting videos into ads-free Audio"
+    },
+    "lyra": {
+      "category": "AI Product",
+      "description": "An AI companion for seniors with cognitive impairemet. Reimagining an interface just for them"
+    }
   }
 }
