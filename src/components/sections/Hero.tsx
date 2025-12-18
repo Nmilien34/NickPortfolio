@@ -5,6 +5,7 @@ import { useElevenLabs } from '../../hooks/useElevenLabs';
 
 export function Hero() {
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState('EN');
   const navigate = useNavigate();
 
@@ -82,7 +83,7 @@ export function Hero() {
         </span>
       </button>
 
-      {/* Navigation Buttons - Hidden on mobile, visible on md+ */}
+      {/* Desktop Navigation - Full buttons */}
       <div className="absolute top-10 right-[280px] hidden md:flex gap-6 z-[60]">
         <button
           onClick={() => navigate('/about')}
@@ -91,7 +92,7 @@ export function Hero() {
           About
         </button>
         <a
-          href={encodeURI("/images/_PM concised V7.2.pdf")}
+          href={encodeURI("/images/_PM concised V7.3.pdf")}
           target="_blank"
           rel="noopener noreferrer"
           className="px-5 py-2 text-normal-text hover:text-text-white transition-colors"
@@ -104,6 +105,53 @@ export function Hero() {
         >
           Learnings
         </button>
+      </div>
+
+      {/* Mobile Navigation - About button only */}
+      <div className="absolute top-6 left-[70px] md:hidden z-[60]">
+        <button
+          onClick={() => navigate('/about')}
+          className="px-3 py-1.5 text-sm text-normal-text hover:text-text-white transition-colors"
+        >
+          About
+        </button>
+      </div>
+
+      {/* Mobile Hamburger Menu - Only visible on mobile */}
+      <div className="absolute top-6 right-[70px] md:hidden z-[60]">
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="px-3 py-1.5 text-white hover:text-[#EFBF04] transition-colors"
+          aria-label="Menu"
+        >
+          {/* Hamburger icon */}
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        {isMenuOpen && (
+          <div className="absolute right-0 mt-2 w-44 rounded-lg border border-[#EFBF04] bg-background-color shadow-[0_0_30px_rgba(239,191,4,0.4)] overflow-hidden">
+            <a
+              href={encodeURI("/images/_PM concised V7.3.pdf")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full px-4 py-3 text-left hover:bg-white/10 transition-colors flex items-center text-normal-text hover:text-text-white block"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Resume
+            </a>
+            <button
+              onClick={() => {
+                navigate('/learnings');
+                setIsMenuOpen(false);
+              }}
+              className="w-full px-4 py-3 text-left hover:bg-white/10 transition-colors text-normal-text hover:text-text-white"
+            >
+              Learnings
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Language Switcher */}
