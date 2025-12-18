@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Header } from '../layout/Header';
 import { Footer } from '../layout/Footer';
@@ -12,6 +12,11 @@ import { StrategicFlow } from '../ui/StrategicFlow';
 export function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+
+  // Scroll to top when component mounts or slug changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
 
   // Find the project by slug
   const project = projects.find((p) => titleToSlug(p.title) === slug);

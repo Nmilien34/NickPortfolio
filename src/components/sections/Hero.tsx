@@ -136,7 +136,7 @@ export function Hero() {
               href={encodeURI("/images/_PM concised V7.3.pdf")}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full px-4 py-3 text-left hover:bg-white/10 transition-colors flex items-center text-normal-text hover:text-text-white block"
+              className="w-full px-4 py-3 text-left hover:bg-white/10 transition-colors block text-normal-text hover:text-text-white"
               onClick={() => setIsMenuOpen(false)}
             >
               Resume
