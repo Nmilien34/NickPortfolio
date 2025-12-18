@@ -100,10 +100,10 @@ export function About() {
                     </p>
                     <ul className="list-disc list-inside space-y-2 ml-2">
                       <li>
-                        <strong className="text-white">Lawnstack:</strong> Built a venture-backed home-service platform connecting homeowners with dedicated service teams.
+                        <strong className="text-white"><a href="https://www.lawnstack.com/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Lawnstack</a>:</strong> Built a venture-backed home-service platform connecting homeowners with dedicated service teams.
                       </li>
                       <li>
-                        <strong className="text-white">Boltzman Lab:</strong> Co-built with Liam Du. We scaled <strong className="text-white">Boltzman Enterprise</strong> to 30 restaurants, processing $50k in monthly orders ($60k ARR) using voice AI. We also built <strong className="text-white">Boltzman Engine</strong>, a chatbot with 3k users that <em>almost</em> got acquired by Mintlify (we failed to close the deal, haha, but learned a ton).
+                        <strong className="text-white">Boltzman Lab:</strong> Co-built with Liam Du. We scaled <strong className="text-white"><a href="https://enterprise.boltzman.ai/" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Boltzman Enterprise</a></strong> to 30 restaurants, processing $50k in monthly orders ($60k ARR) using voice AI. We also built <strong className="text-white"><a href="https://boltzman.ai" target="_blank" rel="noopener noreferrer" className="text-[#EFBF04] hover:underline">Boltzman Engine</a></strong>, a chatbot with 3k users that <em>almost</em> got acquired by Mintlify (we failed to close the deal, haha, but learned a ton).
                       </li>
                       <li>
                         <strong className="text-white">Lyra (Current):</strong> I'm currently building a voice AI companion for seniors battling dementia and early-stage Alzheimer's.
