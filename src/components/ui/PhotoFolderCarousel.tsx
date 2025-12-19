@@ -45,7 +45,7 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
                   return isVideo(coverMedia) ? (
                     <video
                       src={coverMedia}
-                      className="w-full h-full object-cover object-[50%_35%]"
+                      className="w-full h-full object-cover object-[50%_45%]"
                       autoPlay
                       muted
                       loop
@@ -58,7 +58,7 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
                       src={coverMedia}
                       alt={section.caption}
                       loading={index === 0 ? "eager" : "lazy"}
-                      className="w-full h-full object-cover object-[50%_35%]"
+                      className="w-full h-full object-cover object-[50%_45%]"
                       style={{ display: 'block' }}
                       onError={() => {
                         console.error(`Failed to load image: ${coverMedia}`);
@@ -212,7 +212,9 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
                       src={media}
                       alt={`Media ${mediaIndex + 1}`}
                       loading="lazy"
-                      className="w-full aspect-square object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
+                      className={`w-full aspect-square object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300 ${
+                        selectedSection === 0 && mediaIndex === 0 ? 'object-[center_60%]' : ''
+                      }`}
                       onError={(e) => {
                         console.error(`Failed to load image: ${media}`);
                         (e.target as HTMLImageElement).style.display = 'none';
