@@ -51,7 +51,7 @@ function TimelineItem({ data }: TimelineItemProps) {
   return (
     <>
       {/* Desktop Layout - Absolute positioning */}
-      <div className="hidden md:block relative py-16">
+      <div className="hidden md:block relative py-32">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0.5 bg-[#EFBF04]" style={{ height: 'calc(50% - 20px)' }} />
 
         <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 px-6 py-2 rounded-full border-2 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)] bg-background-color text-white font-mono text-sm z-10">
@@ -59,7 +59,7 @@ function TimelineItem({ data }: TimelineItemProps) {
         </div>
 
         {hasCard && (
-          <div className={`absolute -top-24 ${data.position === 'left' ? 'right-1/2 mr-16' : 'left-1/2 ml-16'} flex items-center gap-3 ${data.position === 'left' ? 'flex-row-reverse' : 'flex-row'}`}>
+          <div className={`absolute -top-32 ${data.position === 'left' ? 'right-1/2 mr-16' : 'left-1/2 ml-16'} flex items-center gap-3 ${data.position === 'left' ? 'flex-row-reverse' : 'flex-row'}`}>
             <span className="text-white/50 text-xl">
               {data.position === 'left' && '←'}
               {data.position === 'right' && '→'}
@@ -131,7 +131,7 @@ function BraceCard({
   startIndex,
   endIndex,
   card,
-  itemHeight = 128
+  itemHeight = 256
 }: {
   startIndex: number;
   endIndex: number;
