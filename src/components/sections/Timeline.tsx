@@ -183,7 +183,7 @@ function BraceCard({
   // Position arrow in the middle of the brace
   const arrowTopOffset = (braceHeight / 2) - 10;
   // Position card higher to align with arrow
-  const cardTopOffset = arrowTopOffset - 40;
+  const cardTopOffset = arrowTopOffset - 80;
 
   return (
     <div
