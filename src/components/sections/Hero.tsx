@@ -307,7 +307,7 @@ export function Hero() {
         </div>
 
         {/* Timeline Start */}
-        <div className="relative flex flex-col items-center mt-12 md:mt-20 mb-0">
+        <div className="relative flex flex-col items-center mt-12 md:mt-20 mb-0 md:mb-32">
           {/* Title */}
           <h3 className="font-serif text-xl md:text-2xl text-white mb-6">{t('hero.timelineStart')}</h3>
 
