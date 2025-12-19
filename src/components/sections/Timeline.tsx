@@ -180,8 +180,10 @@ function BraceCard({
   // Calculate brace height: spans from start to end (including both)
   // Each item is py-16 (64px top + 64px bottom = 128px total per item)
   const braceHeight = (endIndex - startIndex) * itemHeight;
-  // Position card in the middle of the brace
-  const cardTopOffset = (braceHeight / 2) - 50; // Position card along the brace
+  // Position arrow in the middle of the brace
+  const arrowTopOffset = (braceHeight / 2) - 10;
+  // Position card higher to align with arrow
+  const cardTopOffset = arrowTopOffset - 40;
 
   return (
     <div
@@ -206,7 +208,7 @@ function BraceCard({
         </div>
       </div>
       {/* Arrow */}
-      <span className="text-white/50" style={{ marginTop: `${cardTopOffset}px` }}>←</span>
+      <span className="text-white/50" style={{ marginTop: `${arrowTopOffset}px` }}>←</span>
       {/* Bracket */}
       <div className="relative" style={{ width: '20px', height: '100%' }}>
         <div className="absolute top-0 left-0 w-full h-0.5 bg-white/30" />
