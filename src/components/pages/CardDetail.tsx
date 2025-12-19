@@ -56,7 +56,7 @@ export function CardDetail() {
         // Check regular timeline items
         if (item.title && titleToSlug(item.title) === slug) {
           cardData = {
-            year: item.year,
+            year: item.yearRange || item.year,
             title: item.title,
             description: item.description,
             highlights: item.highlights,
