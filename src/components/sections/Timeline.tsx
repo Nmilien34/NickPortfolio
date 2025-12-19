@@ -237,7 +237,9 @@ export function Timeline({ years }: TimelineProps) {
 
 // Full timeline data (2015-2026)
 // Note: 2015-2017 "Early Years" is shown in Hero.tsx, so we start from 2018 here
-export const fullTimelineData: TimelineItemData[] = [
+// This function generates timeline data with translations
+export function getTimelineData(_t: (key: string) => string): TimelineItemData[] {
+  return [
   {
     year: '2018',
     yearRange: '2018 - 2019',
@@ -538,4 +540,5 @@ export const fullTimelineData: TimelineItemData[] = [
     ),
     position: 'right',
   },
-];
+  ];
+}
