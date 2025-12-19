@@ -45,7 +45,7 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
                   return isVideo(coverMedia) ? (
                     <video
                       src={coverMedia}
-                      className="w-full h-full object-cover object-[50%_55%]"
+                      className="w-full h-full object-cover object-[50%_30%]"
                       autoPlay
                       muted
                       loop
@@ -58,7 +58,7 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
                       src={coverMedia}
                       alt={section.caption}
                       loading={index === 0 ? "eager" : "lazy"}
-                      className="w-full h-full object-cover object-[50%_55%]"
+                      className="w-full h-full object-cover object-[50%_30%]"
                       style={{ display: 'block' }}
                       onError={() => {
                         console.error(`Failed to load image: ${coverMedia}`);
