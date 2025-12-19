@@ -41,19 +41,9 @@ export function PhotoFolderCarousel({ photoSections }: PhotoFolderCarouselProps)
               {/* Top Section - Image/Video (65%) */}
               <div className="h-[65%] overflow-hidden rounded-t-xl bg-black">
                 {(() => {
-                  const coverMedia = section.videos && section.videos.length > 0 ? section.videos[0] : section.photos[0];
-                  return isVideo(coverMedia) ? (
-                    <video
-                      src={coverMedia}
-                      className="w-full h-full object-cover object-[50%_15%]"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="auto"
-                      style={{ display: 'block', transform: 'scale(1.02)' }}
-                    />
-                  ) : (
+                  // Always use first photo as thumbnail, videos will be in the gallery
+                  const coverMedia = section.photos[0];
+                  return (
                     <img
                       src={coverMedia}
                       alt={section.caption}
