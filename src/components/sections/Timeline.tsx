@@ -181,7 +181,7 @@ function BraceCard({
   // Each item is py-16 (64px top + 64px bottom = 128px total per item)
   const braceHeight = (endIndex - startIndex) * itemHeight;
   // Position card in the middle of the brace
-  const cardTopOffset = (braceHeight / 2) - 10; // Position card along the brace
+  const cardTopOffset = (braceHeight / 2) - 50; // Position card along the brace
 
   return (
     <div
