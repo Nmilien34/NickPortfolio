@@ -1,6 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import { getTimelineData } from '../sections/Timeline';
+import { fullTimelineData } from '../sections/Timeline';
 import { Header } from '../layout/Header';
 import { Footer } from '../layout/Footer';
 import { PhotoFolderCarousel } from '../ui/PhotoFolderCarousel';
@@ -17,10 +16,6 @@ function titleToSlug(title: string): string {
 export function CardDetail() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
-  const { t } = useTranslation();
-
-  // Get timeline data with translations
-  const fullTimelineData = getTimelineData(t);
 
   // Find the card data
   let cardData: {
@@ -38,8 +33,8 @@ export function CardDetail() {
     if (slug === 'early-years') {
       cardData = {
         year: '2015-2017',
-        title: t('timeline.earlyYears.title'),
-        description: t('timeline.earlyYears.description'),
+        title: 'Early Years in the US',
+        description: 'I landed in the US from Haiti in 2015 and immediately realized one thing: nothing here is given, everything is earned. While I was navigating high school and learning English, I wasn\'t just trying to fit in—I was trying to catch up. Got my first job at 16 working at the mall which I then quit to go work at KFC, which paid a lot more. I built my first real community here, made friends who helped me navigate the culture, and set a baseline for the work ethic that would define the next decade of my life. Also played lots of soccer.',
         photoSections: [
           {
             caption: 'Early years in the US',

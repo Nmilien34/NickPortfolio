@@ -1,18 +1,13 @@
 import { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Header } from '../layout/Header';
 import { Footer } from '../layout/Footer';
 import { Hero } from '../sections/Hero';
-import { Timeline, getTimelineData } from '../sections/Timeline';
+import { Timeline, fullTimelineData } from '../sections/Timeline';
 import { Projects } from '../sections/Projects';
 import { SlideNavigation } from '../navigation/SlideNavigation';
 
 export function HomePage() {
   const [currentSection, setCurrentSection] = useState(0);
-  const { t } = useTranslation();
-
-  // Get timeline data with translations
-  const fullTimelineData = getTimelineData(t);
 
   // Split timeline into sections (4 years each)
   // Section 0: Hero (2015)
