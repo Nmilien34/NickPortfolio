@@ -150,12 +150,16 @@ function BraceCard({
   startIndex,
   endIndex,
   card,
-  itemHeight = 128
+  itemHeight = 128,
+  startYear,
+  endYear
 }: {
   startIndex: number;
   endIndex: number;
   card: NonNullable<TimelineItemData['brace']>['card'];
   itemHeight?: number;
+  startYear: string;
+  endYear: string;
 }) {
   const navigate = useNavigate();
 
@@ -218,8 +222,16 @@ function BraceCard({
 
       {/* Mobile Layout */}
       <div className="md:hidden relative flex flex-col items-center">
-        {/* Timeline segment before card */}
+        {/* Timeline segment before year bubble */}
         <div className="w-0.5 h-8 bg-[#EFBF04]" />
+
+        {/* Year bubble */}
+        <div className="px-4 py-1.5 rounded-full border-2 border-white/30 shadow-[0_0_15px_rgba(255,255,255,0.15)] bg-background-color text-white font-mono text-xs z-10">
+          {startYear} - {endYear}
+        </div>
+
+        {/* Timeline segment connecting bubble to card */}
+        <div className="w-0.5 h-16 bg-[#EFBF04]" />
 
         <div className="w-[90vw] max-w-md">
           <div
@@ -244,7 +256,7 @@ function BraceCard({
 
 export function Timeline({ years }: TimelineProps) {
   // Find braces and track which items are part of a brace
-  const braceMap = new Map<number, { startIndex: number; endIndex: number; card: NonNullable<TimelineItemData['brace']>['card'] }>();
+  const braceMap = new Map<number, { startIndex: number; endIndex: number; card: NonNullable<TimelineItemData['brace']>['card']; startYear: string; endYear: string }>();
   const itemsInBrace = new Set<number>();
 
   years.forEach((item, index) => {
@@ -252,7 +264,13 @@ export function Timeline({ years }: TimelineProps) {
       // Find the end index
       const endIndex = years.findIndex(y => y.year === item.brace!.endsAtYear);
       if (endIndex !== -1 && item.brace.card) {
-        braceMap.set(index, { startIndex: index, endIndex, card: item.brace.card });
+        braceMap.set(index, {
+          startIndex: index,
+          endIndex,
+          card: item.brace.card,
+          startYear: item.year,
+          endYear: item.brace.endsAtYear
+        });
         // Mark all items from start to end as part of brace
         for (let i = index; i <= endIndex; i++) {
           itemsInBrace.add(i);
@@ -276,6 +294,8 @@ export function Timeline({ years }: TimelineProps) {
                   startIndex={braceInfo.startIndex}
                   endIndex={braceInfo.endIndex}
                   card={braceInfo.card}
+                  startYear={braceInfo.startYear}
+                  endYear={braceInfo.endYear}
                 />
               )}
             </div>
