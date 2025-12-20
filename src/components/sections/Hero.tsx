@@ -92,7 +92,7 @@ export function Hero() {
           About
         </button>
         <a
-          href={encodeURI("/images/_PM concised V7.3.pdf")}
+          href={encodeURI("/images/_PM concised V7.4.pdf")}
           target="_blank"
           rel="noopener noreferrer"
           className="px-5 py-2 text-normal-text hover:text-text-white transition-colors"
@@ -133,7 +133,7 @@ export function Hero() {
         {isMenuOpen && (
           <div className="absolute right-0 mt-2 w-44 rounded-lg border border-[#EFBF04] bg-background-color shadow-[0_0_30px_rgba(239,191,4,0.4)] overflow-hidden">
             <a
-              href={encodeURI("/images/_PM concised V7.3.pdf")}
+              href={encodeURI("/images/_PM concised V7.4.pdf")}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full px-4 py-3 text-left hover:bg-white/10 transition-colors block text-normal-text hover:text-text-white"
