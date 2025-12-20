@@ -183,36 +183,62 @@ function BraceCard({
   const cardTopOffset = arrowTopOffset - 80;
 
   return (
-    <div
-      className="hidden md:flex absolute right-1/2 mr-20 items-start gap-3 z-20"
-      style={{
-        top: `${itemHeight / 2}px`, // Start from middle of first item's bubble
-        height: `${braceHeight}px`
-      }}
-    >
-      {/* Card */}
-      <div style={{ marginTop: `${cardTopOffset}px` }} className="w-80">
-        <div
-          onClick={handleCardClick}
-          className="w-full p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-white/30 hover:scale-105 transition-all duration-300 text-left cursor-pointer"
-        >
-          {card.title && <h3 className="font-serif text-xl text-white mb-3">{card.title}</h3>}
-          {card.description && <p className="text-sm font-mono text-normal-text leading-relaxed mb-4 line-clamp-3">{card.description}</p>}
-          <div className="flex items-center gap-2 text-xs font-mono text-white/70">
-            <span>Click to view details</span>
-            <span>→</span>
+    <>
+      {/* Desktop Layout */}
+      <div
+        className="hidden md:flex absolute right-1/2 mr-20 items-start gap-3 z-20"
+        style={{
+          top: `${itemHeight / 2}px`, // Start from middle of first item's bubble
+          height: `${braceHeight}px`
+        }}
+      >
+        {/* Card */}
+        <div style={{ marginTop: `${cardTopOffset}px` }} className="w-80">
+          <div
+            onClick={handleCardClick}
+            className="w-full p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-white/30 hover:scale-105 transition-all duration-300 text-left cursor-pointer"
+          >
+            {card.title && <h3 className="font-serif text-xl text-white mb-3">{card.title}</h3>}
+            {card.description && <p className="text-sm font-mono text-normal-text leading-relaxed mb-4 line-clamp-3">{card.description}</p>}
+            <div className="flex items-center gap-2 text-xs font-mono text-white/70">
+              <span>Click to view details</span>
+              <span>→</span>
+            </div>
           </div>
         </div>
+        {/* Arrow */}
+        <span className="text-white/50" style={{ marginTop: `${arrowTopOffset}px` }}>←</span>
+        {/* Bracket */}
+        <div className="relative" style={{ width: '20px', height: '100%' }}>
+          <div className="absolute top-0 left-0 w-full h-0.5 bg-white/30" />
+          <div className="absolute top-0 left-0 w-0.5 h-full bg-white/30" />
+          <div className="absolute bottom-0 left-0 w-full h-0.5 bg-white/30" />
+        </div>
       </div>
-      {/* Arrow */}
-      <span className="text-white/50" style={{ marginTop: `${arrowTopOffset}px` }}>←</span>
-      {/* Bracket */}
-      <div className="relative" style={{ width: '20px', height: '100%' }}>
-        <div className="absolute top-0 left-0 w-full h-0.5 bg-white/30" />
-        <div className="absolute top-0 left-0 w-0.5 h-full bg-white/30" />
-        <div className="absolute bottom-0 left-0 w-full h-0.5 bg-white/30" />
+
+      {/* Mobile Layout */}
+      <div className="md:hidden relative flex flex-col items-center">
+        {/* Timeline segment before card */}
+        <div className="w-0.5 h-8 bg-[#EFBF04]" />
+
+        <div className="w-[90vw] max-w-md">
+          <div
+            onClick={handleCardClick}
+            className="w-full p-4 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm active:bg-white/10 active:scale-[0.98] transition-all duration-200 text-left cursor-pointer"
+          >
+            {card.title && <h3 className="font-serif text-base text-white mb-2 leading-snug">{card.title}</h3>}
+            {card.description && <p className="text-xs font-mono text-normal-text leading-relaxed mb-3">{card.description}</p>}
+            <div className="flex items-center gap-2 text-[10px] font-mono text-white/70">
+              <span>Tap to view details</span>
+              <span>→</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Timeline segment after card */}
+        <div className="w-0.5 h-8 bg-[#EFBF04]" />
       </div>
-    </div>
+    </>
   );
 }
 
