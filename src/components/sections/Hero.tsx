@@ -75,7 +75,7 @@ export function Hero() {
       {/* Logo/Home Button */}
       <button
         onClick={scrollToTop}
-        className="absolute top-6 left-4 md:top-10 md:left-[120px] w-12 h-12 md:w-16 md:h-16 rounded-lg flex items-center justify-center border-2 border-white/30 shadow-[0_0_25px_rgba(255,255,255,0.5)] bg-white/5 z-[60] cursor-pointer hover:border-white/50 hover:shadow-[0_0_35px_rgba(255,255,255,0.7)] transition-all duration-300"
+        className="absolute top-6 left-4 md:top-10 md:left-[120px] w-12 h-12 md:w-16 md:h-16 rounded-lg flex items-center justify-center border-2 border-white/30 bg-white/5 z-[60] cursor-pointer hover:border-white/50 transition-all duration-300"
         aria-label="Home"
       >
         <span className="text-white font-serif text-lg md:text-[22px]">
@@ -158,7 +158,7 @@ export function Hero() {
       <div className="absolute top-6 right-4 md:top-10 md:right-[120px] z-[60]">
         <button
           onClick={() => setIsLangOpen(!isLangOpen)}
-          className="px-4 py-1.5 md:px-6 md:py-2 text-sm md:text-base rounded-full border-2 border-white/30 shadow-[0_0_30px_rgba(255,255,255,0.5)] bg-white/5 text-white hover:border-white/50 hover:shadow-[0_0_40px_rgba(255,255,255,0.7)] transition-all duration-300"
+          className="px-4 py-1.5 md:px-6 md:py-2 text-sm md:text-base rounded-full border-2 border-white/30 bg-white/5 text-white hover:border-white/50 transition-all duration-300"
         >
           {currentLang}
         </button>

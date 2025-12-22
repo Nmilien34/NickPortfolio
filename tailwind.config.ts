@@ -16,6 +16,10 @@ const config: Config = {
         'highlight-dark': '#292929',
         'white-smoke': '#e7e7e7',
       },
+      fontFamily: {
+        sans: ['Nunito', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        serif: ['Nunito', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+      },
     },
   },
   plugins: [],
