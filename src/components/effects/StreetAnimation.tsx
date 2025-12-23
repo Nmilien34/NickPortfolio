@@ -8,16 +8,17 @@ export function StreetAnimation() {
         aria-hidden="true"
       >
         <defs>
-          {/* Blur filters for light glow effect */}
-          <filter id="light-blur-core">
-            <feGaussianBlur stdDeviation="0.4" />
-          </filter>
-          <filter id="light-blur-middle">
-            <feGaussianBlur stdDeviation="1.2" />
-          </filter>
-          <filter id="light-blur-outer">
-            <feGaussianBlur stdDeviation="2.5" />
-          </filter>
+          {/* Mask to fade out lights in the center text area */}
+          <radialGradient id="text-fade-gradient" cx="50%" cy="50%">
+            <stop offset="0%" stopColor="white" stopOpacity="0" />
+            <stop offset="50%" stopColor="white" stopOpacity="0.3" />
+            <stop offset="70%" stopColor="white" stopOpacity="0.7" />
+            <stop offset="100%" stopColor="white" stopOpacity="1" />
+          </radialGradient>
+          <mask id="text-area-mask">
+            {/* White (visible) everywhere, but fades to transparent in center where text is */}
+            <rect width="100" height="100" fill="url(#text-fade-gradient)" />
+          </mask>
         </defs>
 
         {/* Street Grid - Very subtle dark streets (barely visible) */}
@@ -34,28 +35,33 @@ export function StreetAnimation() {
         <line x1="10" y1="55" x2="90" y2="55" stroke="rgba(255,255,255,0.05)" strokeWidth="0.15" />
         <line x1="10" y1="65" x2="90" y2="65" stroke="rgba(255,255,255,0.05)" strokeWidth="0.15" />
 
-        {/* Animated Light - White light moving through streets, avoiding text center */}
-        <g className="animate-street-light">
-          {/* Outer atmospheric glow */}
-          <circle
-            r="1.8"
-            fill="rgba(255,255,255,0.12)"
-            filter="url(#light-blur-outer)"
-          />
-
-          {/* Middle glow */}
-          <circle
-            r="1.2"
-            fill="rgba(255,255,255,0.3)"
-            filter="url(#light-blur-middle)"
-          />
-
-          {/* Core bright white center */}
-          <circle
-            r="0.6"
-            fill="rgba(255,255,255,0.9)"
-            filter="url(#light-blur-core)"
-          />
+        {/* Traffic lights - Each on different streets, moving independently */}
+        {/* Group all lights and apply mask to fade them out in text area */}
+        <g mask="url(#text-area-mask)">
+          <g className="animate-traffic-light-1">
+            <circle r="0.5" fill="rgba(255,255,255,1)" />
+          </g>
+          <g className="animate-traffic-light-2">
+            <circle r="0.5" fill="rgba(255,255,255,1)" />
+          </g>
+          <g className="animate-traffic-light-3">
+            <circle r="0.5" fill="rgba(255,255,255,1)" />
+          </g>
+          <g className="animate-traffic-light-4">
+            <circle r="0.5" fill="rgba(255,255,255,1)" />
+          </g>
+          <g className="animate-traffic-light-5">
+            <circle r="0.5" fill="rgba(255,255,255,1)" />
+          </g>
+          <g className="animate-traffic-light-6">
+            <circle r="0.5" fill="rgba(255,255,255,1)" />
+          </g>
+          <g className="animate-traffic-light-7">
+            <circle r="0.5" fill="rgba(255,255,255,1)" />
+          </g>
+          <g className="animate-traffic-light-8">
+            <circle r="0.5" fill="rgba(255,255,255,1)" />
+          </g>
         </g>
       </svg>
     </div>

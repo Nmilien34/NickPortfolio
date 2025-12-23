@@ -68,17 +68,88 @@ body {
   }
 }
 
-.animate-street-light {
-  /* Path flows through street intersections, avoiding center where text is (40-60% area) */
-  /* Creates a journey: top-left → bottom-left → bottom-right → top-right → back */
-  offset-path: path('M15,35 L15,45 L15,55 L15,65 L30,65 L50,65 L70,65 L85,65 L85,55 L85,45 L85,35 L70,35 L50,35 L30,35 L15,35');
-  animation: street-light-journey 25s linear infinite;
+/* Traffic lights - Each on different streets with turns, independent paths to avoid collisions */
+/* Light 1: Left side, down then right at intersection */
+.animate-traffic-light-1 {
+  offset-path: path('M15,30 L15,35 L15,45 L30,45 L50,45 L70,45 L85,45');
+  animation: street-light-journey 20s linear infinite;
+  animation-delay: 0s;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Light 2: Top, right then down at intersection */
+.animate-traffic-light-2 {
+  offset-path: path('M10,35 L15,35 L30,35 L30,45 L30,55 L30,65');
+  animation: street-light-journey 18s linear infinite;
+  animation-delay: -3s;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Light 3: Right side, up then left at intersection */
+.animate-traffic-light-3 {
+  offset-path: path('M85,70 L85,65 L85,55 L70,55 L50,55 L30,55 L15,55');
+  animation: street-light-journey 22s linear infinite;
+  animation-delay: -5s;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Light 4: Middle horizontal, left then up */
+.animate-traffic-light-4 {
+  offset-path: path('M90,45 L85,45 L70,45 L70,35 L70,30');
+  animation: street-light-journey 19s linear infinite;
+  animation-delay: -1.5s;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Light 5: Second vertical, down then right */
+.animate-traffic-light-5 {
+  offset-path: path('M30,30 L30,35 L30,45 L30,55 L50,55 L70,55 L85,55');
+  animation: street-light-journey 21s linear infinite;
+  animation-delay: -7s;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Light 6: Bottom horizontal, right then up */
+.animate-traffic-light-6 {
+  offset-path: path('M10,65 L15,65 L30,65 L50,65 L50,55 L50,45 L50,35');
+  animation: street-light-journey 17s linear infinite;
+  animation-delay: -2s;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Light 7: Fourth vertical, up then left */
+.animate-traffic-light-7 {
+  offset-path: path('M70,70 L70,65 L70,55 L70,45 L50,45 L30,45 L15,45');
+  animation: street-light-journey 23s linear infinite;
+  animation-delay: -4.5s;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Light 8: Third horizontal, left then down */
+.animate-traffic-light-8 {
+  offset-path: path('M90,55 L85,55 L70,55 L70,65 L70,70');
+  animation: street-light-journey 20s linear infinite;
+  animation-delay: -6.5s;
   will-change: transform;
   transform: translateZ(0);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-street-light {
+  .animate-traffic-light-1,
+  .animate-traffic-light-2,
+  .animate-traffic-light-3,
+  .animate-traffic-light-4,
+  .animate-traffic-light-5,
+  .animate-traffic-light-6,
+  .animate-traffic-light-7,
+  .animate-traffic-light-8 {
     animation: none;
   }
 }
