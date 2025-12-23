@@ -339,7 +339,7 @@ export function Hero() {
               />
             </div>
             <figcaption className="text-center text-gray-400 mt-2 sm:mt-4 font-mono text-[10px] sm:text-xs opacity-80 group-hover:opacity-100 transition-opacity">
-              entrepreneurial journey
+              first week in the us
             </figcaption>
           </figure>
 
