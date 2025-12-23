@@ -332,14 +332,14 @@ export function Hero() {
           <figure className="group relative -rotate-2 md:-rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 ease-out z-0 hover:z-10">
             <div className="w-fit p-1.5 sm:p-2 border border-white/20 rounded-xl sm:rounded-2xl shadow-2xl">
               <img
-                src="/images/4F8413FF-0F8C-4384-AA3A-E72D29CD7AF1.jpeg"
-                alt="First day of high school"
+                src="/images/BecameEntrepreneur/carsSold/jewelsstore/IMG_1675.jpg"
+                alt="Entrepreneurial journey"
                 loading="lazy"
-                className="w-36 h-44 sm:w-48 sm:h-60 md:w-64 md:h-80 lg:w-72 lg:h-96 object-cover object-top rounded-lg sm:rounded-xl filter grayscale-[30%] group-hover:grayscale-0 transition-all duration-500"
+                className="w-36 h-44 sm:w-48 sm:h-60 md:w-64 md:h-80 lg:w-72 lg:h-96 object-cover object-center rounded-lg sm:rounded-xl filter grayscale-[30%] group-hover:grayscale-0 transition-all duration-500"
               />
             </div>
             <figcaption className="text-center text-gray-400 mt-2 sm:mt-4 font-mono text-[10px] sm:text-xs opacity-80 group-hover:opacity-100 transition-opacity">
-              first day of high school
+              entrepreneurial journey
             </figcaption>
           </figure>
 
