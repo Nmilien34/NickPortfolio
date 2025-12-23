@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { StreetAnimation } from '../effects/StreetAnimation';
+import { Terminal } from '../effects/Terminal';
 import { useElevenLabs } from '../../hooks/useElevenLabs';
 
 export function Hero() {
@@ -273,6 +274,9 @@ export function Hero() {
             Press to ask about my work, skills, or availability.
           </p>
         </div>
+
+        {/* Terminal - Linux/bash interface for navigation */}
+        <Terminal />
 
         {/* Personal Photos Section */}
         <div className="relative z-[5] flex flex-col md:flex-row justify-center items-center gap-4 md:gap-4 mt-[70vh] md:mt-[75vh] mb-12 md:mb-32 px-2 sm:px-4">
