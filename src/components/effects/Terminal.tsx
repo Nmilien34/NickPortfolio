@@ -309,17 +309,17 @@ I identify the friction points that block great experiences.`;
   return (
     <div className="w-full max-w-3xl mx-auto mt-12 md:mt-16 mb-8">
       <div
-        className="bg-[#0d1117] border border-[#30363d] rounded-lg overflow-hidden shadow-2xl cursor-text"
+        className="bg-[#0a0a0a] border border-stroke-border rounded-lg overflow-hidden shadow-2xl cursor-text"
         onClick={handleTerminalClick}
       >
         {/* Terminal Header */}
-        <div className="bg-[#161b22] px-4 py-2 flex items-center gap-2 border-b border-[#30363d]">
+        <div className="bg-[#1a1a1a] px-4 py-2 flex items-center gap-2 border-b border-stroke-border">
           <div className="flex gap-1.5">
-            <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-            <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-            <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+            <div className="w-3 h-3 rounded-full bg-[#666666]"></div>
+            <div className="w-3 h-3 rounded-full bg-[#888888]"></div>
+            <div className="w-3 h-3 rounded-full bg-[#aaaaaa]"></div>
           </div>
-          <span className="text-xs text-[#888888] ml-2 font-mono">bash — 80×24</span>
+          <span className="text-xs text-normal-text ml-2 font-mono">bash — 80×24</span>
         </div>
 
         {/* Terminal Body */}
@@ -328,15 +328,15 @@ I identify the friction points that block great experiences.`;
             <div key={index} className="mb-2">
               {item.command && (
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="text-[#a8a8a8]">nick@portfolio</span>
-                  <span className="text-[#888888]">:</span>
-                  <span className="text-[#909090]">{pathString}</span>
-                  <span className="text-[#888888]">$</span>
-                  <span className="text-[#cccccc]">{item.command}</span>
+                  <span className="text-normal-text">nick@portfolio</span>
+                  <span className="text-[#808080]">:</span>
+                  <span className="text-[#999999]">{pathString}</span>
+                  <span className="text-[#808080]">$</span>
+                  <span className="text-text-white">{item.command}</span>
                 </div>
               )}
               {item.output && (
-                <div className="text-[#888888] whitespace-pre-wrap ml-0">
+                <div className="text-normal-text whitespace-pre-wrap ml-0">
                   {item.output}
                 </div>
               )}
@@ -345,21 +345,21 @@ I identify the friction points that block great experiences.`;
 
           {/* Input Line */}
           <form onSubmit={handleSubmit} className="flex items-center gap-2 mt-2">
-            <span className="text-[#a8a8a8]">nick@portfolio</span>
-            <span className="text-[#888888]">:</span>
-            <span className="text-[#909090]">{pathString}</span>
-            <span className="text-[#888888]">$</span>
+            <span className="text-normal-text">nick@portfolio</span>
+            <span className="text-[#808080]">:</span>
+            <span className="text-[#999999]">{pathString}</span>
+            <span className="text-[#808080]">$</span>
             <input
               ref={inputRef}
               type="text"
               value={command}
               onChange={(e) => setCommand(e.target.value)}
               onKeyDown={handleKeyDown}
-              className="flex-1 bg-transparent text-[#cccccc] outline-none border-none focus:outline-none"
+              className="flex-1 bg-transparent text-text-white outline-none border-none focus:outline-none"
               autoFocus
               autoComplete="off"
             />
-            <span className="text-[#888888] animate-pulse">▊</span>
+            <span className="text-[#808080] animate-pulse">▊</span>
           </form>
         </div>
       </div>
