@@ -307,7 +307,7 @@ I identify the friction points that block great experiences.`;
   const pathString = currentPath.join('/');
 
   return (
-    <div className="w-full max-w-3xl mx-auto mt-12 md:mt-16 mb-8">
+    <div className="w-full max-w-3xl mx-auto mt-12 md:mt-16 mb-4">
       <div
         className="bg-[#0a0a0a] border border-stroke-border rounded-lg overflow-hidden shadow-2xl cursor-text"
         onClick={handleTerminalClick}
@@ -323,7 +323,7 @@ I identify the friction points that block great experiences.`;
         </div>
 
         {/* Terminal Body */}
-        <div className="p-4 font-mono text-sm min-h-[300px] max-h-[400px] overflow-y-auto scrollbar-thin">
+        <div className="p-4 font-mono text-sm min-h-[350px] max-h-[450px] overflow-y-auto scrollbar-thin">
           {history.map((item, index) => (
             <div key={index} className="mb-2">
               {item.command && (
