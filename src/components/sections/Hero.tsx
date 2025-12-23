@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { StreetAnimation } from '../effects/StreetAnimation';
 import { Terminal } from '../effects/Terminal';
 import { useElevenLabs } from '../../hooks/useElevenLabs';
@@ -8,6 +9,7 @@ export function Hero() {
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState('EN');
+  const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
 
   // ElevenLabs Configuration - Backend handles the API keys
@@ -68,21 +70,34 @@ export function Hero() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-start justify-center pt-48">
-      {/* Logo/Home Button */}
-      <button
-        onClick={scrollToTop}
-        className="absolute top-6 left-4 md:top-10 md:left-[120px] w-12 h-12 md:w-16 md:h-16 rounded-lg flex items-center justify-center border-2 border-white/30 bg-white/5 z-[60] cursor-pointer hover:border-white/50 transition-all duration-300"
-        aria-label="Home"
-      >
-        <span className="text-white font-serif text-lg md:text-[22px]">
-          NCM
-        </span>
-      </button>
+      {/* Sticky Navigation Container */}
+      <div className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-300 ${
+        isScrolled ? 'backdrop-blur-md bg-black/20' : 'bg-transparent'
+      }`}>
+        <div className="max-w-7xl mx-auto px-4 md:px-8 py-4 md:py-6">
+          {/* Logo/Home Button */}
+          <button
+            onClick={scrollToTop}
+            className="absolute top-6 left-4 md:top-6 md:left-[120px] w-12 h-12 md:w-16 md:h-16 rounded-lg flex items-center justify-center border-2 border-white/30 bg-white/5 cursor-pointer hover:border-white/50 transition-all duration-300"
+            aria-label="Home"
+          >
+            <span className="text-white font-serif text-lg md:text-[22px]">
+              NCM
+            </span>
+          </button>
 
-      {/* Desktop Navigation - Full buttons */}
-      <div className="absolute top-10 right-[280px] hidden md:flex gap-6 z-[60]">
+          {/* Desktop Navigation - Full buttons */}
+          <div className="absolute top-6 right-[280px] hidden md:flex gap-6">
         <button
           onClick={() => navigate('/about')}
           className="px-5 py-2 text-normal-text hover:text-text-white transition-colors"
@@ -112,11 +127,11 @@ export function Hero() {
           className="px-3 py-1.5 text-sm text-normal-text hover:text-text-white transition-colors"
         >
           About
-        </button>
-      </div>
+          </button>
+          </div>
 
-      {/* Mobile Hamburger Menu - Only visible on mobile */}
-      <div className="absolute top-6 right-[70px] md:hidden z-[60]">
+          {/* Mobile Hamburger Menu - Only visible on mobile */}
+          <div className="absolute top-6 right-[70px] md:hidden">
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="px-3 py-1.5 text-white hover:text-[#EFBF04] transition-colors"
@@ -150,10 +165,10 @@ export function Hero() {
             </button>
           </div>
         )}
-      </div>
+          </div>
 
-      {/* Language Switcher */}
-      <div className="absolute top-6 right-4 md:top-10 md:right-[120px] z-[60]">
+          {/* Language Switcher */}
+          <div className="absolute top-6 right-4 md:top-6 md:right-[120px]">
         <button
           onClick={() => setIsLangOpen(!isLangOpen)}
           className="px-4 py-1.5 md:px-6 md:py-2 text-sm md:text-base rounded-full border-2 border-white/30 bg-white/5 text-white hover:border-white/50 transition-all duration-300"
@@ -177,37 +192,57 @@ export function Hero() {
             ))}
           </div>
         )}
+          </div>
+        </div>
       </div>
 
       {/* Hero Content */}
       <div className="text-center px-4 md:px-6 relative z-10">
         {/* First Slide - Name and One-liner with Street Animation */}
-        <div className="relative py-8 md:py-12">
+        <motion.div 
+          className="relative py-8 md:py-12"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           {/* Street Animation - Only in this section */}
           <StreetAnimation />
           
           {/* Main Title */}
-          <h1
+          <motion.h1
             className="relative z-10 font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tighter mb-3 md:mb-4 text-white leading-tight"
             style={{
               mixBlendMode: 'overlay',
               opacity: 0.95,
               textShadow: '0 0 40px rgba(255,255,255,0.3), 0 0 80px rgba(255,255,255,0.2)',
             }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 0.95, y: 0 }}
+            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
           >
             NICK MILIEN
-          </h1>
+          </motion.h1>
 
           {/* Subtitle */}
-          <h2 className="relative z-10 font-serif text-base sm:text-xl md:text-3xl lg:text-4xl font-light text-white-smoke mb-6 md:mb-12 px-2 leading-snug">
+          <motion.h2 
+            className="relative z-10 font-serif text-base sm:text-xl md:text-3xl lg:text-4xl font-light text-white-smoke mb-6 md:mb-12 px-2 leading-snug"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+          >
             {translations[currentLang as keyof typeof translations].subtitle}
-          </h2>
+          </motion.h2>
 
           {/* Details */}
-          <p className="relative z-10 font-mono text-xs md:text-sm text-normal-text max-w-2xl mx-auto px-2">
+          <motion.p 
+            className="relative z-10 font-mono text-xs md:text-sm text-normal-text max-w-2xl mx-auto px-2"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
+          >
             {translations[currentLang as keyof typeof translations].description}
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Voice Assistant */}
         <div className="flex flex-col items-center justify-center gap-6 mt-12">
@@ -276,10 +311,23 @@ export function Hero() {
         </div>
 
         {/* Terminal - Linux/bash interface for navigation */}
-        <Terminal />
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <Terminal />
+        </motion.div>
 
         {/* Personal Photos Section */}
-        <div className="relative z-[5] flex flex-col md:flex-row justify-center items-center gap-4 md:gap-4 mt-8 md:mt-12 mb-12 md:mb-32 px-2 sm:px-4">
+        <motion.div 
+          className="relative z-[5] flex flex-col md:flex-row justify-center items-center gap-4 md:gap-4 mt-16 md:mt-20 mb-12 md:mb-32 px-2 sm:px-4"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           {/* Left Photo (Tilted Left) */}
           <figure className="group relative -rotate-2 md:-rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 ease-out z-0 hover:z-10">
             <div className="w-fit p-1.5 sm:p-2 border border-white/20 rounded-xl sm:rounded-2xl shadow-2xl">
@@ -316,14 +364,20 @@ export function Hero() {
               visiting friends at Cornell
             </figcaption>
           </figure>
-        </div>
+        </motion.div>
 
         {/* Closing Statement */}
-        <div className="max-w-3xl mx-auto mt-12 md:mt-32 mb-8 md:mb-20 px-4 md:px-6 text-center">
+        <motion.div 
+          className="max-w-3xl mx-auto mt-12 md:mt-32 mb-8 md:mb-20 px-4 md:px-6 text-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <p className="font-mono text-xs md:text-sm text-normal-text leading-relaxed">
             Since leaving Haiti, I've been chasing a dream I've had since I was 10. The past decade has been filled with incredible people who shaped my journey. I'm grateful for their guidance and hope to pay it forward. Here's what I've been building.
           </p>
-        </div>
+        </motion.div>
 
         {/* Timeline Start */}
         <div className="relative flex flex-col items-center mt-12 md:mt-20 mb-0">
