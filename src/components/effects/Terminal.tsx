@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 export function Terminal() {
   const [command, setCommand] = useState('');
   const [history, setHistory] = useState<Array<{ command: string; output: string }>>([]);
-  const [currentPath, setCurrentPath] = useState('~/nick-portfolio');
+  const currentPath = '~/nick-portfolio';
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
@@ -38,7 +38,7 @@ I identify the friction points that block great experiences.`;
         break;
 
       case 'ls':
-        output = `about/  projects/  learnings/  resume.pdf`;
+        output = `About  resume  learnings  projects  Cedchat`;
         break;
 
       case 'pwd':
@@ -69,6 +69,13 @@ I identify the friction points that block great experiences.`;
         setTimeout(() => {
           window.open(encodeURI("/images/_PM concised V7.4.pdf"), '_blank');
         }, 500);
+        break;
+
+      case 'cedchat':
+        output = `Cedchat (Cedrick) - Nick's Digital Secretary & Voice AI Assistant
+Cedrick is Nick's personal AI assistant and digital alter-ego.
+He guides users, hypes up Nick's achievements, and helps connect visitors with Nick.
+Look for the voice assistant button on the homepage to interact with Cedrick!`;
         break;
 
       case '':
