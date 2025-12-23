@@ -57,7 +57,7 @@ export function Terminal() {
   useEffect(() => {
     setHistory([{
       command: '',
-      output: `Welcome to Nick Milien's Portfolio Terminal
+      output: `Welcome to my portfolio, if you didn't like Ced, you might find the terminal more useful.
 Type "help" to see available commands`
     }]);
   }, []);
