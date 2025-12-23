@@ -3,7 +3,7 @@ interface SlideNavigationProps {
   totalSlides?: number;
 }
 
-export function SlideNavigation({ currentSlideIndex = 0, totalSlides = 5 }: SlideNavigationProps) {
+export function SlideNavigation({ currentSlideIndex = 0, totalSlides = 6 }: SlideNavigationProps) {
   const scrollToSection = (index: number) => {
     const section = document.getElementById(`section-${index}`);
     if (section) {
