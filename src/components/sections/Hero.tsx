@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { VolumetricLight } from '../effects/VolumetricLight';
+import { StreetAnimation } from '../effects/StreetAnimation';
 import { useElevenLabs } from '../../hooks/useElevenLabs';
 
 export function Hero() {
@@ -69,8 +69,8 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-start justify-center pt-48">
-      {/* Volumetric Light Effect */}
-      <VolumetricLight />
+      {/* Street Animation Effect */}
+      <StreetAnimation />
 
       {/* Logo/Home Button */}
       <button
@@ -272,7 +272,7 @@ export function Hero() {
         </div>
 
         {/* Personal Photos Section */}
-        <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-4 mt-12 md:mt-32 mb-12 md:mb-32 px-2 sm:px-4">
+        <div className="relative z-[5] flex flex-col md:flex-row justify-center items-center gap-4 md:gap-4 mt-[70vh] md:mt-[75vh] mb-12 md:mb-32 px-2 sm:px-4">
           {/* Left Photo (Tilted Left) */}
           <figure className="group relative -rotate-2 md:-rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500 ease-out z-0 hover:z-10">
             <div className="w-fit p-1.5 sm:p-2 border border-white/20 rounded-xl sm:rounded-2xl shadow-2xl">

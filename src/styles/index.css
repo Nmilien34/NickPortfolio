@@ -59,6 +59,28 @@ body {
   animation: wave 1s ease-in-out infinite;
 }
 
+@keyframes street-light-journey {
+  0%, 100% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.animate-street-light {
+  offset-path: path('M20,35 L20,54 L60,54 L60,40 L80,40 L80,61 L40,61 L40,47 L20,47 Z');
+  animation: street-light-journey 30s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-street-light {
+    animation: none;
+  }
+}
+
 /* Custom scrollbar styling */
 .scrollbar-thin::-webkit-scrollbar {
   width: 6px;
