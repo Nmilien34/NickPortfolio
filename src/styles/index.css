@@ -60,7 +60,7 @@ body {
 }
 
 @keyframes street-light-journey {
-  0%, 100% {
+  0% {
     offset-distance: 0%;
   }
   100% {
@@ -69,8 +69,10 @@ body {
 }
 
 .animate-street-light {
-  offset-path: path('M20,35 L20,54 L60,54 L60,40 L80,40 L80,61 L40,61 L40,47 L20,47 Z');
-  animation: street-light-journey 30s linear infinite;
+  /* Path flows through street intersections, avoiding center where text is (40-60% area) */
+  /* Creates a journey: top-left → bottom-left → bottom-right → top-right → back */
+  offset-path: path('M15,35 L15,45 L15,55 L15,65 L30,65 L50,65 L70,65 L85,65 L85,55 L85,45 L85,35 L70,35 L50,35 L30,35 L15,35');
+  animation: street-light-journey 25s linear infinite;
   will-change: transform;
   transform: translateZ(0);
 }

@@ -69,9 +69,6 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-start justify-center pt-48">
-      {/* Street Animation Effect */}
-      <StreetAnimation />
-
       {/* Logo/Home Button */}
       <button
         onClick={scrollToTop}
@@ -183,27 +180,33 @@ export function Hero() {
 
       {/* Hero Content */}
       <div className="text-center px-4 md:px-6 relative z-10">
-        {/* Main Title */}
-        <h1
-          className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tighter mb-3 md:mb-4 text-white leading-tight"
-          style={{
-            mixBlendMode: 'overlay',
-            opacity: 0.95,
-            textShadow: '0 0 40px rgba(255,255,255,0.3), 0 0 80px rgba(255,255,255,0.2)',
-          }}
-        >
-          NICK MILIEN
-        </h1>
+        {/* First Slide - Name and One-liner with Street Animation */}
+        <div className="relative py-8 md:py-12">
+          {/* Street Animation - Only in this section */}
+          <StreetAnimation />
+          
+          {/* Main Title */}
+          <h1
+            className="relative z-10 font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tighter mb-3 md:mb-4 text-white leading-tight"
+            style={{
+              mixBlendMode: 'overlay',
+              opacity: 0.95,
+              textShadow: '0 0 40px rgba(255,255,255,0.3), 0 0 80px rgba(255,255,255,0.2)',
+            }}
+          >
+            NICK MILIEN
+          </h1>
 
-        {/* Subtitle */}
-        <h2 className="font-serif text-base sm:text-xl md:text-3xl lg:text-4xl font-light text-white-smoke mb-6 md:mb-12 px-2 leading-snug">
-          {translations[currentLang as keyof typeof translations].subtitle}
-        </h2>
+          {/* Subtitle */}
+          <h2 className="relative z-10 font-serif text-base sm:text-xl md:text-3xl lg:text-4xl font-light text-white-smoke mb-6 md:mb-12 px-2 leading-snug">
+            {translations[currentLang as keyof typeof translations].subtitle}
+          </h2>
 
-        {/* Details */}
-        <p className="font-mono text-xs md:text-sm text-normal-text max-w-2xl mx-auto px-2">
-          {translations[currentLang as keyof typeof translations].description}
-        </p>
+          {/* Details */}
+          <p className="relative z-10 font-mono text-xs md:text-sm text-normal-text max-w-2xl mx-auto px-2">
+            {translations[currentLang as keyof typeof translations].description}
+          </p>
+        </div>
 
         {/* Voice Assistant */}
         <div className="flex flex-col items-center justify-center gap-6 mt-12">
