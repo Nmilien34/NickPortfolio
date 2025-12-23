@@ -46,7 +46,7 @@ export function Hero() {
   const translations = {
     EN: {
       subtitle: 'Technical Product Manager & Electronics Engineer',
-      description: 'I like finding the problems that keep the experience from being great',
+      description: 'I identify the friction points that block great experiences',
     },
     FR: {
       subtitle: 'Chef de Produit Technique & Ingénieur en Électronique',
