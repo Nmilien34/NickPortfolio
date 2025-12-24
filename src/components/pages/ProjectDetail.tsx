@@ -385,27 +385,27 @@ export function ProjectDetail() {
               <h3 className="font-serif text-lg md:text-xl text-white mb-4">Benefits of the Subscription Model</h3>
               <ul className="space-y-3 text-normal-text font-mono text-sm">
                 <li className="flex items-start">
-                  <span className="mr-2 text-[#EFBF04]">•</span>
+                  <span className="mr-2 text-normal-text">•</span>
                   <span><strong className="text-white">Stickier Business Model:</strong> Customers are less likely to churn after committing to a subscription.</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-2 text-[#EFBF04]">•</span>
+                  <span className="mr-2 text-normal-text">•</span>
                   <span><strong className="text-white">Higher Pricing Potential:</strong> Subscriptions allow for higher prices, providing more room for margins and potentially increasing revenue.</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-2 text-[#EFBF04]">•</span>
+                  <span className="mr-2 text-normal-text">•</span>
                   <span><strong className="text-white">Simplicity:</strong> Comprehensive outdoor home care services beyond just lawn mowing, without the headaches of calculating prices / quotes for the different services.</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-2 text-[#EFBF04]">•</span>
+                  <span className="mr-2 text-normal-text">•</span>
                   <span><strong className="text-white">Trust and Familiarity:</strong> Regular service providers build trust and familiarity with customers.</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-2 text-[#EFBF04]">•</span>
+                  <span className="mr-2 text-normal-text">•</span>
                   <span><strong className="text-white">Predictable Income:</strong> Clearer recurring revenue model is attractive to investors and easier to calculate in terms of churn and revenue projections.</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-2 text-[#EFBF04]">•</span>
+                  <span className="mr-2 text-normal-text">•</span>
                   <span><strong className="text-white">Upsell Opportunities:</strong> More opportunities to engage customers and offer additional services.</span>
                 </li>
               </ul>
@@ -416,15 +416,15 @@ export function ProjectDetail() {
               <h2 className="font-serif text-lg md:text-xl text-white mb-4">Cons of the Subscription Model</h2>
               <ul className="space-y-3 text-normal-text font-mono text-xs md:text-sm">
                 <li className="flex items-start">
-                  <span className="mr-2 text-[#EFBF04]">•</span>
+                  <span className="mr-2 text-normal-text">•</span>
                   <span><strong className="text-white">Higher Price Point:</strong> Harder to sell due to the higher cost.</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-2 text-[#EFBF04]">•</span>
+                  <span className="mr-2 text-normal-text">•</span>
                   <span><strong className="text-white">Reputational Risk:</strong> Increased risk if service providers are of poor quality.</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-2 text-[#EFBF04]">•</span>
+                  <span className="mr-2 text-normal-text">•</span>
                   <span><strong className="text-white">Fundamental Change:</strong> Transitioning from a marketplace to a service provider incurs reputational risks and operational challenges.</span>
                 </li>
               </ul>
@@ -718,7 +718,7 @@ export function ProjectDetail() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div className="flex flex-col justify-center">
                 <div className="inline-block mb-4">
-                  <span className="bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-blue-500/30">
+                  <span className="bg-white/5 text-normal-text px-4 py-2 rounded-full font-mono text-sm font-bold border border-white/20">
                     Option A
                   </span>
                 </div>
@@ -829,7 +829,7 @@ export function ProjectDetail() {
               {/* Option A */}
               <div className="flex flex-col h-full">
                 <div className="inline-block mb-4">
-                  <span className="bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-blue-500/30">
+                  <span className="bg-white/5 text-normal-text px-4 py-2 rounded-full font-mono text-sm font-bold border border-white/20">
                     Option A
                   </span>
                 </div>
@@ -1045,19 +1045,19 @@ export function ProjectDetail() {
                     </p>
                     <ul className="space-y-3 text-normal-text font-mono text-sm">
                       <li className="flex items-start">
-                        <span className="mr-2 text-[#EFBF04] mt-0.5">•</span>
+                        <span className="mr-2 text-normal-text mt-0.5">•</span>
                         <span><strong className="text-white">Acquisition:</strong> Eliminate the need to buy leads or chase sales.</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="mr-2 text-[#EFBF04] mt-0.5">•</span>
+                        <span className="mr-2 text-normal-text mt-0.5">•</span>
                         <span><strong className="text-white">Logistics:</strong> Provide intelligent, automated route optimization.</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="mr-2 text-[#EFBF04] mt-0.5">•</span>
+                        <span className="mr-2 text-normal-text mt-0.5">•</span>
                         <span><strong className="text-white">Fintech:</strong> Instant access to earnings (no net-30 delays).</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="mr-2 text-[#EFBF04] mt-0.5">•</span>
+                        <span className="mr-2 text-normal-text mt-0.5">•</span>
                         <span><strong className="text-white">Operations:</strong> A complete digital OS—scheduling, invoicing, and messaging—replacing the "pen and paper" chaos.</span>
                       </li>
                     </ul>
@@ -1073,11 +1073,11 @@ export function ProjectDetail() {
                     <p className="text-white font-mono text-sm font-semibold mb-3">Optimization: Route Density & Logistics</p>
                     <ul className="space-y-3 text-normal-text font-mono text-sm mb-4">
                       <li className="flex items-start">
-                        <span className="mr-2 text-[#EFBF04] mt-0.5">•</span>
+                        <span className="mr-2 text-normal-text mt-0.5">•</span>
                         <span><strong className="text-white">Requirement: Visual Route Planning.</strong> The Spec: Providers must see a visual map of existing clients to cluster new jobs. This minimizes travel time and maximizes daily revenue per truck.</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="mr-2 text-[#EFBF04] mt-0.5">•</span>
+                        <span className="mr-2 text-normal-text mt-0.5">•</span>
                         <span><strong className="text-white">Requirement: Dynamic "Day-of" Adjustments.</strong> The Spec: The algorithm must support real-time changes—accounting for urgency, proximity, and crew availability—allowing providers to re-optimize their route when conditions change mid-shift.</span>
                       </li>
                     </ul>
@@ -1086,7 +1086,7 @@ export function ProjectDetail() {
                     <p className="text-white font-mono text-sm font-semibold mb-3">Workflow: The Digital Command Center</p>
                     <ul className="space-y-3 text-normal-text font-mono text-sm">
                       <li className="flex items-start">
-                        <span className="mr-2 text-[#EFBF04] mt-0.5">•</span>
+                        <span className="mr-2 text-normal-text mt-0.5">•</span>
                         <span><strong className="text-white">Requirement: Automated Job Management.</strong> The Spec: Eliminate the "morning huddle." Providers need a unified dashboard to view job details, submit proof-of-work photos, and trigger instant payouts upon completion.</span>
                       </li>
                     </ul>
@@ -1189,11 +1189,11 @@ export function ProjectDetail() {
                       <p className="text-white font-mono text-sm font-semibold mb-3">The Data:</p>
                       <ul className="space-y-3 text-normal-text font-mono text-sm">
                         <li className="flex items-start">
-                          <span className="mr-2 text-[#EFBF04] mt-0.5">•</span>
+                          <span className="mr-2 text-normal-text mt-0.5">•</span>
                           <span><strong className="text-white">Time-on-Task:</strong> It took an average of 3.7 minutes to schedule a single job digitally.</span>
                         </li>
                         <li className="flex items-start">
-                          <span className="mr-2 text-[#EFBF04] mt-0.5">•</span>
+                          <span className="mr-2 text-normal-text mt-0.5">•</span>
                           <span><strong className="text-white">Daily Impact:</strong> For a standard 6-job route, this totaled 22.2 minutes of admin time—a 344% increase in effort compared to their 5-minute manual routine.</span>
                         </li>
                       </ul>
@@ -1278,7 +1278,7 @@ export function ProjectDetail() {
                   {/* Factor 1: Route Density */}
                   <div className="mb-6">
                     <div className="flex items-start gap-3 mb-3">
-                      <svg className="w-6 h-6 text-[#EFBF04] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-6 h-6 text-normal-text flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                       </svg>
                       <div>
@@ -1293,7 +1293,7 @@ export function ProjectDetail() {
                   {/* Factor 2: Crew Availability */}
                   <div className="mb-6">
                     <div className="flex items-start gap-3 mb-3">
-                      <svg className="w-6 h-6 text-[#EFBF04] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-6 h-6 text-normal-text flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                       </svg>
                       <div>
@@ -1308,7 +1308,7 @@ export function ProjectDetail() {
                   {/* Factor 3: Job Criticality */}
                   <div>
                     <div className="flex items-start gap-3 mb-3">
-                      <svg className="w-6 h-6 text-[#EFBF04] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-6 h-6 text-normal-text flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                       </svg>
                       <div>
@@ -1391,11 +1391,11 @@ export function ProjectDetail() {
                   <p className="text-white font-mono text-sm font-semibold mb-3">The Solution:</p>
                   <ul className="space-y-3 text-normal-text font-mono text-sm">
                     <li className="flex items-start">
-                      <span className="mr-2 text-[#EFBF04] mt-0.5">•</span>
+                      <span className="mr-2 text-normal-text mt-0.5">•</span>
                       <span><strong className="text-white">Deprecated Time Slots:</strong> Shifted from specific appointment times (e.g., "2:00 PM") to "Day-based" scheduling.</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="mr-2 text-[#EFBF04] mt-0.5">•</span>
+                      <span className="mr-2 text-normal-text mt-0.5">•</span>
                       <span><strong className="text-white">Visualized Proximity:</strong> Exposed the provider's existing route map during the acceptance phase. This allowed them to make data-driven decisions—accepting new jobs only if they fit into their existing clusters.</span>
                     </li>
                   </ul>
@@ -1548,15 +1548,15 @@ export function ProjectDetail() {
             </div>
 
             {/* Conclusion Card - The Co-Founder Experience */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-lg border-2 border-[#EFBF04]/20 p-12 mb-8 w-full max-w-[1240px] mx-auto">
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border-2 border-white/20 p-12 mb-8 w-full max-w-[1240px] mx-auto">
               <div className="max-w-3xl mx-auto text-center">
                 {/* Title with accent */}
                 <div className="mb-8">
-                  <div className="w-16 h-1 bg-[#EFBF04] mx-auto mb-6"></div>
+                  <div className="w-16 h-1 bg-white/20 mx-auto mb-6"></div>
                   <h2 className="text-white font-serif text-4xl md:text-5xl font-bold mb-2">
                     The Co-Founder Experience
                   </h2>
-                  <div className="w-16 h-1 bg-[#EFBF04] mx-auto mt-6"></div>
+                  <div className="w-16 h-1 bg-white/20 mx-auto mt-6"></div>
                 </div>
 
                 {/* Main content */}
@@ -1566,7 +1566,7 @@ export function ProjectDetail() {
                   </p>
 
                   <p className="text-normal-text font-mono text-base leading-relaxed">
-                    I worked alongside <strong className="text-white"><a href="https://allen.mov/" target="_blank" rel="noopener noreferrer" className="hover:text-[#EFBF04] transition-colors underline decoration-[#EFBF04]/50 hover:decoration-[#EFBF04]">Co-founder/CFO Allen Yao</a></strong> to validate our business models and unit economics. Simultaneously, I managed the technical roadmap with <strong className="text-white"><a href="https://www.liamdu.com/" target="_blank" rel="noopener noreferrer" className="hover:text-[#EFBF04] transition-colors underline decoration-[#EFBF04]/50 hover:decoration-[#EFBF04]">Co-founder/CTO Liam Du</a></strong>, ensuring our engineering efforts matched our strategic goals.
+                    I worked alongside <strong className="text-white"><a href="https://allen.mov/" target="_blank" rel="noopener noreferrer" className="hover:text-text-white transition-colors underline decoration-white/50 hover:decoration-white">Co-founder/CFO Allen Yao</a></strong> to validate our business models and unit economics. Simultaneously, I managed the technical roadmap with <strong className="text-white"><a href="https://www.liamdu.com/" target="_blank" rel="noopener noreferrer" className="hover:text-text-white transition-colors underline decoration-white/50 hover:decoration-white">Co-founder/CTO Liam Du</a></strong>, ensuring our engineering efforts matched our strategic goals.
                   </p>
 
                   <p className="text-normal-text font-mono text-base leading-relaxed">
@@ -1905,13 +1905,13 @@ export function ProjectDetail() {
                   </div>
 
                   {/* Option B */}
-                  <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-yellow-500/30 p-6">
+                  <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-full bg-yellow-500/20 flex items-center justify-center border border-yellow-500/40">
+                      <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20">
                         <span className="text-2xl">↪️</span>
                       </div>
                       <div>
-                        <span className="text-yellow-400 font-mono text-xs font-semibold">PARTIAL</span>
+                        <span className="text-normal-text font-mono text-xs font-semibold">PARTIAL</span>
                         <h4 className="font-serif text-lg text-white">Option B</h4>
                       </div>
                     </div>
@@ -1922,13 +1922,13 @@ export function ProjectDetail() {
                   </div>
 
                   {/* Option C */}
-                  <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-blue-500/30 p-6">
+                  <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center border border-blue-500/40">
+                      <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20">
                         <span className="text-2xl">📞</span>
                       </div>
                       <div>
-                        <span className="text-blue-400 font-mono text-xs font-semibold">VIABLE</span>
+                        <span className="text-normal-text font-mono text-xs font-semibold">VIABLE</span>
                         <h4 className="font-serif text-lg text-white">Option C</h4>
                       </div>
                     </div>
@@ -1961,13 +1961,13 @@ export function ProjectDetail() {
                 </p>
 
                 {/* Option A - Modern Ecosystems */}
-                <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 backdrop-blur-sm rounded-xl border border-purple-500/30 p-8 mb-8">
+                <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/20 p-8 mb-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center border border-purple-500/40">
+                    <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center border border-white/20">
                       <span className="text-3xl">🔗</span>
                     </div>
                     <div>
-                      <span className="text-purple-400 font-mono text-xs font-semibold">OPTION A</span>
+                      <span className="text-normal-text font-mono text-xs font-semibold">OPTION A</span>
                       <h4 className="font-serif text-xl text-white">Modern Ecosystems</h4>
                     </div>
                   </div>
@@ -1989,13 +1989,13 @@ export function ProjectDetail() {
                 </div>
 
                 {/* Option B - Smart Printer Bridge */}
-                <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 backdrop-blur-sm rounded-xl border border-orange-500/30 p-8">
+                <div className="bg-white/5 backdrop-blur-sm rounded-xl border border-white/20 p-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center border border-orange-500/40">
+                    <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center border border-white/20">
                       <span className="text-3xl">🖨️</span>
                     </div>
                     <div>
-                      <span className="text-orange-400 font-mono text-xs font-semibold">OPTION B</span>
+                      <span className="text-normal-text font-mono text-xs font-semibold">OPTION B</span>
                       <h4 className="font-serif text-xl text-white">The "Smart Printer" Bridge</h4>
                     </div>
                   </div>

@@ -32,7 +32,7 @@ export function getProjectsData(t: (key: string) => string): Project[] {
     category: t('projects.boltzmanEnterprise.category'),
     description: t('projects.boltzmanEnterprise.description'),
     mockup: '/Projects/VoiceaiReceptionist/91658D25-00CB-4B5E-BD37-CDE8CFA0BA8C.jpeg',
-    gradientColors: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+    gradientColors: undefined,
     browserUrl: 'enterprise.boltzman.ai',
   },
   {
@@ -40,7 +40,7 @@ export function getProjectsData(t: (key: string) => string): Project[] {
     category: t('projects.boltzmanAI.category'),
     description: t('projects.boltzmanAI.description'),
     mockup: '/Projects/Boltzman AI/146A59BD-B8D5-4B99-BD96-823574456AF2.jpeg',
-    gradientColors: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+    gradientColors: undefined,
     browserUrl: 'boltzman.ai',
   },
   {
@@ -48,7 +48,7 @@ export function getProjectsData(t: (key: string) => string): Project[] {
     category: t('projects.boltzmanVoice.category'),
     description: t('projects.boltzmanVoice.description'),
     mockup: '/Projects/BoltzmanVoice/E80A7619-852F-43F7-AADB-099DC4EBE4EB.jpeg',
-    gradientColors: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+    gradientColors: undefined,
     browserUrl: 'voice.boltzman.ai',
   },
   {
@@ -57,14 +57,14 @@ export function getProjectsData(t: (key: string) => string): Project[] {
     description: t('projects.clearr.description'),
     image: '/images/projects/Clearr/clearr-cover.jpeg',
     link: 'https://apps.apple.com/us/app/clearr-thought-translator/id6751149912',
-    gradientColors: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+    gradientColors: undefined,
   },
   {
     title: 'Energy',
     category: t('projects.energy.category'),
     description: t('projects.energy.description'),
     mockup: '/Projects/Energy/974BE277-C1B0-4EBC-9E0C-AE982167833B.jpeg',
-    gradientColors: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    gradientColors: undefined,
     browserUrl: 'YFHNRG.com',
   },
   {
@@ -72,7 +72,7 @@ export function getProjectsData(t: (key: string) => string): Project[] {
     category: t('projects.lyra.category'),
     description: t('projects.lyra.description'),
     underConstruction: true,
-    gradientColors: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
+    gradientColors: undefined,
     browserUrl: 'comingsoon.com',
   },
   ];
