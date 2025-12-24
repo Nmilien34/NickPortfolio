@@ -280,7 +280,7 @@ export function ProjectDetail() {
                 {project.summary || project.description}
               </p>
               {project.underConstruction && (
-                <div className="mt-4 px-4 py-2 bg-yellow-500/20 border border-yellow-500/30 rounded-lg">
+                <div className="mt-4 px-4 py-2 bg-yellow-500/20 border border-gray-500/30 rounded-lg">
                   <p className="text-yellow-400 font-mono text-xs">🚧 This project is currently under construction</p>
                 </div>
               )}
@@ -884,7 +884,7 @@ export function ProjectDetail() {
             {/* Option A */}
             <div className="bg-white/5 rounded-lg border border-white/10 p-4 flex flex-col w-full max-w-xl">
               <div className="inline-block mb-4">
-                <span className="bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-blue-500/30">
+                <span className="bg-gray-500/20 text-gray-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-gray-500/30">
                   Option A
                 </span>
               </div>
@@ -924,7 +924,7 @@ export function ProjectDetail() {
             {/* Option C */}
             <div className="bg-white/5 rounded-lg border border-white/10 p-4 flex flex-col w-full max-w-xl ml-0 md:ml-0">
               <div className="inline-block mb-4">
-                <span className="bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-blue-500/30">
+                <span className="bg-gray-500/20 text-gray-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-gray-500/30">
                   Option C
                 </span>
               </div>
@@ -958,7 +958,7 @@ export function ProjectDetail() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <div className="flex flex-col justify-center">
               <div className="inline-block mb-4">
-                <span className="bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-blue-500/30">
+                <span className="bg-gray-500/20 text-gray-300 px-4 py-2 rounded-full font-mono text-sm font-bold border border-gray-500/30">
                   Option A
                 </span>
               </div>
@@ -2100,13 +2100,13 @@ export function ProjectDetail() {
                   {/* Three Testing Stages */}
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {/* Stage 1 - Pronunciation */}
-                    <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 backdrop-blur-sm rounded-xl border border-blue-500/30 p-6">
+                    <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 backdrop-blur-sm rounded-xl border border-gray-500/30 p-6">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center border border-blue-500/40">
+                        <div className="w-12 h-12 rounded-full bg-gray-500/20 flex items-center justify-center border border-gray-500/40">
                           <span className="text-2xl">🗣️</span>
                         </div>
                         <div>
-                          <span className="text-blue-400 font-mono text-xs font-semibold">STAGE 1</span>
+                          <span className="text-gray-400 font-mono text-xs font-semibold">STAGE 1</span>
                           <h4 className="font-serif text-lg text-white">Pronunciation</h4>
                         </div>
                       </div>
@@ -2117,13 +2117,13 @@ export function ProjectDetail() {
                     </div>
 
                     {/* Stage 2 - Transcription */}
-                    <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur-sm rounded-xl border border-purple-500/30 p-6">
+                    <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 backdrop-blur-sm rounded-xl border border-gray-500/30 p-6">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center border border-purple-500/40">
+                        <div className="w-12 h-12 rounded-full bg-gray-500/20 flex items-center justify-center border border-gray-500/40">
                           <span className="text-2xl">📝</span>
                         </div>
                         <div>
-                          <span className="text-purple-400 font-mono text-xs font-semibold">STAGE 2</span>
+                          <span className="text-gray-400 font-mono text-xs font-semibold">STAGE 2</span>
                           <h4 className="font-serif text-lg text-white">Transcription</h4>
                         </div>
                       </div>
@@ -2214,7 +2214,7 @@ export function ProjectDetail() {
                           </div>
                         </div>
                         {/* Decorative glow */}
-                        <div className="absolute -inset-4 bg-gradient-to-br from-[#EFBF04]/10 via-yellow-500/10 to-amber-500/10 rounded-xl blur-xl -z-10"></div>
+                        <div className="absolute -inset-4 bg-gradient-to-br from-gray-500/10 via-gray-500/10 to-gray-500/10 rounded-xl blur-xl -z-10"></div>
                       </div>
                     </div>
                   </div>
@@ -2437,9 +2437,9 @@ export function ProjectDetail() {
                 {/* PROBLEM SIDE - Left */}
                 <div className="relative flex flex-col">
                   {/* Decorative gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-orange-500/5 rounded-2xl blur-xl"></div>
-                  
-                  <div className="relative bg-gradient-to-br from-red-950/30 to-orange-950/20 backdrop-blur-sm rounded-2xl border-2 border-red-500/30 p-6 md:p-8 flex flex-col h-full">
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-gray-500/5 rounded-2xl blur-xl"></div>
+
+                  <div className="relative bg-gradient-to-br from-red-950/30 to-gray-950/20 backdrop-blur-sm rounded-2xl border-2 border-red-500/30 p-6 md:p-8 flex flex-col h-full">
                     {/* Problem Header */}
                     <div className="flex items-center gap-3 mb-6">
                       <div className="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center border-2 border-red-500/50">
@@ -2607,8 +2607,8 @@ export function ProjectDetail() {
                     {/* Section I */}
                     <div className="space-y-4">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center border border-purple-500/30">
-                          <span className="text-purple-400 font-serif text-xl font-bold">I</span>
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gray-500/20 to-gray-500/20 flex items-center justify-center border border-gray-500/30">
+                          <span className="text-gray-400 font-serif text-xl font-bold">I</span>
                         </div>
                         <h3 className="font-serif text-2xl text-white">Re-evaluating the Problem</h3>
                       </div>
@@ -2617,7 +2617,7 @@ export function ProjectDetail() {
                       <div className="space-y-4">
                         <div className="bg-white/5 rounded-lg p-4 border border-white/10">
                           <h4 className="text-white font-semibold mb-2 font-mono text-sm flex items-center gap-2">
-                            <svg className="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                             </svg>
                             The Implicit Friction of Fragmentation
@@ -2627,8 +2627,8 @@ export function ProjectDetail() {
                           </p>
                         </div>
 
-                        <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-lg p-4 border border-purple-500/20">
-                          <h4 className="text-purple-400 font-semibold mb-2 font-mono text-sm flex items-center gap-2">
+                        <div className="bg-gradient-to-r from-gray-500/10 to-gray-500/10 rounded-lg p-4 border border-gray-500/20">
+                          <h4 className="text-gray-400 font-semibold mb-2 font-mono text-sm flex items-center gap-2">
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                             </svg>
@@ -2641,7 +2641,7 @@ export function ProjectDetail() {
 
                         <div className="bg-white/5 rounded-lg p-4 border border-white/10">
                           <h4 className="text-white font-semibold mb-2 font-mono text-sm flex items-center gap-2">
-                            <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             The Goal
@@ -2656,7 +2656,7 @@ export function ProjectDetail() {
                     {/* Section II */}
                     <div className="space-y-4 pt-6 border-t border-white/10">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center border border-emerald-500/30">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500/20 to-gray-500/20 flex items-center justify-center border border-emerald-500/30">
                           <span className="text-emerald-400 font-serif text-xl font-bold">II</span>
                         </div>
                         <h3 className="font-serif text-2xl text-white">Strategic Solution</h3>
@@ -2675,13 +2675,13 @@ export function ProjectDetail() {
                       {/* Four Pillars */}
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {/* Pillar 1 */}
-                        <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-lg p-4 border border-blue-500/20">
+                        <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-lg p-4 border border-gray-500/20">
                           <div className="flex items-start gap-3 mb-2">
-                            <div className="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
-                              <span className="text-blue-400 font-mono font-bold text-sm">1</span>
+                            <div className="w-8 h-8 rounded-lg bg-gray-500/20 flex items-center justify-center flex-shrink-0">
+                              <span className="text-gray-400 font-mono font-bold text-sm">1</span>
                             </div>
                             <div className="flex-1">
-                              <h4 className="text-blue-400 font-semibold mb-1 font-mono text-sm">Execution of Tasks</h4>
+                              <h4 className="text-gray-400 font-semibold mb-1 font-mono text-sm">Execution of Tasks</h4>
                               <p className="text-white/60 font-mono text-xs italic mb-2">The "How"</p>
                               <p className="text-white/70 font-mono text-xs leading-relaxed">
                                 Powered by the very tools humans use digitally. Our strategy was to equip the system with access to the user's existing suite of favorite applications—Google Drive, Calendar, Notion, Slack, etc.—acting as the "sous chef" to run the digital kitchen.
@@ -2691,13 +2691,13 @@ export function ProjectDetail() {
                         </div>
 
                         {/* Pillar 2 */}
-                        <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-lg p-4 border border-purple-500/20">
+                        <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-lg p-4 border border-gray-500/20">
                           <div className="flex items-start gap-3 mb-2">
-                            <div className="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center flex-shrink-0">
-                              <span className="text-purple-400 font-mono font-bold text-sm">2</span>
+                            <div className="w-8 h-8 rounded-lg bg-gray-500/20 flex items-center justify-center flex-shrink-0">
+                              <span className="text-gray-400 font-mono font-bold text-sm">2</span>
                             </div>
                             <div className="flex-1">
-                              <h4 className="text-purple-400 font-semibold mb-1 font-mono text-sm">Long-Form Memory</h4>
+                              <h4 className="text-gray-400 font-semibold mb-1 font-mono text-sm">Long-Form Memory</h4>
                               <p className="text-white/60 font-mono text-xs italic mb-2">The "Intent"</p>
                               <p className="text-white/70 font-mono text-xs leading-relaxed">
                                 The best way to anticipate and understand a user's intent is by having access to their vast history of past interactions with the system. This deep, persistent memory capability solves the critical problem of contextual understanding.
@@ -2723,13 +2723,13 @@ export function ProjectDetail() {
                         </div>
 
                         {/* Pillar 4 */}
-                        <div className="bg-gradient-to-br from-orange-500/10 to-red-500/10 rounded-lg p-4 border border-orange-500/20">
+                        <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-lg p-4 border border-gray-500/20">
                           <div className="flex items-start gap-3 mb-2">
-                            <div className="w-8 h-8 rounded-lg bg-orange-500/20 flex items-center justify-center flex-shrink-0">
-                              <span className="text-orange-400 font-mono font-bold text-sm">4</span>
+                            <div className="w-8 h-8 rounded-lg bg-gray-500/20 flex items-center justify-center flex-shrink-0">
+                              <span className="text-gray-400 font-mono font-bold text-sm">4</span>
                             </div>
                             <div className="flex-1">
-                              <h4 className="text-orange-400 font-semibold mb-1 font-mono text-sm">Value Function</h4>
+                              <h4 className="text-gray-400 font-semibold mb-1 font-mono text-sm">Value Function</h4>
                               <p className="text-white/60 font-mono text-xs italic mb-2">The "Why"</p>
                               <p className="text-white/70 font-mono text-xs leading-relaxed">
                                 This involves optimizing the system to prioritize actions that the user will find valuable. This optimization is achieved through an incentive-based algorithm, which we've termed the "Boltzman Engine," ensuring the system is always providing desired outcomes.
@@ -2740,7 +2740,7 @@ export function ProjectDetail() {
                       </div>
 
                       {/* Closing Statement */}
-                      <div className="bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-emerald-500/10 rounded-lg p-5 border border-purple-500/20 mt-6">
+                      <div className="bg-gradient-to-r from-gray-500/10 via-gray-500/10 to-gray-500/10 rounded-lg p-5 border border-gray-500/20 mt-6">
                         <p className="text-white/90 font-mono text-sm leading-relaxed">
                           We believe this structured approach, focusing on operationalizing these four pillars, represents the most effective and resource-efficient method for building a universal assistant.
                         </p>
@@ -2785,8 +2785,8 @@ export function ProjectDetail() {
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
                 {/* Header with Icon */}
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center border border-blue-500/30">
-                    <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-500/20 to-gray-500/20 flex items-center justify-center border border-gray-500/30">
+                    <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                     </svg>
                   </div>
@@ -2801,15 +2801,15 @@ export function ProjectDetail() {
                   {/* Text Content */}
                   <div className="space-y-6">
                     {/* The Insight */}
-                    <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg p-5 border border-blue-500/20">
+                    <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-lg p-5 border border-gray-500/20">
                       <div className="flex items-start gap-3 mb-3">
-                        <div className="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
-                          <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-8 h-8 rounded-lg bg-gray-500/20 flex items-center justify-center flex-shrink-0">
+                          <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                           </svg>
                         </div>
                         <div className="flex-1">
-                          <h3 className="text-blue-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">The Insight</h3>
+                          <h3 className="text-gray-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">The Insight</h3>
                           <p className="text-white/80 font-mono text-sm leading-relaxed">
                             After extensive interviews with our target customers (researchers, students, and professionals), the consensus pointed toward a friction-less communication method.
                           </p>
@@ -2820,13 +2820,13 @@ export function ProjectDetail() {
                     {/* The Decision */}
                     <div className="bg-white/5 rounded-lg p-5 border border-white/10">
                       <div className="flex items-start gap-3 mb-3">
-                        <div className="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center flex-shrink-0">
-                          <svg className="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-8 h-8 rounded-lg bg-gray-500/20 flex items-center justify-center flex-shrink-0">
+                          <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
                           </svg>
                         </div>
                         <div className="flex-1">
-                          <h3 className="text-purple-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">The Decision</h3>
+                          <h3 className="text-gray-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">The Decision</h3>
                           <p className="text-white/80 font-mono text-sm leading-relaxed">
                             We determined that the chatbot interface was the optimal channel, primarily because our target users operate predominantly on their desktop computers.
                           </p>
@@ -2835,7 +2835,7 @@ export function ProjectDetail() {
                     </div>
 
                     {/* The Goal */}
-                    <div className="bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-lg p-5 border border-emerald-500/20">
+                    <div className="bg-gradient-to-br from-emerald-500/10 to-gray-500/10 rounded-lg p-5 border border-emerald-500/20">
                       <div className="flex items-start gap-3">
                         <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
                           <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2863,7 +2863,7 @@ export function ProjectDetail() {
                       />
                     </div>
                     {/* Decorative gradient overlay */}
-                    <div className="absolute -inset-4 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-emerald-500/10 rounded-2xl blur-2xl -z-10"></div>
+                    <div className="absolute -inset-4 bg-gradient-to-br from-gray-500/10 via-gray-500/10 to-gray-500/10 rounded-2xl blur-2xl -z-10"></div>
                   </div>
                 </div>
               </div>
@@ -2874,8 +2874,8 @@ export function ProjectDetail() {
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/20 to-red-500/20 flex items-center justify-center border border-orange-500/30">
-                    <svg className="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-500/20 to-gray-500/20 flex items-center justify-center border border-gray-500/30">
+                    <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                     </svg>
                   </div>
@@ -2888,7 +2888,7 @@ export function ProjectDetail() {
                 {/* Content Layout - Problem/Solution with Image */}
                 <div className="space-y-8">
                   {/* The Initial Problem */}
-                  <div className="bg-gradient-to-br from-red-500/10 to-orange-500/10 rounded-xl p-6 border border-red-500/20">
+                  <div className="bg-gradient-to-br from-red-500/10 to-gray-500/10 rounded-xl p-6 border border-red-500/20">
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 rounded-lg bg-red-500/20 flex items-center justify-center flex-shrink-0">
                         <svg className="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2907,7 +2907,7 @@ export function ProjectDetail() {
                   {/* Solution with Image */}
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                     {/* Text Content */}
-                    <div className="bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-xl p-6 border border-emerald-500/20">
+                    <div className="bg-gradient-to-br from-emerald-500/10 to-gray-500/10 rounded-xl p-6 border border-emerald-500/20">
                       <div className="flex items-start gap-4 mb-4">
                         <div className="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
                           <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2939,7 +2939,7 @@ export function ProjectDetail() {
                         />
                       </div>
                       {/* Decorative gradient overlay */}
-                      <div className="absolute -inset-4 bg-gradient-to-br from-emerald-500/10 via-teal-500/10 to-blue-500/10 rounded-2xl blur-2xl -z-10"></div>
+                      <div className="absolute -inset-4 bg-gradient-to-br from-gray-500/10 via-gray-500/10 to-gray-500/10 rounded-2xl blur-2xl -z-10"></div>
                     </div>
                   </div>
 
@@ -2949,7 +2949,7 @@ export function ProjectDetail() {
                       <div className="w-2 h-2 rounded-full bg-red-400"></div>
                       <span>High Friction</span>
                     </div>
-                    <div className="flex-1 h-px bg-gradient-to-r from-red-500/50 via-orange-500/50 to-emerald-500/50"></div>
+                    <div className="flex-1 h-px bg-gradient-to-r from-red-500/50 via-gray-500/50 to-emerald-500/50"></div>
                     <div className="flex items-center gap-2 text-white/40 font-mono text-xs">
                       <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
                       <span>Progressive Disclosure</span>
@@ -2964,8 +2964,8 @@ export function ProjectDetail() {
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
                 {/* Header with Globe Icon */}
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center border border-cyan-500/30">
-                    <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-500/20 to-gray-500/20 flex items-center justify-center border border-gray-500/30">
+                    <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
@@ -2978,7 +2978,7 @@ export function ProjectDetail() {
                 {/* Main Content */}
                 <div className="space-y-8">
                   {/* Description */}
-                  <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-xl p-6 border border-cyan-500/20">
+                  <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-xl p-6 border border-gray-500/20">
                     <p className="text-white/90 font-mono text-base leading-relaxed text-center">
                       Boltzman provided users with comprehensive multilingual support, enabling them to conduct studies, research, and mathematical work in any language of their choosing.
                     </p>
@@ -2988,7 +2988,7 @@ export function ProjectDetail() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Image 1 */}
                     <div className="relative group">
-                      <div className="bg-white/5 rounded-xl p-4 border border-white/10 overflow-hidden transition-all duration-300 group-hover:border-cyan-500/30 group-hover:shadow-lg group-hover:shadow-cyan-500/10">
+                      <div className="bg-white/5 rounded-xl p-4 border border-white/10 overflow-hidden transition-all duration-300 group-hover:border-gray-500/30 group-hover:shadow-lg group-hover:shadow-gray-500/10">
                         <img
                           src="/Projects/Boltzman AI/View recent photos 10.png"
                           alt="Multilingual Support Example 1"
@@ -2997,12 +2997,12 @@ export function ProjectDetail() {
                         />
                       </div>
                       {/* Decorative gradient overlay */}
-                      <div className="absolute -inset-2 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                      <div className="absolute -inset-2 bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                     </div>
 
                     {/* Image 2 */}
                     <div className="relative group">
-                      <div className="bg-white/5 rounded-xl p-4 border border-white/10 overflow-hidden transition-all duration-300 group-hover:border-cyan-500/30 group-hover:shadow-lg group-hover:shadow-cyan-500/10">
+                      <div className="bg-white/5 rounded-xl p-4 border border-white/10 overflow-hidden transition-all duration-300 group-hover:border-gray-500/30 group-hover:shadow-lg group-hover:shadow-gray-500/10">
                         <img
                           src="/Projects/Boltzman AI/View recent photos 11.png"
                           alt="Multilingual Support Example 2"
@@ -3011,28 +3011,28 @@ export function ProjectDetail() {
                         />
                       </div>
                       {/* Decorative gradient overlay */}
-                      <div className="absolute -inset-2 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                      <div className="absolute -inset-2 bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                     </div>
                   </div>
 
                   {/* Language Icons Decoration */}
                   <div className="flex items-center justify-center gap-6 pt-4 border-t border-white/10">
                     <div className="flex items-center gap-2 text-white/50 font-mono text-xs">
-                      <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                       </svg>
                       <span>Multiple Languages</span>
                     </div>
-                    <div className="w-1 h-1 rounded-full bg-cyan-400/50"></div>
+                    <div className="w-1 h-1 rounded-full bg-gray-400/50"></div>
                     <div className="flex items-center gap-2 text-white/50 font-mono text-xs">
-                      <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                       </svg>
                       <span>Research & Studies</span>
                     </div>
-                    <div className="w-1 h-1 rounded-full bg-cyan-400/50"></div>
+                    <div className="w-1 h-1 rounded-full bg-gray-400/50"></div>
                     <div className="flex items-center gap-2 text-white/50 font-mono text-xs">
-                      <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
                       </svg>
                       <span>Mathematical Work</span>
@@ -3047,8 +3047,8 @@ export function ProjectDetail() {
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-indigo-500/20 flex items-center justify-center border border-purple-500/30">
-                    <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-500/20 to-gray-500/20 flex items-center justify-center border border-gray-500/30">
+                    <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
@@ -3061,8 +3061,8 @@ export function ProjectDetail() {
                 {/* Section I: User-Centric Modes */}
                 <div className="mb-12">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center border border-blue-500/30">
-                      <span className="text-blue-400 font-serif text-xl font-bold">I</span>
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gray-500/20 to-gray-500/20 flex items-center justify-center border border-gray-500/30">
+                      <span className="text-gray-400 font-serif text-xl font-bold">I</span>
                     </div>
                     <h3 className="font-serif text-xl md:text-2xl text-white">User-Centric Modes</h3>
                   </div>
@@ -3080,7 +3080,7 @@ export function ProjectDetail() {
                   {/* Mode Diversification */}
                   <div className="mb-8">
                     <h4 className="text-white font-semibold mb-4 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
-                      <svg className="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
                       </svg>
                       Mode Diversification
@@ -3103,10 +3103,10 @@ export function ProjectDetail() {
                       </div>
 
                       {/* Quick Search */}
-                      <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-lg p-4 border border-blue-500/20">
+                      <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-lg p-4 border border-gray-500/20">
                         <div className="flex items-center gap-2 mb-2">
-                          <div className="w-2 h-2 rounded-full bg-blue-400"></div>
-                          <h5 className="text-blue-400 font-semibold font-mono text-sm">Quick Search</h5>
+                          <div className="w-2 h-2 rounded-full bg-gray-400"></div>
+                          <h5 className="text-gray-400 font-semibold font-mono text-sm">Quick Search</h5>
                         </div>
                         <p className="text-white/70 font-mono text-xs leading-relaxed">
                           Optimized for fast facts and answers.
@@ -3114,10 +3114,10 @@ export function ProjectDetail() {
                       </div>
 
                       {/* Pro Search */}
-                      <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-lg p-4 border border-purple-500/20">
+                      <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-lg p-4 border border-gray-500/20">
                         <div className="flex items-center gap-2 mb-2">
-                          <div className="w-2 h-2 rounded-full bg-purple-400"></div>
-                          <h5 className="text-purple-400 font-semibold font-mono text-sm">Pro Search</h5>
+                          <div className="w-2 h-2 rounded-full bg-gray-400"></div>
+                          <h5 className="text-gray-400 font-semibold font-mono text-sm">Pro Search</h5>
                         </div>
                         <p className="text-white/70 font-mono text-xs leading-relaxed">
                           Offers enhanced searching power.
@@ -3125,10 +3125,10 @@ export function ProjectDetail() {
                       </div>
 
                       {/* Assistant (BETA) */}
-                      <div className="bg-gradient-to-br from-orange-500/10 to-red-500/10 rounded-lg p-4 border border-orange-500/20">
+                      <div className="bg-gradient-to-br from-gray-500/10 to-red-500/10 rounded-lg p-4 border border-gray-500/20">
                         <div className="flex items-center gap-2 mb-2">
-                          <div className="w-2 h-2 rounded-full bg-orange-400"></div>
-                          <h5 className="text-orange-400 font-semibold font-mono text-sm">Assistant (BETA)</h5>
+                          <div className="w-2 h-2 rounded-full bg-gray-400"></div>
+                          <h5 className="text-gray-400 font-semibold font-mono text-sm">Assistant (BETA)</h5>
                         </div>
                         <p className="text-white/70 font-mono text-xs leading-relaxed">
                           Focuses on agency, reasoning, and action execution.
@@ -3140,7 +3140,7 @@ export function ProjectDetail() {
                   {/* Specialized Tools */}
                   <div className="mb-8">
                     <h4 className="text-white font-semibold mb-4 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
-                      <svg className="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                       </svg>
                       Specialized Tools
@@ -3167,7 +3167,7 @@ export function ProjectDetail() {
                         loading="lazy"
                       />
                     </div>
-                    <div className="absolute -inset-2 bg-gradient-to-br from-purple-500/10 to-blue-500/10 rounded-xl blur-xl -z-10"></div>
+                    <div className="absolute -inset-2 bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-xl blur-xl -z-10"></div>
                   </div>
                 </div>
 
@@ -3177,8 +3177,8 @@ export function ProjectDetail() {
                 {/* Section II: Strategic Advantage */}
                 <div>
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center border border-indigo-500/30">
-                      <span className="text-indigo-400 font-serif text-xl font-bold">II</span>
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gray-500/20 to-gray-500/20 flex items-center justify-center border border-gray-500/30">
+                      <span className="text-gray-400 font-serif text-xl font-bold">II</span>
                     </div>
                     <h3 className="font-serif text-xl md:text-2xl text-white">Strategic Advantage</h3>
                   </div>
@@ -3187,7 +3187,7 @@ export function ProjectDetail() {
                   </p>
 
                   {/* Introduction */}
-                  <div className="bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-lg p-5 border border-indigo-500/20 mb-8">
+                  <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-lg p-5 border border-gray-500/20 mb-8">
                     <p className="text-white/90 font-mono text-sm leading-relaxed">
                       We recognized that no single Large Language Model (LLM) is superior across all task types. Our vision was to empower Boltzman with a decisive technical edge by allowing it to select the best model for any given action.
                     </p>
@@ -3199,7 +3199,7 @@ export function ProjectDetail() {
                     <div className="space-y-6">
                       {/* Pioneering LLM Choice */}
                       <div className="bg-white/5 rounded-lg p-4 border border-white/10">
-                        <h4 className="text-indigo-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
+                        <h4 className="text-gray-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                           </svg>
@@ -3211,8 +3211,8 @@ export function ProjectDetail() {
                       </div>
 
                       {/* The Orchestration Layer */}
-                      <div className="bg-gradient-to-br from-purple-500/10 to-indigo-500/10 rounded-lg p-4 border border-purple-500/20">
-                        <h4 className="text-purple-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
+                      <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-lg p-4 border border-gray-500/20">
+                        <h4 className="text-gray-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                           </svg>
@@ -3223,19 +3223,19 @@ export function ProjectDetail() {
                         </p>
                         <div className="space-y-3">
                           <div className="flex items-start gap-2">
-                            <span className="text-purple-400 mt-0.5">•</span>
+                            <span className="text-gray-400 mt-0.5">•</span>
                             <p className="text-white/70 font-mono text-xs leading-relaxed">
                               If <span className="text-white font-semibold">DeepSeek R1</span> was superior for deep reasoning tasks, Boltzman would delegate the task to it.
                             </p>
                           </div>
                           <div className="flex items-start gap-2">
-                            <span className="text-purple-400 mt-0.5">•</span>
+                            <span className="text-gray-400 mt-0.5">•</span>
                             <p className="text-white/70 font-mono text-xs leading-relaxed">
                               If <span className="text-white font-semibold">Claude 3 Opus</span> was better suited for math or complex logical reasoning, the system would route the request accordingly.
                             </p>
                           </div>
                           <div className="flex items-start gap-2">
-                            <span className="text-purple-400 mt-0.5">•</span>
+                            <span className="text-gray-400 mt-0.5">•</span>
                             <p className="text-white/70 font-mono text-xs leading-relaxed">
                               If <span className="text-white font-semibold">GPT-3.5</span> was optimal for generative writing, that model would be prioritized.
                             </p>
@@ -3255,7 +3255,7 @@ export function ProjectDetail() {
                             loading="lazy"
                           />
                         </div>
-                        <div className="absolute -inset-2 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-xl blur-xl -z-10"></div>
+                        <div className="absolute -inset-2 bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-xl blur-xl -z-10"></div>
                       </div>
                       <div className="relative flex justify-center">
                         <div className="bg-white/5 rounded-xl p-4 border border-white/10 max-w-md w-full">
@@ -3266,21 +3266,21 @@ export function ProjectDetail() {
                             loading="lazy"
                           />
                         </div>
-                        <div className="absolute -inset-2 bg-gradient-to-br from-purple-500/10 to-indigo-500/10 rounded-xl blur-xl -z-10"></div>
+                        <div className="absolute -inset-2 bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-xl blur-xl -z-10"></div>
                       </div>
                     </div>
                   </div>
 
                   {/* Result */}
-                  <div className="bg-gradient-to-r from-indigo-500/20 via-purple-500/20 to-pink-500/20 rounded-xl p-6 border border-indigo-500/30">
+                  <div className="bg-gradient-to-r from-gray-500/20 via-gray-500/20 to-gray-500/20 rounded-xl p-6 border border-gray-500/30">
                     <div className="flex items-start gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-indigo-500/20 flex items-center justify-center flex-shrink-0">
-                        <svg className="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-10 h-10 rounded-lg bg-gray-500/20 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
                       <div className="flex-1">
-                        <h4 className="text-indigo-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">Result</h4>
+                        <h4 className="text-gray-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">Result</h4>
                         <p className="text-white/90 font-mono text-sm leading-relaxed">
                           By granting the system access to a diverse array of models—including offerings from OpenAI, Anthropic, Google, Meta, and others—Boltzman achieved a "superpower" in execution, resulting in higher quality and more reliable outcomes across a vast spectrum of tasks.
                         </p>
@@ -3296,8 +3296,8 @@ export function ProjectDetail() {
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500/20 to-fuchsia-500/20 flex items-center justify-center border border-violet-500/30">
-                    <svg className="w-6 h-6 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-500/20 to-gray-500/20 flex items-center justify-center border border-gray-500/30">
+                    <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                     </svg>
                   </div>
@@ -3308,16 +3308,16 @@ export function ProjectDetail() {
                 </div>
 
                 {/* Core Goal Introduction */}
-                <div className="bg-gradient-to-r from-violet-500/10 via-purple-500/10 to-fuchsia-500/10 rounded-xl p-6 border border-violet-500/20 mb-10">
+                <div className="bg-gradient-to-r from-gray-500/10 via-gray-500/10 to-gray-500/10 rounded-xl p-6 border border-gray-500/20 mb-10">
                   <p className="text-white/90 font-mono text-sm leading-relaxed text-center">
-                    The foundational goal of Boltzman is to achieve <span className="text-violet-400 font-semibold">true universal AI autonomy</span> by solving the execution constraint. This autonomy is achieved by strategically equipping the system with two critical resource layers: <span className="text-fuchsia-400 font-semibold">specialized expertise (LLMs)</span> and <span className="text-purple-400 font-semibold">essential tools (Software Integration)</span>.
+                    The foundational goal of Boltzman is to achieve <span className="text-gray-400 font-semibold">true universal AI autonomy</span> by solving the execution constraint. This autonomy is achieved by strategically equipping the system with two critical resource layers: <span className="text-gray-400 font-semibold">specialized expertise (LLMs)</span> and <span className="text-gray-400 font-semibold">essential tools (Software Integration)</span>.
                   </p>
                 </div>
 
                 {/* Section I: The Toolkit */}
                 <div className="mb-12">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center border border-emerald-500/30">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500/20 to-gray-500/20 flex items-center justify-center border border-emerald-500/30">
                       <span className="text-emerald-400 font-serif text-xl font-bold">I</span>
                     </div>
                     <h3 className="font-serif text-xl md:text-2xl text-white">The Toolkit</h3>
@@ -3343,8 +3343,8 @@ export function ProjectDetail() {
 
                   {/* Available Tools */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div className="bg-gradient-to-br from-teal-500/10 to-emerald-500/10 rounded-lg p-4 border border-teal-500/20">
-                      <h4 className="text-teal-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
+                    <div className="bg-gradient-to-br from-gray-500/10 to-emerald-500/10 rounded-lg p-4 border border-gray-500/20">
+                      <h4 className="text-gray-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
@@ -3353,14 +3353,14 @@ export function ProjectDetail() {
                       <div className="space-y-2">
                         {['YouTube Transcriber', 'Image Generator', 'Text to Speech'].map((tool, idx) => (
                           <div key={idx} className="flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 rounded-full bg-teal-400"></div>
+                            <div className="w-1.5 h-1.5 rounded-full bg-gray-400"></div>
                             <span className="text-white/80 font-mono text-xs">{tool}</span>
                           </div>
                         ))}
                       </div>
                     </div>
-                    <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-lg p-4 border border-blue-500/20">
-                      <h4 className="text-blue-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
+                    <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-lg p-4 border border-gray-500/20">
+                      <h4 className="text-gray-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
@@ -3369,7 +3369,7 @@ export function ProjectDetail() {
                       <div className="space-y-2">
                         {['Website Scraper', 'Audio Transcriber'].map((tool, idx) => (
                           <div key={idx} className="flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 rounded-full bg-blue-400"></div>
+                            <div className="w-1.5 h-1.5 rounded-full bg-gray-400"></div>
                             <span className="text-white/70 font-mono text-xs">{tool}</span>
                           </div>
                         ))}
@@ -3378,7 +3378,7 @@ export function ProjectDetail() {
                   </div>
 
                   {/* The Outcome */}
-                  <div className="bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-lg p-5 border border-emerald-500/30">
+                  <div className="bg-gradient-to-r from-emerald-500/20 to-gray-500/20 rounded-lg p-5 border border-emerald-500/30">
                     <div className="flex items-start gap-3">
                       <svg className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -3396,8 +3396,8 @@ export function ProjectDetail() {
                 {/* Section II: LLM Orchestration */}
                 <div className="mb-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center border border-indigo-500/30">
-                      <span className="text-indigo-400 font-serif text-xl font-bold">II</span>
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gray-500/20 to-gray-500/20 flex items-center justify-center border border-gray-500/30">
+                      <span className="text-gray-400 font-serif text-xl font-bold">II</span>
                     </div>
                     <h3 className="font-serif text-xl md:text-2xl text-white">LLM Orchestration</h3>
                   </div>
@@ -3417,8 +3417,8 @@ export function ProjectDetail() {
                     {/* Left Column - Content */}
                     <div className="space-y-6">
                       {/* Diverse Model Access */}
-                      <div className="bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-lg p-5 border border-indigo-500/20">
-                        <h4 className="text-indigo-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
+                      <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-lg p-5 border border-gray-500/20">
+                        <h4 className="text-gray-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                           </svg>
@@ -3437,8 +3437,8 @@ export function ProjectDetail() {
                       </div>
 
                       {/* Strategic Delegation */}
-                      <div className="bg-gradient-to-br from-purple-500/10 to-violet-500/10 rounded-lg p-5 border border-purple-500/20">
-                        <h4 className="text-purple-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
+                      <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-lg p-5 border border-gray-500/20">
+                        <h4 className="text-gray-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                           </svg>
@@ -3448,14 +3448,14 @@ export function ProjectDetail() {
                           The core logic of the Boltzman engine dictates that when an action is required, the system delegates the task to the LLM best suited for that specific constraint.
                         </p>
                         <div className="space-y-3">
-                          <div className="bg-black/30 rounded-lg p-3 border border-purple-500/20">
+                          <div className="bg-black/30 rounded-lg p-3 border border-gray-500/20">
                             <p className="text-white/90 font-mono text-xs leading-relaxed">
-                              <span className="text-purple-400 font-semibold">Deep reasoning</span> → DeepSeek R1
+                              <span className="text-gray-400 font-semibold">Deep reasoning</span> → DeepSeek R1
                             </p>
                           </div>
-                          <div className="bg-black/30 rounded-lg p-3 border border-purple-500/20">
+                          <div className="bg-black/30 rounded-lg p-3 border border-gray-500/20">
                             <p className="text-white/90 font-mono text-xs leading-relaxed">
-                              <span className="text-purple-400 font-semibold">Logical/mathematical processing</span> → Claude 3 Opus
+                              <span className="text-gray-400 font-semibold">Logical/mathematical processing</span> → Claude 3 Opus
                             </p>
                           </div>
                         </div>
@@ -3473,21 +3473,21 @@ export function ProjectDetail() {
                             loading="lazy"
                           />
                         </div>
-                        <div className="absolute -inset-2 bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-violet-500/10 rounded-xl blur-xl -z-10"></div>
+                        <div className="absolute -inset-2 bg-gradient-to-br from-gray-500/10 via-gray-500/10 to-gray-500/10 rounded-xl blur-xl -z-10"></div>
                       </div>
                     </div>
                   </div>
 
                   {/* Final Result */}
-                  <div className="bg-gradient-to-r from-violet-500/20 via-purple-500/20 to-indigo-500/20 rounded-xl p-6 border border-violet-500/30">
+                  <div className="bg-gradient-to-r from-gray-500/20 via-gray-500/20 to-gray-500/20 rounded-xl p-6 border border-gray-500/30">
                     <div className="flex items-start gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-violet-500/20 flex items-center justify-center flex-shrink-0">
-                        <svg className="w-5 h-5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-10 h-10 rounded-lg bg-gray-500/20 flex items-center justify-center flex-shrink-0">
+                        <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                         </svg>
                       </div>
                       <div className="flex-1">
-                        <h4 className="text-violet-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">Result</h4>
+                        <h4 className="text-gray-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">Result</h4>
                         <p className="text-white/90 font-mono text-sm leading-relaxed">
                           By combining this deep toolbox with a dynamic LLM orchestration layer, Boltzman effectively solves the constraints of execution and accelerates its journey toward becoming a truly autonomous universal AI system.
                         </p>
@@ -3503,8 +3503,8 @@ export function ProjectDetail() {
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
                 {/* Header with Different Color Scheme */}
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500/20 to-cyan-500/20 flex items-center justify-center border border-teal-500/30">
-                    <svg className="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-500/20 to-gray-500/20 flex items-center justify-center border border-gray-500/30">
+                    <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
                   </div>
@@ -3515,17 +3515,17 @@ export function ProjectDetail() {
                 </div>
 
                 {/* Introduction */}
-                <div className="bg-gradient-to-r from-teal-500/10 via-cyan-500/10 to-blue-500/10 rounded-xl p-6 border border-teal-500/20 mb-10">
+                <div className="bg-gradient-to-r from-gray-500/10 via-gray-500/10 to-gray-500/10 rounded-xl p-6 border border-gray-500/20 mb-10">
                   <p className="text-white/90 font-mono text-sm leading-relaxed text-center">
-                    For Boltzman to evolve from a simple chat interface into a <span className="text-teal-400 font-semibold">truly autonomous agent</span>, it required two critical capabilities: <span className="text-cyan-400 font-semibold">deep memory for intent</span>, and <span className="text-blue-400 font-semibold">secure access to the user's digital environment for action</span>.
+                    For Boltzman to evolve from a simple chat interface into a <span className="text-gray-400 font-semibold">truly autonomous agent</span>, it required two critical capabilities: <span className="text-gray-400 font-semibold">deep memory for intent</span>, and <span className="text-gray-400 font-semibold">secure access to the user's digital environment for action</span>.
                   </p>
                 </div>
 
                 {/* Section I: Long-Form Memory */}
                 <div className="mb-12">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-500/20 to-cyan-500/20 flex items-center justify-center border border-teal-500/30">
-                      <span className="text-teal-400 font-serif text-xl font-bold">I</span>
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gray-500/20 to-gray-500/20 flex items-center justify-center border border-gray-500/30">
+                      <span className="text-gray-400 font-serif text-xl font-bold">I</span>
                     </div>
                     <h3 className="font-serif text-xl md:text-2xl text-white">Long-Form Memory</h3>
                   </div>
@@ -3537,8 +3537,8 @@ export function ProjectDetail() {
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-6">
                     {/* Left: Text Content */}
                     <div className="space-y-5">
-                      <div className="bg-gradient-to-br from-teal-500/10 to-cyan-500/10 rounded-lg p-5 border border-teal-500/20">
-                        <h4 className="text-teal-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
+                      <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-lg p-5 border border-gray-500/20">
+                        <h4 className="text-gray-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                           </svg>
@@ -3547,8 +3547,8 @@ export function ProjectDetail() {
                         <p className="text-white/80 font-mono text-sm leading-relaxed mb-3">
                           Users were allowed to create a knowledge base or memory for the system.
                         </p>
-                        <div className="bg-black/30 rounded-lg p-3 border border-teal-500/20">
-                          <p className="text-teal-300 font-mono text-xs leading-relaxed italic">
+                        <div className="bg-black/30 rounded-lg p-3 border border-gray-500/20">
+                          <p className="text-gray-300 font-mono text-xs leading-relaxed italic">
                             <span className="text-white font-semibold">Purpose:</span> This ensured the underlying algorithms and LLMs had the maximum amount of contextual information available to make the most informed decisions when performing tasks.
                           </p>
                         </div>
@@ -3566,7 +3566,7 @@ export function ProjectDetail() {
                             loading="lazy"
                           />
                         </div>
-                        <div className="absolute -inset-2 bg-gradient-to-br from-teal-500/10 to-cyan-500/10 rounded-xl blur-xl -z-10"></div>
+                        <div className="absolute -inset-2 bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-xl blur-xl -z-10"></div>
                       </div>
                     </div>
                   </div>
@@ -3578,8 +3578,8 @@ export function ProjectDetail() {
                 {/* Section II: Integrations */}
                 <div className="mb-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center border border-cyan-500/30">
-                      <span className="text-cyan-400 font-serif text-xl font-bold">II</span>
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gray-500/20 to-gray-500/20 flex items-center justify-center border border-gray-500/30">
+                      <span className="text-gray-400 font-serif text-xl font-bold">II</span>
                     </div>
                     <h3 className="font-serif text-xl md:text-2xl text-white">Integrations</h3>
                   </div>
@@ -3588,7 +3588,7 @@ export function ProjectDetail() {
                   </p>
 
                   {/* Introduction */}
-                  <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-lg p-5 border border-cyan-500/20 mb-8">
+                  <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-lg p-5 border border-gray-500/20 mb-8">
                     <p className="text-white/80 font-mono text-sm leading-relaxed">
                       The Integrations pillar solves the "where" of execution, allowing Boltzman to seamlessly operate across the user's fragmented digital workspace.
                     </p>
@@ -3607,15 +3607,15 @@ export function ProjectDetail() {
                             loading="lazy"
                           />
                         </div>
-                        <div className="absolute -inset-2 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-xl blur-xl -z-10"></div>
+                        <div className="absolute -inset-2 bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-xl blur-xl -z-10"></div>
                       </div>
                     </div>
 
                     {/* Right: Text Content */}
                     <div className="space-y-6 order-1 lg:order-2">
                       {/* Access and Authorization */}
-                      <div className="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-lg p-5 border border-blue-500/20">
-                        <h4 className="text-blue-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
+                      <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-lg p-5 border border-gray-500/20">
+                        <h4 className="text-gray-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                           </svg>
@@ -3626,7 +3626,7 @@ export function ProjectDetail() {
                         </p>
                         <div className="flex flex-wrap gap-2">
                           {['Notion', 'Google Drive', 'Slack', 'Google Docs', 'N8N', 'ClickUp', 'SurveyMonkey'].map((app, idx) => (
-                            <span key={idx} className="px-3 py-1.5 bg-white/10 rounded-lg text-white/90 font-mono text-xs border border-blue-500/20">
+                            <span key={idx} className="px-3 py-1.5 bg-white/10 rounded-lg text-white/90 font-mono text-xs border border-gray-500/20">
                               {app}
                             </span>
                           ))}
@@ -3634,8 +3634,8 @@ export function ProjectDetail() {
                       </div>
 
                       {/* Dual Functionality */}
-                      <div className="bg-gradient-to-br from-cyan-500/10 to-teal-500/10 rounded-lg p-5 border border-cyan-500/20">
-                        <h4 className="text-cyan-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
+                      <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-lg p-5 border border-gray-500/20">
+                        <h4 className="text-gray-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                           </svg>
@@ -3645,26 +3645,26 @@ export function ProjectDetail() {
                           These integrations serve a dual purpose for the LLMs:
                         </p>
                         <div className="space-y-3">
-                          <div className="bg-black/30 rounded-lg p-3 border border-cyan-500/20">
+                          <div className="bg-black/30 rounded-lg p-3 border border-gray-500/20">
                             <div className="flex items-start gap-2">
-                              <svg className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                               </svg>
                               <div>
-                                <p className="text-cyan-400 font-semibold font-mono text-xs mb-1">Retrieval</p>
+                                <p className="text-gray-400 font-semibold font-mono text-xs mb-1">Retrieval</p>
                                 <p className="text-white/70 font-mono text-xs leading-relaxed">
                                   They provide secure locations to retrieve information (e.g., pulling a file from Google Drive or Slack).
                                 </p>
                               </div>
                             </div>
                           </div>
-                          <div className="bg-black/30 rounded-lg p-3 border border-cyan-500/20">
+                          <div className="bg-black/30 rounded-lg p-3 border border-gray-500/20">
                             <div className="flex items-start gap-2">
-                              <svg className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                               </svg>
                               <div>
-                                <p className="text-cyan-400 font-semibold font-mono text-xs mb-1">Execution</p>
+                                <p className="text-gray-400 font-semibold font-mono text-xs mb-1">Execution</p>
                                 <p className="text-white/70 font-mono text-xs leading-relaxed">
                                   They give the system the necessary authority and location to execute actions (e.g., creating a document or sending a message) within the user's preferred apps.
                                 </p>
@@ -3678,16 +3678,16 @@ export function ProjectDetail() {
                 </div>
 
                 {/* Final Result */}
-                <div className="bg-gradient-to-r from-teal-500/20 via-cyan-500/20 to-blue-500/20 rounded-xl p-6 border border-teal-500/30">
+                <div className="bg-gradient-to-r from-gray-500/20 via-gray-500/20 to-gray-500/20 rounded-xl p-6 border border-gray-500/30">
                   <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-teal-500/20 flex items-center justify-center flex-shrink-0">
-                      <svg className="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-10 h-10 rounded-lg bg-gray-500/20 flex items-center justify-center flex-shrink-0">
+                      <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
                     <div className="flex-1">
                       <p className="text-white/90 font-mono text-sm leading-relaxed">
-                        By combining <span className="text-teal-400 font-semibold">deep contextual memory</span> with <span className="text-cyan-400 font-semibold">robust, integrated action capabilities</span>, Boltzman fulfills the requirement of an autonomous universal AI system.
+                        By combining <span className="text-gray-400 font-semibold">deep contextual memory</span> with <span className="text-gray-400 font-semibold">robust, integrated action capabilities</span>, Boltzman fulfills the requirement of an autonomous universal AI system.
                       </p>
                     </div>
                   </div>
@@ -3700,8 +3700,8 @@ export function ProjectDetail() {
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center border border-amber-500/30">
-                    <svg className="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-500/20 to-gray-500/20 flex items-center justify-center border border-gray-500/30">
+                    <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                     </svg>
                   </div>
@@ -3712,9 +3712,9 @@ export function ProjectDetail() {
                 </div>
 
                 {/* Introduction */}
-                <div className="bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-yellow-500/10 rounded-xl p-6 border border-amber-500/20 mb-10">
+                <div className="bg-gradient-to-r from-gray-500/10 via-gray-500/10 to-gray-500/10 rounded-xl p-6 border border-gray-500/20 mb-10">
                   <p className="text-white/90 font-mono text-sm leading-relaxed text-center">
-                    While the primary function of the Tools Marketplace is to equip the Boltzman Engine with assets for autonomous orchestration, a <span className="text-amber-400 font-semibold">significant side benefit</span> is the consolidation of fragmented utilities for the end-user.
+                    While the primary function of the Tools Marketplace is to equip the Boltzman Engine with assets for autonomous orchestration, a <span className="text-gray-400 font-semibold">significant side benefit</span> is the consolidation of fragmented utilities for the end-user.
                   </p>
                 </div>
 
@@ -3723,13 +3723,13 @@ export function ProjectDetail() {
                   {/* Left Column - Text Content */}
                   <div className="space-y-6">
                     {/* Solving Tool Fragmentation */}
-                    <div className="bg-gradient-to-br from-amber-500/10 to-orange-500/10 rounded-lg p-5 border border-amber-500/20">
+                    <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-lg p-5 border border-gray-500/20">
                       <div className="flex items-start gap-3 mb-3">
-                        <svg className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                         </svg>
                         <div className="flex-1">
-                          <h4 className="text-amber-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">Solving Tool Fragmentation</h4>
+                          <h4 className="text-gray-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">Solving Tool Fragmentation</h4>
                           <p className="text-white/80 font-mono text-sm leading-relaxed mb-3">
                             The tools developed for the AI's use are also some of the most commonly used utilities by humans digitally. These functions—such as the YouTube Transcriber, Image Generator, and Website Scraper—are typically scattered across different platforms on the internet.
                           </p>
@@ -3738,13 +3738,13 @@ export function ProjectDetail() {
                     </div>
 
                     {/* The Single-Roof Advantage */}
-                    <div className="bg-gradient-to-br from-orange-500/10 to-amber-500/10 rounded-lg p-5 border border-orange-500/20">
+                    <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-lg p-5 border border-gray-500/20">
                       <div className="flex items-start gap-3">
-                        <svg className="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                         </svg>
                         <div className="flex-1">
-                          <h4 className="text-orange-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">The Single-Roof Advantage</h4>
+                          <h4 className="text-gray-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">The Single-Roof Advantage</h4>
                           <p className="text-white/80 font-mono text-sm leading-relaxed">
                             Boltzman provides a unique value proposition by serving as a single, consolidated platform where all these essential tools reside under one roof.
                           </p>
@@ -3764,14 +3764,14 @@ export function ProjectDetail() {
                           loading="lazy"
                         />
                       </div>
-                      <div className="absolute -inset-2 bg-gradient-to-br from-amber-500/10 via-orange-500/10 to-yellow-500/10 rounded-xl blur-xl -z-10"></div>
+                      <div className="absolute -inset-2 bg-gradient-to-br from-gray-500/10 via-gray-500/10 to-gray-500/10 rounded-xl blur-xl -z-10"></div>
                     </div>
                   </div>
                 </div>
 
                 {/* Dual Access Section */}
-                <div className="bg-gradient-to-br from-yellow-500/10 to-amber-500/10 rounded-xl p-6 border border-yellow-500/20">
-                  <h4 className="text-yellow-400 font-semibold mb-4 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
+                <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-xl p-6 border border-gray-500/20">
+                  <h4 className="text-gray-400 font-semibold mb-4 font-mono text-sm uppercase tracking-wide flex items-center gap-2">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                     </svg>
@@ -3783,15 +3783,15 @@ export function ProjectDetail() {
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {/* AI Orchestration */}
-                    <div className="bg-black/30 rounded-lg p-4 border border-amber-500/20">
+                    <div className="bg-black/30 rounded-lg p-4 border border-gray-500/20">
                       <div className="flex items-start gap-3 mb-2">
-                        <div className="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center flex-shrink-0">
-                          <svg className="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-8 h-8 rounded-lg bg-gray-500/20 flex items-center justify-center flex-shrink-0">
+                          <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                           </svg>
                         </div>
                         <div className="flex-1">
-                          <h5 className="text-amber-400 font-semibold mb-2 font-mono text-xs uppercase tracking-wide">AI Orchestration</h5>
+                          <h5 className="text-gray-400 font-semibold mb-2 font-mono text-xs uppercase tracking-wide">AI Orchestration</h5>
                           <p className="text-white/70 font-mono text-xs leading-relaxed">
                             The Boltzman algorithm can autonomously leverage the tools to execute complex, multi-step actions.
                           </p>
@@ -3800,15 +3800,15 @@ export function ProjectDetail() {
                     </div>
 
                     {/* Human Utility */}
-                    <div className="bg-black/30 rounded-lg p-4 border border-orange-500/20">
+                    <div className="bg-black/30 rounded-lg p-4 border border-gray-500/20">
                       <div className="flex items-start gap-3 mb-2">
-                        <div className="w-8 h-8 rounded-lg bg-orange-500/20 flex items-center justify-center flex-shrink-0">
-                          <svg className="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-8 h-8 rounded-lg bg-gray-500/20 flex items-center justify-center flex-shrink-0">
+                          <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                           </svg>
                         </div>
                         <div className="flex-1">
-                          <h5 className="text-orange-400 font-semibold mb-2 font-mono text-xs uppercase tracking-wide">Human Utility</h5>
+                          <h5 className="text-gray-400 font-semibold mb-2 font-mono text-xs uppercase tracking-wide">Human Utility</h5>
                           <p className="text-white/70 font-mono text-xs leading-relaxed">
                             Users can access and use these tools in isolation for quick, one-off tasks without initiating a full AI workflow.
                           </p>
@@ -3837,7 +3837,7 @@ export function ProjectDetail() {
                 </div>
 
                 {/* Introduction */}
-                <div className="bg-gradient-to-r from-emerald-500/10 via-green-500/10 to-teal-500/10 rounded-xl p-6 border border-emerald-500/20 mb-10">
+                <div className="bg-gradient-to-r from-emerald-500/10 via-green-500/10 to-gray-500/10 rounded-xl p-6 border border-emerald-500/20 mb-10">
                   <p className="text-white/90 font-mono text-sm leading-relaxed text-center">
                     Our experience-shaping features were designed specifically to address high-friction points identified by our target users, primarily researchers and students, which positioned Boltzman <span className="text-emerald-400 font-semibold">ahead of early incumbent AI assistants</span>.
                   </p>
@@ -3856,7 +3856,7 @@ export function ProjectDetail() {
                   </p>
 
                   {/* Problem Statement */}
-                  <div className="bg-gradient-to-br from-red-500/10 to-orange-500/10 rounded-lg p-5 border border-red-500/20 mb-6">
+                  <div className="bg-gradient-to-br from-red-500/10 to-gray-500/10 rounded-lg p-5 border border-red-500/20 mb-6">
                     <div className="flex items-start gap-3">
                       <svg className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
@@ -3888,7 +3888,7 @@ export function ProjectDetail() {
                     </div>
 
                     {/* User Empowerment */}
-                    <div className="bg-gradient-to-br from-green-500/10 to-teal-500/10 rounded-lg p-5 border border-green-500/20">
+                    <div className="bg-gradient-to-br from-green-500/10 to-gray-500/10 rounded-lg p-5 border border-green-500/20">
                       <div className="flex items-start gap-3 mb-3">
                         <svg className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -3910,8 +3910,8 @@ export function ProjectDetail() {
                 {/* Section II: Canvas and Threads */}
                 <div className="mb-8">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-500/20 to-cyan-500/20 flex items-center justify-center border border-teal-500/30">
-                      <span className="text-teal-400 font-serif text-xl font-bold">II</span>
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gray-500/20 to-gray-500/20 flex items-center justify-center border border-gray-500/30">
+                      <span className="text-gray-400 font-serif text-xl font-bold">II</span>
                     </div>
                     <h3 className="font-serif text-xl md:text-2xl text-white">Canvas and Threads</h3>
                   </div>
@@ -3931,13 +3931,13 @@ export function ProjectDetail() {
                     {/* Left Column - Features */}
                     <div className="space-y-6">
                       {/* Canvas */}
-                      <div className="bg-gradient-to-br from-teal-500/10 to-cyan-500/10 rounded-lg p-5 border border-teal-500/20">
+                      <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-lg p-5 border border-gray-500/20">
                         <div className="flex items-start gap-3 mb-3">
-                          <svg className="w-5 h-5 text-teal-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                           </svg>
                           <div className="flex-1">
-                            <h4 className="text-teal-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">Canvas (Internal Whiteboard)</h4>
+                            <h4 className="text-gray-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">Canvas (Internal Whiteboard)</h4>
                             <p className="text-white/80 font-mono text-xs leading-relaxed mb-2">
                               We realized that users needed a place to take notes and write down thoughts while conducting research.
                             </p>
@@ -3949,13 +3949,13 @@ export function ProjectDetail() {
                       </div>
 
                       {/* Threads */}
-                      <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-lg p-5 border border-cyan-500/20">
+                      <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-lg p-5 border border-gray-500/20">
                         <div className="flex items-start gap-3">
-                          <svg className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                           </svg>
                           <div className="flex-1">
-                            <h4 className="text-cyan-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">Threads (Deep Clarification)</h4>
+                            <h4 className="text-gray-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">Threads (Deep Clarification)</h4>
                             <p className="text-white/80 font-mono text-xs leading-relaxed mb-2">
                               To support deep comprehension, users were allowed to highlight words they didn't understand and initiate a Thread.
                             </p>
@@ -3978,7 +3978,7 @@ export function ProjectDetail() {
                             loading="lazy"
                           />
                         </div>
-                        <div className="absolute -inset-2 bg-gradient-to-br from-teal-500/10 via-cyan-500/10 to-blue-500/10 rounded-xl blur-xl -z-10"></div>
+                        <div className="absolute -inset-2 bg-gradient-to-br from-gray-500/10 via-gray-500/10 to-gray-500/10 rounded-xl blur-xl -z-10"></div>
                       </div>
                     </div>
                   </div>
@@ -3991,8 +3991,8 @@ export function ProjectDetail() {
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-rose-500/20 to-pink-500/20 flex items-center justify-center border border-rose-500/30">
-                    <svg className="w-6 h-6 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-500/20 to-gray-500/20 flex items-center justify-center border border-gray-500/30">
+                    <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
                   </div>
@@ -4003,9 +4003,9 @@ export function ProjectDetail() {
                 </div>
 
                 {/* Text Content */}
-                <div className="bg-gradient-to-r from-rose-500/10 via-pink-500/10 to-fuchsia-500/10 rounded-xl p-6 border border-rose-500/20 mb-8">
+                <div className="bg-gradient-to-r from-gray-500/10 via-gray-500/10 to-gray-500/10 rounded-xl p-6 border border-gray-500/20 mb-8">
                   <p className="text-white/90 font-mono text-lg leading-relaxed text-center">
-                    The core algorithmic objective of the Boltzman Engine is to <span className="text-rose-400 font-semibold">accurately infer and fulfill the user's underlying intent</span> with every query.
+                    The core algorithmic objective of the Boltzman Engine is to <span className="text-gray-400 font-semibold">accurately infer and fulfill the user's underlying intent</span> with every query.
                   </p>
                 </div>
 
@@ -4046,8 +4046,8 @@ export function ProjectDetail() {
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500/20 to-amber-500/20 flex items-center justify-center border border-yellow-500/30">
-                    <svg className="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-500/20 to-gray-500/20 flex items-center justify-center border border-gray-500/30">
+                    <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
@@ -4058,9 +4058,9 @@ export function ProjectDetail() {
                 </div>
 
                 {/* Introduction */}
-                <div className="bg-gradient-to-r from-yellow-500/10 via-amber-500/10 to-orange-500/10 rounded-xl p-6 border border-yellow-500/20 mb-10">
+                <div className="bg-gradient-to-r from-gray-500/10 via-gray-500/10 to-gray-500/10 rounded-xl p-6 border border-gray-500/20 mb-10">
                   <p className="text-white/90 font-mono text-sm leading-relaxed text-center">
-                    Boltzman's monetization strategy was designed to align feature access with user value and the <span className="text-yellow-400 font-semibold">computational cost of advanced AI orchestration</span>.
+                    Boltzman's monetization strategy was designed to align feature access with user value and the <span className="text-gray-400 font-semibold">computational cost of advanced AI orchestration</span>.
                   </p>
                 </div>
 
@@ -4098,19 +4098,19 @@ export function ProjectDetail() {
                   </div>
 
                   {/* Pro Tier */}
-                  <div className="bg-gradient-to-br from-yellow-500/10 to-amber-500/10 rounded-xl p-6 border border-yellow-500/20">
+                  <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-xl p-6 border border-gray-500/20">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-yellow-500/20 flex items-center justify-center border border-yellow-500/30">
-                        <svg className="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-10 h-10 rounded-lg bg-gray-500/20 flex items-center justify-center border border-gray-500/30">
+                        <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                         </svg>
                       </div>
                       <h3 className="font-serif text-xl text-white">The Pro Tier</h3>
                     </div>
-                    <p className="text-yellow-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">The Agentic Advantage</p>
-                    <div className="mb-4 p-3 bg-yellow-500/20 rounded-lg border border-yellow-500/30">
-                      <p className="text-yellow-300 font-mono text-lg font-bold text-center">
-                        $20.00 <span className="text-yellow-400 text-sm font-normal">/ monthly</span>
+                    <p className="text-gray-400 font-semibold mb-2 font-mono text-sm uppercase tracking-wide">The Agentic Advantage</p>
+                    <div className="mb-4 p-3 bg-gray-500/20 rounded-lg border border-gray-500/30">
+                      <p className="text-gray-300 font-mono text-lg font-bold text-center">
+                        $20.00 <span className="text-gray-400 text-sm font-normal">/ monthly</span>
                       </p>
                     </div>
                     <p className="text-white/80 font-mono text-xs leading-relaxed mb-4">
@@ -4123,49 +4123,49 @@ export function ProjectDetail() {
                 </div>
 
                 {/* Pro Tier Features */}
-                <div className="bg-gradient-to-br from-yellow-500/10 to-amber-500/10 rounded-xl p-6 border border-yellow-500/20 mb-10">
-                  <h4 className="text-yellow-400 font-semibold mb-4 font-mono text-sm uppercase tracking-wide">Pro Plan Features</h4>
+                <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-xl p-6 border border-gray-500/20 mb-10">
+                  <h4 className="text-gray-400 font-semibold mb-4 font-mono text-sm uppercase tracking-wide">Pro Plan Features</h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="bg-black/30 rounded-lg p-4 border border-yellow-500/20">
+                    <div className="bg-black/30 rounded-lg p-4 border border-gray-500/20">
                       <div className="flex items-start gap-2 mb-2">
-                        <svg className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
-                        <h5 className="text-yellow-400 font-semibold font-mono text-xs uppercase">Agentic Orchestration</h5>
+                        <h5 className="text-gray-400 font-semibold font-mono text-xs uppercase">Agentic Orchestration</h5>
                       </div>
                       <p className="text-white/70 font-mono text-xs leading-relaxed">
                         Full access to the orchestration layer, enabling AI to autonomously execute complex, multi-step tasks across integrations.
                       </p>
                     </div>
-                    <div className="bg-black/30 rounded-lg p-4 border border-yellow-500/20">
+                    <div className="bg-black/30 rounded-lg p-4 border border-gray-500/20">
                       <div className="flex items-start gap-2 mb-2">
-                        <svg className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <h5 className="text-yellow-400 font-semibold font-mono text-xs uppercase">Unlimited Usage</h5>
+                        <h5 className="text-gray-400 font-semibold font-mono text-xs uppercase">Unlimited Usage</h5>
                       </div>
                       <p className="text-white/70 font-mono text-xs leading-relaxed">
                         Unlimited AI searches and conversations.
                       </p>
                     </div>
-                    <div className="bg-black/30 rounded-lg p-4 border border-yellow-500/20">
+                    <div className="bg-black/30 rounded-lg p-4 border border-gray-500/20">
                       <div className="flex items-start gap-2 mb-2">
-                        <svg className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                         </svg>
-                        <h5 className="text-yellow-400 font-semibold font-mono text-xs uppercase">Advanced Features</h5>
+                        <h5 className="text-gray-400 font-semibold font-mono text-xs uppercase">Advanced Features</h5>
                       </div>
                       <p className="text-white/70 font-mono text-xs leading-relaxed">
                         Access to advanced features, integrations, and priority support.
                       </p>
                     </div>
-                    <div className="bg-black/30 rounded-lg p-4 border border-yellow-500/20">
+                    <div className="bg-black/30 rounded-lg p-4 border border-gray-500/20">
                       <div className="flex items-start gap-2 mb-2">
-                        <svg className="w-4 h-4 text-yellow-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
-                        <h5 className="text-yellow-400 font-semibold font-mono text-xs uppercase">LLM Customization</h5>
+                        <h5 className="text-gray-400 font-semibold font-mono text-xs uppercase">LLM Customization</h5>
                       </div>
                       <p className="text-white/70 font-mono text-xs leading-relaxed">
                         Custom AI model configurations, including Pro-only LLMs like GPT-4.5 Preview, DeepSeek R1, and others.
@@ -4188,7 +4188,7 @@ export function ProjectDetail() {
                         />
                       </div>
                       {/* Decorative glow */}
-                      <div className="absolute -inset-4 bg-gradient-to-br from-yellow-500/10 via-amber-500/10 to-orange-500/10 rounded-xl blur-xl -z-10"></div>
+                      <div className="absolute -inset-4 bg-gradient-to-br from-gray-500/10 via-gray-500/10 to-gray-500/10 rounded-xl blur-xl -z-10"></div>
                     </div>
                   </div>
 
@@ -4208,7 +4208,7 @@ export function ProjectDetail() {
                         </div>
                       </div>
                       {/* Decorative glow */}
-                      <div className="absolute -inset-4 bg-gradient-to-br from-yellow-500/10 via-amber-500/10 to-orange-500/10 rounded-xl blur-xl -z-10"></div>
+                      <div className="absolute -inset-4 bg-gradient-to-br from-gray-500/10 via-gray-500/10 to-gray-500/10 rounded-xl blur-xl -z-10"></div>
                     </div>
                   </div>
                 </div>
@@ -4220,8 +4220,8 @@ export function ProjectDetail() {
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center border border-amber-500/30">
-                    <svg className="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-500/20 to-gray-500/20 flex items-center justify-center border border-gray-500/30">
+                    <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
                   </div>
@@ -4232,28 +4232,28 @@ export function ProjectDetail() {
                 </div>
 
                 {/* Introduction */}
-                <div className="bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-red-500/10 rounded-xl p-6 border border-amber-500/20 mb-10">
+                <div className="bg-gradient-to-r from-gray-500/10 via-gray-500/10 to-red-500/10 rounded-xl p-6 border border-gray-500/20 mb-10">
                   <p className="text-white/90 font-mono text-sm leading-relaxed text-center">
-                    This project represents a <span className="text-amber-400 font-semibold">high-leverage exercise in product creation</span>, demonstrating that a true universal AI assistant could be built with just two people. It provided invaluable lessons in three critical areas:
+                    This project represents a <span className="text-gray-400 font-semibold">high-leverage exercise in product creation</span>, demonstrating that a true universal AI assistant could be built with just two people. It provided invaluable lessons in three critical areas:
                   </p>
                 </div>
 
                 {/* Three Key Lessons */}
                 <div className="space-y-8">
                   {/* Lesson 1 */}
-                  <div className="bg-gradient-to-br from-blue-500/10 to-indigo-500/10 rounded-xl p-6 border border-blue-500/20">
+                  <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-xl p-6 border border-gray-500/20">
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0">
-                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500/20 to-indigo-500/20 flex items-center justify-center border border-blue-500/30">
-                          <span className="text-blue-400 font-serif text-2xl font-bold">1</span>
+                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-gray-500/20 to-gray-500/20 flex items-center justify-center border border-gray-500/30">
+                          <span className="text-gray-400 font-serif text-2xl font-bold">1</span>
                         </div>
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-blue-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide">Product Strategy & Taste (Finding the Edge)</h3>
+                        <h3 className="text-gray-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide">Product Strategy & Taste (Finding the Edge)</h3>
                         <p className="text-white/80 font-mono text-sm leading-relaxed mb-3">
                           I learned the profound importance of "product taste"—the ability to identify and execute on nuanced user pain points that competitors overlook. This insight allowed us to carve out a competitive advantage in a crowded market where incumbents possessed far greater resources and traction.
                         </p>
-                        <div className="bg-black/30 rounded-lg p-4 border border-blue-500/20">
+                        <div className="bg-black/30 rounded-lg p-4 border border-gray-500/20">
                           <p className="text-white/70 font-mono text-xs leading-relaxed italic">
                             By focusing on fundamental issues like source citation, threads, and internal notetaking, we designed an experience that resonated deeply with our target users (students and researchers).
                           </p>
@@ -4263,19 +4263,19 @@ export function ProjectDetail() {
                   </div>
 
                   {/* Lesson 2 */}
-                  <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-xl p-6 border border-purple-500/20">
+                  <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-xl p-6 border border-gray-500/20">
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0">
-                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center border border-purple-500/30">
-                          <span className="text-purple-400 font-serif text-2xl font-bold">2</span>
+                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-gray-500/20 to-gray-500/20 flex items-center justify-center border border-gray-500/30">
+                          <span className="text-gray-400 font-serif text-2xl font-bold">2</span>
                         </div>
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-purple-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide">Technicality & Execution</h3>
+                        <h3 className="text-gray-400 font-semibold mb-3 font-mono text-sm uppercase tracking-wide">Technicality & Execution</h3>
                         <p className="text-white/80 font-mono text-sm leading-relaxed mb-3">
                           This venture was a masterclass in technical leadership and feasibility. I dramatically enhanced my coding skills and learned how to deeply conceptualize a product—translating complex product ideas into engineering reality.
                         </p>
-                        <div className="bg-black/30 rounded-lg p-4 border border-purple-500/20">
+                        <div className="bg-black/30 rounded-lg p-4 border border-gray-500/20">
                           <p className="text-white/70 font-mono text-xs leading-relaxed italic">
                             This included designing the orchestration layer, integrating various LLMs, and building the necessary tools for autonomous action.
                           </p>
@@ -4285,10 +4285,10 @@ export function ProjectDetail() {
                   </div>
 
                   {/* Lesson 3 */}
-                  <div className="bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-xl p-6 border border-emerald-500/20">
+                  <div className="bg-gradient-to-br from-emerald-500/10 to-gray-500/10 rounded-xl p-6 border border-emerald-500/20">
                     <div className="flex items-start gap-4">
                       <div className="flex-shrink-0">
-                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center border border-emerald-500/30">
+                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-emerald-500/20 to-gray-500/20 flex items-center justify-center border border-emerald-500/30">
                           <span className="text-emerald-400 font-serif text-2xl font-bold">3</span>
                         </div>
                       </div>
@@ -4314,8 +4314,8 @@ export function ProjectDetail() {
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/20 p-6 md:p-8">
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center border border-indigo-500/30">
-                    <svg className="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-500/20 to-gray-500/20 flex items-center justify-center border border-gray-500/30">
+                    <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
                   </div>
@@ -4329,7 +4329,7 @@ export function ProjectDetail() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                   {/* Image 1 */}
                   <div className="relative group">
-                    <div className="bg-white/5 rounded-xl p-4 border border-white/10 overflow-hidden transition-all duration-300 group-hover:border-indigo-500/30 group-hover:shadow-lg group-hover:shadow-indigo-500/10">
+                    <div className="bg-white/5 rounded-xl p-4 border border-white/10 overflow-hidden transition-all duration-300 group-hover:border-gray-500/30 group-hover:shadow-lg group-hover:shadow-gray-500/10">
                       <img
                         src="/Projects/Boltzman AI/uuid=BD016AC9-281D-44DD-9DB2-B48538D05B7A&code=001&library=1&type=1&mode=1&loc=true&cap=true.jpeg"
                         alt="Team Member"
@@ -4338,12 +4338,12 @@ export function ProjectDetail() {
                       />
                     </div>
                     {/* Decorative gradient overlay */}
-                    <div className="absolute -inset-2 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                    <div className="absolute -inset-2 bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                   </div>
 
                   {/* Image 2 */}
                   <div className="relative group">
-                    <div className="bg-white/5 rounded-xl p-4 border border-white/10 overflow-hidden transition-all duration-300 group-hover:border-purple-500/30 group-hover:shadow-lg group-hover:shadow-purple-500/10">
+                    <div className="bg-white/5 rounded-xl p-4 border border-white/10 overflow-hidden transition-all duration-300 group-hover:border-gray-500/30 group-hover:shadow-lg group-hover:shadow-gray-500/10">
                       <img
                         src="/Projects/Boltzman AI/uuid=4A991D1E-E894-491B-93D0-D37B1E896AB6&code=001&library=1&type=1&mode=1&loc=true&cap=true.jpeg"
                         alt="Team Member"
@@ -4352,21 +4352,21 @@ export function ProjectDetail() {
                       />
                     </div>
                     {/* Decorative gradient overlay */}
-                    <div className="absolute -inset-2 bg-gradient-to-br from-purple-500/10 to-indigo-500/10 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                    <div className="absolute -inset-2 bg-gradient-to-br from-gray-500/10 to-gray-500/10 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                   </div>
                 </div>
 
                 {/* Team Message */}
-                <div className="bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-pink-500/10 rounded-xl p-6 border border-indigo-500/20">
+                <div className="bg-gradient-to-r from-gray-500/10 via-gray-500/10 to-gray-500/10 rounded-xl p-6 border border-gray-500/20">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0">
-                      <svg className="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                       </svg>
                     </div>
                     <div className="flex-1">
                       <p className="text-white/90 font-mono text-sm leading-relaxed">
-                        <span className="text-indigo-400 font-semibold">Liam Du</span> taught me a lot and we had a lot of fun building the Boltzman Engine, in great engineering feat in our view, we did something in <span className="text-purple-400 font-semibold">2 months</span> what takes teams <span className="text-pink-400 font-semibold">months with way more people</span>.
+                        <span className="text-gray-400 font-semibold">Liam Du</span> taught me a lot and we had a lot of fun building the Boltzman Engine, in great engineering feat in our view, we did something in <span className="text-gray-400 font-semibold">2 months</span> what takes teams <span className="text-gray-400 font-semibold">months with way more people</span>.
                       </p>
                     </div>
                   </div>
@@ -4430,12 +4430,12 @@ export function ProjectDetail() {
               {/* Problem Card - Top */}
               <div className="relative mb-8">
                 {/* Decorative gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 via-orange-500/5 to-transparent rounded-3xl blur-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 via-gray-500/5 to-transparent rounded-3xl blur-2xl"></div>
                 
-                <div className="relative bg-gradient-to-br from-red-950/40 via-orange-950/30 to-red-950/20 backdrop-blur-sm rounded-3xl border-2 border-red-500/40 p-8 md:p-10">
+                <div className="relative bg-gradient-to-br from-red-950/40 via-gray-950/30 to-red-950/20 backdrop-blur-sm rounded-3xl border-2 border-red-500/40 p-8 md:p-10">
                   {/* Problem Header */}
                   <div className="flex items-center gap-4 mb-8">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500/30 to-orange-500/20 flex items-center justify-center border-2 border-red-400/50 shadow-lg shadow-red-500/20">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500/30 to-gray-500/20 flex items-center justify-center border-2 border-red-400/50 shadow-lg shadow-red-500/20">
                       <svg className="w-7 h-7 text-red-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                       </svg>
@@ -4451,7 +4451,7 @@ export function ProjectDetail() {
                     {/* Point 1 */}
                     <div className="bg-black/40 rounded-2xl p-5 border border-red-500/30 hover:border-red-400/50 transition-all hover:shadow-lg hover:shadow-red-500/10">
                       <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-red-500/30 to-orange-500/20 flex items-center justify-center border border-red-400/40">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-red-500/30 to-gray-500/20 flex items-center justify-center border border-red-400/40">
                           <svg className="w-5 h-5 text-red-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                           </svg>
@@ -4468,7 +4468,7 @@ export function ProjectDetail() {
                     {/* Point 2 */}
                     <div className="bg-black/40 rounded-2xl p-5 border border-red-500/30 hover:border-red-400/50 transition-all hover:shadow-lg hover:shadow-red-500/10">
                       <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-red-500/30 to-orange-500/20 flex items-center justify-center border border-red-400/40">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-red-500/30 to-gray-500/20 flex items-center justify-center border border-red-400/40">
                           <svg className="w-5 h-5 text-red-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
@@ -4485,7 +4485,7 @@ export function ProjectDetail() {
                     {/* Point 3 */}
                     <div className="bg-black/40 rounded-2xl p-5 border border-red-500/30 hover:border-red-400/50 transition-all hover:shadow-lg hover:shadow-red-500/10">
                       <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-red-500/30 to-orange-500/20 flex items-center justify-center border border-red-400/40">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-red-500/30 to-gray-500/20 flex items-center justify-center border border-red-400/40">
                           <svg className="w-5 h-5 text-red-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                           </svg>
@@ -4616,10 +4616,10 @@ export function ProjectDetail() {
                 {/* Real-World Scenarios Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                   {/* The Student */}
-                  <div className="bg-gradient-to-br from-blue-500/10 to-indigo-500/5 rounded-2xl p-6 border border-blue-500/20 hover:border-blue-400/40 transition-all">
+                  <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/5 rounded-2xl p-6 border border-gray-500/20 hover:border-gray-400/40 transition-all">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center border border-blue-400/30">
-                        <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-10 h-10 rounded-lg bg-gray-500/20 flex items-center justify-center border border-gray-400/30">
+                        <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
                       </div>
@@ -4631,10 +4631,10 @@ export function ProjectDetail() {
                   </div>
 
                   {/* The Executive */}
-                  <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/5 rounded-2xl p-6 border border-purple-500/20 hover:border-purple-400/40 transition-all">
+                  <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/5 rounded-2xl p-6 border border-gray-500/20 hover:border-gray-400/40 transition-all">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center border border-purple-400/30">
-                        <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-10 h-10 rounded-lg bg-gray-500/20 flex items-center justify-center border border-gray-400/30">
+                        <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                         </svg>
                       </div>
@@ -4646,10 +4646,10 @@ export function ProjectDetail() {
                   </div>
 
                   {/* The Busy Pro */}
-                  <div className="bg-gradient-to-br from-orange-500/10 to-red-500/5 rounded-2xl p-6 border border-orange-500/20 hover:border-orange-400/40 transition-all">
+                  <div className="bg-gradient-to-br from-gray-500/10 to-red-500/5 rounded-2xl p-6 border border-gray-500/20 hover:border-gray-400/40 transition-all">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center border border-orange-400/30">
-                        <svg className="w-5 h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-10 h-10 rounded-lg bg-gray-500/20 flex items-center justify-center border border-gray-400/30">
+                        <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                         </svg>
                       </div>
@@ -4739,31 +4739,31 @@ export function ProjectDetail() {
                 {/* How It Works Section */}
                 <div>
                   <div className="flex items-center gap-4 mb-8">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500/30 to-indigo-500/20 flex items-center justify-center border-2 border-blue-400/50 shadow-lg shadow-blue-500/20">
-                      <svg className="w-7 h-7 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-500/30 to-gray-500/20 flex items-center justify-center border-2 border-gray-400/50 shadow-lg shadow-gray-500/20">
+                      <svg className="w-7 h-7 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                       </svg>
                     </div>
                     <div>
                       <h3 className="font-serif text-2xl md:text-3xl text-white mb-2">How It Works</h3>
-                      <p className="text-blue-300/80 font-mono text-sm">Seamless Voice Execution</p>
+                      <p className="text-gray-300/80 font-mono text-sm">Seamless Voice Execution</p>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {/* Step 1: Sync */}
                     <div className="relative">
-                      <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-gradient-to-br from-blue-500/30 to-indigo-500/20 flex items-center justify-center border-2 border-blue-400/50">
-                        <span className="text-blue-300 font-bold font-mono text-sm">1</span>
+                      <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-gradient-to-br from-gray-500/30 to-gray-500/20 flex items-center justify-center border-2 border-gray-400/50">
+                        <span className="text-gray-300 font-bold font-mono text-sm">1</span>
                       </div>
-                      <div className="bg-gradient-to-br from-blue-500/10 to-indigo-500/5 rounded-xl p-6 border border-blue-500/20 pt-8">
+                      <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/5 rounded-xl p-6 border border-gray-500/20 pt-8">
                         <div className="flex items-center gap-3 mb-4">
-                          <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center border border-blue-400/30">
-                            <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <div className="w-10 h-10 rounded-lg bg-gray-500/20 flex items-center justify-center border border-gray-400/30">
+                            <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
                             </svg>
                           </div>
-                          <h4 className="text-blue-400 font-semibold font-mono text-base">Sync</h4>
+                          <h4 className="text-gray-400 font-semibold font-mono text-base">Sync</h4>
                         </div>
                         <p className="text-white/75 font-mono text-sm leading-relaxed">
                           Securely connect your digital ecosystem (Notion, Google Drive, GitHub) in one click.
@@ -4773,17 +4773,17 @@ export function ProjectDetail() {
 
                     {/* Step 2: Speak */}
                     <div className="relative">
-                      <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-gradient-to-br from-blue-500/30 to-indigo-500/20 flex items-center justify-center border-2 border-blue-400/50">
-                        <span className="text-blue-300 font-bold font-mono text-sm">2</span>
+                      <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-gradient-to-br from-gray-500/30 to-gray-500/20 flex items-center justify-center border-2 border-gray-400/50">
+                        <span className="text-gray-300 font-bold font-mono text-sm">2</span>
                       </div>
-                      <div className="bg-gradient-to-br from-blue-500/10 to-indigo-500/5 rounded-xl p-6 border border-blue-500/20 pt-8">
+                      <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/5 rounded-xl p-6 border border-gray-500/20 pt-8">
                         <div className="flex items-center gap-3 mb-4">
-                          <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center border border-blue-400/30">
-                            <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <div className="w-10 h-10 rounded-lg bg-gray-500/20 flex items-center justify-center border border-gray-400/30">
+                            <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
                             </svg>
                           </div>
-                          <h4 className="text-blue-400 font-semibold font-mono text-base">Speak</h4>
+                          <h4 className="text-gray-400 font-semibold font-mono text-base">Speak</h4>
                         </div>
                         <p className="text-white/75 font-mono text-sm leading-relaxed">
                           Issue natural voice commands, queries, or complex instructions on the go.
@@ -4793,17 +4793,17 @@ export function ProjectDetail() {
 
                     {/* Step 3: Execute */}
                     <div className="relative">
-                      <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-gradient-to-br from-blue-500/30 to-indigo-500/20 flex items-center justify-center border-2 border-blue-400/50">
-                        <span className="text-blue-300 font-bold font-mono text-sm">3</span>
+                      <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-gradient-to-br from-gray-500/30 to-gray-500/20 flex items-center justify-center border-2 border-gray-400/50">
+                        <span className="text-gray-300 font-bold font-mono text-sm">3</span>
                       </div>
-                      <div className="bg-gradient-to-br from-blue-500/10 to-indigo-500/5 rounded-xl p-6 border border-blue-500/20 pt-8">
+                      <div className="bg-gradient-to-br from-gray-500/10 to-gray-500/5 rounded-xl p-6 border border-gray-500/20 pt-8">
                         <div className="flex items-center gap-3 mb-4">
-                          <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center border border-blue-400/30">
-                            <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <div className="w-10 h-10 rounded-lg bg-gray-500/20 flex items-center justify-center border border-gray-400/30">
+                            <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                             </svg>
                           </div>
-                          <h4 className="text-blue-400 font-semibold font-mono text-base">Execute</h4>
+                          <h4 className="text-gray-400 font-semibold font-mono text-base">Execute</h4>
                         </div>
                         <p className="text-white/75 font-mono text-sm leading-relaxed">
                           Receive instant, intelligent responses and perform actions tailored to your specific data and context.
@@ -4821,8 +4821,8 @@ export function ProjectDetail() {
                 {/* Header */}
                 <div className="text-center mb-12">
                   <div className="inline-flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center border border-purple-400/30">
-                      <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-500/20 to-gray-500/20 flex items-center justify-center border border-gray-400/30">
+                      <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                       </svg>
                     </div>
@@ -4833,27 +4833,27 @@ export function ProjectDetail() {
 
                 {/* Persona 1: The Student */}
                 <div className="mb-12">
-                  <div className="bg-gradient-to-br from-blue-500/10 via-indigo-500/5 to-blue-500/5 rounded-2xl border-2 border-blue-500/30 p-8 mb-6">
+                  <div className="bg-gradient-to-br from-gray-500/10 via-gray-500/5 to-gray-500/5 rounded-2xl border-2 border-gray-500/30 p-8 mb-6">
                     {/* Persona Header */}
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500/30 to-indigo-500/20 flex items-center justify-center border-2 border-blue-400/50 shadow-lg shadow-blue-500/20">
-                        <svg className="w-8 h-8 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gray-500/30 to-gray-500/20 flex items-center justify-center border-2 border-gray-400/50 shadow-lg shadow-gray-500/20">
+                        <svg className="w-8 h-8 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
                       </div>
                       <div>
                         <h3 className="font-serif text-2xl md:text-3xl text-white mb-1">Persona 1: The Student</h3>
-                        <p className="text-blue-300/80 font-mono text-sm">Academic Cramming</p>
+                        <p className="text-gray-300/80 font-mono text-sm">Academic Cramming</p>
                       </div>
                     </div>
 
                     {/* The Insight */}
-                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-blue-500/20">
+                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-gray-500/20">
                       <div className="flex items-start gap-3 mb-3">
-                        <svg className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                         </svg>
-                        <h4 className="text-blue-400 font-semibold font-mono text-sm uppercase tracking-wide">The Insight</h4>
+                        <h4 className="text-gray-400 font-semibold font-mono text-sm uppercase tracking-wide">The Insight</h4>
                       </div>
                       <p className="text-white/80 font-mono text-sm leading-relaxed">
                         Students often have 15-45 minute walking commutes between campus locations. They are stressed about exams but can't read notes while walking. They need an active tutor, not just a passive audiobook.
@@ -4861,12 +4861,12 @@ export function ProjectDetail() {
                     </div>
 
                     {/* The Workflow */}
-                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-blue-500/20">
+                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-gray-500/20">
                       <div className="flex items-start gap-3 mb-3">
-                        <svg className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
-                        <h4 className="text-blue-400 font-semibold font-mono text-sm uppercase tracking-wide">The Workflow</h4>
+                        <h4 className="text-gray-400 font-semibold font-mono text-sm uppercase tracking-wide">The Workflow</h4>
                       </div>
                       <p className="text-white/80 font-mono text-sm leading-relaxed">
                         Walking to the Psychology Final Exam (30 mins).
@@ -4874,45 +4874,45 @@ export function ProjectDetail() {
                     </div>
 
                     {/* The Context */}
-                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-blue-500/20">
+                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-gray-500/20">
                       <div className="flex items-start gap-3 mb-4">
-                        <svg className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                         </svg>
-                        <h4 className="text-blue-400 font-semibold font-mono text-sm uppercase tracking-wide">The Context (What Boltzman Voice "Sees")</h4>
+                        <h4 className="text-gray-400 font-semibold font-mono text-sm uppercase tracking-wide">The Context (What Boltzman Voice "Sees")</h4>
                       </div>
                       <div className="space-y-3 font-mono text-xs">
-                        <div className="bg-blue-500/10 rounded-lg p-3 border border-blue-500/20">
-                          <span className="text-blue-300 font-semibold">[PDF]</span> <span className="text-white/70">Psych 101 Lecture Notes.pdf</span>
+                        <div className="bg-gray-500/10 rounded-lg p-3 border border-gray-500/20">
+                          <span className="text-gray-300 font-semibold">[PDF]</span> <span className="text-white/70">Psych 101 Lecture Notes.pdf</span>
                           <p className="text-white/60 mt-1 leading-relaxed">Content: "Atkinson-Shiffrin Model: Sensory → Short Term → Long Term. Baddeley's Model: Central Executive, Phonological Loop. Interference: Proactive (old blocks new), Retroactive (new blocks old). Construction Errors: The mind fills gaps with logic, not fact."</p>
                         </div>
-                        <div className="bg-blue-500/10 rounded-lg p-3 border border-blue-500/20">
-                          <span className="text-blue-300 font-semibold">[Video Transcript]</span> <span className="text-white/70">Memory Concepts Explained (YouTube)</span>
+                        <div className="bg-gray-500/10 rounded-lg p-3 border border-gray-500/20">
+                          <span className="text-gray-300 font-semibold">[Video Transcript]</span> <span className="text-white/70">Memory Concepts Explained (YouTube)</span>
                           <p className="text-white/60 mt-1 leading-relaxed">Content: "04:12: The Misinformation Effect occurs when misleading info is incorporated into one's memory after an event. Example: The 'Car Crash' study where the word 'smashed' vs 'hit' changed speed estimates."</p>
                         </div>
-                        <div className="bg-blue-500/10 rounded-lg p-3 border border-blue-500/20">
-                          <span className="text-blue-300 font-semibold">[Audio Transcript]</span> <span className="text-white/70">Finals Review Session.mp4</span>
+                        <div className="bg-gray-500/10 rounded-lg p-3 border border-gray-500/20">
+                          <span className="text-gray-300 font-semibold">[Audio Transcript]</span> <span className="text-white/70">Finals Review Session.mp4</span>
                           <p className="text-white/60 mt-1 leading-relaxed">Content: "TA: 'Make sure you know the difference between Recall (fill-in-the-blank) and Recognition (multiple choice). We will test heavily on interference examples.'"</p>
                         </div>
                       </div>
                     </div>
 
                     {/* The Interaction */}
-                    <div className="bg-gradient-to-br from-blue-500/20 to-indigo-500/10 rounded-xl p-6 border-2 border-blue-400/30">
+                    <div className="bg-gradient-to-br from-gray-500/20 to-gray-500/10 rounded-xl p-6 border-2 border-gray-400/30">
                       <div className="flex items-start gap-3 mb-4">
-                        <svg className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                         </svg>
-                        <h4 className="text-blue-400 font-semibold font-mono text-sm uppercase tracking-wide">The Interaction (Boltzman Voice)</h4>
+                        <h4 className="text-gray-400 font-semibold font-mono text-sm uppercase tracking-wide">The Interaction (Boltzman Voice)</h4>
                       </div>
                       <div className="space-y-4 font-mono text-sm">
-                        <div className="bg-black/40 rounded-lg p-4 border border-blue-500/20">
-                          <p className="text-blue-300 mb-2"><span className="font-semibold">User:</span> "I have 30 minutes. Review the main memory models we covered."</p>
+                        <div className="bg-black/40 rounded-lg p-4 border border-gray-500/20">
+                          <p className="text-gray-300 mb-2"><span className="font-semibold">User:</span> "I have 30 minutes. Review the main memory models we covered."</p>
                           <p className="text-green-300"><span className="font-semibold">Boltzman:</span> "Okay. Based on your Lecture Notes, we need to cover Atkinson-Shiffrin and Baddeley. Atkinson focuses on the flow from Sensory to Long Term, while Baddeley emphasizes the 'Working Memory' components like the Phonological Loop. Want me to quiz you on the difference?"</p>
                         </div>
-                        <div className="bg-black/40 rounded-lg p-4 border border-blue-500/20">
-                          <p className="text-blue-300 mb-2"><span className="font-semibold">User:</span> "What did the TA say about the misinformation effect? That's likely on the test."</p>
+                        <div className="bg-black/40 rounded-lg p-4 border border-gray-500/20">
+                          <p className="text-gray-300 mb-2"><span className="font-semibold">User:</span> "What did the TA say about the misinformation effect? That's likely on the test."</p>
                           <p className="text-green-300"><span className="font-semibold">Boltzman:</span> "In the review session recording, the TA explicitly linked the misinformation effect to the 'Car Crash' study mentioned in your YouTube video. He said to remember that word choice—like 'smashed' vs 'hit'—alters the memory construction."</p>
                         </div>
                       </div>
@@ -4922,27 +4922,27 @@ export function ProjectDetail() {
 
                 {/* Persona 2: The Parent */}
                 <div className="mb-12">
-                  <div className="bg-gradient-to-br from-purple-500/10 via-pink-500/5 to-purple-500/5 rounded-2xl border-2 border-purple-500/30 p-8 mb-6">
+                  <div className="bg-gradient-to-br from-gray-500/10 via-gray-500/5 to-gray-500/5 rounded-2xl border-2 border-gray-500/30 p-8 mb-6">
                     {/* Persona Header */}
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500/30 to-pink-500/20 flex items-center justify-center border-2 border-purple-400/50 shadow-lg shadow-purple-500/20">
-                        <svg className="w-8 h-8 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gray-500/30 to-gray-500/20 flex items-center justify-center border-2 border-gray-400/50 shadow-lg shadow-gray-500/20">
+                        <svg className="w-8 h-8 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                         </svg>
                       </div>
                       <div>
                         <h3 className="font-serif text-2xl md:text-3xl text-white mb-1">Persona 2: The Parent</h3>
-                        <p className="text-purple-300/80 font-mono text-sm">The Logistics Hub</p>
+                        <p className="text-gray-300/80 font-mono text-sm">The Logistics Hub</p>
                       </div>
                     </div>
 
                     {/* The Insight */}
-                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-purple-500/20">
+                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-gray-500/20">
                       <div className="flex items-start gap-3 mb-3">
-                        <svg className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                         </svg>
-                        <h4 className="text-purple-400 font-semibold font-mono text-sm uppercase tracking-wide">The Insight</h4>
+                        <h4 className="text-gray-400 font-semibold font-mono text-sm uppercase tracking-wide">The Insight</h4>
                       </div>
                       <p className="text-white/80 font-mono text-sm leading-relaxed">
                         Parents operate as the "Central Processing Unit" for the family. Their "dead time" is the school run/drive. They suffer from fragmented info—data is scattered across texts, emails, and calendars, making mental synchronization impossible while driving.
@@ -4950,12 +4950,12 @@ export function ProjectDetail() {
                     </div>
 
                     {/* The Workflow */}
-                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-purple-500/20">
+                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-gray-500/20">
                       <div className="flex items-start gap-3 mb-3">
-                        <svg className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
-                        <h4 className="text-purple-400 font-semibold font-mono text-sm uppercase tracking-wide">The Workflow</h4>
+                        <h4 className="text-gray-400 font-semibold font-mono text-sm uppercase tracking-wide">The Workflow</h4>
                       </div>
                       <p className="text-white/80 font-mono text-sm leading-relaxed">
                         Morning school drop-off and commute.
@@ -4963,54 +4963,54 @@ export function ProjectDetail() {
                     </div>
 
                     {/* The Context */}
-                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-purple-500/20">
+                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-gray-500/20">
                       <div className="flex items-start gap-3 mb-4">
-                        <svg className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                         </svg>
-                        <h4 className="text-purple-400 font-semibold font-mono text-sm uppercase tracking-wide">The Context (What Boltzman Voice "Sees")</h4>
+                        <h4 className="text-gray-400 font-semibold font-mono text-sm uppercase tracking-wide">The Context (What Boltzman Voice "Sees")</h4>
                       </div>
                       <div className="space-y-3 font-mono text-xs">
-                        <div className="bg-purple-500/10 rounded-lg p-3 border border-purple-500/20">
-                          <span className="text-purple-300 font-semibold">[Integration: G-Cal]</span> <span className="text-white/70">Family Hub</span>
+                        <div className="bg-gray-500/10 rounded-lg p-3 border border-gray-500/20">
+                          <span className="text-gray-300 font-semibold">[Integration: G-Cal]</span> <span className="text-white/70">Family Hub</span>
                           <div className="text-white/60 mt-2 space-y-1">
                             <p>Event: "Emma - Soccer Practice" | Loc: Lincoln Fields | Time: 4:30-6:00pm</p>
                             <p>Event: "Noah - Piano Lesson" | Loc: Ms. Chen's | Time: 3:45-4:30pm</p>
                             <p>Note: "Wed Meal Plan: Chicken Stir-fry (Defrost AM)"</p>
                           </div>
                         </div>
-                        <div className="bg-purple-500/10 rounded-lg p-3 border border-purple-500/20">
-                          <span className="text-purple-300 font-semibold">[Integration: Gmail]</span>
+                        <div className="bg-gray-500/10 rounded-lg p-3 border border-gray-500/20">
+                          <span className="text-gray-300 font-semibold">[Integration: Gmail]</span>
                           <p className="text-white/70 mt-1">Subject: 5th Grade Field Trip</p>
                           <p className="text-white/60 mt-1">Body: "Museum trip April 15. Permission slips and $12 fee due by Friday, April 11. Bring lunch or $8."</p>
                         </div>
-                        <div className="bg-purple-500/10 rounded-lg p-3 border border-purple-500/20">
-                          <span className="text-purple-300 font-semibold">[Integration: iMessage]</span> <span className="text-white/70">Thread: Sarah (Babysitter)</span>
+                        <div className="bg-gray-500/10 rounded-lg p-3 border border-gray-500/20">
+                          <span className="text-gray-300 font-semibold">[Integration: iMessage]</span> <span className="text-white/70">Thread: Sarah (Babysitter)</span>
                           <p className="text-white/60 mt-1">Last Msg: "Yes, that works for me! See you Friday at 6."</p>
                         </div>
                       </div>
                     </div>
 
                     {/* The Interaction */}
-                    <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/10 rounded-xl p-6 border-2 border-purple-400/30">
+                    <div className="bg-gradient-to-br from-gray-500/20 to-gray-500/10 rounded-xl p-6 border-2 border-gray-400/30">
                       <div className="flex items-start gap-3 mb-4">
-                        <svg className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
                         </svg>
-                        <h4 className="text-purple-400 font-semibold font-mono text-sm uppercase tracking-wide">The Interaction (Boltzman Voice)</h4>
+                        <h4 className="text-gray-400 font-semibold font-mono text-sm uppercase tracking-wide">The Interaction (Boltzman Voice)</h4>
                       </div>
                       <div className="space-y-4 font-mono text-sm">
-                        <div className="bg-black/40 rounded-lg p-4 border border-purple-500/20">
-                          <p className="text-purple-300 mb-2"><span className="font-semibold">User:</span> "What activities do the kids have after school? Coordinate the pickup."</p>
+                        <div className="bg-black/40 rounded-lg p-4 border border-gray-500/20">
+                          <p className="text-gray-300 mb-2"><span className="font-semibold">User:</span> "What activities do the kids have after school? Coordinate the pickup."</p>
                           <p className="text-green-300"><span className="font-semibold">Boltzman:</span> "It's tight today. Noah has Piano at 3:45 at Ms. Chen's, and Emma has Soccer at 4:30 at Lincoln Fields. You'll need to drop Noah, then immediately drive Emma to make the 4:30 start."</p>
                         </div>
-                        <div className="bg-black/40 rounded-lg p-4 border border-purple-500/20">
-                          <p className="text-purple-300 mb-2"><span className="font-semibold">User:</span> "What's for dinner according to the plan? Do I need to prep?"</p>
+                        <div className="bg-black/40 rounded-lg p-4 border border-gray-500/20">
+                          <p className="text-gray-300 mb-2"><span className="font-semibold">User:</span> "What's for dinner according to the plan? Do I need to prep?"</p>
                           <p className="text-green-300"><span className="font-semibold">Boltzman:</span> "It's Chicken Stir-fry night. The calendar note says you need to defrost the chicken this morning."</p>
                         </div>
-                        <div className="bg-black/40 rounded-lg p-4 border border-purple-500/20">
-                          <p className="text-purple-300 mb-2"><span className="font-semibold">User:</span> "When was my last text with the babysitter? I need to confirm Friday."</p>
+                        <div className="bg-black/40 rounded-lg p-4 border border-gray-500/20">
+                          <p className="text-gray-300 mb-2"><span className="font-semibold">User:</span> "When was my last text with the babysitter? I need to confirm Friday."</p>
                           <p className="text-green-300"><span className="font-semibold">Boltzman:</span> "You last spoke to Sarah confirming this Friday at 6 PM. She said 'Yes, that works for me!'"</p>
                         </div>
                       </div>
@@ -5040,27 +5040,27 @@ export function ProjectDetail() {
 
                 {/* Persona 3: The Sales Manager */}
                 <div className="mb-12">
-                  <div className="bg-gradient-to-br from-orange-500/10 via-red-500/5 to-orange-500/5 rounded-2xl border-2 border-orange-500/30 p-8 mb-6">
+                  <div className="bg-gradient-to-br from-gray-500/10 via-red-500/5 to-gray-500/5 rounded-2xl border-2 border-gray-500/30 p-8 mb-6">
                     {/* Persona Header */}
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500/30 to-red-500/20 flex items-center justify-center border-2 border-orange-400/50 shadow-lg shadow-orange-500/20">
-                        <svg className="w-8 h-8 text-orange-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gray-500/30 to-red-500/20 flex items-center justify-center border-2 border-gray-400/50 shadow-lg shadow-gray-500/20">
+                        <svg className="w-8 h-8 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                         </svg>
                       </div>
                       <div>
                         <h3 className="font-serif text-2xl md:text-3xl text-white mb-1">Persona 3: The Sales Manager</h3>
-                        <p className="text-orange-300/80 font-mono text-sm">High-Stakes Prep</p>
+                        <p className="text-gray-300/80 font-mono text-sm">High-Stakes Prep</p>
                       </div>
                     </div>
 
                     {/* The Insight */}
-                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-orange-500/20">
+                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-gray-500/20">
                       <div className="flex items-start gap-3 mb-3">
-                        <svg className="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                         </svg>
-                        <h4 className="text-orange-400 font-semibold font-mono text-sm uppercase tracking-wide">The Insight</h4>
+                        <h4 className="text-gray-400 font-semibold font-mono text-sm uppercase tracking-wide">The Insight</h4>
                       </div>
                       <p className="text-white/80 font-mono text-sm leading-relaxed">
                         Sales professionals have high anxiety before client meetings. They utilize commute time to "get in the zone," but they lack a feedback loop. Talking to themselves isn't enough; they need a roleplay partner who knows the specific client context.
@@ -5068,12 +5068,12 @@ export function ProjectDetail() {
                     </div>
 
                     {/* The Workflow */}
-                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-orange-500/20">
+                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-gray-500/20">
                       <div className="flex items-start gap-3 mb-3">
-                        <svg className="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
-                        <h4 className="text-orange-400 font-semibold font-mono text-sm uppercase tracking-wide">The Workflow</h4>
+                        <h4 className="text-gray-400 font-semibold font-mono text-sm uppercase tracking-wide">The Workflow</h4>
                       </div>
                       <p className="text-white/80 font-mono text-sm leading-relaxed">
                         Driving to Acme Corp HQ (1 hour).
@@ -5081,53 +5081,53 @@ export function ProjectDetail() {
                     </div>
 
                     {/* The Context */}
-                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-orange-500/20">
+                    <div className="bg-black/30 rounded-xl p-5 mb-6 border border-gray-500/20">
                       <div className="flex items-start gap-3 mb-4">
-                        <svg className="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                         </svg>
-                        <h4 className="text-orange-400 font-semibold font-mono text-sm uppercase tracking-wide">The Context (What Boltzman Voice "Sees")</h4>
+                        <h4 className="text-gray-400 font-semibold font-mono text-sm uppercase tracking-wide">The Context (What Boltzman Voice "Sees")</h4>
                       </div>
                       <div className="space-y-3 font-mono text-xs">
-                        <div className="bg-orange-500/10 rounded-lg p-3 border border-orange-500/20">
-                          <span className="text-orange-300 font-semibold">[PDF]</span> <span className="text-white/70">Acme Corp Pitch Package.pdf</span>
+                        <div className="bg-gray-500/10 rounded-lg p-3 border border-gray-500/20">
+                          <span className="text-gray-300 font-semibold">[PDF]</span> <span className="text-white/70">Acme Corp Pitch Package.pdf</span>
                           <div className="text-white/60 mt-2 space-y-1">
                             <p>Pain Point: "Inventory discrepancies costing ~$300K/yr."</p>
                             <p>Solution: "Real-time sync eliminates manual reconciliation."</p>
                             <p>Timeline: "Q3 Implementation Deadline."</p>
                           </div>
                         </div>
-                        <div className="bg-orange-500/10 rounded-lg p-3 border border-orange-500/20">
-                          <span className="text-orange-300 font-semibold">[Doc]</span> <span className="text-white/70">Sales Effectiveness Toolkit.docx</span>
+                        <div className="bg-gray-500/10 rounded-lg p-3 border border-gray-500/20">
+                          <span className="text-gray-300 font-semibold">[Doc]</span> <span className="text-white/70">Sales Effectiveness Toolkit.docx</span>
                           <p className="text-white/60 mt-1">Script: "Objection: Price. Response: Pivot to 18-month ROI. 'Yes, the fee is higher, but with 94% accuracy improvement, you break even in 6 months.'"</p>
                         </div>
-                        <div className="bg-orange-500/10 rounded-lg p-3 border border-orange-500/20">
-                          <span className="text-orange-300 font-semibold">[Web Scrape]</span> <span className="text-white/70">Acme Corp Website</span>
+                        <div className="bg-gray-500/10 rounded-lg p-3 border border-gray-500/20">
+                          <span className="text-gray-300 font-semibold">[Web Scrape]</span> <span className="text-white/70">Acme Corp Website</span>
                           <p className="text-white/60 mt-1">About: "Acme Corp values 'Speed to Market' and 'Operational Transparency' above all."</p>
                         </div>
                       </div>
                     </div>
 
                     {/* The Interaction */}
-                    <div className="bg-gradient-to-br from-orange-500/20 to-red-500/10 rounded-xl p-6 border-2 border-orange-400/30">
+                    <div className="bg-gradient-to-br from-gray-500/20 to-red-500/10 rounded-xl p-6 border-2 border-gray-400/30">
                       <div className="flex items-start gap-3 mb-4">
-                        <svg className="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                         </svg>
-                        <h4 className="text-orange-400 font-semibold font-mono text-sm uppercase tracking-wide">The Interaction (Boltzman Voice)</h4>
+                        <h4 className="text-gray-400 font-semibold font-mono text-sm uppercase tracking-wide">The Interaction (Boltzman Voice)</h4>
                       </div>
                       <div className="space-y-4 font-mono text-sm">
-                        <div className="bg-black/40 rounded-lg p-4 border border-orange-500/20">
-                          <p className="text-orange-300 mb-2"><span className="font-semibold">User:</span> "I want to practice my opening. Roleplay as their procurement director."</p>
+                        <div className="bg-black/40 rounded-lg p-4 border border-gray-500/20">
+                          <p className="text-gray-300 mb-2"><span className="font-semibold">User:</span> "I want to practice my opening. Roleplay as their procurement director."</p>
                           <p className="text-green-300"><span className="font-semibold">Boltzman:</span> "Understood. I'm the Director. 'Look, we like the software, but your implementation timeline seems aggressive. We can't risk downtime in Q3.' How do you respond?"</p>
                         </div>
-                        <div className="bg-black/40 rounded-lg p-4 border border-orange-500/20">
-                          <p className="text-orange-300 mb-2"><span className="font-semibold">User:</span> "I'd say... we can do it fast."</p>
+                        <div className="bg-black/40 rounded-lg p-4 border border-gray-500/20">
+                          <p className="text-gray-300 mb-2"><span className="font-semibold">User:</span> "I'd say... we can do it fast."</p>
                           <p className="text-green-300"><span className="font-semibold">Boltzman:</span> "That's a bit weak. Based on your Pitch Package, try leveraging the 'tailored Q3 deadline' plan. Say: 'We specifically designed the rollout to align with your Q3 goals, ensuring zero downtime during the switch.'"</p>
                         </div>
-                        <div className="bg-black/40 rounded-lg p-4 border border-orange-500/20">
-                          <p className="text-orange-300 mb-2"><span className="font-semibold">User:</span> "Okay, let me try responding to the pricing objection."</p>
+                        <div className="bg-black/40 rounded-lg p-4 border border-gray-500/20">
+                          <p className="text-gray-300 mb-2"><span className="font-semibold">User:</span> "Okay, let me try responding to the pricing objection."</p>
                           <p className="text-green-300"><span className="font-semibold">Boltzman:</span> "Go ahead. I'll check your response against the ROI script in your Toolkit."</p>
                         </div>
                       </div>
@@ -5137,10 +5137,10 @@ export function ProjectDetail() {
 
                 {/* Persona 4: The Bio-Hacker */}
                 <div>
-                  <div className="bg-gradient-to-br from-emerald-500/10 via-teal-500/5 to-emerald-500/5 rounded-2xl border-2 border-emerald-500/30 p-8">
+                  <div className="bg-gradient-to-br from-emerald-500/10 via-gray-500/5 to-emerald-500/5 rounded-2xl border-2 border-emerald-500/30 p-8">
                     {/* Persona Header */}
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500/30 to-teal-500/20 flex items-center justify-center border-2 border-emerald-400/50 shadow-lg shadow-emerald-500/20">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500/30 to-gray-500/20 flex items-center justify-center border-2 border-emerald-400/50 shadow-lg shadow-emerald-500/20">
                         <svg className="w-8 h-8 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                         </svg>
@@ -5203,7 +5203,7 @@ export function ProjectDetail() {
                     </div>
 
                     {/* The Interaction */}
-                    <div className="bg-gradient-to-br from-emerald-500/20 to-teal-500/10 rounded-xl p-6 border-2 border-emerald-400/30">
+                    <div className="bg-gradient-to-br from-emerald-500/20 to-gray-500/10 rounded-xl p-6 border-2 border-emerald-400/30">
                       <div className="flex items-start gap-3 mb-4">
                         <svg className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -5275,7 +5275,7 @@ export function ProjectDetail() {
                       </div>
                     </div>
                     {/* Decorative glow */}
-                    <div className="absolute -inset-2 bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 rounded-xl blur-xl -z-10 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute -inset-2 bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-gray-500/10 rounded-xl blur-xl -z-10 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
 
                   {/* Video 2 */}
@@ -5293,7 +5293,7 @@ export function ProjectDetail() {
                       </div>
                     </div>
                     {/* Decorative glow */}
-                    <div className="absolute -inset-2 bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-teal-500/10 rounded-xl blur-xl -z-10 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute -inset-2 bg-gradient-to-br from-green-500/10 via-emerald-500/10 to-gray-500/10 rounded-xl blur-xl -z-10 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                 </div>
               </div>
@@ -5316,7 +5316,7 @@ export function ProjectDetail() {
                 </div>
 
                 {/* Content */}
-                <div className="bg-gradient-to-r from-green-500/10 via-emerald-500/10 to-teal-500/10 rounded-xl p-6 border border-green-500/20 mb-6">
+                <div className="bg-gradient-to-r from-green-500/10 via-emerald-500/10 to-gray-500/10 rounded-xl p-6 border border-green-500/20 mb-6">
                   <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed text-center">
                     Working with <a href="https://www.liamdu.com/" target="_blank" rel="noopener noreferrer" className="text-green-400 font-semibold hover:underline">Liam Du</a> was a masterclass in extreme execution. We went from a whiteboard concept to a fully functional product in a single night—a feat that usually takes teams weeks.
                   </p>
@@ -5382,22 +5382,22 @@ export function ProjectDetail() {
 
             {/* Problem vs Solution Card */}
             <div className="mb-8">
-              <div className="bg-gradient-to-br from-purple-950/60 via-black/80 to-black rounded-3xl border border-purple-600/50 p-6 md:p-10 shadow-[0_0_50px_rgba(147,51,234,0.35)]">
+              <div className="bg-gradient-to-br from-gray-950/60 via-black/80 to-black rounded-3xl border border-gray-600/50 p-6 md:p-10 shadow-[0_0_50px_rgba(107,114,128,0.35)]">
                 {/* Header */}
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500 to-fuchsia-500 flex items-center justify-center border border-purple-300/60 shadow-lg shadow-purple-500/40">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gray-500 to-gray-500 flex items-center justify-center border border-gray-300/60 shadow-lg shadow-gray-500/40">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13" />
                       </svg>
                     </div>
                     <div>
                       <h2 className="font-serif text-2xl md:text-3xl text-white mb-1">The Problem & The Solution</h2>
-                      <p className="text-purple-200/80 font-mono text-xs md:text-sm">The "Catalog vs. Utility" Trade-off in Music</p>
+                      <p className="text-gray-200/80 font-mono text-xs md:text-sm">The "Catalog vs. Utility" Trade-off in Music</p>
                     </div>
                   </div>
-                  <div className="hidden md:flex items-center gap-2 text-xs font-mono text-purple-200/70 bg-purple-500/10 border border-purple-400/40 rounded-full px-4 py-1">
-                    <span className="w-2 h-2 rounded-full bg-fuchsia-400 animate-pulse" />
+                  <div className="hidden md:flex items-center gap-2 text-xs font-mono text-gray-200/70 bg-gray-500/10 border border-gray-400/40 rounded-full px-4 py-1">
+                    <span className="w-2 h-2 rounded-full bg-gray-400 animate-pulse" />
                     <span>Built for underground + discovery-first listening</span>
                   </div>
                 </div>
@@ -5406,10 +5406,10 @@ export function ProjectDetail() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
                   {/* Problem Side */}
                   <div className="relative flex flex-col">
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/15 via-fuchsia-500/10 to-transparent rounded-2xl blur-2xl pointer-events-none" />
-                    <div className="relative bg-white/5 rounded-2xl border border-purple-500/40 p-6 md:p-7 flex flex-col h-full">
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-500/15 via-gray-500/10 to-transparent rounded-2xl blur-2xl pointer-events-none" />
+                    <div className="relative bg-white/5 rounded-2xl border border-gray-500/40 p-6 md:p-7 flex flex-col h-full">
                       <div className="flex items-center gap-3 mb-4">
-                        <span className="px-3 py-1 rounded-full bg-purple-500/20 border border-purple-400/50 text-purple-200 font-mono text-[11px] uppercase tracking-[0.2em]">
+                        <span className="px-3 py-1 rounded-full bg-gray-500/20 border border-gray-400/50 text-gray-200 font-mono text-[11px] uppercase tracking-[0.2em]">
                           The Problem
                         </span>
                       </div>
@@ -5417,24 +5417,24 @@ export function ProjectDetail() {
 
                       <div className="space-y-4 text-white/80 font-mono text-xs md:text-sm leading-relaxed">
                         {/* Content Gap */}
-                        <div className="border-l-2 border-purple-400/60 pl-4">
-                          <p className="text-purple-300 font-semibold mb-1">The Content Gap</p>
+                        <div className="border-l-2 border-gray-400/60 pl-4">
+                          <p className="text-gray-300 font-semibold mb-1">The Content Gap</p>
                           <p>
                             Mainstream platforms (Spotify, Apple Music) lack the depth of underground artists, remixes, and covers that exist exclusively on YouTube. Users are forced to choose between a good interface (Spotify) or a good catalog (YouTube).
                           </p>
                         </div>
 
                         {/* Attention Tax */}
-                        <div className="border-l-2 border-purple-400/60 pl-4">
-                          <p className="text-purple-300 font-semibold mb-1">The "Attention Tax" (UX Friction)</p>
+                        <div className="border-l-2 border-gray-400/60 pl-4">
+                          <p className="text-gray-300 font-semibold mb-1">The "Attention Tax" (UX Friction)</p>
                           <p>
                             YouTube holds the monopoly on niche content, but its mobile architecture creates high friction for music listeners. It forces "active viewing" (screen on, no background play) and interrupts flow with aggressive ads, making it unusable for passive listening (commuting/working).
                           </p>
                         </div>
 
                         {/* Financial Barrier */}
-                        <div className="border-l-2 border-purple-400/60 pl-4">
-                          <p className="text-purple-300 font-semibold mb-1">The Financial Barrier</p>
+                        <div className="border-l-2 border-gray-400/60 pl-4">
+                          <p className="text-gray-300 font-semibold mb-1">The Financial Barrier</p>
                           <p>
                             Top-tier music experiences are gated behind premium subscriptions. For students and cost-sensitive users, the choice is binary: pay monthly fees or suffer through ad-heavy, limited experiences.
                           </p>
@@ -5445,10 +5445,10 @@ export function ProjectDetail() {
 
                   {/* Solution Side */}
                   <div className="relative flex flex-col">
-                    <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/15 via-purple-500/10 to-transparent rounded-2xl blur-2xl pointer-events-none" />
-                    <div className="relative bg-white/5 rounded-2xl border border-fuchsia-500/40 p-6 md:p-7 flex flex-col h-full">
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-500/15 via-gray-500/10 to-transparent rounded-2xl blur-2xl pointer-events-none" />
+                    <div className="relative bg-white/5 rounded-2xl border border-gray-500/40 p-6 md:p-7 flex flex-col h-full">
                       <div className="flex items-center gap-3 mb-4">
-                        <span className="px-3 py-1 rounded-full bg-fuchsia-500/20 border border-fuchsia-400/50 text-fuchsia-100 font-mono text-[11px] uppercase tracking-[0.2em]">
+                        <span className="px-3 py-1 rounded-full bg-gray-500/20 border border-gray-400/50 text-gray-100 font-mono text-[11px] uppercase tracking-[0.2em]">
                           ⚡ The Solution: Energy
                         </span>
                       </div>
@@ -5456,24 +5456,24 @@ export function ProjectDetail() {
 
                       <div className="space-y-4 text-white/80 font-mono text-xs md:text-sm leading-relaxed">
                         {/* Audio-First Architecture */}
-                        <div className="bg-black/40 rounded-xl p-4 border border-fuchsia-500/30">
-                          <p className="text-fuchsia-200 font-semibold mb-1">Audio-First Architecture</p>
+                        <div className="bg-black/40 rounded-xl p-4 border border-gray-500/30">
+                          <p className="text-gray-200 font-semibold mb-1">Audio-First Architecture</p>
                           <p>
                             Energy leverages the YouTube Data API to decouple the audio track from the video container. By programmatically retrieving MP4 streams and converting them to MP3 audio in real-time, the app allows for seamless background playback and "screen-off" listening.
                           </p>
                         </div>
 
                         {/* Unified Discovery Engine */}
-                        <div className="bg-black/40 rounded-xl p-4 border border-fuchsia-500/30">
-                          <p className="text-fuchsia-200 font-semibold mb-1">Unified Discovery Engine</p>
+                        <div className="bg-black/40 rounded-xl p-4 border border-gray-500/30">
+                          <p className="text-gray-200 font-semibold mb-1">Unified Discovery Engine</p>
                           <p>
                             The system aggregates data to keep users on top of Global Trending Charts while simultaneously providing access to the deep tail of underground artists, effectively combining the discovery power of YouTube with the utility of a dedicated music player.
                           </p>
                         </div>
 
                         {/* Frictionless & Free */}
-                        <div className="bg-black/40 rounded-xl p-4 border border-fuchsia-500/30">
-                          <p className="text-fuchsia-200 font-semibold mb-1">Frictionless & Free</p>
+                        <div className="bg-black/40 rounded-xl p-4 border border-gray-500/30">
+                          <p className="text-gray-200 font-semibold mb-1">Frictionless & Free</p>
                           <p>
                             By building a custom client, Energy removes the ad-layer and playback restrictions, delivering a premium, uninterrupted listening experience without the recurring subscription cost.
                           </p>
@@ -5487,12 +5487,12 @@ export function ProjectDetail() {
 
             {/* Zero-Friction Experience Card */}
             <div className="mb-8">
-              <div className="bg-gradient-to-br from-purple-950/60 via-black/80 to-black rounded-3xl border border-purple-600/50 p-8 md:p-10 shadow-[0_0_50px_rgba(147,51,234,0.35)]">
+              <div className="bg-gradient-to-br from-gray-950/60 via-black/80 to-black rounded-3xl border border-gray-600/50 p-8 md:p-10 shadow-[0_0_50px_rgba(107,114,128,0.35)]">
                 {/* Header */}
                 <div className="text-center mb-10">
                   <div className="inline-flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/30 flex items-center justify-center border border-purple-400/50 shadow-lg shadow-purple-500/30">
-                      <svg className="w-6 h-6 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-500/30 to-gray-500/30 flex items-center justify-center border border-gray-400/50 shadow-lg shadow-gray-500/30">
+                      <svg className="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                     </div>
@@ -5500,14 +5500,14 @@ export function ProjectDetail() {
                   </div>
                   <div className="max-w-3xl mx-auto">
                     <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed mb-4">
-                      We built NRGFLOW with a <span className="text-purple-300 font-semibold">"Zero-Friction"</span> philosophy. When users land on the platform, they aren't bombarded with banners or complex navigation. The interface is intentionally minimal, immediately surfacing the solutions to the user's primary pain points without requiring them to scroll or search.
+                      We built NRGFLOW with a <span className="text-gray-300 font-semibold">"Zero-Friction"</span> philosophy. When users land on the platform, they aren't bombarded with banners or complex navigation. The interface is intentionally minimal, immediately surfacing the solutions to the user's primary pain points without requiring them to scroll or search.
                     </p>
                   </div>
                 </div>
 
                 {/* Images Section */}
                 <div className="mb-12 space-y-8">
-                  <div className="rounded-2xl overflow-hidden border border-purple-500/30 shadow-2xl bg-black/20">
+                  <div className="rounded-2xl overflow-hidden border border-gray-500/30 shadow-2xl bg-black/20">
                     <img
                       src="/Projects/Energy/Group 10.svg"
                       alt="NRGFLOW Interface"
@@ -5515,7 +5515,7 @@ export function ProjectDetail() {
                       loading="lazy"
                     />
                   </div>
-                  <div className="rounded-2xl overflow-hidden border border-purple-500/30 shadow-2xl bg-black/20">
+                  <div className="rounded-2xl overflow-hidden border border-gray-500/30 shadow-2xl bg-black/20">
                     <img
                       src="/Projects/Energy/D2E9F876-79D5-4F95-BB08-43721438BEE6.jpeg"
                       alt="NRGFLOW Features"
@@ -5528,33 +5528,33 @@ export function ProjectDetail() {
                 {/* Core Features Section */}
                 <div>
                   <div className="flex items-center gap-4 mb-8">
-                    <div className="h-px bg-gradient-to-r from-transparent via-purple-500/50 to-purple-500/50 flex-1"></div>
+                    <div className="h-px bg-gradient-to-r from-transparent via-gray-500/50 to-gray-500/50 flex-1"></div>
                     <h3 className="font-serif text-2xl md:text-3xl text-white">Core Feature Architecture</h3>
-                    <div className="h-px bg-gradient-to-l from-transparent via-purple-500/50 to-purple-500/50 flex-1"></div>
+                    <div className="h-px bg-gradient-to-l from-transparent via-gray-500/50 to-gray-500/50 flex-1"></div>
                   </div>
 
                   <div className="space-y-8">
                     {/* Feature 1: YouTube-to-MP3 Conversion */}
                     <div className="relative">
-                      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-fuchsia-500/5 to-transparent rounded-2xl blur-xl"></div>
-                      <div className="relative bg-gradient-to-br from-purple-950/40 via-black/60 to-purple-950/30 rounded-2xl border-2 border-purple-500/40 p-6 md:p-8">
+                      <div className="absolute inset-0 bg-gradient-to-br from-gray-500/10 via-gray-500/5 to-transparent rounded-2xl blur-xl"></div>
+                      <div className="relative bg-gradient-to-br from-gray-950/40 via-black/60 to-gray-950/30 rounded-2xl border-2 border-gray-500/40 p-6 md:p-8">
                         <div className="flex items-start gap-4 mb-4">
-                          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/20 flex items-center justify-center border-2 border-purple-400/50 flex-shrink-0">
-                            <svg className="w-6 h-6 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-500/30 to-gray-500/20 flex items-center justify-center border-2 border-gray-400/50 flex-shrink-0">
+                            <svg className="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
                             </svg>
                           </div>
                           <div className="flex-1">
                             <h4 className="font-serif text-xl md:text-2xl text-white mb-2">YouTube-to-MP3 Conversion Engine</h4>
                             <div className="space-y-4 mt-4">
-                              <div className="bg-black/40 rounded-xl p-4 border border-purple-500/30">
-                                <p className="text-purple-300 font-semibold font-mono text-sm mb-2 uppercase tracking-wide">The Experience</p>
+                              <div className="bg-black/40 rounded-xl p-4 border border-gray-500/30">
+                                <p className="text-gray-300 font-semibold font-mono text-sm mb-2 uppercase tracking-wide">The Experience</p>
                                 <p className="text-white/80 font-mono text-sm leading-relaxed">
                                   We engineered a seamless bridge between YouTube's massive catalog and a premium listening experience. Users can convert video streams into high-quality MP3s instantly.
                                 </p>
                               </div>
-                              <div className="bg-gradient-to-r from-purple-500/10 to-fuchsia-500/10 rounded-xl p-4 border border-purple-400/30">
-                                <p className="text-fuchsia-300 font-semibold font-mono text-sm mb-2 uppercase tracking-wide">The Value Prop</p>
+                              <div className="bg-gradient-to-r from-gray-500/10 to-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                                <p className="text-gray-300 font-semibold font-mono text-sm mb-2 uppercase tracking-wide">The Value Prop</p>
                                 <p className="text-white/80 font-mono text-sm leading-relaxed">
                                   This effectively decouples the audio from the video container, unlocking ad-free listening and background play for free, solving the "paywall" friction found on Spotify and Apple Music.
                                 </p>
@@ -5567,25 +5567,25 @@ export function ProjectDetail() {
 
                     {/* Feature 2: AI-Enhanced Song Recognition */}
                     <div className="relative">
-                      <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/10 via-purple-500/5 to-transparent rounded-2xl blur-xl"></div>
-                      <div className="relative bg-gradient-to-br from-fuchsia-950/40 via-black/60 to-purple-950/30 rounded-2xl border-2 border-fuchsia-500/40 p-6 md:p-8">
+                      <div className="absolute inset-0 bg-gradient-to-br from-gray-500/10 via-gray-500/5 to-transparent rounded-2xl blur-xl"></div>
+                      <div className="relative bg-gradient-to-br from-gray-950/40 via-black/60 to-gray-950/30 rounded-2xl border-2 border-gray-500/40 p-6 md:p-8">
                         <div className="flex items-start gap-4 mb-4">
-                          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-fuchsia-500/30 to-purple-500/20 flex items-center justify-center border-2 border-fuchsia-400/50 flex-shrink-0">
-                            <svg className="w-6 h-6 text-fuchsia-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-500/30 to-gray-500/20 flex items-center justify-center border-2 border-gray-400/50 flex-shrink-0">
+                            <svg className="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                             </svg>
                           </div>
                           <div className="flex-1">
                             <h4 className="font-serif text-xl md:text-2xl text-white mb-2">AI-Enhanced Song Recognition</h4>
                             <div className="space-y-4 mt-4">
-                              <div className="bg-black/40 rounded-xl p-4 border border-fuchsia-500/30">
-                                <p className="text-fuchsia-300 font-semibold font-mono text-sm mb-2 uppercase tracking-wide">The Experience</p>
+                              <div className="bg-black/40 rounded-xl p-4 border border-gray-500/30">
+                                <p className="text-gray-300 font-semibold font-mono text-sm mb-2 uppercase tracking-wide">The Experience</p>
                                 <p className="text-white/80 font-mono text-sm leading-relaxed">
                                   Inspired by Shazam but optimized for the web, this feature allows users to identify music by simply letting the platform "listen" to a snippet.
                                 </p>
                               </div>
-                              <div className="bg-gradient-to-r from-fuchsia-500/10 to-purple-500/10 rounded-xl p-4 border border-fuchsia-400/30">
-                                <p className="text-purple-300 font-semibold font-mono text-sm mb-2 uppercase tracking-wide">The Tech</p>
+                              <div className="bg-gradient-to-r from-gray-500/10 to-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                                <p className="text-gray-300 font-semibold font-mono text-sm mb-2 uppercase tracking-wide">The Tech</p>
                                 <p className="text-white/80 font-mono text-sm leading-relaxed">
                                   We integrated an AI-enhanced recognition layer that analyzes audio fingerprints to accurately identify tracks—even obscure underground songs—and immediately links them for conversion.
                                 </p>
@@ -5598,25 +5598,25 @@ export function ProjectDetail() {
 
                     {/* Feature 3: Offline-First Personal Library */}
                     <div className="relative">
-                      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-fuchsia-500/5 to-transparent rounded-2xl blur-xl"></div>
-                      <div className="relative bg-gradient-to-br from-purple-950/40 via-black/60 to-fuchsia-950/30 rounded-2xl border-2 border-purple-500/40 p-6 md:p-8">
+                      <div className="absolute inset-0 bg-gradient-to-br from-gray-500/10 via-gray-500/5 to-transparent rounded-2xl blur-xl"></div>
+                      <div className="relative bg-gradient-to-br from-gray-950/40 via-black/60 to-gray-950/30 rounded-2xl border-2 border-gray-500/40 p-6 md:p-8">
                         <div className="flex items-start gap-4 mb-4">
-                          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/20 flex items-center justify-center border-2 border-purple-400/50 flex-shrink-0">
-                            <svg className="w-6 h-6 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-500/30 to-gray-500/20 flex items-center justify-center border-2 border-gray-400/50 flex-shrink-0">
+                            <svg className="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
                             </svg>
                           </div>
                           <div className="flex-1">
                             <h4 className="font-serif text-xl md:text-2xl text-white mb-2">Offline-First Personal Library</h4>
                             <div className="space-y-4 mt-4">
-                              <div className="bg-black/40 rounded-xl p-4 border border-purple-500/30">
-                                <p className="text-purple-300 font-semibold font-mono text-sm mb-2 uppercase tracking-wide">The Experience</p>
+                              <div className="bg-black/40 rounded-xl p-4 border border-gray-500/30">
+                                <p className="text-gray-300 font-semibold font-mono text-sm mb-2 uppercase tracking-wide">The Experience</p>
                                 <p className="text-white/80 font-mono text-sm leading-relaxed">
                                   We moved beyond simple streaming by building a persistent Personal Library system.
                                 </p>
                               </div>
-                              <div className="bg-gradient-to-r from-purple-500/10 to-fuchsia-500/10 rounded-xl p-4 border border-purple-400/30">
-                                <p className="text-fuchsia-300 font-semibold font-mono text-sm mb-2 uppercase tracking-wide">The Value Prop</p>
+                              <div className="bg-gradient-to-r from-gray-500/10 to-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                                <p className="text-gray-300 font-semibold font-mono text-sm mb-2 uppercase tracking-wide">The Value Prop</p>
                                 <p className="text-white/80 font-mono text-sm leading-relaxed">
                                   This grants users true ownership of their music. By saving converted tracks locally to their library, users can listen to their curated underground playlists anywhere, fully offline, without relying on an internet connection or data plan.
                                 </p>
@@ -5633,30 +5633,30 @@ export function ProjectDetail() {
 
             {/* Dashboard Experience Card */}
             <div className="mb-8">
-              <div className="bg-gradient-to-br from-purple-950/60 via-black/80 to-black rounded-3xl border border-purple-600/50 p-8 md:p-10 shadow-[0_0_50px_rgba(147,51,234,0.35)]">
+              <div className="bg-gradient-to-br from-gray-950/60 via-black/80 to-black rounded-3xl border border-gray-600/50 p-8 md:p-10 shadow-[0_0_50px_rgba(107,114,128,0.35)]">
                 {/* Header */}
                 <div className="text-center mb-10">
                   <div className="inline-flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/30 flex items-center justify-center border border-purple-400/50 shadow-lg shadow-purple-500/30">
-                      <svg className="w-6 h-6 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-500/30 to-gray-500/30 flex items-center justify-center border border-gray-400/50 shadow-lg shadow-gray-500/30">
+                      <svg className="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
                       </svg>
                     </div>
                     <h2 className="font-serif text-3xl md:text-4xl text-white">The Dashboard Experience</h2>
                   </div>
-                  <p className="text-purple-300/80 font-mono text-sm md:text-base">Instant Immersion</p>
+                  <p className="text-gray-300/80 font-mono text-sm md:text-base">Instant Immersion</p>
                 </div>
 
                 {/* Introduction */}
-                <div className="bg-gradient-to-r from-purple-500/10 via-fuchsia-500/10 to-purple-500/10 rounded-xl p-6 border border-purple-500/30 mb-10">
+                <div className="bg-gradient-to-r from-gray-500/10 via-gray-500/10 to-gray-500/10 rounded-xl p-6 border border-gray-500/30 mb-10">
                   <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed text-center">
-                    Once logged in, the interface shifts from the landing page's utility focus to a <span className="text-purple-300 font-semibold">hyper-personalized command center</span>. We designed the dashboard to minimize "Time-to-Play," ensuring users are only ever one click away from their audio.
+                    Once logged in, the interface shifts from the landing page's utility focus to a <span className="text-gray-300 font-semibold">hyper-personalized command center</span>. We designed the dashboard to minimize "Time-to-Play," ensuring users are only ever one click away from their audio.
                   </p>
                 </div>
 
                 {/* Dashboard Image */}
                 <div className="mb-10">
-                  <div className="rounded-2xl overflow-hidden border border-purple-500/30 shadow-2xl bg-black/20">
+                  <div className="rounded-2xl overflow-hidden border border-gray-500/30 shadow-2xl bg-black/20">
                     <img
                       src="/Projects/Energy/772DDE9D-BE97-4C58-B987-43D8A1FD1017.jpeg"
                       alt="NRGFLOW Dashboard"
@@ -5670,11 +5670,11 @@ export function ProjectDetail() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {/* Feature 1: Contextual Welcome */}
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-fuchsia-500/5 to-transparent rounded-2xl blur-xl"></div>
-                    <div className="relative bg-gradient-to-br from-purple-950/40 via-black/60 to-purple-950/30 rounded-2xl border-2 border-purple-500/40 p-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-500/10 via-gray-500/5 to-transparent rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-gray-950/40 via-black/60 to-gray-950/30 rounded-2xl border-2 border-gray-500/40 p-6">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/20 flex items-center justify-center border-2 border-purple-400/50">
-                          <svg className="w-5 h-5 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gray-500/30 to-gray-500/20 flex items-center justify-center border-2 border-gray-400/50">
+                          <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                           </svg>
                         </div>
@@ -5688,11 +5688,11 @@ export function ProjectDetail() {
 
                   {/* Feature 2: Made for You */}
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/10 via-purple-500/5 to-transparent rounded-2xl blur-xl"></div>
-                    <div className="relative bg-gradient-to-br from-fuchsia-950/40 via-black/60 to-purple-950/30 rounded-2xl border-2 border-fuchsia-500/40 p-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-500/10 via-gray-500/5 to-transparent rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-gray-950/40 via-black/60 to-gray-950/30 rounded-2xl border-2 border-gray-500/40 p-6">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-fuchsia-500/30 to-purple-500/20 flex items-center justify-center border-2 border-fuchsia-400/50">
-                          <svg className="w-5 h-5 text-fuchsia-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gray-500/30 to-gray-500/20 flex items-center justify-center border-2 border-gray-400/50">
+                          <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                           </svg>
                         </div>
@@ -5706,11 +5706,11 @@ export function ProjectDetail() {
 
                   {/* Feature 3: Live Trending Data */}
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-fuchsia-500/5 to-transparent rounded-2xl blur-xl"></div>
-                    <div className="relative bg-gradient-to-br from-purple-950/40 via-black/60 to-fuchsia-950/30 rounded-2xl border-2 border-purple-500/40 p-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-500/10 via-gray-500/5 to-transparent rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-gray-950/40 via-black/60 to-gray-950/30 rounded-2xl border-2 border-gray-500/40 p-6">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/20 flex items-center justify-center border-2 border-purple-400/50">
-                          <svg className="w-5 h-5 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gray-500/30 to-gray-500/20 flex items-center justify-center border-2 border-gray-400/50">
+                          <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                           </svg>
                         </div>
@@ -5727,24 +5727,24 @@ export function ProjectDetail() {
 
             {/* Retention Engine Card */}
             <div className="mb-8">
-              <div className="bg-gradient-to-br from-purple-950/60 via-black/80 to-black rounded-3xl border border-purple-600/50 p-8 md:p-10 shadow-[0_0_50px_rgba(147,51,234,0.35)]">
+              <div className="bg-gradient-to-br from-gray-950/60 via-black/80 to-black rounded-3xl border border-gray-600/50 p-8 md:p-10 shadow-[0_0_50px_rgba(107,114,128,0.35)]">
                 {/* Header */}
                 <div className="text-center mb-10">
                   <div className="inline-flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/30 flex items-center justify-center border border-purple-400/50 shadow-lg shadow-purple-500/30">
-                      <svg className="w-6 h-6 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-500/30 to-gray-500/30 flex items-center justify-center border border-gray-400/50 shadow-lg shadow-gray-500/30">
+                      <svg className="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
                       </svg>
                     </div>
                     <h2 className="font-serif text-3xl md:text-4xl text-white">The Retention Engine</h2>
                   </div>
-                  <p className="text-purple-300/80 font-mono text-sm md:text-base">Curated Playlists</p>
+                  <p className="text-gray-300/80 font-mono text-sm md:text-base">Curated Playlists</p>
                 </div>
 
                 {/* Introduction */}
-                <div className="bg-gradient-to-r from-purple-500/10 via-fuchsia-500/10 to-purple-500/10 rounded-xl p-6 border border-purple-500/30 mb-10">
+                <div className="bg-gradient-to-r from-gray-500/10 via-gray-500/10 to-gray-500/10 rounded-xl p-6 border border-gray-500/30 mb-10">
                   <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed text-center">
-                    We identified that while discovery gets users on the platform, <span className="text-purple-300 font-semibold">curation is what keeps them there</span>. The Playlist interface serves as the "second home" for users, transforming fleeting discoveries into a permanent, accessible library.
+                    We identified that while discovery gets users on the platform, <span className="text-gray-300 font-semibold">curation is what keeps them there</span>. The Playlist interface serves as the "second home" for users, transforming fleeting discoveries into a permanent, accessible library.
                   </p>
                 </div>
 
@@ -5778,11 +5778,11 @@ export function ProjectDetail() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {/* Feature 1: Standardized Control Suite */}
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-fuchsia-500/5 to-transparent rounded-2xl blur-xl"></div>
-                    <div className="relative bg-gradient-to-br from-purple-950/40 via-black/60 to-purple-950/30 rounded-2xl border-2 border-purple-500/40 p-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-500/10 via-gray-500/5 to-transparent rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-gray-950/40 via-black/60 to-gray-950/30 rounded-2xl border-2 border-gray-500/40 p-6">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/20 flex items-center justify-center border-2 border-purple-400/50">
-                          <svg className="w-5 h-5 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gray-500/30 to-gray-500/20 flex items-center justify-center border-2 border-gray-400/50">
+                          <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
@@ -5790,14 +5790,14 @@ export function ProjectDetail() {
                         <h3 className="font-serif text-lg text-white">Standardized Control Suite</h3>
                       </div>
                       <div className="space-y-3">
-                        <div className="bg-black/40 rounded-xl p-3 border border-purple-500/30">
-                          <p className="text-purple-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Experience</p>
+                        <div className="bg-black/40 rounded-xl p-3 border border-gray-500/30">
+                          <p className="text-gray-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Experience</p>
                           <p className="text-white/75 font-mono text-xs leading-relaxed">
                             We didn't reinvent the wheel where it wasn't necessary. The playlist header features a prominent, industry-standard control set: a primary Play button for immediate immersion and a Shuffle toggle for randomized listening.
                           </p>
                         </div>
-                        <div className="bg-gradient-to-r from-purple-500/10 to-fuchsia-500/10 rounded-xl p-3 border border-purple-400/30">
-                          <p className="text-fuchsia-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Logic</p>
+                        <div className="bg-gradient-to-r from-gray-500/10 to-gray-500/10 rounded-xl p-3 border border-gray-400/30">
+                          <p className="text-gray-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Logic</p>
                           <p className="text-white/75 font-mono text-xs leading-relaxed">
                             This familiarity reduces the learning curve, allowing users to interact with their underground collection just as easily as they would on Spotify.
                           </p>
@@ -5808,25 +5808,25 @@ export function ProjectDetail() {
 
                   {/* Feature 2: Social Loops */}
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/10 via-purple-500/5 to-transparent rounded-2xl blur-xl"></div>
-                    <div className="relative bg-gradient-to-br from-fuchsia-950/40 via-black/60 to-purple-950/30 rounded-2xl border-2 border-fuchsia-500/40 p-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-500/10 via-gray-500/5 to-transparent rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-gray-950/40 via-black/60 to-gray-950/30 rounded-2xl border-2 border-gray-500/40 p-6">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-fuchsia-500/30 to-purple-500/20 flex items-center justify-center border-2 border-fuchsia-400/50">
-                          <svg className="w-5 h-5 text-fuchsia-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gray-500/30 to-gray-500/20 flex items-center justify-center border-2 border-gray-400/50">
+                          <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
                           </svg>
                         </div>
                         <h3 className="font-serif text-lg text-white">Social Loops</h3>
                       </div>
                       <div className="space-y-3">
-                        <div className="bg-black/40 rounded-xl p-3 border border-fuchsia-500/30">
-                          <p className="text-fuchsia-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Experience</p>
+                        <div className="bg-black/40 rounded-xl p-3 border border-gray-500/30">
+                          <p className="text-gray-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Experience</p>
                           <p className="text-white/75 font-mono text-xs leading-relaxed">
                             Integrated directly next to the playback controls is the Share button.
                           </p>
                         </div>
-                        <div className="bg-gradient-to-r from-fuchsia-500/10 to-purple-500/10 rounded-xl p-3 border border-fuchsia-400/30">
-                          <p className="text-purple-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Value Prop</p>
+                        <div className="bg-gradient-to-r from-gray-500/10 to-gray-500/10 rounded-xl p-3 border border-gray-400/30">
+                          <p className="text-gray-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Value Prop</p>
                           <p className="text-white/75 font-mono text-xs leading-relaxed">
                             Music is inherently social. This feature allows users to export their niche finds to friends, turning individual discovery into a viral growth loop for the platform.
                           </p>
@@ -5837,19 +5837,19 @@ export function ProjectDetail() {
 
                   {/* Feature 3: Clean Metadata Organization */}
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-fuchsia-500/5 to-transparent rounded-2xl blur-xl"></div>
-                    <div className="relative bg-gradient-to-br from-purple-950/40 via-black/60 to-fuchsia-950/30 rounded-2xl border-2 border-purple-500/40 p-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-500/10 via-gray-500/5 to-transparent rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-gray-950/40 via-black/60 to-gray-950/30 rounded-2xl border-2 border-gray-500/40 p-6">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/20 flex items-center justify-center border-2 border-purple-400/50">
-                          <svg className="w-5 h-5 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gray-500/30 to-gray-500/20 flex items-center justify-center border-2 border-gray-400/50">
+                          <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
                           </svg>
                         </div>
                         <h3 className="font-serif text-lg text-white">Clean Metadata Organization</h3>
                       </div>
                       <div className="space-y-3">
-                        <div className="bg-black/40 rounded-xl p-3 border border-purple-500/30">
-                          <p className="text-purple-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Interface</p>
+                        <div className="bg-black/40 rounded-xl p-3 border border-gray-500/30">
+                          <p className="text-gray-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Interface</p>
                           <p className="text-white/75 font-mono text-xs leading-relaxed">
                             The list view is designed for clarity, stripping away the visual noise typical of YouTube. It presents a clean hierarchy of Title, Artist, and Duration, allowing users to scan their collection (e.g., "Juice WRLD", "Polo G") without distraction.
                           </p>
@@ -5863,30 +5863,30 @@ export function ProjectDetail() {
 
             {/* Collaboration Hub Card */}
             <div className="mb-8">
-              <div className="bg-gradient-to-br from-purple-950/60 via-black/80 to-black rounded-3xl border border-purple-600/50 p-8 md:p-10 shadow-[0_0_50px_rgba(147,51,234,0.35)]">
+              <div className="bg-gradient-to-br from-gray-950/60 via-black/80 to-black rounded-3xl border border-gray-600/50 p-8 md:p-10 shadow-[0_0_50px_rgba(107,114,128,0.35)]">
                 {/* Header */}
                 <div className="text-center mb-10">
                   <div className="inline-flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/30 flex items-center justify-center border border-purple-400/50 shadow-lg shadow-purple-500/30">
-                      <svg className="w-6 h-6 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-500/30 to-gray-500/30 flex items-center justify-center border border-gray-400/50 shadow-lg shadow-gray-500/30">
+                      <svg className="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                       </svg>
                     </div>
                     <h2 className="font-serif text-3xl md:text-4xl text-white">The Collaboration Hub</h2>
                   </div>
-                  <p className="text-purple-300/80 font-mono text-sm md:text-base">My Playlists</p>
+                  <p className="text-gray-300/80 font-mono text-sm md:text-base">My Playlists</p>
                 </div>
 
                 {/* Introduction */}
-                <div className="bg-gradient-to-r from-purple-500/10 via-fuchsia-500/10 to-purple-500/10 rounded-xl p-6 border border-purple-500/30 mb-10">
+                <div className="bg-gradient-to-r from-gray-500/10 via-gray-500/10 to-gray-500/10 rounded-xl p-6 border border-gray-500/30 mb-10">
                   <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed text-center">
-                    We designed the My Playlists interface to be the user's <span className="text-purple-300 font-semibold">personal archive and social launchpad</span>. This is where individual curation meets community sharing, giving users granular control over how they organize and distribute their underground music.
+                    We designed the My Playlists interface to be the user's <span className="text-gray-300 font-semibold">personal archive and social launchpad</span>. This is where individual curation meets community sharing, giving users granular control over how they organize and distribute their underground music.
                   </p>
                 </div>
 
                 {/* Image */}
                 <div className="mb-10">
-                  <div className="rounded-2xl overflow-hidden border border-purple-500/30 shadow-2xl bg-black/20">
+                  <div className="rounded-2xl overflow-hidden border border-gray-500/30 shadow-2xl bg-black/20">
                     <img
                       src="/Projects/Energy/13A86BD8-D63F-4E7D-B7D3-BDCFA4F22EBB.jpeg"
                       alt="NRGFLOW My Playlists Interface"
@@ -5900,25 +5900,25 @@ export function ProjectDetail() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Feature 1: Customizable Curation */}
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-fuchsia-500/5 to-transparent rounded-2xl blur-xl"></div>
-                    <div className="relative bg-gradient-to-br from-purple-950/40 via-black/60 to-purple-950/30 rounded-2xl border-2 border-purple-500/40 p-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-500/10 via-gray-500/5 to-transparent rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-gray-950/40 via-black/60 to-gray-950/30 rounded-2xl border-2 border-gray-500/40 p-6">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/20 flex items-center justify-center border-2 border-purple-400/50">
-                          <svg className="w-5 h-5 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gray-500/30 to-gray-500/20 flex items-center justify-center border-2 border-gray-400/50">
+                          <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                           </svg>
                         </div>
                         <h3 className="font-serif text-lg text-white">Customizable Curation</h3>
                       </div>
                       <div className="space-y-3">
-                        <div className="bg-black/40 rounded-xl p-3 border border-purple-500/30">
-                          <p className="text-purple-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Experience</p>
+                        <div className="bg-black/40 rounded-xl p-3 border border-gray-500/30">
+                          <p className="text-gray-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Experience</p>
                           <p className="text-white/75 font-mono text-xs leading-relaxed">
                             Users can spin up new collections instantly via the "Create Playlist" modal, which asks for the essentials: a distinctive Playlist Name and an optional Description to provide context for the vibe (e.g., "songs to add to the playlist").
                           </p>
                         </div>
-                        <div className="bg-gradient-to-r from-purple-500/10 to-fuchsia-500/10 rounded-xl p-3 border border-purple-400/30">
-                          <p className="text-fuchsia-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Value Prop</p>
+                        <div className="bg-gradient-to-r from-gray-500/10 to-gray-500/10 rounded-xl p-3 border border-gray-400/30">
+                          <p className="text-gray-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Value Prop</p>
                           <p className="text-white/75 font-mono text-xs leading-relaxed">
                             This structured metadata transforms a random list of songs into a cohesive "album" experience, allowing users to build their own narrative around disparate tracks.
                           </p>
@@ -5929,25 +5929,25 @@ export function ProjectDetail() {
 
                   {/* Feature 2: Granular Privacy Controls */}
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/10 via-purple-500/5 to-transparent rounded-2xl blur-xl"></div>
-                    <div className="relative bg-gradient-to-br from-fuchsia-950/40 via-black/60 to-purple-950/30 rounded-2xl border-2 border-fuchsia-500/40 p-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-500/10 via-gray-500/5 to-transparent rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-gray-950/40 via-black/60 to-gray-950/30 rounded-2xl border-2 border-gray-500/40 p-6">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-fuchsia-500/30 to-purple-500/20 flex items-center justify-center border-2 border-fuchsia-400/50">
-                          <svg className="w-5 h-5 text-fuchsia-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gray-500/30 to-gray-500/20 flex items-center justify-center border-2 border-gray-400/50">
+                          <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                           </svg>
                         </div>
                         <h3 className="font-serif text-lg text-white">Granular Privacy Controls</h3>
                       </div>
                       <div className="space-y-3">
-                        <div className="bg-black/40 rounded-xl p-3 border border-fuchsia-500/30">
-                          <p className="text-fuchsia-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Experience</p>
+                        <div className="bg-black/40 rounded-xl p-3 border border-gray-500/30">
+                          <p className="text-gray-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Experience</p>
                           <p className="text-white/75 font-mono text-xs leading-relaxed">
                             We implemented a toggle-based permission system directly in the creation flow. Users can check "Make this playlist public" to broadcast their taste to the platform or keep it private for personal listening.
                           </p>
                         </div>
-                        <div className="bg-gradient-to-r from-fuchsia-500/10 to-purple-500/10 rounded-xl p-3 border border-fuchsia-400/30">
-                          <p className="text-purple-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Logic</p>
+                        <div className="bg-gradient-to-r from-gray-500/10 to-gray-500/10 rounded-xl p-3 border border-gray-400/30">
+                          <p className="text-gray-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Logic</p>
                           <p className="text-white/75 font-mono text-xs leading-relaxed">
                             By defaulting to choice, we respect the user's desire for privacy while offering a clear path to becoming a "tastemaker" on the platform.
                           </p>
@@ -5958,25 +5958,25 @@ export function ProjectDetail() {
 
                   {/* Feature 3: Collaborative "Social Mode" */}
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-fuchsia-500/5 to-transparent rounded-2xl blur-xl"></div>
-                    <div className="relative bg-gradient-to-br from-purple-950/40 via-black/60 to-purple-950/30 rounded-2xl border-2 border-purple-500/40 p-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-500/10 via-gray-500/5 to-transparent rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-gray-950/40 via-black/60 to-gray-950/30 rounded-2xl border-2 border-gray-500/40 p-6">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/20 flex items-center justify-center border-2 border-purple-400/50">
-                          <svg className="w-5 h-5 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gray-500/30 to-gray-500/20 flex items-center justify-center border-2 border-gray-400/50">
+                          <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                           </svg>
                         </div>
                         <h3 className="font-serif text-lg text-white">Collaborative "Social Mode"</h3>
                       </div>
                       <div className="space-y-3">
-                        <div className="bg-black/40 rounded-xl p-3 border border-purple-500/30">
-                          <p className="text-purple-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Experience</p>
+                        <div className="bg-black/40 rounded-xl p-3 border border-gray-500/30">
+                          <p className="text-gray-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Experience</p>
                           <p className="text-white/75 font-mono text-xs leading-relaxed">
                             The "Allow others to add songs" checkbox turns a static playlist into a dynamic, collaborative queue.
                           </p>
                         </div>
-                        <div className="bg-gradient-to-r from-purple-500/10 to-fuchsia-500/10 rounded-xl p-3 border border-purple-400/30">
-                          <p className="text-fuchsia-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Value Prop</p>
+                        <div className="bg-gradient-to-r from-gray-500/10 to-gray-500/10 rounded-xl p-3 border border-gray-400/30">
+                          <p className="text-gray-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Value Prop</p>
                           <p className="text-white/75 font-mono text-xs leading-relaxed">
                             This feature mimics the "party mode" functionality of premium apps, enabling friends to co-curate vibes in real-time without needing a paid subscription.
                           </p>
@@ -5987,19 +5987,19 @@ export function ProjectDetail() {
 
                   {/* Feature 4: Unified Library View */}
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/10 via-purple-500/5 to-transparent rounded-2xl blur-xl"></div>
-                    <div className="relative bg-gradient-to-br from-fuchsia-950/40 via-black/60 to-purple-950/30 rounded-2xl border-2 border-fuchsia-500/40 p-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-500/10 via-gray-500/5 to-transparent rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-gray-950/40 via-black/60 to-gray-950/30 rounded-2xl border-2 border-gray-500/40 p-6">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-fuchsia-500/30 to-purple-500/20 flex items-center justify-center border-2 border-fuchsia-400/50">
-                          <svg className="w-5 h-5 text-fuchsia-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gray-500/30 to-gray-500/20 flex items-center justify-center border-2 border-gray-400/50">
+                          <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                           </svg>
                         </div>
                         <h3 className="font-serif text-lg text-white">Unified Library View</h3>
                       </div>
                       <div className="space-y-3">
-                        <div className="bg-black/40 rounded-xl p-3 border border-fuchsia-500/30">
-                          <p className="text-fuchsia-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Interface</p>
+                        <div className="bg-black/40 rounded-xl p-3 border border-gray-500/30">
+                          <p className="text-gray-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Interface</p>
                           <p className="text-white/75 font-mono text-xs leading-relaxed">
                             The background view organizes all created playlists (like "nicks fun") into a visual grid with album art, track counts, and visibility icons (eye icon), ensuring users can manage their growing library at a glance.
                           </p>
@@ -6013,30 +6013,30 @@ export function ProjectDetail() {
 
             {/* YouTube Integration Card */}
             <div className="mb-8">
-              <div className="bg-gradient-to-br from-purple-950/60 via-black/80 to-black rounded-3xl border border-purple-600/50 p-8 md:p-10 shadow-[0_0_50px_rgba(147,51,234,0.35)]">
+              <div className="bg-gradient-to-br from-gray-950/60 via-black/80 to-black rounded-3xl border border-gray-600/50 p-8 md:p-10 shadow-[0_0_50px_rgba(107,114,128,0.35)]">
                 {/* Header */}
                 <div className="text-center mb-10">
                   <div className="inline-flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/30 flex items-center justify-center border border-purple-400/50 shadow-lg shadow-purple-500/30">
-                      <svg className="w-6 h-6 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-500/30 to-gray-500/30 flex items-center justify-center border border-gray-400/50 shadow-lg shadow-gray-500/30">
+                      <svg className="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
                       </svg>
                     </div>
                     <h2 className="font-serif text-3xl md:text-4xl text-white">YouTube Integration</h2>
                   </div>
-                  <p className="text-purple-300/80 font-mono text-sm md:text-base">Solving the "Empty Library Problem"</p>
+                  <p className="text-gray-300/80 font-mono text-sm md:text-base">Solving the "Empty Library Problem"</p>
                 </div>
 
                 {/* Introduction */}
-                <div className="bg-gradient-to-r from-purple-500/10 via-fuchsia-500/10 to-purple-500/10 rounded-xl p-6 border border-purple-500/30 mb-10">
+                <div className="bg-gradient-to-r from-gray-500/10 via-gray-500/10 to-gray-500/10 rounded-xl p-6 border border-gray-500/30 mb-10">
                   <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed text-center">
-                    We recognized that the biggest barrier to adopting a new music platform is the <span className="text-purple-300 font-semibold">"Empty Library Problem."</span> Users have spent years curating their YouTube playlists and subscriptions, and they shouldn't have to start from zero. To solve this, I engineered a direct YouTube Integration that serves as a seamless bridge between the user's existing data and the Energy platform.
+                    We recognized that the biggest barrier to adopting a new music platform is the <span className="text-gray-300 font-semibold">"Empty Library Problem."</span> Users have spent years curating their YouTube playlists and subscriptions, and they shouldn't have to start from zero. To solve this, I engineered a direct YouTube Integration that serves as a seamless bridge between the user's existing data and the Energy platform.
                   </p>
                 </div>
 
                 {/* Image */}
                 <div className="mb-10">
-                  <div className="rounded-2xl overflow-hidden border border-purple-500/30 shadow-2xl bg-black/20">
+                  <div className="rounded-2xl overflow-hidden border border-gray-500/30 shadow-2xl bg-black/20">
                     <img
                       src="/Projects/Energy/6ADA2CCA-66C5-43F6-8BEA-EC07A705089F.jpeg"
                       alt="YouTube Integration Interface"
@@ -6050,25 +6050,25 @@ export function ProjectDetail() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Feature 1: One-Click Migration */}
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-fuchsia-500/5 to-transparent rounded-2xl blur-xl"></div>
-                    <div className="relative bg-gradient-to-br from-purple-950/40 via-black/60 to-purple-950/30 rounded-2xl border-2 border-purple-500/40 p-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-500/10 via-gray-500/5 to-transparent rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-gray-950/40 via-black/60 to-gray-950/30 rounded-2xl border-2 border-gray-500/40 p-6">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/30 to-fuchsia-500/20 flex items-center justify-center border-2 border-purple-400/50">
-                          <svg className="w-5 h-5 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gray-500/30 to-gray-500/20 flex items-center justify-center border-2 border-gray-400/50">
+                          <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                           </svg>
                         </div>
                         <h3 className="font-serif text-lg text-white">One-Click Migration</h3>
                       </div>
                       <div className="space-y-3">
-                        <div className="bg-black/40 rounded-xl p-3 border border-purple-500/30">
-                          <p className="text-purple-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Experience</p>
+                        <div className="bg-black/40 rounded-xl p-3 border border-gray-500/30">
+                          <p className="text-gray-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Experience</p>
                           <p className="text-white/75 font-mono text-xs leading-relaxed">
                             We simplified the onboarding process into a single action. Users are presented with a prominent "Connect with YouTube" CTA that handles the authentication instantly.
                           </p>
                         </div>
-                        <div className="bg-gradient-to-r from-purple-500/10 to-fuchsia-500/10 rounded-xl p-3 border border-purple-400/30">
-                          <p className="text-fuchsia-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Value Prop</p>
+                        <div className="bg-gradient-to-r from-gray-500/10 to-gray-500/10 rounded-xl p-3 border border-gray-400/30">
+                          <p className="text-gray-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Value Prop</p>
                           <p className="text-white/75 font-mono text-xs leading-relaxed">
                             This eliminates the "cold start" problem. By enabling users to "Import all your playlists," we deliver immediate value the moment they sign up, rather than forcing them to manually search for and re-add hundreds of songs.
                           </p>
@@ -6079,25 +6079,25 @@ export function ProjectDetail() {
 
                   {/* Feature 2: Continuous Synchronization */}
                   <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/10 via-purple-500/5 to-transparent rounded-2xl blur-xl"></div>
-                    <div className="relative bg-gradient-to-br from-fuchsia-950/40 via-black/60 to-purple-950/30 rounded-2xl border-2 border-fuchsia-500/40 p-6">
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-500/10 via-gray-500/5 to-transparent rounded-2xl blur-xl"></div>
+                    <div className="relative bg-gradient-to-br from-gray-950/40 via-black/60 to-gray-950/30 rounded-2xl border-2 border-gray-500/40 p-6">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-fuchsia-500/30 to-purple-500/20 flex items-center justify-center border-2 border-fuchsia-400/50">
-                          <svg className="w-5 h-5 text-fuchsia-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-gray-500/30 to-gray-500/20 flex items-center justify-center border-2 border-gray-400/50">
+                          <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                           </svg>
                         </div>
                         <h3 className="font-serif text-lg text-white">Continuous Synchronization</h3>
                       </div>
                       <div className="space-y-3">
-                        <div className="bg-black/40 rounded-xl p-3 border border-fuchsia-500/30">
-                          <p className="text-fuchsia-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Tech</p>
+                        <div className="bg-black/40 rounded-xl p-3 border border-gray-500/30">
+                          <p className="text-gray-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Tech</p>
                           <p className="text-white/75 font-mono text-xs leading-relaxed">
                             The integration isn't just a one-time data dump; it includes logic to "Keep playlists in sync".
                           </p>
                         </div>
-                        <div className="bg-gradient-to-r from-fuchsia-500/10 to-purple-500/10 rounded-xl p-3 border border-fuchsia-400/30">
-                          <p className="text-purple-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Benefit</p>
+                        <div className="bg-gradient-to-r from-gray-500/10 to-gray-500/10 rounded-xl p-3 border border-gray-400/30">
+                          <p className="text-gray-300 font-semibold font-mono text-xs mb-2 uppercase tracking-wide">The Benefit</p>
                           <p className="text-white/75 font-mono text-xs leading-relaxed">
                             This ensures true interoperability. If a user updates a playlist on YouTube, it reflects in Energy, preventing their libraries from becoming fragmented across platforms.
                           </p>
@@ -6111,32 +6111,32 @@ export function ProjectDetail() {
 
             {/* Reflection Card */}
             <div className="mb-8">
-              <div className="relative overflow-hidden bg-gradient-to-br from-purple-950/80 via-black/90 to-fuchsia-950/80 rounded-3xl border-2 border-purple-500/40 p-8 md:p-12 shadow-[0_0_60px_rgba(147,51,234,0.4)]">
+              <div className="relative overflow-hidden bg-gradient-to-br from-gray-950/80 via-black/90 to-gray-950/80 rounded-3xl border-2 border-gray-500/40 p-8 md:p-12 shadow-[0_0_60px_rgba(147,51,234,0.4)]">
                 {/* Decorative Background Elements */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-fuchsia-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+                <div className="absolute top-0 right-0 w-64 h-64 bg-gray-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-gray-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
                 
                 <div className="relative z-10">
                   {/* Header */}
                   <div className="text-center mb-8">
                     <div className="inline-flex items-center justify-center gap-3 mb-4">
-                      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/40 to-fuchsia-500/40 flex items-center justify-center border-2 border-purple-400/60 shadow-lg shadow-purple-500/50">
-                        <svg className="w-7 h-7 text-purple-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-500/40 to-gray-500/40 flex items-center justify-center border-2 border-gray-400/60 shadow-lg shadow-gray-500/50">
+                        <svg className="w-7 h-7 text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                         </svg>
                       </div>
                       <h2 className="font-serif text-3xl md:text-4xl text-white">Reflection</h2>
                     </div>
-                    <p className="text-purple-300/90 font-mono text-base md:text-lg font-semibold">The Superpower of Agency</p>
+                    <p className="text-gray-300/90 font-mono text-base md:text-lg font-semibold">The Superpower of Agency</p>
                   </div>
 
                   {/* Reflection Content */}
                   <div className="max-w-4xl mx-auto">
-                    <div className="bg-black/30 backdrop-blur-sm rounded-2xl border border-purple-500/30 p-8 md:p-10">
+                    <div className="bg-black/30 backdrop-blur-sm rounded-2xl border border-gray-500/30 p-8 md:p-10">
                       <div className="relative">
                         {/* Quote decoration */}
                         <div className="absolute -top-4 -left-4 w-12 h-12 opacity-20">
-                          <svg className="w-full h-full text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-full h-full text-gray-400" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.984zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
                           </svg>
                         </div>
@@ -6144,9 +6144,9 @@ export function ProjectDetail() {
                         <p className="text-white/95 font-mono text-base md:text-lg leading-relaxed relative z-10">
                           To be honest, there isn't a deep, inspirational backstory here. I just saw a gap in my daily life, so I wrote the code to fix it. 
                           <br /><br />
-                          The biggest lesson wasn't technical—it was simply realizing that <span className="text-purple-300 font-semibold">I don't have to wait for products to exist</span>. If I want something, I can just build it. 
+                          The biggest lesson wasn't technical—it was simply realizing that <span className="text-gray-300 font-semibold">I don't have to wait for products to exist</span>. If I want something, I can just build it. 
                           <br /><br />
-                          <span className="text-fuchsia-300 font-semibold text-lg">That agency feels like a genuine superpower.</span>
+                          <span className="text-gray-300 font-semibold text-lg">That agency feels like a genuine superpower.</span>
                         </p>
                       </div>
                     </div>
@@ -6162,8 +6162,8 @@ export function ProjectDetail() {
           <>
             {/* First Image Card */}
             <div className="mb-8">
-              <div className="bg-gradient-to-br from-sky-50/10 via-white/5 to-sky-100/10 rounded-3xl border-2 border-sky-300/30 p-6 md:p-10 shadow-[0_0_40px_rgba(56,189,248,0.2)]">
-                <div className="rounded-2xl overflow-hidden border border-sky-200/20 shadow-xl bg-white/5">
+              <div className="bg-gradient-to-br from-gray-50/10 via-white/5 to-gray-100/10 rounded-3xl border-2 border-gray-300/30 p-6 md:p-10 shadow-[0_0_40px_rgba(56,189,248,0.2)]">
+                <div className="rounded-2xl overflow-hidden border border-gray-200/20 shadow-xl bg-white/5">
                   <img
                     src="/Projects/Clearr/18E300C3-BB87-4109-8AEA-B298456D1762.jpeg"
                     alt="Clearr Interface"
@@ -6177,7 +6177,7 @@ export function ProjectDetail() {
             {/* Summary and Profile Cards - Side by Side */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               {/* Summary Card - First */}
-              <div className="bg-gradient-to-br from-sky-50/10 via-white/5 to-sky-100/10 rounded-xl border-2 border-sky-300/30 p-6 shadow-[0_0_30px_rgba(56,189,248,0.15)]">
+              <div className="bg-gradient-to-br from-gray-50/10 via-white/5 to-gray-100/10 rounded-xl border-2 border-gray-300/30 p-6 shadow-[0_0_30px_rgba(56,189,248,0.15)]">
                 <h2 className="font-serif text-xl text-white mb-4">Summary</h2>
                 <p className="text-white/90 font-mono text-sm leading-relaxed">
                   Clearr is an AI-powered 'thought translator' designed to de-escalate interpersonal conflict. Functioning like a translation engine for emotions, the app ingests raw, unfiltered thoughts and uses generative AI to rewrite them into healthy, constructive communication. This was a dedicated contract project built for a client; I served as the Lead Backend Engineer, architecting the translation logic and API infrastructure, while collaborating with Liam Du, who led Frontend and Design.
@@ -6185,7 +6185,7 @@ export function ProjectDetail() {
               </div>
 
               {/* Profile Card - Second */}
-              <div className="bg-gradient-to-br from-sky-50/10 via-white/5 to-sky-100/10 rounded-xl border-2 border-sky-300/30 p-6 shadow-[0_0_30px_rgba(56,189,248,0.15)]">
+              <div className="bg-gradient-to-br from-gray-50/10 via-white/5 to-gray-100/10 rounded-xl border-2 border-gray-300/30 p-6 shadow-[0_0_30px_rgba(56,189,248,0.15)]">
                 <h2 className="font-serif text-xl text-white mb-4">Profile</h2>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
@@ -6210,22 +6210,22 @@ export function ProjectDetail() {
 
             {/* Problem vs Solution Card */}
             <div className="mb-8">
-              <div className="bg-gradient-to-br from-sky-50/20 via-white/10 to-blue-50/20 rounded-3xl border-2 border-sky-300/40 p-6 md:p-10 shadow-[0_0_50px_rgba(56,189,248,0.25)]">
+              <div className="bg-gradient-to-br from-gray-50/20 via-white/10 to-gray-50/20 rounded-3xl border-2 border-gray-300/40 p-6 md:p-10 shadow-[0_0_50px_rgba(56,189,248,0.25)]">
                 {/* Header */}
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-500 flex items-center justify-center border-2 border-sky-300/60 shadow-lg shadow-sky-400/40">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center border-2 border-gray-300/60 shadow-lg shadow-gray-400/40">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                       </svg>
                     </div>
                     <div>
                       <h2 className="font-serif text-2xl md:text-3xl text-white mb-1">The Problem & The Solution</h2>
-                      <p className="text-sky-200/80 font-mono text-xs md:text-sm">The "Intent vs. Impact" Gap in Communication</p>
+                      <p className="text-gray-200/80 font-mono text-xs md:text-sm">The "Intent vs. Impact" Gap in Communication</p>
                     </div>
                   </div>
-                  <div className="hidden md:flex items-center gap-2 text-xs font-mono text-sky-200/70 bg-sky-400/10 border border-sky-300/40 rounded-full px-4 py-1">
-                    <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+                  <div className="hidden md:flex items-center gap-2 text-xs font-mono text-gray-200/70 bg-gray-400/10 border border-gray-300/40 rounded-full px-4 py-1">
+                    <span className="w-2 h-2 rounded-full bg-gray-400 animate-pulse" />
                     <span>AI-powered emotional intelligence</span>
                   </div>
                 </div>
@@ -6234,10 +6234,10 @@ export function ProjectDetail() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
                   {/* Problem Side */}
                   <div className="relative flex flex-col">
-                    <div className="absolute inset-0 bg-gradient-to-br from-orange-500/15 via-red-500/10 to-transparent rounded-2xl blur-2xl pointer-events-none" />
-                    <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-orange-400/40 p-6 md:p-7 flex flex-col h-full">
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-500/15 via-red-500/10 to-transparent rounded-2xl blur-2xl pointer-events-none" />
+                    <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-gray-400/40 p-6 md:p-7 flex flex-col h-full">
                       <div className="flex items-center gap-3 mb-4">
-                        <span className="px-3 py-1 rounded-full bg-orange-500/20 border border-orange-400/50 text-orange-200 font-mono text-[11px] uppercase tracking-[0.2em]">
+                        <span className="px-3 py-1 rounded-full bg-gray-500/20 border border-gray-400/50 text-gray-200 font-mono text-[11px] uppercase tracking-[0.2em]">
                           The Problem
                         </span>
                       </div>
@@ -6245,24 +6245,24 @@ export function ProjectDetail() {
 
                       <div className="space-y-4 text-white/90 font-mono text-xs md:text-sm leading-relaxed flex-grow">
                         {/* The Articulation Barrier */}
-                        <div className="border-l-2 border-orange-400/60 pl-4">
-                          <p className="text-orange-300 font-semibold mb-1">The Articulation Barrier</p>
+                        <div className="border-l-2 border-gray-400/60 pl-4">
+                          <p className="text-gray-300 font-semibold mb-1">The Articulation Barrier</p>
                           <p>
                             We often struggle to translate our complex, raw emotions into clear language. When we type exactly what we think in the heat of the moment, the message can come across as aggressive or confusing, leading to accidental offense.
                           </p>
                         </div>
 
                         {/* The Cost of Miscommunication */}
-                        <div className="border-l-2 border-orange-400/60 pl-4">
-                          <p className="text-orange-300 font-semibold mb-1">The Cost of Miscommunication</p>
+                        <div className="border-l-2 border-gray-400/60 pl-4">
+                          <p className="text-gray-300 font-semibold mb-1">The Cost of Miscommunication</p>
                           <p>
                             In sensitive situations—whether a tricky text to a friend or a critical work email—a poorly phrased message can damage relationships or even "cost us friends" because the recipient misinterprets the tone.
                           </p>
                         </div>
 
                         {/* Communication Anxiety */}
-                        <div className="border-l-2 border-orange-400/60 pl-4">
-                          <p className="text-orange-300 font-semibold mb-1">Communication Anxiety</p>
+                        <div className="border-l-2 border-gray-400/60 pl-4">
+                          <p className="text-gray-300 font-semibold mb-1">Communication Anxiety</p>
                           <p>
                             Many users suffer from "analysis paralysis," wasting valuable time stressing over how to word a difficult message, fearing that their raw input isn't professional or polite enough to send.
                           </p>
@@ -6273,10 +6273,10 @@ export function ProjectDetail() {
 
                   {/* Solution Side */}
                   <div className="relative flex flex-col">
-                    <div className="absolute inset-0 bg-gradient-to-br from-sky-500/15 via-blue-500/10 to-transparent rounded-2xl blur-2xl pointer-events-none" />
-                    <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-400/40 p-6 md:p-7 flex flex-col h-full">
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-500/15 via-gray-500/10 to-transparent rounded-2xl blur-2xl pointer-events-none" />
+                    <div className="relative bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-gray-400/40 p-6 md:p-7 flex flex-col h-full">
                       <div className="flex items-center gap-3 mb-4">
-                        <span className="px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/50 text-sky-100 font-mono text-[11px] uppercase tracking-[0.2em]">
+                        <span className="px-3 py-1 rounded-full bg-gray-500/20 border border-gray-400/50 text-gray-100 font-mono text-[11px] uppercase tracking-[0.2em]">
                           🧠 The Solution: Clearr
                         </span>
                       </div>
@@ -6284,24 +6284,24 @@ export function ProjectDetail() {
 
                       <div className="space-y-4 text-white/90 font-mono text-xs md:text-sm leading-relaxed flex-grow">
                         {/* Google Translate for Emotions */}
-                        <div className="bg-white/10 rounded-xl p-4 border border-sky-400/30">
-                          <p className="text-sky-300 font-semibold mb-1">"Google Translate" for Emotions</p>
+                        <div className="bg-white/10 rounded-xl p-4 border border-gray-400/30">
+                          <p className="text-gray-300 font-semibold mb-1">"Google Translate" for Emotions</p>
                           <p>
                             We built an AI engine that acts as a bridge between your brain and your keyboard. It takes "raw, messy thoughts" as input and instantly refines them into "smooth, polished messages," ensuring the output matches your actual intent.
                           </p>
                         </div>
 
                         {/* Granular Tone Control */}
-                        <div className="bg-white/10 rounded-xl p-4 border border-sky-400/30">
-                          <p className="text-sky-300 font-semibold mb-1">Granular Tone Control</p>
+                        <div className="bg-white/10 rounded-xl p-4 border border-gray-400/30">
+                          <p className="text-gray-300 font-semibold mb-1">Granular Tone Control</p>
                           <p>
                             Unlike basic spell-checkers, Clearr understands context. Users can select specific modes—Professional, Casual, Persuasive, or Friendly—to tailor the delivery of the message to the specific relationship and situation.
                           </p>
                         </div>
 
                         {/* Confidence at Speed */}
-                        <div className="bg-white/10 rounded-xl p-4 border border-sky-400/30">
-                          <p className="text-sky-300 font-semibold mb-1">Confidence at Speed</p>
+                        <div className="bg-white/10 rounded-xl p-4 border border-gray-400/30">
+                          <p className="text-gray-300 font-semibold mb-1">Confidence at Speed</p>
                           <p>
                             By providing AI-generated message templates and instant refinement, the app removes the stress of writing, allowing users to communicate clearly and confidently without the fear of being misunderstood.
                           </p>
@@ -6315,31 +6315,31 @@ export function ProjectDetail() {
 
             {/* The Challenge Card */}
             <div className="mb-8">
-              <div className="bg-gradient-to-br from-sky-50/20 via-white/10 to-blue-50/20 rounded-3xl border-2 border-sky-300/40 p-6 md:p-10 shadow-[0_0_50px_rgba(56,189,248,0.25)]">
+              <div className="bg-gradient-to-br from-gray-50/20 via-white/10 to-gray-50/20 rounded-3xl border-2 border-gray-300/40 p-6 md:p-10 shadow-[0_0_50px_rgba(56,189,248,0.25)]">
                 {/* Header */}
                 <div className="text-center mb-8">
                   <div className="inline-flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-500 flex items-center justify-center border-2 border-sky-300/60 shadow-lg shadow-sky-400/40">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center border-2 border-gray-300/60 shadow-lg shadow-gray-400/40">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                       </svg>
                     </div>
                     <h2 className="font-serif text-3xl md:text-4xl text-white">The Challenge</h2>
                   </div>
-                  <p className="text-sky-200/80 font-mono text-base md:text-lg font-semibold">"Google Translate" for Emotions</p>
+                  <p className="text-gray-200/80 font-mono text-base md:text-lg font-semibold">"Google Translate" for Emotions</p>
                 </div>
 
                 {/* Content */}
                 <div className="max-w-4xl mx-auto">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-8 md:p-10 mb-8">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-gray-300/40 p-8 md:p-10 mb-8">
                     <p className="text-white/95 font-mono text-base md:text-lg leading-relaxed text-center">
-                      The goal was to build a system that takes <span className="text-sky-300 font-semibold">raw, messy human emotion</span> and "translates" it into healthy communication. As the backend architect, I had to ensure the system wasn't just a wrapper for ChatGPT—it needed to be <span className="text-sky-300 font-semibold">safe, context-aware, and strictly rate-limited</span> based on monetization tiers.
+                      The goal was to build a system that takes <span className="text-gray-300 font-semibold">raw, messy human emotion</span> and "translates" it into healthy communication. As the backend architect, I had to ensure the system wasn't just a wrapper for ChatGPT—it needed to be <span className="text-gray-300 font-semibold">safe, context-aware, and strictly rate-limited</span> based on monetization tiers.
                     </p>
                   </div>
                 </div>
 
                 {/* Architecture Section */}
-                <div className="max-w-5xl mx-auto mt-8 pt-8 border-t border-sky-300/30">
+                <div className="max-w-5xl mx-auto mt-8 pt-8 border-t border-gray-300/30">
                   <div className="text-center mb-6">
                     <h3 className="font-serif text-2xl md:text-3xl text-white mb-2">The Architecture</h3>
                   </div>
@@ -6348,7 +6348,7 @@ export function ProjectDetail() {
                     {/* Text Content */}
                     <div className="md:col-span-1 flex flex-col justify-center">
                       <p className="text-white/90 font-mono text-base md:text-lg leading-relaxed">
-                        The whole backend is designed in a <span className="text-sky-300 font-semibold">clean, modular and minimal architecture</span>, designed for <span className="text-sky-300 font-semibold">scalability and low learning curve</span>.
+                        The whole backend is designed in a <span className="text-gray-300 font-semibold">clean, modular and minimal architecture</span>, designed for <span className="text-gray-300 font-semibold">scalability and low learning curve</span>.
                       </p>
                     </div>
 
@@ -6357,7 +6357,7 @@ export function ProjectDetail() {
                       <img
                         src="/Projects/Clearr/EC28F842-7601-43E9-92DD-E8447C4CA5A3.jpeg"
                         alt="Clearr Backend Architecture"
-                        className="w-full h-full min-h-[500px] object-cover object-left rounded-2xl border-2 border-sky-300/40 shadow-lg shadow-sky-400/20"
+                        className="w-full h-full min-h-[500px] object-cover object-left rounded-2xl border-2 border-gray-300/40 shadow-lg shadow-gray-400/20"
                       />
                     </div>
                   </div>
@@ -6367,82 +6367,82 @@ export function ProjectDetail() {
 
             {/* The Entry Point: Phone-First Architecture Card */}
             <div className="mb-8">
-              <div className="bg-gradient-to-br from-sky-50/20 via-white/10 to-blue-50/20 rounded-3xl border-2 border-sky-300/40 p-6 md:p-10 shadow-[0_0_50px_rgba(56,189,248,0.25)]">
+              <div className="bg-gradient-to-br from-gray-50/20 via-white/10 to-gray-50/20 rounded-3xl border-2 border-gray-300/40 p-6 md:p-10 shadow-[0_0_50px_rgba(56,189,248,0.25)]">
                 {/* Header */}
                 <div className="text-center mb-8">
                   <div className="inline-flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-500 flex items-center justify-center border-2 border-sky-300/60 shadow-lg shadow-sky-400/40">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center border-2 border-gray-300/60 shadow-lg shadow-gray-400/40">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                       </svg>
                     </div>
                     <h2 className="font-serif text-2xl md:text-3xl text-white">The Entry Point</h2>
                   </div>
-                  <p className="text-sky-200/80 font-mono text-base md:text-lg font-semibold">Phone-First Architecture</p>
+                  <p className="text-gray-200/80 font-mono text-base md:text-lg font-semibold">Phone-First Architecture</p>
                 </div>
 
                 {/* Introduction */}
                 <div className="max-w-4xl mx-auto mb-8">
                   <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed text-center">
-                    We made a deliberate engineering choice to bypass email/password entirely in favor of <span className="text-sky-300 font-semibold">Phone Number OAuth</span>. This wasn't just a UX decision—it was the <span className="text-sky-300 font-semibold">backbone of our MVP architecture</span>.
+                    We made a deliberate engineering choice to bypass email/password entirely in favor of <span className="text-gray-300 font-semibold">Phone Number OAuth</span>. This wasn't just a UX decision—it was the <span className="text-gray-300 font-semibold">backbone of our MVP architecture</span>.
                   </p>
                 </div>
 
                 {/* Two Main Sections */}
                 <div className="space-y-6 md:space-y-8">
                   {/* The Identity Anchor */}
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-gray-300/40 p-6 md:p-8">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-10 h-10 rounded-xl bg-sky-500/30 flex items-center justify-center border border-sky-400/50">
-                        <svg className="w-5 h-5 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-10 h-10 rounded-xl bg-gray-500/30 flex items-center justify-center border border-gray-400/50">
+                        <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
                       </div>
                       <h3 className="font-serif text-xl md:text-2xl text-white">The Identity Anchor</h3>
-                      <span className="text-sky-300/70 font-mono text-xs md:text-sm">(Backend Logic)</span>
+                      <span className="text-gray-300/70 font-mono text-xs md:text-sm">(Backend Logic)</span>
                     </div>
 
                     <div className="space-y-4">
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Decision:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">The Decision:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          In our database schema, the <span className="text-sky-300 font-semibold">phoneNumber serves as the primary unique identifier</span> for the user.
+                          In our database schema, the <span className="text-gray-300 font-semibold">phoneNumber serves as the primary unique identifier</span> for the user.
                         </p>
                       </div>
 
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Integration:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">The Integration:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          This was critical for our <span className="text-sky-300 font-semibold">RevenueCat implementation</span>. By tying identity strictly to a verified phone number, we ensured a reliable "Source of Truth" for validating entitlements and syncing subscription status across devices without complex email verification flows.
+                          This was critical for our <span className="text-gray-300 font-semibold">RevenueCat implementation</span>. By tying identity strictly to a verified phone number, we ensured a reliable "Source of Truth" for validating entitlements and syncing subscription status across devices without complex email verification flows.
                         </p>
                       </div>
                     </div>
                   </div>
 
                   {/* Frictionless Entry */}
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-gray-300/40 p-6 md:p-8">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-10 h-10 rounded-xl bg-sky-500/30 flex items-center justify-center border border-sky-400/50">
-                        <svg className="w-5 h-5 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-10 h-10 rounded-xl bg-gray-500/30 flex items-center justify-center border border-gray-400/50">
+                        <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                       </div>
                       <h3 className="font-serif text-xl md:text-2xl text-white">Frictionless Entry</h3>
-                      <span className="text-sky-300/70 font-mono text-xs md:text-sm">(User Logic)</span>
+                      <span className="text-gray-300/70 font-mono text-xs md:text-sm">(User Logic)</span>
                     </div>
 
                     <div className="space-y-4 mb-6">
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Experience:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">The Experience:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          When users open Clearr, they are likely in a <span className="text-sky-300 font-semibold">high-stress emotional state</span>. They need immediate access, not a "Forgot Password" loop.
+                          When users open Clearr, they are likely in a <span className="text-gray-300 font-semibold">high-stress emotional state</span>. They need immediate access, not a "Forgot Password" loop.
                         </p>
                       </div>
 
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Flow:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">The Flow:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          We built a streamlined, <span className="text-sky-300 font-semibold">2-step OTP (One-Time Password) flow</span>. The interface is stark and focused—asking only for the number—allowing users to authenticate and start translating their thoughts in <span className="text-sky-300 font-semibold">under 10 seconds</span>.
+                          We built a streamlined, <span className="text-gray-300 font-semibold">2-step OTP (One-Time Password) flow</span>. The interface is stark and focused—asking only for the number—allowing users to authenticate and start translating their thoughts in <span className="text-gray-300 font-semibold">under 10 seconds</span>.
                         </p>
                       </div>
                     </div>
@@ -6452,7 +6452,7 @@ export function ProjectDetail() {
                       <img
                         src="/Projects/Clearr/F1BBFD5B-8E96-4899-A783-CCC0209E003B.jpeg"
                         alt="Phone-First OTP Authentication Flow"
-                        className="w-full max-w-md h-auto rounded-2xl border-2 border-sky-300/40 shadow-lg shadow-sky-400/20"
+                        className="w-full max-w-md h-auto rounded-2xl border-2 border-gray-300/40 shadow-lg shadow-gray-400/20"
                       />
                     </div>
                   </div>
@@ -6462,11 +6462,11 @@ export function ProjectDetail() {
 
             {/* The Auth & Initialization Pipeline Card */}
             <div className="mb-8">
-              <div className="bg-gradient-to-br from-sky-50/20 via-white/10 to-blue-50/20 rounded-3xl border-2 border-sky-300/40 p-6 md:p-10 shadow-[0_0_50px_rgba(56,189,248,0.25)]">
+              <div className="bg-gradient-to-br from-gray-50/20 via-white/10 to-gray-50/20 rounded-3xl border-2 border-gray-300/40 p-6 md:p-10 shadow-[0_0_50px_rgba(56,189,248,0.25)]">
                 {/* Header */}
                 <div className="text-center mb-8">
                   <div className="inline-flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-500 flex items-center justify-center border-2 border-sky-300/60 shadow-lg shadow-sky-400/40">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center border-2 border-gray-300/60 shadow-lg shadow-gray-400/40">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                       </svg>
@@ -6478,106 +6478,106 @@ export function ProjectDetail() {
                 {/* Introduction */}
                 <div className="max-w-4xl mx-auto mb-8">
                   <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed text-center">
-                    As a backend engineer, I viewed the "Phone Auth" flow as a balance between <span className="text-sky-300 font-semibold">security and latency</span>. We couldn't afford to have slow DB writes for temporary codes, nor could we build our own SMS gateway. Here is how I architected the state machine using <span className="text-sky-300 font-semibold">Twilio and a Caching Layer</span>.
+                    As a backend engineer, I viewed the "Phone Auth" flow as a balance between <span className="text-gray-300 font-semibold">security and latency</span>. We couldn't afford to have slow DB writes for temporary codes, nor could we build our own SMS gateway. Here is how I architected the state machine using <span className="text-gray-300 font-semibold">Twilio and a Caching Layer</span>.
                   </p>
                 </div>
 
                 {/* Three Main Sections */}
                 <div className="space-y-6 md:space-y-8">
                   {/* 1. The OTP Trigger */}
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-gray-300/40 p-6 md:p-8">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-10 h-10 rounded-xl bg-sky-500/30 flex items-center justify-center border border-sky-400/50">
-                        <span className="text-sky-300 font-bold font-mono">1</span>
+                      <div className="w-10 h-10 rounded-xl bg-gray-500/30 flex items-center justify-center border border-gray-400/50">
+                        <span className="text-gray-300 font-bold font-mono">1</span>
                       </div>
                       <h3 className="font-serif text-xl md:text-2xl text-white">The OTP Trigger</h3>
-                      <span className="text-sky-300/70 font-mono text-xs md:text-sm">(Ephemeral Storage)</span>
+                      <span className="text-gray-300/70 font-mono text-xs md:text-sm">(Ephemeral Storage)</span>
                     </div>
 
                     <div className="space-y-4">
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Action:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">The Action:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
                           User enters their phone number.
                         </p>
-                        <p className="text-sky-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
+                        <p className="text-gray-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          When the request hits <code className="text-sky-300">POST /api/send-otp</code>, I deliberately avoided touching the main MongoDB database. Writing temporary OTPs to a persistent disk database is inefficient and creates "garbage" data.
+                          When the request hits <code className="text-gray-300">POST /api/send-otp</code>, I deliberately avoided touching the main MongoDB database. Writing temporary OTPs to a persistent disk database is inefficient and creates "garbage" data.
                         </p>
                       </div>
 
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">Twilio Integration:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">Twilio Integration:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          I integrated the <span className="text-sky-300 font-semibold">Twilio Programmable SMS API</span> to handle the delivery. The backend generates a cryptographically secure 6-digit integer and offloads the delivery to Twilio's network.
+                          I integrated the <span className="text-gray-300 font-semibold">Twilio Programmable SMS API</span> to handle the delivery. The backend generates a cryptographically secure 6-digit integer and offloads the delivery to Twilio's network.
                         </p>
                       </div>
 
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Caching Layer:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">The Caching Layer:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          Instead of the DB, I stored the <code className="text-sky-300">{`{phoneNumber: otpCode}`}</code> pair in an <span className="text-sky-300 font-semibold">in-memory cache (with a strict TTL of 5 minutes)</span>.
+                          Instead of the DB, I stored the <code className="text-gray-300">{`{phoneNumber: otpCode}`}</code> pair in an <span className="text-gray-300 font-semibold">in-memory cache (with a strict TTL of 5 minutes)</span>.
                         </p>
-                        <p className="text-sky-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">Why:</p>
+                        <p className="text-gray-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">Why:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          This ensures the OTP automatically expires without me needing to run cron jobs to clean up the database. It keeps the auth logic <span className="text-sky-300 font-semibold">stateless and incredibly fast</span>.
+                          This ensures the OTP automatically expires without me needing to run cron jobs to clean up the database. It keeps the auth logic <span className="text-gray-300 font-semibold">stateless and incredibly fast</span>.
                         </p>
                       </div>
                     </div>
                   </div>
 
                   {/* 2. The Verification Gate */}
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-gray-300/40 p-6 md:p-8">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-10 h-10 rounded-xl bg-sky-500/30 flex items-center justify-center border border-sky-400/50">
-                        <span className="text-sky-300 font-bold font-mono">2</span>
+                      <div className="w-10 h-10 rounded-xl bg-gray-500/30 flex items-center justify-center border border-gray-400/50">
+                        <span className="text-gray-300 font-bold font-mono">2</span>
                       </div>
                       <h3 className="font-serif text-xl md:text-2xl text-white">The Verification Gate</h3>
-                      <span className="text-sky-300/70 font-mono text-xs md:text-sm">(The Handshake)</span>
+                      <span className="text-gray-300/70 font-mono text-xs md:text-sm">(The Handshake)</span>
                     </div>
 
                     <div className="space-y-4">
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
                           The 6-digit OTP entry.
                         </p>
-                        <p className="text-sky-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
+                        <p className="text-gray-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          This represents the <code className="text-sky-300">POST /api/verify-otp</code> checkpoint.
+                          This represents the <code className="text-gray-300">POST /api/verify-otp</code> checkpoint.
                         </p>
                       </div>
 
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">Cache Validation:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">Cache Validation:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed mb-3">
                           The backend first queries the cache.
                         </p>
                         <ul className="space-y-2 text-white/90 font-mono text-sm md:text-base">
                           <li className="flex items-start gap-2">
-                            <span className="text-sky-300 mt-1">•</span>
+                            <span className="text-gray-300 mt-1">•</span>
                             <span><span className="text-red-300 font-semibold">Mis-match:</span> Return 400 Bad Request immediately.</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <span className="text-sky-300 mt-1">•</span>
+                            <span className="text-gray-300 mt-1">•</span>
                             <span><span className="text-green-300 font-semibold">Match:</span> invalidate the cache key instantly (preventing replay attacks).</span>
                           </li>
                         </ul>
                       </div>
 
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Branching Logic:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">The Branching Logic:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed mb-3">
                           Once validated, I query the persistent User collection:
                         </p>
                         <ul className="space-y-2 text-white/90 font-mono text-sm md:text-base">
                           <li className="flex items-start gap-2">
-                            <span className="text-sky-300 mt-1">•</span>
-                            <span><span className="text-sky-300 font-semibold">User Exists:</span> Generate JWT and return 200.</span>
+                            <span className="text-gray-300 mt-1">•</span>
+                            <span><span className="text-gray-300 font-semibold">User Exists:</span> Generate JWT and return 200.</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <span className="text-sky-300 mt-1">•</span>
-                            <span><span className="text-sky-300 font-semibold">User Doesn't Exist:</span> Return <code className="text-sky-300">isNewUser: true</code>. This signals the frontend to hold the verified session in memory and push the Profile Setup screen.</span>
+                            <span className="text-gray-300 mt-1">•</span>
+                            <span><span className="text-gray-300 font-semibold">User Doesn't Exist:</span> Return <code className="text-gray-300">isNewUser: true</code>. This signals the frontend to hold the verified session in memory and push the Profile Setup screen.</span>
                           </li>
                         </ul>
                       </div>
@@ -6585,44 +6585,44 @@ export function ProjectDetail() {
                   </div>
 
                   {/* 3. Profile Setup */}
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-gray-300/40 p-6 md:p-8">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-10 h-10 rounded-xl bg-sky-500/30 flex items-center justify-center border border-sky-400/50">
-                        <span className="text-sky-300 font-bold font-mono">3</span>
+                      <div className="w-10 h-10 rounded-xl bg-gray-500/30 flex items-center justify-center border border-gray-400/50">
+                        <span className="text-gray-300 font-bold font-mono">3</span>
                       </div>
                       <h3 className="font-serif text-xl md:text-2xl text-white">Profile Setup</h3>
-                      <span className="text-sky-300/70 font-mono text-xs md:text-sm">(The "Heavy Lifting" Trigger)</span>
+                      <span className="text-gray-300/70 font-mono text-xs md:text-sm">(The "Heavy Lifting" Trigger)</span>
                     </div>
 
                     <div className="space-y-4 mb-6">
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
                           New users input their name during OTP verification.
                         </p>
-                        <p className="text-sky-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
+                        <p className="text-gray-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          When <code className="text-sky-300">POST /api/verify-otp</code> receives <code className="text-sky-300">fullName</code> for a new user (<code className="text-sky-300">isNewUser: true</code>), this triggers the <span className="text-sky-300 font-semibold">most computationally expensive moment</span> in the lifecycle—an atomic initialization sequence.
+                          When <code className="text-gray-300">POST /api/verify-otp</code> receives <code className="text-gray-300">fullName</code> for a new user (<code className="text-gray-300">isNewUser: true</code>), this triggers the <span className="text-gray-300 font-semibold">most computationally expensive moment</span> in the lifecycle—an atomic initialization sequence.
                         </p>
                       </div>
 
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Execution Flow:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">The Execution Flow:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed mb-3">
                           The backend performs a synchronous "waterfall":
                         </p>
                         <ul className="space-y-3 text-white/90 font-mono text-sm md:text-base">
                           <li className="flex items-start gap-2">
-                            <span className="text-sky-300 mt-1 font-bold">1.</span>
-                            <span><span className="text-sky-300 font-semibold">DB Write:</span> Create the User document with <code className="text-sky-300">_id</code>, <code className="text-sky-300">phoneNumber</code>, and <code className="text-sky-300">fullName</code>.</span>
+                            <span className="text-gray-300 mt-1 font-bold">1.</span>
+                            <span><span className="text-gray-300 font-semibold">DB Write:</span> Create the User document with <code className="text-gray-300">_id</code>, <code className="text-gray-300">phoneNumber</code>, and <code className="text-gray-300">fullName</code>.</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <span className="text-sky-300 mt-1 font-bold">2.</span>
-                            <span><span className="text-sky-300 font-semibold">External Provisioning:</span> Generate <code className="text-sky-300">revenueCatUserId</code> and <code className="text-sky-300">stripeCustomerID</code>.</span>
+                            <span className="text-gray-300 mt-1 font-bold">2.</span>
+                            <span><span className="text-gray-300 font-semibold">External Provisioning:</span> Generate <code className="text-gray-300">revenueCatUserId</code> and <code className="text-gray-300">stripeCustomerID</code>.</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <span className="text-sky-300 mt-1 font-bold">3.</span>
-                            <span><span className="text-sky-300 font-semibold">Entitlement Injection:</span> Set Freemium Tier and return JWT token.</span>
+                            <span className="text-gray-300 mt-1 font-bold">3.</span>
+                            <span><span className="text-gray-300 font-semibold">Entitlement Injection:</span> Set Freemium Tier and return JWT token.</span>
                           </li>
                         </ul>
                       </div>
@@ -6634,14 +6634,14 @@ export function ProjectDetail() {
                         <img
                           src="/Projects/Clearr/76FD46CC-43CA-498B-8963-5D6C13576F4B.jpeg"
                           alt="Auth Pipeline Flow"
-                          className="w-full max-w-md h-auto rounded-2xl border-2 border-sky-300/40 shadow-lg shadow-sky-400/20"
+                          className="w-full max-w-md h-auto rounded-2xl border-2 border-gray-300/40 shadow-lg shadow-gray-400/20"
                         />
                       </div>
                       <div className="w-full flex justify-center">
                         <img
                           src="/Projects/Clearr/B5EA00F3-CB71-4523-8F19-44C29BC6589A.jpeg"
                           alt="Initialization Sequence"
-                          className="w-full max-w-md h-auto rounded-2xl border-2 border-sky-300/40 shadow-lg shadow-sky-400/20"
+                          className="w-full max-w-md h-auto rounded-2xl border-2 border-gray-300/40 shadow-lg shadow-gray-400/20"
                         />
                       </div>
                     </div>
@@ -6652,11 +6652,11 @@ export function ProjectDetail() {
 
             {/* The Control Center: State & Data Management Card */}
             <div className="mb-8">
-              <div className="bg-gradient-to-br from-sky-50/20 via-white/10 to-blue-50/20 rounded-3xl border-2 border-sky-300/40 p-6 md:p-10 shadow-[0_0_50px_rgba(56,189,248,0.25)]">
+              <div className="bg-gradient-to-br from-gray-50/20 via-white/10 to-gray-50/20 rounded-3xl border-2 border-gray-300/40 p-6 md:p-10 shadow-[0_0_50px_rgba(56,189,248,0.25)]">
                 {/* Header */}
                 <div className="text-center mb-8">
                   <div className="inline-flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-500 flex items-center justify-center border-2 border-sky-300/60 shadow-lg shadow-sky-400/40">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center border-2 border-gray-300/60 shadow-lg shadow-gray-400/40">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -6664,55 +6664,55 @@ export function ProjectDetail() {
                     </div>
                     <h2 className="font-serif text-2xl md:text-3xl text-white">The Control Center</h2>
                   </div>
-                  <p className="text-sky-200/80 font-mono text-base md:text-lg font-semibold">State & Data Management</p>
+                  <p className="text-gray-200/80 font-mono text-base md:text-lg font-semibold">State & Data Management</p>
                 </div>
 
                 {/* Introduction */}
                 <div className="max-w-4xl mx-auto mb-8">
                   <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed text-center">
-                    I viewed the Settings screen not as a menu, but as the user's <span className="text-sky-300 font-semibold">dashboard for managing their database record and session lifecycle</span>. Every item here corresponds to a critical API endpoint or data field in our schema.
+                    I viewed the Settings screen not as a menu, but as the user's <span className="text-gray-300 font-semibold">dashboard for managing their database record and session lifecycle</span>. Every item here corresponds to a critical API endpoint or data field in our schema.
                   </p>
                 </div>
 
                 {/* Three Main Sections */}
                 <div className="space-y-6 md:space-y-8">
                   {/* 1. Identity & Debugging */}
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-gray-300/40 p-6 md:p-8">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-10 h-10 rounded-xl bg-sky-500/30 flex items-center justify-center border border-sky-400/50">
-                        <span className="text-sky-300 font-bold font-mono">1</span>
+                      <div className="w-10 h-10 rounded-xl bg-gray-500/30 flex items-center justify-center border border-gray-400/50">
+                        <span className="text-gray-300 font-bold font-mono">1</span>
                       </div>
                       <h3 className="font-serif text-xl md:text-2xl text-white">Identity & Debugging</h3>
-                      <span className="text-sky-300/70 font-mono text-xs md:text-sm">(The "Source of Truth")</span>
+                      <span className="text-gray-300/70 font-mono text-xs md:text-sm">(The "Source of Truth")</span>
                     </div>
 
                     <div className="space-y-4">
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
                           The top section displaying "Nick" and the phone number.
                         </p>
-                        <p className="text-sky-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
+                        <p className="text-gray-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
                       </div>
 
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">Visible Primary Key:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">Visible Primary Key:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          We intentionally display the phone number because, in our database architecture, this is the <span className="text-sky-300 font-semibold">immutable anchor for the account</span>.
+                          We intentionally display the phone number because, in our database architecture, this is the <span className="text-gray-300 font-semibold">immutable anchor for the account</span>.
                         </p>
                       </div>
 
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">Support Logic:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">Support Logic:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          By exposing this, we make customer support seamless. If a user reports an issue, they can see exactly which identity is authenticated, allowing us to look up their specific <code className="text-sky-300">revenueCatUserId</code> or <code className="text-sky-300">stripeCustomerID</code> instantly in the logs.
+                          By exposing this, we make customer support seamless. If a user reports an issue, they can see exactly which identity is authenticated, allowing us to look up their specific <code className="text-gray-300">revenueCatUserId</code> or <code className="text-gray-300">stripeCustomerID</code> instantly in the logs.
                         </p>
                       </div>
                     </div>
                   </div>
 
                   {/* 2. The "Nuclear Option" */}
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-gray-300/40 p-6 md:p-8">
                     <div className="flex items-center gap-3 mb-6">
                       <div className="w-10 h-10 rounded-xl bg-red-500/30 flex items-center justify-center border border-red-400/50">
                         <span className="text-red-300 font-bold font-mono">2</span>
@@ -6753,37 +6753,37 @@ export function ProjectDetail() {
                   </div>
 
                   {/* 3. Preference Persistence */}
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-gray-300/40 p-6 md:p-8">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-10 h-10 rounded-xl bg-sky-500/30 flex items-center justify-center border border-sky-400/50">
-                        <span className="text-sky-300 font-bold font-mono">3</span>
+                      <div className="w-10 h-10 rounded-xl bg-gray-500/30 flex items-center justify-center border border-gray-400/50">
+                        <span className="text-gray-300 font-bold font-mono">3</span>
                       </div>
                       <h3 className="font-serif text-xl md:text-2xl text-white">Preference Persistence</h3>
-                      <span className="text-sky-300/70 font-mono text-xs md:text-sm">(System vs. User State)</span>
+                      <span className="text-gray-300/70 font-mono text-xs md:text-sm">(System vs. User State)</span>
                     </div>
 
                     <div className="space-y-4 mb-6">
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
                           The Appearance Modal (System/Light/Dark).
                         </p>
-                        <p className="text-sky-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
+                        <p className="text-gray-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
                       </div>
 
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">Local vs. Server State:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">Local vs. Server State:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed mb-3">
                           We made a distinction here.
                         </p>
                         <ul className="space-y-3 text-white/90 font-mono text-sm md:text-base">
                           <li className="flex items-start gap-2">
-                            <span className="text-sky-300 mt-1">•</span>
-                            <span><span className="text-sky-300 font-semibold">Appearance (Light/Dark)</span> is handled via <span className="text-sky-300 font-semibold">Local Storage</span> on the device because it's a UI preference that doesn't need to bloat the user's database document.</span>
+                            <span className="text-gray-300 mt-1">•</span>
+                            <span><span className="text-gray-300 font-semibold">Appearance (Light/Dark)</span> is handled via <span className="text-gray-300 font-semibold">Local Storage</span> on the device because it's a UI preference that doesn't need to bloat the user's database document.</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <span className="text-sky-300 mt-1">•</span>
-                            <span><span className="text-sky-300 font-semibold">Writing Style</span> (seen in the menu), however, is stored in the <span className="text-sky-300 font-semibold">MongoDB User object</span> (under <code className="text-sky-300">trainingContext</code>). This ensures that if the user switches phones, their personalized AI voice model follows them, whereas their dark mode setting remains device-specific.</span>
+                            <span className="text-gray-300 mt-1">•</span>
+                            <span><span className="text-gray-300 font-semibold">Writing Style</span> (seen in the menu), however, is stored in the <span className="text-gray-300 font-semibold">MongoDB User object</span> (under <code className="text-gray-300">trainingContext</code>). This ensures that if the user switches phones, their personalized AI voice model follows them, whereas their dark mode setting remains device-specific.</span>
                           </li>
                         </ul>
                       </div>
@@ -6795,14 +6795,14 @@ export function ProjectDetail() {
                         <img
                           src="/Projects/Clearr/BE4FFC2B-F42E-4772-BABD-59AC64926EE4.jpeg"
                           alt="Control Center Settings"
-                          className="w-full max-w-md h-auto rounded-2xl border-2 border-sky-300/40 shadow-lg shadow-sky-400/20"
+                          className="w-full max-w-md h-auto rounded-2xl border-2 border-gray-300/40 shadow-lg shadow-gray-400/20"
                         />
                       </div>
                       <div className="w-full flex justify-center">
                         <img
                           src="/Projects/Clearr/E914BCC2-0A8E-4FFD-9FD6-8734AAF79792.jpeg"
                           alt="Preference Management"
-                          className="w-full max-w-md h-auto rounded-2xl border-2 border-sky-300/40 shadow-lg shadow-sky-400/20"
+                          className="w-full max-w-md h-auto rounded-2xl border-2 border-gray-300/40 shadow-lg shadow-gray-400/20"
                         />
                       </div>
                     </div>
@@ -6813,11 +6813,11 @@ export function ProjectDetail() {
 
             {/* Contextual Mode Logic Card */}
             <div className="mb-8">
-              <div className="bg-gradient-to-br from-sky-50/20 via-white/10 to-blue-50/20 rounded-3xl border-2 border-sky-300/40 p-6 md:p-10 shadow-[0_0_50px_rgba(56,189,248,0.25)]">
+              <div className="bg-gradient-to-br from-gray-50/20 via-white/10 to-gray-50/20 rounded-3xl border-2 border-gray-300/40 p-6 md:p-10 shadow-[0_0_50px_rgba(56,189,248,0.25)]">
                 {/* Header */}
                 <div className="text-center mb-8">
                   <div className="inline-flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-500 flex items-center justify-center border-2 border-sky-300/60 shadow-lg shadow-sky-400/40">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center border-2 border-gray-300/60 shadow-lg shadow-gray-400/40">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                       </svg>
@@ -6829,91 +6829,91 @@ export function ProjectDetail() {
                 {/* Introduction */}
                 <div className="max-w-4xl mx-auto mb-8">
                   <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed text-center">
-                    I knew that simply sending user text to an LLM with a generic "make this nicer" command would result in <span className="text-sky-300 font-semibold">robotic, unhelpful outputs</span>. To solve this, I architected a <span className="text-sky-300 font-semibold">Contextual Injection Layer</span> in the <code className="text-sky-300">POST /api/translations</code> endpoint.
+                    I knew that simply sending user text to an LLM with a generic "make this nicer" command would result in <span className="text-gray-300 font-semibold">robotic, unhelpful outputs</span>. To solve this, I architected a <span className="text-gray-300 font-semibold">Contextual Injection Layer</span> in the <code className="text-gray-300">POST /api/translations</code> endpoint.
                   </p>
                 </div>
 
                 {/* Three Main Sections */}
                 <div className="space-y-6 md:space-y-8">
                   {/* 1. The "Mode" Parameter */}
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-gray-300/40 p-6 md:p-8">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-10 h-10 rounded-xl bg-sky-500/30 flex items-center justify-center border border-sky-400/50">
-                        <span className="text-sky-300 font-bold font-mono">1</span>
+                      <div className="w-10 h-10 rounded-xl bg-gray-500/30 flex items-center justify-center border border-gray-400/50">
+                        <span className="text-gray-300 font-bold font-mono">1</span>
                       </div>
                       <h3 className="font-serif text-xl md:text-2xl text-white">The "Mode" Parameter</h3>
-                      <span className="text-sky-300/70 font-mono text-xs md:text-sm">(System Prompt Switching)</span>
+                      <span className="text-gray-300/70 font-mono text-xs md:text-sm">(System Prompt Switching)</span>
                     </div>
 
                     <div className="space-y-4">
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
                           The "Select Mode" menu where users choose from their custom modes (e.g., Personal, Professional).
                         </p>
-                        <p className="text-sky-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
+                        <p className="text-gray-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          The frontend sends a <code className="text-sky-300">modeId</code> (or uses the user's default). The backend retrieves the mode's custom prompt from the database and injects it into the LLM context window. Each mode has its own persona—for example, Personal modes focus on vulnerability and de-escalation, while Professional modes prioritize clarity and neutrality.
+                          The frontend sends a <code className="text-gray-300">modeId</code> (or uses the user's default). The backend retrieves the mode's custom prompt from the database and injects it into the LLM context window. Each mode has its own persona—for example, Personal modes focus on vulnerability and de-escalation, while Professional modes prioritize clarity and neutrality.
                         </p>
                       </div>
                     </div>
                   </div>
 
                   {/* 2. The Safety Guardrails */}
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-gray-300/40 p-6 md:p-8">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-10 h-10 rounded-xl bg-amber-500/30 flex items-center justify-center border border-amber-400/50">
-                        <span className="text-amber-300 font-bold font-mono">2</span>
+                      <div className="w-10 h-10 rounded-xl bg-gray-500/30 flex items-center justify-center border border-gray-400/50">
+                        <span className="text-gray-300 font-bold font-mono">2</span>
                       </div>
                       <h3 className="font-serif text-xl md:text-2xl text-white">The Safety Guardrails</h3>
-                      <span className="text-amber-300/70 font-mono text-xs md:text-sm">(Pre-Processing)</span>
+                      <span className="text-gray-300/70 font-mono text-xs md:text-sm">(Pre-Processing)</span>
                     </div>
 
                     <div className="space-y-4">
-                      <div className="bg-amber-500/10 rounded-xl p-4 border border-amber-400/30">
-                        <p className="text-amber-300 font-semibold mb-2 font-mono text-sm md:text-base">The Logic:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">The Logic:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          Before the "Mode" logic even runs, I implemented a <span className="text-amber-300 font-semibold">Safety Interceptor</span>.
+                          Before the "Mode" logic even runs, I implemented a <span className="text-gray-300 font-semibold">Safety Interceptor</span>.
                         </p>
                       </div>
 
-                      <div className="bg-amber-500/10 rounded-xl p-4 border border-amber-400/30">
-                        <p className="text-amber-300 font-semibold mb-2 font-mono text-sm md:text-base">The Problem:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">The Problem:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
                           We didn't want the AI to "polish" <span className="text-red-300 font-semibold">hate speech or suicide notes</span> into "nicer" versions.
                         </p>
                       </div>
 
-                      <div className="bg-amber-500/10 rounded-xl p-4 border border-amber-400/30">
-                        <p className="text-amber-300 font-semibold mb-2 font-mono text-sm md:text-base">The Solution:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">The Solution:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          The backend runs a <span className="text-amber-300 font-semibold">classification check first</span>. If the input contains threats or self-harm (e.g., "I hate you and can't stand you"), the system refuses the translation request with a <code className="text-amber-300">400 error</code> or a helpful diversion message, rather than processing it.
+                          The backend runs a <span className="text-gray-300 font-semibold">classification check first</span>. If the input contains threats or self-harm (e.g., "I hate you and can't stand you"), the system refuses the translation request with a <code className="text-gray-300">400 error</code> or a helpful diversion message, rather than processing it.
                         </p>
                       </div>
                     </div>
                   </div>
 
                   {/* 3. Data Schema & Analytics */}
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-gray-300/40 p-6 md:p-8">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-10 h-10 rounded-xl bg-sky-500/30 flex items-center justify-center border border-sky-400/50">
-                        <span className="text-sky-300 font-bold font-mono">3</span>
+                      <div className="w-10 h-10 rounded-xl bg-gray-500/30 flex items-center justify-center border border-gray-400/50">
+                        <span className="text-gray-300 font-bold font-mono">3</span>
                       </div>
                       <h3 className="font-serif text-xl md:text-2xl text-white">Data Schema & Analytics</h3>
                     </div>
 
                     <div className="space-y-4 mb-6">
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Architecture:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">The Architecture:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          We store the mode in the <span className="text-sky-300 font-semibold">Translation collection</span> alongside the input and output.
+                          We store the mode in the <span className="text-gray-300 font-semibold">Translation collection</span> alongside the input and output.
                         </p>
                       </div>
 
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">Why:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">Why:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          This allows us to run analytics on our "Tier" usage. For example, we can track if <span className="text-sky-300 font-semibold">Professional mode users have higher retention rates</span> (lower churn) than Personal mode users, allowing us to adjust our subscription limits (<code className="text-sky-300">translationsPerMonth</code>) based on value capture.
+                          This allows us to run analytics on our "Tier" usage. For example, we can track if <span className="text-gray-300 font-semibold">Professional mode users have higher retention rates</span> (lower churn) than Personal mode users, allowing us to adjust our subscription limits (<code className="text-gray-300">translationsPerMonth</code>) based on value capture.
                         </p>
                       </div>
                     </div>
@@ -6923,7 +6923,7 @@ export function ProjectDetail() {
                       <img
                         src="/Projects/Clearr/3A64D645-1716-4632-9D54-5B9E4BAC4AC3.jpeg"
                         alt="Contextual Mode Logic"
-                        className="w-full max-w-md h-auto rounded-2xl border-2 border-sky-300/40 shadow-lg shadow-sky-400/20"
+                        className="w-full max-w-md h-auto rounded-2xl border-2 border-gray-300/40 shadow-lg shadow-gray-400/20"
                       />
                     </div>
                   </div>
@@ -6933,11 +6933,11 @@ export function ProjectDetail() {
 
             {/* How the Translations Work Card */}
             <div className="mb-8">
-              <div className="bg-gradient-to-br from-sky-50/20 via-white/10 to-blue-50/20 rounded-3xl border-2 border-sky-300/40 p-6 md:p-10 shadow-[0_0_50px_rgba(56,189,248,0.25)]">
+              <div className="bg-gradient-to-br from-gray-50/20 via-white/10 to-gray-50/20 rounded-3xl border-2 border-gray-300/40 p-6 md:p-10 shadow-[0_0_50px_rgba(56,189,248,0.25)]">
                 {/* Header */}
                 <div className="text-center mb-8">
                   <div className="inline-flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-500 flex items-center justify-center border-2 border-sky-300/60 shadow-lg shadow-sky-400/40">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center border-2 border-gray-300/60 shadow-lg shadow-gray-400/40">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                       </svg>
@@ -6949,130 +6949,130 @@ export function ProjectDetail() {
                 {/* Introduction */}
                 <div className="max-w-4xl mx-auto mb-8">
                   <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed text-center">
-                    The <code className="text-sky-300">POST /api/translations</code> endpoint was the most critical piece of infrastructure. I didn't just want to "wrap" the OpenAI API; I needed to build a pipeline that was <span className="text-sky-300 font-semibold">context-aware, safe, and rate-limited</span>.
+                    The <code className="text-gray-300">POST /api/translations</code> endpoint was the most critical piece of infrastructure. I didn't just want to "wrap" the OpenAI API; I needed to build a pipeline that was <span className="text-gray-300 font-semibold">context-aware, safe, and rate-limited</span>.
                   </p>
                 </div>
 
                 {/* Four Main Sections */}
                 <div className="space-y-6 md:space-y-8">
                   {/* 1. The Context Injection */}
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-gray-300/40 p-6 md:p-8">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-10 h-10 rounded-xl bg-sky-500/30 flex items-center justify-center border border-sky-400/50">
-                        <span className="text-sky-300 font-bold font-mono">1</span>
+                      <div className="w-10 h-10 rounded-xl bg-gray-500/30 flex items-center justify-center border border-gray-400/50">
+                        <span className="text-gray-300 font-bold font-mono">1</span>
                       </div>
                       <h3 className="font-serif text-xl md:text-2xl text-white">The Context Injection</h3>
-                      <span className="text-sky-300/70 font-mono text-xs md:text-sm">(The "Mode" Switch)</span>
+                      <span className="text-gray-300/70 font-mono text-xs md:text-sm">(The "Mode" Switch)</span>
                     </div>
 
                     <div className="space-y-4">
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
                           The "Select Mode" menu where users choose from their custom modes (e.g., Personal, Professional).
                         </p>
-                        <p className="text-sky-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
+                        <p className="text-gray-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          The "magic" of Clearr isn't just the LLM—it's the <span className="text-sky-300 font-semibold">System Prompt Architecture</span>. When the frontend sends <code className="text-sky-300">{`{ translationInput: string, modeId: "mode123" }`}</code>, my backend logic acts as a switchboard:
+                          The "magic" of Clearr isn't just the LLM—it's the <span className="text-gray-300 font-semibold">System Prompt Architecture</span>. When the frontend sends <code className="text-gray-300">{`{ translationInput: string, modeId: "mode123" }`}</code>, my backend logic acts as a switchboard:
                         </p>
                       </div>
 
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">Dynamic Prompt Swapping:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">Dynamic Prompt Swapping:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed mb-3">
                           The backend retrieves the user's selected mode (or default) and injects its custom prompt into the LLM context. Each mode has its own persona—for example:
                         </p>
                         <ul className="space-y-2 text-white/90 font-mono text-sm md:text-base">
                           <li className="flex items-start gap-2">
-                            <span className="text-sky-300 mt-1">•</span>
-                            <span><span className="text-sky-300 font-semibold">Personal modes:</span> Focus on vulnerability, "I" statements, and de-escalation.</span>
+                            <span className="text-gray-300 mt-1">•</span>
+                            <span><span className="text-gray-300 font-semibold">Personal modes:</span> Focus on vulnerability, "I" statements, and de-escalation.</span>
                           </li>
                           <li className="flex items-start gap-2">
-                            <span className="text-sky-300 mt-1">•</span>
-                            <span><span className="text-sky-300 font-semibold">Professional modes:</span> Prioritize clarity, neutrality, and actionable communication.</span>
+                            <span className="text-gray-300 mt-1">•</span>
+                            <span><span className="text-gray-300 font-semibold">Professional modes:</span> Prioritize clarity, neutrality, and actionable communication.</span>
                           </li>
                         </ul>
                       </div>
 
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">Writing Style Injection:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">Writing Style Injection:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          The backend also pulls the user's <code className="text-sky-300">trainingContext</code> from the database to ensure the output sounds like them (e.g., maintaining their natural cadence) rather than a generic robot.
+                          The backend also pulls the user's <code className="text-gray-300">trainingContext</code> from the database to ensure the output sounds like them (e.g., maintaining their natural cadence) rather than a generic robot.
                         </p>
                       </div>
                     </div>
                   </div>
 
                   {/* 2. The Safety & Policy Layer */}
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-gray-300/40 p-6 md:p-8">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-10 h-10 rounded-xl bg-amber-500/30 flex items-center justify-center border border-amber-400/50">
-                        <span className="text-amber-300 font-bold font-mono">2</span>
+                      <div className="w-10 h-10 rounded-xl bg-gray-500/30 flex items-center justify-center border border-gray-400/50">
+                        <span className="text-gray-300 font-bold font-mono">2</span>
                       </div>
                       <h3 className="font-serif text-xl md:text-2xl text-white">The Safety & Policy Layer</h3>
-                      <span className="text-amber-300/70 font-mono text-xs md:text-sm">(Pre-Processing)</span>
+                      <span className="text-gray-300/70 font-mono text-xs md:text-sm">(Pre-Processing)</span>
                     </div>
 
                     <div className="space-y-4">
-                      <div className="bg-amber-500/10 rounded-xl p-4 border border-amber-400/30">
-                        <p className="text-amber-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
                           The "Raw Thought" Input.
                         </p>
-                        <p className="text-amber-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
+                        <p className="text-gray-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          Before sending anything to GPT-4, I architected a <span className="text-amber-300 font-semibold">Safety Interceptor</span> to protect the platform.
+                          Before sending anything to GPT-4, I architected a <span className="text-gray-300 font-semibold">Safety Interceptor</span> to protect the platform.
                         </p>
                       </div>
 
-                      <div className="bg-amber-500/10 rounded-xl p-4 border border-amber-400/30">
-                        <p className="text-amber-300 font-semibold mb-2 font-mono text-sm md:text-base">Toxicity Detection:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">Toxicity Detection:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
                           The system first scans the input (e.g., "I hate you and can't stand you") for <span className="text-red-300 font-semibold">self-harm, threats, or extreme hate speech</span>.
                         </p>
                       </div>
 
-                      <div className="bg-amber-500/10 rounded-xl p-4 border border-amber-400/30">
-                        <p className="text-amber-300 font-semibold mb-2 font-mono text-sm md:text-base">The "Refusal" Logic:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">The "Refusal" Logic:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          If the input violates our policy, the backend immediately terminates the request with a specific flag, returning a message like <span className="text-amber-300 italic">"I can't help translating this message,"</span> rather than allowing the AI to "polish" abuse into a sendable format.
+                          If the input violates our policy, the backend immediately terminates the request with a specific flag, returning a message like <span className="text-gray-300 italic">"I can't help translating this message,"</span> rather than allowing the AI to "polish" abuse into a sendable format.
                         </p>
                       </div>
                     </div>
                   </div>
 
                   {/* 3. The GPT-4 Integration & Prompt Engineering */}
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-gray-300/40 p-6 md:p-8">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-10 h-10 rounded-xl bg-sky-500/30 flex items-center justify-center border border-sky-400/50">
-                        <span className="text-sky-300 font-bold font-mono">3</span>
+                      <div className="w-10 h-10 rounded-xl bg-gray-500/30 flex items-center justify-center border border-gray-400/50">
+                        <span className="text-gray-300 font-bold font-mono">3</span>
                       </div>
                       <h3 className="font-serif text-xl md:text-2xl text-white">The GPT-4 Integration & Prompt Engineering</h3>
                     </div>
 
                     <div className="space-y-4 mb-6">
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">The Screen:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
                           The Polished Output.
                         </p>
-                        <p className="text-sky-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
+                        <p className="text-gray-300 font-semibold mt-3 mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          We utilized the GPT-4 API for its nuance capabilities, but raw GPT is often too formal. I spent significant time fine-tuning the <span className="text-sky-300 font-semibold">prompt engineering parameters</span>:
+                          We utilized the GPT-4 API for its nuance capabilities, but raw GPT is often too formal. I spent significant time fine-tuning the <span className="text-gray-300 font-semibold">prompt engineering parameters</span>:
                         </p>
                       </div>
 
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Instructions:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">The Instructions:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          I hard-coded strict rules into the API call: <span className="text-sky-300 italic">"Be concise but warm,"</span> <span className="text-sky-300 italic">"Add empathy but don't be formal,"</span> and <span className="text-sky-300 italic">"Sound natural, try to be less robotic"</span>.
+                          I hard-coded strict rules into the API call: <span className="text-gray-300 italic">"Be concise but warm,"</span> <span className="text-gray-300 italic">"Add empathy but don't be formal,"</span> and <span className="text-gray-300 italic">"Sound natural, try to be less robotic"</span>.
                         </p>
                       </div>
 
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">Token Management:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">Token Management:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          I configured the <code className="text-sky-300">max_tokens</code> (e.g., 1000) to ensure responses were substantial enough to convey meaning but concise enough to fit in a text bubble.
+                          I configured the <code className="text-gray-300">max_tokens</code> (e.g., 1000) to ensure responses were substantial enough to convey meaning but concise enough to fit in a text bubble.
                         </p>
                       </div>
                     </div>
@@ -7082,39 +7082,39 @@ export function ProjectDetail() {
                       <img
                         src="/Projects/Clearr/184124FC-EAB1-4FD2-B6EA-56F2CE32C11F.jpeg"
                         alt="GPT-4 Integration"
-                        className="w-full max-w-md h-auto rounded-2xl border-2 border-sky-300/40 shadow-lg shadow-sky-400/20"
+                        className="w-full max-w-md h-auto rounded-2xl border-2 border-gray-300/40 shadow-lg shadow-gray-400/20"
                       />
                     </div>
                   </div>
 
                   {/* 4. The Response Object & History */}
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-sky-300/40 p-6 md:p-8">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-gray-300/40 p-6 md:p-8">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-10 h-10 rounded-xl bg-sky-500/30 flex items-center justify-center border border-sky-400/50">
-                        <span className="text-sky-300 font-bold font-mono">4</span>
+                      <div className="w-10 h-10 rounded-xl bg-gray-500/30 flex items-center justify-center border border-gray-400/50">
+                        <span className="text-gray-300 font-bold font-mono">4</span>
                       </div>
                       <h3 className="font-serif text-xl md:text-2xl text-white">The Response Object & History</h3>
                     </div>
 
                     <div className="space-y-4 mb-6">
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">The Backend Thinking:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          The API doesn't just return text. It returns a <span className="text-sky-300 font-semibold">structured object</span> that updates the frontend state immediately:
+                          The API doesn't just return text. It returns a <span className="text-gray-300 font-semibold">structured object</span> that updates the frontend state immediately:
                         </p>
                       </div>
 
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">Rate Limit Tracking:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">Rate Limit Tracking:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          It returns <code className="text-sky-300">translationsLeft</code> so the UI can warn the user if they are hitting their Tier limit.
+                          It returns <code className="text-gray-300">translationsLeft</code> so the UI can warn the user if they are hitting their Tier limit.
                         </p>
                       </div>
 
-                      <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-400/30">
-                        <p className="text-sky-300 font-semibold mb-2 font-mono text-sm md:text-base">History Sync:</p>
+                      <div className="bg-gray-500/10 rounded-xl p-4 border border-gray-400/30">
+                        <p className="text-gray-300 font-semibold mb-2 font-mono text-sm md:text-base">History Sync:</p>
                         <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
-                          It asynchronously saves the <code className="text-sky-300">{`{input, output, timestamp}`}</code> tuple to the Translation collection, allowing the user to view their "Version 1" vs. "Raw" comparison later.
+                          It asynchronously saves the <code className="text-gray-300">{`{input, output, timestamp}`}</code> tuple to the Translation collection, allowing the user to view their "Version 1" vs. "Raw" comparison later.
                         </p>
                       </div>
                     </div>
@@ -7124,7 +7124,7 @@ export function ProjectDetail() {
                       <img
                         src="/Projects/Clearr/0E8DEBBF-E4D9-4631-898B-93BB6A2E8EC9.jpeg"
                         alt="Response Object & History"
-                        className="w-full max-w-md h-auto rounded-2xl border-2 border-sky-300/40 shadow-lg shadow-sky-400/20"
+                        className="w-full max-w-md h-auto rounded-2xl border-2 border-gray-300/40 shadow-lg shadow-gray-400/20"
                       />
                     </div>
                   </div>
@@ -7134,20 +7134,20 @@ export function ProjectDetail() {
 
             {/* Reflection Card */}
             <div className="mb-8">
-              <div className="bg-gradient-to-br from-sky-50/20 via-white/10 to-blue-50/20 rounded-3xl border-2 border-sky-300/40 p-6 md:p-10 shadow-[0_0_50px_rgba(56,189,248,0.25)]">
+              <div className="bg-gradient-to-br from-gray-50/20 via-white/10 to-gray-50/20 rounded-3xl border-2 border-gray-300/40 p-6 md:p-10 shadow-[0_0_50px_rgba(56,189,248,0.25)]">
                 <div className="text-center mb-6">
                   <div className="inline-flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center border-2 border-amber-300/60 shadow-lg shadow-amber-400/30">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gray-400 to-gray-500 flex items-center justify-center border-2 border-gray-300/60 shadow-lg shadow-gray-400/30">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                     </div>
                     <h2 className="font-serif text-2xl md:text-3xl text-white">Reflection</h2>
                   </div>
-                  <p className="text-amber-200/80 font-mono text-base md:text-lg font-semibold">90% Planning, 10% Coding</p>
+                  <p className="text-gray-200/80 font-mono text-base md:text-lg font-semibold">90% Planning, 10% Coding</p>
                 </div>
 
-                <div className="max-w-4xl mx-auto bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-amber-300/40 p-6 md:p-8">
+                <div className="max-w-4xl mx-auto bg-white/10 backdrop-blur-sm rounded-2xl border-2 border-gray-300/40 p-6 md:p-8">
                   <p className="text-white/90 font-mono text-sm md:text-base leading-relaxed">
                     This project redefined my understanding of engineering velocity. The backend build took under an hour—helped by Claude Code—but only after a week of rigorous architecture. Working with Liam Du, we refused to write a line until the logic was bulletproof. I mapped every edge case into a 15-page design doc and FigJam flow. Lesson: when the thinking is clear, execution is trivial.
                   </p>
