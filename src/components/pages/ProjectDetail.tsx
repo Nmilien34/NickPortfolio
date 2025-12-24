@@ -15,7 +15,8 @@ interface EmbeddedProject {
   title: string;
   image: string;
   images?: string[]; // Multiple images for gallery view
-  video?: string; // Video file path
+  video?: string; // Single video file path (deprecated, use videos array)
+  videos?: string[]; // Multiple videos for gallery view
   languages: string[];
   description: string;
   techStack: string[];
@@ -29,7 +30,10 @@ const embeddedProjects: EmbeddedProject[] = [
     id: '1',
     title: 'Digital Clock',
     image: '/Projects/Embeddedsystems/IMG_1698.jpg',
-    video: '/Projects/Embeddedsystems/digitalClock.mp4',
+    videos: [
+      '/Projects/Embeddedsystems/digitalClock.mp4',
+      '/Projects/Embeddedsystems/IMG_3071.mp4'
+    ],
     languages: ['C'],
     description: 'A digital clock built using Arduino and a 5011AS 7-segment display. The clock displays time using multiple seven-segment displays controlled through resistors and Arduino digital pins.',
     techStack: ['Arduino', '5011AS 7-Segment Display', 'Resistors', 'Breadboard'],
@@ -44,7 +48,7 @@ const embeddedProjects: EmbeddedProject[] = [
       '/Projects/Embeddedsystems/IMG_1703.jpg',
       '/Projects/Embeddedsystems/IMG_1704.jpg'
     ],
-    languages: ['C'],
+    languages: ['Python'],
     description: 'A car crash detection module built using Arduino and sensors. The system detects sudden impacts or collisions and can trigger alerts or safety mechanisms.',
     techStack: ['Arduino', 'Accelerometer/Impact Sensor', 'Breadboard', 'LEDs', 'Resistors'],
     features: ['Impact detection', 'Real-time monitoring', 'Alert system'],
@@ -68,10 +72,49 @@ const embeddedProjects: EmbeddedProject[] = [
     id: '4',
     title: 'Mini Piano',
     image: '/Projects/Embeddedsystems/IMG_1699.jpg',
-    languages: ['C'],
+    videos: [
+      '/Projects/Embeddedsystems/WhatsApp+Video+2022-05-12+at+7.46.07+PM.mp4'
+    ],
+    languages: ['C++'],
     description: 'A mini piano built using Arduino, push buttons, and a buzzer. Each button plays a different musical note, allowing users to create simple melodies using the piezo buzzer.',
     techStack: ['Arduino', 'Push Buttons', 'Piezo Buzzer', 'Breadboard', 'Resistors'],
     features: ['Multiple musical notes', 'Button-triggered tones', 'Interactive sound generation'],
+  },
+  {
+    id: '5',
+    title: 'PWM LED Brightness Control',
+    image: '/Projects/Embeddedsystems/View recent photos 13.png',
+    videos: [
+      '/Projects/Embeddedsystems/WhatsApp+Video+2022-03-31+at+11.01.31+PM.mp4'
+    ],
+    languages: ['C'],
+    description: 'Controlling LED brightness using a Potentiometer(Dial) via pulse width modulation. The system allows real-time adjustment of LED brightness by rotating a potentiometer, demonstrating analog input reading and PWM output control on Arduino.',
+    techStack: ['Breadboard', 'Potentiometer', 'Arduino', 'LED'],
+    features: ['PWM brightness control', 'Analog input reading', 'Real-time adjustment', 'Smooth brightness transitions'],
+  },
+  {
+    id: '6',
+    title: 'Traffic Lights',
+    image: '/Projects/Embeddedsystems/IMG_1715.jpg',
+    videos: [
+      '/Projects/Embeddedsystems/embedded+system+project.mp4'
+    ],
+    languages: ['C'],
+    description: 'A Sequential LED Blinker',
+    techStack: ['Arduino', 'LEDs', 'Breadboard'],
+    features: ['Sequential LED blinking', 'Traffic light simulation', 'Timed state transitions'],
+  },
+  {
+    id: '7',
+    title: 'Keypad 7-Segment Interface',
+    image: '/Projects/Embeddedsystems/IMG_1717.jpg',
+    videos: [
+      '/Projects/Embeddedsystems/hw+6+video.mp4'
+    ],
+    languages: ['C'],
+    description: 'Keypad interfacing project connecting a 4x4 matrix keyboard to a 7-segment display',
+    techStack: ['Arduino', '4x4 Membrane Keypad', '7-Segment LED Display'],
+    features: ['Keypad input processing', '7-segment display output', 'Matrix keyboard scanning'],
   },
 ];
 
@@ -400,6 +443,10 @@ export function ProjectDetail() {
                               ? 'center 30%'
                               : embProject.title === 'Mini Piano'
                               ? 'center 40%'
+                              : embProject.title === 'PWM LED Brightness Control'
+                              ? 'center 80%'
+                              : embProject.title === 'Keypad 7-Segment Interface'
+                              ? 'center 20%'
                               : 'center'
                           }}
                         />
@@ -503,8 +550,23 @@ export function ProjectDetail() {
 
                     {/* Modal Content */}
                     <div className="p-6 space-y-6">
-                      {/* Project Video */}
-                      {selectedProject.video && (
+                      {/* Project Videos */}
+                      {selectedProject.videos && selectedProject.videos.length > 0 ? (
+                        <div className="space-y-4">
+                          {selectedProject.videos.map((video, idx) => (
+                            <div key={idx} className="aspect-video bg-white/10 rounded-lg overflow-hidden">
+                              <video
+                                src={video}
+                                controls
+                                className="w-full h-full object-cover"
+                                playsInline
+                              >
+                                Your browser does not support the video tag.
+                              </video>
+                            </div>
+                          ))}
+                        </div>
+                      ) : selectedProject.video && (
                         <div className="aspect-video bg-white/10 rounded-lg overflow-hidden">
                           <video
                             src={selectedProject.video}
@@ -535,13 +597,17 @@ export function ProjectDetail() {
                                     ? 'center 30%'
                                     : selectedProject.title === 'Mini Piano'
                                     ? 'center 40%'
+                                    : selectedProject.title === 'PWM LED Brightness Control'
+                                    ? 'center 80%'
+                                    : selectedProject.title === 'Keypad 7-Segment Interface'
+                                    ? 'center 20%'
                                     : 'center'
                                 }}
                               />
                             </div>
                           ))}
                         </div>
-                      ) : !selectedProject.video && (
+                      ) : !selectedProject.video && !selectedProject.videos && (
                         <div className="aspect-video bg-white/10 rounded-lg overflow-hidden">
                           <img
                             src={selectedProject.image}
