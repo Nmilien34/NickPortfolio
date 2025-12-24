@@ -382,7 +382,7 @@ export function Hero() {
         {/* Timeline Start */}
         <div className="relative flex flex-col items-center mt-8 sm:mt-12 md:mt-20 mb-0">
           {/* Title */}
-          <h3 className="font-serif text-lg sm:text-xl md:text-2xl text-white mb-4 sm:mb-6">the beginning</h3>
+          <h3 className="font-serif text-lg sm:text-xl md:text-2xl text-white mb-4 sm:mb-6">The Beginning</h3>
 
           {/* Year Label in Bubble */}
           <div className="px-5 sm:px-6 md:px-8 py-1.5 sm:py-2 rounded-full border-2 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)] bg-white/5 text-white font-mono text-xs sm:text-sm mb-3 sm:mb-4">
