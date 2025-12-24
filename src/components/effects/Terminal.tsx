@@ -95,6 +95,7 @@ export function Terminal() {
   const [currentFont, setCurrentFont] = useState<FontType>('mono');
   const inputRef = useRef<HTMLInputElement>(null);
   const terminalBodyRef = useRef<HTMLDivElement>(null);
+  const hasAutoLoadedRef = useRef(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -104,11 +105,48 @@ export function Terminal() {
     if (savedTheme && THEMES[savedTheme]) setCurrentTheme(savedTheme);
     if (savedFont && FONTS[savedFont]) setCurrentFont(savedFont);
 
-    setHistory([{
-      command: '',
-      output: `Welcome to my portfolio, if you didn't like Ced, you might find the terminal more useful.
+    // Auto-load information sequence (only once)
+    if (hasAutoLoadedRef.current) return;
+    hasAutoLoadedRef.current = true;
+
+    const autoLoadInfo = [
+      'Description: Nick Milien - Technical Product Manager | Voice AI, Robotics & Entrepreneurship | ODF Fellow & Alchemist Backed Founder',
+      'Education: New Jersey Institute of Technology',
+      'Major: Electrical and Computer Engineering',
+      'Relevant Programming language: Matlab, C, C++, Python, Typescript/javascript, Linux',
+      'Product Strategy, Roadmap Planning, User Research, Data Processing & Analytics, Protection & Control, Interpersonal skills, P Voice AI, I2c, I2S, Computer vision'
+    ];
+
+    // Start with empty history
+    setHistory([]);
+
+    const timeoutIds: NodeJS.Timeout[] = [];
+
+    // Add each line with a delay
+    autoLoadInfo.forEach((info, index) => {
+      const timeoutId = setTimeout(() => {
+        setHistory(prev => [...prev, {
+          command: '',
+          output: info
+        }]);
+      }, (index + 1) * 600); // 600ms delay between each line
+      timeoutIds.push(timeoutId);
+    });
+
+    // Add welcome message after all info is loaded
+    const welcomeTimeoutId = setTimeout(() => {
+      setHistory(prev => [...prev, {
+        command: '',
+        output: `\nWelcome to my portfolio, if you didn't like Ced, you might find the terminal more useful.
 Type "help" to see available commands`
-    }]);
+      }]);
+    }, (autoLoadInfo.length + 1) * 600);
+    timeoutIds.push(welcomeTimeoutId);
+
+    // Cleanup function
+    return () => {
+      timeoutIds.forEach(id => clearTimeout(id));
+    };
   }, []);
 
   // Apply theme changes to the page
