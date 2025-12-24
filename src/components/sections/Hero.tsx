@@ -339,7 +339,7 @@ export function Hero() {
               />
             </div>
             <figcaption className="text-center text-gray-400 mt-1.5 sm:mt-2 md:mt-4 font-mono text-[10px] sm:text-xs opacity-80 group-hover:opacity-100 transition-opacity">
-              first week in the us
+              First week in the US
             </figcaption>
           </figure>
 
@@ -361,7 +361,7 @@ export function Hero() {
               />
             </div>
             <figcaption className="text-center text-gray-400 mt-1.5 sm:mt-2 md:mt-4 font-mono text-[10px] sm:text-xs opacity-80 group-hover:opacity-100 transition-opacity">
-              visiting friends at Cornell
+              Visiting friends at Cornell
             </figcaption>
           </figure>
         </motion.div>

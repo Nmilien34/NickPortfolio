@@ -109,7 +109,7 @@ export function Terminal() {
     // Start with empty history
     setHistory([]);
 
-    const timeoutIds: NodeJS.Timeout[] = [];
+    const timeoutIds: ReturnType<typeof setTimeout>[] = [];
     let currentDelay = 500; // Start after 500ms
 
     // Initializing message
