@@ -96,6 +96,11 @@
     "lyra": {
       "category": "Produit IA",
       "description": "Un compagnon IA pour les seniors ayant des troubles cognitifs. Réinventer une interface juste pour eux"
+    },
+    "embeddedSystems": {
+      "category": "Matériel et Systèmes Embarqués",
+      "description": "Un parcours à travers des projets de systèmes embarqués que j'ai réalisés au fil des années",
+      "summary": "J'ai créé une tonne de projets embarqués au cours des 3 dernières années. Pour vous éviter quelques clics, je les ai tous gardés sur une seule page—n'hésitez pas à faire défiler et voir ce qui attire votre attention."
     }
   }
 }

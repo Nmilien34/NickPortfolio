@@ -75,6 +75,14 @@ export function getProjectsData(t: (key: string) => string): Project[] {
     gradientColors: undefined,
     browserUrl: 'comingsoon.com',
   },
+  {
+    title: 'Evolution of My Embedded Systems',
+    category: t('projects.embeddedSystems.category'),
+    description: t('projects.embeddedSystems.description'),
+    summary: t('projects.embeddedSystems.summary'),
+    gradientColors: undefined,
+    browserUrl: 'embedded.nickmilien.com',
+  },
   ];
 }
 
@@ -173,6 +181,8 @@ export function Projects() {
                           loading="eager"
                         />
                       </div>
+                    ) : project.title === 'Evolution of My Embedded Systems' ? (
+                      <div className="h-full" />
                     ) : (
                       <div className="flex flex-col items-center justify-center h-full p-8">
                         <div className="text-gray-400 text-6xl mb-4">📸</div>

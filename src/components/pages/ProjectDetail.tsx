@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Header } from '../layout/Header';
@@ -10,10 +10,150 @@ import { LogicFlow } from '../ui/LogicFlow';
 import { StrategicComparison } from '../ui/StrategicComparison';
 import { StrategicFlow } from '../ui/StrategicFlow';
 
+interface EmbeddedProject {
+  id: string;
+  title: string;
+  image: string;
+  images?: string[]; // Multiple images for gallery view
+  languages: string[];
+  description: string;
+  techStack: string[];
+  codeSnippet?: string;
+  features?: string[];
+}
+
+// Sample embedded projects data (placeholders)
+const embeddedProjects: EmbeddedProject[] = [
+  {
+    id: '1',
+    title: 'Digital Clock',
+    image: '/Projects/Embeddedsystems/IMG_1698.jpg',
+    languages: ['C'],
+    description: 'A digital clock built using Arduino and a 5011AS 7-segment display. The clock displays time using multiple seven-segment displays controlled through resistors and Arduino digital pins.',
+    techStack: ['Arduino', '5011AS 7-Segment Display', 'Resistors', 'Breadboard'],
+    features: ['Time display on 7-segment', 'Arduino-controlled segments', 'Low power consumption'],
+  },
+  {
+    id: '2',
+    title: 'Car Crash Detection Module',
+    image: '/Projects/Embeddedsystems/IMG_1702.jpg',
+    images: [
+      '/Projects/Embeddedsystems/IMG_1702.jpg',
+      '/Projects/Embeddedsystems/IMG_1703.jpg',
+      '/Projects/Embeddedsystems/IMG_1704.jpg'
+    ],
+    languages: ['C'],
+    description: 'A car crash detection module built using Arduino and sensors. The system detects sudden impacts or collisions and can trigger alerts or safety mechanisms.',
+    techStack: ['Arduino', 'Accelerometer/Impact Sensor', 'Breadboard', 'LEDs', 'Resistors'],
+    features: ['Impact detection', 'Real-time monitoring', 'Alert system'],
+  },
+  {
+    id: '3',
+    title: 'AI Companion for Seniors with Dementia',
+    image: '/Projects/Embeddedsystems/IMG_1706.jpg',
+    images: [
+      '/Projects/Embeddedsystems/IMG_1706.jpg',
+      '/Projects/Embeddedsystems/IMG_1707.jpg',
+      '/Projects/Embeddedsystems/IMG_1708.jpg',
+      '/Projects/Embeddedsystems/IMG_1709.jpg'
+    ],
+    languages: ['Python', 'Node.js'],
+    description: 'An AI-powered companion device designed specifically for seniors with dementia. Features FM radio, interactive controls, and a touchscreen interface to provide entertainment, stimulation, and familiar interactions.',
+    techStack: ['Raspberry Pi', 'TEA5767 FM Radio Module', 'Antenna', 'LM386 Op Amp', 'ST1718', 'Rotary Encoder', 'GPIO Button', '7" TFT LCD'],
+    features: ['FM radio functionality', 'Touch screen interface', 'Simple, accessible controls', 'Audio amplification', 'AI-powered interactions'],
+  },
+  {
+    id: '4',
+    title: 'Mini Piano',
+    image: '/Projects/Embeddedsystems/IMG_1699.jpg',
+    languages: ['C'],
+    description: 'A mini piano built using Arduino, push buttons, and a buzzer. Each button plays a different musical note, allowing users to create simple melodies using the piezo buzzer.',
+    techStack: ['Arduino', 'Push Buttons', 'Piezo Buzzer', 'Breadboard', 'Resistors'],
+    features: ['Multiple musical notes', 'Button-triggered tones', 'Interactive sound generation'],
+  },
+];
+
+// Random smaller projects from Embedded System 1
+const randomEmbeddedProjects: EmbeddedProject[] = [
+  {
+    id: 'r1',
+    title: '',
+    image: '/Projects/Embeddedsystems/IMG_1684.jpg',
+    languages: ['C'],
+    description: '',
+    techStack: [],
+  },
+  {
+    id: 'r2',
+    title: '',
+    image: '/Projects/Embeddedsystems/IMG_1685.jpg',
+    languages: ['C'],
+    description: '',
+    techStack: [],
+  },
+  {
+    id: 'r3',
+    title: '',
+    image: '/Projects/Embeddedsystems/IMG_1686.jpg',
+    languages: ['C'],
+    description: '',
+    techStack: [],
+  },
+  {
+    id: 'r4',
+    title: '',
+    image: '/Projects/Embeddedsystems/IMG_1689.jpg',
+    languages: ['C'],
+    description: '',
+    techStack: [],
+  },
+  {
+    id: 'r5',
+    title: '',
+    image: '/Projects/Embeddedsystems/IMG_1690.jpg',
+    languages: ['C'],
+    description: '',
+    techStack: [],
+  },
+  {
+    id: 'r6',
+    title: '',
+    image: '/Projects/Embeddedsystems/IMG_1691.jpg',
+    languages: ['C'],
+    description: '',
+    techStack: [],
+  },
+  {
+    id: 'r7',
+    title: '',
+    image: '/Projects/Embeddedsystems/IMG_1692.jpg',
+    languages: ['C'],
+    description: '',
+    techStack: [],
+  },
+  {
+    id: 'r8',
+    title: '',
+    image: '/Projects/Embeddedsystems/IMG_1694.jpg',
+    languages: ['C'],
+    description: '',
+    techStack: [],
+  },
+  {
+    id: 'r9',
+    title: '',
+    image: '/Projects/Embeddedsystems/IMG_1695.jpg',
+    languages: ['C'],
+    description: '',
+    techStack: [],
+  },
+];
+
 export function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const [selectedProject, setSelectedProject] = useState<EmbeddedProject | null>(null);
 
   // Scroll to top when component mounts or slug changes
   useEffect(() => {
@@ -64,7 +204,7 @@ export function ProjectDetail() {
             <div className="flex items-start justify-between flex-wrap gap-4">
               <div className="flex items-start gap-4">
                 {/* Project Icon/Logo */}
-                {project.title === 'Lawnstack' ? (
+                {project.title === 'Evolution of My Embedded Systems' ? null : project.title === 'Lawnstack' ? (
                   <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg bg-white/10 border border-white/20 overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
                     <img
                       src="/Projects/Lawnstack /Logo /Frame 49.svg"
@@ -222,6 +362,215 @@ export function ProjectDetail() {
               )}
             </div>
           </div>
+
+          {/* Summary Card - Only for Evolution of My Embedded Systems */}
+          {project.title === 'Evolution of My Embedded Systems' && (
+            <>
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 md:p-8 mb-8">
+                <h2 className="font-serif text-xl md:text-2xl text-white mb-4">Summary</h2>
+                <p className="text-normal-text font-mono text-sm md:text-base leading-relaxed">
+                  {project.summary || project.description}
+                </p>
+              </div>
+
+              {/* Embedded Projects Grid */}
+              <div className="mb-8">
+                <h2 className="font-serif text-2xl md:text-3xl text-white mb-6">Projects</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {embeddedProjects.map((embProject) => (
+                    <div
+                      key={embProject.id}
+                      onClick={() => setSelectedProject(embProject)}
+                      className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 overflow-hidden cursor-pointer hover:bg-white/10 hover:border-white/30 hover:scale-[1.02] transition-all duration-300 group"
+                    >
+                      {/* Project Image */}
+                      <div className="aspect-video bg-white/10 overflow-hidden">
+                        <img
+                          src={embProject.image}
+                          alt={embProject.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+
+                      {/* Project Info */}
+                      <div className="p-4">
+                        <h3 className="font-serif text-lg text-white mb-2 group-hover:text-white/90">
+                          {embProject.title}
+                        </h3>
+
+                        {/* Languages */}
+                        <div className="flex flex-wrap gap-2">
+                          {embProject.languages.map((lang, idx) => (
+                            <span
+                              key={idx}
+                              className="px-2 py-1 bg-white/10 border border-white/20 rounded text-xs font-mono text-white/80"
+                            >
+                              {lang}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Random Projects from Embedded System 1 */}
+              <div className="mb-8">
+                <h2 className="font-serif text-2xl md:text-3xl text-white mb-6">Random from Embedded System 1</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {randomEmbeddedProjects.map((embProject) => (
+                    <div
+                      key={embProject.id}
+                      className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 overflow-hidden"
+                    >
+                      {/* Project Image */}
+                      <div className="aspect-video bg-white/10 overflow-hidden">
+                        <img
+                          src={embProject.image}
+                          alt="Embedded Systems Project"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+
+                      {/* Project Info - Just Languages */}
+                      <div className="p-4">
+                        <div className="flex flex-wrap gap-2">
+                          {embProject.languages.map((lang, idx) => (
+                            <span
+                              key={idx}
+                              className="px-2 py-1 bg-white/10 border border-white/20 rounded text-xs font-mono text-white/80"
+                            >
+                              {lang}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Project Detail Modal */}
+              {selectedProject && (
+                <div
+                  className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+                  onClick={() => setSelectedProject(null)}
+                >
+                  <div
+                    className="bg-background-color border border-white/20 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {/* Modal Header */}
+                    <div className="sticky top-0 bg-background-color border-b border-white/20 p-6 flex items-start justify-between">
+                      <div>
+                        <h2 className="font-serif text-2xl md:text-3xl text-white mb-2">
+                          {selectedProject.title}
+                        </h2>
+                        <div className="flex flex-wrap gap-2">
+                          {selectedProject.languages.map((lang, idx) => (
+                            <span
+                              key={idx}
+                              className="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-xs font-mono text-white/80"
+                            >
+                              {lang}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      <button
+                        onClick={() => setSelectedProject(null)}
+                        className="text-white/60 hover:text-white transition-colors p-2"
+                      >
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                    </div>
+
+                    {/* Modal Content */}
+                    <div className="p-6 space-y-6">
+                      {/* Project Images */}
+                      {selectedProject.images && selectedProject.images.length > 1 ? (
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          {selectedProject.images.map((img, idx) => (
+                            <div key={idx} className="aspect-video bg-white/10 rounded-lg overflow-hidden">
+                              <img
+                                src={img}
+                                alt={`${selectedProject.title} - Image ${idx + 1}`}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="aspect-video bg-white/10 rounded-lg overflow-hidden">
+                          <img
+                            src={selectedProject.image}
+                            alt={selectedProject.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      )}
+
+                      {/* Description */}
+                      <div>
+                        <h3 className="font-serif text-xl text-white mb-3">Description</h3>
+                        <p className="text-normal-text font-mono text-sm leading-relaxed">
+                          {selectedProject.description}
+                        </p>
+                      </div>
+
+                      {/* Tech Stack */}
+                      <div>
+                        <h3 className="font-serif text-xl text-white mb-3">Tech Stack</h3>
+                        <div className="flex flex-wrap gap-2">
+                          {selectedProject.techStack.map((tech, idx) => (
+                            <span
+                              key={idx}
+                              className="px-3 py-1.5 bg-white/5 border border-white/20 rounded-lg text-sm font-mono text-white/80"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Features */}
+                      {selectedProject.features && selectedProject.features.length > 0 && (
+                        <div>
+                          <h3 className="font-serif text-xl text-white mb-3">Key Features</h3>
+                          <ul className="space-y-2">
+                            {selectedProject.features.map((feature, idx) => (
+                              <li
+                                key={idx}
+                                className="flex items-start gap-2 text-normal-text font-mono text-sm"
+                              >
+                                <span className="text-white/60 mt-1">→</span>
+                                <span>{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {/* Code Snippet */}
+                      {selectedProject.codeSnippet && (
+                        <div>
+                          <h3 className="font-serif text-xl text-white mb-3">Code Snippet</h3>
+                          <div className="bg-black/40 border border-white/10 rounded-lg p-4 overflow-x-auto">
+                            <pre className="text-sm text-green-400 font-mono">
+                              <code>{selectedProject.codeSnippet}</code>
+                            </pre>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </>
+          )}
 
           {/* Team Card - Only for Lawnstack */}
           {project.title === 'Lawnstack' && (

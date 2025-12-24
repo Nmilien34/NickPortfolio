@@ -96,6 +96,11 @@
     "lyra": {
       "category": "Pwodui IA",
       "description": "Yon konpayon IA pou granmoun ki gen pwoblèm kognitif. Reimajine yon entèfas jis pou yo"
+    },
+    "embeddedSystems": {
+      "category": "Materyèl ak Sistèm Entegre",
+      "description": "Yon vwayaj atravè pwojè sistèm entegre ke m te fè pandan ane yo",
+      "summary": "Mwen te fè anpil pwojè sistèm entegre nan 3 dènye ane yo. Pou evite w klike anpil, mwen mete yo tout sou yon sèl paj—santi w lib pou w gade epi wè sa ki enterese w."
     }
   }
 }

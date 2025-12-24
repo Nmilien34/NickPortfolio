@@ -96,6 +96,11 @@
     "lyra": {
       "category": "AI Product",
       "description": "An AI companion for seniors with cognitive impairemet. Reimagining an interface just for them"
+    },
+    "embeddedSystems": {
+      "category": "Hardware & Embedded Systems",
+      "description": "A journey through embedded systems projects that I've done over the years",
+      "summary": "I've built a ton of embedded projects over the last 3 years. To save you some clicks, I kept them all on one page—feel free to scroll through and see what catches your eye."
     }
   }
 }
