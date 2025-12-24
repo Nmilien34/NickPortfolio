@@ -42,6 +42,19 @@ const fileSystem: { [key: string]: FileSystemNode } = {
 Cedrick is Nick's personal AI assistant and digital alter-ego.
 He guides users, hypes up Nick's achievements, and helps connect visitors with Nick.
 Look for the voice assistant button on the homepage to interact with Cedrick!`
+  },
+  'settings': {
+    type: 'directory',
+    children: {
+      'theme': {
+        type: 'file',
+        content: 'Theme Settings - Choose from: default, white, black, or dim'
+      },
+      'font': {
+        type: 'file',
+        content: 'Font Settings - Customize your terminal font'
+      }
+    }
   }
 };
 
@@ -49,6 +62,24 @@ interface ChatMessage {
   role: 'user' | 'assistant';
   content: string;
 }
+
+type ThemeType = 'default' | 'white' | 'black' | 'dim';
+type FontType = 'mono' | 'sans' | 'serif' | 'code' | 'system';
+
+const THEMES = {
+  default: { bg: '#131313', text: '#b3b3b3', textWhite: '#ededed' },
+  white: { bg: '#ffffff', text: '#333333', textWhite: '#000000' },
+  black: { bg: '#000000', text: '#a0a0a0', textWhite: '#ffffff' },
+  dim: { bg: '#1a1a1a', text: '#999999', textWhite: '#cccccc' }
+};
+
+const FONTS = {
+  mono: "'Courier New', Courier, monospace",
+  sans: "'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif",
+  serif: "'IBM Plex Serif', Georgia, serif",
+  code: "'Fira Code', 'Cascadia Code', monospace",
+  system: "ui-monospace, 'SF Mono', Monaco, 'Cascadia Mono', monospace"
+};
 
 export function Terminal() {
   const [command, setCommand] = useState('');
@@ -58,17 +89,47 @@ export function Terminal() {
   const [currentPath, setCurrentPath] = useState<string[]>(['~', 'nick-portfolio']);
   const [isChatMode, setIsChatMode] = useState(false);
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
+  const [isSettingsMode, setIsSettingsMode] = useState(false);
+  const [settingsType, setSettingsType] = useState<'theme' | 'font' | null>(null);
+  const [currentTheme, setCurrentTheme] = useState<ThemeType>('default');
+  const [currentFont, setCurrentFont] = useState<FontType>('mono');
   const inputRef = useRef<HTMLInputElement>(null);
   const terminalBodyRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Load settings from localStorage
+    const savedTheme = localStorage.getItem('terminal-theme') as ThemeType;
+    const savedFont = localStorage.getItem('terminal-font') as FontType;
+    if (savedTheme && THEMES[savedTheme]) setCurrentTheme(savedTheme);
+    if (savedFont && FONTS[savedFont]) setCurrentFont(savedFont);
+
     setHistory([{
       command: '',
       output: `Welcome to my portfolio, if you didn't like Ced, you might find the terminal more useful.
 Type "help" to see available commands`
     }]);
   }, []);
+
+  // Apply theme changes to the page
+  useEffect(() => {
+    const theme = THEMES[currentTheme];
+    document.body.style.backgroundColor = theme.bg;
+    document.body.style.color = theme.text;
+
+    // Update CSS variables
+    document.documentElement.style.setProperty('--background-color', theme.bg);
+    document.documentElement.style.setProperty('--text-white', theme.textWhite);
+    document.documentElement.style.setProperty('--normal-text', theme.text);
+
+    localStorage.setItem('terminal-theme', currentTheme);
+  }, [currentTheme]);
+
+  // Apply font changes to the page
+  useEffect(() => {
+    document.body.style.fontFamily = FONTS[currentFont];
+    localStorage.setItem('terminal-font', currentFont);
+  }, [currentFont]);
 
   // Auto-scroll to bottom when chat messages update
   useEffect(() => {
@@ -143,6 +204,108 @@ Type "help" to see available commands`
     setTimeout(() => {
       setChatMessages(prev => [...prev, assistantMessage]);
     }, 500);
+  };
+
+  const handleSettingsChange = (input: string) => {
+    const normalized = input.toLowerCase().trim();
+
+    if (normalized === 'exit') {
+      setIsSettingsMode(false);
+      setSettingsType(null);
+      setHistory(prev => [...prev, {
+        command: '',
+        output: 'Exited settings. Type "help" to see available commands.'
+      }]);
+      return;
+    }
+
+    if (settingsType === 'theme') {
+      if (normalized === '1' || normalized === 'default') {
+        setCurrentTheme('default');
+        setIsSettingsMode(false);
+        setSettingsType(null);
+        setHistory(prev => [...prev, {
+          command: '',
+          output: '✓ Theme changed to: Default'
+        }]);
+      } else if (normalized === '2' || normalized === 'white') {
+        setCurrentTheme('white');
+        setIsSettingsMode(false);
+        setSettingsType(null);
+        setHistory(prev => [...prev, {
+          command: '',
+          output: '✓ Theme changed to: White'
+        }]);
+      } else if (normalized === '3' || normalized === 'black') {
+        setCurrentTheme('black');
+        setIsSettingsMode(false);
+        setSettingsType(null);
+        setHistory(prev => [...prev, {
+          command: '',
+          output: '✓ Theme changed to: Black'
+        }]);
+      } else if (normalized === '4' || normalized === 'dim') {
+        setCurrentTheme('dim');
+        setIsSettingsMode(false);
+        setSettingsType(null);
+        setHistory(prev => [...prev, {
+          command: '',
+          output: '✓ Theme changed to: Dim'
+        }]);
+      } else {
+        setHistory(prev => [...prev, {
+          command: input,
+          output: 'Invalid option. Please enter 1-4 or type "exit" to cancel.'
+        }]);
+      }
+    } else if (settingsType === 'font') {
+      if (normalized === '1' || normalized === 'mono') {
+        setCurrentFont('mono');
+        setIsSettingsMode(false);
+        setSettingsType(null);
+        setHistory(prev => [...prev, {
+          command: '',
+          output: '✓ Font changed to: Monospace'
+        }]);
+      } else if (normalized === '2' || normalized === 'sans') {
+        setCurrentFont('sans');
+        setIsSettingsMode(false);
+        setSettingsType(null);
+        setHistory(prev => [...prev, {
+          command: '',
+          output: '✓ Font changed to: Sans Serif'
+        }]);
+      } else if (normalized === '3' || normalized === 'serif') {
+        setCurrentFont('serif');
+        setIsSettingsMode(false);
+        setSettingsType(null);
+        setHistory(prev => [...prev, {
+          command: '',
+          output: '✓ Font changed to: Serif'
+        }]);
+      } else if (normalized === '4' || normalized === 'code') {
+        setCurrentFont('code');
+        setIsSettingsMode(false);
+        setSettingsType(null);
+        setHistory(prev => [...prev, {
+          command: '',
+          output: '✓ Font changed to: Code'
+        }]);
+      } else if (normalized === '5' || normalized === 'system') {
+        setCurrentFont('system');
+        setIsSettingsMode(false);
+        setSettingsType(null);
+        setHistory(prev => [...prev, {
+          command: '',
+          output: '✓ Font changed to: System'
+        }]);
+      } else {
+        setHistory(prev => [...prev, {
+          command: input,
+          output: 'Invalid option. Please enter 1-5 or type "exit" to cancel.'
+        }]);
+      }
+    }
   };
 
   const getCurrentDirectory = (): { [key: string]: FileSystemNode } => {
@@ -302,6 +465,31 @@ I identify the friction points that block great experiences.`;
               content: "Hey! I'm Cedrick, Nick's AI assistant. Ask me anything about his projects, experience, or skills. Type 'exit' to return to the terminal."
             }]);
             output = 'Starting Cedchat...';
+          } else if (fileName === 'theme') {
+            setIsSettingsMode(true);
+            setSettingsType('theme');
+            output = `Theme Settings
+─────────────────────────
+Choose a theme:
+  1. Default (current: ${currentTheme === 'default' ? '✓' : ' '})
+  2. White   (current: ${currentTheme === 'white' ? '✓' : ' '})
+  3. Black   (current: ${currentTheme === 'black' ? '✓' : ' '})
+  4. Dim     (current: ${currentTheme === 'dim' ? '✓' : ' '})
+
+Enter 1-4 to select or 'exit' to cancel`;
+          } else if (fileName === 'font') {
+            setIsSettingsMode(true);
+            setSettingsType('font');
+            output = `Font Settings
+─────────────────────────
+Choose a font:
+  1. Monospace   (current: ${currentFont === 'mono' ? '✓' : ' '})
+  2. Sans Serif  (current: ${currentFont === 'sans' ? '✓' : ' '})
+  3. Serif       (current: ${currentFont === 'serif' ? '✓' : ' '})
+  4. Code        (current: ${currentFont === 'code' ? '✓' : ' '})
+  5. System      (current: ${currentFont === 'system' ? '✓' : ' '})
+
+Enter 1-5 to select or 'exit' to cancel`;
           } else if (file && file.route) {
             output = `Opening ${fileName}...`;
             setTimeout(() => {
@@ -375,6 +563,8 @@ I identify the friction points that block great experiences.`;
     if (command.trim()) {
       if (isChatMode) {
         handleChatMessage(command);
+      } else if (isSettingsMode) {
+        handleSettingsChange(command);
       } else {
         executeCommand(command);
       }
@@ -478,15 +668,17 @@ I identify the friction points that block great experiences.`;
 
           {/* Input Line */}
           <form onSubmit={handleSubmit} className="flex items-center gap-2 mt-2">
-            {!isChatMode ? (
+            {isSettingsMode ? (
+              <span className="text-yellow-400">⚙️</span>
+            ) : isChatMode ? (
+              <span className="text-emerald-400">💬</span>
+            ) : (
               <>
                 <span className="text-normal-text">nick@portfolio</span>
                 <span className="text-[#808080]">:</span>
                 <span className="text-[#999999]">{pathString}</span>
                 <span className="text-[#808080]">$</span>
               </>
-            ) : (
-              <span className="text-emerald-400">💬</span>
             )}
             <input
               ref={inputRef}
@@ -497,7 +689,7 @@ I identify the friction points that block great experiences.`;
               className="flex-1 bg-transparent text-text-white outline-none border-none focus:outline-none"
               autoFocus
               autoComplete="off"
-              placeholder={isChatMode ? "Ask me anything..." : ""}
+              placeholder={isSettingsMode ? "Enter your choice..." : isChatMode ? "Ask me anything..." : ""}
             />
             <span className="text-[#808080] animate-pulse">▊</span>
           </form>
