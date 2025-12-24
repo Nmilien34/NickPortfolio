@@ -15,6 +15,7 @@ interface EmbeddedProject {
   title: string;
   image: string;
   images?: string[]; // Multiple images for gallery view
+  video?: string; // Video file path
   languages: string[];
   description: string;
   techStack: string[];
@@ -28,6 +29,7 @@ const embeddedProjects: EmbeddedProject[] = [
     id: '1',
     title: 'Digital Clock',
     image: '/Projects/Embeddedsystems/IMG_1698.jpg',
+    video: '/Projects/Embeddedsystems/digitalClock.mp4',
     languages: ['C'],
     description: 'A digital clock built using Arduino and a 5011AS 7-segment display. The clock displays time using multiple seven-segment displays controlled through resistors and Arduino digital pins.',
     techStack: ['Arduino', '5011AS 7-Segment Display', 'Resistors', 'Breadboard'],
@@ -389,6 +391,17 @@ export function ProjectDetail() {
                           src={embProject.image}
                           alt={embProject.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          style={{
+                            objectPosition: embProject.title === 'Digital Clock' 
+                              ? 'center 80%' 
+                              : embProject.title === 'Car Crash Detection Module'
+                              ? 'center 20%'
+                              : embProject.title === 'AI Companion for Seniors with Dementia'
+                              ? 'center 30%'
+                              : embProject.title === 'Mini Piano'
+                              ? 'center 40%'
+                              : 'center'
+                          }}
                         />
                       </div>
 
@@ -490,6 +503,20 @@ export function ProjectDetail() {
 
                     {/* Modal Content */}
                     <div className="p-6 space-y-6">
+                      {/* Project Video */}
+                      {selectedProject.video && (
+                        <div className="aspect-video bg-white/10 rounded-lg overflow-hidden">
+                          <video
+                            src={selectedProject.video}
+                            controls
+                            className="w-full h-full object-cover"
+                            playsInline
+                          >
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                      )}
+
                       {/* Project Images */}
                       {selectedProject.images && selectedProject.images.length > 1 ? (
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -499,16 +526,38 @@ export function ProjectDetail() {
                                 src={img}
                                 alt={`${selectedProject.title} - Image ${idx + 1}`}
                                 className="w-full h-full object-cover"
+                                style={{
+                                  objectPosition: selectedProject.title === 'Digital Clock' 
+                                    ? 'center 80%' 
+                                    : selectedProject.title === 'Car Crash Detection Module'
+                                    ? 'center 20%'
+                                    : selectedProject.title === 'AI Companion for Seniors with Dementia'
+                                    ? 'center 30%'
+                                    : selectedProject.title === 'Mini Piano'
+                                    ? 'center 40%'
+                                    : 'center'
+                                }}
                               />
                             </div>
                           ))}
                         </div>
-                      ) : (
+                      ) : !selectedProject.video && (
                         <div className="aspect-video bg-white/10 rounded-lg overflow-hidden">
                           <img
                             src={selectedProject.image}
                             alt={selectedProject.title}
                             className="w-full h-full object-cover"
+                            style={{
+                              objectPosition: selectedProject.title === 'Digital Clock' 
+                                ? 'center 80%' 
+                                : selectedProject.title === 'Car Crash Detection Module'
+                                ? 'center 20%'
+                                : selectedProject.title === 'AI Companion for Seniors with Dementia'
+                                ? 'center 30%'
+                                : selectedProject.title === 'Mini Piano'
+                                ? 'center 40%'
+                                : 'center'
+                            }}
                           />
                         </div>
                       )}
@@ -590,7 +639,7 @@ export function ProjectDetail() {
           )}
 
           {/* Visual Mockup Card */}
-          {(project.coverImage || project.mockup) && (
+          {(project.coverImage || project.mockup) && project.title !== 'Evolution of My Embedded Systems' && (
             <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 md:p-8 mb-8">
               <div className="relative">
                 {/* Desktop Mockup */}
