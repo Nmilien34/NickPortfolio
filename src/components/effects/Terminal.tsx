@@ -95,7 +95,6 @@ export function Terminal() {
   const [currentFont, setCurrentFont] = useState<FontType>('mono');
   const inputRef = useRef<HTMLInputElement>(null);
   const terminalBodyRef = useRef<HTMLDivElement>(null);
-  const hasAutoLoadedRef = useRef(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -105,33 +104,61 @@ export function Terminal() {
     if (savedTheme && THEMES[savedTheme]) setCurrentTheme(savedTheme);
     if (savedFont && FONTS[savedFont]) setCurrentFont(savedFont);
 
-    // Auto-load information sequence (only once)
-    if (hasAutoLoadedRef.current) return;
-    hasAutoLoadedRef.current = true;
-
-    const autoLoadInfo = [
-      'Description: Nick Milien - Technical Product Manager | Voice AI, Robotics & Entrepreneurship | ODF Fellow & Alchemist Backed Founder',
-      'Education: New Jersey Institute of Technology',
-      'Major: Electrical and Computer Engineering',
-      'Relevant Programming language: Matlab, C, C++, Python, Typescript/javascript, Linux',
-      'Product Strategy, Roadmap Planning, User Research, Data Processing & Analytics, Protection & Control, Interpersonal skills, P Voice AI, I2c, I2S, Computer vision'
-    ];
+    // Auto-load information sequence (runs on every page load/refresh)
 
     // Start with empty history
     setHistory([]);
 
     const timeoutIds: NodeJS.Timeout[] = [];
+    let currentDelay = 500; // Start after 500ms
+
+    // Initializing message
+    const initTimeoutId = setTimeout(() => {
+      setHistory(prev => [...prev, {
+        command: '',
+        output: 'Initializing profile...'
+      }]);
+    }, currentDelay);
+    timeoutIds.push(initTimeoutId);
+    currentDelay += 800;
+
+    // Profile information - each line loads separately
+    const profileLines = [
+      '',
+      '> Name: Nickson Milien',
+      '> Role: Technical Product Manager',
+      '> Focus: Voice AI • Robotics • Entrepreneurship',
+      '> Affiliations: ODF Fellow • Alchemist-backed Founder',
+      '',
+      '> Education: New Jersey Institute of Technology (NJIT)',
+      '> Major: Electrical & Computer Engineering',
+      '',
+      '> Languages: MATLAB, C, C++, Python, TypeScript/JavaScript, Linux',
+      '',
+      '> Core Skills:',
+      '  - Product Strategy & Roadmapping',
+      '  - User Research & Data Analytics',
+      '  - Voice AI Systems',
+      '  - Protection & Control Engineering',
+      '  - Embedded Systems (I2C, I2S)',
+      '  - Computer Vision',
+      '  - Cross-functional Leadership',
+      '',
+      '> Status: Online'
+    ];
 
     // Add each line with a delay
-    autoLoadInfo.forEach((info, index) => {
+    profileLines.forEach((line, index) => {
       const timeoutId = setTimeout(() => {
         setHistory(prev => [...prev, {
           command: '',
-          output: info
+          output: line
         }]);
-      }, (index + 1) * 600); // 600ms delay between each line
+      }, currentDelay + (index * 300)); // 300ms delay between each line
       timeoutIds.push(timeoutId);
     });
+
+    currentDelay += (profileLines.length * 300) + 500;
 
     // Add welcome message after all info is loaded
     const welcomeTimeoutId = setTimeout(() => {
@@ -140,7 +167,7 @@ export function Terminal() {
         output: `\nWelcome to my portfolio, if you didn't like Ced, you might find the terminal more useful.
 Type "help" to see available commands`
       }]);
-    }, (autoLoadInfo.length + 1) * 600);
+    }, currentDelay);
     timeoutIds.push(welcomeTimeoutId);
 
     // Cleanup function
@@ -675,7 +702,7 @@ Enter 1-5 to select or 'exit' to cancel`;
                     </div>
                   )}
                   {item.output && (
-                    <div className="text-normal-text text-xs sm:text-sm whitespace-pre-wrap ml-0">
+                    <div className="text-normal-text text-xs sm:text-sm whitespace-pre-wrap text-left">
                       {item.output}
                     </div>
                   )}
