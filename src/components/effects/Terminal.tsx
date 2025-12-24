@@ -45,13 +45,21 @@ Look for the voice assistant button on the homepage to interact with Cedrick!`
   }
 };
 
+interface ChatMessage {
+  role: 'user' | 'assistant';
+  content: string;
+}
+
 export function Terminal() {
   const [command, setCommand] = useState('');
   const [history, setHistory] = useState<Array<{ command: string; output: string }>>([]);
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
   const [currentPath, setCurrentPath] = useState<string[]>(['~', 'nick-portfolio']);
+  const [isChatMode, setIsChatMode] = useState(false);
+  const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
+  const terminalBodyRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -61,6 +69,81 @@ export function Terminal() {
 Type "help" to see available commands`
     }]);
   }, []);
+
+  // Auto-scroll to bottom when chat messages update
+  useEffect(() => {
+    if (terminalBodyRef.current && isChatMode) {
+      terminalBodyRef.current.scrollTop = terminalBodyRef.current.scrollHeight;
+    }
+  }, [chatMessages, isChatMode]);
+
+  // Simple AI response function (can be replaced with actual API call)
+  const getAIResponse = (userMessage: string): string => {
+    const lowerMsg = userMessage.toLowerCase();
+
+    // Greetings
+    if (lowerMsg.match(/^(hi|hello|hey|yo|sup|greetings)/)) {
+      return "Hey! I'm Cedrick, Nick's AI assistant. I can tell you about his projects, experience, or skills. What would you like to know?";
+    }
+
+    // Projects
+    if (lowerMsg.includes('project') || lowerMsg.includes('built') || lowerMsg.includes('work')) {
+      return "Nick has worked on some impressive projects! Check out Lawnstack (a lawn care marketplace), Boltzman AI (an AI orchestration platform), and Clearr (an emotional intelligence app). Type 'ls' after exiting to explore them in the terminal!";
+    }
+
+    // Experience
+    if (lowerMsg.includes('experience') || lowerMsg.includes('background')) {
+      return "Nick is a Technical Product Manager and Electronics Engineer who identifies friction points that block great experiences. He's built multiple AI products and has a strong background in full-stack development.";
+    }
+
+    // Skills
+    if (lowerMsg.includes('skill') || lowerMsg.includes('tech') || lowerMsg.includes('stack')) {
+      return "Nick's tech stack includes React, TypeScript, Python, AI/ML integration, product management, and electronics engineering. He specializes in building scalable products and AI-powered systems.";
+    }
+
+    // Contact
+    if (lowerMsg.includes('contact') || lowerMsg.includes('reach') || lowerMsg.includes('email')) {
+      return "You can reach Nick through the contact section of his portfolio. Check the navigation menu for contact options!";
+    }
+
+    // Help
+    if (lowerMsg.includes('help') || lowerMsg.includes('what can you')) {
+      return "I can help you learn about Nick's projects, experience, skills, and background. Ask me anything about his work or type 'exit' to return to the terminal!";
+    }
+
+    // Exit hints
+    if (lowerMsg.includes('exit') || lowerMsg.includes('quit') || lowerMsg.includes('leave')) {
+      return "To exit the chat, just type 'exit' and press Enter!";
+    }
+
+    // Default response
+    return "That's an interesting question! I'm Nick's AI assistant focused on his portfolio. Ask me about his projects, experience, or skills, or type 'exit' to return to the terminal.";
+  };
+
+  const handleChatMessage = (message: string) => {
+    if (message.toLowerCase() === 'exit') {
+      setIsChatMode(false);
+      setChatMessages([]);
+      setHistory(prev => [...prev, {
+        command: '',
+        output: 'Exited Cedchat. Type "help" to see available commands.'
+      }]);
+      return;
+    }
+
+    // Add user message
+    const userMessage: ChatMessage = { role: 'user', content: message };
+    setChatMessages(prev => [...prev, userMessage]);
+
+    // Get AI response
+    const aiResponse = getAIResponse(message);
+    const assistantMessage: ChatMessage = { role: 'assistant', content: aiResponse };
+
+    // Add AI response after a short delay for realism
+    setTimeout(() => {
+      setChatMessages(prev => [...prev, assistantMessage]);
+    }, 500);
+  };
 
   const getCurrentDirectory = (): { [key: string]: FileSystemNode } => {
     if (currentPath.length <= 2) return fileSystem;
@@ -109,6 +192,7 @@ Type "help" to see available commands`
   pwd           - Print working directory
   cat <file>    - Display file contents
   open <file>   - Open file/navigate to page
+  cedchat       - Start interactive chat with Cedrick (AI assistant)
   clear         - Clear terminal
   whoami        - Show information about Nick
   tree          - Show directory structure
@@ -193,6 +277,15 @@ I identify the friction points that block great experiences.`;
         }
         break;
 
+      case 'cedchat':
+        setIsChatMode(true);
+        setChatMessages([{
+          role: 'assistant',
+          content: "Hey! I'm Cedrick, Nick's AI assistant. Ask me anything about his projects, experience, or skills. Type 'exit' to return to the terminal."
+        }]);
+        output = 'Starting Cedchat...';
+        break;
+
       case 'open':
         if (args.length === 0) {
           output = 'open: missing file operand';
@@ -201,7 +294,15 @@ I identify the friction points that block great experiences.`;
           const fileName = args[0];
           const file = currentDir[fileName];
 
-          if (file && file.route) {
+          // Special handling for cedchat
+          if (fileName === 'cedchat') {
+            setIsChatMode(true);
+            setChatMessages([{
+              role: 'assistant',
+              content: "Hey! I'm Cedrick, Nick's AI assistant. Ask me anything about his projects, experience, or skills. Type 'exit' to return to the terminal."
+            }]);
+            output = 'Starting Cedchat...';
+          } else if (file && file.route) {
             output = `Opening ${fileName}...`;
             setTimeout(() => {
               if (file.route!.endsWith('.pdf')) {
@@ -272,7 +373,11 @@ I identify the friction points that block great experiences.`;
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (command.trim()) {
-      executeCommand(command);
+      if (isChatMode) {
+        handleChatMessage(command);
+      } else {
+        executeCommand(command);
+      }
       setCommand('');
     }
   };
@@ -323,32 +428,66 @@ I identify the friction points that block great experiences.`;
         </div>
 
         {/* Terminal Body */}
-        <div className="p-4 font-mono text-sm min-h-[350px] max-h-[450px] overflow-y-auto scrollbar-thin">
-          {history.map((item, index) => (
-            <div key={index} className="mb-2">
-              {item.command && (
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="text-normal-text">nick@portfolio</span>
-                  <span className="text-[#808080]">:</span>
-                  <span className="text-[#999999]">{pathString}</span>
-                  <span className="text-[#808080]">$</span>
-                  <span className="text-text-white">{item.command}</span>
+        <div ref={terminalBodyRef} className="p-4 font-mono text-sm min-h-[350px] max-h-[450px] overflow-y-auto scrollbar-thin">
+          {!isChatMode ? (
+            // Normal Terminal Mode
+            <>
+              {history.map((item, index) => (
+                <div key={index} className="mb-2">
+                  {item.command && (
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-normal-text">nick@portfolio</span>
+                      <span className="text-[#808080]">:</span>
+                      <span className="text-[#999999]">{pathString}</span>
+                      <span className="text-[#808080]">$</span>
+                      <span className="text-text-white">{item.command}</span>
+                    </div>
+                  )}
+                  {item.output && (
+                    <div className="text-normal-text whitespace-pre-wrap ml-0">
+                      {item.output}
+                    </div>
+                  )}
                 </div>
-              )}
-              {item.output && (
-                <div className="text-normal-text whitespace-pre-wrap ml-0">
-                  {item.output}
+              ))}
+            </>
+          ) : (
+            // Chat Mode
+            <>
+              <div className="mb-4 pb-2 border-b border-stroke-border">
+                <div className="text-emerald-400 font-bold mb-1">🤖 Cedchat Active</div>
+                <div className="text-normal-text text-xs">Type 'exit' to return to terminal</div>
+              </div>
+              {chatMessages.map((msg, index) => (
+                <div key={index} className="mb-3">
+                  {msg.role === 'user' ? (
+                    <div className="flex items-start gap-2">
+                      <span className="text-blue-400 font-semibold">You:</span>
+                      <span className="text-text-white">{msg.content}</span>
+                    </div>
+                  ) : (
+                    <div className="flex items-start gap-2">
+                      <span className="text-emerald-400 font-semibold">Cedrick:</span>
+                      <span className="text-normal-text">{msg.content}</span>
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-          ))}
+              ))}
+            </>
+          )}
 
           {/* Input Line */}
           <form onSubmit={handleSubmit} className="flex items-center gap-2 mt-2">
-            <span className="text-normal-text">nick@portfolio</span>
-            <span className="text-[#808080]">:</span>
-            <span className="text-[#999999]">{pathString}</span>
-            <span className="text-[#808080]">$</span>
+            {!isChatMode ? (
+              <>
+                <span className="text-normal-text">nick@portfolio</span>
+                <span className="text-[#808080]">:</span>
+                <span className="text-[#999999]">{pathString}</span>
+                <span className="text-[#808080]">$</span>
+              </>
+            ) : (
+              <span className="text-emerald-400">💬</span>
+            )}
             <input
               ref={inputRef}
               type="text"
@@ -358,6 +497,7 @@ I identify the friction points that block great experiences.`;
               className="flex-1 bg-transparent text-text-white outline-none border-none focus:outline-none"
               autoFocus
               autoComplete="off"
+              placeholder={isChatMode ? "Ask me anything..." : ""}
             />
             <span className="text-[#808080] animate-pulse">▊</span>
           </form>
