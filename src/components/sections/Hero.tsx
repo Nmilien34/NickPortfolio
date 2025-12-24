@@ -79,7 +79,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-start justify-center pt-48">
+    <section className="relative min-h-screen flex items-start justify-center pt-24 sm:pt-32 md:pt-40 lg:pt-48">
       {/* Sticky Navigation Container */}
       <div className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-300 ${
         isScrolled ? 'backdrop-blur-md bg-black/20' : 'bg-transparent'
@@ -88,10 +88,10 @@ export function Hero() {
           {/* Logo/Home Button */}
           <button
             onClick={scrollToTop}
-            className="absolute top-6 left-4 md:top-6 md:left-[120px] w-12 h-12 md:w-16 md:h-16 rounded-lg flex items-center justify-center border-2 border-white/30 bg-white/5 cursor-pointer hover:border-white/50 transition-all duration-300"
+            className="absolute top-4 left-4 sm:top-6 sm:left-6 md:left-[120px] w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-lg flex items-center justify-center border-2 border-white/30 bg-white/5 cursor-pointer hover:border-white/50 transition-all duration-300"
             aria-label="Home"
           >
-            <span className="text-white font-serif text-lg md:text-[22px]">
+            <span className="text-white font-serif text-base sm:text-lg md:text-[22px]">
               NCM
             </span>
           </button>
@@ -121,17 +121,17 @@ export function Hero() {
       </div>
 
       {/* Mobile Navigation - About button only */}
-      <div className="absolute top-6 left-[70px] md:hidden z-[60]">
+      <div className="absolute top-4 left-[56px] sm:top-6 sm:left-[70px] md:hidden z-[60]">
         <button
           onClick={() => navigate('/about')}
-          className="px-3 py-1.5 text-sm text-normal-text hover:text-text-white transition-colors"
+          className="px-2 py-1 sm:px-3 sm:py-1.5 text-xs sm:text-sm text-normal-text hover:text-text-white transition-colors"
         >
           About
           </button>
           </div>
 
           {/* Mobile Hamburger Menu - Only visible on mobile */}
-          <div className="absolute top-6 right-[70px] md:hidden">
+          <div className="absolute top-4 right-[56px] sm:top-6 sm:right-[70px] md:hidden">
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="px-3 py-1.5 text-white hover:text-[#EFBF04] transition-colors"
@@ -168,10 +168,10 @@ export function Hero() {
           </div>
 
           {/* Language Switcher */}
-          <div className="absolute top-6 right-4 md:top-6 md:right-[120px]">
+          <div className="absolute top-4 right-4 sm:top-6 sm:right-4 md:right-[120px]">
         <button
           onClick={() => setIsLangOpen(!isLangOpen)}
-          className="px-4 py-1.5 md:px-6 md:py-2 text-sm md:text-base rounded-full border-2 border-white/30 bg-white/5 text-white hover:border-white/50 transition-all duration-300"
+          className="px-3 py-1 sm:px-4 sm:py-1.5 md:px-6 md:py-2 text-xs sm:text-sm md:text-base rounded-full border-2 border-white/30 bg-white/5 text-white hover:border-white/50 transition-all duration-300"
         >
           {currentLang}
         </button>
@@ -210,7 +210,7 @@ export function Hero() {
           
           {/* Main Title */}
           <motion.h1
-            className="relative z-10 font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tighter mb-3 md:mb-4 text-white leading-tight"
+            className="relative z-10 font-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tighter mb-2 sm:mb-3 md:mb-4 text-white leading-tight"
             style={{
               mixBlendMode: 'overlay',
               opacity: 0.95,
@@ -224,8 +224,8 @@ export function Hero() {
           </motion.h1>
 
           {/* Subtitle */}
-          <motion.h2 
-            className="relative z-10 font-serif text-base sm:text-xl md:text-3xl lg:text-4xl font-light text-white-smoke mb-6 md:mb-12 px-2 leading-snug"
+          <motion.h2
+            className="relative z-10 font-serif text-sm sm:text-base md:text-2xl lg:text-3xl xl:text-4xl font-light text-white-smoke mb-4 sm:mb-6 md:mb-12 px-2 leading-snug"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
@@ -245,7 +245,7 @@ export function Hero() {
         </motion.div>
 
         {/* Voice Assistant */}
-        <div className="flex flex-col items-center justify-center gap-6 mt-12">
+        <div className="flex flex-col items-center justify-center gap-4 sm:gap-6 mt-8 sm:mt-12">
           {/* Visualizer (Only visible when active) */}
           <div className={`h-16 flex items-center justify-center gap-1 transition-all duration-500 ${isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-50 h-0 overflow-hidden'}`}>
             {[...Array(12)].map((_, i) => (
@@ -266,8 +266,8 @@ export function Hero() {
             onClick={toggleRecording}
             disabled={isConnecting}
             className={`
-              relative group px-8 py-3 rounded-full
-              flex items-center gap-3
+              relative group px-5 py-2 sm:px-8 sm:py-3 rounded-full
+              flex items-center gap-2 sm:gap-3
               transition-all duration-500 ease-out
               border border-white/10 bg-white/5 backdrop-blur-sm
               hover:bg-white/10 hover:border-white/20 hover:scale-105
@@ -285,7 +285,7 @@ export function Hero() {
             }`} />
 
             {/* Button Text */}
-            <span className="font-mono text-sm text-gray-300 tracking-wide uppercase">
+            <span className="font-mono text-xs sm:text-sm text-gray-300 tracking-wide uppercase">
               {isConnecting ? "Connecting..." : 
                isConnected ? "Listening..." : 
                isProcessing ? "Processing..." : 
@@ -305,7 +305,7 @@ export function Hero() {
           )}
 
           {/* Instruction Text */}
-          <p className={`text-xs text-gray-600 font-mono transition-opacity duration-500 ${isActive ? 'opacity-0' : 'opacity-100'}`}>
+          <p className={`text-[10px] sm:text-xs text-gray-600 font-mono transition-opacity duration-500 text-center px-4 ${isActive ? 'opacity-0' : 'opacity-100'}`}>
             Press to ask about my work, skills, or availability.
           </p>
         </div>
@@ -321,8 +321,8 @@ export function Hero() {
         </motion.div>
 
         {/* Personal Photos Section */}
-        <motion.div 
-          className="relative z-[5] flex flex-col md:flex-row justify-center items-center gap-4 md:gap-4 mt-16 md:mt-20 mb-12 md:mb-32 px-2 sm:px-4"
+        <motion.div
+          className="relative z-[5] flex flex-col md:flex-row justify-center items-center gap-3 sm:gap-4 md:gap-4 mt-12 sm:mt-16 md:mt-20 mb-8 sm:mb-12 md:mb-32 px-2 sm:px-4"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -335,16 +335,16 @@ export function Hero() {
                 src="/images/BecameEntrepreneur/carsSold/jewelsstore/IMG_1675.jpg"
                 alt="Entrepreneurial journey"
                 loading="lazy"
-                className="w-36 h-44 sm:w-48 sm:h-60 md:w-64 md:h-80 lg:w-72 lg:h-96 object-cover object-center rounded-lg sm:rounded-xl filter grayscale-[30%] group-hover:grayscale-0 transition-all duration-500"
+                className="w-40 h-48 sm:w-52 sm:h-64 md:w-64 md:h-80 lg:w-72 lg:h-96 object-cover object-center rounded-lg sm:rounded-xl filter grayscale-[30%] group-hover:grayscale-0 transition-all duration-500"
               />
             </div>
-            <figcaption className="text-center text-gray-400 mt-2 sm:mt-4 font-mono text-[10px] sm:text-xs opacity-80 group-hover:opacity-100 transition-opacity">
+            <figcaption className="text-center text-gray-400 mt-1.5 sm:mt-2 md:mt-4 font-mono text-[10px] sm:text-xs opacity-80 group-hover:opacity-100 transition-opacity">
               first week in the us
             </figcaption>
           </figure>
 
           {/* Timeline Indicator */}
-          <div className="flex flex-col md:flex-row items-center gap-1 sm:gap-2 text-gray-500 font-mono text-[10px] sm:text-xs order-last md:order-none">
+          <div className="flex flex-col md:flex-row items-center gap-0.5 sm:gap-1 md:gap-2 text-gray-500 font-mono text-[9px] sm:text-[10px] md:text-xs order-last md:order-none">
             <span className="hidden md:inline">←</span>
             <span className="text-center">~10 years<br className="md:hidden" /> in the us</span>
             <span className="hidden md:inline">→</span>
@@ -357,40 +357,40 @@ export function Hero() {
                 src="/images/1F97147A-5531-4D66-BA63-A9F5B0A77C19_1_105_c.jpeg"
                 alt="Visiting Cornell"
                 loading="lazy"
-                className="w-36 h-44 sm:w-48 sm:h-60 md:w-64 md:h-80 lg:w-72 lg:h-96 object-cover rounded-lg sm:rounded-xl filter grayscale-[30%] group-hover:grayscale-0 transition-all duration-500"
+                className="w-40 h-48 sm:w-52 sm:h-64 md:w-64 md:h-80 lg:w-72 lg:h-96 object-cover rounded-lg sm:rounded-xl filter grayscale-[30%] group-hover:grayscale-0 transition-all duration-500"
               />
             </div>
-            <figcaption className="text-center text-gray-400 mt-2 sm:mt-4 font-mono text-[10px] sm:text-xs opacity-80 group-hover:opacity-100 transition-opacity">
+            <figcaption className="text-center text-gray-400 mt-1.5 sm:mt-2 md:mt-4 font-mono text-[10px] sm:text-xs opacity-80 group-hover:opacity-100 transition-opacity">
               visiting friends at Cornell
             </figcaption>
           </figure>
         </motion.div>
 
         {/* Closing Statement */}
-        <motion.div 
-          className="max-w-3xl mx-auto mt-12 md:mt-32 mb-8 md:mb-20 px-4 md:px-6 text-center"
+        <motion.div
+          className="max-w-3xl mx-auto mt-8 sm:mt-12 md:mt-32 mb-6 sm:mb-8 md:mb-20 px-4 md:px-6 text-center"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <p className="font-mono text-xs md:text-sm text-normal-text leading-relaxed">
+          <p className="font-mono text-[11px] sm:text-xs md:text-sm text-normal-text leading-relaxed">
             Since leaving Haiti, I've been chasing a dream I've had since I was 10. The past decade has been filled with incredible people who shaped my journey. I'm grateful for their guidance and hope to pay it forward. Here's what I've been building.
           </p>
         </motion.div>
 
         {/* Timeline Start */}
-        <div className="relative flex flex-col items-center mt-12 md:mt-20 mb-0">
+        <div className="relative flex flex-col items-center mt-8 sm:mt-12 md:mt-20 mb-0">
           {/* Title */}
-          <h3 className="font-serif text-xl md:text-2xl text-white mb-6">the beginning</h3>
+          <h3 className="font-serif text-lg sm:text-xl md:text-2xl text-white mb-4 sm:mb-6">the beginning</h3>
 
           {/* Year Label in Bubble */}
-          <div className="px-6 md:px-8 py-2 rounded-full border-2 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)] bg-white/5 text-white font-mono text-sm mb-4">
+          <div className="px-5 sm:px-6 md:px-8 py-1.5 sm:py-2 rounded-full border-2 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)] bg-white/5 text-white font-mono text-xs sm:text-sm mb-3 sm:mb-4">
             2015
           </div>
 
           {/* Description */}
-          <p className="font-mono text-xs md:text-sm text-normal-text mb-8">Came to live in the US</p>
+          <p className="font-mono text-[11px] sm:text-xs md:text-sm text-normal-text mb-6 sm:mb-8">Came to live in the US</p>
 
           {/* Timeline Dot */}
           <div className="w-4 h-4 rounded-full bg-white shadow-[0_0_15px_rgba(255,255,255,0.5)] mb-0" />
@@ -410,23 +410,23 @@ export function Hero() {
               <div className="absolute bottom-0 left-0 w-full h-0.5 bg-white/30" />
             </div>
             {/* Arrow and Card */}
-            <div className="flex items-center gap-3 mt-20">
-              <span className="text-white/50">→</span>
-              <div className="w-80">
+            <div className="flex items-center gap-2 md:gap-3 mt-16 md:mt-20">
+              <span className="text-white/50 text-sm md:text-base">→</span>
+              <div className="w-72 md:w-80 lg:w-96">
                 <div
                   onClick={() => {
                     console.log('Early Years card clicked');
                     navigate('/early-years');
                   }}
-                  className="w-full p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-white/30 hover:scale-105 transition-all duration-300 text-left cursor-pointer"
+                  className="w-full p-4 md:p-5 lg:p-6 rounded-lg border border-white/20 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-white/30 hover:scale-105 transition-all duration-300 text-left cursor-pointer"
                 >
-                  <h3 className="font-serif text-xl text-white mb-3">
+                  <h3 className="font-serif text-lg md:text-xl lg:text-2xl text-white mb-2 md:mb-3">
                     Early Years in the US
                   </h3>
-                  <p className="text-sm font-mono text-normal-text leading-relaxed mb-4 line-clamp-3">
+                  <p className="text-xs md:text-sm font-mono text-normal-text leading-relaxed mb-3 md:mb-4 line-clamp-3">
                     I landed in the US from Haiti in 2015 and immediately realized one thing: nothing here is given, everything is earned. While I was navigating high school and learning English, I wasn't just trying to fit in—I was trying to catch up. Got my first job at 16 working at the mall which I then quit to go work at KFC, which paid a lot more. I built my first real community here, made friends who helped me navigate the culture, and set a baseline for the work ethic that would define the next decade of my life. Also played lots of soccer.
                   </p>
-                  <div className="flex items-center gap-2 text-xs font-mono text-white/70">
+                  <div className="flex items-center gap-2 text-[10px] md:text-xs font-mono text-white/70">
                     <span>Click to view details</span>
                     <span>→</span>
                   </div>

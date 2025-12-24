@@ -453,19 +453,10 @@ I identify the friction points that block great experiences.`;
         if (args.length === 0) {
           output = 'open: missing file operand';
         } else {
-          const currentDir = getCurrentDirectory();
           const fileName = args[0];
-          const file = currentDir[fileName];
 
-          // Special handling for cedchat
-          if (fileName === 'cedchat') {
-            setIsChatMode(true);
-            setChatMessages([{
-              role: 'assistant',
-              content: "Hey! I'm Cedrick, Nick's AI assistant. Ask me anything about his projects, experience, or skills. Type 'exit' to return to the terminal."
-            }]);
-            output = 'Starting Cedchat...';
-          } else if (fileName === 'theme') {
+          // Special handling for settings paths (from any directory)
+          if (fileName === 'theme' || fileName === 'settings/theme') {
             setIsSettingsMode(true);
             setSettingsType('theme');
             output = `Theme Settings
@@ -477,7 +468,7 @@ Choose a theme:
   4. Dim     (current: ${currentTheme === 'dim' ? '✓' : ' '})
 
 Enter 1-4 to select or 'exit' to cancel`;
-          } else if (fileName === 'font') {
+          } else if (fileName === 'font' || fileName === 'settings/font') {
             setIsSettingsMode(true);
             setSettingsType('font');
             output = `Font Settings
@@ -490,19 +481,31 @@ Choose a font:
   5. System      (current: ${currentFont === 'system' ? '✓' : ' '})
 
 Enter 1-5 to select or 'exit' to cancel`;
-          } else if (file && file.route) {
-            output = `Opening ${fileName}...`;
-            setTimeout(() => {
-              if (file.route!.endsWith('.pdf')) {
-                window.open(encodeURI(file.route!), '_blank');
-              } else {
-                navigate(file.route!);
-              }
-            }, 500);
-          } else if (file && file.type === 'directory') {
-            output = `open: ${fileName}: Is a directory (use 'cd ${fileName}' to enter)`;
+          } else if (fileName === 'cedchat') {
+            setIsChatMode(true);
+            setChatMessages([{
+              role: 'assistant',
+              content: "Hey! I'm Cedrick, Nick's AI assistant. Ask me anything about his projects, experience, or skills. Type 'exit' to return to the terminal."
+            }]);
+            output = 'Starting Cedchat...';
           } else {
-            output = `open: ${fileName}: No such file or directory`;
+            const currentDir = getCurrentDirectory();
+            const file = currentDir[fileName];
+
+            if (file && file.route) {
+              output = `Opening ${fileName}...`;
+              setTimeout(() => {
+                if (file.route!.endsWith('.pdf')) {
+                  window.open(encodeURI(file.route!), '_blank');
+                } else {
+                  navigate(file.route!);
+                }
+              }, 500);
+            } else if (file && file.type === 'directory') {
+              output = `open: ${fileName}: Is a directory (use 'cd ${fileName}' to enter)`;
+            } else {
+              output = `open: ${fileName}: No such file or directory`;
+            }
           }
         }
         break;
@@ -602,39 +605,39 @@ Enter 1-5 to select or 'exit' to cancel`;
   const pathString = currentPath.join('/');
 
   return (
-    <div className="w-full max-w-3xl mx-auto mt-12 md:mt-16 mb-4">
+    <div className="w-full max-w-3xl mx-auto mt-8 sm:mt-10 md:mt-12 mb-3 sm:mb-4 px-2 sm:px-0">
       <div
         className="bg-[#0a0a0a] border border-stroke-border rounded-lg overflow-hidden shadow-2xl cursor-text"
         onClick={handleTerminalClick}
       >
         {/* Terminal Header */}
-        <div className="bg-[#1a1a1a] px-4 py-2 flex items-center gap-2 border-b border-stroke-border">
-          <div className="flex gap-1.5">
-            <div className="w-3 h-3 rounded-full bg-[#666666]"></div>
-            <div className="w-3 h-3 rounded-full bg-[#888888]"></div>
-            <div className="w-3 h-3 rounded-full bg-[#aaaaaa]"></div>
+        <div className="bg-[#1a1a1a] px-3 sm:px-4 py-1.5 sm:py-2 flex items-center gap-1.5 sm:gap-2 border-b border-stroke-border">
+          <div className="flex gap-1 sm:gap-1.5">
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#666666]"></div>
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#888888]"></div>
+            <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#aaaaaa]"></div>
           </div>
-          <span className="text-xs text-normal-text ml-2 font-mono">bash — 80×24</span>
+          <span className="text-[10px] sm:text-xs text-normal-text ml-1 sm:ml-2 font-mono">bash — 80×24</span>
         </div>
 
         {/* Terminal Body */}
-        <div ref={terminalBodyRef} className="p-4 font-mono text-sm min-h-[350px] max-h-[450px] overflow-y-auto scrollbar-thin">
+        <div ref={terminalBodyRef} className="p-3 sm:p-4 font-mono text-xs sm:text-sm min-h-[280px] sm:min-h-[320px] md:min-h-[350px] max-h-[380px] sm:max-h-[420px] md:max-h-[450px] overflow-y-auto scrollbar-thin">
           {!isChatMode ? (
             // Normal Terminal Mode
             <>
               {history.map((item, index) => (
-                <div key={index} className="mb-2">
+                <div key={index} className="mb-1.5 sm:mb-2">
                   {item.command && (
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-normal-text">nick@portfolio</span>
-                      <span className="text-[#808080]">:</span>
-                      <span className="text-[#999999]">{pathString}</span>
-                      <span className="text-[#808080]">$</span>
-                      <span className="text-text-white">{item.command}</span>
+                    <div className="flex items-center gap-1 sm:gap-2 mb-0.5 sm:mb-1 flex-wrap">
+                      <span className="text-normal-text text-xs sm:text-sm">nick@portfolio</span>
+                      <span className="text-[#808080] text-xs sm:text-sm">:</span>
+                      <span className="text-[#999999] text-xs sm:text-sm truncate max-w-[120px] sm:max-w-none">{pathString}</span>
+                      <span className="text-[#808080] text-xs sm:text-sm">$</span>
+                      <span className="text-text-white text-xs sm:text-sm">{item.command}</span>
                     </div>
                   )}
                   {item.output && (
-                    <div className="text-normal-text whitespace-pre-wrap ml-0">
+                    <div className="text-normal-text text-xs sm:text-sm whitespace-pre-wrap ml-0">
                       {item.output}
                     </div>
                   )}
@@ -644,21 +647,21 @@ Enter 1-5 to select or 'exit' to cancel`;
           ) : (
             // Chat Mode
             <>
-              <div className="mb-4 pb-2 border-b border-stroke-border">
-                <div className="text-emerald-400 font-bold mb-1">🤖 Cedchat Active</div>
-                <div className="text-normal-text text-xs">Type 'exit' to return to terminal</div>
+              <div className="mb-3 sm:mb-4 pb-1.5 sm:pb-2 border-b border-stroke-border">
+                <div className="text-emerald-400 font-bold mb-0.5 sm:mb-1 text-xs sm:text-sm">🤖 Cedchat Active</div>
+                <div className="text-normal-text text-[10px] sm:text-xs">Type 'exit' to return to terminal</div>
               </div>
               {chatMessages.map((msg, index) => (
-                <div key={index} className="mb-3">
+                <div key={index} className="mb-2 sm:mb-3">
                   {msg.role === 'user' ? (
-                    <div className="flex items-start gap-2">
-                      <span className="text-blue-400 font-semibold">You:</span>
-                      <span className="text-text-white">{msg.content}</span>
+                    <div className="flex items-start gap-1.5 sm:gap-2">
+                      <span className="text-blue-400 font-semibold text-xs sm:text-sm">You:</span>
+                      <span className="text-text-white text-xs sm:text-sm">{msg.content}</span>
                     </div>
                   ) : (
-                    <div className="flex items-start gap-2">
-                      <span className="text-emerald-400 font-semibold">Cedrick:</span>
-                      <span className="text-normal-text">{msg.content}</span>
+                    <div className="flex items-start gap-1.5 sm:gap-2">
+                      <span className="text-emerald-400 font-semibold text-xs sm:text-sm">Cedrick:</span>
+                      <span className="text-normal-text text-xs sm:text-sm">{msg.content}</span>
                     </div>
                   )}
                 </div>
@@ -667,17 +670,17 @@ Enter 1-5 to select or 'exit' to cancel`;
           )}
 
           {/* Input Line */}
-          <form onSubmit={handleSubmit} className="flex items-center gap-2 mt-2">
+          <form onSubmit={handleSubmit} className="flex items-center gap-1 sm:gap-2 mt-1.5 sm:mt-2 flex-wrap">
             {isSettingsMode ? (
-              <span className="text-yellow-400">⚙️</span>
+              <span className="text-yellow-400 text-sm sm:text-base">⚙️</span>
             ) : isChatMode ? (
-              <span className="text-emerald-400">💬</span>
+              <span className="text-emerald-400 text-sm sm:text-base">💬</span>
             ) : (
               <>
-                <span className="text-normal-text">nick@portfolio</span>
-                <span className="text-[#808080]">:</span>
-                <span className="text-[#999999]">{pathString}</span>
-                <span className="text-[#808080]">$</span>
+                <span className="text-normal-text text-xs sm:text-sm">nick@portfolio</span>
+                <span className="text-[#808080] text-xs sm:text-sm">:</span>
+                <span className="text-[#999999] text-xs sm:text-sm truncate max-w-[120px] sm:max-w-none">{pathString}</span>
+                <span className="text-[#808080] text-xs sm:text-sm">$</span>
               </>
             )}
             <input
@@ -686,12 +689,12 @@ Enter 1-5 to select or 'exit' to cancel`;
               value={command}
               onChange={(e) => setCommand(e.target.value)}
               onKeyDown={handleKeyDown}
-              className="flex-1 bg-transparent text-text-white outline-none border-none focus:outline-none"
+              className="flex-1 bg-transparent text-text-white text-xs sm:text-sm outline-none border-none focus:outline-none min-w-0"
               autoFocus
               autoComplete="off"
               placeholder={isSettingsMode ? "Enter your choice..." : isChatMode ? "Ask me anything..." : ""}
             />
-            <span className="text-[#808080] animate-pulse">▊</span>
+            <span className="text-[#808080] text-xs sm:text-sm animate-pulse">▊</span>
           </form>
         </div>
       </div>
