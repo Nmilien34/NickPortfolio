@@ -49,7 +49,9 @@ export function Hero() {
   const translations = {
     EN: {
       subtitle: 'Technical Product Manager & Electronics Engineer',
-      description: 'I\'m Nick, a technical product manager with a hardware and software engineering background. I\'m passionate about crafting memorable experiences through data-driven design and reliable technology. I build products users love and recommend. Previously built a venture-backed startup. Click here to learn more',
+      description: 'I\'m Nick, a technical product manager with a hardware and software engineering background. I\'m passionate about crafting memorable experiences through data-driven design and reliable technology. I build products users love and recommend. Previously built a venture-backed startup. Click ',
+      descriptionLink: 'here',
+      descriptionSuffix: ' to learn more',
     },
     FR: {
       subtitle: 'Chef de Produit Technique & Ingénieur en Électronique',
@@ -240,7 +242,22 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
           >
-            {translations[currentLang as keyof typeof translations].description}
+            {currentLang === 'EN' ? (
+              <>
+                {translations.EN.description}
+                <a 
+                  href="https://www.nickmilien.com/about" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white underline hover:text-gray-300 transition-colors"
+                >
+                  {translations.EN.descriptionLink}
+                </a>
+                {translations.EN.descriptionSuffix}
+              </>
+            ) : (
+              translations[currentLang as keyof typeof translations].description
+            )}
           </motion.p>
         </motion.div>
 
