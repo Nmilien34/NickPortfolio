@@ -51,7 +51,7 @@ export function Hero() {
       subtitle: 'Technical Product Manager & Electronics Engineer',
       description: 'I\'m Nick, a technical product manager with a hardware and software engineering background. I\'m passionate about crafting memorable experiences through data-driven design and reliable technology. I build products users love and recommend. Previously built a venture-backed startup. Click ',
       descriptionLink: 'here',
-      descriptionSuffix: ' to learn more',
+      descriptionSuffix: ' to learn more about me',
     },
     FR: {
       subtitle: 'Chef de Produit Technique & Ingénieur en Électronique',
