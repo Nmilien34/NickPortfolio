@@ -141,8 +141,6 @@ export function Terminal() {
       '  - Voice AI Systems',
       '  - Protection & Control Engineering',
       '  - Embedded Systems (I2C, I2S)',
-      '  - Computer Vision',
-      '  - Cross-functional Leadership',
       '',
       '> Status: Online'
     ];
