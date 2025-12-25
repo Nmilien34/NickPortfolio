@@ -49,7 +49,7 @@ export function Hero() {
   const translations = {
     EN: {
       subtitle: 'Technical Product Manager & Electronics Engineer',
-      description: 'I identify the friction points that block great experiences',
+      description: 'I\'m Nick, a technical product manager with a hardware and software engineering background. I\'m passionate about crafting memorable experiences through data-driven design and reliable technology. I build products users love and recommend. Previously built a venture-backed startup. Click here to learn more',
     },
     FR: {
       subtitle: 'Chef de Produit Technique & Ingénieur en Électronique',
