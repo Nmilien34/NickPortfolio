@@ -160,7 +160,7 @@ export function About() {
                       <p className="text-white/60 text-xs">Electrical and Computer Engineering(Electronics)</p>
                     </div>
                     <div className="border-b border-white/10 pb-2">
-                      <p className="text-white font-semibold mb-2">Accelerator</p>
+                      <p className="text-white font-semibold mb-2">Accelerators & Fellowships</p>
                       <div className="flex flex-col gap-3">
                         <div className="flex items-start justify-between">
                           <a 
@@ -261,7 +261,7 @@ export function About() {
                         </a>
                       </div>
                     </div>
-                    <div className="pb-2">
+                    <div className="border-b border-white/10 pb-2">
                       <p className="text-white font-semibold mb-2">LinkedIn</p>
                       <a 
                         href="https://www.linkedin.com/in/nmilien/" 
@@ -278,6 +278,37 @@ export function About() {
                           Connect on LinkedIn
                         </span>
                       </a>
+                    </div>
+                    <div className="pb-2">
+                      <p className="text-white font-semibold mb-3">Experience</p>
+                      <div className="space-y-4">
+                        {/* First Experience Entry */}
+                        <div>
+                          <div className="flex justify-between items-start mb-1">
+                            <div>
+                              <p className="text-white font-semibold text-xs">Boltzman Lab</p>
+                              <p className="text-white/80 text-xs">Co-Founder & Engineer</p>
+                            </div>
+                            <p className="text-white/60 text-xs whitespace-nowrap ml-4">Dec 2024 - Dec 2025</p>
+                          </div>
+                          <p className="text-white/60 text-xs mt-2 leading-relaxed">
+                            Co-built and scaled Boltzman Enterprise to 30 restaurants, processing $50k in monthly orders ($60k ARR) using voice AI. Developed Boltzman Engine, a chatbot with 3k users.
+                          </p>
+                        </div>
+                        {/* Second Experience Entry */}
+                        <div>
+                          <div className="flex justify-between items-start mb-1">
+                            <div>
+                              <p className="text-white font-semibold text-xs">Lawnstack</p>
+                              <p className="text-white/80 text-xs">Founder & CEO</p>
+                            </div>
+                            <p className="text-white/60 text-xs whitespace-nowrap ml-4">Dec 2023 - Dec 2024</p>
+                          </div>
+                          <p className="text-white/60 text-xs mt-2 leading-relaxed">
+                            Built a venture-backed home-service platform connecting homeowners with dedicated service teams. Led product development and scaled operations.
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
