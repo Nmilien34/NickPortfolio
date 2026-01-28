@@ -101,6 +101,11 @@
       "category": "Hardware & Embedded Systems",
       "description": "A journey through embedded systems projects that I've done over the years",
       "summary": "I've built a ton of embedded projects over the last 3 years. To save you some clicks, I kept them all on one page—feel free to scroll through and see what catches your eye."
+    },
+    "vibes": {
+      "category": "IOS Mobile App",
+      "description": "A mini-social network that lives in your keyboard",
+      "summary": "Why I Built Vibe: A Case Study in Rethinking Social Connection\n\nThe Problem I Noticed\n\nI deactivated Instagram for over a year. When I came back, I kept asking myself why it felt so draining. After talking to friends and seeing similar reflections on TikTok, a pattern emerged: Instagram makes everyone feel like they're competing. You're chasing likes, comparing yourself to people you grew up with, feeling like you're not measuring up. Comparison is the thief of joy, and the constant expectation from people who knew you before makes posting feel high-stakes.\n\nTikTok feels different. It's mostly strangers on your FYP, so there's no baggage—no one knows you anyway, so why not just post? The algorithm figured out how to remove the pressure while keeping the dopamine hit.\n\nThe Core Question\n\nHow do you keep the good parts of social media (connection, seeing what friends are up to) while removing the toxic parts (comparison, performative posting, chasing metrics)?\n\nI broke it down into three questions:\n\n1. What did Instagram and TikTok get right?\n2. How do I build this without creating \"another social media app\"?\n3. What's the right medium?"
     }
   }
 }

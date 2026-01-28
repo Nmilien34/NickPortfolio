@@ -709,7 +709,7 @@ export function ProjectDetail() {
             <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 md:p-8 mb-8">
               <div className="relative">
                 {/* Desktop Mockup */}
-                <div className="relative mx-auto max-w-4xl">
+                <div className="relative mx-auto w-full">
                   <div className={project.title === 'Boltzman Enterprise' || project.title === 'Boltzman Voice' ? 'bg-white rounded-t-lg p-2 flex items-center gap-2' : project.title === 'Boltzman AI' ? 'bg-[#2a2a2a] rounded-t-lg p-2 flex items-center gap-2 border-b border-gray-700' : 'bg-gray-800 rounded-t-lg p-2 flex items-center gap-2'}>
                     <div className="flex gap-1.5 md:gap-2">
                       <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-red-500"></div>
@@ -731,6 +731,164 @@ export function ProjectDetail() {
               </div>
             </div>
           )}
+
+        {/* Vibes-specific content */}
+        {project.title === 'Vibes' && (
+          <React.Fragment>
+          {/* Row 1: Left column (Summary + Question 1) and Right column (Profile + Image) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            {/* Left Column */}
+            <div className="flex flex-col gap-6">
+              {/* Summary Card */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 md:p-6">
+                <h2 className="font-serif text-lg md:text-xl text-white mb-4">Summary</h2>
+                <p className="text-normal-text font-mono text-xs md:text-sm leading-relaxed whitespace-pre-line">
+                  {project.summary || project.description}
+                </p>
+              </div>
+
+              {/* Question 1 Card */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 md:p-6">
+                <h2 className="font-serif text-lg md:text-xl text-white mb-4">Question 1: What Did They Get Right?</h2>
+                <p className="text-normal-text font-mono text-xs md:text-sm leading-relaxed whitespace-pre-line">
+                  Instagram nailed Stories. People have a deep desire to see what their close friends are doing—not 5th-degree connections, but the people they actually care about: family, childhood friends, coworkers. Stories solved this. Ephemeral, low-pressure, high-frequency updates.
+
+TikTok and Instagram nailed the Feed (Reels/FYP). Short-form video is neurologically addictive—cognitive load decreases as you scroll, and the dopamine hits keep coming. But here's the thing: creating a competing feed is really hard. You need massive content volume, a unique algorithm culture, and enough scale that people aren't seeing recycled content. YouTube Shorts and Twitter's video feeds are struggling for exactly this reason. Instagram only succeeded with Reels because they already had distribution and a distinct content culture.
+
+Conclusion: I can't out-compete TikTok or Instagram on the feed. But I can focus on the part that matters more to my hypothesis: Stories for close connections.
+                </p>
+              </div>
+            </div>
+
+            {/* Right Column */}
+            <div className="flex flex-col gap-6">
+              {/* Profile Card */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-3 md:p-4">
+                <h2 className="font-serif text-base md:text-lg text-white mb-2">Profile</h2>
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Role</p>
+                    <p className="text-white font-mono text-xs">Technical Product Manager</p>
+                  </div>
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Team</p>
+                    <p className="text-white font-mono text-xs">Solo</p>
+                  </div>
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Platform</p>
+                    <p className="text-white font-mono text-xs">IOS</p>
+                  </div>
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Timeline</p>
+                    <p className="text-white font-mono text-xs">In Development</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Keyboard Integration Image */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 flex items-center justify-center flex-1">
+                <img
+                  src="/Projects/Vibes/7EF6ABF1-6924-4AF3-9BCD-561412A5D1B1.png"
+                  alt="Vibes keyboard integration"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Row 2: Question 2 and Question 3 - Parallel */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            {/* Question 2 Card */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 md:p-6">
+              <h2 className="font-serif text-lg md:text-xl text-white mb-4">Question 2: How Do I Avoid the "New Social Media" Problem?</h2>
+              <p className="text-normal-text font-mono text-xs md:text-sm leading-relaxed whitespace-pre-line">
+                People don't want another social app. The space is crowded. Truth Social, Sora, BeReal—they all failed at convincing people to switch platforms.
+
+The solution: Don't build a platform. Build a feature that lives inside something people already use daily.
+
+I looked at my Screen Time: TikTok, Instagram, Messages, Notes, Phone, Browser. Out of all of those, Messages stood out. People already live in group chats. Their friends are already there. If I could build something that lives inside Messages—where you never have to leave the app—maybe it could work.
+              </p>
+            </div>
+
+            {/* Question 3 Card */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 md:p-6">
+              <h2 className="font-serif text-lg md:text-xl text-white mb-4">Question 3: What's the Medium?</h2>
+              <p className="text-normal-text font-mono text-xs md:text-sm leading-relaxed whitespace-pre-line">
+                I decided to build for iOS first. iPhones hold 58% of the US smartphone market (2025 data), and most of my target users are on iMessage. Plus, if it didn't work, I could pivot to Android later.
+
+But building in Apple's ecosystem is notoriously hard. After a lot of research (shoutout to Claude and Perplexity), I discovered: iMessage Extensions.
+
+An iMessage extension lets you build an app that lives in the keyboard drawer. You never leave Messages. It's a mini social network embedded in your most-used app.
+              </p>
+            </div>
+          </div>
+
+          {/* Row 3: The Solution - Full Width */}
+          <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 md:p-6 mb-8">
+            <h2 className="font-serif text-lg md:text-xl text-white mb-4">The Solution: Vibe</h2>
+            <p className="text-normal-text font-mono text-xs md:text-sm leading-relaxed mb-4">
+              The concept: A unified feed of "Vibes" (ephemeral stories) from friends per group chat. You only see Vibes from people in the same chat as you. Stories are grouped by chat, not by platform-wide algorithm.
+            </p>
+            <p className="text-white font-mono text-xs md:text-sm font-semibold mb-2">Key features:</p>
+            <ul className="text-normal-text font-mono text-xs md:text-sm leading-relaxed list-disc list-inside mb-4 space-y-1">
+              <li>Record and share 15-second videos</li>
+              <li>Low-effort alternatives: share your current song, battery %, mood, ETA</li>
+              <li>Lock-to-unlock mechanic: blur your Vibe until friends post theirs (forces participation)</li>
+              <li>Everything expires in 24 hours</li>
+              <li>Group streaks to keep chats active</li>
+            </ul>
+            <p className="text-white font-mono text-xs md:text-sm font-semibold mb-2">Why it might work:</p>
+            <ul className="text-normal-text font-mono text-xs md:text-sm leading-relaxed list-disc list-inside space-y-1">
+              <li>Lives in Messages (no app-switching friction)</li>
+              <li>Private by design (only your group chat sees it)</li>
+              <li>Low-pressure (ephemeral, no likes/comments)</li>
+              <li>Optimized for actual friends, not followers</li>
+            </ul>
+          </div>
+
+          {/* Row 4: Two Cards in Parallel */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            {/* Left Column */}
+            <div className="flex flex-col gap-4">
+              {/* Why This Matters Card */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4">
+                <h2 className="font-serif text-base md:text-lg text-white mb-3">Why This Matters (Even If It Doesn't Take Off)</h2>
+                <p className="text-normal-text font-mono text-xs leading-relaxed mb-3">
+                  This might not become the next big thing. But it's a real experiment in solving a real problem: How do you build connection without comparison?
+                </p>
+                <p className="text-normal-text font-mono text-xs leading-relaxed mb-2">
+                  Even if Vibe doesn't scale, I learned:
+                </p>
+                <ul className="text-normal-text font-mono text-xs leading-relaxed list-disc list-inside mb-3 space-y-0.5">
+                  <li>How to build for iOS from scratch</li>
+                  <li>How to design social mechanics that reduce pressure</li>
+                  <li>What it takes to distribute a product in a crowded space</li>
+                  <li>The first principles of what makes social networks stick</li>
+                </ul>
+                <p className="text-normal-text font-mono text-xs leading-relaxed">
+                  I'm treating this as a case study. Whether it takes off or not, I had fun building it, and I'm excited to see what I learn from the process.
+                </p>
+              </div>
+
+              {/* To Be Continued Card */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-3">
+                <p className="text-normal-text font-mono text-xs leading-relaxed italic">
+                  To be Continued for now, im still working on this, i will share more as I build
+                </p>
+              </div>
+            </div>
+
+            {/* Right Card - Vibe Interface Image */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 flex items-center justify-center">
+              <img
+                src="/Projects/Vibes/portfolioCompactedview.png"
+                alt="Vibe interface showing streak and new vibe button"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          </div>
+          </React.Fragment>
+        )}
 
         {/* Lawnstack-specific content */}
         {project.title === 'Lawnstack' && (

@@ -84,6 +84,16 @@ export function getProjectsData(t: (key: string) => string): Project[] {
     gradientColors: undefined,
     browserUrl: 'embedded.nickmilien.com',
   },
+  {
+    title: 'Vibes',
+    category: t('projects.vibes.category'),
+    description: t('projects.vibes.description'),
+    summary: t('projects.vibes.summary'),
+    mockup: '/Projects/Vibes/Vibes poster.png',
+    coverImage: '/Projects/Vibes/portfolio project picture.png',
+    gradientColors: undefined,
+    browserUrl: 'vibes.app',
+  },
   ];
 }
 
