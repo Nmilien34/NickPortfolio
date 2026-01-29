@@ -164,11 +164,11 @@ export function Projects() {
                           alt={`${project.title} mockup`}
                           style={{
                             objectFit: 'cover',
-                            objectPosition: project.title === 'Energy' ? 'top left' : 'top center',
+                            objectPosition: project.title === 'Energy' ? 'top left' : project.title === 'Vibes' ? 'center top' : 'top center',
                             imageRendering: '-webkit-optimize-contrast',
                             WebkitBackfaceVisibility: 'hidden',
                             backfaceVisibility: 'hidden',
-                            transform: 'translateZ(0) scale(0.95)',
+                            transform: project.title === 'Vibes' ? 'translateZ(0) scale(0.95) translateY(-10%)' : 'translateZ(0) scale(0.95)',
                             filter: 'contrast(1.05) brightness(1.02)',
                             width: '100%',
                             height: '100%',
