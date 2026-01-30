@@ -89,7 +89,7 @@ export function getProjectsData(t: (key: string) => string): Project[] {
     category: t('projects.vibes.category'),
     description: t('projects.vibes.description'),
     summary: t('projects.vibes.summary'),
-    mockup: '/Projects/Vibes/Vibes poster.png',
+    mockup: '/Projects/Vibes/newthumbnail.png',
     coverImage: '/Projects/Vibes/portfolio project picture.png',
     gradientColors: undefined,
     browserUrl: 'vibes.app',
@@ -164,11 +164,11 @@ export function Projects() {
                           alt={`${project.title} mockup`}
                           style={{
                             objectFit: 'cover',
-                            objectPosition: project.title === 'Energy' ? 'top left' : project.title === 'Vibes' ? 'center top' : 'top center',
+                            objectPosition: project.title === 'Energy' ? 'top left' : project.title === 'Vibes' ? 'center' : 'top center',
                             imageRendering: '-webkit-optimize-contrast',
                             WebkitBackfaceVisibility: 'hidden',
                             backfaceVisibility: 'hidden',
-                            transform: project.title === 'Vibes' ? 'translateZ(0) scale(0.95) translateY(-10%)' : 'translateZ(0) scale(0.95)',
+                            transform: project.title === 'Vibes' ? 'translateZ(0) scale(1.05)' : 'translateZ(0) scale(0.95)',
                             filter: 'contrast(1.05) brightness(1.02)',
                             width: '100%',
                             height: '100%',
