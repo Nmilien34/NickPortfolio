@@ -20,8 +20,8 @@ export function SlideNavigation({ currentSlideIndex = 0, totalSlides = 6 }: Slid
             w-2.5 h-2.5 md:w-3 md:h-3 rounded-full transition-all duration-500 ease-out
             touch-manipulation
             ${index === currentSlideIndex
-              ? 'bg-white scale-125 shadow-[0_0_10px_rgba(255,255,255,0.5)]' // Active Dot (Glowing)
-              : 'bg-white/20 hover:bg-white/40 hover:scale-110 active:bg-white/40 active:scale-110' // Inactive Dot (Dim)
+              ? 'bg-white/80 scale-125 shadow-[0_0_10px_rgba(255,255,255,0.25)]' // Active Dot (Glowing, dimmed)
+              : 'bg-white/15 hover:bg-white/30 hover:scale-110 active:bg-white/30 active:scale-110' // Inactive Dot (Dim)
             }
           `}
           aria-label={`Go to section ${index + 1}`}
