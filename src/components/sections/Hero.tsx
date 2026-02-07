@@ -273,9 +273,9 @@ export function Hero() {
 
           {/* Subtitle */}
           <motion.h2
-            className="relative z-10 font-serif text-sm sm:text-base md:text-2xl lg:text-3xl xl:text-4xl font-light text-white-smoke mb-4 sm:mb-6 md:mb-12 px-2 leading-snug"
+            className="relative z-10 font-serif text-sm sm:text-base md:text-2xl lg:text-3xl xl:text-4xl font-light text-white-smoke/80 mb-4 sm:mb-6 md:mb-12 px-2 leading-snug"
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 0.85, y: 0 }}
             transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
           >
             {translations[currentLang as keyof typeof translations].subtitle}
