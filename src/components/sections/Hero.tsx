@@ -107,7 +107,9 @@ export function Hero() {
           {/* Logo/Home Button */}
           <button
             onClick={scrollToTop}
-            className="absolute top-4 left-4 sm:top-6 sm:left-6 md:left-[120px] w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-lg flex items-center justify-center border-2 border-white/30 bg-white/5 cursor-pointer hover:border-white/50 transition-all duration-300"
+            className={`absolute top-4 left-4 sm:top-6 sm:left-6 md:left-[120px] w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-lg flex items-center justify-center border-2 cursor-pointer transition-all duration-300 ${
+              isScrolled ? 'border-white/20 bg-black hover:border-white/40' : 'border-white/30 bg-white/5 hover:border-white/50'
+            }`}
             aria-label="Home"
           >
             <span className="text-white font-serif text-base sm:text-lg md:text-[22px]">
@@ -142,7 +144,7 @@ export function Hero() {
               </svg>
             </button>
             {isProjectsOpen && (
-              <div className="absolute right-0 mt-2 w-56 max-h-[70vh] overflow-y-auto rounded-lg border border-[#EFBF04] bg-background-color shadow-[0_0_30px_rgba(239,191,4,0.4)] overflow-hidden z-[70]">
+              <div className="absolute right-0 mt-2 w-56 max-h-[70vh] overflow-y-auto rounded-lg border border-white/20 bg-background-color overflow-hidden z-[70]">
                 {PROJECT_TITLES.map((title) => (
                   <button
                     key={title}
@@ -184,7 +186,7 @@ export function Hero() {
         </button>
 
         {isMenuOpen && (
-          <div className="absolute right-0 mt-2 w-56 max-h-[70vh] overflow-y-auto rounded-lg border border-[#EFBF04] bg-background-color shadow-[0_0_30px_rgba(239,191,4,0.4)] overflow-hidden z-[70]">
+          <div className="absolute right-0 mt-2 w-56 max-h-[70vh] overflow-y-auto rounded-lg border border-white/20 bg-background-color overflow-hidden z-[70]">
             <a
               href={encodeURI("/_PM concised V7.7.1.pdf")}
               target="_blank"
@@ -215,7 +217,9 @@ export function Hero() {
           <div className="absolute top-4 right-4 sm:top-6 sm:right-4 md:right-[120px]" data-lang-dropdown>
         <button
           onClick={() => setIsLangOpen(!isLangOpen)}
-          className="px-3 py-1 sm:px-4 sm:py-1.5 md:px-6 md:py-2 text-xs sm:text-sm md:text-base rounded-full border-2 border-white/30 bg-white/5 text-white hover:border-white/50 transition-all duration-300"
+          className={`px-3 py-1 sm:px-4 sm:py-1.5 md:px-6 md:py-2 text-xs sm:text-sm md:text-base rounded-full border-2 text-white transition-all duration-300 ${
+            isScrolled ? 'border-white/20 bg-black hover:border-white/40' : 'border-white/30 bg-white/5 hover:border-white/50'
+          }`}
         >
           {currentLang}
         </button>
