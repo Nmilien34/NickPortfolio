@@ -4,9 +4,13 @@ import { motion } from 'framer-motion';
 import { StreetAnimation } from '../effects/StreetAnimation';
 import { Terminal } from '../effects/Terminal';
 import { useElevenLabs } from '../../hooks/useElevenLabs';
+import { titleToSlug } from '../../lib/utils';
+
+const PROJECT_TITLES = ['Lawnstack', 'Boltzman Enterprise', 'Boltzman AI', 'Boltzman Voice', 'Clearr', 'Energy', 'Lyra', 'Evolution of My Embedded Systems', 'Vibes'];
 
 export function Hero() {
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const [isProjectsOpen, setIsProjectsOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState('EN');
   const [isScrolled, setIsScrolled] = useState(false);
@@ -80,11 +84,24 @@ export function Hero() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.closest('[data-projects-dropdown]') || target.closest('[data-lang-dropdown]')) return;
+      setIsProjectsOpen(false);
+      setIsLangOpen(false);
+    };
+    if (isProjectsOpen || isLangOpen) {
+      document.addEventListener('click', handleClickOutside);
+      return () => document.removeEventListener('click', handleClickOutside);
+    }
+  }, [isProjectsOpen, isLangOpen]);
+
   return (
     <section className="relative min-h-screen flex items-start justify-center pt-24 sm:pt-32 md:pt-40 lg:pt-48">
       {/* Sticky Navigation Container */}
       <div className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-300 ${
-        isScrolled ? 'backdrop-blur-md bg-black/20' : 'bg-transparent'
+        isScrolled ? 'bg-black' : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-4 md:py-6">
           {/* Logo/Home Button */}
@@ -114,12 +131,33 @@ export function Hero() {
         >
           Resume
         </a>
-        <button
-          onClick={() => navigate('/learnings')}
-          className="px-5 py-2 text-normal-text hover:text-text-white transition-colors"
-        >
-          Learnings
-        </button>
+          <div className="relative" data-projects-dropdown>
+            <button
+              onClick={() => { setIsProjectsOpen(!isProjectsOpen); setIsLangOpen(false); }}
+              className="px-5 py-2 text-normal-text hover:text-text-white transition-colors flex items-center gap-1"
+            >
+              Projects
+              <svg className={`w-4 h-4 transition-transform ${isProjectsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {isProjectsOpen && (
+              <div className="absolute right-0 mt-2 w-56 max-h-[70vh] overflow-y-auto rounded-lg border border-[#EFBF04] bg-background-color shadow-[0_0_30px_rgba(239,191,4,0.4)] overflow-hidden z-[70]">
+                {PROJECT_TITLES.map((title) => (
+                  <button
+                    key={title}
+                    onClick={() => {
+                      navigate(`/project/${titleToSlug(title)}`);
+                      setIsProjectsOpen(false);
+                    }}
+                    className="w-full px-4 py-3 text-left hover:bg-white/10 transition-colors text-normal-text hover:text-text-white border-b border-white/5 last:border-0"
+                  >
+                    {title}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
       </div>
 
       {/* Mobile Navigation - About button only */}
@@ -146,31 +184,35 @@ export function Hero() {
         </button>
 
         {isMenuOpen && (
-          <div className="absolute right-0 mt-2 w-44 rounded-lg border border-[#EFBF04] bg-background-color shadow-[0_0_30px_rgba(239,191,4,0.4)] overflow-hidden">
+          <div className="absolute right-0 mt-2 w-56 max-h-[70vh] overflow-y-auto rounded-lg border border-[#EFBF04] bg-background-color shadow-[0_0_30px_rgba(239,191,4,0.4)] overflow-hidden z-[70]">
             <a
               href={encodeURI("/_PM concised V7.7.1.pdf")}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full px-4 py-3 text-left hover:bg-white/10 transition-colors block text-normal-text hover:text-text-white"
+              className="w-full px-4 py-3 text-left hover:bg-white/10 transition-colors block text-normal-text hover:text-text-white border-b border-white/5"
               onClick={() => setIsMenuOpen(false)}
             >
               Resume
             </a>
-            <button
-              onClick={() => {
-                navigate('/learnings');
-                setIsMenuOpen(false);
-              }}
-              className="w-full px-4 py-3 text-left hover:bg-white/10 transition-colors text-normal-text hover:text-text-white"
-            >
-              Learnings
-            </button>
+            <div className="py-2 px-3 text-xs font-semibold text-white/60 uppercase tracking-wider">Projects</div>
+            {PROJECT_TITLES.map((title) => (
+              <button
+                key={title}
+                onClick={() => {
+                  navigate(`/project/${titleToSlug(title)}`);
+                  setIsMenuOpen(false);
+                }}
+                className="w-full px-4 py-2.5 text-left hover:bg-white/10 transition-colors text-normal-text hover:text-text-white text-sm"
+              >
+                {title}
+              </button>
+            ))}
           </div>
         )}
           </div>
 
           {/* Language Switcher */}
-          <div className="absolute top-4 right-4 sm:top-6 sm:right-4 md:right-[120px]">
+          <div className="absolute top-4 right-4 sm:top-6 sm:right-4 md:right-[120px]" data-lang-dropdown>
         <button
           onClick={() => setIsLangOpen(!isLangOpen)}
           className="px-3 py-1 sm:px-4 sm:py-1.5 md:px-6 md:py-2 text-xs sm:text-sm md:text-base rounded-full border-2 border-white/30 bg-white/5 text-white hover:border-white/50 transition-all duration-300"
