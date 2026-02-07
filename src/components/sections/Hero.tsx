@@ -53,7 +53,7 @@ export function Hero() {
   const translations = {
     EN: {
       subtitle: 'Technical Product Manager & Electronics Engineer',
-      description: 'I\'m Nick. I taking ideas from 0 to 1 and making the gap between thinking and building nonexistent. I care about solving the right problems and obsess over well‑designed products, from software to hardware. I previously built a venture‑backed startup. Click ',
+      description: 'I\'m Nick. I take ideas from 0 to 1 and making the gap between thinking and building nonexistent. I care about solving the right problems and obsess over well‑designed products, from software to hardware. I previously built a venture‑backed startup. Click ',
       descriptionLink: 'here',
       descriptionSuffix: ' to learn more about me',
     },
