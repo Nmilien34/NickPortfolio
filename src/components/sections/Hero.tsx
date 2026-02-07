@@ -144,7 +144,7 @@ export function Hero() {
               </svg>
             </button>
             {isProjectsOpen && (
-              <div className="absolute right-0 mt-2 w-56 max-h-[70vh] overflow-y-auto rounded-lg border border-white/20 bg-background-color overflow-hidden z-[70]">
+              <div className="absolute right-0 mt-2 w-56 max-h-[70vh] overflow-y-auto rounded-lg border border-white/20 bg-background-color shadow-[0_0_20px_rgba(255,255,255,0.08)] overflow-hidden z-[70]">
                 {PROJECT_TITLES.map((title) => (
                   <button
                     key={title}
@@ -186,7 +186,7 @@ export function Hero() {
         </button>
 
         {isMenuOpen && (
-          <div className="absolute right-0 mt-2 w-56 max-h-[70vh] overflow-y-auto rounded-lg border border-white/20 bg-background-color overflow-hidden z-[70]">
+          <div className="absolute right-0 mt-2 w-56 max-h-[70vh] overflow-y-auto rounded-lg border border-white/20 bg-background-color shadow-[0_0_20px_rgba(255,255,255,0.08)] overflow-hidden z-[70]">
             <a
               href={encodeURI("/_PM concised V7.7.1.pdf")}
               target="_blank"
@@ -258,14 +258,14 @@ export function Hero() {
           
           {/* Main Title */}
           <motion.h1
-            className="relative z-10 font-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tighter mb-2 sm:mb-3 md:mb-4 text-white leading-tight"
+            className="relative z-10 font-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tighter mb-2 sm:mb-3 md:mb-4 text-white/85 leading-tight"
             style={{
               mixBlendMode: 'overlay',
-              opacity: 0.95,
-              textShadow: '0 0 40px rgba(255,255,255,0.3), 0 0 80px rgba(255,255,255,0.2)',
+              opacity: 0.8,
+              textShadow: '0 0 40px rgba(255,255,255,0.18), 0 0 80px rgba(255,255,255,0.1)',
             }}
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 0.95, y: 0 }}
+            animate={{ opacity: 0.8, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
           >
             NICK MILIEN
