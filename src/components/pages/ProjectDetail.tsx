@@ -408,9 +408,34 @@ export function ProjectDetail() {
             </div>
           </div>
 
-          {/* Good OT Practice - Summary and Profile */}
+          {/* Good OT Practice - Browser mockup, Summary and Profile */}
           {project.title === 'Good OT Practice' && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <>
+              {/* Browser mockup - above Summary and Profile */}
+              {(project.mockup || project.coverImage || project.image) && (
+                <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 md:p-8 mb-8">
+                  <div className="relative mx-auto w-full">
+                    <div className="bg-gray-800 rounded-t-lg p-2 flex items-center gap-2">
+                      <div className="flex gap-1.5 md:gap-2">
+                        <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-red-500"></div>
+                        <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-yellow-500"></div>
+                        <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-500"></div>
+                      </div>
+                      <div className="flex-1 bg-gray-700 rounded px-2 md:px-4 py-1 text-[10px] md:text-xs text-gray-300 text-center font-mono">
+                        {project.browserUrl || 'goodotpractice.com'}
+                      </div>
+                    </div>
+                    <div className="bg-white rounded-b-lg overflow-hidden shadow-2xl">
+                      <img
+                        src={project.mockup || project.coverImage || project.image}
+                        alt={`${project.title} screenshot`}
+                        className="w-full h-auto"
+                      />
+                    </div>
+                  </div>
+                </div>
+              )}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 md:p-6">
                 <h2 className="font-serif text-lg md:text-xl text-white mb-4">Summary</h2>
                 <p className="text-normal-text font-mono text-xs md:text-sm leading-relaxed whitespace-pre-line">
@@ -439,6 +464,7 @@ export function ProjectDetail() {
                 </div>
               </div>
             </div>
+            </>
           )}
 
           {/* Summary Card - Only for Evolution of My Embedded Systems */}
@@ -738,7 +764,7 @@ export function ProjectDetail() {
           )}
 
           {/* Visual Mockup Card */}
-          {(project.coverImage || project.mockup) && project.title !== 'Evolution of My Embedded Systems' && (
+          {(project.coverImage || project.mockup) && project.title !== 'Evolution of My Embedded Systems' && project.title !== 'Good OT Practice' && (
             <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-6 md:p-8 mb-8">
               <div className="relative">
                 {/* Desktop Mockup */}
