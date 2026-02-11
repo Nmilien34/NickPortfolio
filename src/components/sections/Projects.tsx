@@ -94,6 +94,15 @@ export function getProjectsData(t: (key: string) => string): Project[] {
     gradientColors: undefined,
     browserUrl: 'vibes.app',
   },
+  {
+    title: 'Good OT Practice',
+    category: t('projects.goodOtPractice.category'),
+    description: t('projects.goodOtPractice.description'),
+    summary: t('projects.goodOtPractice.summary'),
+    mockup: '/Projects/GoodOtPractice/DE16F569-8756-48B4-AAFB-3B479EDE42C1.png',
+    gradientColors: undefined,
+    browserUrl: 'goodotpractice.com',
+  },
   ];
 }
 
