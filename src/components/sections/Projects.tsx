@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { titleToSlug } from '../../lib/utils';
@@ -132,8 +133,12 @@ function partitionProjectsBySection(projects: Project[]): Record<SectionKey, Pro
   return result;
 }
 
+/** Fixed height for the browser mockup inside compact cards so every card is identical. */
+const DESKTOP_MOCKUP_HEIGHT = 148;
+/** Card/container height: mockup + padding + room for title overlay. Kept tight so the gray container isn’t long. */
+const DESKTOP_CARD_HEIGHT = DESKTOP_MOCKUP_HEIGHT + 52;
 const DESKTOP_CARD_CLASS =
-  'group relative overflow-hidden rounded-lg sm:rounded-xl cursor-pointer transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] min-h-[200px] md:min-h-[220px]';
+  'group relative overflow-hidden rounded-lg sm:rounded-xl cursor-pointer transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] min-w-0 box-border block min-h-0';
 const MOBILE_CARD_CLASS =
   'group relative overflow-hidden rounded-xl sm:rounded-2xl cursor-pointer transition-all duration-500 hover:scale-[1.02] active:scale-[0.98] min-h-[300px] sm:min-h-[400px]';
 
@@ -149,7 +154,25 @@ function ProjectCard({
   compact?: boolean;
 }) {
   const cardClass = compact ? DESKTOP_CARD_CLASS : MOBILE_CARD_CLASS;
-  const mockupHeight = compact ? '75%' : '85%';
+  const cardStyle = compact
+    ? {
+        width: '100%',
+        height: '100%',
+        minHeight: 0,
+        maxHeight: '100%',
+        boxSizing: 'border-box' as const,
+        contain: 'layout size' as const,
+        flex: '0 0 auto',
+        overflow: 'hidden' as const,
+        isolation: 'isolate' as const,
+        backgroundColor: project.title === 'Boltzman AI' ? '#1a1a1a' : 'hsl(var(--background))',
+        color: 'hsl(var(--foreground))',
+      }
+    : {
+        backgroundColor: project.title === 'Boltzman AI' ? '#1a1a1a' : 'hsl(var(--background))',
+        color: 'hsl(var(--foreground))',
+      };
+  const mockupHeight = compact ? DESKTOP_MOCKUP_HEIGHT : '85%';
   const paddingClass = compact ? 'p-2 md:p-3' : 'p-4 md:p-6';
   const chromeClass = compact
     ? 'px-2 py-1.5 md:px-2 md:py-2 flex items-center gap-1.5'
@@ -168,25 +191,69 @@ function ProjectCard({
     ? 'absolute bottom-2 left-2 md:bottom-2.5 md:left-2.5 z-10'
     : 'absolute bottom-3 left-3 sm:bottom-4 sm:left-4 md:bottom-6 md:left-6 z-10';
 
+  const cardRef = useRef<HTMLDivElement>(null);
+  // #region agent log
+  useEffect(() => {
+    if (!compact || !cardRef.current) return;
+    const el = cardRef.current;
+    const raf = requestAnimationFrame(() => {
+      const cs = typeof getComputedStyle !== 'undefined' ? getComputedStyle(el) : null;
+      const parent = el.parentElement;
+      const firstChild = el.firstElementChild;
+      const payload = {
+        hypothesisId: 'A',
+        projectTitle: project.title,
+        expectedHeight: DESKTOP_CARD_HEIGHT,
+        inlineHeight: el.style.height,
+        computedHeight: cs?.height ?? null,
+        offsetHeight: el.offsetHeight,
+        parentOffsetHeight: parent?.offsetHeight ?? null,
+        firstChildOffsetHeight: firstChild instanceof HTMLElement ? firstChild.offsetHeight : null,
+      };
+      fetch('http://127.0.0.1:7242/ingest/6c79a092-4ad3-4147-8078-543fa19fc467', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ location: 'Projects.tsx:ProjectCard', message: 'card measure', data: payload, timestamp: Date.now() }),
+      }).catch(() => {});
+      if (typeof console !== 'undefined' && console.log) {
+        console.log('[DEBUG card measure]', JSON.stringify(payload));
+      }
+    });
+    return () => cancelAnimationFrame(raf);
+  }, [compact, project.title]);
+  // #endregion
+
   return (
     <div
+      ref={cardRef}
       className={cardClass}
       onClick={() => onNavigate(titleToSlug(project.title))}
-      style={{
-        backgroundColor: project.title === 'Boltzman AI' ? '#1a1a1a' : 'hsl(var(--background))',
-        color: 'hsl(var(--foreground))',
-      }}
+      style={cardStyle}
     >
-      <div className={`absolute inset-0 flex items-end ${paddingClass}`}>
+      <div
+        className={`absolute inset-0 flex flex-col justify-end ${paddingClass}`}
+        style={compact ? { height: '100%', maxHeight: '100%', minHeight: 0 } : undefined}
+      >
         <div
-          className={`w-full ${project.title === 'Boltzman AI' ? 'bg-[#1a1a1a]' : 'bg-white'} rounded-t-lg shadow-xl overflow-hidden`}
-          style={{
-            height: mockupHeight,
-            maskImage: 'linear-gradient(to bottom, black 0%, black 55%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 55%, transparent 100%)',
-          }}
+          className={`w-full ${project.title === 'Boltzman AI' ? 'bg-[#1a1a1a]' : 'bg-white'} rounded-t-lg shadow-xl overflow-hidden flex flex-col min-h-0`}
+          style={
+            compact
+              ? {
+                  height: DESKTOP_MOCKUP_HEIGHT,
+                  minHeight: DESKTOP_MOCKUP_HEIGHT,
+                  maxHeight: DESKTOP_MOCKUP_HEIGHT,
+                  flex: '0 0 auto',
+                  maskImage: 'linear-gradient(to bottom, black 0%, black 55%, transparent 100%)',
+                  WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 55%, transparent 100%)',
+                }
+              : {
+                  height: mockupHeight,
+                  maskImage: 'linear-gradient(to bottom, black 0%, black 55%, transparent 100%)',
+                  WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 55%, transparent 100%)',
+                }
+          }
         >
-          <div className={`${project.title === 'Boltzman AI' ? 'bg-[#2a2a2a] border-b border-gray-700' : 'bg-gray-100 border-b border-gray-200'} ${chromeClass}`}>
+          <div className={`flex-shrink-0 ${project.title === 'Boltzman AI' ? 'bg-[#2a2a2a] border-b border-gray-700' : 'bg-gray-100 border-b border-gray-200'} ${chromeClass}`}>
             <div className="flex gap-1 md:gap-1.5">
               <div className={`${dotClass} bg-red-500`}></div>
               <div className={`${dotClass} bg-yellow-500`}></div>
@@ -197,27 +264,25 @@ function ProjectCard({
             </div>
           </div>
 
-          <div className={`${project.title === 'Boltzman AI' ? 'bg-[#1a1a1a]' : 'bg-white'} h-full relative overflow-hidden`}>
+          <div className={`flex-1 min-h-0 relative overflow-hidden ${project.title === 'Boltzman AI' ? 'bg-[#1a1a1a]' : 'bg-white'}`}>
             {project.underConstruction ? (
               <div className="flex flex-col items-center justify-center h-full p-4">
                 <div className="text-gray-800 text-sm md:text-base font-bold mb-1">{t('projects.underConstruction')}</div>
                 <div className="text-gray-500 text-xs">{t('projects.comingSoon')}</div>
               </div>
             ) : project.mockup ? (
-              <div className="w-full h-full relative overflow-hidden">
+              <div className="absolute inset-0 overflow-hidden">
                 <img
                   src={project.mockup}
                   alt={`${project.title} mockup`}
+                  className="absolute inset-0 w-full h-full object-cover"
                   style={{
-                    objectFit: 'cover',
                     objectPosition: project.title === 'Energy' ? 'top left' : project.title === 'Vibes' ? 'center' : 'top center',
                     imageRendering: '-webkit-optimize-contrast',
                     WebkitBackfaceVisibility: 'hidden',
                     backfaceVisibility: 'hidden',
                     transform: project.title === 'Vibes' ? 'translateZ(0) scale(1.05)' : 'translateZ(0) scale(0.95)',
                     filter: 'contrast(1.05) brightness(1.02)',
-                    width: '100%',
-                    height: '100%',
                   }}
                   loading="eager"
                 />
@@ -265,8 +330,8 @@ const SECTION_TITLE_KEYS: Record<SectionKey, string> = {
 
 function SectionTitle({ label }: { label: string }) {
   return (
-    <div className="inline-flex items-center rounded-lg border border-white/20 bg-white/5 px-4 py-2.5 backdrop-blur-sm">
-      <span className="font-serif text-base md:text-lg font-medium tracking-tight text-white/95">
+    <div className="inline-flex items-center rounded-full border border-white/20 bg-white/5 px-4 py-1.5 backdrop-blur-sm">
+      <span className="font-serif text-sm md:text-base font-medium tracking-tight text-white/95">
         {label}
       </span>
     </div>
@@ -296,18 +361,31 @@ export function Projects() {
               <div
                 className={
                   key === 'contracts'
-                    ? 'grid grid-cols-2 gap-4'
-                    : 'grid grid-cols-2 lg:grid-cols-4 gap-4'
+                    ? 'grid grid-cols-2 gap-4 items-start [&>*]:min-h-0'
+                    : 'grid grid-cols-2 lg:grid-cols-4 gap-4 items-start [&>*]:min-h-0'
                 }
+                style={{
+                  alignContent: 'start',
+                  gridTemplateRows: `${DESKTOP_CARD_HEIGHT}px`,
+                }}
               >
                 {bySection[key].map((project) => (
-                  <ProjectCard
+                  <div
                     key={project.title}
-                    project={project}
-                    t={t}
-                    onNavigate={handleNavigate}
-                    compact
-                  />
+                    className="min-h-0 overflow-hidden flex flex-col"
+                    style={{
+                      height: DESKTOP_CARD_HEIGHT,
+                      minHeight: DESKTOP_CARD_HEIGHT,
+                      maxHeight: DESKTOP_CARD_HEIGHT,
+                    }}
+                  >
+                    <ProjectCard
+                      project={project}
+                      t={t}
+                      onNavigate={handleNavigate}
+                      compact
+                    />
+                  </div>
                 ))}
               </div>
             </div>
