@@ -110,6 +110,11 @@
       "description": "Occupational therapy practice management web application",
       "summary": "Good OT Practice is a clinical resource library for occupational therapists that centralizes expert-curated research papers, videos, courses, and continuing education content in one organized platform.\n\nThe problem: OT professionals and students currently face a fragmented learning experience—juggling multiple websites, YouTube tutorials, and scattered resources that create constant context switching. Existing platforms compound this issue with lengthy 1+ hour formats that don't fit into busy clinical schedules.\n\nThe solution: A one-stop shop where OT professionals can access bite-sized, interactive videos and lectures designed for efficient learning. I built the MVP in 3 days, delivering a streamlined platform that replaces the chaos of tab-juggling with a cohesive learning experience tailored to working therapists' needs."
     },
+    "foster": {
+      "category": "Contract",
+      "description": "Description coming soon",
+      "summary": "Summary coming soon"
+    },
     "vibes": {
       "category": "IOS Mobile App",
       "description": "A mini-social network that lives in your keyboard",

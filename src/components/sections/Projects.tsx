@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { titleToSlug } from '../../lib/utils';
 
 export interface Project {
@@ -104,8 +103,18 @@ export function getProjectsData(t: (key: string) => string): Project[] {
       description: t('projects.goodOtPractice.description'),
       summary: t('projects.goodOtPractice.summary'),
       mockup: '/Projects/GoodOtPractice/DE16F569-8756-48B4-AAFB-3B479EDE42C1.png',
+      link: 'https://www.goodotpractice.com/',
       gradientColors: undefined,
       browserUrl: 'goodotpractice.com',
+    },
+    {
+      title: 'Foster',
+      category: t('projects.foster.category'),
+      description: t('projects.foster.description'),
+      summary: t('projects.foster.summary'),
+      image: '/Projects/Foster/Logo.svg',
+      gradientColors: undefined,
+      browserUrl: 'foster.com',
     },
   ];
 }
@@ -113,7 +122,7 @@ export function getProjectsData(t: (key: string) => string): Project[] {
 const PROJECT_SECTIONS = {
   professional: ['Lawnstack', 'Boltzman Enterprise', 'Boltzman AI', 'Boltzman Voice'],
   personal: ['Energy', 'Lyra', 'Evolution of My Embedded Systems', 'Vibes'],
-  contracts: ['Clearr', 'Good OT Practice'],
+  contracts: ['Clearr', 'Good OT Practice', 'Foster'],
 } as const;
 
 type SectionKey = keyof typeof PROJECT_SECTIONS;
@@ -148,13 +157,11 @@ function ProjectCard({
   t,
   onNavigate,
   compact,
-  index,
 }: {
   project: Project;
   t: (key: string) => string;
   onNavigate: (slug: string) => void;
   compact?: boolean;
-  index: number;
 }) {
   const cardClass = compact ? DESKTOP_CARD_CLASS : MOBILE_CARD_CLASS;
   const cardStyle = compact
@@ -227,19 +234,11 @@ function ProjectCard({
   // #endregion
 
   return (
-    <motion.div
+    <div
       ref={cardRef}
       className={`${cardClass} before:absolute before:inset-0 before:bg-[radial-gradient(1000px_circle_at_var(--mouse-x)_var(--mouse-y),rgba(255,255,255,0.06),transparent_40%)] before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500`}
       onClick={() => onNavigate(titleToSlug(project.title))}
       style={cardStyle}
-      initial={{ opacity: 0, x: -50 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{
-        duration: 1.2,
-        delay: index * 0.1,
-        ease: [0.33, 1, 0.68, 1] // Custom refined spring-like easeOut: smoother entrance, softer deceleration
-      }}
     >
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br from-white/[0.03] to-transparent pointer-events-none" />
 
@@ -312,9 +311,11 @@ function ProjectCard({
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                  className={`absolute inset-0 w-full h-full opacity-90 group-hover:opacity-100 transition-opacity duration-500 ${
+                    project.title === 'Foster' ? 'object-contain scale-[1.15] translate-y-[22px] sm:translate-y-[38px]' : 'object-cover'
+                  }`}
                   style={{
-                    objectPosition: 'center',
+                    objectPosition: project.title === 'Foster' ? 'center 70%' : 'center',
                     imageRendering: 'auto',
                     WebkitFontSmoothing: 'antialiased',
                   }}
@@ -335,7 +336,7 @@ function ProjectCard({
         <h3 className={titleClass}>{project.title}</h3>
         <p className={categoryClass}>{project.category}</p>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -383,17 +384,13 @@ export function Projects() {
             <div key={key} className="space-y-4">
               <SectionTitle label={t(SECTION_TITLE_KEYS[key])} />
               <div
-                className={
-                  key === 'contracts'
-                    ? 'grid grid-cols-2 gap-4 items-start [&>*]:min-h-0'
-                    : 'grid grid-cols-2 lg:grid-cols-4 gap-4 items-start [&>*]:min-h-0'
-                }
+                className="grid grid-cols-2 lg:grid-cols-4 gap-4 items-start [&>*]:min-h-0"
                 style={{
                   alignContent: 'start',
                   gridTemplateRows: `${DESKTOP_CARD_HEIGHT}px`,
                 }}
               >
-                {bySection[key].map((project, index) => (
+                {bySection[key].map((project) => (
                   <div
                     key={project.title}
                     className="min-h-0 overflow-hidden flex flex-col pt-2"
@@ -408,7 +405,6 @@ export function Projects() {
                       t={t}
                       onNavigate={handleNavigate}
                       compact
-                      index={index}
                     />
                   </div>
                 ))}
@@ -419,13 +415,12 @@ export function Projects() {
 
         {/* Mobile: single grid, no section headers */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto md:hidden">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <div key={project.title} className="pt-2">
               <ProjectCard
                 project={project}
                 t={t}
                 onNavigate={handleNavigate}
-                index={index}
               />
             </div>
           ))}
