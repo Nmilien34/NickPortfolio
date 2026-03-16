@@ -112,8 +112,8 @@
     },
     "foster": {
       "category": "Contract",
-      "description": "Description coming soon",
-      "summary": "Summary coming soon"
+      "description": "Mobile personal CRM built with React Native and Expo.",
+      "summary": "Why I Took It\nA friend needed an extra hand, and I saw a chance to learn something I'd never really done before. I'd spent most of my time in backend, frontend, and core systems work, but design implementation, the actual craft of translating a design into a pixel-perfect interface, was a blind spot. Foster was the excuse to close that gap.\n\nThe Problem\nFoster is a mobile personal CRM built with React Native and Expo. The core insight behind it is simple: most people are bad at staying in touch, not because they don't care, but because life gets in the way. Foster fixes that by giving you a structured way to manage your relationships, tracking when you last spoke to someone, setting check-in frequencies, logging notes from conversations, and surfacing reminders before important moments slip by. It also layers in AI to help you figure out what to actually say, and a subscription tier for users who want the full experience. Less \"address book,\" more \"relationship operating system.\"\n\nWhat I Learned\nI didn't just implement designs, I owned the entire frontend. And the thing that surprised me most was how unforgiving it is. A pixel off is a pixel off. Working at that level of fidelity forced me to develop a completely new relationship with AI coding assistants, because the explicitness required is unlike anything I'd dealt with before. Vague prompts don't cut it, you need the right vocabulary. Knowing words like baseline grid, safe area insets, elevation, kerning, that kind of specificity is what separates a 20-minute implementation from a 3-hour rabbit hole. The biggest thing I walked away with wasn't just frontend skill, it was a new design engineering vocabulary that I can now bring to any interface I touch."
     },
     "vibes": {
       "category": "IOS Mobile App",

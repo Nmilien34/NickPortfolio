@@ -488,6 +488,39 @@ export function ProjectDetail() {
             </>
           )}
 
+          {/* Foster - Summary and Profile */}
+          {project.title === 'Foster' && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 items-start">
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 md:p-6">
+                <h2 className="font-serif text-lg md:text-xl text-white mb-4">Summary</h2>
+                <p className="text-normal-text font-mono text-xs md:text-sm leading-relaxed whitespace-pre-line">
+                  {project.summary || project.description}
+                </p>
+              </div>
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 md:p-6">
+                <h2 className="font-serif text-lg md:text-xl text-white mb-4">Profile</h2>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Role</p>
+                    <p className="text-white font-mono text-sm">Design engineer</p>
+                  </div>
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Team</p>
+                    <p className="text-white font-mono text-sm">2</p>
+                  </div>
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Timeline</p>
+                    <p className="text-white font-mono text-sm">1 week</p>
+                  </div>
+                  <div>
+                    <p className="text-white/60 font-mono text-xs mb-1">Pay</p>
+                    <p className="text-white font-mono text-sm">$1,000</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Summary Card - Only for Evolution of My Embedded Systems */}
           {project.title === 'Evolution of My Embedded Systems' && (
             <>
