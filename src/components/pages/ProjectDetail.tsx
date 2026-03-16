@@ -298,11 +298,11 @@ export function ProjectDetail() {
                     />
                   </div>
                 ) : project.title === 'Foster' ? (
-                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg bg-white/10 border border-white/20 overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
+                  <div className="w-14 h-14 md:w-20 md:h-20 rounded-lg bg-white/10 border border-white/20 overflow-hidden flex-shrink-0 flex items-center justify-center">
                     <img
                       src="/Projects/Foster/Logo.svg"
                       alt="Foster Logo"
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-contain transform scale-150 translate-y-6"
                     />
                   </div>
                 ) : (

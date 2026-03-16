@@ -98,6 +98,14 @@ export function getProjectsData(t: (key: string) => string): Project[] {
       browserUrl: 'vibes.app',
     },
     {
+      title: 'Corner',
+      category: t('projects.corner.category'),
+      description: t('projects.corner.description'),
+      underConstruction: true,
+      gradientColors: undefined,
+      browserUrl: 'corner.com',
+    },
+    {
       title: 'Good OT Practice',
       category: t('projects.goodOtPractice.category'),
       description: t('projects.goodOtPractice.description'),
@@ -121,7 +129,7 @@ export function getProjectsData(t: (key: string) => string): Project[] {
 
 const PROJECT_SECTIONS = {
   professional: ['Lawnstack', 'Boltzman Enterprise', 'Boltzman AI', 'Boltzman Voice'],
-  personal: ['Energy', 'Lyra', 'Evolution of My Embedded Systems', 'Vibes'],
+  personal: ['Energy', 'Lyra', 'Evolution of My Embedded Systems', 'Vibes', 'Corner'],
   contracts: ['Clearr', 'Good OT Practice', 'Foster'],
 } as const;
 
