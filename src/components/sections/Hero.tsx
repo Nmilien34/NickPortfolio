@@ -6,7 +6,20 @@ import { Terminal } from '../effects/Terminal';
 import { useElevenLabs } from '../../hooks/useElevenLabs';
 import { titleToSlug } from '../../lib/utils';
 
-const PROJECT_TITLES = ['Lawnstack', 'Boltzman Enterprise', 'Boltzman AI', 'Boltzman Voice', 'Clearr', 'Energy', 'Lyra', 'Evolution of My Embedded Systems', 'Vibes', 'Good OT Practice'];
+const PROJECT_TITLES = [
+  'Lawnstack',
+  'Boltzman Enterprise',
+  'Boltzman AI',
+  'Boltzman Voice',
+  'Clearr',
+  'Energy',
+  'Lyra',
+  'Evolution of My Embedded Systems',
+  'Vibes',
+  'Good OT Practice',
+  'Foster',
+  'Corner',
+];
 
 export function Hero() {
   const [isLangOpen, setIsLangOpen] = useState(false);

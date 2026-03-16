@@ -521,6 +521,16 @@ export function ProjectDetail() {
             </div>
           )}
 
+          {/* Lyra - Update Card */}
+          {project.title === 'Lyra' && (
+            <div className="bg-white/5 backdrop-blur-sm rounded-lg border border-white/20 p-4 md:p-6 mb-8">
+              <h2 className="font-serif text-lg md:text-xl text-white mb-3">Update</h2>
+              <p className="text-normal-text font-mono text-xs md:text-sm leading-relaxed whitespace-pre-line">
+                Lyra is complete in the sense that it was delivered and presented as my capstone project in December, where it took first place. But I've never been fully satisfied with it, mostly because the exterior design felt rushed, and honestly the whole final stretch was. I think Lyra has real commercial potential, there's a market and genuine demand for something like this, but it needs more time, more capital, and most importantly a real industrial designer in the room. I've had some early conversations with people at RISD but nothing has moved forward yet. For now I'll be adding what was actually built and presented for the capstone, and I'll update this as the project evolves.
+              </p>
+            </div>
+          )}
+
           {/* Summary Card - Only for Evolution of My Embedded Systems */}
           {project.title === 'Evolution of My Embedded Systems' && (
             <>
