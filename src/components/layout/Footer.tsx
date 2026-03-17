@@ -29,6 +29,14 @@ export function Footer() {
               LinkedIn
             </a>
             <a
+              href="https://x.com/nmilienceo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-normal-text hover:text-text-white transition-colors"
+            >
+              X
+            </a>
+            <a
               href="mailto:Nicksonn.milien@gmail.com"
               className="text-normal-text hover:text-text-white transition-colors"
             >
