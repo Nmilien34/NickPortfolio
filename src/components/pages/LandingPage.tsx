@@ -72,7 +72,7 @@ const experienceEntries = [
     organization: 'Lawnstack',
     role: 'Co-founder / Product',
     tag: 'Venture backed, $150k raised',
-    meta: '2024-2025',
+    meta: 'Jan 2024 - Dec 2025',
     href: '/project/lawnstack',
     logoSrc: '/Projects/Lawnstack /Logo /Frame 49.svg',
     logoAlt: 'Lawnstack logo',
