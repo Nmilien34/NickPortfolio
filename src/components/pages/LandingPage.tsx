@@ -396,6 +396,7 @@ function WritingSection({
 
 export function LandingPage() {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [hasStartedScrolling, setHasStartedScrolling] = useState(false);
   const logoRef = useRef<HTMLAnchorElement | null>(null);
   const navGroupRef = useRef<HTMLDivElement | null>(null);
   const navItemRefs = useRef<Array<HTMLElement | null>>([]);
@@ -510,6 +511,19 @@ export function LandingPage() {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [isProfileOpen]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 8) setHasStartedScrolling(true);
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <main className="landing-sharp-type min-h-screen overflow-x-hidden bg-[#f3f0ea] text-[#6f7478]">
@@ -742,7 +756,11 @@ export function LandingPage() {
               Nick Milien
             </h1>
           </div>
-          <div className="hero-scroll-cue flex flex-col items-center gap-4 text-xs font-semibold uppercase leading-none text-[#7f878c] sm:text-sm">
+          <div
+            className={`hero-scroll-cue flex flex-col items-center gap-4 text-xs font-semibold uppercase leading-none text-[#7f878c] sm:text-sm ${
+              hasStartedScrolling ? 'hero-scroll-cue-settled' : ''
+            }`}
+          >
             <span className="hero-scroll-arrow" aria-hidden="true" />
             <span>Scroll to see more</span>
           </div>
