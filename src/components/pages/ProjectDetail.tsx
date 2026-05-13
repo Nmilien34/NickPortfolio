@@ -213,7 +213,7 @@ export function ProjectDetail() {
 
   if (!project) {
     return (
-      <div className="min-h-screen flex flex-col bg-background-color">
+      <div className="project-detail-warm min-h-screen flex flex-col bg-[#f3f0ea] text-[#6f7478]">
         <Header />
         <main className="flex-1 flex items-center justify-center">
           <div className="text-center">
@@ -232,7 +232,7 @@ export function ProjectDetail() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-background-color">
+    <div className="project-detail-warm min-h-screen flex flex-col bg-[#f3f0ea] text-[#6f7478]">
       <Header />
       <main className="flex-1 pt-20 md:pt-32 pb-8 md:pb-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
@@ -294,6 +294,14 @@ export function ProjectDetail() {
                     <img
                       src="/Projects/Clearr/5361FE02-9D38-4F02-992B-EA13F7F12C6A_4_5005_c.jpeg"
                       alt="Clearr Logo"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                ) : project.title === 'Good OT Practice' ? (
+                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg bg-[#eef1f2] border border-white/20 overflow-hidden flex-shrink-0 flex items-center justify-center p-2">
+                    <img
+                      src="/Projects/GoodOtPractice/favicon.svg"
+                      alt="Good OT Practice Logo"
                       className="w-full h-full object-contain"
                     />
                   </div>
