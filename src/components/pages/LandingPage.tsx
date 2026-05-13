@@ -4,7 +4,7 @@ import { writings } from '../../content/writings';
 
 const navItems = [
   { label: 'Experience', href: '#experience' },
-  { label: 'Resume', href: '/_PM%20concised%20V7.7.1.pdf', external: true },
+  { label: 'Resume', href: '/_PM%20concised%20V8.pdf', external: true },
   { label: 'Writings', href: '#writing' },
   { label: 'Profile', profile: true },
 ];

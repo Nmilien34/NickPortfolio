@@ -17,7 +17,7 @@ const fileSystem: { [key: string]: FileSystemNode } = {
   'resume.pdf': {
     type: 'file',
     content: 'Nick Milien\'s Resume - Technical Product Manager & Electronics Engineer',
-    route: '/_PM concised V7.7.1.pdf'
+    route: '/_PM concised V8.pdf'
   },
   'learnings': {
     type: 'file',
