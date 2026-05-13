@@ -492,24 +492,34 @@ a, button, [role="button"], input, textarea, select {
 }
 
 @media (max-width: 640px) {
+  .hero-scroll-cue {
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 4.75rem);
+    gap: 0.75rem;
+  }
+
+  .hero-scroll-arrow {
+    width: 24px;
+    height: 22px;
+  }
+
   .quiet-light-notebook {
     right: -1.5rem;
-    bottom: 7.5rem;
-    width: 13rem;
-    opacity: 0.48;
+    bottom: 9rem;
+    width: 11rem;
+    opacity: 0.34;
   }
 
   .quiet-light-pen {
     right: 1.5rem;
-    bottom: 10rem;
-    width: 8rem;
-    opacity: 0.36;
+    bottom: 11.2rem;
+    width: 7rem;
+    opacity: 0.28;
   }
 
   .quiet-light-plant {
     left: 1rem;
-    bottom: 6.5rem;
-    opacity: 0.32;
+    bottom: 8rem;
+    opacity: 0.24;
   }
 }
 

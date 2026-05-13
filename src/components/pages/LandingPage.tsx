@@ -259,7 +259,7 @@ function LedgerSection({
    */
   return (
     <div className="lg:col-span-2">
-      <div className="mb-10 grid gap-4 lg:grid-cols-[minmax(180px,0.28fr)_minmax(0,0.72fr)]">
+      <div className="mb-6 grid gap-4 sm:mb-10 lg:grid-cols-[minmax(180px,0.28fr)_minmax(0,0.72fr)]">
         <p className="text-[11px] font-semibold uppercase leading-none text-[#2f5f7c] sm:text-xs">
           {eyebrow}
         </p>
@@ -325,7 +325,7 @@ function LedgerSection({
             </>
           );
           const rowClassName =
-            'group grid min-h-[92px] grid-cols-[44px_minmax(0,1fr)] gap-x-3 gap-y-2 border-b-[0.5px] border-[#e4e0d8]/80 py-5 transition-colors duration-300 hover:bg-[#f8f5ee]/45 sm:grid-cols-[56px_minmax(0,1.1fr)_minmax(0,1.2fr)_auto] sm:items-center sm:gap-6 sm:py-6';
+            'group grid min-h-[82px] grid-cols-[44px_minmax(0,1fr)] gap-x-3 gap-y-2 border-b-[0.5px] border-[#e4e0d8]/80 py-4 transition-colors duration-300 hover:bg-[#f8f5ee]/45 sm:min-h-[92px] sm:grid-cols-[56px_minmax(0,1.1fr)_minmax(0,1.2fr)_auto] sm:items-center sm:gap-6 sm:py-6';
 
           return entry.href && entry.external ? (
             <a
@@ -363,7 +363,7 @@ function WritingSection({
 }) {
   return (
     <div className="lg:col-span-2">
-      <div className="mb-10 grid gap-4 lg:grid-cols-[minmax(180px,0.28fr)_minmax(0,0.72fr)]">
+      <div className="mb-6 grid gap-4 sm:mb-10 lg:grid-cols-[minmax(180px,0.28fr)_minmax(0,0.72fr)]">
         <p className="text-[11px] font-semibold uppercase leading-none text-[#2f5f7c] sm:text-xs">
           {eyebrow}
         </p>
@@ -512,7 +512,7 @@ export function LandingPage() {
   }, [isProfileOpen]);
 
   return (
-    <main className="landing-sharp-type min-h-screen bg-[#f3f0ea] text-[#6f7478]">
+    <main className="landing-sharp-type min-h-screen overflow-x-hidden bg-[#f3f0ea] text-[#6f7478]">
       <nav
         className="pointer-events-none fixed inset-x-0 top-4 z-50 px-4 text-[10px] font-semibold uppercase leading-none text-[#6f7478] sm:top-5 sm:px-8 sm:text-xs lg:px-12"
       >
@@ -568,19 +568,21 @@ export function LandingPage() {
             if (event.target === event.currentTarget) setIsProfileOpen(false);
           }}
         >
-          <div className="relative max-h-[100dvh] w-full overflow-y-auto rounded-t-[22px] border border-[#e4e0d8]/90 bg-[#f8f6f1] p-2 shadow-[0_34px_90px_rgba(103,95,82,0.18)] sm:max-h-[88vh] sm:max-w-5xl sm:rounded-[18px] sm:p-3">
-            <button
-              type="button"
-              onClick={() => setIsProfileOpen(false)}
-              className="sticky left-full top-3 z-10 mb-2 block w-fit rounded-full bg-[#f3f0ea]/95 px-4 py-2 text-xs font-semibold uppercase leading-none text-[#8b9298] shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] transition-colors hover:text-[#555b60] sm:absolute sm:right-4 sm:top-4 sm:mb-0"
-            >
-              Close
-            </button>
+          <div className="relative max-h-[100dvh] w-full overflow-x-hidden overflow-y-auto rounded-t-[22px] border border-[#e4e0d8]/90 bg-[#f8f6f1] p-2 shadow-[0_34px_90px_rgba(103,95,82,0.18)] sm:max-h-[88vh] sm:max-w-5xl sm:rounded-[18px] sm:p-3">
+            <div className="sticky top-2 z-10 mb-2 flex justify-end sm:absolute sm:right-4 sm:top-4 sm:mb-0">
+              <button
+                type="button"
+                onClick={() => setIsProfileOpen(false)}
+                className="rounded-full bg-[#f3f0ea]/95 px-4 py-2 text-xs font-semibold uppercase leading-none text-[#8b9298] shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] transition-colors hover:text-[#555b60]"
+              >
+                Close
+              </button>
+            </div>
 
             <div className="grid overflow-hidden rounded-[16px] border border-[#e4e0d8]/80 bg-[#f3f0ea] md:grid-cols-[0.9fr_1.1fr]">
               <div className="relative border-b border-[#e4e0d8]/80 bg-[#ebe6dc] p-4 md:min-h-[340px] md:border-b-0 md:border-r md:p-6">
                 <div className="absolute inset-y-0 right-0 hidden w-px bg-gradient-to-b from-transparent via-[#cfc7b8] to-transparent md:block" />
-                <div className="grid gap-4 sm:grid-cols-[0.48fr_0.52fr] sm:items-end md:flex md:h-full md:flex-col md:items-stretch md:justify-between md:gap-8">
+                <div className="grid gap-4 min-[460px]:grid-cols-[0.48fr_0.52fr] min-[460px]:items-end md:flex md:h-full md:flex-col md:items-stretch md:justify-between md:gap-8">
                   <div className="sm:contents md:block">
                     <p className="mb-4 text-[11px] font-semibold uppercase leading-none text-[#2f5f7c]">
                       Passport / Profile
@@ -593,7 +595,7 @@ export function LandingPage() {
                       />
                     </div>
                   </div>
-                  <div className="self-end sm:self-center md:self-auto">
+                  <div className="self-end min-[460px]:self-center md:self-auto">
                     <p className="text-xs font-semibold uppercase leading-none text-[#8b9298]">
                       Nick Milien
                     </p>
@@ -638,7 +640,7 @@ export function LandingPage() {
                     </a>
                     <a
                       href="mailto:Nicksonn.milien@gmail.com"
-                      className="rounded-full bg-[#f8f6f1]/85 px-5 py-3 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.65)] transition-colors hover:bg-[#fbfaf6]"
+                      className="break-all rounded-full bg-[#f8f6f1]/85 px-5 py-3 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.65)] transition-colors hover:bg-[#fbfaf6]"
                     >
                       Nicksonn.milien@gmail.com
                     </a>
@@ -715,7 +717,7 @@ export function LandingPage() {
         </div>
       ) : null}
 
-      <section className="relative flex min-h-screen flex-col overflow-hidden bg-[#f3f0ea] px-5 py-5 sm:min-h-dvh sm:px-8 lg:px-12">
+      <section className="relative flex min-h-[100svh] flex-col overflow-hidden bg-[#f3f0ea] px-5 py-5 sm:min-h-dvh sm:px-8 lg:px-12">
         <div className="quiet-light-scene" aria-hidden="true">
           <div className="quiet-light-wall" />
           <div className="quiet-light-desk" />
@@ -731,7 +733,7 @@ export function LandingPage() {
           <div className="quiet-window-shadow" />
           <div className="quiet-cloud-light" />
         </div>
-        <div className="relative z-10 flex flex-1 flex-col justify-center gap-10 pb-24 pt-12 sm:pb-32 sm:pt-16">
+        <div className="relative z-10 flex flex-1 flex-col justify-center gap-10 pb-28 pt-20 sm:pb-32 sm:pt-16">
           <div className="w-full max-w-5xl" aria-label="Welcome, I’m Nick Milien">
             <p className="hero-type hero-type-kicker mb-5 w-fit text-[11px] font-semibold uppercase leading-none text-[#2f5f7c] sm:text-xs">
               Welcome, I’m
@@ -747,7 +749,7 @@ export function LandingPage() {
         </div>
       </section>
 
-      <section className="px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+      <section className="px-5 py-10 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
         <p className="max-w-4xl text-sm font-medium leading-6 text-[#6f7478] sm:text-base sm:leading-7">
           I like building well-designed products that work well, whether that’s hardware or software. What I care about
           most is the end-user experience and creating products that become habitual. There’s something inspiring about
@@ -756,13 +758,13 @@ export function LandingPage() {
         </p>
       </section>
 
-      <section className="px-5 pb-24 sm:px-8 lg:px-12">
+      <section className="px-5 pb-16 sm:px-8 sm:pb-24 lg:px-12">
         <div className="border-t-[0.5px] border-[#e4e0d8]">
           {sections.map((section) => (
             <section
               key={section.id}
               id={section.id}
-              className="grid scroll-mt-8 gap-8 border-b-[0.5px] border-[#e4e0d8] py-10 sm:py-14 lg:grid-cols-[minmax(180px,0.28fr)_minmax(0,0.72fr)] lg:py-16"
+              className="grid scroll-mt-8 gap-6 border-b-[0.5px] border-[#e4e0d8] py-8 sm:gap-8 sm:py-14 lg:grid-cols-[minmax(180px,0.28fr)_minmax(0,0.72fr)] lg:py-16"
             >
               {section.id === 'experience' ? (
                 <LedgerSection
